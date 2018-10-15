@@ -1,0 +1,9 @@
+This mod adds 7 NPCs (Alchemist, Brewer, Jeweler, Young Brewer, Operator, Architect and Musician), who sell potions, materials and some other stuff. 
+New combinations of potions are sold by the Young Brewer.
+The spawn condition for the Alchemist, the Jeweler & the Brewer is to kill the Eye of Ctulhu. 
+The Young Brewer spawns while both the Alchemist & the Brewer are in the world in Hardmode.
+The spawn condition for the Operator is to beat EoW/BoC.
+The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
+The Musician will come if you defeat Skeletron.
+v1.0
+-Initial release.
