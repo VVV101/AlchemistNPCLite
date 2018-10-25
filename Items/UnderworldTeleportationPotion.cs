@@ -6,10 +6,11 @@ using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
+using AlchemistNPCLite.Items;
  
 namespace AlchemistNPCLite.Items
 {
-    public class UnderworldTeleportationPotion : ModItem
+     public class UnderworldTeleportationPotion : ModItem
     {
         public override void SetStaticDefaults()
 		{

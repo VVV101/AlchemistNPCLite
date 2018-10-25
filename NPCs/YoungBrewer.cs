@@ -66,7 +66,7 @@ namespace AlchemistNPCLite.NPCs
             mod.AddTranslation(text);
             text = mod.CreateTranslation("Entry1");
             text.SetDefault("I'm trading potions which were made by my parents.");
-            text.AddTranslation(GameCulture.Russian, "Я продаю зелья, которые были сделаны моими родителями.");
+            text.AddTranslation(GameCulture.Russian, "Я продаю зелья, сделанные моими родителями.");
             text.AddTranslation(GameCulture.Chinese, "我出售我父母做的药剂.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("Entry2");

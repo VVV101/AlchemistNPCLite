@@ -26,7 +26,7 @@ namespace AlchemistNPCLite.Items
 		
 		private static void SyncTeleport(int teleportType = 0)
 		{
-			var netMessage = AlchemistNPCLite.instance.GetPacket();
+			var netMessage = AlchemistNPCLite.Instance.GetPacket();
 			netMessage.Write((byte)AlchemistNPCLite.AlchemistNPCLiteMessageType.TeleportPlayer);
 			netMessage.Write(teleportType);
 			netMessage.Send();

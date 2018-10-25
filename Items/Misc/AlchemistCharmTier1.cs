@@ -15,7 +15,7 @@ namespace AlchemistNPCLite.Items.Misc
 		{
 			DisplayName.SetDefault("Alchemist Charm Tier 1");
 			Tooltip.SetDefault("While this is in your inventory, you have a low chance not to consume potion");
-			DisplayName.AddTranslation(GameCulture.Russian, "Талисман Алхимика Тир 1");
+			DisplayName.AddTranslation(GameCulture.Russian, "Талисман Алхимика Первого Уровня");
             Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеет малый шанс не потратить зелье");
         }
 

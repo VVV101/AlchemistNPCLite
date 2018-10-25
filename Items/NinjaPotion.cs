@@ -39,5 +39,39 @@ namespace AlchemistNPCLite.Items
             item.buffTime = 36000;    //this is the buff duration        10 = 10 Second
             return;
         }
+		
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.Daybloom, 1);
+			recipe.AddIngredient(ItemID.Waterleaf, 1);
+			recipe.AddIngredient(ItemID.Fireblossom, 1);
+			recipe.AddIngredient(ItemID.Deathweed, 1);
+			recipe.AddIngredient(ItemID.HellstoneBar, 1);
+			recipe.AddIngredient(ItemID.RottenChunk, 2);
+			recipe.AddIngredient(ItemID.CursedFlame, 1);
+			recipe.AddIngredient(ItemID.SoulofNight, 3);
+			recipe.AddIngredient(ItemID.BottledWater, 1);
+			recipe.AddIngredient(ItemID.ChlorophyteOre, 1);
+			recipe.AddIngredient(ItemID.Ectoplasm, 1);
+			recipe.AddTile(TileID.Bottles);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+			recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.Daybloom, 1);
+			recipe.AddIngredient(ItemID.Waterleaf, 1);
+			recipe.AddIngredient(ItemID.Fireblossom, 1);
+			recipe.AddIngredient(ItemID.Deathweed, 1);
+			recipe.AddIngredient(ItemID.HellstoneBar, 1);
+			recipe.AddIngredient(ItemID.Vertebrae, 2);
+			recipe.AddIngredient(ItemID.Ichor, 1);
+			recipe.AddIngredient(ItemID.SoulofNight, 3);
+			recipe.AddIngredient(ItemID.BottledWater, 1);
+			recipe.AddIngredient(ItemID.ChlorophyteOre, 1);
+			recipe.AddIngredient(ItemID.Ectoplasm, 1);
+			recipe.AddTile(TileID.Bottles);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
     }
 }

@@ -126,6 +126,11 @@ namespace AlchemistNPCLite.NPCs
             text.AddTranslation(GameCulture.Russian, " и я очень похожи? Это потому что мы близнецы.");
             text.AddTranslation(GameCulture.Chinese, " 长得几乎一毛一样?这是因为我们是兄弟.");
             mod.AddTranslation(text);
+            text = mod.CreateTranslation("Combine");
+            text.SetDefault("Combine notes");
+            text.AddTranslation(GameCulture.Russian, "Соединить записки");
+            text.AddTranslation(GameCulture.Chinese, "黏合笔记");
+            mod.AddTranslation(text);
         }
 		
 		public override void SetDefaults()

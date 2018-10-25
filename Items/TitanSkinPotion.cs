@@ -40,5 +40,37 @@ namespace AlchemistNPCLite.Items
             item.buffTime = 52000;    //this is the buff duration        10 = 10 Second
             return;
         }
+		
+		public override void AddRecipes()
+		{
+			ModRecipe recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.Waterleaf, 1);
+			recipe.AddIngredient(ItemID.Fireblossom, 1);
+			recipe.AddIngredient(ItemID.Shiverthorn, 1);
+			recipe.AddIngredient(ItemID.Deathweed, 1);
+			recipe.AddIngredient(ItemID.Obsidian, 1);
+			recipe.AddIngredient(ItemID.CrystalShard, 1);
+			recipe.AddIngredient(ItemID.CursedFlame, 1);
+			recipe.AddIngredient(ItemID.SoulofLight, 1);
+			recipe.AddIngredient(ItemID.SoulofNight, 1);
+			recipe.AddIngredient(ItemID.BottledWater, 1);
+			recipe.AddTile(TileID.Bottles);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+			recipe = new ModRecipe(mod);
+			recipe.AddIngredient(ItemID.Waterleaf, 1);
+			recipe.AddIngredient(ItemID.Fireblossom, 1);
+			recipe.AddIngredient(ItemID.Shiverthorn, 1);
+			recipe.AddIngredient(ItemID.Deathweed, 1);
+			recipe.AddIngredient(ItemID.Obsidian, 1);
+			recipe.AddIngredient(ItemID.CrystalShard, 1);
+			recipe.AddIngredient(ItemID.Ichor, 1);
+			recipe.AddIngredient(ItemID.SoulofLight, 1);
+			recipe.AddIngredient(ItemID.SoulofNight, 1);
+			recipe.AddIngredient(ItemID.BottledWater, 1);
+			recipe.AddTile(TileID.Bottles);
+			recipe.SetResult(this);
+			recipe.AddRecipe();
+		}
     }
 }

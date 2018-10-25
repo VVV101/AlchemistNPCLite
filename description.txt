@@ -7,3 +7,6 @@ The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Musician will come if you defeat Skeletron.
 v1.0
 -Initial release.
+Only a small part of all mod's content is left here.
+All town NPCs except Explorer, Alchemist Charms, Luck Charms and all potions. 
+All else was removed.

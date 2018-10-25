@@ -16,7 +16,7 @@ namespace AlchemistNPCLite.Items.Misc
 			DisplayName.SetDefault("Alchemist Charm Tier 2");
 			Tooltip.SetDefault("While this is in your inventory, you have a moderate chance not to consume potion"
 			+"\nAllows to use potions from Piggy Bank by Quick Buff");
-			DisplayName.AddTranslation(GameCulture.Russian, "Талисман Алхимика Тир 2");
+			DisplayName.AddTranslation(GameCulture.Russian, "Талисман Алхимика Второго Уровня");
             Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеет средний шанс не потратить зелье\nПозволяет использовать зелья из Свиньи-Копилки с помощью клавиши Быстрого Баффа");
         }
 
@@ -38,8 +38,8 @@ namespace AlchemistNPCLite.Items.Misc
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "AlchemistCharmTier1");
-			recipe.AddRecipeGroup("AlchemistNPCLite:EvilBar", 15);
-			recipe.AddRecipeGroup("AlchemistNPCLite:EvilComponent", 20);
+			recipe.AddRecipeGroup("AlchemistNPC:EvilBar", 15);
+			recipe.AddRecipeGroup("AlchemistNPC:EvilComponent", 20);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

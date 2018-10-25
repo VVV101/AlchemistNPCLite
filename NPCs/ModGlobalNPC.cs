@@ -48,6 +48,17 @@ namespace AlchemistNPCLite.NPCs
 
 		public override void SetupShop(int type, Chest shop, ref int nextSlot)
 		{
+			Player player = Main.player[Main.myPlayer];
+			if (type == mod.NPCType("Brewer") || type == mod.NPCType("Alchemist") || type == mod.NPCType("Young Brewer"))
+			{
+				for (nextSlot = 0; nextSlot < 40; ++nextSlot)
+				{
+					if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).Discount)
+					{
+						shop.item[nextSlot].shopCustomPrice -= shop.item[nextSlot].shopCustomPrice/4;
+					}
+				}
+			}
 			if (ModLoader.GetLoadedMods().Contains("Tremor"))
 			{
 				if (type == ModLoader.GetMod("Tremor").NPCType("Lady Moon"))
@@ -295,21 +306,7 @@ namespace AlchemistNPCLite.NPCs
 			{
 				if (!NPC.downedBoss1)
 				{
-					if (Main.netMode == 0)
-					{
-						Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("AlchemistCharmTier1"));
-					}
-					if (Main.netMode == 1)
-					{
-						for (int i = 0; i < 200; i++)
-						{
-							if (Main.player[i].active)
-							{
-								Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("AlchemistCharmTier1"));
-							}
-						}
-
-					}
+					npc.DropItemInstanced(npc.position, npc.Size, mod.ItemType("AlchemistCharmTier1"));
 				}
 			}
 			return true;
