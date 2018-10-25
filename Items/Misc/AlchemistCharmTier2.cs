@@ -38,8 +38,8 @@ namespace AlchemistNPCLite.Items.Misc
 		{
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient(null, "AlchemistCharmTier1");
-			recipe.AddRecipeGroup("AlchemistNPC:EvilBar", 15);
-			recipe.AddRecipeGroup("AlchemistNPC:EvilComponent", 20);
+			recipe.AddRecipeGroup("AlchemistNPCLite:EvilBar", 15);
+			recipe.AddRecipeGroup("AlchemistNPCLite:EvilComponent", 20);
 			recipe.AddTile(TileID.Anvils);
 			recipe.SetResult(this);
 			recipe.AddRecipe();
