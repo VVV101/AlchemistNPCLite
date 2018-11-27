@@ -6,6 +6,7 @@ using Terraria.ModLoader;
 using Terraria.ID;
 using AlchemistNPCLite.NPCs;
 using AlchemistNPCLite;
+using AlchemistNPCLite.Interface;
 using Terraria.Localization;
  
 namespace AlchemistNPCLite.NPCs
@@ -18,11 +19,6 @@ namespace AlchemistNPCLite.NPCs
 		public static bool Shop3 = false;
 		public static bool Shop4 = false;
 		public static bool Shop5 = false;
-		public static bool S1A = false;
-		public static bool S2A = false;
-		public static bool S3A = false;
-		public static bool S4A = false;
-		public static bool S5A = false;
 		public override string Texture
 		{
 			get
@@ -75,8 +71,8 @@ namespace AlchemistNPCLite.NPCs
             text.AddTranslation(GameCulture.Russian, "5-ый магазин (Wildlife/Sacred/Spirit/Cristilium/ExpSentr)");
             text.AddTranslation(GameCulture.Chinese, "第五商店 (Wildlife/圣域/魂灵/水晶之地/ExpSentr)");
             mod.AddTranslation(text);
-            text = mod.CreateTranslation("CycleShop");
-            text.SetDefault("Cycle Shop");
+            text = mod.CreateTranslation("ShopsChanger");
+            text.SetDefault("Shops Changer");
             text.AddTranslation(GameCulture.Russian, "Смена магазина");
             text.AddTranslation(GameCulture.Chinese, "切换商店");
             mod.AddTranslation(text);
@@ -194,6 +190,10 @@ namespace AlchemistNPCLite.NPCs
             text.AddTranslation(GameCulture.Russian, " может быть так же спокойна, как я, но потом я вспоминаю ");
             text.AddTranslation(GameCulture.Chinese, " 和我一样从容冷静, 但是后来我想到了 ");
             mod.AddTranslation(text);
+			text = mod.CreateTranslation("EntryB19");
+            text.SetDefault("I once traveled far away from Terraria to learn more about Alchemy. In my travels I met a ''scientist of magic'' called Azanor. He showed me the secrets of something called ''thaumaturgy''.");
+            text.AddTranslation(GameCulture.Russian, "Я однажды выбралась из мира Террарии чтобы узнать больше об Алхимии. В своих путешествиях я встретила ''учёного магии'' по имени Азанор. Он показал мне тайны чего-то, названного ''тауматургия''.");
+            mod.AddTranslation(text);
         }
 
 		public override void SetDefaults()
@@ -309,6 +309,7 @@ namespace AlchemistNPCLite.NPCs
 				string EntryB16 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryB16");
 				string EntryB17 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryB17");
 				string EntryB18 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryB18");
+				string EntryB19 = Language.GetTextValue("Mods.AlchemistNPC.EntryB19");
 				int Alchemist = NPC.FindFirstNPC(mod.NPCType("Alchemist"));
 				int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
 			if (Main.bloodMoon && partyGirl >= 0 && Alchemist >=0 && Main.rand.Next(4) == 0)
@@ -345,7 +346,7 @@ namespace AlchemistNPCLite.NPCs
 			{
 				return EntryB8 + Main.npc[Alchemist].GivenName + EntryB9;
 			}
-            switch (Main.rand.Next(7))
+            switch (Main.rand.Next(8))
             {
                 case 0:                                     
 				return EntryB1;
@@ -359,6 +360,8 @@ namespace AlchemistNPCLite.NPCs
 				return EntryB5;
                 case 5:
 				return EntryB6;
+				case 6:
+				return EntryB19;
                 default:
 				return EntryB7;
             }
@@ -366,41 +369,31 @@ namespace AlchemistNPCLite.NPCs
  
         public override void SetChatButtons(ref string button, ref string button2)
         {
-            string ShopB1 = Language.GetTextValue("Mods.AlchemistNPCLite.ShopB1");
-			string ShopB2 = Language.GetTextValue("Mods.AlchemistNPCLite.ShopB2");
-			string ShopB3 = Language.GetTextValue("Mods.AlchemistNPCLite.ShopB3");
-			string ShopB4 = Language.GetTextValue("Mods.AlchemistNPCLite.ShopB4");
-			string ShopB5 = Language.GetTextValue("Mods.AlchemistNPCLite.ShopB5");
-			string CycleShop = Language.GetTextValue("Mods.AlchemistNPCLite.CycleShop");
+            string ShopB1 = Language.GetTextValue("Mods.AlchemistNPC.ShopB1");
+			string ShopB2 = Language.GetTextValue("Mods.AlchemistNPC.ShopB2");
+			string ShopB3 = Language.GetTextValue("Mods.AlchemistNPC.ShopB3");
+			string ShopB4 = Language.GetTextValue("Mods.AlchemistNPC.ShopB4");
+			string ShopB5 = Language.GetTextValue("Mods.AlchemistNPC.ShopB5");
+			string ShopsChanger = Language.GetTextValue("Mods.AlchemistNPC.ShopsChanger");
 			if (Shop1)
 			{
 			button = ShopB1;
-			S5A = false;
-			S1A = true;
 			}
 			if (Shop2)
 			{
 			button = ShopB2;
-			S1A = false;
-			S2A = true;
 			}
 			if (Shop3)
 			{
 			button = ShopB3;
-			S2A = false;
-			S3A = true;
 			}
 			if (Shop4)
 			{
 			button = ShopB4;
-			S3A = false;
-			S4A = true;
 			}
 			if (Shop5)
 			{
 			button = ShopB5;
-			S4A = false;
-			S5A = true;
 			}
 			if (npc.FindBuffIndex(119) >= 0 && NPC.AnyNPCs(mod.NPCType("Alchemist")) && !NPC.AnyNPCs(mod.NPCType("Young Brewer")))
 			{
@@ -408,7 +401,7 @@ namespace AlchemistNPCLite.NPCs
 			}
 			else
 			{
-			button2 = CycleShop;
+			button2 = ShopsChanger;
 			}
         }
  
@@ -417,10 +410,11 @@ namespace AlchemistNPCLite.NPCs
 			if (firstButton)
             {
                 shop = true;
+				ShopChangeUI.visible = false;
             }
 			else
 			{
-				if (npc.FindBuffIndex(119) >= 0 && NPC.AnyNPCs(mod.NPCType("Alchemist")) && !NPC.AnyNPCs(mod.NPCType("Young Brewer")))
+				if (npc.HasBuff(119) && NPC.AnyNPCs(mod.NPCType("Alchemist")) && !NPC.AnyNPCs(mod.NPCType("Young Brewer")))
 				{
 					for (int k = 0; k < 255; k++)
 					{
@@ -431,32 +425,8 @@ namespace AlchemistNPCLite.NPCs
 						}
 					}
 				}
-			if (Shop1 && S1A)
-						{
-						Shop2 = true;
-						Shop1 = false;
-						}
-			if (Shop2 && S2A)
-						{
-						Shop3 = true;
-						Shop2 = false;
-						}
-			if (Shop3 && S3A)
-						{
-						Shop4 = true;
-						Shop3 = false;
-						}
-			if (Shop4 && S4A)
-						{
-						Shop5 = true;
-						Shop4 = false;
-						}
-			if (Shop5 && S5A)
-						{
-						Shop1 = true;
-						Shop5 = false;
-						}
-				}
+				ShopChangeUI.visible = true;
+			}
 		}
  
 		public bool SacredToolsDownedAbaddon

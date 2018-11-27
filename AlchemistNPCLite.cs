@@ -13,6 +13,7 @@ using Terraria.UI;
 using Terraria.DataStructures;
 using Terraria.GameContent.UI;
 using AlchemistNPCLite.Items;
+using AlchemistNPCLite.Interface;
 
 namespace AlchemistNPCLite
 {
@@ -46,19 +47,106 @@ namespace AlchemistNPCLite
 		public static int ReversivityCoinTier4ID;
 		public static int ReversivityCoinTier5ID;
 		public static int ReversivityCoinTier6ID;
+		private UserInterface alchemistUserInterface;
+		internal ShopChangeUI alchemistUI;
+		private UserInterface alchemistUserInterfaceA;
+		internal ShopChangeUIA alchemistUIA;
+		private UserInterface alchemistUserInterfaceO;
+		internal ShopChangeUIO alchemistUIO;
+		private UserInterface alchemistUserInterfaceP;
 		
 		public override void Load()
 		{
+			Config.Load();
 			Instance = this;
             string DiscordBuffTeleportation = Language.GetTextValue("Discord Buff Teleportation");
             DiscordBuff = RegisterHotKey(DiscordBuffTeleportation, "Q");
             SetTranslation();
 			instance = this;
+			if (!Main.dedServ)
+			{
+			alchemistUI = new ShopChangeUI();
+			alchemistUI.Activate();
+			alchemistUserInterface = new UserInterface();
+			alchemistUserInterface.SetState(alchemistUI);
+			
+			alchemistUIA = new ShopChangeUIA();
+			alchemistUIA.Activate();
+			alchemistUserInterfaceA = new UserInterface();
+			alchemistUserInterfaceA.SetState(alchemistUIA);
+			
+			alchemistUIO = new ShopChangeUIO();
+			alchemistUIO.Activate();
+			alchemistUserInterfaceO = new UserInterface();
+			alchemistUserInterfaceO.SetState(alchemistUIO);
+			}
 		}
 		
 		public override void Unload()
 		{
 			instance = null;
+		}
+		
+		public static string ConfigFileRelativePath 
+		{
+		get { return "Mod Configs/AlchemistLitev12.json"; }
+		}
+
+		public static void ReloadConfigFromFile() 
+		{
+		Config.Load();
+		}
+		
+		public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
+		{
+			int MouseTextIndex = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
+			if (MouseTextIndex != -1)
+			{
+				layers.Insert(MouseTextIndex, new LegacyGameInterfaceLayer(
+					"AlchemistNPC: Shop Selector",
+					delegate
+					{
+						if (ShopChangeUI.visible)
+						{
+							alchemistUI.Draw(Main.spriteBatch);
+						}
+						return true;
+					},
+					InterfaceScaleType.UI)
+				);
+			}
+			int MouseTextIndexA = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
+			if (MouseTextIndexA != -1)
+			{
+				layers.Insert(MouseTextIndexA, new LegacyGameInterfaceLayer(
+					"AlchemistNPC: Shop Selector A",
+					delegate
+					{
+						if (ShopChangeUIA.visible)
+						{
+							alchemistUIA.Draw(Main.spriteBatch);
+						}
+						return true;
+					},
+					InterfaceScaleType.UI)
+				);
+			}
+			int MouseTextIndexO = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
+			if (MouseTextIndexO != -1)
+			{
+				layers.Insert(MouseTextIndexO, new LegacyGameInterfaceLayer(
+					"AlchemistNPC: Shop Selector O",
+					delegate
+					{
+						if (ShopChangeUIO.visible)
+						{
+							alchemistUIO.Draw(Main.spriteBatch);
+						}
+						return true;
+					},
+					InterfaceScaleType.UI)
+				);
+			}
 		}
 		
 		public override void AddRecipeGroups()
@@ -621,6 +709,24 @@ namespace AlchemistNPCLite
             AddTranslation(text);
 
         }
+		
+		public override void UpdateUI(GameTime gameTime)
+		{
+			if (alchemistUserInterface != null && ShopChangeUI.visible)
+			{
+				alchemistUserInterface.Update(gameTime);
+			}
+			
+			if (alchemistUserInterfaceA != null && ShopChangeUIA.visible)
+			{
+				alchemistUserInterfaceA.Update(gameTime);
+			}
+			
+			if (alchemistUserInterfaceO != null && ShopChangeUIO.visible)
+			{
+				alchemistUserInterfaceO.Update(gameTime);
+			}
+		}
     }
 	
 }

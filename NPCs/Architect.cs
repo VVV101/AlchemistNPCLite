@@ -7,6 +7,7 @@ using Terraria.ModLoader;
 using Terraria.ID;
 using Terraria.Localization;
 using AlchemistNPCLite.NPCs;
+using AlchemistNPCLite.Interface;
  
 namespace AlchemistNPCLite.NPCs
 {
@@ -23,16 +24,6 @@ namespace AlchemistNPCLite.NPCs
 		public static bool Shop8 = false;
 		public static bool Shop9 = false;
 		public static bool Shop10 = false;
-		public static bool S1A = false;
-		public static bool S2A = false;
-		public static bool S3A = false;
-		public static bool S4A = false;
-		public static bool S5A = false;
-		public static bool S6A = false;
-		public static bool S7A = false;
-		public static bool S8A = false;
-		public static bool S9A = false;
-		public static bool S10A = false;
 		public override string Texture
 		{
 			get
@@ -183,6 +174,10 @@ namespace AlchemistNPCLite.NPCs
             text.AddTranslation(GameCulture.Russian, "Я видел твои постройки, но я всё ещё не впечатлён.");
             text.AddTranslation(GameCulture.Chinese, "我看了你的建筑, 但是我仍然觉得不怎么样.");
             mod.AddTranslation(text);
+			text = mod.CreateTranslation("A21");
+            text.SetDefault("Have you heard 'bout that FuryForged guy? I taught him all he knows!");
+            text.AddTranslation(GameCulture.Russian, "Ты слышал об этом FuryForged? Я научил его всему, что он знает!");
+            mod.AddTranslation(text);
             text = mod.CreateTranslation("AS1");
             text.SetDefault("1st shop (Filler Blocks)       ");
             text.AddTranslation(GameCulture.Russian, "1-ый магазин (Заполняющие Блоки)");
@@ -233,8 +228,8 @@ namespace AlchemistNPCLite.NPCs
             text.AddTranslation(GameCulture.Russian, "10-ый магазин (Канделябры)");
             text.AddTranslation(GameCulture.Chinese, "第十商店 (烛台)");
             mod.AddTranslation(text);
-            text = mod.CreateTranslation("CycleAS");
-            text.SetDefault("Cycle Shop");
+            text = mod.CreateTranslation("ShopsChanger");
+            text.SetDefault("Shops Changer");
             text.AddTranslation(GameCulture.Russian, "Смена магазина");
             text.AddTranslation(GameCulture.Chinese, "切换商店");
             mod.AddTranslation(text);
@@ -318,31 +313,31 @@ namespace AlchemistNPCLite.NPCs
  
         public override string GetChat()
         {                                          //npc chat
-		string A1 = Language.GetTextValue("Mods.AlchemistNPCLite.A1");
-		string A2 = Language.GetTextValue("Mods.AlchemistNPCLite.A2");
-		string A3 = Language.GetTextValue("Mods.AlchemistNPCLite.A3");	
-		string A4 = Language.GetTextValue("Mods.AlchemistNPCLite.A4");	
-		string A5 = Language.GetTextValue("Mods.AlchemistNPCLite.A5");	
-		string A6 = Language.GetTextValue("Mods.AlchemistNPCLite.A6");	
-		string A7 = Language.GetTextValue("Mods.AlchemistNPCLite.A7");	
-		string A8 = Language.GetTextValue("Mods.AlchemistNPCLite.A8");	
-		string A9 = Language.GetTextValue("Mods.AlchemistNPCLite.A9");	
-		string A10 = Language.GetTextValue("Mods.AlchemistNPCLite.A10");	
-		string A11 = Language.GetTextValue("Mods.AlchemistNPCLite.A11");	
-		string A12 = Language.GetTextValue("Mods.AlchemistNPCLite.A12");	
-		string A13 = Language.GetTextValue("Mods.AlchemistNPCLite.A13");	
-		string A14 = Language.GetTextValue("Mods.AlchemistNPCLite.A14");	
-		string A15 = Language.GetTextValue("Mods.AlchemistNPCLite.A15");	
-		string A16 = Language.GetTextValue("Mods.AlchemistNPCLite.A16");	
-		string A17 = Language.GetTextValue("Mods.AlchemistNPCLite.A17");	
-		string A18 = Language.GetTextValue("Mods.AlchemistNPCLite.A18");	
-		string A19 = Language.GetTextValue("Mods.AlchemistNPCLite.A19");
-		string A20 = Language.GetTextValue("Mods.AlchemistNPCLite.A20");		
+			string A1 = Language.GetTextValue("Mods.AlchemistNPCLite.A1");
+			string A2 = Language.GetTextValue("Mods.AlchemistNPCLite.A2");
+			string A3 = Language.GetTextValue("Mods.AlchemistNPCLite.A3");	
+			string A4 = Language.GetTextValue("Mods.AlchemistNPCLite.A4");	
+			string A5 = Language.GetTextValue("Mods.AlchemistNPCLite.A5");	
+			string A6 = Language.GetTextValue("Mods.AlchemistNPCLite.A6");	
+			string A7 = Language.GetTextValue("Mods.AlchemistNPCLite.A7");	
+			string A8 = Language.GetTextValue("Mods.AlchemistNPCLite.A8");	
+			string A9 = Language.GetTextValue("Mods.AlchemistNPCLite.A9");	
+			string A10 = Language.GetTextValue("Mods.AlchemistNPCLite.A10");	
+			string A11 = Language.GetTextValue("Mods.AlchemistNPCLite.A11");	
+			string A12 = Language.GetTextValue("Mods.AlchemistNPCLite.A12");	
+			string A13 = Language.GetTextValue("Mods.AlchemistNPCLite.A13");	
+			string A14 = Language.GetTextValue("Mods.AlchemistNPCLite.A14");	
+			string A15 = Language.GetTextValue("Mods.AlchemistNPCLite.A15");	
+			string A16 = Language.GetTextValue("Mods.AlchemistNPCLite.A16");	
+			string A17 = Language.GetTextValue("Mods.AlchemistNPCLite.A17");	
+			string A18 = Language.GetTextValue("Mods.AlchemistNPCLite.A18");	
+			string A19 = Language.GetTextValue("Mods.AlchemistNPCLite.A19");
+			string A20 = Language.GetTextValue("Mods.AlchemistNPCLite.A20");
+			string A21 = Language.GetTextValue("Mods.AlchemistNPC.A21");			
 
-		
-				 int goblinTinkerer = NPC.FindFirstNPC(NPCID.GoblinTinkerer);
-				  int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
-				  int demolitionist = NPC.FindFirstNPC(NPCID.Demolitionist);
+			int goblinTinkerer = NPC.FindFirstNPC(NPCID.GoblinTinkerer);
+			int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
+			int demolitionist = NPC.FindFirstNPC(NPCID.Demolitionist);
 			if (Main.bloodMoon && partyGirl >= 0 && goblinTinkerer >=0 && Main.rand.Next(4) == 0)
 			{
 			return A1 + Main.npc[partyGirl].GivenName + A2 + Main.npc[goblinTinkerer].GivenName + A3;
@@ -379,7 +374,7 @@ namespace AlchemistNPCLite.NPCs
 			{
 			return A12 + Main.npc[demolitionist].GivenName + A13;
 			}
-            switch (Main.rand.Next(5))
+            switch (Main.rand.Next(8))
             {                
                 case 0:
 				return A14;
@@ -393,6 +388,8 @@ namespace AlchemistNPCLite.NPCs
 				return A18;
 				case 5:
 				return A19;
+				case 6:
+				return A21;
                 default:
 				return A20;
             }
@@ -400,139 +397,71 @@ namespace AlchemistNPCLite.NPCs
  
         public override void SetChatButtons(ref string button, ref string button2)
         {
-			string AS1 = Language.GetTextValue("Mods.AlchemistNPCLite.AS1");
-			string AS2 = Language.GetTextValue("Mods.AlchemistNPCLite.AS2");
-			string AS3 = Language.GetTextValue("Mods.AlchemistNPCLite.AS3");
-			string AS4 = Language.GetTextValue("Mods.AlchemistNPCLite.AS4");
-			string AS5 = Language.GetTextValue("Mods.AlchemistNPCLite.AS5");
-			string AS6 = Language.GetTextValue("Mods.AlchemistNPCLite.AS6");
-			string AS7 = Language.GetTextValue("Mods.AlchemistNPCLite.AS7");
-			string AS8 = Language.GetTextValue("Mods.AlchemistNPCLite.AS8");
-			string AS9 = Language.GetTextValue("Mods.AlchemistNPCLite.AS9");
-			string AS10 = Language.GetTextValue("Mods.AlchemistNPCLite.AS10");
-			string CycleAS = Language.GetTextValue("Mods.AlchemistNPCLite.CycleAS");
-          if (Shop1)
+			string AS1 = Language.GetTextValue("Mods.AlchemistNPC.AS1");
+			string AS2 = Language.GetTextValue("Mods.AlchemistNPC.AS2");
+			string AS3 = Language.GetTextValue("Mods.AlchemistNPC.AS3");
+			string AS4 = Language.GetTextValue("Mods.AlchemistNPC.AS4");
+			string AS5 = Language.GetTextValue("Mods.AlchemistNPC.AS5");
+			string AS6 = Language.GetTextValue("Mods.AlchemistNPC.AS6");
+			string AS7 = Language.GetTextValue("Mods.AlchemistNPC.AS7");
+			string AS8 = Language.GetTextValue("Mods.AlchemistNPC.AS8");
+			string AS9 = Language.GetTextValue("Mods.AlchemistNPC.AS9");
+			string AS10 = Language.GetTextValue("Mods.AlchemistNPC.AS10");
+			string ShopsChanger = Language.GetTextValue("Mods.AlchemistNPC.ShopsChanger");
+			if (Shop1)
 			{
 			button = AS1;
-			S10A = false;
-			S1A = true;
 			}
 			if (Shop2)
 			{
 			button = AS2;
-			S1A = false;
-			S2A = true;
 			}
 			if (Shop3)
 			{
 			button = AS3;
-			S2A = false;
-			S3A = true;
 			}
 			if (Shop4)
 			{
 			button = AS4;
-			S3A = false;
-			S4A = true;
 			}
 			if (Shop5)
 			{
 			button = AS5;
-			S4A = false;
-			S5A = true;
 			}
 			if (Shop6)
 			{
 			button = AS6;
-			S5A = false;
-			S6A = true;
 			}
 			if (Shop7)
 			{
 			button = AS7;
-			S6A = false;
-			S7A = true;
 			}
 			if (Shop8)
 			{
 			button = AS8;
-			S7A = false;
-			S8A = true;
 			}
 			if (Shop9)
 			{
 			button = AS9;
-			S8A = false;
-			S9A = true;
 			}
 			if (Shop10)
 			{
 			button = AS10;
-			S9A = false;
-			S10A = true;
 			}
-	  button2 = CycleAS;
+			button2 = ShopsChanger;
         }
  
         public override void OnChatButtonClicked(bool firstButton, ref bool shop) 
 		{
-		if (firstButton)
+			if (firstButton)
             {
                 shop = true;
+				ShopChangeUIA.visible = false;
             }
-		else
-				{
-			if (Shop1 && S1A)
-						{
-						Shop2 = true;
-						Shop1 = false;
-						}
-			if (Shop2 && S2A)
-						{
-						Shop3 = true;
-						Shop2 = false;
-						}
-			if (Shop3 && S3A)
-						{
-						Shop4 = true;
-						Shop3 = false;
-						}
-			if (Shop4 && S4A)
-						{
-						Shop5 = true;
-						Shop4 = false;
-						}
-			if (Shop5 && S5A)
-						{
-						Shop6 = true;
-						Shop5 = false;
-						}
-			if (Shop6 && S6A)
-						{
-						Shop7 = true;
-						Shop6 = false;
-						}
-			if (Shop7 && S7A)
-						{
-						Shop8 = true;
-						Shop7 = false;
-						}
-			if (Shop8 && S8A)
-						{
-						Shop9 = true;
-						Shop8 = false;
-						}
-			if (Shop9 && S9A)
-						{
-						Shop10 = true;
-						Shop9 = false;
-						}
-			if (Shop10 && S10A)
-						{
-						Shop1 = true;
-						Shop10 = false;
-						}
-				}
+			else
+			{
+				ShopChangeUIA.visible = true;
+			}
 		}
 
         Mod chadsfurniture = ModLoader.GetMod("chadsfurni");
@@ -541,21 +470,21 @@ namespace AlchemistNPCLite.NPCs
         {
 		if (Shop1)
 			{
-shop.item[nextSlot].SetDefaults (ItemID.DirtBlock);
-			shop.item[nextSlot].shopCustomPrice = 1;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.ClayBlock);
-			shop.item[nextSlot].shopCustomPrice = 1;
-			nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.StoneBlock);
-			shop.item[nextSlot].shopCustomPrice = 1;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.EbonstoneBlock);
-			shop.item[nextSlot].shopCustomPrice = 2;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.CrimstoneBlock);
-			shop.item[nextSlot].shopCustomPrice = 2;
-            nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.DirtBlock);
+				shop.item[nextSlot].shopCustomPrice = 1;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.ClayBlock);
+				shop.item[nextSlot].shopCustomPrice = 1;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.StoneBlock);
+				shop.item[nextSlot].shopCustomPrice = 1;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.EbonstoneBlock);
+				shop.item[nextSlot].shopCustomPrice = 2;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.CrimstoneBlock);
+				shop.item[nextSlot].shopCustomPrice = 2;
+				nextSlot++;
 if (NPC.downedQueenBee)
 {
 shop.item[nextSlot].SetDefaults (ItemID.Hive);

@@ -53,6 +53,11 @@ namespace AlchemistNPCLite.NPCs
 			{
 				for (nextSlot = 0; nextSlot < 40; ++nextSlot)
 				{
+					shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice*2;
+					if (Config.RevPrices && CalamityModRevengeance)
+					{
+						shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice*4;
+					}
 					if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).Discount)
 					{
 						shop.item[nextSlot].shopCustomPrice -= shop.item[nextSlot].shopCustomPrice/4;

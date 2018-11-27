@@ -109,6 +109,10 @@ namespace AlchemistNPCLite.NPCs
             text.AddTranslation(GameCulture.Russian, ", не самая лучшая Зельеварщица на свете? Она может сварить любые сложнейшие зелья с лёгкостью!");
             text.AddTranslation(GameCulture.Chinese, " , 是最酷的药剂师, 不是吗? 她可以轻松酿造出难做的药剂.");
             mod.AddTranslation(text);
+			text = mod.CreateTranslation("Entry10");
+            text.SetDefault("Certain combinations can only be brewed if certain types of magic are present in the world.");
+            text.AddTranslation(GameCulture.Russian, "Некоторые комбинации могут быть изготовлены только если в мире присутсвуют особенные виды магии.");
+            mod.AddTranslation(text);
         }
 
 		public override void SetDefaults()
@@ -216,21 +220,22 @@ namespace AlchemistNPCLite.NPCs
  
         public override string GetChat()
         {                                           //npc chat
-        string Entry1 = Language.GetTextValue("Mods.AlchemistNPCLite.Entry1");
-		string Entry2 = Language.GetTextValue("Mods.AlchemistNPCLite.Entry2");
-		string Entry3 = Language.GetTextValue("Mods.AlchemistNPCLite.Entry3");
-		string Entry4 = Language.GetTextValue("Mods.AlchemistNPCLite.Entry4");
-		string Entry5 = Language.GetTextValue("Mods.AlchemistNPCLite.Entry5");
-		string Entry6 = Language.GetTextValue("Mods.AlchemistNPCLite.Entry6");
-		string Entry7 = Language.GetTextValue("Mods.AlchemistNPCLite.Entry7");
-		string Entry8 = Language.GetTextValue("Mods.AlchemistNPCLite.Entry8");
-		string Entry9 = Language.GetTextValue("Mods.AlchemistNPCLite.Entry9");
+        string Entry1 = Language.GetTextValue("Mods.AlchemistNPC.Entry1");
+		string Entry2 = Language.GetTextValue("Mods.AlchemistNPC.Entry2");
+		string Entry3 = Language.GetTextValue("Mods.AlchemistNPC.Entry3");
+		string Entry4 = Language.GetTextValue("Mods.AlchemistNPC.Entry4");
+		string Entry5 = Language.GetTextValue("Mods.AlchemistNPC.Entry5");
+		string Entry6 = Language.GetTextValue("Mods.AlchemistNPC.Entry6");
+		string Entry7 = Language.GetTextValue("Mods.AlchemistNPC.Entry7");
+		string Entry8 = Language.GetTextValue("Mods.AlchemistNPC.Entry8");
+		string Entry9 = Language.GetTextValue("Mods.AlchemistNPC.Entry9");
+		string Entry10 = Language.GetTextValue("Mods.AlchemistNPC.Entry10");
 		int Brewer = NPC.FindFirstNPC(mod.NPCType("Brewer"));
 			if (Brewer >= 0 && Main.rand.Next(4) == 0)
 			{
 				return Entry8 + Main.npc[Brewer].GivenName + Entry9;
 			}
-            switch (Main.rand.Next(7))
+            switch (Main.rand.Next(8))
             {
                 case 0:                                     
 				return Entry1;
@@ -244,6 +249,8 @@ namespace AlchemistNPCLite.NPCs
 				return Entry5;
                 case 5:
 				return Entry6;
+				case 6:
+				return Entry10;
                 default:
 				return Entry7;
             }
