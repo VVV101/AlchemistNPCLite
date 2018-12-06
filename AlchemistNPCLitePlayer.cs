@@ -63,12 +63,14 @@ namespace AlchemistNPCLite
 			AlchemistCharmTier3 = false;
 			AlchemistCharmTier4 = false;
 			Traps = false;
-			
-			if (player.talkNPC == -1)
+			if (Main.netMode == 0)
 			{
-				ShopChangeUI.visible = false;
-				ShopChangeUIA.visible = false;
-				ShopChangeUIO.visible = false;
+				if (player.talkNPC == -1)
+				{
+					ShopChangeUI.visible = false;
+					ShopChangeUIA.visible = false;
+					ShopChangeUIO.visible = false;
+				}
 			}
 		}
 	

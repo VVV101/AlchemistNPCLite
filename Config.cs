@@ -10,6 +10,7 @@ namespace AlchemistNPCLite
     {
         public static int StarPrice = 1000;
 		public static bool RevPrices = true;
+		public static int PotsPriceMulti = 2;
         static string ConfigPath = Path.Combine(Main.SavePath, "Mod Configs", "AlchemistLitev12.json");
         static Preferences Configuration = new Preferences(ConfigPath);
 
@@ -38,6 +39,11 @@ namespace AlchemistNPCLite
 				{
 				RevPrices = true;
 				}
+				Configuration.Get<int>("PotsPriceMulti", ref Config.PotsPriceMulti);
+				if(PotsPriceMulti <= 0)
+				{
+				PotsPriceMulti = 2;
+				}
 				return true;
 			}
 			else
@@ -51,6 +57,7 @@ namespace AlchemistNPCLite
             Configuration.Clear();
             Configuration.Put("StarPrice", StarPrice);
 			Configuration.Put("RevPrices", RevPrices);
+			Configuration.Put("PotsPriceMulti", PotsPriceMulti);
             Configuration.Save(true);
         }
     }

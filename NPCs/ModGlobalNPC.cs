@@ -53,7 +53,7 @@ namespace AlchemistNPCLite.NPCs
 			{
 				for (nextSlot = 0; nextSlot < 40; ++nextSlot)
 				{
-					shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice*2;
+					shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice*(Config.PotsPriceMulti);
 					if (Config.RevPrices && CalamityModRevengeance)
 					{
 						shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice*4;
