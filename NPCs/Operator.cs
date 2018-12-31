@@ -389,9 +389,9 @@ namespace AlchemistNPCLite.NPCs
 		string EntryO31 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryO31");
 		string EntryO32 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryO32");
 		string EntryO33 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryO33");
-		string EntryO34 = Language.GetTextValue("Mods.AlchemistNPC.EntryO34");
-		string EntryO35 = Language.GetTextValue("Mods.AlchemistNPC.EntryO35");
-		string EntryO36 = Language.GetTextValue("Mods.AlchemistNPC.EntryO36");
+		string EntryO34 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryO34");
+		string EntryO35 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryO35");
+		string EntryO36 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryO36");
 		if (Main.bloodMoon)
 			{
 				switch (Main.rand.Next(3))
@@ -567,7 +567,7 @@ namespace AlchemistNPCLite.NPCs
 		string VanillaTreasureBagsShop = Language.GetTextValue("Mods.AlchemistNPCLite.VanillaTreasureBagsShop");
 		string ModdedTreasureBagsShop = Language.GetTextValue("Mods.AlchemistNPCLite.ModdedTreasureBagsShop");
 		string ModdedTreasureBagsShop2 = Language.GetTextValue("Mods.AlchemistNPCLite.ModdedTreasureBagsShop2");
-		string ShopChanger = Language.GetTextValue("Mods.AlchemistNPC.ShopChanger");
+		string ShopChanger = Language.GetTextValue("Mods.AlchemistNPCLite.ShopChanger");
 		button = BossDropsShop;
 		if (Main.expertMode)
 		{

@@ -333,7 +333,7 @@ namespace AlchemistNPCLite.NPCs
 			string A18 = Language.GetTextValue("Mods.AlchemistNPCLite.A18");	
 			string A19 = Language.GetTextValue("Mods.AlchemistNPCLite.A19");
 			string A20 = Language.GetTextValue("Mods.AlchemistNPCLite.A20");
-			string A21 = Language.GetTextValue("Mods.AlchemistNPC.A21");			
+			string A21 = Language.GetTextValue("Mods.AlchemistNPCLite.A21");			
 
 			int goblinTinkerer = NPC.FindFirstNPC(NPCID.GoblinTinkerer);
 			int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
@@ -397,17 +397,17 @@ namespace AlchemistNPCLite.NPCs
  
         public override void SetChatButtons(ref string button, ref string button2)
         {
-			string AS1 = Language.GetTextValue("Mods.AlchemistNPC.AS1");
-			string AS2 = Language.GetTextValue("Mods.AlchemistNPC.AS2");
-			string AS3 = Language.GetTextValue("Mods.AlchemistNPC.AS3");
-			string AS4 = Language.GetTextValue("Mods.AlchemistNPC.AS4");
-			string AS5 = Language.GetTextValue("Mods.AlchemistNPC.AS5");
-			string AS6 = Language.GetTextValue("Mods.AlchemistNPC.AS6");
-			string AS7 = Language.GetTextValue("Mods.AlchemistNPC.AS7");
-			string AS8 = Language.GetTextValue("Mods.AlchemistNPC.AS8");
-			string AS9 = Language.GetTextValue("Mods.AlchemistNPC.AS9");
-			string AS10 = Language.GetTextValue("Mods.AlchemistNPC.AS10");
-			string ShopsChanger = Language.GetTextValue("Mods.AlchemistNPC.ShopsChanger");
+			string AS1 = Language.GetTextValue("Mods.AlchemistNPCLite.AS1");
+			string AS2 = Language.GetTextValue("Mods.AlchemistNPCLite.AS2");
+			string AS3 = Language.GetTextValue("Mods.AlchemistNPCLite.AS3");
+			string AS4 = Language.GetTextValue("Mods.AlchemistNPCLite.AS4");
+			string AS5 = Language.GetTextValue("Mods.AlchemistNPCLite.AS5");
+			string AS6 = Language.GetTextValue("Mods.AlchemistNPCLite.AS6");
+			string AS7 = Language.GetTextValue("Mods.AlchemistNPCLite.AS7");
+			string AS8 = Language.GetTextValue("Mods.AlchemistNPCLite.AS8");
+			string AS9 = Language.GetTextValue("Mods.AlchemistNPCLite.AS9");
+			string AS10 = Language.GetTextValue("Mods.AlchemistNPCLite.AS10");
+			string ShopsChanger = Language.GetTextValue("Mods.AlchemistNPCLite.ShopsChanger");
 			if (Shop1)
 			{
 			button = AS1;

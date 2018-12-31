@@ -44,6 +44,10 @@ namespace AlchemistNPCLite.NPCs
             text.AddTranslation(GameCulture.Russian, "Магазин Тремор мода");
             text.AddTranslation(GameCulture.Chinese, "震颤商店");
             mod.AddTranslation(text);
+			text = mod.CreateTranslation("GetCharm");
+            text.SetDefault("Get Charm");
+            text.AddTranslation(GameCulture.Russian, "Получить талисман");
+            mod.AddTranslation(text);
             text = mod.CreateTranslation("Edward");
             text.SetDefault("Edward");
             text.AddTranslation(GameCulture.Russian, "Эдвард");
@@ -327,9 +331,9 @@ namespace AlchemistNPCLite.NPCs
 		 string EntryA22 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA22");
 		 string EntryA23 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA23");
 		 string EntryA24 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA24");
-		 string EntryA25 = Language.GetTextValue("Mods.AlchemistNPC.EntryA25");
-		 string EntryA26 = Language.GetTextValue("Mods.AlchemistNPC.EntryA26");
-		 string EntryA27 = Language.GetTextValue("Mods.AlchemistNPC.EntryA27");
+		 string EntryA25 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA25");
+		 string EntryA26 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA26");
+		 string EntryA27 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA27");
 		 int Brewer = NPC.FindFirstNPC(mod.NPCType("Brewer"));
 		 int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
 		 int witchDoctor = NPC.FindFirstNPC(NPCID.WitchDoctor);
@@ -426,10 +430,18 @@ namespace AlchemistNPCLite.NPCs
         public override void SetChatButtons(ref string button, ref string button2)
         {
 			string TremorShop = Language.GetTextValue("Mods.AlchemistNPCLite.TremorShop");
+			string GetCharm = Language.GetTextValue("Mods.AlchemistNPCLite.GetCharm");
             button = Language.GetTextValue("LegacyInterface.28");
+			
 			if (ModLoader.GetLoadedMods().Contains("Tremor"))
 			{
-			button2 = TremorShop;
+				button2 = TremorShop;
+			}
+			
+			Player player = Main.player[Main.myPlayer];
+			if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier1 == false && ((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier2 == false && ((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier3 == false && ((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier4 == false)
+			{
+				button2 = GetCharm;
 			}
         }
  
@@ -443,9 +455,17 @@ namespace AlchemistNPCLite.NPCs
 		}
 		else
 			{
-				baseShop = false;
-				tremorShop = true;
-				shop = true;
+				Player player = Main.player[Main.myPlayer];
+				if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier1 == false && ((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier2 == false && ((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier3 == false && ((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier4 == false)
+				{
+					player.QuickSpawnItem(mod.ItemType("AlchemistCharmTier1"));
+				}
+				if (ModLoader.GetLoadedMods().Contains("Tremor"))
+				{
+					baseShop = false;
+					tremorShop = true;
+					shop = true;
+				}
 			}
 		}
  

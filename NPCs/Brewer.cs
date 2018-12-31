@@ -309,7 +309,7 @@ namespace AlchemistNPCLite.NPCs
 				string EntryB16 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryB16");
 				string EntryB17 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryB17");
 				string EntryB18 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryB18");
-				string EntryB19 = Language.GetTextValue("Mods.AlchemistNPC.EntryB19");
+				string EntryB19 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryB19");
 				int Alchemist = NPC.FindFirstNPC(mod.NPCType("Alchemist"));
 				int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
 			if (Main.bloodMoon && partyGirl >= 0 && Alchemist >=0 && Main.rand.Next(4) == 0)
@@ -369,12 +369,12 @@ namespace AlchemistNPCLite.NPCs
  
         public override void SetChatButtons(ref string button, ref string button2)
         {
-            string ShopB1 = Language.GetTextValue("Mods.AlchemistNPC.ShopB1");
-			string ShopB2 = Language.GetTextValue("Mods.AlchemistNPC.ShopB2");
-			string ShopB3 = Language.GetTextValue("Mods.AlchemistNPC.ShopB3");
-			string ShopB4 = Language.GetTextValue("Mods.AlchemistNPC.ShopB4");
-			string ShopB5 = Language.GetTextValue("Mods.AlchemistNPC.ShopB5");
-			string ShopsChanger = Language.GetTextValue("Mods.AlchemistNPC.ShopsChanger");
+            string ShopB1 = Language.GetTextValue("Mods.AlchemistNPCLite.ShopB1");
+			string ShopB2 = Language.GetTextValue("Mods.AlchemistNPCLite.ShopB2");
+			string ShopB3 = Language.GetTextValue("Mods.AlchemistNPCLite.ShopB3");
+			string ShopB4 = Language.GetTextValue("Mods.AlchemistNPCLite.ShopB4");
+			string ShopB5 = Language.GetTextValue("Mods.AlchemistNPCLite.ShopB5");
+			string ShopsChanger = Language.GetTextValue("Mods.AlchemistNPCLite.ShopsChanger");
 			if (Shop1)
 			{
 			button = ShopB1;

@@ -220,16 +220,16 @@ namespace AlchemistNPCLite.NPCs
  
         public override string GetChat()
         {                                           //npc chat
-        string Entry1 = Language.GetTextValue("Mods.AlchemistNPC.Entry1");
-		string Entry2 = Language.GetTextValue("Mods.AlchemistNPC.Entry2");
-		string Entry3 = Language.GetTextValue("Mods.AlchemistNPC.Entry3");
-		string Entry4 = Language.GetTextValue("Mods.AlchemistNPC.Entry4");
-		string Entry5 = Language.GetTextValue("Mods.AlchemistNPC.Entry5");
-		string Entry6 = Language.GetTextValue("Mods.AlchemistNPC.Entry6");
-		string Entry7 = Language.GetTextValue("Mods.AlchemistNPC.Entry7");
-		string Entry8 = Language.GetTextValue("Mods.AlchemistNPC.Entry8");
-		string Entry9 = Language.GetTextValue("Mods.AlchemistNPC.Entry9");
-		string Entry10 = Language.GetTextValue("Mods.AlchemistNPC.Entry10");
+        string Entry1 = Language.GetTextValue("Mods.AlchemistNPCLite.Entry1");
+		string Entry2 = Language.GetTextValue("Mods.AlchemistNPCLite.Entry2");
+		string Entry3 = Language.GetTextValue("Mods.AlchemistNPCLite.Entry3");
+		string Entry4 = Language.GetTextValue("Mods.AlchemistNPCLite.Entry4");
+		string Entry5 = Language.GetTextValue("Mods.AlchemistNPCLite.Entry5");
+		string Entry6 = Language.GetTextValue("Mods.AlchemistNPCLite.Entry6");
+		string Entry7 = Language.GetTextValue("Mods.AlchemistNPCLite.Entry7");
+		string Entry8 = Language.GetTextValue("Mods.AlchemistNPCLite.Entry8");
+		string Entry9 = Language.GetTextValue("Mods.AlchemistNPCLite.Entry9");
+		string Entry10 = Language.GetTextValue("Mods.AlchemistNPCLite.Entry10");
 		int Brewer = NPC.FindFirstNPC(mod.NPCType("Brewer"));
 			if (Brewer >= 0 && Main.rand.Next(4) == 0)
 			{
