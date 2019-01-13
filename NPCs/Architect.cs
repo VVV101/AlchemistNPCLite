@@ -468,7 +468,7 @@ namespace AlchemistNPCLite.NPCs
 
         public override void SetupShop(Chest shop, ref int nextSlot)
         {
-		if (Shop1)
+			if (Shop1)
 			{
 				shop.item[nextSlot].SetDefaults (ItemID.DirtBlock);
 				shop.item[nextSlot].shopCustomPrice = 1;
@@ -485,99 +485,102 @@ namespace AlchemistNPCLite.NPCs
 				shop.item[nextSlot].SetDefaults (ItemID.CrimstoneBlock);
 				shop.item[nextSlot].shopCustomPrice = 2;
 				nextSlot++;
-if (NPC.downedQueenBee)
-{
-shop.item[nextSlot].SetDefaults (ItemID.Hive);
-shop.item[nextSlot].shopCustomPrice = 10;
-nextSlot++;
-}
-shop.item[nextSlot].SetDefaults (ItemID.SandBlock);
-			shop.item[nextSlot].shopCustomPrice = 1;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.EbonsandBlock);
-			shop.item[nextSlot].shopCustomPrice = 2;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.CrimsandBlock);
-			shop.item[nextSlot].shopCustomPrice = 2;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.Sandstone);
-			shop.item[nextSlot].shopCustomPrice = 1;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.HardenedSand);
-			shop.item[nextSlot].shopCustomPrice = 1;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.MudBlock);
-			shop.item[nextSlot].shopCustomPrice = 1;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.DesertFossil);
-			shop.item[nextSlot].shopCustomPrice = 1000;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.Obsidian);
-			shop.item[nextSlot].shopCustomPrice = 2500;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.AshBlock);
-			shop.item[nextSlot].shopCustomPrice = 1;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.SiltBlock);
-			shop.item[nextSlot].shopCustomPrice = 100;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.SnowBlock);
-			shop.item[nextSlot].shopCustomPrice = 1;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.IceBlock);
-			shop.item[nextSlot].shopCustomPrice = 1;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.Marble);
-			shop.item[nextSlot].shopCustomPrice = 50;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.Granite);
-			shop.item[nextSlot].shopCustomPrice = 50;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.Cloud);
-			shop.item[nextSlot].shopCustomPrice = 100;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.RainCloud);
-			shop.item[nextSlot].shopCustomPrice = 100;
-            nextSlot++;
-if (Main.hardMode)
-{		
-shop.item[nextSlot].SetDefaults (ItemID.PearlstoneBlock);
-			shop.item[nextSlot].shopCustomPrice = 25;
-            nextSlot++;
-shop.item[nextSlot].SetDefaults (ItemID.PearlsandBlock);
-			shop.item[nextSlot].shopCustomPrice = 25;
-            nextSlot++;
-}
-			}
-				if (Shop2)
+				if (NPC.downedQueenBee)
 				{
-			shop.item[nextSlot].SetDefaults (ItemID.RedBrick);
-			shop.item[nextSlot].shopCustomPrice = 2;
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults (ItemID.Ebonwood);
-			shop.item[nextSlot].shopCustomPrice = 10;
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults (ItemID.Shadewood);
-			shop.item[nextSlot].shopCustomPrice = 10;
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults (ItemID.BorealWood);
-			shop.item[nextSlot].shopCustomPrice = 10;
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults (ItemID.PalmWood);
-			shop.item[nextSlot].shopCustomPrice = 15;
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults (ItemID.RichMahogany);
-			shop.item[nextSlot].shopCustomPrice = 15;
-			nextSlot++;
-		if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
-				{
-				if (NPC.downedGoblins)
-						{
-						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("YewWood"));
-						shop.item[nextSlot].shopCustomPrice = 500;
-						nextSlot++;
-						}
+					shop.item[nextSlot].SetDefaults (ItemID.Hive);
+					shop.item[nextSlot].shopCustomPrice = 10;
+					nextSlot++;
 				}
+				shop.item[nextSlot].SetDefaults (ItemID.SandBlock);
+				shop.item[nextSlot].shopCustomPrice = 1;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.EbonsandBlock);
+				shop.item[nextSlot].shopCustomPrice = 2;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.CrimsandBlock);
+				shop.item[nextSlot].shopCustomPrice = 2;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.Sandstone);
+				shop.item[nextSlot].shopCustomPrice = 1;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.HardenedSand);
+				shop.item[nextSlot].shopCustomPrice = 1;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.MudBlock);
+				shop.item[nextSlot].shopCustomPrice = 1;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.DesertFossil);
+				shop.item[nextSlot].shopCustomPrice = 1000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.Obsidian);
+				shop.item[nextSlot].shopCustomPrice = 2500;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.AshBlock);
+				shop.item[nextSlot].shopCustomPrice = 1;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.SiltBlock);
+				shop.item[nextSlot].shopCustomPrice = 100;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.SnowBlock);
+				shop.item[nextSlot].shopCustomPrice = 1;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.IceBlock);
+				shop.item[nextSlot].shopCustomPrice = 1;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.Marble);
+				shop.item[nextSlot].shopCustomPrice = 50;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.Granite);
+				shop.item[nextSlot].shopCustomPrice = 50;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.Cloud);
+				shop.item[nextSlot].shopCustomPrice = 100;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.RainCloud);
+				shop.item[nextSlot].shopCustomPrice = 100;
+				nextSlot++;
+				if (Main.hardMode)
+				{		
+					shop.item[nextSlot].SetDefaults (ItemID.PearlstoneBlock);
+					shop.item[nextSlot].shopCustomPrice = 25;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults (ItemID.PearlsandBlock);
+					shop.item[nextSlot].shopCustomPrice = 25;
+					nextSlot++;
+				}
+			}
+			if (Shop2)
+			{
+				shop.item[nextSlot].SetDefaults (ItemID.RedBrick);
+				shop.item[nextSlot].shopCustomPrice = 2;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.Wood);
+				shop.item[nextSlot].shopCustomPrice = 5;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.Ebonwood);
+				shop.item[nextSlot].shopCustomPrice = 10;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.Shadewood);
+				shop.item[nextSlot].shopCustomPrice = 10;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.BorealWood);
+				shop.item[nextSlot].shopCustomPrice = 10;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.PalmWood);
+				shop.item[nextSlot].shopCustomPrice = 15;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.RichMahogany);
+				shop.item[nextSlot].shopCustomPrice = 15;
+				nextSlot++;
+			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			{
+				if (NPC.downedGoblins)
+				{
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("YewWood"));
+					shop.item[nextSlot].shopCustomPrice = 500;
+					nextSlot++;
+				}
+			}
 			shop.item[nextSlot].SetDefaults (ItemID.DynastyWood);
 			shop.item[nextSlot].shopCustomPrice = 100;
 			nextSlot++;
@@ -593,63 +596,66 @@ shop.item[nextSlot].SetDefaults (ItemID.PearlsandBlock);
 			shop.item[nextSlot].shopCustomPrice = 25;
 			nextSlot++;
 			}
-		shop.item[nextSlot].SetDefaults (ItemID.GrayBrick);
+			shop.item[nextSlot].SetDefaults (ItemID.GrayBrick);
 			shop.item[nextSlot].shopCustomPrice = 2;
 			nextSlot++;
-		shop.item[nextSlot].SetDefaults (ItemID.Glass);
+			shop.item[nextSlot].SetDefaults (ItemID.Glass);
 			shop.item[nextSlot].shopCustomPrice = 2;
-            nextSlot++;
-		shop.item[nextSlot].SetDefaults (ItemID.ObsidianBrick);
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.MeteoriteBrick);
+			shop.item[nextSlot].shopCustomPrice = 4;
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.ObsidianBrick);
 			shop.item[nextSlot].shopCustomPrice = 5;
-            nextSlot++;
-		shop.item[nextSlot].SetDefaults (ItemID.IridescentBrick);
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.IridescentBrick);
 			shop.item[nextSlot].shopCustomPrice = 2;
-            nextSlot++;
-		shop.item[nextSlot].SetDefaults (ItemID.SnowBrick);
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.SnowBrick);
 			shop.item[nextSlot].shopCustomPrice = 2;
-            nextSlot++;
-		shop.item[nextSlot].SetDefaults (ItemID.SandstoneBrick);
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.SandstoneBrick);
 			shop.item[nextSlot].shopCustomPrice = 2;
-            nextSlot++;
-		shop.item[nextSlot].SetDefaults (ItemID.EbonstoneBrick);
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.EbonstoneBrick);
 			shop.item[nextSlot].shopCustomPrice = 10;
-            nextSlot++;
-		shop.item[nextSlot].SetDefaults (ItemID.IceBrick);
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.IceBrick);
 			shop.item[nextSlot].shopCustomPrice = 2;
-            nextSlot++;
-		shop.item[nextSlot].SetDefaults (ItemID.FleshBlock);
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.FleshBlock);
 			shop.item[nextSlot].shopCustomPrice = 10;
-            nextSlot++;		
-		shop.item[nextSlot].SetDefaults (ItemID.StoneSlab);
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.StoneSlab);
 			shop.item[nextSlot].shopCustomPrice = 2;
-            nextSlot++;
-		shop.item[nextSlot].SetDefaults (ItemID.SandstoneSlab);
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.SandstoneSlab);
 			shop.item[nextSlot].shopCustomPrice = 2;
-            nextSlot++;
-		shop.item[nextSlot].SetDefaults (ItemID.MarbleBlock);
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.MarbleBlock);
 			shop.item[nextSlot].shopCustomPrice = 2;
-            nextSlot++;
-		shop.item[nextSlot].SetDefaults (ItemID.GraniteBlock);
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.GraniteBlock);
 			shop.item[nextSlot].shopCustomPrice = 2;
-            nextSlot++;
-	    if (NPC.downedQueenBee)
-	    {
-	    shop.item[nextSlot].SetDefaults (ItemID.HoneyBlock);
-	    shop.item[nextSlot].shopCustomPrice = 5;
-	    nextSlot++;
-	    }
-		if (Main.hardMode)
+			nextSlot++;
+			if (NPC.downedQueenBee)
 			{
-		shop.item[nextSlot].SetDefaults (ItemID.CrystalBlock);
-			shop.item[nextSlot].shopCustomPrice = 100;
-            nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.HoneyBlock);
+				shop.item[nextSlot].shopCustomPrice = 5;
+				nextSlot++;
 			}
-		shop.item[nextSlot].SetDefaults (ItemID.SunplateBlock);
+			if (Main.hardMode)
+			{
+				shop.item[nextSlot].SetDefaults (ItemID.CrystalBlock);
+				shop.item[nextSlot].shopCustomPrice = 100;
+				nextSlot++;
+			}
+			shop.item[nextSlot].SetDefaults (ItemID.SunplateBlock);
 			shop.item[nextSlot].shopCustomPrice = 25;
-            nextSlot++;
-		shop.item[nextSlot].SetDefaults (ItemID.Pumpkin);
+			nextSlot++;
+			shop.item[nextSlot].SetDefaults (ItemID.Pumpkin);
 			shop.item[nextSlot].shopCustomPrice = 125;
-            nextSlot++;
+			nextSlot++;
 			if (NPC.downedBoss3)
 			{
 				shop.item[nextSlot].SetDefaults (ItemID.PinkBrick);
@@ -669,35 +675,32 @@ shop.item[nextSlot].SetDefaults (ItemID.PearlsandBlock);
 				nextSlot++;
 				shop.item[nextSlot].SetDefaults (ItemID.FleshBlock);
 				shop.item[nextSlot].shopCustomPrice = 10;
-           			nextSlot++;		
+           		nextSlot++;		
 			}
 			if (Main.hardMode)
-				{
-		shop.item[nextSlot].SetDefaults (ItemID.PearlstoneBrick);
-			shop.item[nextSlot].shopCustomPrice = 10;
-            nextSlot++;
-		shop.item[nextSlot].SetDefaults (ItemID.RainbowBrick);
-			shop.item[nextSlot].shopCustomPrice = 100;
-			nextSlot++;
-				}
-				if (NPC.downedGolemBoss)
-				{
-					shop.item[nextSlot].SetDefaults (ItemID.LihzahrdBrick);
-			shop.item[nextSlot].shopCustomPrice = 100;
-			nextSlot++;
-				}
+			{
+				shop.item[nextSlot].SetDefaults (ItemID.PearlstoneBrick);
+				shop.item[nextSlot].shopCustomPrice = 10;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.RainbowBrick);
+				shop.item[nextSlot].shopCustomPrice = 100;
+				nextSlot++;
+			}
+			if (NPC.downedGolemBoss)
+			{
+				shop.item[nextSlot].SetDefaults (ItemID.LihzahrdBrick);
+				shop.item[nextSlot].shopCustomPrice = 100;
+				nextSlot++;
+			}
 			if (NPC.downedMartians)
-				{
-		shop.item[nextSlot].SetDefaults (ItemID.MartianConduitPlating);
-			shop.item[nextSlot].shopCustomPrice = 25;
-			nextSlot++;
-				}
-}
+			{
+				shop.item[nextSlot].SetDefaults (ItemID.MartianConduitPlating);
+				shop.item[nextSlot].shopCustomPrice = 25;
+				nextSlot++;
+			}
+			}
 			if (Shop3)
 			{
-			shop.item[nextSlot].SetDefaults (ItemID.Wood);
-			shop.item[nextSlot].shopCustomPrice = 5;
-            nextSlot++;
 			shop.item[nextSlot].SetDefaults (ItemID.Candle);
 			shop.item[nextSlot].shopCustomPrice = 100;
             nextSlot++;

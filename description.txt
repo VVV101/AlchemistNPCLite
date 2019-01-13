@@ -5,6 +5,8 @@ The Young Brewer spawns while both the Alchemist & the Brewer are in the world i
 The spawn condition for the Operator is to beat EoW/BoC.
 The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Musician will come if you defeat Skeletron.
+v1.4
+-Added Meteorite Brick and Alchemy Table to Architect shop.
 v1.3
 -Lowered prices for potions (2x multiplier by default and just +2x with Revengeance).
 -Added way for getting Alchemist Charm from the Alchemist.
