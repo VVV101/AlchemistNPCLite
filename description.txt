@@ -6,6 +6,11 @@ The spawn condition for the Operator is to beat EoW/BoC.
 The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Musician will come if you defeat Skeletron.
 v1.4
+-Reworked how exactly Shops Changer works.
+Now it opens shop immidietly after pressing certain shop button (~optimisation of time).
+-Added support for Census - Town NPC Checklist mod.
+-Added some more music boxes from the Calamity Music mod to Musician's 2nd shop.
+-Fixed 2nd Music boxes shop of Musician (returned all Calamity music boxes back).
 -Added Meteorite Brick and Alchemy Table to Architect shop.
 v1.3
 -Lowered prices for potions (2x multiplier by default and just +2x with Revengeance).
