@@ -51,6 +51,11 @@ namespace AlchemistNPCLite
 		public bool Traps = false;
 		public bool ModPlayer = true;
 		
+		public bool CalamityModDownedSCal
+		{
+		get { return CalamityMod.CalamityWorld.downedSCal; }
+		}
+		
 		public override void ResetEffects()
 		{
 			Discount = false;
@@ -156,7 +161,56 @@ namespace AlchemistNPCLite
 						player.AddBuff(type2, time1, true);
 						if (player.bank.item[index1].consumable)
 						{
-						  --player.bank.item[index1].stack;
+							if (AlchemistCharmTier4 == true)
+							{
+								if (CalamityModDownedSCal)
+								{
+								}
+								else if (Main.rand.NextFloat() >= .25f)
+								{
+								}
+								else
+								{
+									--player.bank.item[index1].stack;
+								}
+							}
+							
+							else if (AlchemistCharmTier3 == true)
+							{
+								if (Main.rand.Next(2) == 0)
+								{
+								}
+								else
+								{
+									--player.bank.item[index1].stack;
+								}
+							}
+							
+							else if (AlchemistCharmTier2 == true)
+							{
+								if (Main.rand.Next(4) == 0)
+								{
+								}
+								else
+								{
+									--player.bank.item[index1].stack;
+								}
+							}
+							
+							else if (AlchemistCharmTier1 == true)
+							{
+								if (Main.rand.Next(10) == 0)
+								{
+								}
+								else
+								{
+									--player.bank.item[index1].stack;
+								}
+							}
+							else
+							{
+								--player.bank.item[index1].stack;
+							}
 						  if (player.bank.item[index1].stack <= 0)
 							player.bank.item[index1].TurnToAir();
 						}

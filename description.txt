@@ -11,6 +11,7 @@ Now it opens shop immidietly after pressing certain shop button (~optimisation o
 -Added support for Census - Town NPC Checklist mod.
 -Added some more music boxes from the Calamity Music mod to Musician's 2nd shop.
 -Fixed 2nd Music boxes shop of Musician (returned all Calamity music boxes back).
+-Fixed potions being consumed from Piggy Bank no matter if potions saving effect was working.
 -Added Meteorite Brick and Alchemy Table to Architect shop.
 v1.3
 -Lowered prices for potions (2x multiplier by default and just +2x with Revengeance).
