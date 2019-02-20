@@ -58,9 +58,21 @@ namespace AlchemistNPCLite.NPCs
 					{
 						shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice;
 					}
-					if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).Discount)
+					if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier4)
+					{
+						shop.item[nextSlot].shopCustomPrice -= shop.item[nextSlot].shopCustomPrice/2;
+					}
+					else if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier3)
+					{
+						shop.item[nextSlot].shopCustomPrice -= (int)(shop.item[nextSlot].shopCustomPrice*0.35f);
+					}
+					else if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier2)
 					{
 						shop.item[nextSlot].shopCustomPrice -= shop.item[nextSlot].shopCustomPrice/4;
+					}
+					else if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier1)
+					{
+						shop.item[nextSlot].shopCustomPrice -= shop.item[nextSlot].shopCustomPrice/10;
 					}
 				}
 			}

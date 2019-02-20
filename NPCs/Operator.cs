@@ -1126,7 +1126,7 @@ namespace AlchemistNPCLite.NPCs
 				shop.item[nextSlot].shopCustomPrice = 3000000;
 				nextSlot++;
 				}
-				if (NPC.downedAncientCultist && Main.expertMode)
+				if (NPC.downedGolemBoss && Main.expertMode)
 				{
 				shop.item[nextSlot].SetDefaults (ItemID.GolemBossBag);
 				shop.item[nextSlot].shopCustomPrice = 3000000;
@@ -1138,20 +1138,17 @@ namespace AlchemistNPCLite.NPCs
 				shop.item[nextSlot].shopCustomPrice = 4000000;
 				nextSlot++;
 				}
-				if (NPC.downedAncientCultist && Main.expertMode)
+				if (NPC.downedFishron && Main.expertMode)
 				{
 				shop.item[nextSlot].SetDefaults (ItemID.FishronBossBag);
 				shop.item[nextSlot].shopCustomPrice = 5000000;
 				nextSlot++;
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
-					{
-						if(CalamityModDownedGuardian)
-						{
-						shop.item[nextSlot].SetDefaults (ItemID.MoonLordBossBag);
-						shop.item[nextSlot].shopCustomPrice = 6000000;
-						nextSlot++;
-					}
+				if (NPC.downedMoonlord && Main.expertMode)
+				{
+					shop.item[nextSlot].SetDefaults (ItemID.MoonLordBossBag);
+					shop.item[nextSlot].shopCustomPrice = 6000000;
+					nextSlot++;
 				}
 			}
 			if (Shop4)

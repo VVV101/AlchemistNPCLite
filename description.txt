@@ -8,8 +8,12 @@ The Musician will come if you defeat Skeletron.
 v1.4
 -Reworked how exactly Shops Changer works.
 Now it opens shop immidietly after pressing certain shop button (~optimisation of time).
+-Base PotsPriceMulti is 1 now. Config file is AlchemistLitev14.json.
 -Added support for Census - Town NPC Checklist mod.
 -Added some more music boxes from the Calamity Music mod to Musician's 2nd shop.
+-All Alchemist Charms are now provide different discounts. They are 10%, 25%, 35%, 50%.
+-Duke Fishron Treasure Bag is now available after beating Duke Fishron. 
+Same for Moon Lord Treasure Bag (available after beating Moon Lord).
 -Fixed 2nd Music boxes shop of Musician (returned all Calamity music boxes back).
 -Fixed potions being consumed from Piggy Bank no matter if potions saving effect was working.
 -Added Meteorite Brick and Alchemy Table to Architect shop.

@@ -104,7 +104,7 @@ namespace AlchemistNPCLite
 		
 		public static string ConfigFileRelativePath 
 		{
-		get { return "Mod Configs/AlchemistLitev12.json"; }
+		get { return "Mod Configs/AlchemistLitev14.json"; }
 		}
 
 		public static void ReloadConfigFromFile() 

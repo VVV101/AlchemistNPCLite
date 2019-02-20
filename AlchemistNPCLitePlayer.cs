@@ -40,7 +40,6 @@ namespace AlchemistNPCLite
 {
 	public class AlchemistNPCLitePlayer : ModPlayer
 	{
-		public bool Discount = false;
 		public bool DistantPotionsUse = false;
 		public bool Voodoo = false;
 		public bool Luck = false;
@@ -58,7 +57,6 @@ namespace AlchemistNPCLite
 		
 		public override void ResetEffects()
 		{
-			Discount = false;
 			DistantPotionsUse = false;
 			Luck = false;
 			AlchemistGlobalItem.Luck = false;
