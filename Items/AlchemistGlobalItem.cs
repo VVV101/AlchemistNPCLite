@@ -99,31 +99,34 @@ namespace AlchemistNPCLite.Items
 		
 		public override bool ConsumeItem(Item item, Player player)	
 		{
-			if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier4 == true && (item.buffTime > 0 || item.healLife > 0 || item.healMana > 0))
+			if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier4 == true && (item.buffTime > 0 || item.healLife > 0 || item.healMana > 0 || item.UseSound == SoundID.Item3))
 			{
-				if (CalamityModDownedSCal)
+				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 				{
-				return false;
+					if (CalamityModDownedSCal)
+					{
+					return false;
+					}
 				}
-				else if (Main.rand.NextFloat() >= .25f)
+				if (Main.rand.NextFloat() >= .25f)
 				{
 				return false;
 				}
 			}
 			
-			else if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier3 == true && (item.buffTime > 0 || item.healLife > 0 || item.healMana > 0))
+			else if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier3 == true && (item.buffTime > 0 || item.healLife > 0 || item.healMana > 0 || item.UseSound == SoundID.Item3))
 			{
 				if (Main.rand.Next(2) == 0)
 				return false;
 			}
 			
-			else if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier2 == true && (item.buffTime > 0 || item.healLife > 0 || item.healMana > 0))
+			else if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier2 == true && (item.buffTime > 0 || item.healLife > 0 || item.healMana > 0 || item.UseSound == SoundID.Item3))
 			{
 				if (Main.rand.Next(4) == 0)
 				return false;
 			}
 			
-			else if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier1 == true && (item.buffTime > 0 || item.healLife > 0 || item.healMana > 0))
+			else if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier1 == true && (item.buffTime > 0 || item.healLife > 0 || item.healMana > 0 || item.UseSound == SoundID.Item3))
 			{
 				if (Main.rand.Next(10) == 0)
 				return false;
