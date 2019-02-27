@@ -8,6 +8,10 @@ The Musician will come if you defeat Skeletron.
 v1.4
 -Reworked how exactly Shops Changer works.
 Now it opens shop immidietly after pressing certain shop button (~optimisation of time).
+-Added Nature Blessing Potion to Brewer's 2nd shop. Grants Dryad's Blessing Buff.
+Available anytime.
+-Added Greater Dangersense Potion to Brewer's 2nd shop. Grants Greater Dangersense Buff. It makes enemy projectiles to light and be colored yellow.
+Available anytime.
 -Base PotsPriceMulti is 1 now. Config file is AlchemistLitev14.json.
 -Added support for Census - Town NPC Checklist mod.
 -Added some more music boxes from the Calamity Music mod to Musician's 2nd shop.

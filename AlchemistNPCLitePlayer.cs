@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using ReLogic.Utilities;
 using System;
+using System.Linq;
 using System.Collections.Generic;
 using System.IO;
 using System.Security.Cryptography;
@@ -61,6 +62,7 @@ namespace AlchemistNPCLite
 			Luck = false;
 			AlchemistGlobalItem.Luck = false;
 			AlchemistGlobalItem.Luck2 = false;
+			AlchemistNPCLite.GreaterDangersense = false;
 			AlchemistCharmTier1 = false;
 			AlchemistCharmTier2 = false;
 			AlchemistCharmTier3 = false;

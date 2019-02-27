@@ -585,23 +585,17 @@ namespace AlchemistNPCLite.NPCs
 		}
 		if (Shop2)
 		{
-		if (NPC.downedBoss1)
-		{
-		shop.item[nextSlot].SetDefaults (ItemID.LesserRestorationPotion);
-		shop.item[nextSlot].shopCustomPrice = 3500;
-		nextSlot++;
-		}
 		if (NPC.downedBoss2)
 		{
-		shop.item[nextSlot].SetDefaults (ItemID.RestorationPotion);
-		shop.item[nextSlot].shopCustomPrice = 7500;
-		nextSlot++;
 		shop.item[nextSlot].SetDefaults (ItemID.StrangeBrew);
 		shop.item[nextSlot].shopCustomPrice = 10000;
 		nextSlot++;
 		}
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("SunshinePotion"));
 		shop.item[nextSlot].shopCustomPrice = 15000;
+		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("GreaterDangersensePotion"));
+		shop.item[nextSlot].shopCustomPrice = 25000;
 		nextSlot++;
 		if (NPC.downedBoss3)
 			{

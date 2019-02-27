@@ -20,6 +20,29 @@ namespace AlchemistNPCLite.Projectiles
 		{
 			get { return true; }
 		}
+		
+		public override Color? GetAlpha(Projectile projectile, Color lightColor)
+        {
+			if (AlchemistNPCLite.GreaterDangersense == true)
+			{
+				if (projectile.hostile && !projectile.friendly)
+				{
+					return Color.Yellow;
+				}
+			}
+			return base.GetAlpha(projectile, lightColor);
+        }
+		
+		public override void AI(Projectile projectile)
+		{
+			if (AlchemistNPCLite.GreaterDangersense == true)
+			{
+				if (projectile.hostile && !projectile.friendly)
+				{
+					Lighting.AddLight(projectile.Center, 1f, 1f, 0f);
+				}
+			}
+		}
 
 		public override void OnHitNPC(Projectile projectile, NPC target, int damage, float knockback, bool crit)
 		{

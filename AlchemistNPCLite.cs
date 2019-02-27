@@ -34,8 +34,7 @@ namespace AlchemistNPCLite
 		internal TeleportClass TeleportClass;
 		public static ModHotKey DiscordBuff;
 		public static bool SF = false;
-		public static bool BastScroll = false;
-		public static bool Stormbreaker = false;
+		public static bool GreaterDangersense = false;
 		public static int DTH = 0;
 		public static float ppx = 0f;
 		public static float ppy = 0f;
