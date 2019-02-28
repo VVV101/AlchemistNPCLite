@@ -857,6 +857,67 @@ namespace AlchemistNPCLite.NPCs
         get { return pinkymod.Global.Pinkyworld.downedAbyssmalDuo; }
         }
 		
+		public bool AAModDownedMonarch
+		{
+        get { return AAMod.AAWorld.downedMonarch; }
+        }
+		public bool AAModDownedGrips
+		{
+        get { return AAMod.AAWorld.downedGrips; }
+        }
+		public bool AAModDownedBrood
+		{
+        get { return AAMod.AAWorld.downedBrood; }
+        }
+		public bool AAModDownedHydra
+		{
+        get { return AAMod.AAWorld.downedHydra; }
+        }
+		public bool AAModDownedSerpent
+		{
+        get { return AAMod.AAWorld.downedSerpent; }
+        }
+		public bool AAModDownedDjinn
+		{
+        get { return AAMod.AAWorld.downedDjinn; }
+        }
+		public bool AAModDownedRetriever
+		{
+        get { return AAMod.AAWorld.downedRetriever; }
+        }
+		public bool AAModDownedRaider
+		{
+        get { return AAMod.AAWorld.downedRaider; }
+        }
+		public bool AAModDownedOrthrus
+		{
+        get { return AAMod.AAWorld.downedOrthrus; }
+        }
+		public bool AAModDownedEFish
+		{
+        get { return AAMod.AAWorld.downedEFish; }
+        }
+		public bool AAModDownedEquinox
+		{
+        get { return AAMod.AAWorld.downedEquinox; }
+        }
+		public bool AAModDownedYamata
+		{
+        get { return AAMod.AAWorld.downedYamata; }
+        }
+		public bool AAModDownedAkuma
+		{
+        get { return AAMod.AAWorld.downedAkuma; }
+        }
+		public bool AAModDownedZero
+		{
+        get { return AAMod.AAWorld.downedZero; }
+        }
+		public bool AAModDownedShen
+		{
+        get { return AAMod.AAWorld.downedZero; }
+        }
+		
 		public override void SetupShop(Chest shop, ref int nextSlot)
 		{
 			if (Shop1)
@@ -1445,6 +1506,105 @@ namespace AlchemistNPCLite.NPCs
 				}
 				if (NPC.downedBoss3 && Main.expertMode)
 				{
+					if (ModLoader.GetLoadedMods().Contains("AAMod"))
+					{
+						if (AAModDownedMonarch)
+						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("MonarchBag"));
+							shop.item[nextSlot].shopCustomPrice = 150000;
+							nextSlot++;
+						}
+						if (AAModDownedGrips)
+						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("GripsBag"));
+							shop.item[nextSlot].shopCustomPrice = 300000;
+							nextSlot++;
+						}
+						if (AAModDownedBrood)
+						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("BroodBag"));
+							shop.item[nextSlot].shopCustomPrice = 500000;
+							nextSlot++;
+						}
+						if (AAModDownedHydra)
+						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("HydraBag"));
+							shop.item[nextSlot].shopCustomPrice = 750000;
+							nextSlot++;
+						}
+						if (AAModDownedSerpent)
+						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("SerpentBag"));
+							shop.item[nextSlot].shopCustomPrice = 1000000;
+							nextSlot++;
+						}
+						if (AAModDownedDjinn)
+						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("DjinnBag"));
+							shop.item[nextSlot].shopCustomPrice = 1000000;
+							nextSlot++;
+						}
+						if (AAModDownedRetriever)
+						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("RetrieverBag"));
+							shop.item[nextSlot].shopCustomPrice = 1500000;
+							nextSlot++;
+						}
+						if (AAModDownedRaider)
+						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("RaiderBag"));
+							shop.item[nextSlot].shopCustomPrice = 1500000;
+							nextSlot++;
+						}
+						if (AAModDownedOrthrus)
+						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("OrthusBag"));
+							shop.item[nextSlot].shopCustomPrice = 1500000;
+							nextSlot++;
+						}
+						if (AAModDownedEFish)
+						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("EFishBag"));
+							shop.item[nextSlot].shopCustomPrice = 3000000;
+							nextSlot++;
+						}
+						if (AAModDownedEquinox)
+						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("DBBag"));
+							shop.item[nextSlot].shopCustomPrice = 2500000;
+							nextSlot++;
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("NCBag"));
+							shop.item[nextSlot].shopCustomPrice = 2500000;
+							nextSlot++;
+						}
+						if (AAModDownedYamata)
+						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("YamataBag"));
+							shop.item[nextSlot].shopCustomPrice = 5000000;
+							nextSlot++;
+						}
+						if (AAModDownedAkuma)
+						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("AkumaBag"));
+							shop.item[nextSlot].shopCustomPrice = 5000000;
+							nextSlot++;
+						}
+						if (AAModDownedZero)
+						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("ZeroBag"));
+							shop.item[nextSlot].shopCustomPrice = 10000000;
+							nextSlot++;
+						}
+						if (AAModDownedShen)
+						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("ShenCache"));
+							shop.item[nextSlot].shopCustomPrice = 30000000;
+							nextSlot++;
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("GripsSBag"));
+							shop.item[nextSlot].shopCustomPrice = 15000000;
+							nextSlot++;
+						}
+					}
 					if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
 					{
 						if (SpiritModDownedScarabeus)

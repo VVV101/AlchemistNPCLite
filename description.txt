@@ -14,8 +14,10 @@ Available anytime.
 Available anytime.
 -Base PotsPriceMulti is 1 now. Config file is AlchemistLitev14.json.
 -Added support for Census - Town NPC Checklist mod.
+-Added support for Ancients Awakened.
 -Added some more music boxes from the Calamity Music mod to Musician's 2nd shop.
 -All Alchemist Charms are now provide different discounts. They are 10%, 25%, 35%, 50%.
+-Flasks in Young Brewer shop are in separate shop now.
 -Duke Fishron Treasure Bag is now available after beating Duke Fishron. 
 Same for Moon Lord Treasure Bag (available after beating Moon Lord).
 -Fixed 2nd Music boxes shop of Musician (returned all Calamity music boxes back).
