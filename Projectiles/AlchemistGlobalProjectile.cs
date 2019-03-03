@@ -23,26 +23,23 @@ namespace AlchemistNPCLite.Projectiles
 		
 		public override Color? GetAlpha(Projectile projectile, Color lightColor)
         {
-			if (AlchemistNPCLite.GreaterDangersense == true)
+			for (int k = 0; k < 255; k++)
 			{
-				if (projectile.hostile && !projectile.friendly)
+				Player player = Main.player[k];
+				if (player.active)
 				{
-					return Color.Yellow;
+					if (player.HasBuff(mod.BuffType("GreaterDangersense")))
+					{
+						if (projectile.hostile && !projectile.friendly)
+						{
+							Lighting.AddLight(projectile.Center, 1f, 1f, 0f);
+							return Color.Yellow;
+						}
+					}
 				}
 			}
 			return base.GetAlpha(projectile, lightColor);
         }
-		
-		public override void AI(Projectile projectile)
-		{
-			if (AlchemistNPCLite.GreaterDangersense == true)
-			{
-				if (projectile.hostile && !projectile.friendly)
-				{
-					Lighting.AddLight(projectile.Center, 1f, 1f, 0f);
-				}
-			}
-		}
 
 		public override void OnHitNPC(Projectile projectile, NPC target, int damage, float knockback, bool crit)
 		{

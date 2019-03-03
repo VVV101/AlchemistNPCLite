@@ -320,6 +320,22 @@ namespace AlchemistNPCLite.NPCs
 			}
 		}
 		
+		public override void DrawEffects(NPC npc, ref Color drawColor)
+		{
+			for (int k = 0; k < 255; k++)
+			{
+				Player player = Main.player[k];
+				if (player.active && player.HasBuff(mod.BuffType("GreaterDangersense")))
+				{
+					if (npc.type == 112)
+					{
+						npc.color = new Color(255, 255, 0, 100);
+						Lighting.AddLight(npc.position, 1f, 1f, 0f);
+					}
+				}
+			}
+		}
+		
 		public override bool PreNPCLoot(NPC npc)
 		{
 			if (npc.type == NPCID.EyeofCthulhu)
