@@ -5,14 +5,16 @@ using Terraria.GameContent.Events;
 using Terraria.ModLoader;
 using Terraria.Localization;
 using Terraria.World.Generation;
+using AlchemistNPCLite.Interface;
  
 namespace AlchemistNPCLite.NPCs
 {
 	[AutoloadHead]
 	public class Musician : ModNPC
 	{
-		public static bool S1 = false;
+		public static bool S1 = true;
 		public static bool S2 = false;
+		public static bool S3 = false;
 		public override string Texture
 		{
 			get
@@ -43,6 +45,15 @@ namespace AlchemistNPCLite.NPCs
             text.SetDefault("2nd shop");
             text.AddTranslation(GameCulture.Russian, "2-ой магазин");
             mod.AddTranslation(text);
+			text = mod.CreateTranslation("Shop3");
+            text.SetDefault("3rd shop");
+            text.AddTranslation(GameCulture.Russian, "3-ий магазин");
+            mod.AddTranslation(text);
+			text = mod.CreateTranslation("ShopChanger");
+            text.SetDefault("Shop Changer");
+            text.AddTranslation(GameCulture.Russian, "Сменить магазин");
+            text.AddTranslation(GameCulture.Chinese, "切换商店");
+            mod.AddTranslation(text);
             text = mod.CreateTranslation("Beethoven");
             text.SetDefault("Beethoven");
             text.AddTranslation(GameCulture.Russian, "Бетховен");
@@ -72,7 +83,7 @@ namespace AlchemistNPCLite.NPCs
             text.AddTranslation(GameCulture.Russian, "Гамма");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryM1");
-            text.SetDefault("I would have worn headphones, but I'm not sure if Terrarians have ears or not...");
+            text.SetDefault("I would wear headphones, but I'm not sure if Terrarians even have ears...");
             text.AddTranslation(GameCulture.Russian, "Я бы носил наушники, но я не уверен, что обитатели Террарии вообще имеют уши...");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryM2");
@@ -117,15 +128,15 @@ namespace AlchemistNPCLite.NPCs
             mod.AddTranslation(text);
 			text = mod.CreateTranslation("EntryM12");
             text.SetDefault("I'll be honest, I'm not sure if I trust ");
-            text.AddTranslation(GameCulture.Russian, "Я буду честен, я не уверен, что я доверяю ");
+            text.AddTranslation(GameCulture.Russian, "Буду честен, я не уверен, что я доверяю ");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryM13");
             text.SetDefault(". He claims to not be possessed, and yet he still is using skulls to fight... I'm getting mixed messages here.");
             text.AddTranslation(GameCulture.Russian, ". Он вроде бы больше не одержим, но все еще использует черепа для битвы... У меня смешанные чувства.");
             mod.AddTranslation(text);
 			text = mod.CreateTranslation("EntryM14");
-            text.SetDefault("Man, my mixtape is so much better than this, but I can't sell you that due to copyrights.");
-            text.AddTranslation(GameCulture.Russian, "Мои записи значительно лучше этих, но я не могу продать их тебе из-за авторских прав.");
+            text.SetDefault("Man, my mixtape is so much better than this, but I can't sell you that due to copyright.");
+            text.AddTranslation(GameCulture.Russian, "Чувак, мои записи значительно лучше всего этого, но я не могу продать их тебе из-за авторских прав.");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("EntryM15");
             text.SetDefault("No, I don't have an ''All Star'' music box. Code it in yourself.");
@@ -302,7 +313,7 @@ namespace AlchemistNPCLite.NPCs
 			{
 				return EntryM20;
 			}
-			if (Cyborg >= 0 && Main.npc[Cyborg].GivenName == "Gamma" && Main.npc[Musician].GivenName == Gamma && Main.rand.Next(20) == 0)
+			if (Cyborg >= 0 && Main.npc[Cyborg].GivenName == "Gamma" && Main.npc[Musician].GivenName == Gamma && Main.rand.Next(15) == 0)
 			{
 				return EntryM3;
 			}
@@ -329,7 +340,7 @@ namespace AlchemistNPCLite.NPCs
 				return EntryM18;
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetLoadedMods().Contains("CalamityModMusic"))
 			{
 				if (Main.rand.Next(15) == 0)
 				{
@@ -364,26 +375,33 @@ namespace AlchemistNPCLite.NPCs
         public override void SetChatButtons(ref string button, ref string button2)
         {
             string Shop2 = Language.GetTextValue("Mods.AlchemistNPCLite.Shop2");
-			button = Language.GetTextValue("LegacyInterface.28");
-			if (Main.hardMode)
+			string Shop3 = Language.GetTextValue("Mods.AlchemistNPCLite.Shop3");
+			string ShopChanger = Language.GetTextValue("Mods.AlchemistNPCLite.ShopChanger");
+			if (S1)
 			{
-				button2 = Shop2;
+				button = Language.GetTextValue("LegacyInterface.28");
 			}
+			if (S2)
+			{
+				button = Shop2;
+			}
+			if (S3)
+			{
+				button = Shop3;
+			}
+			button2 = ShopChanger;
         }
  
         public override void OnChatButtonClicked(bool firstButton, ref bool shop)
 		{
 			if (firstButton)
 			{
-			S1 = true;
-			S2 = false;
-			shop = true;
+				shop = true;
+				ShopChangeUIM.visible = false;
 			}
 			else
 			{
-				S1 = false;
-				S2 = true;
-				shop = true;
+				ShopChangeUIM.visible = true;
 			}
 		}
 		
@@ -493,7 +511,7 @@ namespace AlchemistNPCLite.NPCs
         get { return ThoriumMod.ThoriumWorld.downedDepthBoss; }
         }
 		
-         public override void SetupShop(Chest shop, ref int nextSlot)
+        public override void SetupShop(Chest shop, ref int nextSlot)
         {
 			if (S1)
 			{
@@ -692,7 +710,13 @@ namespace AlchemistNPCLite.NPCs
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("SlimeGodMusicbox"));
 					shop.item[nextSlot].shopCustomPrice = 150000;
 					nextSlot++;
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("CragMusicbox"));
+					shop.item[nextSlot].shopCustomPrice = 150000;
+					nextSlot++;
 					}
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("SirenIdleMusicbox"));
+					shop.item[nextSlot].shopCustomPrice = 150000;
+					nextSlot++;
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("SulphurousMusicbox"));
 					shop.item[nextSlot].shopCustomPrice = 150000;
 					nextSlot++;
@@ -728,6 +752,18 @@ namespace AlchemistNPCLite.NPCs
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("CalamitasMusicbox"));
 					shop.item[nextSlot].shopCustomPrice = 150000;
 					nextSlot++;
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("CalamityMusicbox"));
+					shop.item[nextSlot].shopCustomPrice = 150000;
+					nextSlot++;
+					}
+					if (CalamityModMusicDownedLeviathan)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("SirenMusicbox"));
+						shop.item[nextSlot].shopCustomPrice = 150000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("LeviathanMusicbox"));
+						shop.item[nextSlot].shopCustomPrice = 150000;
+						nextSlot++;
 					}
 					if (CalamityModMusicDownedAstrum)
 					{
@@ -751,6 +787,12 @@ namespace AlchemistNPCLite.NPCs
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("RavagerMusicbox"));
 					shop.item[nextSlot].shopCustomPrice = 150000;
 					nextSlot++;
+					}
+					if (NPC.downedMoonlord)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("CultistMusicbox"));
+						shop.item[nextSlot].shopCustomPrice = 150000;
+						nextSlot++;
 					}
 						if (CalamityModMusicDownedGuardian)
 						{
@@ -778,6 +820,9 @@ namespace AlchemistNPCLite.NPCs
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("PolterghastMusicbox"));
 						shop.item[nextSlot].shopCustomPrice = 300000;
 						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("SunkenSeaMusicbox"));
+						shop.item[nextSlot].shopCustomPrice = 300000;
+						nextSlot++;
 						}
 						if (CalamityModMusicDownedDOG)
 						{
@@ -788,7 +833,19 @@ namespace AlchemistNPCLite.NPCs
 							shop.item[nextSlot].shopCustomPrice = 500000;
 							nextSlot++;
 						}
-						if (CalamityModMusicDownedDOG)
+						if (CalamityModMusicDownedYharon)
+						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("Yharon1Musicbox"));
+							shop.item[nextSlot].shopCustomPrice = 500000;
+							nextSlot++;
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("Yharon2Musicbox"));
+							shop.item[nextSlot].shopCustomPrice = 500000;
+							nextSlot++;
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("Yharon3Musicbox"));
+							shop.item[nextSlot].shopCustomPrice = 500000;
+							nextSlot++;
+						}
+						if (CalamityModMusicDownedSCal)
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityModMusic").ItemType("SCalGMusicbox"));
 							shop.item[nextSlot].shopCustomPrice = 500000;
@@ -805,6 +862,9 @@ namespace AlchemistNPCLite.NPCs
 						}
 					}
 				}
+			}
+			if (S3)
+			{
 				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
 				{
 					if (ThoriumModDownedGTBird)

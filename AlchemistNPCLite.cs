@@ -53,6 +53,8 @@ namespace AlchemistNPCLite
 		private UserInterface alchemistUserInterfaceO;
 		internal ShopChangeUIO alchemistUIO;
 		private UserInterface alchemistUserInterfaceP;
+		internal ShopChangeUIM alchemistUIM;
+		private UserInterface alchemistUserInterfaceM;
 		
 		public override void Load()
 		{
@@ -78,6 +80,11 @@ namespace AlchemistNPCLite
 			alchemistUIO.Activate();
 			alchemistUserInterfaceO = new UserInterface();
 			alchemistUserInterfaceO.SetState(alchemistUIO);
+			
+			alchemistUIM = new ShopChangeUIM();
+			alchemistUIM.Activate();
+			alchemistUserInterfaceM = new UserInterface();
+			alchemistUserInterfaceM.SetState(alchemistUIM);
 			}
 		}
 		
@@ -155,6 +162,22 @@ namespace AlchemistNPCLite
 						if (ShopChangeUIO.visible)
 						{
 							alchemistUIO.Draw(Main.spriteBatch);
+						}
+						return true;
+					},
+					InterfaceScaleType.UI)
+				);
+			}
+			int MouseTextIndexM = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
+			if (MouseTextIndexM != -1)
+			{
+				layers.Insert(MouseTextIndexM, new LegacyGameInterfaceLayer(
+					"AlchemistNPC: Shop Selector M",
+					delegate
+					{
+						if (ShopChangeUIM.visible)
+						{
+							alchemistUIM.Draw(Main.spriteBatch);
 						}
 						return true;
 					},
@@ -829,6 +852,11 @@ namespace AlchemistNPCLite
 			if (alchemistUserInterfaceO != null && ShopChangeUIO.visible)
 			{
 				alchemistUserInterfaceO.Update(gameTime);
+			}
+			
+			if (alchemistUserInterfaceM != null && ShopChangeUIM.visible)
+			{
+				alchemistUserInterfaceM.Update(gameTime);
 			}
 		}
     }
