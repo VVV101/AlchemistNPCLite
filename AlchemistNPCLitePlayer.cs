@@ -75,6 +75,7 @@ namespace AlchemistNPCLite
 					ShopChangeUI.visible = false;
 					ShopChangeUIA.visible = false;
 					ShopChangeUIO.visible = false;
+					ShopChangeUIM.visible = false;
 				}
 			}
 		}

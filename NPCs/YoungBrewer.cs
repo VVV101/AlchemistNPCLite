@@ -283,36 +283,36 @@ namespace AlchemistNPCLite.NPCs
         {
 			if (Shop1)
 			{
-				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("VanTankCombination"));
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("VanTankCombination"));
 				shop.item[nextSlot].shopCustomPrice = 90000;
 				nextSlot++;
 				if (Main.hardMode)
 				{
-					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("TankCombination"));
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("TankCombination"));
 					shop.item[nextSlot].shopCustomPrice = 160000;
 					nextSlot++;
 				}
-				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("BattleCombination"));
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("BattleCombination"));
 				shop.item[nextSlot].shopCustomPrice = 120000;
 				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("RangerCombination"));
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("RangerCombination"));
 				shop.item[nextSlot].shopCustomPrice = 75000;
 				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("MageCombination"));
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("MageCombination"));
 				shop.item[nextSlot].shopCustomPrice = 90000;
 				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("BuilderCombination"));
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("BuilderCombination"));
 				shop.item[nextSlot].shopCustomPrice = 35000;
 				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ExplorerCombination"));
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("ExplorerCombination"));
 				shop.item[nextSlot].shopCustomPrice = 80000;
 				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("SummonerCombination"));
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("SummonerCombination"));
 				shop.item[nextSlot].shopCustomPrice = 30000;
 				nextSlot++;
 				if (Main.player[Main.myPlayer].anglerQuestsFinished >= 5)
 				{
-					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("FishingCombination"));
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("FishingCombination"));
 					shop.item[nextSlot].shopCustomPrice = 100000;
 					nextSlot++;
 				}
@@ -320,7 +320,7 @@ namespace AlchemistNPCLite.NPCs
 				{
 					if (NPC.downedMechBossAny)
 					{
-						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("ThoriumCombination"));
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("ThoriumCombination"));
 						shop.item[nextSlot].shopCustomPrice = 300000;
 						nextSlot++;
 					}
@@ -329,7 +329,7 @@ namespace AlchemistNPCLite.NPCs
 				{
 					if (NPC.downedGolemBoss)
 					{
-						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("CalamityCombination"));
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("CalamityCombination"));
 						shop.item[nextSlot].shopCustomPrice = 350000;
 						nextSlot++;
 					}
@@ -338,14 +338,14 @@ namespace AlchemistNPCLite.NPCs
 				{
 					if (NPC.downedMechBossAny)
 					{
-						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("SpiritCombination"));
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("SpiritCombination"));
 						shop.item[nextSlot].shopCustomPrice = 250000;
 						nextSlot++;
 					}
 				}
 				if (NPC.downedMoonlord)
 				{
-					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPC").ItemType("UniversalCombination"));
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("UniversalCombination"));
 					shop.item[nextSlot].shopCustomPrice = 500000;
 					nextSlot++;
 				}

@@ -594,6 +594,9 @@ namespace AlchemistNPCLite.NPCs
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("SunshinePotion"));
 		shop.item[nextSlot].shopCustomPrice = 15000;
 		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("Dopamine"));
+		shop.item[nextSlot].shopCustomPrice = 15000;
+		nextSlot++;
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("GreaterDangersensePotion"));
 		shop.item[nextSlot].shopCustomPrice = 25000;
 		nextSlot++;
