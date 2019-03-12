@@ -52,9 +52,8 @@ namespace AlchemistNPCLite
 		internal ShopChangeUIA alchemistUIA;
 		private UserInterface alchemistUserInterfaceO;
 		internal ShopChangeUIO alchemistUIO;
-		private UserInterface alchemistUserInterfaceP;
-		internal ShopChangeUIM alchemistUIM;
 		private UserInterface alchemistUserInterfaceM;
+		internal ShopChangeUIM alchemistUIM;
 		
 		public override void Load()
 		{

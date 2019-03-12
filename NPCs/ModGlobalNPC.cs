@@ -48,34 +48,40 @@ namespace AlchemistNPCLite.NPCs
 
 		public override void SetupShop(int type, Chest shop, ref int nextSlot)
 		{
-			Player player = Main.player[Main.myPlayer];
-			if (type == mod.NPCType("Brewer") || type == mod.NPCType("Alchemist") || type == mod.NPCType("Young Brewer"))
+			for (int k = 0; k < 255; k++)
 			{
-				for (nextSlot = 0; nextSlot < 40; ++nextSlot)
+				Player player = Main.player[k];
+				if (player.active)
 				{
-					shop.item[nextSlot].shopCustomPrice *= Config.PotsPriceMulti;
-					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+					if (type == mod.NPCType("Brewer") || type == mod.NPCType("Alchemist") || type == mod.NPCType("Young Brewer"))
 					{
-						if (Config.RevPrices && CalamityModRevengeance)
+						for (nextSlot = 0; nextSlot < 40; ++nextSlot)
 						{
-							shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice;
+							shop.item[nextSlot].shopCustomPrice *= Config.PotsPriceMulti;
+							if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+							{
+								if (Config.RevPrices && CalamityModRevengeance)
+								{
+									shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice;
+								}
+							}
+							if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier4)
+							{
+								shop.item[nextSlot].shopCustomPrice -= shop.item[nextSlot].shopCustomPrice/2;
+							}
+							else if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier3)
+							{
+								shop.item[nextSlot].shopCustomPrice -= ((shop.item[nextSlot].shopCustomPrice/20)*7);
+							}
+							else if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier2)
+							{
+								shop.item[nextSlot].shopCustomPrice -= shop.item[nextSlot].shopCustomPrice/4;
+							}
+							else if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier1)
+							{
+								shop.item[nextSlot].shopCustomPrice -= shop.item[nextSlot].shopCustomPrice/10;
+							}
 						}
-					}
-					if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier4)
-					{
-						shop.item[nextSlot].shopCustomPrice -= shop.item[nextSlot].shopCustomPrice/2;
-					}
-					else if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier3)
-					{
-						shop.item[nextSlot].shopCustomPrice -= (int)(shop.item[nextSlot].shopCustomPrice*0.35f);
-					}
-					else if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier2)
-					{
-						shop.item[nextSlot].shopCustomPrice -= shop.item[nextSlot].shopCustomPrice/4;
-					}
-					else if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier1)
-					{
-						shop.item[nextSlot].shopCustomPrice -= shop.item[nextSlot].shopCustomPrice/10;
 					}
 				}
 			}
