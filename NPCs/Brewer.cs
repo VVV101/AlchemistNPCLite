@@ -600,6 +600,9 @@ namespace AlchemistNPCLite.NPCs
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("GreaterDangersensePotion"));
 		shop.item[nextSlot].shopCustomPrice = 25000;
 		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("NatureBlessingPotion"));
+		shop.item[nextSlot].shopCustomPrice = 25000;
+		nextSlot++;
 		if (NPC.downedBoss3)
 			{
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("BewitchingPotion"));

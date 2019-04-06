@@ -95,7 +95,7 @@ namespace AlchemistNPCLite
 				censusMod.Call("TownNPCCondition", NPCType("Alchemist"), "Defeat Eye of Cthulhu");
 				censusMod.Call("TownNPCCondition", NPCType("Brewer"), "Defeat Eye of Cthulhu");
 				censusMod.Call("TownNPCCondition", NPCType("Jeweler"), "Defeat Eye of Cthulhu");
-				censusMod.Call("TownNPCCondition", NPCType("Jeweler"), "Defeat Eater of Worlds/Brain of Cthulhu and have at least 5 NPCs alive");
+				censusMod.Call("TownNPCCondition", NPCType("Architect"), "Defeat Eater of Worlds/Brain of Cthulhu and have at least 5 NPCs alive");
 				censusMod.Call("TownNPCCondition", NPCType("Operator"), "Defeat Eater of Worlds/Brain of Cthulhu");
 				censusMod.Call("TownNPCCondition", NPCType("Musician"), "Defeat Skeletron");
 				censusMod.Call("TownNPCCondition", NPCType("Young Brewer"), "World state is Hardmode and both Alchemist and Operator are alive");

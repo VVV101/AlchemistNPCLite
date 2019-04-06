@@ -452,6 +452,21 @@ namespace AlchemistNPCLite.NPCs
 			shop.item[nextSlot].SetDefaults (ItemID.PeaceCandle);
 			shop.item[nextSlot].shopCustomPrice = 50000;
 			nextSlot++;
+			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			{
+				if (Main.hardMode)
+				{
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("TranquilityCandle"));
+					shop.item[nextSlot].shopCustomPrice = 100000;
+					nextSlot++;
+				}
+				if (NPC.downedPlantBoss)
+				{
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("ChaosCandle"));
+					shop.item[nextSlot].shopCustomPrice = 150000;
+					nextSlot++;
+				}
+			}
 			shop.item[nextSlot].SetDefaults (ItemID.Spike);
 			shop.item[nextSlot].shopCustomPrice = 10000;
 			nextSlot++;

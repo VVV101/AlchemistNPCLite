@@ -477,6 +477,10 @@ namespace AlchemistNPCLite.NPCs
 		{
 		get { return CalamityMod.CalamityWorld.downedPolterghast; }
 		}
+		public bool CalamityModDownedDOG
+		{
+		get { return CalamityMod.CalamityWorld.downedDoG; }
+		}
  
         public override void SetupShop(Chest shop, ref int nextSlot)
         {
@@ -504,13 +508,13 @@ namespace AlchemistNPCLite.NPCs
 		}
 		if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
 		{
-			if(CalamityModDownedGuardian && !CalamityModDownedPolter)
+			if(CalamityModDownedGuardian && !CalamityModDownedDOG)
 			{
 			shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityMod").ItemType("SupremeHealingPotion"));
 			shop.item[nextSlot].shopCustomPrice = 500000;
 			nextSlot++;
 			}
-			if(CalamityModDownedPolter)
+			if(CalamityModDownedDOG)
 			{
 			shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityMod").ItemType("OmegaHealingPotion"));
 			shop.item[nextSlot].shopCustomPrice = 2000000;

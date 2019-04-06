@@ -5,7 +5,12 @@ The Young Brewer spawns while both the Alchemist & the Brewer are in the world i
 The spawn condition for the Operator is to beat EoW/BoC.
 The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Musician will come if you defeat Skeletron.
-1.4.2
+v1.5
+-Nature Blessing Potion can now be bought from Brewer.
+-Fixed Omega Healing Potion availability.
+-Fixed Calamity Combination stats boosts.
+-Added Chaos and Tranquility Candles to Jeweler's shop.
+v1.4.2
 -Fixed shops changer crashes (hopefully, this is the final time I am fixing it).
 v1.4.1
 -Fixed one annoying crash related to Musician's Shops Changer.
