@@ -6,7 +6,9 @@ The spawn condition for the Operator is to beat EoW/BoC.
 The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Musician will come if you defeat Skeletron.
 v1.5
+-Potions are now compatible with Calamity Mod's Rogue damage type.
 -Nature Blessing Potion can now be bought from Brewer.
+-Reworked Operator's prices.
 -Fixed Omega Healing Potion availability.
 -Fixed Calamity Combination stats boosts.
 -Added Chaos and Tranquility Candles to Jeweler's shop.
