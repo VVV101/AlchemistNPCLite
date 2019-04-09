@@ -8,6 +8,7 @@ The Musician will come if you defeat Skeletron.
 v1.5
 -Potions are now compatible with Calamity Mod's Rogue damage type.
 -Nature Blessing Potion can now be bought from Brewer.
+-Zen and Zerg Potions are now available in hardmode (their initial recipes got changed).
 -Reworked Operator's prices.
 -Fixed Omega Healing Potion availability.
 -Fixed Calamity Combination stats boosts.

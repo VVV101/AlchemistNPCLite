@@ -733,12 +733,15 @@ namespace AlchemistNPCLite.NPCs
 				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("PotionofOmniscience"));
 				shop.item[nextSlot].shopCustomPrice = 20000;
 				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("ZergPotion"));
-				shop.item[nextSlot].shopCustomPrice = 30000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("ZenPotion"));
-				shop.item[nextSlot].shopCustomPrice = 30000;
-				nextSlot++;
+				if (Main.hardMode)
+				{
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("ZergPotion"));
+					shop.item[nextSlot].shopCustomPrice = 30000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("ZenPotion"));
+					shop.item[nextSlot].shopCustomPrice = 30000;
+					nextSlot++;
+				}
 				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("YharimsStimulants"));
 				shop.item[nextSlot].shopCustomPrice = 100000;
 				nextSlot++;
