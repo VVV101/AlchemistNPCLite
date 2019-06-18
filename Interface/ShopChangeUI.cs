@@ -39,7 +39,7 @@ namespace AlchemistNPCLite.Interface
 			text.OnClick += new MouseEvent(PlayButtonClicked1);
 			BrewerShopsPanel.Append(text);
 			
-			UIText text2 = new UIText("Mod/Calamity/Thorium/RG");
+			UIText text2 = new UIText("Mod/Calamity");
 			text2.Left.Set(35, 0f);
 			text2.Top.Set(40, 0f);
 			text2.Width.Set(120, 0f);
@@ -47,9 +47,17 @@ namespace AlchemistNPCLite.Interface
 			text2.OnClick += new MouseEvent(PlayButtonClicked2);
 			BrewerShopsPanel.Append(text2);
 			
+			UIText text21 = new UIText("Thorium/RG");
+			text21.Left.Set(35, 0f);
+			text21.Top.Set(70, 0f);
+			text21.Width.Set(100, 0f);
+			text21.Height.Set(22, 0f);
+			text21.OnClick += new MouseEvent(PlayButtonClicked2);
+			BrewerShopsPanel.Append(text21);
+			
 			UIText text3 = new UIText("MorePotions");
 			text3.Left.Set(35, 0f);
-			text3.Top.Set(70, 0f);
+			text3.Top.Set(100, 0f);
 			text3.Width.Set(70, 0f);
 			text3.Height.Set(22, 0f);
 			text3.OnClick += new MouseEvent(PlayButtonClicked3);
@@ -57,7 +65,7 @@ namespace AlchemistNPCLite.Interface
 			
 			UIText text4 = new UIText("UnuBattleRods/Tacklebox/Tremor");
 			text4.Left.Set(35, 0f);
-			text4.Top.Set(100, 0f);
+			text4.Top.Set(130, 0f);
 			text4.Width.Set(150, 0f);
 			text4.Height.Set(22, 0f);
 			text4.OnClick += new MouseEvent(PlayButtonClicked4);
@@ -65,7 +73,7 @@ namespace AlchemistNPCLite.Interface
 			
 			UIText text5 = new UIText("Wildlife/Sacred/Spirit/Cristilium/ExpSentr");
 			text5.Left.Set(35, 0f);
-			text5.Top.Set(130, 0f);
+			text5.Top.Set(160, 0f);
 			text5.Width.Set(200, 0f);
 			text5.Height.Set(22, 0f);
 			text5.OnClick += new MouseEvent(PlayButtonClicked5);
@@ -123,6 +131,7 @@ namespace AlchemistNPCLite.Interface
 		{
 			Brewer.Shop1 = true;
 			Brewer.Shop2 = false;
+			Brewer.Shop21 = false;
 			Brewer.Shop3 = false;
 			Brewer.Shop4 = false;
 			Brewer.Shop5 = false;
@@ -138,6 +147,23 @@ namespace AlchemistNPCLite.Interface
 		{
 			Brewer.Shop1 = false;
 			Brewer.Shop2 = true;
+			Brewer.Shop21 = false;
+			Brewer.Shop3 = false;
+			Brewer.Shop4 = false;
+			Brewer.Shop5 = false;
+			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
+			ShopChangeUI.visible = false;
+			Main.playerInventory = true;
+			Main.npcChatText = "";
+			Main.npcShop = Main.MaxShopIDs - 1;
+			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+		}
+		
+		private void PlayButtonClicked21(UIMouseEvent evt, UIElement listeningElement)
+		{
+			Brewer.Shop1 = false;
+			Brewer.Shop2 = false;
+			Brewer.Shop21 = true;
 			Brewer.Shop3 = false;
 			Brewer.Shop4 = false;
 			Brewer.Shop5 = false;
@@ -153,6 +179,7 @@ namespace AlchemistNPCLite.Interface
 		{
 			Brewer.Shop1 = false;
 			Brewer.Shop2 = false;
+			Brewer.Shop21 = false;
 			Brewer.Shop3 = true;
 			Brewer.Shop4 = false;
 			Brewer.Shop5 = false;
@@ -168,6 +195,7 @@ namespace AlchemistNPCLite.Interface
 		{
 			Brewer.Shop1 = false;
 			Brewer.Shop2 = false;
+			Brewer.Shop21 = false;
 			Brewer.Shop3 = false;
 			Brewer.Shop4 = true;
 			Brewer.Shop5 = false;
@@ -183,6 +211,7 @@ namespace AlchemistNPCLite.Interface
 		{
 			Brewer.Shop1 = false;
 			Brewer.Shop2 = false;
+			Brewer.Shop21 = false;
 			Brewer.Shop3 = false;
 			Brewer.Shop4 = false;
 			Brewer.Shop5 = true;

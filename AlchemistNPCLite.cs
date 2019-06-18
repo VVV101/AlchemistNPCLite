@@ -109,7 +109,7 @@ namespace AlchemistNPCLite
 		
 		public static string ConfigFileRelativePath 
 		{
-		get { return "Mod Configs/AlchemistLitev14.json"; }
+		get { return "Mod Configs/AlchemistLitev15.json"; }
 		}
 
 		public static void ReloadConfigFromFile() 
@@ -330,6 +330,26 @@ namespace AlchemistNPCLite
 			recipe.AddIngredient(ItemID.Wire, 25);
 			recipe.AddTile(TileID.TinkerersWorkbench);
 			recipe.SetResult(ItemID.LifeformAnalyzer);
+			recipe.AddRecipe();
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.Mushroom);
+			recipe.AddIngredient(ItemID.Daybloom);
+			recipe.AddTile(TileID.Bottles);
+			recipe.SetResult(ItemID.PurificationPowder, 5);
+			recipe.AddRecipe();
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.CorruptSeeds);
+			recipe.AddIngredient(ItemID.PurificationPowder);
+			recipe.AddIngredient(ItemID.PixieDust);
+			recipe.AddTile(TileID.Bottles);
+			recipe.SetResult(ItemID.HallowedSeeds);
+			recipe.AddRecipe();
+			recipe = new ModRecipe(this);
+			recipe.AddIngredient(ItemID.CrimsonSeeds);
+			recipe.AddIngredient(ItemID.PurificationPowder);
+			recipe.AddIngredient(ItemID.PixieDust);
+			recipe.AddTile(TileID.Bottles);
+			recipe.SetResult(ItemID.HallowedSeeds);
 			recipe.AddRecipe();
 		}
 		

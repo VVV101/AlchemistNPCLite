@@ -230,7 +230,7 @@ namespace AlchemistNPCLite.NPCs
 		
         public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		{
-			if (NPC.downedBoss1)
+			if (NPC.downedBoss1 && Config.AlchemistSpawn)
 			{
 			return true;
 			}

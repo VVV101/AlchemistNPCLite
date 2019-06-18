@@ -136,7 +136,7 @@ namespace AlchemistNPCLite.Items
 
 		public override float UseTimeMultiplier(Item item, Player player)	
 		{
-			if (player.FindBuffIndex(mod.BuffType("ThoriumCombo")) > -1)
+			if (player.FindBuffIndex(mod.BuffType("ThoriumCombo")) > -1 && item.useTime > 3)
 			{
 				return 1.08f;
 			}
