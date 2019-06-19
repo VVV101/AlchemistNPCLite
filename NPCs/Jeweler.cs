@@ -231,7 +231,7 @@ namespace AlchemistNPCLite.NPCs
 		 string EntryJ7 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryJ7");
 		 string EntryJ8 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryJ8");
 		 string EntryJ9 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryJ9");
-		 string EntryJ10 = Language.GetTextValue("Mods.AlchemistNPC.EntryJ10");
+		 string EntryJ10 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryJ10");
 		 int Merchant = NPC.FindFirstNPC(NPCID.Merchant);
 			if (Merchant >= 0 && Main.rand.Next(5) == 0)
 			{
