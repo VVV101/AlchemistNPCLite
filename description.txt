@@ -9,8 +9,10 @@ v1.5.1
 -Added config options for disabling certain NPCs spawn.
 -Added new Calamity mod potions to Brewer.
 -Added recipes for Purification Powder and Hallowed Seeds.
+-Added more support for Ancients Awakened.
 -Fixed some errors in Operator code.
 -Operator now sells essences after beating respective Calamity boss or after beating Plantera.
+-Some new sprites by CC#1547.
 v1.5
 -Potions are now compatible with Calamity Mod's Rogue damage type.
 -Nature Blessing Potion can now be bought from Brewer.

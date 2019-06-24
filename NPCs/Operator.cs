@@ -865,6 +865,10 @@ namespace AlchemistNPCLite.NPCs
 		{
         get { return AAMod.AAWorld.downedGrips; }
         }
+		public bool AAModDownedTruffleToad
+		{
+        get { return AAMod.AAWorld.downedToad; }
+        }
 		public bool AAModDownedBrood
 		{
         get { return AAMod.AAWorld.downedBrood; }
@@ -896,6 +900,10 @@ namespace AlchemistNPCLite.NPCs
 		public bool AAModDownedEquinox
 		{
         get { return AAMod.AAWorld.downedEquinox; }
+        }
+		public bool AAModDownedSisters
+		{
+        get { return AAMod.AAWorld.downedSisters; }
         }
 		public bool AAModDownedYamata
 		{
@@ -1543,6 +1551,12 @@ namespace AlchemistNPCLite.NPCs
 							shop.item[nextSlot].shopCustomPrice = 300000;
 							nextSlot++;
 						}
+						if (AAModDownedTruffleToad)
+						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("TruffleBag"));
+							shop.item[nextSlot].shopCustomPrice = 350000;
+							nextSlot++;
+						}
 						if (AAModDownedBrood)
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("BroodBag"));
@@ -1592,6 +1606,12 @@ namespace AlchemistNPCLite.NPCs
 							nextSlot++;
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("NCBag"));
 							shop.item[nextSlot].shopCustomPrice = 2500000;
+							nextSlot++;
+						}
+						if (AAModDownedSisters)
+						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("AHBag"));
+							shop.item[nextSlot].shopCustomPrice = 5000000;
 							nextSlot++;
 						}
 						if (AAModDownedYamata)
