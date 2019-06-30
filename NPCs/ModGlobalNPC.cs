@@ -58,7 +58,7 @@ namespace AlchemistNPCLite.NPCs
 						for (nextSlot = 0; nextSlot < 40; ++nextSlot)
 						{
 							shop.item[nextSlot].shopCustomPrice *= Config.PotsPriceMulti;
-							if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+							if (ModLoader.GetMod("CalamityMod") != null)
 							{
 								if (Config.RevPrices && CalamityModRevengeance)
 								{
@@ -85,7 +85,7 @@ namespace AlchemistNPCLite.NPCs
 					}
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("Tremor"))
+			if (ModLoader.GetMod("Tremor") != null)
 			{
 				if (type == ModLoader.GetMod("Tremor").NPCType("Lady Moon"))
 				{
@@ -163,7 +163,7 @@ namespace AlchemistNPCLite.NPCs
 					npc.lifeMax = 500;
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("MaterialTraderNpc"))
+			if (ModLoader.GetMod("MaterialTraderNpc") != null)
 			{
 				if (npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Jungle Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Cavern Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Cool Guy")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Desert Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Dungeon Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Evil Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Hell Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Holy Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Ocean Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Sky Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Winter Trader")))
 				{
@@ -360,7 +360,7 @@ namespace AlchemistNPCLite.NPCs
 			{
 				Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("LuckCharm"));
 			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (Main.player[(int)Player.FindClosest(npc.position, npc.width, npc.height)].HasBuff(mod.BuffType("CalamityComb")) && npc.type == (ModLoader.GetMod("CalamityMod").NPCType("DevourerofGodsHeadS")) && CalamityModRevengeance)
 				{

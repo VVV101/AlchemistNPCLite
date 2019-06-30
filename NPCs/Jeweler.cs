@@ -237,7 +237,7 @@ namespace AlchemistNPCLite.NPCs
 			{
 				return EntryJ8 + Main.npc[Merchant].GivenName + EntryJ9;
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 				switch (Main.rand.Next(2))
 				{
@@ -311,7 +311,7 @@ namespace AlchemistNPCLite.NPCs
 				shop.item[nextSlot].SetDefaults (ItemID.FossilOre);
 				shop.item[nextSlot].shopCustomPrice = 5000;
 				nextSlot++;
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetMod("ThoriumMod") != null)
 					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("Opal"));
 					shop.item[nextSlot].shopCustomPrice = 5000;
@@ -353,7 +353,7 @@ namespace AlchemistNPCLite.NPCs
 				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPCLite").ItemType("HorrifyingSkull"));
 				shop.item[nextSlot].shopCustomPrice = 250000;
 				nextSlot++;
-				if (ModLoader.GetLoadedMods().Contains("Tremor"))
+				if (ModLoader.GetMod("Tremor") != null)
 				{
 					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("Rupicide"));
 					shop.item[nextSlot].shopCustomPrice = 5000;
@@ -377,7 +377,7 @@ namespace AlchemistNPCLite.NPCs
 						nextSlot++;
 						}
 							}
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetMod("ThoriumMod") != null)
 						{
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("GraniteEnergyCore"));
 						shop.item[nextSlot].shopCustomPrice = 10000;
@@ -386,7 +386,7 @@ namespace AlchemistNPCLite.NPCs
 						shop.item[nextSlot].shopCustomPrice = 10000;
 						nextSlot++;	
 						}
-				if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+				if (ModLoader.GetMod("SpiritMod") != null)
 						{
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("GraniteChunk"));
 						shop.item[nextSlot].shopCustomPrice = 10000;
@@ -422,7 +422,7 @@ namespace AlchemistNPCLite.NPCs
 		nextSlot++;
 			if (NPC.downedBoss2)
 			{
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("Mistletoe"));
 				shop.item[nextSlot].shopCustomPrice = 50000;
@@ -452,7 +452,7 @@ namespace AlchemistNPCLite.NPCs
 			shop.item[nextSlot].SetDefaults (ItemID.PeaceCandle);
 			shop.item[nextSlot].shopCustomPrice = 50000;
 			nextSlot++;
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (Main.hardMode)
 				{

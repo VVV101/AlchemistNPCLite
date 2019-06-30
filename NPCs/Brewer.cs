@@ -659,7 +659,7 @@ namespace AlchemistNPCLite.NPCs
 				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("TitanSkinPotion"));
 				shop.item[nextSlot].shopCustomPrice = 50000;
 				nextSlot++;
-					if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+					if (ModLoader.GetMod("CalamityMod") != null)
 					{
 						if (CalamityModRevengeance)
 						{
@@ -700,7 +700,7 @@ namespace AlchemistNPCLite.NPCs
 					}
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BoundingPotion"));
 				shop.item[nextSlot].shopCustomPrice = 20000;
@@ -799,7 +799,7 @@ namespace AlchemistNPCLite.NPCs
 		}
 		if (Shop21)
 		{
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 				if (NPC.downedBoss3)
 				{
@@ -847,7 +847,7 @@ namespace AlchemistNPCLite.NPCs
 				shop.item[nextSlot].shopCustomPrice = 20000;
 				nextSlot++;
 			}
-			if (ModLoader.GetLoadedMods().Contains("ReducedGrinding"))
+			if (ModLoader.GetMod("ReducedGrinding") != null)
 			{
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ReducedGrinding").ItemType("War_Potion"));
 			shop.item[nextSlot].shopCustomPrice = 15000;
@@ -868,7 +868,7 @@ namespace AlchemistNPCLite.NPCs
 		}
 		if (Shop3)
 		{
-			if (ModLoader.GetLoadedMods().Contains("MorePotions"))
+			if (ModLoader.GetMod("MorePotions") != null)
 			{
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("MorePotions").ItemType("HeavyRootsPotion"));
 			shop.item[nextSlot].shopCustomPrice = 7500;
@@ -1003,7 +1003,7 @@ if (NPC.downedMoonlord)
 		}
 		if (Shop4)
 		{
-		if (ModLoader.GetLoadedMods().Contains("UnuBattleRods"))
+		if (ModLoader.GetMod("UnuBattleRods") != null)
 			{
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("UnuBattleRods").ItemType("BobEscalationPotion"));
 			shop.item[nextSlot].shopCustomPrice = 10000;
@@ -1024,7 +1024,7 @@ if (NPC.downedMoonlord)
             nextSlot++;
 				}
 			}
-		if (ModLoader.GetLoadedMods().Contains("Tacklebox"))
+		if (ModLoader.GetMod("Tacklebox") != null)
 		{
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Tacklebox").ItemType("FrogPotion"));
 			shop.item[nextSlot].shopCustomPrice = 10000;
@@ -1054,7 +1054,7 @@ if (NPC.downedMoonlord)
 				}
 			}
 		}
-		if (ModLoader.GetLoadedMods().Contains("Tremor"))
+		if (ModLoader.GetMod("Tremor") != null)
 				{
 			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Tremor").ItemType("InspirationPotion"));
 			shop.item[nextSlot].shopCustomPrice = 20000;
@@ -1093,7 +1093,7 @@ if (NPC.downedMoonlord)
 		}
 		if (Shop5)
 		{
-			if (ModLoader.GetLoadedMods().Contains("Wildlife"))
+			if (ModLoader.GetMod("Wildlife") != null)
 				{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Wildlife").ItemType("BouncePotion"));
 					shop.item[nextSlot].shopCustomPrice = 10000;
@@ -1135,7 +1135,7 @@ if (NPC.downedMoonlord)
 					nextSlot++;
 					}
 				}
-				if (ModLoader.GetLoadedMods().Contains("SacredTools"))
+				if (ModLoader.GetMod("SacredTools") != null)
 					{
 						if (NPC.downedBoss1)
 						{
@@ -1168,7 +1168,7 @@ if (NPC.downedMoonlord)
 						nextSlot++;
 						}
 					}
-				if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+				if (ModLoader.GetMod("SpiritMod") != null)
 				{
 					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SpiritMod").ItemType("BismitePotion"));
 					shop.item[nextSlot].value = 10000;
@@ -1201,7 +1201,7 @@ if (NPC.downedMoonlord)
 					nextSlot++;
 					}
 				}
-				if (ModLoader.GetLoadedMods().Contains("CrystiliumMod"))
+				if (ModLoader.GetMod("CrystiliumMod") != null)
 				{
 				if (Main.hardMode)
 					{
@@ -1228,7 +1228,7 @@ if (NPC.downedMoonlord)
 					nextSlot++;
 					}
 				}
-				if (ModLoader.GetLoadedMods().Contains("ExpandedSentries"))
+				if (ModLoader.GetMod("ExpandedSentries") != null)
 				{
 				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ExpandedSentries").ItemType("SentryPotion"));
 				shop.item[nextSlot].value = 30000;

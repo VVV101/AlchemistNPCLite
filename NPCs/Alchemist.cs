@@ -373,7 +373,7 @@ namespace AlchemistNPCLite.NPCs
 			{
 				return EntryA15 + Main.npc[Brewer].GivenName + EntryA16;
 			}
-			if (ModLoader.GetLoadedMods().Contains("Tremor"))
+			if (ModLoader.GetMod("Tremor") != null)
 			{
 				int Alch = NPC.FindFirstNPC(ModLoader.GetMod("Tremor").NPCType("Alchemist"));
 				if (Alch >= 0 && Main.rand.Next(4) == 0)
@@ -381,14 +381,14 @@ namespace AlchemistNPCLite.NPCs
 				return EntryA12 + Main.npc[Alch].GivenName + EntryA13;
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("Tremor"))
+			if (ModLoader.GetMod("Tremor") != null)
 			{
 				if (NPC.downedBoss3 && Main.rand.Next(6) == 0)
 				{
 				return EntryA14;
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 				int DA = NPC.FindFirstNPC(ModLoader.GetMod("ThoriumMod").NPCType("DesertTraveler"));
 				if (DA >= 0 && Main.rand.Next(7) == 0)
@@ -396,7 +396,7 @@ namespace AlchemistNPCLite.NPCs
 				return EntryA9 + Main.npc[DA].GivenName +  EntryA10;
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 				int DA = NPC.FindFirstNPC(ModLoader.GetMod("ThoriumMod").NPCType("DesertTraveler"));
 				if (DA >= 0 && Brewer >=0 && Main.rand.Next(8) == 0)
@@ -404,7 +404,7 @@ namespace AlchemistNPCLite.NPCs
 				return EntryA11;
 				}
 			}
-			if (ModLoader.GetLoadedMods().Contains("Peculiarity") && Main.rand.Next(5) == 0)
+			if (ModLoader.GetMod("ThoriumMod") != null && Main.rand.Next(5) == 0)
 			{
 			return EntryA8;
 			}
@@ -433,7 +433,7 @@ namespace AlchemistNPCLite.NPCs
 			string GetCharm = Language.GetTextValue("Mods.AlchemistNPCLite.GetCharm");
             button = Language.GetTextValue("LegacyInterface.28");
 			
-			if (ModLoader.GetLoadedMods().Contains("Tremor"))
+			if (ModLoader.GetMod("Tremor") != null)
 			{
 				button2 = TremorShop;
 			}
@@ -460,7 +460,7 @@ namespace AlchemistNPCLite.NPCs
 				{
 					player.QuickSpawnItem(mod.ItemType("AlchemistCharmTier1"));
 				}
-				if (ModLoader.GetLoadedMods().Contains("Tremor"))
+				if (ModLoader.GetMod("Tremor") != null)
 				{
 					baseShop = false;
 					tremorShop = true;
@@ -506,7 +506,7 @@ namespace AlchemistNPCLite.NPCs
 		shop.item[nextSlot].shopCustomPrice = 25000;
 		nextSlot++;
 		}
-		if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+		if (ModLoader.GetMod("CalamityMod") != null)
 		{
 			if(CalamityModDownedGuardian && !CalamityModDownedDOG)
 			{
@@ -554,7 +554,7 @@ namespace AlchemistNPCLite.NPCs
 		shop.item[nextSlot].shopCustomPrice = 7500;
 		nextSlot++;	
 		}
-		if (ModLoader.GetLoadedMods().Contains("imkSushisMod"))
+		if (ModLoader.GetMod("imkSushisMod") != null)
 		{
 		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("BaseSummoningPotion"));
 		shop.item[nextSlot].shopCustomPrice = 2500;
@@ -631,7 +631,7 @@ namespace AlchemistNPCLite.NPCs
 			shop.item[nextSlot].shopCustomPrice = 1000;
 			nextSlot++;
 			}
-			if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+			if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 				if (NPC.downedBoss2)
 						{
@@ -667,7 +667,7 @@ namespace AlchemistNPCLite.NPCs
 		}
 		if (tremorShop)
 		{
-			if (ModLoader.GetLoadedMods().Contains("Tremor"))
+			if (ModLoader.GetMod("Tremor") != null)
 			{
 				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("BasicFlask"));
 				nextSlot++;
@@ -722,67 +722,67 @@ namespace AlchemistNPCLite.NPCs
 				nextSlot++;
 				if (Main.hardMode)
 				{
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("ExtendedBurningFlask"));
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("HealthSupportFlask"));
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("ManaSupportFlask"));
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("LesserVenomFlask"));
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("BigVenomFlask"));
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("CrystalFlask"));
-				shop.item[nextSlot].shopCustomPrice = 150;
-				nextSlot++;
-				if (NPC.downedPlantBoss)
-		{
-			shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("PhantomFlask"));
-				nextSlot++;
-			shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("PlagueFlask"));
-				nextSlot++;
-			shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("SparkingFlask"));
-				nextSlot++;
-		}
-		if (NPC.downedMoonlord)
-				{
-	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("MoonDustFlask"));
-	shop.item[nextSlot].shopCustomPrice = 250;
-				nextSlot++;
-	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("ClusterFlask"));
-	shop.item[nextSlot].shopCustomPrice = 300;
-				nextSlot++;
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("ExtendedBurningFlask"));
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("HealthSupportFlask"));
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("ManaSupportFlask"));
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("LesserVenomFlask"));
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("BigVenomFlask"));
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("CrystalFlask"));
+					shop.item[nextSlot].shopCustomPrice = 150;
+					nextSlot++;
+					if (NPC.downedPlantBoss)
+					{
+						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("PhantomFlask"));
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("PlagueFlask"));
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("SparkingFlask"));
+						nextSlot++;
+					}
+					if (NPC.downedMoonlord)
+					{
+						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("MoonDustFlask"));
+						shop.item[nextSlot].shopCustomPrice = 250;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("ClusterFlask"));
+						shop.item[nextSlot].shopCustomPrice = 300;
+						nextSlot++;
+					}
 				}
+					if (NPC.downedBoss3)
+					{
+						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("Gloomstone"));
+						shop.item[nextSlot].shopCustomPrice = 100;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("UntreatedFlesh"));
+						shop.item[nextSlot].shopCustomPrice = 100;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("LightBulb"));
+						shop.item[nextSlot].shopCustomPrice = 500;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("AtisBlood"));
+						shop.item[nextSlot].shopCustomPrice = 2500;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("TearsofDeath"));
+						shop.item[nextSlot].shopCustomPrice = 2500;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("TornPapyrus"));
+						shop.item[nextSlot].shopCustomPrice = 5000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("PhantomSoul"));
+						shop.item[nextSlot].shopCustomPrice = 5000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("TheRib"));
+						shop.item[nextSlot].shopCustomPrice = 7500;
+						nextSlot++;
+					}	
 				}
-			if (NPC.downedBoss3)
-		{
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("Gloomstone"));
-				shop.item[nextSlot].shopCustomPrice = 100;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("UntreatedFlesh"));
-				shop.item[nextSlot].shopCustomPrice = 100;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("LightBulb"));
-				shop.item[nextSlot].shopCustomPrice = 500;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("AtisBlood"));
-				shop.item[nextSlot].shopCustomPrice = 2500;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("TearsofDeath"));
-				shop.item[nextSlot].shopCustomPrice = 2500;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("TornPapyrus"));
-				shop.item[nextSlot].shopCustomPrice = 5000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("PhantomSoul"));
-				shop.item[nextSlot].shopCustomPrice = 5000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("TheRib"));
-				shop.item[nextSlot].shopCustomPrice = 7500;
-				nextSlot++;
-		}	
 			}
-		}
 		}
 	}
 }

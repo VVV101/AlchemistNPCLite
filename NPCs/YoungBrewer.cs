@@ -202,15 +202,8 @@ namespace AlchemistNPCLite.NPCs
 
 		public override void TownNPCAttackProj(ref int projType, ref int attackDelay)
 		{
-			if (NPC.downedMoonlord)
-			{
-			projType = mod.ProjectileType("CorrosiveFlask");
-			}
-			else
-			{
 			projType = ProjectileID.ToxicFlask;
-			}
-			attackDelay = 1;
+			attackDelay = 5;
 		}
 
 		public override void TownNPCAttackProjSpeed(ref float multiplier, ref float gravityCorrection, ref float randomOffset)
@@ -316,7 +309,7 @@ namespace AlchemistNPCLite.NPCs
 					shop.item[nextSlot].shopCustomPrice = 100000;
 					nextSlot++;
 				}
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 					if (NPC.downedMechBossAny)
 					{
@@ -325,7 +318,7 @@ namespace AlchemistNPCLite.NPCs
 						nextSlot++;
 					}
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (NPC.downedGolemBoss)
 					{
@@ -334,7 +327,7 @@ namespace AlchemistNPCLite.NPCs
 						nextSlot++;
 					}
 				}
-				if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+				if (ModLoader.GetMod("SpiritMod") != null)
 				{
 					if (NPC.downedMechBossAny)
 					{
@@ -349,7 +342,7 @@ namespace AlchemistNPCLite.NPCs
 					shop.item[nextSlot].shopCustomPrice = 500000;
 					nextSlot++;
 				}
-				if (ModLoader.GetLoadedMods().Contains("ThoriumMod"))
+				if (ModLoader.GetMod("ThoriumMod") != null)
 				{
 					if (NPC.downedBoss3)
 					{
@@ -430,7 +423,7 @@ namespace AlchemistNPCLite.NPCs
 					shop.item[nextSlot].shopCustomPrice = 30000;
 					nextSlot++;	
 				}
-				if (ModLoader.GetLoadedMods().Contains("AAMod"))
+				if (ModLoader.GetMod("AAMod") != null)
 				{
 					if (Main.hardMode)
 					{
@@ -442,7 +435,7 @@ namespace AlchemistNPCLite.NPCs
 						nextSlot++;
 					}
 				}
-				if (ModLoader.GetLoadedMods().Contains("SpiritMod"))
+				if (ModLoader.GetMod("SpiritMod") != null)
 				{
 					if (Main.hardMode)
 					{
@@ -451,7 +444,7 @@ namespace AlchemistNPCLite.NPCs
 						nextSlot++;
 					}
 				}
-				if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
 					{

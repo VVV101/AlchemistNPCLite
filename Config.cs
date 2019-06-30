@@ -27,7 +27,6 @@ namespace AlchemistNPCLite
 
             if(!success)
             {
-                ErrorLogger.Log("Failed to read AlchemistNPCLite's config file! Recreating config...");
                 CreateConfig();
             }
         }

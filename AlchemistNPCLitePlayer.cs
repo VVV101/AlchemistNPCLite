@@ -164,7 +164,7 @@ namespace AlchemistNPCLite
 						{
 							if (AlchemistCharmTier4 == true)
 							{
-								if (ModLoader.GetLoadedMods().Contains("CalamityMod"))
+								if (ModLoader.GetMod("CalamityMod") != null)
 								{
 									if (CalamityModDownedSCal)
 									{

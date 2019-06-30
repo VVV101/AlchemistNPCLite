@@ -285,7 +285,7 @@ namespace AlchemistNPCLite
 					TeleportClass.HandleTeleport(reader.ReadInt32(), true, whoAmI);
 					break;
 				default:
-					ErrorLogger.Log("AlchemistNPCLite: Unknown Message type: " + msgType);
+					Logger.Error("AlchemistNPCLite: Unknown Message type: " + msgType);
 					break;
 			}
 		}
