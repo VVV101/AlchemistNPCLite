@@ -17,8 +17,11 @@ namespace AlchemistNPCLite.Items.Misc
 			Tooltip.SetDefault("While this is in your inventory, you have better chance of getting better reforges"
 			+"\nAlso affects accessories (Menacing->Lucky->Warding)");
 			DisplayName.AddTranslation(GameCulture.Russian, "Талисман Абсолютной Удачи");
-            Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеете более высокий шанс получить лучшую перековку\nРаботает и с аксессуарами (Грозный->Удачливый->Оберегающий)");
-        }
+            		Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеете более высокий шанс получить лучшую перековку\nРаботает и с аксессуарами (Грозный->Удачливый->Оберегающий)");
+        		DisplayName.AddTranslation(GameCulture.Chinese, "绝对幸运符咒");
+			Tooltip.AddTranslation(GameCulture.Chinese, "放置于物品栏时, 重铸时有更高概率获得更好的词缀\n能够影响饰品 (险恶->幸运->护佑)");
+
+	}
 
 		public override void SetDefaults()
 		{
