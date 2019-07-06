@@ -114,7 +114,8 @@ namespace AlchemistNPCLite.NPCs
 			text = mod.CreateTranslation("Entry10");
             text.SetDefault("Certain combinations can only be brewed if certain types of magic are present in the world.");
             text.AddTranslation(GameCulture.Russian, "Некоторые комбинации могут быть изготовлены только если в мире присутсвуют особенные виды магии.");
-            mod.AddTranslation(text);
+            text.AddTranslation(GameCulture.Chinese, "某些整合药剂包只有在世界上存在某种魔法的情况下才能制作出来。");
+	    mod.AddTranslation(text);
         }
 
 		public override void SetDefaults()
