@@ -18,8 +18,11 @@ namespace AlchemistNPCLite.Items
 			Tooltip.SetDefault("Teleports you to the Jungle (near leftest top or rightest top jungle point)"
 			+"\nSide depends on used mouse button");
 			DisplayName.AddTranslation(GameCulture.Russian, "Телепортёр к Джунглям");
-            Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас в джунгли\nСторона зависит от нажатой кнопки мыши");
-        }    
+            		Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас в джунгли\nСторона зависит от нажатой кнопки мыши");
+       			DisplayName.AddTranslation(GameCulture.Chinese, "丛林传送药剂");
+			Tooltip.AddTranslation(GameCulture.Chinese, "将你传送至丛林"
+			+"\n方向取决于使用的鼠标按键");
+       }    
 		public override void SetDefaults()
         {
             item.CloneDefaults(ItemID.RecallPotion);
