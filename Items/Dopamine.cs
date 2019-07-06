@@ -16,7 +16,9 @@ namespace AlchemistNPCLite.Items
 			DisplayName.SetDefault("Dopamine");
 			Tooltip.SetDefault("Makes you Happy");
 			DisplayName.AddTranslation(GameCulture.Russian, "Допамин");
-            Tooltip.AddTranslation(GameCulture.Russian, "Делает вас счастливым");
+            		Tooltip.AddTranslation(GameCulture.Russian, "Делает вас счастливым");
+	    		DisplayName.AddTranslation(GameCulture.Chinese, "多巴胺");
+			Tooltip.AddTranslation(GameCulture.Chinese, "让你愉快");
         }    
 		public override void SetDefaults()
         {
