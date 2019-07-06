@@ -33,6 +33,7 @@ namespace AlchemistNPCLite.NPCs
 		{
 			DisplayName.SetDefault("Musician");
 			DisplayName.AddTranslation(GameCulture.Russian, "Музыкант");
+			DisplayName.AddTranslation(GameCulture.Chinese, "音乐家");
             Main.npcFrameCount[npc.type] = 25;   
 			NPCID.Sets.AttackFrameCount[npc.type] = 4;
 			NPCID.Sets.DangerDetectRange[npc.type] = 500;
