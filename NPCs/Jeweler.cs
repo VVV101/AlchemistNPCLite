@@ -55,7 +55,7 @@ namespace AlchemistNPCLite.NPCs
             ModTranslation text = mod.CreateTranslation("ArenaShop");
             text.SetDefault("Arena Shop");
             text.AddTranslation(GameCulture.Russian, "Магазин Арены");
-            text.AddTranslation(GameCulture.Chinese, "阿瑞娜商店");
+            text.AddTranslation(GameCulture.Chinese, "战斗场地商店");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("Carl");
             text.SetDefault("Carl");
@@ -129,6 +129,7 @@ namespace AlchemistNPCLite.NPCs
 			text = mod.CreateTranslation("EntryJ10");
             text.SetDefault("Should you find enought of those torn notes, bring the to me and ill decipher them for you. Dont ask me why, just know that they hold a value for me.");
             text.AddTranslation(GameCulture.Russian, "Как только найдёшь достаточно изорванных записок, неси их мне и я расшифрую их для тебя. Не спрашивай зачем, просто знай, что они имеют значение для меня.");
+	    text.AddTranslation(GameCulture.Chinese, "如果你发现了那些破碎的笔记，请把它们给我，我会帮你把它们破译出来。别问我为什么，你只需要知道他们对我有价值。");
             mod.AddTranslation(text);
         }
 		
