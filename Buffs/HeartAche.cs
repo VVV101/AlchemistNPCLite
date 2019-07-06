@@ -17,6 +17,8 @@ namespace AlchemistNPCLite.Buffs
 			canBeCleared = false;
 			DisplayName.AddTranslation(GameCulture.Russian, "Боль Сердца");
 			Description.AddTranslation(GameCulture.Russian, "Вы не можете использовать Зелье Тьмы сейчас");
+			DisplayName.AddTranslation(GameCulture.Chinese, "痛心");
+            		Description.AddTranslation(GameCulture.Chinese, "无法使用黑暗药剂");
         }
 	}
 }
