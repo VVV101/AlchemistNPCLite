@@ -24,8 +24,8 @@ namespace AlchemistNPCLite.Items
             Tooltip.AddTranslation(GameCulture.Russian, "Даёт большинство баффов от зелий мода Calamity (Yharim's Stimulants, Cadence, Titan Scale, Fabsol's Vodka and Omniscience)");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "灾厄药剂包");
-            Tooltip.AddTranslation(GameCulture.Chinese, "给予大部分灾厄药剂的增益效果 (Yharim之力, 舒畅, 泰坦鳞片, 节奏大师, 全知)");
-        }    
+            Tooltip.AddTranslation(GameCulture.Chinese, "给予大部分灾厄药剂的增益效果 (魔君牌兴奋剂, 尾音, 泰坦之鳞, Fabsol伏特加, 全知)");
+    }    
 
 		public override void SetDefaults()
         {
