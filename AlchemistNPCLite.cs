@@ -104,7 +104,9 @@ namespace AlchemistNPCLite
 		
 		public override void Unload()
 		{
+			Instance = null;
 			instance = null;
+			DiscordBuff = null;
 		}
 		
 		public static string ConfigFileRelativePath 
