@@ -19,7 +19,7 @@ namespace AlchemistNPCLite.Items
 		
 		public bool CalamityModDownedSCal
 		{
-		get { return CalamityMod.CalamityWorld.downedSCal; }
+		get { return CalamityMod.World.CalamityWorld.downedSCal; }
 		}
 		
 		public override void UpdateInventory(Item item, Player player)

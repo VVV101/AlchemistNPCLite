@@ -53,7 +53,7 @@ namespace AlchemistNPCLite
 		
 		public bool CalamityModDownedSCal
 		{
-		get { return CalamityMod.CalamityWorld.downedSCal; }
+		get { return CalamityMod.World.CalamityWorld.downedSCal; }
 		}
 		
 		public override void ResetEffects()
