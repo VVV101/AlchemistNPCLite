@@ -1086,9 +1086,6 @@ namespace AlchemistNPCLite.NPCs
 				}
 				if (NPC.downedGolemBoss)
 				{
-				shop.item[nextSlot].SetDefaults (ItemID.BeetleHusk);
-				shop.item[nextSlot].shopCustomPrice = 10000;
-				nextSlot++;
 					if (ModLoader.GetMod("CalamityMod") != null)
 					{
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("LivingShard"));
@@ -1130,8 +1127,11 @@ namespace AlchemistNPCLite.NPCs
 					}
 					if (CalamityModDownedPolter)
 					{
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BloodOrb"));
+					shop.item[nextSlot].shopCustomPrice = 50000;
+					nextSlot++;
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm"));
-					shop.item[nextSlot].shopCustomPrice = 250000;
+					shop.item[nextSlot].shopCustomPrice = 200000;
 					nextSlot++;
 					}
 					if (CalamityModDownedDOG && CalamityModDownedBirb)

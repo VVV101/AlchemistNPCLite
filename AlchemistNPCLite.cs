@@ -554,7 +554,8 @@ namespace AlchemistNPCLite
             AddTranslation(text);
 
             text = CreateTranslation("AstrageldonSlime");
-            text.SetDefault("Astrageldon Slime Treasure Bag");
+            text.SetDefault("Astrum Aureus Treasure Bag");
+			text.AddTranslation(GameCulture.Russian, "Сумка Звёздного Заразителя");
             text.AddTranslation(GameCulture.Chinese, "大彗星史莱姆宝藏袋");
             AddTranslation(text);
 
