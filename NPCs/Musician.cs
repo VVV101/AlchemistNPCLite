@@ -188,15 +188,6 @@ namespace AlchemistNPCLite.NPCs
             text.AddTranslation(GameCulture.Chinese, "这是你的错。出。去。");
 	    mod.AddTranslation(text);
 			text = mod.CreateTranslation("EntryM20");
-            text.SetDefault("Ah, this takes me back! I remember when this song used to play in the dungeon and the underworld... good times!");
-            text.AddTranslation(GameCulture.Russian, "Эх, ностальгия! Я помню, когда эта мелодия играла в Подземелье и в Преисподней... хорошие времена!");
-            text.AddTranslation(GameCulture.Chinese, "啊，我回来了！我记得这首歌曾经在地牢和地下演奏…真是好时光！");
-	    mod.AddTranslation(text);
-			text = mod.CreateTranslation("EntryM21");
-            text.SetDefault("Is there a name for the fear of being spied by a cake?");
-            text.AddTranslation(GameCulture.Russian, "Если ли имя у страха того, что за тобой шпионят с помощью торта?");
-            text.AddTranslation(GameCulture.Chinese, "有没有一个名字是因为害怕被蛋糕监视？");
-	    mod.AddTranslation(text);
 
         }
 		
