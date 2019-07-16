@@ -178,16 +178,7 @@ namespace AlchemistNPCLite.NPCs
             text.AddTranslation(GameCulture.Chinese, "没想到我会卖一个带歌词的八音盒…DM DOKURO，是个疯狂的人，我喜欢！");
 	    mod.AddTranslation(text);
 			text = mod.CreateTranslation("EntryM18");
-            text.SetDefault("A whole music based class? That sounds amazing! Too bad I don't have any gear for that, huh?");
-            text.AddTranslation(GameCulture.Russian, "Целый класс, основанный на музыке? Звучит потрясающе! Жаль, что у меня нет ничего подходящего для него...");
-            text.AddTranslation(GameCulture.Chinese, "整个基础音乐系列？听起来太棒了！很糟糕，我没有装备，嗯？");
-	    mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryM19");
-            text.SetDefault("This is your fault. GET. OUT.");
-            text.AddTranslation(GameCulture.Russian, "Это твоя вина. УБИРАЙСЯ. ОТСЮДА.");
-            text.AddTranslation(GameCulture.Chinese, "这是你的错。出。去。");
-	    mod.AddTranslation(text);
-			text = mod.CreateTranslation("EntryM20");
+            
 
         }
 		
