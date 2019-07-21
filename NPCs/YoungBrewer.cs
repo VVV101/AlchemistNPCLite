@@ -135,7 +135,7 @@ namespace AlchemistNPCLite.NPCs
 		
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		{
-			if (Main.hardMode && Config.YoungBrewerSpawn)
+			if (Main.hardMode && AlchemistNPCLite.modConfiguration.YoungBrewerSpawn)
 			{
 				if (NPC.AnyNPCs(mod.NPCType("Brewer")))
 				{

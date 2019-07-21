@@ -150,7 +150,7 @@ namespace AlchemistNPCLite.NPCs
 		
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
 		{
-			if (NPC.downedBoss1 && Config.JewelerSpawn)
+			if (NPC.downedBoss1 && AlchemistNPCLite.modConfiguration.JewelerSpawn)
 			{
 			return true;
 			}

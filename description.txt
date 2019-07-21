@@ -7,6 +7,7 @@ The Architect will come if you have at least 5 NPC and EoW/BoC is beaten.
 The Musician will come if you defeat Skeletron.
 v1.6.1
 -Updated for tModloader 0.11.2.2.
+-Added Mod Config support. Now you may change config options ingame.
 -Combinations now disable their certain boosts when Calamity Combination, Profaned Rage, Holy Wrath or Cadence potion buffs are active.
 -Added More Potions Combination. 
 Available in hardmode.

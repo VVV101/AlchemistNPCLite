@@ -31,6 +31,7 @@ namespace AlchemistNPCLite
 
 		public static Mod Instance;
 		internal static AlchemistNPCLite instance;
+		internal static ModConfiguration modConfiguration;
 		internal TeleportClass TeleportClass;
 		public static ModHotKey DiscordBuff;
 		public static bool SF = false;
@@ -57,7 +58,6 @@ namespace AlchemistNPCLite
 		
 		public override void Load()
 		{
-			Config.Load();
 			Instance = this;
             string DiscordBuffTeleportation = Language.GetTextValue("Discord Buff Teleportation");
             DiscordBuff = RegisterHotKey(DiscordBuffTeleportation, "Q");
@@ -107,16 +107,7 @@ namespace AlchemistNPCLite
 			Instance = null;
 			instance = null;
 			DiscordBuff = null;
-		}
-		
-		public static string ConfigFileRelativePath 
-		{
-		get { return "Mod Configs/AlchemistLitev15.json"; }
-		}
-
-		public static void ReloadConfigFromFile() 
-		{
-		Config.Load();
+			modConfiguration = null;
 		}
 		
 		public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)

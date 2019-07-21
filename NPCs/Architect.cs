@@ -257,7 +257,7 @@ namespace AlchemistNPCLite.NPCs
 		
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
         {
-            if (numTownNPCs >= 5 && NPC.downedBoss2 && Config.ArchitectSpawn)
+            if (numTownNPCs >= 5 && NPC.downedBoss2 && AlchemistNPCLite.modConfiguration.ArchitectSpawn)
                 {
                  return true;
                 }

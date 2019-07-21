@@ -12,7 +12,7 @@ namespace AlchemistNPCLite
             switch(item.type)
             {
                 case ItemID.FallenStar:
-                    item.value = Config.StarPrice;
+                    item.value = AlchemistNPCLite.modConfiguration.StarPrice;
                     break;
 				case 1267:
                     item.value = 20;
