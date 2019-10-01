@@ -61,7 +61,7 @@ namespace AlchemistNPCLite.Items
 		
 		public override bool UseItem(Player player)
 		{
-		CalamityMod.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalamityPlayer>(Calamity);
+		CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>(Calamity);
 		CalamityPlayer.stress = 10000;
 		player.AddBuff(mod.BuffType("HeartAche"), 18000, true);
 		return true;

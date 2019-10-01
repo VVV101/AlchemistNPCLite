@@ -257,7 +257,7 @@ namespace AlchemistNPCLite.NPCs
 		
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
         {
-            if (numTownNPCs >= 5 && NPC.downedBoss2 && AlchemistNPCLite.modConfiguration.ArchitectSpawn)
+            if (numTownNPCs >= 3 && AlchemistNPCLite.modConfiguration.ArchitectSpawn)
                 {
                  return true;
                 }
@@ -519,12 +519,15 @@ namespace AlchemistNPCLite.NPCs
 				shop.item[nextSlot].SetDefaults (ItemID.MudBlock);
 				shop.item[nextSlot].shopCustomPrice = 1;
 				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ItemID.DesertFossil);
-				shop.item[nextSlot].shopCustomPrice = 1000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ItemID.Obsidian);
-				shop.item[nextSlot].shopCustomPrice = 2500;
-				nextSlot++;
+				if (NPC.downedBoss2)
+				{
+					shop.item[nextSlot].SetDefaults (ItemID.DesertFossil);
+					shop.item[nextSlot].shopCustomPrice = 1000;
+					nextSlot++;
+					shop.item[nextSlot].SetDefaults (ItemID.Obsidian);
+					shop.item[nextSlot].shopCustomPrice = 2500;
+					nextSlot++;
+				}
 				shop.item[nextSlot].SetDefaults (ItemID.AshBlock);
 				shop.item[nextSlot].shopCustomPrice = 1;
 				nextSlot++;
