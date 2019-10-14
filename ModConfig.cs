@@ -88,7 +88,7 @@ namespace AlchemistNPCLite
 				message = "Changes accepted!";
 				return true;
 			}
-			else
+			if (whoAmI != 0)
 			{
 				message = "You have no rights to change AlchemistNPCLite.modConfiguration.";
 				return false;

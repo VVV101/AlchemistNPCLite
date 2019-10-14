@@ -33,7 +33,6 @@ namespace AlchemistNPCLite
 		public static Mod Instance;
 		internal static AlchemistNPCLite instance;
 		internal static ModConfiguration modConfiguration;
-		internal TeleportClass TeleportClass;
 		public static ModHotKey DiscordBuff;
 		public static bool SF = false;
 		public static bool GreaterDangersense = false;

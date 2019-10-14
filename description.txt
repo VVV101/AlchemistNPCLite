@@ -7,6 +7,7 @@ The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 v1.6.3
 -Updated for tModloader 0.11.5.
+-Cleaned up some code.
 -Removed Dash from Thorium Combination.
 v1.6.2
 -Updated for tModloader 0.11.4.

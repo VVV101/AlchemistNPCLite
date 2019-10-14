@@ -218,9 +218,9 @@ namespace AlchemistNPCLite.Items
 		{
 			Vector2 prePos = player.position;
 			Vector2 pos = prePos;
-			for (int y = 2400; y > 0; --y)
+			for (int y = Main.maxTilesY; y > 0; --y)
 				{
-					for (int x = 0; x < Main.tile.GetLength(0); ++x)
+					for (int x = 0; x < Main.maxTilesX; ++x)
 					{
 					if (Main.tile[x, y] == null) continue;
 					if (Main.tile[x, y].type != 60) continue;
@@ -239,9 +239,9 @@ namespace AlchemistNPCLite.Items
 		{
 			Vector2 prePos = player.position;
 			Vector2 pos = prePos;
-			for (int y = 2400; y > 0; --y)
+			for (int y = Main.maxTilesY; y > 0; --y)
 			{
-				for (int x = 8400; x > 0; --x)
+				for (int x = Main.maxTilesX; x > 0; --x)
 				{
 					if (Main.tile[x, y] == null) continue;
 					if (Main.tile[x, y].type != 60) continue;
