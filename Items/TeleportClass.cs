@@ -223,8 +223,8 @@ namespace AlchemistNPCLite.Items
 					for (int x = 0; x < Main.maxTilesX; ++x)
 					{
 					if (Main.tile[x, y] == null) continue;
-					if (Main.tile[x, y].type != 60) continue;
-					pos = new Vector2((x) * 16, (y-5) * 16);
+					if (Main.tile[x, y].type != 384) continue;
+					pos = new Vector2((x) * 16, (y-2) * 16);
 					break;
 				}
 			}
@@ -244,8 +244,8 @@ namespace AlchemistNPCLite.Items
 				for (int x = Main.maxTilesX; x > 0; --x)
 				{
 					if (Main.tile[x, y] == null) continue;
-					if (Main.tile[x, y].type != 60) continue;
-					pos = new Vector2((x) * 16, (y-5) * 16);
+					if (Main.tile[x, y].type != 384) continue;
+					pos = new Vector2((x) * 16, (y-2) * 16);
 					break;
 				}
 			}

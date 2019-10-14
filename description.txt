@@ -6,9 +6,10 @@ The spawn condition for the Operator is to beat EoW/BoC.
 The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 v1.6.3
--Updated for tModloader 0.11.5.
--Cleaned up some code.
+-Updated to tModloader 0.11.5.
+-Jungle Teleporter potion now aims for Living Machogany leaves.
 -Removed Dash from Thorium Combination.
+-Cleaned up some code.
 v1.6.2
 -Updated for tModloader 0.11.4.
 -Fixed incompatibility with latest Calamity mod build.
