@@ -7,7 +7,8 @@ The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 v1.6.3
 -Updated to tModloader 0.11.5.
--Jungle Teleporter potion now aims for Living Machogany leaves.
+-Jungle Teleporter potion now has different functions for left and right click.
+-Jungle Teleporter potion is now available after beating EoW/BoC.
 -Removed Dash from Thorium Combination.
 -Cleaned up some code.
 v1.6.2

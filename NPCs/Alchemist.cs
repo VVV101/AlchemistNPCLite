@@ -203,7 +203,7 @@ namespace AlchemistNPCLite.NPCs
             mod.AddTranslation(text);
 			text = mod.CreateTranslation("EntryA27");
             text.SetDefault(" interest in occult Alchemy did nothing but grow.");
-            text.AddTranslation(GameCulture.Russian, " в оккультной алхимии только вырос.");
+            text.AddTranslation(GameCulture.Russian, " к оккультной алхимии только вырос.");
             mod.AddTranslation(text);
         }
 
@@ -575,6 +575,9 @@ namespace AlchemistNPCLite.NPCs
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("BeachTeleporterPotion"));
 		shop.item[nextSlot].shopCustomPrice = 20000;
 		nextSlot++;
+		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("JungleTeleporterPotion"));
+		shop.item[nextSlot].shopCustomPrice = 50000;
+		nextSlot++;
 		}
 		if (NPC.downedBoss3)
 		{
@@ -588,9 +591,6 @@ namespace AlchemistNPCLite.NPCs
 		if (Main.hardMode)
 		{
 		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("UnderworldTeleportationPotion"));
-		shop.item[nextSlot].shopCustomPrice = 50000;
-		nextSlot++;
-		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("JungleTeleporterPotion"));
 		shop.item[nextSlot].shopCustomPrice = 50000;
 		nextSlot++;
 		}

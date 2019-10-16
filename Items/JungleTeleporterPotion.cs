@@ -16,10 +16,11 @@ namespace AlchemistNPCLite.Items
         public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Jungle Teleporter Potion");
-			Tooltip.SetDefault("Teleports you to the Jungle (near leftest top or rightest top jungle point)"
-			+"\nSide depends on used mouse button");
+			Tooltip.SetDefault("Teleports you to the Jungle"
+			+"\nLeft click teleports to jungle plant"
+			+"\nRight click teleports to living machogany leaves");
 			DisplayName.AddTranslation(GameCulture.Russian, "Телепортёр к Джунглям");
-            Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас в джунгли\nСторона зависит от нажатой кнопки мыши");
+            Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас в джунгли\nЛевая кнопка телепортирует к джунглевому растению\nПравая кнопка телепортирует к листьям живой махогани");
         }    
 		public override void SetDefaults()
         {
@@ -49,7 +50,7 @@ namespace AlchemistNPCLite.Items
 			{
 				if (Main.myPlayer == player.whoAmI)
 				{
-				TeleportClass.HandleTeleport(9);
+				TeleportClass.HandleTeleport(10);
 				return true;
 				}
 			}
@@ -57,7 +58,7 @@ namespace AlchemistNPCLite.Items
 			{
 				if (Main.myPlayer == player.whoAmI)
 				{
-				TeleportClass.HandleTeleport(10);
+				TeleportClass.HandleTeleport(9);
 				return true;
 				}
 			}
@@ -71,7 +72,7 @@ namespace AlchemistNPCLite.Items
 
         public override void RightClick(Player player)
         {
-            TeleportClass.HandleTeleport(9);
+            TeleportClass.HandleTeleport(10);
         }
     }
 }
