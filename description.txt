@@ -9,6 +9,7 @@ v1.6.3
 You need to have latest Calamity mod version (1.4.2.105).
 It is available in Calamity mod Discord channel.
 -Updated to tModloader 0.11.5.
+-Fixed Titan Scale potion functionality in Calamity Combination.
 -Zerg/Zen potions, Chaos/Tranquility Candles were moved to post Plantera.
 -Jungle Teleporter potion now has different functions for left and right click.
 -Jungle Teleporter potion is now available after beating EoW/BoC.
