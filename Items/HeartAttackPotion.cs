@@ -7,7 +7,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
  
-namespace AlchemistNPC.Items
+namespace AlchemistNPCLite.Items
 {
     public class HeartAttackPotion : ModItem
     {

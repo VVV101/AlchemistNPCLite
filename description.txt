@@ -5,6 +5,8 @@ The Young Brewer spawns while both the Alchemist & the Brewer are in the world i
 The spawn condition for the Operator is to beat EoW/BoC.
 The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
+v1.6.4 hotfix
+-Fixed an error which caused mod fail to load.
 v1.6.3
 -Updated to tModloader 0.11.5.
 -Fixed Titan Scale potion functionality in Calamity Combination.
