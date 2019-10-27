@@ -6,8 +6,6 @@ The spawn condition for the Operator is to beat EoW/BoC.
 The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 v1.6.3
-You need to have latest Calamity mod version (1.4.2.105).
-It is available in Calamity mod Discord channel.
 -Updated to tModloader 0.11.5.
 -Fixed Titan Scale potion functionality in Calamity Combination.
 -Zerg/Zen potions, Chaos/Tranquility Candles were moved to post Plantera.
