@@ -87,6 +87,10 @@ namespace AlchemistNPCLite.Buffs
 					player.statDefense -= 8;
 				}
 			}
+			if (player.thorns < 1.0)
+			{
+				player.thorns = 0.3333333f;
+			}
 			BuffLoader.Update(BuffID.ObsidianSkin, player, ref buffIndex);
 		}
 	}
