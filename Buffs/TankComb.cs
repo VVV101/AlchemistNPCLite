@@ -53,6 +53,7 @@ namespace AlchemistNPCLite.Buffs
 			{
 				player.thorns = 0.3333333f;
 			}
+			BuffLoader.Update(BuffID.ObsidianSkin, player, ref buffIndex);
 		}
 	}
 }

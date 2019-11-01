@@ -87,6 +87,7 @@ namespace AlchemistNPCLite.Buffs
 					player.statDefense -= 8;
 				}
 			}
+			BuffLoader.Update(BuffID.ObsidianSkin, player, ref buffIndex);
 		}
 	}
 }
