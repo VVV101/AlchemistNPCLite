@@ -135,6 +135,28 @@ namespace AlchemistNPCLite.Items
 			return true;
 		}
 
+		public override bool UseItem(Item item, Player player)
+		{
+			AlchemistNPCLitePlayer modPlayer = player.GetModPlayer<AlchemistNPCLitePlayer>();
+			if (modPlayer.AlchemistCharmTier4)
+			{
+				player.AddBuff(item.buffType, item.buffTime + (item.buffTime/2), true);
+			}
+			else if (modPlayer.AlchemistCharmTier3)
+			{
+				player.AddBuff(item.buffType, item.buffTime + ((item.buffTime/20)*7), true);
+			}
+			else if (modPlayer.AlchemistCharmTier2)
+			{
+				player.AddBuff(item.buffType, item.buffTime + (item.buffTime/4), true);
+			}
+			else if (modPlayer.AlchemistCharmTier1)
+			{
+				player.AddBuff(item.buffType, item.buffTime + (item.buffTime/10), true);
+			}
+			return base.UseItem(item, player);
+		}
+
 		public override float UseTimeMultiplier(Item item, Player player)	
 		{
 			if (player.FindBuffIndex(mod.BuffType("ThoriumCombo")) > -1 && item.useTime > 3)

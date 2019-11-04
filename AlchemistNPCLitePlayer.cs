@@ -256,7 +256,26 @@ namespace AlchemistNPCLite
 						int time1 = player.bank.item[index1].buffTime;
 						if (time1 == 0)
 						  time1 = 3600;
+					  
+					  if (AlchemistCharmTier4)
+					  {
+						time1 += time1/2;
+					  }
+					  else if (AlchemistCharmTier3)
+					  {
+						time1 += (time1/20)*7;
+					  }
+					  else if (AlchemistCharmTier2)
+					  {
+						time1 += time1/4;
+					  }
+					  else if (AlchemistCharmTier1)
+					  {
+						time1 += time1/10;
+					  }
+					  
 						player.AddBuff(type2, time1, true);
+						
 						if (player.bank.item[index1].consumable)
 						{
 							if (AlchemistCharmTier4 == true)
@@ -266,8 +285,15 @@ namespace AlchemistNPCLite
 									if (CalamityModDownedSCal)
 									{
 									}
+									else if (Main.rand.NextFloat() >= .25f)
+									{
+									}
+									else
+									{
+										--player.bank.item[index1].stack;
+									}
 								}
-								if (Main.rand.NextFloat() >= .25f)
+								else if (Main.rand.NextFloat() >= .25f)
 								{
 								}
 								else

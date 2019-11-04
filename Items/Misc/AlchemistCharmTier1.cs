@@ -16,9 +16,10 @@ namespace AlchemistNPCLite.Items.Misc
 		{
 			DisplayName.SetDefault("Alchemist Charm Tier 1");
 			Tooltip.SetDefault("While this is in your inventory, you have a low chance not to consume potion"
-			+"\nAlchemist, Brewer and Young Brewer are providing 10% discount");
+			+"\nAlchemist, Brewer and Young Brewer are providing 10% discount"
+			+"\nBuffs duration is 10% longer");
 			DisplayName.AddTranslation(GameCulture.Russian, "Талисман Алхимика Первого Уровня");
-            Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеет малый шанс не потратить зелье\nАлхимик, Зельеварщица и Юный Зельевар предоставляют скидку в 10%");
+            Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеет малый шанс не потратить зелье\nАлхимик, Зельеварщица и Юный Зельевар предоставляют скидку в 10%\nДлительность баффов увеличена на 10%");
         }
 
 		public override void SetDefaults()

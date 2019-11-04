@@ -7,6 +7,8 @@ The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 v1.6.5
 -Added Materia Transmutators and their components.
+-Alchemist Charms now also add some duration to buff potions depending on tier.
+-Potion of Darkness can no longer be used if any boss is alive.
 -Cleaned up a lot of buffs code.
 v1.6.4 hotfix
 -Fixed an error which caused mod fail to load.
