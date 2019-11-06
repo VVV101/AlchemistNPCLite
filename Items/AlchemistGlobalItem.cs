@@ -156,15 +156,6 @@ namespace AlchemistNPCLite.Items
 			}
 			return base.UseItem(item, player);
 		}
-
-		public override float UseTimeMultiplier(Item item, Player player)	
-		{
-			if (player.FindBuffIndex(mod.BuffType("ThoriumCombo")) > -1 && item.useTime > 3)
-			{
-				return 1.08f;
-			}
-			return 1f;
-		}
 		
 		public override void ModifyTooltips(Item item, List<TooltipLine> tooltips)
 		{
