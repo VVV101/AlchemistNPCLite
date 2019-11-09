@@ -17,7 +17,7 @@ namespace AlchemistNPCLite.Buffs
 		{
 			DisplayName.SetDefault("Calamity Combination");
 			Description.SetDefault("Perfect sum of Calamity buffs"
-			+"\nYharim's Stimulants, Cadence, Fabsol's Vodka, Titan Scale and Omniscience");
+			+"\nYharim's Stimulants, Cadence, Fabsol's Vodka, Soaring, Bounding and Titan Scale");
 			Main.debuff[Type] = false;
 			canBeCleared = true;
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Каламити");
@@ -32,7 +32,8 @@ namespace AlchemistNPCLite.Buffs
 			player.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("YharimPower")] = true;
 			player.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("TitanScale")] = true;
 			player.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("FabsolVodkaBuff")] = true;
-			player.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("Omniscience")] = true;
+			player.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("Soaring")] = true;
+			player.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("BoundingBuff")] = true;
 			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 				ThoriumBoosts(player);
@@ -53,7 +54,8 @@ namespace AlchemistNPCLite.Buffs
 			Calamity.GetBuff("YharimPower").Update(player, ref buffIndex);
 			Calamity.GetBuff("TitanScale").Update(player, ref buffIndex);
 			Calamity.GetBuff("FabsolVodkaBuff").Update(player, ref buffIndex);
-			Calamity.GetBuff("Omniscience").Update(player, ref buffIndex);
+			Calamity.GetBuff("Soaring").Update(player, ref buffIndex);
+			Calamity.GetBuff("BoundingBuff").Update(player, ref buffIndex);
         }
 		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		

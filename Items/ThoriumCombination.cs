@@ -21,7 +21,7 @@ namespace AlchemistNPCLite.Items
 		{
 			DisplayName.SetDefault("Thorium Combination");
 			Tooltip.SetDefault("Grants most buffs from Thorium Mod potions"
-			+"\nAccuracy, Blood, Combat, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy");
+			+"\nAccuracy, Blood, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy");
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Thorium");
             Tooltip.AddTranslation(GameCulture.Russian, "Даёт большинство баффов от зелий мода Thorium\nAccuracy, Blood, Combat, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy");
 
@@ -41,7 +41,7 @@ namespace AlchemistNPCLite.Items
             item.consumable = true;           //this make that the item is consumable when used
             item.width = 32;
             item.height = 32;
-            item.value = Item.sellPrice(0, 10, 0, 0);
+            item.value = Item.sellPrice(0, 8, 0, 0);
             item.rare = 10;
             item.buffType = mod.BuffType("ThoriumComb");           //this is where you put your Buff
             item.buffTime = 52000;    //this is the buff duration        10 = 10 Second
@@ -52,7 +52,6 @@ namespace AlchemistNPCLite.Items
 			ModRecipe recipe = new ModRecipe(mod);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("AccuracyPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("BloodPotion")), 1);
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("CombatPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("FrenzyPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("CreativityPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("EarwormPotion")), 1);

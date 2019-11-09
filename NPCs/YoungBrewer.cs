@@ -315,7 +315,7 @@ namespace AlchemistNPCLite.NPCs
 					if (NPC.downedMechBossAny)
 					{
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("ThoriumCombination"));
-						shop.item[nextSlot].shopCustomPrice = 300000;
+						shop.item[nextSlot].shopCustomPrice = 250000;
 						nextSlot++;
 					}
 				}
@@ -365,8 +365,8 @@ namespace AlchemistNPCLite.NPCs
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("GorganCoatingItem"));
 						shop.item[nextSlot].shopCustomPrice = 5000;
 						nextSlot++;
-						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("LifeLeechCoatingItem"));
-						shop.item[nextSlot].shopCustomPrice = 5000;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("SporeCoatingItem"));
+						shop.item[nextSlot].shopCustomPrice = 2500;
 						nextSlot++;
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("ToxicCoatingItem"));
 						shop.item[nextSlot].shopCustomPrice = 2500;

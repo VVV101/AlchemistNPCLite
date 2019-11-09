@@ -20,9 +20,9 @@ namespace AlchemistNPCLite.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Calamity Combination");
-			Tooltip.SetDefault("Grants most buffs from Calamity Mod potions (Yharim's Stimulants, Cadence, Titan Scale, Fabsol's Vodka and Omniscience)");
+			Tooltip.SetDefault("Grants most buffs from Calamity Mod potions (Yharim's Stimulants, Cadence, Titan Scale, Soaring, Bounding and Fabsol's Vodka)");
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Calamity");
-            Tooltip.AddTranslation(GameCulture.Russian, "Даёт большинство баффов от зелий мода Calamity (Yharim's Stimulants, Cadence, Titan Scale, Fabsol's Vodka and Omniscience)");
+            Tooltip.AddTranslation(GameCulture.Russian, "Даёт большинство баффов от зелий мода Calamity (Стимулянты Ярима, Каденции, Титановой Чешуи, Полёта, Связующее и Водки Фабсола)");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "灾厄药剂包");
             Tooltip.AddTranslation(GameCulture.Chinese, "给予大部分灾厄药剂的增益效果 (Yharim之力, 舒畅, 泰坦鳞片, 节奏大师, 全知)");
@@ -48,11 +48,12 @@ namespace AlchemistNPCLite.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("PotionofOmniscience")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("YharimsStimulants")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("FabsolsVodka")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("CadencePotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("TitanScalePotion")), 1);
+			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("SoaringPotion")), 1);
+			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("BoundingPotion")), 1);
 			recipe.AddTile(TileID.AlchemyTable);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

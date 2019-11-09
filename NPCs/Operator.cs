@@ -1130,14 +1130,17 @@ namespace AlchemistNPCLite.NPCs
 					shop.item[nextSlot].shopCustomPrice = 200000;
 					nextSlot++;
 					}
-					if (CalamityModDownedDOG && CalamityModDownedBirb)
+					if (CalamityModDownedDOG && AlchemistNPCLiteWorld.downedDOGPumpking)
 					{
-					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("NightmareFuel"));
-					shop.item[nextSlot].shopCustomPrice = 150000;
-					nextSlot++;				
-					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("EndothermicEnergy"));
-					shop.item[nextSlot].shopCustomPrice = 150000;
-					nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("NightmareFuel"));
+						shop.item[nextSlot].shopCustomPrice = 150000;
+						nextSlot++;			
+					}					
+					if (CalamityModDownedDOG && AlchemistNPCLiteWorld.downedDOGIceQueen)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("EndothermicEnergy"));
+						shop.item[nextSlot].shopCustomPrice = 150000;
+						nextSlot++;
 					}
 				}
 			}
