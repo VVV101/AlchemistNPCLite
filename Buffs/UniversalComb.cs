@@ -39,6 +39,7 @@ namespace AlchemistNPCLite.Buffs
 			modPlayer.DR10 = true;
 			modPlayer.Regeneration = true;
 			modPlayer.Lifeforce = true;
+			modPlayer.MS = true;
 			player.magicDamage += 0.25f;
             player.magicCrit += 2;
 			player.statManaMax2 += 20;
