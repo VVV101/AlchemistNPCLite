@@ -25,37 +25,44 @@ namespace AlchemistNPCLite.Interface
 			OperatorShopsPanel.SetPadding(0);
 			OperatorShopsPanel.Left.Set(575f, 0f);
 			OperatorShopsPanel.Top.Set(275f, 0f);
-			OperatorShopsPanel.Width.Set(260f, 0f);
-			OperatorShopsPanel.Height.Set(130f, 0f);
+			OperatorShopsPanel.Width.Set(300f, 0f);
+			OperatorShopsPanel.Height.Set(160f, 0f);
 			OperatorShopsPanel.BackgroundColor = new Color(73, 94, 171);
 
 			OperatorShopsPanel.OnMouseDown += new UIElement.MouseEvent(DragStart);
 			OperatorShopsPanel.OnMouseUp += new UIElement.MouseEvent(DragEnd);
 
-			UIText text = new UIText("Materials/Boss Drops");
+			UIText text = new UIText("Vanilla Materials/Boss Drops");
 			text.Left.Set(35, 0f);
 			text.Top.Set(10, 0f);
 			text.Width.Set(90, 0f);
 			text.Height.Set(22, 0f);
 			OperatorShopsPanel.Append(text);
 			
+			UIText text1 = new UIText("Modded Materials/Boss Drops");
+			text1.Left.Set(35, 0f);
+			text1.Top.Set(40, 0f);
+			text1.Width.Set(90, 0f);
+			text1.Height.Set(22, 0f);
+			OperatorShopsPanel.Append(text1);
+			
 			UIText text2 = new UIText("Vanilla Treasure Bags");
 			text2.Left.Set(35, 0f);
-			text2.Top.Set(40, 0f);
+			text2.Top.Set(70, 0f);
 			text2.Width.Set(70, 0f);
 			text2.Height.Set(22, 0f);
 			OperatorShopsPanel.Append(text2);
 			
 			UIText text3 = new UIText("Modded Treasure Bags #1");
 			text3.Left.Set(35, 0f);
-			text3.Top.Set(70, 0f);
+			text3.Top.Set(100, 0f);
 			text3.Width.Set(120, 0f);
 			text3.Height.Set(22, 0f);
 			OperatorShopsPanel.Append(text3);
 			
 			UIText text4 = new UIText("Modded Treasure Bags #2");
 			text4.Left.Set(35, 0f);
-			text4.Top.Set(100, 0f);
+			text4.Top.Set(130, 0f);
 			text4.Width.Set(120, 0f);
 			text4.Height.Set(22, 0f);
 			OperatorShopsPanel.Append(text4);
@@ -68,23 +75,30 @@ namespace AlchemistNPCLite.Interface
 			playButton.Height.Set(22, 0f);
 			playButton.OnClick += new MouseEvent(PlayButtonClicked1);
 			OperatorShopsPanel.Append(playButton);
+			UIImageButton playButton1 = new UIImageButton(buttonPlayTexture);
+			playButton1.Left.Set(10, 0f);
+			playButton1.Top.Set(40, 0f);
+			playButton1.Width.Set(22, 0f);
+			playButton1.Height.Set(22, 0f);
+			playButton1.OnClick += new MouseEvent(PlayButtonClicked11);
+			OperatorShopsPanel.Append(playButton1);
 			UIImageButton playButton2 = new UIImageButton(buttonPlayTexture);
 			playButton2.Left.Set(10, 0f);
-			playButton2.Top.Set(40, 0f);
+			playButton2.Top.Set(70, 0f);
 			playButton2.Width.Set(22, 0f);
 			playButton2.Height.Set(22, 0f);
 			playButton2.OnClick += new MouseEvent(PlayButtonClicked2);
 			OperatorShopsPanel.Append(playButton2);
 			UIImageButton playButton3 = new UIImageButton(buttonPlayTexture);
 			playButton3.Left.Set(10, 0f);
-			playButton3.Top.Set(70, 0f);
+			playButton3.Top.Set(100, 0f);
 			playButton3.Width.Set(22, 0f);
 			playButton3.Height.Set(22, 0f);
 			playButton3.OnClick += new MouseEvent(PlayButtonClicked3);
 			OperatorShopsPanel.Append(playButton3);
 			UIImageButton playButton4 = new UIImageButton(buttonPlayTexture);
 			playButton4.Left.Set(10, 0f);
-			playButton4.Top.Set(100, 0f);
+			playButton4.Top.Set(130, 0f);
 			playButton4.Width.Set(22, 0f);
 			playButton4.Height.Set(22, 0f);
 			playButton4.OnClick += new MouseEvent(PlayButtonClicked4);
@@ -92,7 +106,7 @@ namespace AlchemistNPCLite.Interface
 
 			Texture2D buttonDeleteTexture = ModContent.GetTexture("Terraria/UI/ButtonDelete");
 			UIImageButton closeButton = new UIImageButton(buttonDeleteTexture);
-			closeButton.Left.Set(230, 0f);
+			closeButton.Left.Set(270, 0f);
 			closeButton.Top.Set(10, 0f);
 			closeButton.Width.Set(22, 0f);
 			closeButton.Height.Set(22, 0f);
@@ -104,6 +118,22 @@ namespace AlchemistNPCLite.Interface
 		private void PlayButtonClicked1(UIMouseEvent evt, UIElement listeningElement)
 		{
 			Operator.Shop1 = true;
+			Operator.Shop2 = false;
+			Operator.Shop3 = false;
+			Operator.Shop4 = false;
+			Operator.Shop5 = false;
+			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
+			ShopChangeUIO.visible = false;
+			Main.playerInventory = true;
+			Main.npcChatText = "";
+			Main.npcShop = Main.MaxShopIDs - 1;
+			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+		}
+		
+		private void PlayButtonClicked11(UIMouseEvent evt, UIElement listeningElement)
+		{
+			Operator.Shop1 = false;
+			Operator.Shop2 = true;
 			Operator.Shop3 = false;
 			Operator.Shop4 = false;
 			Operator.Shop5 = false;
@@ -118,6 +148,7 @@ namespace AlchemistNPCLite.Interface
 		private void PlayButtonClicked2(UIMouseEvent evt, UIElement listeningElement)
 		{
 			Operator.Shop1 = false;
+			Operator.Shop2 = false;
 			Operator.Shop3 = true;
 			Operator.Shop4 = false;
 			Operator.Shop5 = false;
@@ -132,6 +163,7 @@ namespace AlchemistNPCLite.Interface
 		private void PlayButtonClicked3(UIMouseEvent evt, UIElement listeningElement)
 		{
 			Operator.Shop1 = false;
+			Operator.Shop2 = false;
 			Operator.Shop3 = false;
 			Operator.Shop4 = true;
 			Operator.Shop5 = false;
@@ -146,6 +178,7 @@ namespace AlchemistNPCLite.Interface
 		private void PlayButtonClicked4(UIMouseEvent evt, UIElement listeningElement)
 		{
 			Operator.Shop1 = false;
+			Operator.Shop2 = false;
 			Operator.Shop3 = false;
 			Operator.Shop4 = false;
 			Operator.Shop5 = true;
