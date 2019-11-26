@@ -127,9 +127,10 @@ namespace AlchemistNPCLite
 					{
 						RedemptionBoost(player);
 					}
-					if (ModLoader.GetMod("CalamityMod") != null)
+					Mod Calamity = ModLoader.GetMod("CalamityMod");
+					if(Calamity != null)
 					{
-						CalamityBoost(player);
+						Calamity.Call("AddRogueCrit", player, 10);
 					}
 				}
 				if (!player.HasBuff(mod.BuffType("CalamityComb")) && !player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("Cadence")) && Regeneration) player.lifeRegen += 4;

@@ -38,9 +38,10 @@ namespace AlchemistNPCLite.Buffs
 				{
 				RedemptionBoost(player);
 				}
-				if (ModLoader.GetMod("CalamityMod") != null)
+				Mod Calamity = ModLoader.GetMod("CalamityMod");
+				if(Calamity != null)
 				{
-				CalamityBoost(player);
+					Calamity.Call("AddRogueCrit", player, 5);
 				}
 		}
 		
