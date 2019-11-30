@@ -1073,15 +1073,6 @@ namespace AlchemistNPCLite.NPCs
 					shop.item[nextSlot].shopCustomPrice = 10000;
 					nextSlot++;
 				}
-				if (NPC.downedMechBossAny)
-				{
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("DivineLava"));
-				shop.item[nextSlot].shopCustomPrice = 20000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPC").ItemType("CursedIce"));
-				shop.item[nextSlot].shopCustomPrice = 20000;
-				nextSlot++;
-				}
 				if (ModLoader.GetMod("CalamityMod") != null)
 				{
 					if (CalamityModDownedHiveMind)
