@@ -58,6 +58,16 @@ namespace AlchemistNPCLite
 		public bool MusicianSpawn;
 		
 		[DefaultValue(true)]
+		[Label("Tinkerer Spawn toggle")]
+		[Tooltip("True to enable Tinkerer NPC spawn, false to disable. True by default")]
+		public bool TinkererSpawn;
+		
+		[DefaultValue(true)]
+		[Label("Lifeform Analyzer laser pointing")]
+		[Tooltip("Enable or disable laser pointing of Lifeform Analyzer (ticks each second). True by default")]
+		public bool LifeformAnalyzer;
+		
+		[DefaultValue(true)]
 		[Label("Revengeance mode prices scaling")]
 		[Tooltip("True to make potions prices bigger. True by default")]
 		public bool RevPrices;
@@ -73,6 +83,18 @@ namespace AlchemistNPCLite
 		[Label("Fallen Stars Price")]
 		[Tooltip("1000 is 10 silver price by default")]
 		public int StarPrice;
+		
+		[Range(1, 1000000)]
+		[DefaultValue(1000)]
+		[Label("Recall Potion Price")]
+		[Tooltip("1000 is 10 silver price by default")]
+		public int RecallPrice;
+		
+		[Range(1, 1000000)]
+		[DefaultValue(1000)]
+		[Label("Wormhole Potion Price")]
+		[Tooltip("1000 is 10 silver price by default")]
+		public int WormholePrice;
 
 		public override ModConfig Clone() {
 			var clone = (ModConfiguration)base.Clone();

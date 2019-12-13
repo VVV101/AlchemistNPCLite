@@ -5,7 +5,10 @@ The Young Brewer spawns while both the Alchemist & the Brewer are in the world i
 The spawn condition for the Operator is to beat EoW/BoC.
 The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
-v1.6.6
+v1.7
+-Added Tinkerer NPC. But unlike in AlchemistNPC, his accessories would be unlocked during progression.
+-Added Recall/Wormhole Potion price config options.
+-Added more materials to Operator's materials shops.
 -Fixed possible Operator's shop change menu mouse stucking.
 v1.6.5
 -Added Materia Transmutators and their components.

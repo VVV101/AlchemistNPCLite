@@ -544,10 +544,8 @@ namespace AlchemistNPCLite.NPCs
 		nextSlot++;	
 		}
 		shop.item[nextSlot].SetDefaults (ItemID.RecallPotion);
-		shop.item[nextSlot].shopCustomPrice = 5000;
 		nextSlot++;
 		shop.item[nextSlot].SetDefaults (ItemID.WormholePotion);
-		shop.item[nextSlot].shopCustomPrice = 5000;
 		nextSlot++;
 		if (Main.hardMode)
 		{

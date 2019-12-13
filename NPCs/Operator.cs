@@ -1138,31 +1138,37 @@ namespace AlchemistNPCLite.NPCs
 					shop.item[nextSlot].shopCustomPrice = 30000;
 					nextSlot++;
 					}
-					if (CalamityModDownedAstrum)
+					if (CalamityModDownedAstrageldon)
 					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstralJelly"));
 					shop.item[nextSlot].shopCustomPrice = 50000;
 					nextSlot++;
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("Stardust"));
-					shop.item[nextSlot].shopCustomPrice = 20000;
+					shop.item[nextSlot].shopCustomPrice = 10000;
 					nextSlot++;
 					}
-					if (NPC.downedGolemBoss)
+					if (CalamityModDownedLeviathan)
 					{
-							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("LivingShard"));
-							shop.item[nextSlot].shopCustomPrice = 30000;
-							nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("LivingShard"));
+						shop.item[nextSlot].shopCustomPrice = 30000;
+						nextSlot++;
 					}
-					if (NPC.downedAncientCultist)
+					if (CalamityModDownedRavager)
 					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BarofLife"));
 					shop.item[nextSlot].shopCustomPrice = 100000;
 					nextSlot++;
 					}
-					if (CalamityModDownedProvidence)
+					if (CalamityModDownedAstrum)
+					{
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("MeldBlob"));
+					shop.item[nextSlot].shopCustomPrice = 10000;
+					nextSlot++;
+					}
+					if (CalamityModDownedGuardian)
 					{
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("UnholyEssence"));
-					shop.item[nextSlot].shopCustomPrice = 100000;
+					shop.item[nextSlot].shopCustomPrice = 50000;
 					nextSlot++;
 					}
 					if (CalamityModDownedPolter)
