@@ -12,8 +12,8 @@ namespace AlchemistNPCLite.Projectiles
 			projectile.width = 4;
 			projectile.height = 4;
 			// NO! projectile.aiStyle = 48;
-			projectile.friendly = true;
-			projectile.hostile = true;
+			projectile.friendly = false;
+			projectile.hostile = false;
 			projectile.extraUpdates = 100;
 			projectile.timeLeft = 100; // lowered from 300
 			projectile.penetrate = -1;
