@@ -43,6 +43,7 @@ namespace AlchemistNPCLite
 			BitsByte flags = new BitsByte();
 			flags[0] = downedDOGPumpking;
 			flags[1] = downedDOGIceQueen;
+			writer.Write(flags11);
 		}
 
 		public override void NetReceive(BinaryReader reader)
