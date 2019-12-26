@@ -11,6 +11,7 @@ v1.7
 -Added more materials to Operator's materials shops.
 -Now Lifeform Analizer also creates laser pointer to rare creature (ticks each second).
 Can be toggled by Mod Configuration.
+-Fixed Simple Crafting Penny and both Materia Transmutators were not giving chance to save ingredients during craft (Alchemy Table feature).
 -Fixed NetSend error in world file.
 -New awesome mod's icon by Alemeow#7389.
 v1.6.6
