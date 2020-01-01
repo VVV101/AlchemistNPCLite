@@ -21,9 +21,9 @@ namespace AlchemistNPCLite.Items
 		{
 			DisplayName.SetDefault("Thorium Combination");
 			Tooltip.SetDefault("Grants most buffs from Thorium Mod potions"
-			+"\nAccuracy, Blood, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy");
+			+"\nAssassin, Blood, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy, Hydration");
 			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Thorium");
-            Tooltip.AddTranslation(GameCulture.Russian, "Даёт большинство баффов от зелий мода Thorium\nAccuracy, Blood, Combat, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy");
+            Tooltip.AddTranslation(GameCulture.Russian, "Даёт большинство баффов от зелий мода Thorium\nAssassin, Blood, Combat, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy, Hydration");
 
             DisplayName.AddTranslation(GameCulture.Chinese, "瑟银捆绑包");
             Tooltip.AddTranslation(GameCulture.Chinese, "获得瑟银的大部分药水Buff" +
@@ -50,7 +50,7 @@ namespace AlchemistNPCLite.Items
 		public override void AddRecipes()
 		{
 			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("AccuracyPotion")), 1);
+			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("AssassinPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("BloodPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("FrenzyPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("CreativityPotion")), 1);
@@ -58,6 +58,7 @@ namespace AlchemistNPCLite.Items
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("InspirationReachPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("GlowingPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("HolyPotion")), 1);
+			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("HydrationPotion")), 1);
 			recipe.AddTile(TileID.AlchemyTable);
 			recipe.SetResult(this);
 			recipe.AddRecipe();

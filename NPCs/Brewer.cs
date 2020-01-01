@@ -810,6 +810,9 @@ namespace AlchemistNPCLite.NPCs
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("EarwormPotion"));
 					shop.item[nextSlot].shopCustomPrice = 10000;
 					nextSlot++;
+					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("AssassinPotion"));
+					shop.item[nextSlot].shopCustomPrice = 10000;
+					nextSlot++;
 				}
 				if (Main.hardMode)
 				{
@@ -829,7 +832,7 @@ namespace AlchemistNPCLite.NPCs
 					shop.item[nextSlot].shopCustomPrice = 20000;
 					nextSlot++;
 				}
-				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("AccuracyPotion"));
+				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("HydrationPotion"));
 				shop.item[nextSlot].shopCustomPrice = 10000;
 				nextSlot++;
 				shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("BloodPotion"));
