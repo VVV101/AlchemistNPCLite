@@ -12,6 +12,7 @@ v1.7
 -Now Lifeform Analizer also creates laser pointer to rare creature (ticks each second).
 Can be toggled by Mod Configuration.
 -Added Assassin and Hydration potions to Thorium Combination.
+-Removed dash ability from Ninja potion.
 -Fixed Simple Crafting Penny and both Materia Transmutators were not giving chance to save ingredients during craft (Alchemy Table feature).
 -Fixed Thorium Combination crafting bug.
 -Fixed NetSend error in world file.
