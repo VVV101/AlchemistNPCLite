@@ -357,7 +357,7 @@ namespace AlchemistNPCLite.NPCs
 					shop.item[nextSlot].shopCustomPrice = 500000;
 					nextSlot++;
 				}
-				if (NPC.downedMechBossAny)
+				if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
 				{
 					shop.item[nextSlot].SetDefaults (ItemID.Blindfold);
 					shop.item[nextSlot].shopCustomPrice = 50000;

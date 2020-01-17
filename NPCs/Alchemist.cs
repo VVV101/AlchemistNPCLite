@@ -12,7 +12,7 @@ namespace AlchemistNPCLite.NPCs
 	public class Alchemist : ModNPC
 	{
 		public static bool baseShop = false;
-		public static bool tremorShop = false;
+		public static bool plantShop = false;
 		public override string Texture
 		{
 			get
@@ -40,10 +40,9 @@ namespace AlchemistNPCLite.NPCs
 			NPCID.Sets.AttackAverageChance[npc.type] = 30;
 			NPCID.Sets.HatOffsetY[npc.type] = -4;
 
-            ModTranslation text = mod.CreateTranslation("TremorShop");
-            text.SetDefault("Tremor Shop");
-            text.AddTranslation(GameCulture.Russian, "Магазин Тремор мода");
-            text.AddTranslation(GameCulture.Chinese, "震颤商店");
+            ModTranslation text = mod.CreateTranslation("PlantsShop");
+            text.SetDefault("Plants shop");
+            text.AddTranslation(GameCulture.Russian, "Магазин растений");
             mod.AddTranslation(text);
 			text = mod.CreateTranslation("GetCharm");
             text.SetDefault("Get Charm");
@@ -206,12 +205,6 @@ namespace AlchemistNPCLite.NPCs
             text.AddTranslation(GameCulture.Russian, " к оккультной алхимии только вырос.");
             mod.AddTranslation(text);
         }
-
-		public override void ResetEffects()
-		{
-		baseShop = false;
-		tremorShop = false;
-		}
 		
 		public override void SetDefaults()
 		{
@@ -430,14 +423,10 @@ namespace AlchemistNPCLite.NPCs
  
         public override void SetChatButtons(ref string button, ref string button2)
         {
-			string TremorShop = Language.GetTextValue("Mods.AlchemistNPCLite.TremorShop");
+			string PlantsShop = Language.GetTextValue("Mods.AlchemistNPC.PlantsShop");
 			string GetCharm = Language.GetTextValue("Mods.AlchemistNPCLite.GetCharm");
             button = Language.GetTextValue("LegacyInterface.28");
-			
-			if (ModLoader.GetMod("Tremor") != null)
-			{
-				button2 = TremorShop;
-			}
+			button2 = PlantsShop;
 			
 			Player player = Main.player[Main.myPlayer];
 			if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier1 == false && ((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier2 == false && ((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier3 == false && ((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier4 == false)
@@ -451,7 +440,7 @@ namespace AlchemistNPCLite.NPCs
 		if (firstButton)
 		{
 		baseShop = true;
-		tremorShop = false;
+		plantShop = false;
 		shop = true;
 		}
 		else
@@ -461,12 +450,9 @@ namespace AlchemistNPCLite.NPCs
 				{
 					player.QuickSpawnItem(mod.ItemType("AlchemistCharmTier1"));
 				}
-				if (ModLoader.GetMod("Tremor") != null)
-				{
-					baseShop = false;
-					tremorShop = true;
-					shop = true;
-				}
+				baseShop = false;
+				plantShop = true;
+				shop = true;
 			}
 		}
  
@@ -604,20 +590,8 @@ namespace AlchemistNPCLite.NPCs
 		shop.item[nextSlot].SetDefaults (ItemID.BottledWater);
 		shop.item[nextSlot].shopCustomPrice = 500;
 		nextSlot++;
-		shop.item[nextSlot].SetDefaults (ItemID.Mushroom);
-		shop.item[nextSlot].shopCustomPrice = 500;
-		nextSlot++;			
-		shop.item[nextSlot].SetDefaults (ItemID.GlowingMushroom);
-		shop.item[nextSlot].shopCustomPrice = 1000;
-		nextSlot++;
 			if (NPC.downedBoss2)
 			{
-			shop.item[nextSlot].SetDefaults (ItemID.VileMushroom);
-			shop.item[nextSlot].shopCustomPrice = 1000;
-			nextSlot++;
-			shop.item[nextSlot].SetDefaults (ItemID.ViciousMushroom);
-			shop.item[nextSlot].shopCustomPrice = 1000;
-			nextSlot++;
 			shop.item[nextSlot].SetDefaults (ItemID.FallenStar);
 			nextSlot++;
 			}
@@ -631,22 +605,22 @@ namespace AlchemistNPCLite.NPCs
 			nextSlot++;
 			}
 			if (ModLoader.GetMod("ThoriumMod") != null)
-				{
+			{
 				if (NPC.downedBoss2)
-						{
-						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("WaterChestnut"));
-						shop.item[nextSlot].shopCustomPrice = 3500;
-						nextSlot++;
-						}
-					if (NPC.downedBoss3)
-						{
-						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("Jelly"));
-						shop.item[nextSlot].shopCustomPrice = 7500;
-						nextSlot++;
-						}
-				}
-			if (Main.hardMode)
 				{
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("WaterChestnut"));
+					shop.item[nextSlot].shopCustomPrice = 3500;
+					nextSlot++;
+				}
+				if (NPC.downedBoss3)
+				{
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("Jelly"));
+					shop.item[nextSlot].shopCustomPrice = 7500;
+					nextSlot++;
+				}
+			}
+			if (Main.hardMode)
+			{
 				shop.item[nextSlot].SetDefaults (ItemID.PixieDust);
 				shop.item[nextSlot].shopCustomPrice = 5000;
 				nextSlot++;
@@ -662,97 +636,48 @@ namespace AlchemistNPCLite.NPCs
 				shop.item[nextSlot].SetDefaults (ItemID.Ichor);
 				shop.item[nextSlot].shopCustomPrice = 7500;
 				nextSlot++;
-				}	
-		}
-		if (tremorShop)
-		{
-			if (ModLoader.GetMod("Tremor") != null)
+			}	
+			}
+			if (plantShop)
 			{
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("BasicFlask"));
+				shop.item[nextSlot].SetDefaults(ItemID.Daybloom);
+				shop.item[nextSlot].shopCustomPrice = 1000;
 				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("FrostLiquidFlask"));
+				shop.item[nextSlot].SetDefaults(ItemID.Waterleaf);
+				shop.item[nextSlot].shopCustomPrice = 1000;
 				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("LesserHealingFlack"));
+				shop.item[nextSlot].SetDefaults(ItemID.Shiverthorn);
+				shop.item[nextSlot].shopCustomPrice = 1000;
 				nextSlot++;
-				if (Main.hardMode)
+				shop.item[nextSlot].SetDefaults(ItemID.Blinkroot);
+				shop.item[nextSlot].shopCustomPrice = 2000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ItemID.Moonglow);
+				shop.item[nextSlot].shopCustomPrice = 2000;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ItemID.Fireblossom);
+				shop.item[nextSlot].shopCustomPrice = 2500;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults(ItemID.Deathweed);
+				shop.item[nextSlot].shopCustomPrice = 2500;
+				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.Mushroom);
+				shop.item[nextSlot].shopCustomPrice = 500;
+				nextSlot++;			
+				shop.item[nextSlot].SetDefaults (ItemID.GlowingMushroom);
+				shop.item[nextSlot].shopCustomPrice = 1000;
+				nextSlot++;
+				if (NPC.downedBoss2)
 				{
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("BigHealingFlack"));
-				nextSlot++;
-				}
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("LesserManaFlask"));
-				nextSlot++;
-				if (Main.hardMode)
-				{
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("BigManaFlask"));
-				nextSlot++;
-				}
-				if (NPC.downedMoonlord)
-				{
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("SuperManaFlask"));
-				nextSlot++;
-				}
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("LesserPoisonFlask"));
-				nextSlot++;
-				if (Main.hardMode)
-				{
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("BigPoisonFlask"));
-				nextSlot++;
-				}
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("BoomFlask"));
-				nextSlot++;
-				if (Main.hardMode)
-				{
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("ExtendedBoomFlask"));
-				nextSlot++;
-				}
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("FreezeFlask"));
-				nextSlot++;
-				if (Main.hardMode)
-				{
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("ExtendedFreezeFlask"));
-				nextSlot++;
-				}
-				if (NPC.downedBoss3)
-				{
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("GoldFlask"));
-				nextSlot++;
-				}
-				shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("BurningFlask"));
-				nextSlot++;
-				if (Main.hardMode)
-				{
-					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("ExtendedBurningFlask"));
+					shop.item[nextSlot].SetDefaults (ItemID.VileMushroom);
+					shop.item[nextSlot].shopCustomPrice = 1000;
 					nextSlot++;
-					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("HealthSupportFlask"));
+					shop.item[nextSlot].SetDefaults (ItemID.ViciousMushroom);
+					shop.item[nextSlot].shopCustomPrice = 1000;
 					nextSlot++;
-					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("ManaSupportFlask"));
-					nextSlot++;
-					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("LesserVenomFlask"));
-					nextSlot++;
-					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("BigVenomFlask"));
-					nextSlot++;
-					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("CrystalFlask"));
-					shop.item[nextSlot].shopCustomPrice = 150;
-					nextSlot++;
-					if (NPC.downedPlantBoss)
-					{
-						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("PhantomFlask"));
-						nextSlot++;
-						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("PlagueFlask"));
-						nextSlot++;
-						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("SparkingFlask"));
-						nextSlot++;
-					}
-					if (NPC.downedMoonlord)
-					{
-						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("MoonDustFlask"));
-						shop.item[nextSlot].shopCustomPrice = 250;
-						nextSlot++;
-						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("ClusterFlask"));
-						shop.item[nextSlot].shopCustomPrice = 300;
-						nextSlot++;
-					}
 				}
+				if (ModLoader.GetMod("Tremor") != null)
+				{
 					if (NPC.downedBoss3)
 					{
 						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("Gloomstone"));

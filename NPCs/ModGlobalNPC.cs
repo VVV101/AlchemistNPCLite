@@ -54,6 +54,13 @@ namespace AlchemistNPCLite.NPCs
 				Player player = Main.player[k];
 				if (player.active)
 				{
+					if (type == mod.NPCType("Tinkerer"))
+					{
+						for (nextSlot = 0; nextSlot < 40; ++nextSlot)
+						{
+							shop.item[nextSlot].shopCustomPrice *= 2;
+						}
+					}
 					if (type == mod.NPCType("Brewer") || type == mod.NPCType("Alchemist") || type == mod.NPCType("Young Brewer"))
 					{
 						for (nextSlot = 0; nextSlot < 40; ++nextSlot)
@@ -208,6 +215,11 @@ namespace AlchemistNPCLite.NPCs
 			{
 				Main.npcCatchable[npc.type] = true;
 				npc.catchItem = (short)mod.ItemType("MusicianHorcrux");
+			}
+			if (npc.type == mod.NPCType("Tinkerer"))
+			{
+				Main.npcCatchable[npc.type] = true;
+				npc.catchItem = (short)mod.ItemType("TinkererHorcrux");
 			}
 		}
 
