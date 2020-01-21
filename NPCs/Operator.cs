@@ -958,6 +958,11 @@ namespace AlchemistNPCLite.NPCs
         get { return AAMod.AAWorld.downedZero; }
         }
 		
+		public override void NPCLoot()
+		{
+			Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, mod.ItemType("APMC"));
+		}
+		
 		public override void SetupShop(Chest shop, ref int nextSlot)
 		{
 			if (Shop1)
@@ -1052,16 +1057,16 @@ namespace AlchemistNPCLite.NPCs
 				if (NPC.downedMoonlord)
 				{
 					shop.item[nextSlot].SetDefaults (ItemID.FragmentSolar);
-					shop.item[nextSlot].shopCustomPrice = 50000;
+					shop.item[nextSlot].shopCustomPrice = 100000;
 					nextSlot++;
 					shop.item[nextSlot].SetDefaults (ItemID.FragmentNebula);
-					shop.item[nextSlot].shopCustomPrice = 50000;
+					shop.item[nextSlot].shopCustomPrice = 100000;
 					nextSlot++;
 					shop.item[nextSlot].SetDefaults (ItemID.FragmentVortex);
-					shop.item[nextSlot].shopCustomPrice = 50000;
+					shop.item[nextSlot].shopCustomPrice = 100000;
 					nextSlot++;
 					shop.item[nextSlot].SetDefaults (ItemID.FragmentStardust);
-					shop.item[nextSlot].shopCustomPrice = 50000;
+					shop.item[nextSlot].shopCustomPrice = 100000;
 					nextSlot++;
 				}
 			}
@@ -1072,6 +1077,18 @@ namespace AlchemistNPCLite.NPCs
 					shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("Petal"));
 					shop.item[nextSlot].shopCustomPrice = 10000;
 					nextSlot++;
+					if (NPC.downedMoonlord)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("WhiteDwarfFragment"));
+						shop.item[nextSlot].shopCustomPrice = 100000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("CometFragment"));
+						shop.item[nextSlot].shopCustomPrice = 100000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("CelestialFragment"));
+						shop.item[nextSlot].shopCustomPrice = 100000;
+						nextSlot++;
+					}
 				}
 				if (ModLoader.GetMod("CalamityMod") != null)
 				{

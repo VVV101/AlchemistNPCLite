@@ -3,6 +3,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
+using Microsoft.Xna.Framework;
 
 namespace AlchemistNPCLite.Items.Summoning
 {
@@ -43,7 +44,8 @@ namespace AlchemistNPCLite.Items.Summoning
 		
 		public override bool CanUseItem(Player player)
 		{
-			return !NPC.AnyNPCs(mod.NPCType("Operator"));
+			Vector2 vector2 = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);
+			return (!NPC.AnyNPCs(mod.NPCType("Operator")) && !Collision.SolidCollision(vector2, player.width, player.height));
 		}
 
 		public override void OnConsumeItem(Player player)
