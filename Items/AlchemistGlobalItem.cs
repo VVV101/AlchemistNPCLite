@@ -160,6 +160,92 @@ namespace AlchemistNPCLite.Items
 		public override bool UseItem(Item item, Player player)
 		{
 			AlchemistNPCLitePlayer modPlayer = player.GetModPlayer<AlchemistNPCLitePlayer>();
+			if (item.type == 1991 || item.type == 3183)
+			{
+				for (int v = 0; v < 200; ++v)
+				{
+					NPC npc = Main.npc[v];
+					if (npc.active && npc.townNPC)
+					{
+						if (AlchemistNPCLite.modConfiguration.CatchNPC)
+						{
+							if (npc.type == mod.NPCType("Alchemist"))
+							{
+								Main.npcCatchable[npc.type] = true;
+								npc.catchItem = (short)mod.ItemType("AlchemistHorcrux");
+							}
+							if (npc.type == mod.NPCType("Brewer"))
+							{
+								Main.npcCatchable[npc.type] = true;
+								npc.catchItem = (short)mod.ItemType("BrewerHorcrux");
+							}
+							if (npc.type == mod.NPCType("Architect"))
+							{
+								Main.npcCatchable[npc.type] = true;
+								npc.catchItem = (short)mod.ItemType("ArchitectHorcrux");
+							}
+							if (npc.type == mod.NPCType("Jeweler"))
+							{
+								Main.npcCatchable[npc.type] = true;
+								npc.catchItem = (short)mod.ItemType("JewelerHorcrux");
+							}
+							if (npc.type == mod.NPCType("Operator"))
+							{
+								Main.npcCatchable[npc.type] = true;
+								npc.catchItem = (short)mod.ItemType("APMC");
+							}
+							if (npc.type == mod.NPCType("Musician"))
+							{
+								Main.npcCatchable[npc.type] = true;
+								npc.catchItem = (short)mod.ItemType("MusicianHorcrux");
+							}
+							if (npc.type == mod.NPCType("Tinkerer"))
+							{
+								Main.npcCatchable[npc.type] = true;
+								npc.catchItem = (short)mod.ItemType("TinkererHorcrux");
+							}
+						}
+						if (!AlchemistNPCLite.modConfiguration.CatchNPC)
+						{
+							if (npc.type == mod.NPCType("Alchemist"))
+							{
+								Main.npcCatchable[npc.type] = false;
+								npc.catchItem = -1;
+							}
+							if (npc.type == mod.NPCType("Brewer"))
+							{
+								Main.npcCatchable[npc.type] = false;
+								npc.catchItem = -1;
+							}
+							if (npc.type == mod.NPCType("Architect"))
+							{
+								Main.npcCatchable[npc.type] = false;
+								npc.catchItem = -1;
+							}
+							if (npc.type == mod.NPCType("Jeweler"))
+							{
+								Main.npcCatchable[npc.type] = false;
+								npc.catchItem = -1;
+							}
+							if (npc.type == mod.NPCType("Operator"))
+							{
+								Main.npcCatchable[npc.type] = false;
+								npc.catchItem = -1;
+							}
+							if (npc.type == mod.NPCType("Musician"))
+							{
+								Main.npcCatchable[npc.type] = false;
+								npc.catchItem = -1;
+							}
+							if (npc.type == mod.NPCType("Tinkerer"))
+							{
+								Main.npcCatchable[npc.type] = false;
+								npc.catchItem = -1;
+							}
+						}
+					}
+				}
+			}
 			if (modPlayer.AlchemistCharmTier4)
 			{
 				player.AddBuff(item.buffType, item.buffTime + (item.buffTime/2), true);

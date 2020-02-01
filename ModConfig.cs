@@ -72,6 +72,11 @@ namespace AlchemistNPCLite
 		[Tooltip("True to make potions prices bigger. True by default")]
 		public bool RevPrices;
 		
+		[DefaultValue(true)]
+		[Label("Catcheable mod's NPCs toggle")]
+		[Tooltip("True to make mod's town NPCs catcheable. True by default")]
+		public bool CatchNPC;
+		
 		[Range(1, 1000)]
 		[DefaultValue(1)]
 		[Label("Potions price multiplier")]
