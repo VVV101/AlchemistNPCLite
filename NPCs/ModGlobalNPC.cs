@@ -329,6 +329,17 @@ namespace AlchemistNPCLite.NPCs
 
 		public override void NPCLoot(NPC npc)
 		{
+			if (npc.type == 541)
+			{
+				if (!AlchemistNPCLiteWorld.downedSandElemental) 
+				{
+					AlchemistNPCLiteWorld.downedSandElemental = true;
+					if (Main.netMode == NetmodeID.Server) 
+					{
+						NetMessage.SendData(MessageID.WorldData);
+					}
+				}
+			}
 			if (ModLoader.GetMod("CalamityMod") != null)
 			{
 				if (CalamityModDownedDOG && npc.type == 327)

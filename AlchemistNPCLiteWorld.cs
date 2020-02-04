@@ -20,11 +20,13 @@ namespace AlchemistNPCLite
 		private const int saveVersion = 0;
 		public static bool downedDOGPumpking;
 		public static bool downedDOGIceQueen;
+		public static bool downedSandElemental;
 
 		public override void Initialize()
 		{
 			downedDOGIceQueen = false;
 			downedDOGPumpking = false;
+			downedSandElemental = false;
 		}
 
 		public override TagCompound Save()
@@ -32,6 +34,7 @@ namespace AlchemistNPCLite
 			var downed = new List<string>();
 			if (downedDOGPumpking) downed.Add("DOGPumpking");
 			if (downedDOGIceQueen) downed.Add("DOGIceQueen");
+			if (downedSandElemental) downed.Add("SandElemental");
 			
 			return new TagCompound {
 				{"downed", downed}
@@ -43,6 +46,7 @@ namespace AlchemistNPCLite
 			BitsByte flags = new BitsByte();
 			flags[0] = downedDOGPumpking;
 			flags[1] = downedDOGIceQueen;
+			flags[2] = downedSandElemental;
 			writer.Write(flags);
 		}
 
@@ -51,6 +55,7 @@ namespace AlchemistNPCLite
 			BitsByte flags = reader.ReadByte();
 			downedDOGPumpking = flags[0];
 			downedDOGIceQueen = flags[1];
+			downedSandElemental = flags[2];
 			// As mentioned in NetSend, BitBytes can contain 8 values. If you have more, be sure to read the additional data:
 			// BitsByte flags2 = reader.ReadByte();
 			// downed9thBoss = flags[0];
@@ -61,6 +66,7 @@ namespace AlchemistNPCLite
 			var downed = tag.GetList<string>("downed");
 			downedDOGPumpking = downed.Contains("DOGPumpking");
 			downedDOGIceQueen = downed.Contains("DOGIceQueen");
+			downedSandElemental = downed.Contains("SandElemental");
 		}
 	}
 }

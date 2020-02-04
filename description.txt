@@ -7,6 +7,10 @@ The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 v1.7.1
 -Added Tinkerer's Horcrux to Jeweler's shop.
+-Added Feathers to Operator's shop.
+Available after beating Skeletron.
+-Added Forbidden Fragments to Operator's shop.
+Available after beating Sand Elemental.
 -Added config option to disable catcheability of mod's town NPCs.
 v1.7
 -Added Tinkerer NPC. But unlike in AlchemistNPC, his accessories would be unlocked during progression.
