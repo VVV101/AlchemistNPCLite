@@ -1098,6 +1098,48 @@ namespace AlchemistNPCLite.NPCs
 						shop.item[nextSlot].shopCustomPrice = 100000;
 						nextSlot++;
 					}
+					if (NPC.downedGolemBoss)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("BrokenHeroFragment"));
+						shop.item[nextSlot].shopCustomPrice = 250000;
+						nextSlot++;
+					}
+				}
+				if (ModLoader.GetMod("SpiritMod") != null)
+				{
+					if (NPC.downedGolemBoss)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("BrokenParts"));
+						shop.item[nextSlot].shopCustomPrice = 500000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("BrokenStaff"));
+						shop.item[nextSlot].shopCustomPrice = 500000;
+						nextSlot++;
+					}
+				}
+				if (ModLoader.GetMod("LithosArmory") != null)
+				{
+					if (NPC.downedGolemBoss)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("LithosArmory").ItemType("BrokenHeroFlail"));
+						shop.item[nextSlot].shopCustomPrice = 500000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("LithosArmory").ItemType("BrokenHeroGreatbow"));
+						shop.item[nextSlot].shopCustomPrice = 500000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("LithosArmory").ItemType("BrokenHeroShotgun"));
+						shop.item[nextSlot].shopCustomPrice = 500000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("LithosArmory").ItemType("BrokenHeroSling"));
+						shop.item[nextSlot].shopCustomPrice = 500000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("LithosArmory").ItemType("BrokenHeroSpear"));
+						shop.item[nextSlot].shopCustomPrice = 500000;
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("LithosArmory").ItemType("BrokenHeroWand"));
+						shop.item[nextSlot].shopCustomPrice = 500000;
+						nextSlot++;
+					}
 				}
 				if (ModLoader.GetMod("CalamityMod") != null)
 				{
@@ -1177,6 +1219,12 @@ namespace AlchemistNPCLite.NPCs
 					{
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("LivingShard"));
 						shop.item[nextSlot].shopCustomPrice = 30000;
+						nextSlot++;
+					}
+					if (NPC.downedGolemBoss)
+					{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("SolarVeil"));
+						shop.item[nextSlot].shopCustomPrice = 50000;
 						nextSlot++;
 					}
 					if (CalamityModDownedRavager)

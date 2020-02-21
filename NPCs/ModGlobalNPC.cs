@@ -164,7 +164,7 @@ namespace AlchemistNPCLite.NPCs
 					npc.lifeMax = 500;
 				}
 			}
-			if (npc.type == mod.NPCType("Alchemist") || npc.type == mod.NPCType("Brewer") || npc.type == mod.NPCType("Young Brewer") || npc.type == mod.NPCType("Jeweler") || npc.type == mod.NPCType("Architect") || npc.type == mod.NPCType("Musician"))
+			if (npc.type == mod.NPCType("Alchemist") || npc.type == mod.NPCType("Brewer") || npc.type == mod.NPCType("Young Brewer") || npc.type == mod.NPCType("Jeweler") || npc.type == mod.NPCType("Architect") || npc.type == mod.NPCType("Musician") || npc.type == mod.NPCType("Tinkerer"))
 			{
 				if (NPC.downedMoonlord)
 				{
@@ -180,6 +180,41 @@ namespace AlchemistNPCLite.NPCs
 						npc.lifeMax = 500;
 					}
 				}
+			}
+			if (npc.type == mod.NPCType("Alchemist"))
+			{
+				Main.npcCatchable[npc.type] = true;
+				npc.catchItem = (short)mod.ItemType("AlchemistHorcrux");
+			}
+			if (npc.type == mod.NPCType("Brewer"))
+			{
+				Main.npcCatchable[npc.type] = true;
+				npc.catchItem = (short)mod.ItemType("BrewerHorcrux");
+			}
+			if (npc.type == mod.NPCType("Architect"))
+			{
+				Main.npcCatchable[npc.type] = true;
+				npc.catchItem = (short)mod.ItemType("ArchitectHorcrux");
+			}
+			if (npc.type == mod.NPCType("Jeweler"))
+			{
+				Main.npcCatchable[npc.type] = true;
+				npc.catchItem = (short)mod.ItemType("JewelerHorcrux");
+			}
+			if (npc.type == mod.NPCType("Operator"))
+			{
+				Main.npcCatchable[npc.type] = true;
+				npc.catchItem = (short)mod.ItemType("APMC");
+			}
+			if (npc.type == mod.NPCType("Musician"))
+			{
+				Main.npcCatchable[npc.type] = true;
+				npc.catchItem = (short)mod.ItemType("MusicianHorcrux");
+			}
+			if (npc.type == mod.NPCType("Tinkerer"))
+			{
+				Main.npcCatchable[npc.type] = true;
+				npc.catchItem = (short)mod.ItemType("TinkererHorcrux");
 			}
 		}
 

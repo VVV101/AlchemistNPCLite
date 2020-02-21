@@ -26,6 +26,14 @@ namespace AlchemistNPCLite.Items
 		
 		public override void UpdateInventory(Item item, Player player)
 		{
+			if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).BoomBox)
+			{
+				if (player.inventory[49].createTile != -1 && player.inventory[49].accessory)
+				{
+					bool r = false;
+					player.VanillaUpdateAccessory(player.whoAmI, player.inventory[49], false, ref r, ref r, ref r);
+				}
+			}
 			if (player.accCritterGuide && AlchemistNPCLite.modConfiguration.LifeformAnalyzer)
 			{
 				if(Main.GameUpdateCount % 60 == 0) 
