@@ -18,6 +18,7 @@ namespace AlchemistNPCLite.NPCs
 		public static bool Shop3 = false;
 		public static bool Shop4 = false;
 		public static bool Shop5 = false;
+		public static bool Shop6 = false;
 		public override string Texture
 		{
 			get
@@ -69,6 +70,11 @@ namespace AlchemistNPCLite.NPCs
             text.SetDefault("Modded Treasure Bags Shop #2");
             text.AddTranslation(GameCulture.Russian, "Магазин сумок модовых Боссов #2");
             text.AddTranslation(GameCulture.Chinese, "模组宝藏袋商店#2    ");
+            mod.AddTranslation(text);
+			text = mod.CreateTranslation("ModdedTreasureBagsShop3");
+            text.SetDefault("Modded Treasure Bags Shop #3");
+            text.AddTranslation(GameCulture.Russian, "Магазин сумок модовых Боссов #3");
+            text.AddTranslation(GameCulture.Chinese, "模组宝藏袋商店#3    ");
             mod.AddTranslation(text);
             text = mod.CreateTranslation("ShopChanger");
             text.SetDefault("Shop Changer");
@@ -582,6 +588,7 @@ namespace AlchemistNPCLite.NPCs
 		string VanillaTreasureBagsShop = Language.GetTextValue("Mods.AlchemistNPCLite.VanillaTreasureBagsShop");
 		string ModdedTreasureBagsShop = Language.GetTextValue("Mods.AlchemistNPCLite.ModdedTreasureBagsShop");
 		string ModdedTreasureBagsShop2 = Language.GetTextValue("Mods.AlchemistNPCLite.ModdedTreasureBagsShop2");
+		string ModdedTreasureBagsShop3 = Language.GetTextValue("Mods.AlchemistNPCLite.ModdedTreasureBagsShop3");
 		string ShopChanger = Language.GetTextValue("Mods.AlchemistNPCLite.ShopChanger");
 		button = BossDropsShop;
 		if (!Main.expertMode)
@@ -612,6 +619,10 @@ namespace AlchemistNPCLite.NPCs
 			{
 			button = ModdedTreasureBagsShop2;
 			}
+			if (Shop6)
+			{
+			button = ModdedTreasureBagsShop3;
+			}
         }
  
         public override void OnChatButtonClicked(bool firstButton, ref bool shop)
@@ -625,6 +636,7 @@ namespace AlchemistNPCLite.NPCs
 					Shop3 = false;
 					Shop4 = false;
 					Shop5 = false;
+					Shop6 = false;
 					shop = true;
 				}
 				if (Main.expertMode)
@@ -642,6 +654,7 @@ namespace AlchemistNPCLite.NPCs
 					Shop3 = false;
 					Shop4 = false;
 					Shop5 = false;
+					Shop6 = false;
 					shop = true;
 				}
 				if (Main.expertMode)
@@ -785,6 +798,10 @@ namespace AlchemistNPCLite.NPCs
         get { return ThoriumMod.ThoriumWorld.downedRealityBreaker; }
         }
 		
+		public bool SacredToolsDownedDecree
+		{
+        get { return SacredTools.ModdedWorld.downedDecree; }
+        }
 		public bool SacredToolsDownedPumpkin
 		{
         get { return SacredTools.ModdedWorld.downedPumpboi; }
@@ -793,9 +810,17 @@ namespace AlchemistNPCLite.NPCs
 		{
         get { return SacredTools.ModdedWorld.downedHarpy; }
         }
+		public bool SacredToolsDownedAraneas
+		{
+        get { return SacredTools.ModdedWorld.downedAraneas; }
+        }
 		public bool SacredToolsDownedHarpyHM
 		{
         get { return SacredTools.ModdedWorld.downedRaynare; }
+        }
+		public bool SacredToolsDownedPrimordia
+		{
+        get { return SacredTools.ModdedWorld.downedPrimordia; }
         }
 		public bool SacredToolsDownedAbbadon
 		{
@@ -956,6 +981,63 @@ namespace AlchemistNPCLite.NPCs
 		public bool AAModDownedShen
 		{
         get { return AAMod.AAWorld.downedZero; }
+        }
+		
+		public bool EADownedWasteland
+		{
+        get { return ElementsAwoken.MyWorld.downedWasteland; }
+        }
+		public bool EADownedWyrm
+		{
+        get { return ElementsAwoken.MyWorld.downedAncientWyrm;}
+        }
+		public bool EADownedInfernace
+		{
+        get { return ElementsAwoken.MyWorld.downedInfernace; }
+        }
+		public bool EADownedScourgeFighter
+		{
+        get { return ElementsAwoken.MyWorld.downedScourgeFighter; }
+        }
+		public bool EADownedRegaroth
+		{
+        get { return ElementsAwoken.MyWorld.downedRegaroth; }
+        }
+		public bool EADownedCelestials
+		{
+        get { return ElementsAwoken.MyWorld.downedCelestial; }
+        }
+		public bool EADownedObsidious
+		{
+        get { return ElementsAwoken.MyWorld.downedObsidious; }
+        }
+		public bool EADownedPermafrost
+		{
+        get { return ElementsAwoken.MyWorld.downedPermafrost; }
+        }
+		public bool EADownedAqueous
+		{
+        get { return ElementsAwoken.MyWorld.downedAqueous; }
+        }
+		public bool EADownedGuardian
+		{
+        get { return ElementsAwoken.MyWorld.downedGuardian; }
+        }
+		public bool EADownedVolcanox
+		{
+        get { return ElementsAwoken.MyWorld.downedVolcanox; }
+        }
+		public bool EADownedVoidLevi
+		{
+        get { return ElementsAwoken.MyWorld.downedVoidLeviathan; }
+        }
+		public bool EADownedAzana
+		{
+        get { return ElementsAwoken.MyWorld.downedAzana; }
+        }
+		public bool EADownedAncients
+		{
+        get { return ElementsAwoken.MyWorld.downedAncients; }
         }
 		
 		public override void NPCLoot()
@@ -1611,50 +1693,68 @@ namespace AlchemistNPCLite.NPCs
 					if (ModLoader.GetMod("SacredTools") != null)
 					{
 						if (NPC.downedBoss3)	
-						{
-							if (SacredToolsDownedPumpkin)
-								{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("PumpkinBag"));
-								shop.item[nextSlot].shopCustomPrice = 500000;
-								nextSlot++;
-								}
-							if (SacredToolsDownedHarpyPreHM)
-								{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("HarpyBag"));
-								shop.item[nextSlot].shopCustomPrice = 1000000;
-								nextSlot++;
-								}
-							if (SacredToolsDownedHarpyHM)
-								{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("HarpyBag2"));
-								shop.item[nextSlot].shopCustomPrice = 2000000;
-								nextSlot++;
-								}
-							if (SacredToolsDownedAbbadon)
-								{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("OblivionBag"));
-								shop.item[nextSlot].shopCustomPrice = 5000000;
-								nextSlot++;
-								}
-							if (SacredToolsDownedAraghur)
-								{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("SerpentBag"));
-								shop.item[nextSlot].shopCustomPrice = 7500000;
-								nextSlot++;
-								}
-							if (SacredToolsDownedLunarians)
-								{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("LunarBag"));
-								shop.item[nextSlot].shopCustomPrice = 10000000;
-								nextSlot++;
-								}
-							if (SacredToolsDownedChallenger)
-								{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("ChallengerBag"));
-								shop.item[nextSlot].shopCustomPrice = 15000000;
-								nextSlot++;
-								}
-						}
+							{
+								if (SacredToolsDownedDecree)
+									{
+									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("DecreeBag"));
+									shop.item[nextSlot].shopCustomPrice = 330000;
+									nextSlot++;
+									}
+								if (SacredToolsDownedPumpkin)
+									{
+									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("PumpkinBag"));
+									shop.item[nextSlot].shopCustomPrice = 500000;
+									nextSlot++;
+									}
+								if (SacredToolsDownedHarpyPreHM)
+									{
+									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("HarpyBag"));
+									shop.item[nextSlot].shopCustomPrice = 1000000;
+									nextSlot++;
+									}
+								if (SacredToolsDownedAraneas)
+									{
+									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("AraneasBag"));
+									shop.item[nextSlot].shopCustomPrice = 1500000;
+									nextSlot++;
+									}
+								if (SacredToolsDownedHarpyHM)
+									{
+									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("HarpyBag2"));
+									shop.item[nextSlot].shopCustomPrice = 2000000;
+									nextSlot++;
+									}
+								if (SacredToolsDownedPrimordia)
+									{
+									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("PrimordiaBag"));
+									shop.item[nextSlot].shopCustomPrice = 3000000;
+									nextSlot++;
+									}
+								if (SacredToolsDownedAbbadon)
+									{
+									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("OblivionBag"));
+									shop.item[nextSlot].shopCustomPrice = 5000000;
+									nextSlot++;
+									}
+								if (SacredToolsDownedAraghur)
+									{
+									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("SerpentBag"));
+									shop.item[nextSlot].shopCustomPrice = 7500000;
+									nextSlot++;
+									}
+								if (SacredToolsDownedLunarians)
+									{
+									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("LunarBag"));
+									shop.item[nextSlot].shopCustomPrice = 10000000;
+									nextSlot++;
+									}
+								if (SacredToolsDownedChallenger)
+									{
+									shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SacredTools").ItemType("ChallengerBag"));
+									shop.item[nextSlot].shopCustomPrice = 15000000;
+									nextSlot++;
+									}
+							}
 					}
 			}
 			if (Shop5)
@@ -1885,6 +1985,104 @@ namespace AlchemistNPCLite.NPCs
 						{
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("pinkymod").ItemType("GatekeeperTreasureBag"));
 						shop.item[nextSlot].shopCustomPrice = 2500000;
+						nextSlot++;
+						}
+					}
+				}
+			}
+			if (Shop6)
+			{
+				if (!NPC.downedBoss3)
+				{
+					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AlchemistNPCLite").ItemType("InformatingNote"));
+					nextSlot++;
+				}
+				if (NPC.downedBoss3 && Main.expertMode)
+				{
+					if (ModLoader.GetMod("ElementsAwoken") != null)
+					{
+						if (EADownedWasteland)
+						{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ElementsAwoken").ItemType("WastelandBag"));
+						shop.item[nextSlot].shopCustomPrice = 300000;
+						nextSlot++;
+						}
+						if (EADownedInfernace)
+						{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ElementsAwoken").ItemType("InfernaceBag"));
+						shop.item[nextSlot].shopCustomPrice = 500000;
+						nextSlot++;
+						}
+						if (EADownedScourgeFighter)
+						{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ElementsAwoken").ItemType("ScourgeFighterBag"));
+						shop.item[nextSlot].shopCustomPrice = 1500000;
+						nextSlot++;
+						}
+						if (EADownedRegaroth)
+						{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ElementsAwoken").ItemType("RegarothBag"));
+						shop.item[nextSlot].shopCustomPrice = 1750000;
+						nextSlot++;
+						}
+						if (EADownedCelestials)
+						{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ElementsAwoken").ItemType("TheCelestialBag"));
+						shop.item[nextSlot].shopCustomPrice = 2000000;
+						nextSlot++;
+						}
+						if (EADownedPermafrost)
+						{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ElementsAwoken").ItemType("PermafrostBag"));
+						shop.item[nextSlot].shopCustomPrice = 2250000;
+						nextSlot++;
+						}
+						if (EADownedObsidious)
+						{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ElementsAwoken").ItemType("ObsidiousBag"));
+						shop.item[nextSlot].shopCustomPrice = 2250000;
+						nextSlot++;
+						}
+						if (EADownedAqueous)
+						{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ElementsAwoken").ItemType("AqueousBag"));
+						shop.item[nextSlot].shopCustomPrice = 2500000;
+						nextSlot++;
+						}
+						if (EADownedWyrm)
+						{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ElementsAwoken").ItemType("TempleKeepersBag"));
+						shop.item[nextSlot].shopCustomPrice = 2750000;
+						nextSlot++;
+						}
+						if (EADownedGuardian)
+						{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ElementsAwoken").ItemType("GuardianBag"));
+						shop.item[nextSlot].shopCustomPrice = 3000000;
+						nextSlot++;
+						}
+						if (EADownedVolcanox)
+						{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ElementsAwoken").ItemType("VolcanoxBag"));
+						shop.item[nextSlot].shopCustomPrice = 5000000;
+						nextSlot++;
+						}
+						if (EADownedVoidLevi)
+						{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ElementsAwoken").ItemType("VoidLeviathanBag"));
+						shop.item[nextSlot].shopCustomPrice = 6000000;
+						nextSlot++;
+						}
+						if (EADownedAzana)
+						{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ElementsAwoken").ItemType("AzanaBag"));
+						shop.item[nextSlot].shopCustomPrice = 8000000;
+						nextSlot++;
+						}
+						if (EADownedAncients)
+						{
+						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ElementsAwoken").ItemType("AncientsBag"));
+						shop.item[nextSlot].shopCustomPrice = 10000000;
 						nextSlot++;
 						}
 					}

@@ -26,7 +26,7 @@ namespace AlchemistNPCLite.Interface
 			OperatorShopsPanel.Left.Set(575f, 0f);
 			OperatorShopsPanel.Top.Set(275f, 0f);
 			OperatorShopsPanel.Width.Set(300f, 0f);
-			OperatorShopsPanel.Height.Set(160f, 0f);
+			OperatorShopsPanel.Height.Set(190f, 0f);
 			OperatorShopsPanel.BackgroundColor = new Color(73, 94, 171);
 
 			OperatorShopsPanel.OnMouseDown += new UIElement.MouseEvent(DragStart);
@@ -67,6 +67,13 @@ namespace AlchemistNPCLite.Interface
 			text4.Height.Set(22, 0f);
 			OperatorShopsPanel.Append(text4);
 			
+			UIText text5 = new UIText("Modded Treasure Bags #3");
+			text5.Left.Set(35, 0f);
+			text5.Top.Set(160, 0f);
+			text5.Width.Set(120, 0f);
+			text5.Height.Set(22, 0f);
+			OperatorShopsPanel.Append(text5);
+			
 			Texture2D buttonPlayTexture = ModContent.GetTexture("Terraria/UI/ButtonPlay");
 			UIImageButton playButton = new UIImageButton(buttonPlayTexture);
 			playButton.Left.Set(10, 0f);
@@ -103,6 +110,13 @@ namespace AlchemistNPCLite.Interface
 			playButton4.Height.Set(22, 0f);
 			playButton4.OnClick += new MouseEvent(PlayButtonClicked4);
 			OperatorShopsPanel.Append(playButton4);
+			UIImageButton playButton5 = new UIImageButton(buttonPlayTexture);
+			playButton5.Left.Set(10, 0f);
+			playButton5.Top.Set(160, 0f);
+			playButton5.Width.Set(22, 0f);
+			playButton5.Height.Set(22, 0f);
+			playButton5.OnClick += new MouseEvent(PlayButtonClicked5);
+			OperatorShopsPanel.Append(playButton5);
 
 			Texture2D buttonDeleteTexture = ModContent.GetTexture("Terraria/UI/ButtonDelete");
 			UIImageButton closeButton = new UIImageButton(buttonDeleteTexture);
@@ -122,6 +136,7 @@ namespace AlchemistNPCLite.Interface
 			Operator.Shop3 = false;
 			Operator.Shop4 = false;
 			Operator.Shop5 = false;
+			Operator.Shop6 = false;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUIO.visible = false;
 			Main.playerInventory = true;
@@ -137,6 +152,7 @@ namespace AlchemistNPCLite.Interface
 			Operator.Shop3 = false;
 			Operator.Shop4 = false;
 			Operator.Shop5 = false;
+			Operator.Shop6 = false;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUIO.visible = false;
 			Main.playerInventory = true;
@@ -152,6 +168,7 @@ namespace AlchemistNPCLite.Interface
 			Operator.Shop3 = true;
 			Operator.Shop4 = false;
 			Operator.Shop5 = false;
+			Operator.Shop6 = false;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUIO.visible = false;
 			Main.playerInventory = true;
@@ -167,6 +184,7 @@ namespace AlchemistNPCLite.Interface
 			Operator.Shop3 = false;
 			Operator.Shop4 = true;
 			Operator.Shop5 = false;
+			Operator.Shop6 = false;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUIO.visible = false;
 			Main.playerInventory = true;
@@ -182,6 +200,23 @@ namespace AlchemistNPCLite.Interface
 			Operator.Shop3 = false;
 			Operator.Shop4 = false;
 			Operator.Shop5 = true;
+			Operator.Shop6 = false;
+			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
+			ShopChangeUIO.visible = false;
+			Main.playerInventory = true;
+			Main.npcChatText = "";
+			Main.npcShop = Main.MaxShopIDs - 1;
+			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+		}
+		
+		private void PlayButtonClicked5(UIMouseEvent evt, UIElement listeningElement)
+		{
+			Operator.Shop1 = false;
+			Operator.Shop2 = false;
+			Operator.Shop3 = false;
+			Operator.Shop4 = false;
+			Operator.Shop5 = false;
+			Operator.Shop6 = true;
 			NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
 			ShopChangeUIO.visible = false;
 			Main.playerInventory = true;

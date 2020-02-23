@@ -6,6 +6,7 @@ The spawn condition for the Operator is to beat EoW/BoC.
 The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 v1.7.2
+-Added support to Elements Awoken mod for Operator. Fixed some other mod's errors.
 -Added all Broken Hero stuff from Vanilla/Thorium/Spirit/Litho's Armory mods.
 Available after beating Golem.
 -Added Solar Veil to Operator's shop.

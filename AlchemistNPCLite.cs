@@ -677,33 +677,130 @@ namespace AlchemistNPCLite
             text.AddTranslation(GameCulture.Chinese, "灾难之灵宝藏袋");
             AddTranslation(text);
 
+			 //ElementsAwoken
+			text = CreateTranslation("Wasteland");
+            text.SetDefault("Wasteland Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Infernace");
+            text.SetDefault("Infernace Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("ScourgeFighter");
+            text.SetDefault("Scourge Fighter Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Regaroth");
+            text.SetDefault("Regaroth Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("TheCelestials");
+            text.SetDefault("The Celestials Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Permafrost");
+            text.SetDefault("Permafrost Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Obsidious");
+            text.SetDefault("Obsidious Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Aqueous");
+            text.SetDefault("Aqueous Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("TempleKeepers");
+            text.SetDefault("The Temple Keepers Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Guardian");
+            text.SetDefault("The Guardian Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Volcanox");
+            text.SetDefault("Volcanox Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("VoidLevi");
+            text.SetDefault("Void Leviathan Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Azana");
+            text.SetDefault("Azana Treasure Bag");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Ancients");
+            text.SetDefault("The Ancients Treasure Bag");
+            AddTranslation(text);
+
 			 //SacredTools
+			text = CreateTranslation("Decree");
+            text.SetDefault("The Decree Treasure Bag");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Декри");
+			text.AddTranslation(GameCulture.Chinese, "焚炎南瓜宝藏袋");
+            AddTranslation(text);
+			 
             text = CreateTranslation("FlamingPumpkin");
             text.SetDefault("The Flaming Pumpkin Treasure Bag");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Горящей Тыквы");
             AddTranslation(text);
 			
 			text = CreateTranslation("Jensen");
-            text.SetDefault("Jansen, the Grand Harpy Treasure Bag");
+            text.SetDefault("Jensen, the Grand Harpy Treasure Bag");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Дженсен, Великой Гарпии");
+			text.AddTranslation(GameCulture.Chinese, "巨型鸟妖詹森宝藏袋");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Araneas");
+            text.SetDefault("Araneas Treasure Bag");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Аранеи");
             AddTranslation(text);
 			
 			text = CreateTranslation("Raynare");
             text.SetDefault("Harpy Queen, Raynare Treasure Bag");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Рейнейр, Королевы Гарпий");
+			text.AddTranslation(GameCulture.Chinese, "鸟妖女王雷纳宝藏袋");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Primordia");
+            text.SetDefault("Primordia Treasure Bag");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Примордии");
             AddTranslation(text);
 			
 			text = CreateTranslation("Abaddon");
             text.SetDefault("Abaddon, the Emissary of Nightmares Treasure Bag");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Абаддона, Эмиссара Кошмаров");
+			text.AddTranslation(GameCulture.Chinese, "梦魇使者亚巴顿宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Araghur");
             text.SetDefault("Araghur, the Flare Serpent Treasure Bag");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Арагура, Огненного Змия");
+			text.AddTranslation(GameCulture.Chinese, "熔火巨蟒宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Lunarians");
             text.SetDefault("The Lunarians Treasure Bag");
+	    	text.AddTranslation(GameCulture.Russian, "Сумка Лунарианов");
+			text.AddTranslation(GameCulture.Chinese, "月军宝藏袋");
             AddTranslation(text);
 			
 			text = CreateTranslation("Challenger");
-            text.SetDefault("The Challenger Treasure Bag");
+            text.SetDefault("Erazor Treasure Bag");
+			text.AddTranslation(GameCulture.Russian, "Сумка Ирэйзора");
+			text.AddTranslation(GameCulture.Chinese, "堕落帝者宝藏袋");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Challenger");
+            text.SetDefault("Erazor Treasure Bag");
+			text.AddTranslation(GameCulture.Russian, "Сумка Ирэйзора");
+			text.AddTranslation(GameCulture.Chinese, "堕落帝者宝藏袋");
+            AddTranslation(text);
+			
+			text = CreateTranslation("Spookboi");
+            text.SetDefault("Nihilus Treasure Bag");
+			text.AddTranslation(GameCulture.Russian, "Сумка Нигилюса");
             AddTranslation(text);
 			
 			//SpiritMod
