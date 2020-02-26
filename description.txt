@@ -14,6 +14,7 @@ Available after beating Golem.
 -Added Boom Box to Musician's 3rd shop.
 Allows to passively play music boxes placed in the last inventory slot.
 -Added recipes for Obsidian, Honey and Crispy Honey blocks.
+-Added Calamity mod's Tesla Potion to Brewer's 2nd shop.
 -Fixed mod's NPC summoning items not working.
 -Fixed Materia Transmutators not working as Thorium Anvil and Arcane Armor Fabricator.
 v1.7.1

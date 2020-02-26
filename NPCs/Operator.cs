@@ -1524,22 +1524,19 @@ namespace AlchemistNPCLite.NPCs
 					}
 					if (ModLoader.GetMod("CalamityMod") != null)
 					{
-						if (NPC.downedPlantBoss)
+						if (CalamityModDownedCalamitas)
 						{
-							if (CalamityModDownedCalamitas)
+							if (!CalamityModDownedProvidence)
 							{
-								if (!CalamityModDownedProvidence)
-								{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("CalamitasBag"));
-								shop.item[nextSlot].shopCustomPrice = 3000000;
-								nextSlot++;
-								}
-								if (CalamityModDownedProvidence)
-								{
-								shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("CalamitasBag"));
-								shop.item[nextSlot].shopCustomPrice = 5000000;
-								nextSlot++;
-								}
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("CalamitasBag"));
+							shop.item[nextSlot].shopCustomPrice = 3000000;
+							nextSlot++;
+							}
+							if (CalamityModDownedProvidence)
+							{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("CalamitasBag"));
+							shop.item[nextSlot].shopCustomPrice = 5000000;
+							nextSlot++;
 							}
 						}
 						if (CalamityModDownedLeviathan)
