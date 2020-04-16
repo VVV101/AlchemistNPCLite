@@ -202,7 +202,7 @@ namespace AlchemistNPCLite
 					{
 						if (ModLoader.GetMod("CalamityMod") != null)
 						{
-							if (player.bank.item[index1].buffType == ModLoader.GetMod("CalamityMod").BuffType("HeartAttack"))
+							if (player.bank.item[index1].buffType == ModLoader.GetMod("CalamityMod").BuffType("AbsoluteRage"))
 							{
 								for (int v = 0; v < 200; ++v)
 								{
@@ -417,7 +417,7 @@ namespace AlchemistNPCLite
 		private void CalamityRage(Player player)
         {
 			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-			CalamityPlayer.stress = 10000;
+			CalamityPlayer.rage = rageMax;
         }
 	}
 }
