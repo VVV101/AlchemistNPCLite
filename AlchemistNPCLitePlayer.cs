@@ -417,7 +417,7 @@ namespace AlchemistNPCLite
 		private void CalamityRage(Player player)
         {
 			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-			CalamityPlayer.rage = rageMax;
+			CalamityPlayer.rage = CalamityPlayer.rageMax;
         }
 	}
 }
