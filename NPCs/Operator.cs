@@ -684,6 +684,10 @@ namespace AlchemistNPCLite.NPCs
 		{
 		get { return CalamityMod.World.CalamityWorld.downedPolterghast; }
 		}
+		public bool CalamityModDownedOldDuke
+		{
+		get { return CalamityMod.World.CalamityWorld.downedBoomerDuke; }
+		}
 		public bool CalamityModDownedDOG
 		{
 		get { return CalamityMod.World.CalamityWorld.downedDoG; }
@@ -1002,10 +1006,6 @@ namespace AlchemistNPCLite.NPCs
 		public bool EADownedRegaroth
 		{
         get { return ElementsAwoken.MyWorld.downedRegaroth; }
-        }
-		public bool EADownedCelestials
-		{
-        get { return ElementsAwoken.MyWorld.downedCelestial; }
         }
 		public bool EADownedObsidious
 		{
@@ -1649,6 +1649,13 @@ namespace AlchemistNPCLite.NPCs
 							shop.item[nextSlot].shopCustomPrice = 7500000;
 							nextSlot++;
 						}
+						if(CalamityModDownedOldDuke)
+						{
+							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("OldDukeBag"));
+							shop.item[nextSlot].shopCustomPrice = new int?(7);
+							shop.item[nextSlot].shopSpecialCurrency = AlchemistNPC.ReversivityCoinTier6ID;
+							nextSlot++;
+						}
 						if (CalamityModDownedDOG)
 						{
 							shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("DevourerofGodsBag"));
@@ -2073,12 +2080,6 @@ namespace AlchemistNPCLite.NPCs
 						{
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ElementsAwoken").ItemType("RegarothBag"));
 						shop.item[nextSlot].shopCustomPrice = 1750000;
-						nextSlot++;
-						}
-						if (EADownedCelestials)
-						{
-						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ElementsAwoken").ItemType("TheCelestialBag"));
-						shop.item[nextSlot].shopCustomPrice = 2000000;
 						nextSlot++;
 						}
 						if (EADownedPermafrost)
