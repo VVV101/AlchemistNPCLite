@@ -375,9 +375,10 @@ namespace AlchemistNPCLite.NPCs
 					}
 				}
 			}
-			if (ModLoader.GetMod("CalamityMod") != null)
+			Mod Calamity = ModLoader.GetMod("CalamityMod");
+			if(Calamity != null)
 			{
-				if (CalamityModDownedDOG && npc.type == 327)
+				if ((bool)Calamity.Call("Downed", "dog") && npc.type == 327)
 				{
 					if (!AlchemistNPCLiteWorld.downedDOGPumpking) {
 						AlchemistNPCLiteWorld.downedDOGPumpking = true;
@@ -387,7 +388,7 @@ namespace AlchemistNPCLite.NPCs
 					}
 				}
 				
-				if (CalamityModDownedDOG && npc.type == 345)
+				if ((bool)Calamity.Call("Downed", "dog") && npc.type == 345)
 				{
 					if (!AlchemistNPCLiteWorld.downedDOGIceQueen) {
 						AlchemistNPCLiteWorld.downedDOGIceQueen = true;
@@ -411,10 +412,6 @@ namespace AlchemistNPCLite.NPCs
 		{
         get { return CalamityMod.World.CalamityWorld.revenge; }
         }
-		public bool CalamityModDownedDOG
-		{
-		get { return CalamityMod.World.CalamityWorld.downedDoG; }
-		}
 		
 		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 	}

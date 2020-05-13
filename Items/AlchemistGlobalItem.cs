@@ -19,11 +19,6 @@ namespace AlchemistNPCLite.Items
 		public static bool Luck = false;
 		public static bool Luck2 = false;
 		
-		public bool CalamityModDownedSCal
-		{
-		get { return CalamityMod.World.CalamityWorld.downedSCal; }
-		}
-		
 		public override void UpdateInventory(Item item, Player player)
 		{
 			if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).BoomBox)
@@ -132,11 +127,12 @@ namespace AlchemistNPCLite.Items
 		{
 			if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier4 == true && (item.buffTime > 0 || item.healLife > 0 || item.healMana > 0 || item.UseSound == SoundID.Item3))
 			{
-				if (ModLoader.GetMod("CalamityMod") != null)
+				Mod Calamity = ModLoader.GetMod("CalamityMod");
+				if (Calamity != null)
 				{
-					if (CalamityModDownedSCal)
+					if ((bool)Calamity.Call("Downed", "supreme calamitas"))
 					{
-					return false;
+						return false;
 					}
 				}
 				if (Main.rand.NextFloat() >= .25f)
@@ -309,6 +305,7 @@ namespace AlchemistNPCLite.Items
             string Ravager = Language.GetTextValue("Mods.AlchemistNPCLite.Ravager");
             string Providence = Language.GetTextValue("Mods.AlchemistNPCLite.Providence");
             string Polterghast = Language.GetTextValue("Mods.AlchemistNPCLite.Polterghast");
+			string OldDuke = Language.GetTextValue("Mods.AlchemistNPCLite.OldDuke");
             string DevourerofGods = Language.GetTextValue("Mods.AlchemistNPCLite.DevourerofGods");
             string Bumblebirb = Language.GetTextValue("Mods.AlchemistNPCLite.Bumblebirb");
             string Yharon = Language.GetTextValue("Mods.AlchemistNPCLite.Yharon");
@@ -604,6 +601,12 @@ namespace AlchemistNPCLite.Items
 				if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("PolterghastBag")))
 				{
 				TooltipLine line = new TooltipLine(mod, "Polterghast", Polterghast);
+				line.overrideColor = Color.LimeGreen;
+				tooltips.Insert(1,line);
+				}
+				if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("OldDukeBag")))
+				{
+				TooltipLine line = new TooltipLine(mod, "OldDuke", OldDuke);
 				line.overrideColor = Color.LimeGreen;
 				tooltips.Insert(1,line);
 				}
