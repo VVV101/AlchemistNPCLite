@@ -7,6 +7,7 @@ The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 v1.7.3
 -Added Old Duke's bag in Operator's modded bags shop.
+-Added Sulphurskin Potion to Brewer's shop.
 -Fixed Calamity mod's Rage and Adrenaline related mechanics.
 -Some code polishing.
 -Changed price of Marble and Granite blocks.
