@@ -32,228 +32,228 @@ namespace AlchemistNPCLite.NPCs
 				return "AlchemistNPCLite/NPCs/Architect";
 			}
 		}
-
-		public override bool Autoload(ref string name)
-		{
-			name = "Architect";
-			return true;
-		}
+		// Possibly removed
+		// public override bool Autoload(ref string name)
+		// {
+		// 	name = "Architect";
+		// 	return true;
+		// }
 
 		public override void SetStaticDefaults()
 		{
             DisplayName.SetDefault("Architect");
-            DisplayName.AddTranslation(GameCulture.Chinese, "建筑师");
-            Main.npcFrameCount[npc.type] = 26;   
-			NPCID.Sets.AttackFrameCount[npc.type] = 5;
-			NPCID.Sets.DangerDetectRange[npc.type] = 100;
-			NPCID.Sets.AttackType[npc.type] = 3;
-			NPCID.Sets.AttackTime[npc.type] = 35;
-			NPCID.Sets.AttackAverageChance[npc.type] = 50;
-			NPCID.Sets.HatOffsetY[npc.type] = -4;
+            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "建筑师");
+            Main.npcFrameCount[NPC.type] = 26;   
+			NPCID.Sets.AttackFrameCount[NPC.type] = 5;
+			NPCID.Sets.DangerDetectRange[NPC.type] = 100;
+			NPCID.Sets.AttackType[NPC.type] = 3;
+			NPCID.Sets.AttackTime[NPC.type] = 35;
+			NPCID.Sets.AttackAverageChance[NPC.type] = 50;
+			NPCID.Sets.HatOffsetY[NPC.type] = -4;
 
-            ModTranslation text = mod.CreateTranslation("Joe");
+            ModTranslation text = LocalizationLoader.CreateTranslation(Mod, "Joe");
             text.SetDefault("Joe");
-            text.AddTranslation(GameCulture.Russian, "Джо");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("Mark");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Джо");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "Mark");
             text.SetDefault("Mark");
-            text.AddTranslation(GameCulture.Russian, "Марк");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("Walter");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Марк");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "Walter");
             text.SetDefault("Walter");
-            text.AddTranslation(GameCulture.Russian, "Вальтер");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("Archer");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Вальтер");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "Archer");
             text.SetDefault("Archer");
-            text.AddTranslation(GameCulture.Russian, "Арчер");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("Frido");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Арчер");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "Frido");
             text.SetDefault("Frido");
-            text.AddTranslation(GameCulture.Russian, "Фридо");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("Li");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Фридо");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "Li");
             text.SetDefault("Li");
-            text.AddTranslation(GameCulture.Russian, "Ли");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("A1");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ли");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "A1");
             text.SetDefault("If this dastardly ");
-            text.AddTranslation(GameCulture.Russian, "Если эта трусливая ");
-            text.AddTranslation(GameCulture.Chinese, "如果这个卑鄙的 ");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("A2");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Если эта трусливая ");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "如果这个卑鄙的 ");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "A2");
             text.SetDefault(" isn't going to shut up, I'm letting ");
-            text.AddTranslation(GameCulture.Russian, " не замолчит, я позволю ");
-            text.AddTranslation(GameCulture.Chinese, " 再不住口的话, 我会让 ");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("A3");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), " не замолчит, я позволю ");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), " 再不住口的话, 我会让 ");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "A3");
             text.SetDefault(" bite her.");
-            text.AddTranslation(GameCulture.Russian, " укусить её.");
-            text.AddTranslation(GameCulture.Chinese, " 咬她.");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("A4");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), " укусить её.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), " 咬她.");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "A4");
             text.SetDefault("KILL THE ZOMBIES! KILL THE BUNNIES! IN THE NAME OF THE BLOO- oh sorry I didn't notice you here.");
-            text.AddTranslation(GameCulture.Russian, "УБИВАЙ ЗОМБИ! УБИВАЙ КРОЛИКОВ! ВО ИМЯ КРОВ-- Ой прости, я не заметил, что ты здесь.");
-            text.AddTranslation(GameCulture.Chinese, "杀掉那个僵尸! 杀掉那个兔子! 那个名字是血- 哦, 抱歉, 我没注意到你在这里.");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("A5");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "УБИВАЙ ЗОМБИ! УБИВАЙ КРОЛИКОВ! ВО ИМЯ КРОВ-- Ой прости, я не заметил, что ты здесь.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "杀掉那个僵尸! 杀掉那个兔子! 那个名字是血- 哦, 抱歉, 我没注意到你在这里.");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "A5");
             text.SetDefault("Why hello there I'm just getting some blood buckets for a lake I'm making pleasedontaskanymorequestions");
-            text.AddTranslation(GameCulture.Russian, "Привет. Я просто собираю несколько вёдер крови для озера. Пожалуйста, большеничегонеспрашивай.");
-            text.AddTranslation(GameCulture.Chinese, "哦嗨你好我正在为一个湖收集一些装满血的水桶我很开心所以别问我更多问题了再见.");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("A6");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Привет. Я просто собираю несколько вёдер крови для озера. Пожалуйста, большеничегонеспрашивай.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "哦嗨你好我正在为一个湖收集一些装满血的水桶我很开心所以别问我更多问题了再见.");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "A6");
             text.SetDefault("I like it when there is a gigantic horde of zombies behind our doors. But I HATE WHEN THEY BREAK MY DOORS!");
-            text.AddTranslation(GameCulture.Russian, "Я люблю, когда за нашими дверями огромная орда зомби. Но Я НЕНАВИЖУ КОГДА ОНИ ИХ ЛОМАЮТ!");
-            text.AddTranslation(GameCulture.Chinese, "当有一大堆僵尸在我的门后面时我很喜欢它，但是当它们打破我的门时我恨它!");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("A7");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Я люблю, когда за нашими дверями огромная орда зомби. Но Я НЕНАВИЖУ КОГДА ОНИ ИХ ЛОМАЮТ!");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "当有一大堆僵尸在我的门后面时我很喜欢它，但是当它们打破我的门时我恨它!");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "A7");
             text.SetDefault("Ah, the feeling that I'm not safe, the paranoia is embraced the moment the bloodmoon rises up in the sky.");
-            text.AddTranslation(GameCulture.Russian, "Ах, это чувство отсутствия безопасности, паранойя, которая подчёркивается моментом, когда кровавая луна восходит на небосводе.");
-            text.AddTranslation(GameCulture.Chinese, "啊哈, 这种不安全的感觉, 偏执狂热爱这种血月在空中的感觉.");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("A8");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ах, это чувство отсутствия безопасности, паранойя, которая подчёркивается моментом, когда кровавая луна восходит на небосводе.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "啊哈, 这种不安全的感觉, 偏执狂热爱这种血月在空中的感觉.");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "A8");
             text.SetDefault("Are you interested in my religion? It invloves sacrifices to the bloody moon.");
-            text.AddTranslation(GameCulture.Russian, "Ты заинтересован в моей религии? У нас есть жертвы Кровавой Луне.");
-            text.AddTranslation(GameCulture.Chinese, "你对我的信仰感兴趣吗? 它涉及对血月的牺牲.");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("A9");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ты заинтересован в моей религии? У нас есть жертвы Кровавой Луне.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "你对我的信仰感兴趣吗? 它涉及对血月的牺牲.");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "A9");
             text.SetDefault("Do you know why I hate these goblins? They are mildly annoying.");
-            text.AddTranslation(GameCulture.Russian, "Знаешь, почему я ненавижу этих гоблинов? Они ужасно раздражающие.");
-            text.AddTranslation(GameCulture.Chinese, "你知道为毛我恨这些哥布林嘛? 他们太鸡儿吵了.");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("A10");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Знаешь, почему я ненавижу этих гоблинов? Они ужасно раздражающие.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "你知道为毛我恨这些哥布林嘛? 他们太鸡儿吵了.");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "A10");
             text.SetDefault("Hooray to pirates! They supply me with my golden furniture!");
-            text.AddTranslation(GameCulture.Russian, "Ура пиратам! Они привозят мне золотую мебель!");
-            text.AddTranslation(GameCulture.Chinese, "海盗万岁! 他们给我供应金家具!");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("A11");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ура пиратам! Они привозят мне золотую мебель!");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "海盗万岁! 他们给我供应金家具!");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "A11");
             text.SetDefault("Ah! Finally some proper plating to have my roof done!");
-            text.AddTranslation(GameCulture.Russian, "Ах! Наконец-то хорошое покрытие для моей крыши готово!");
-            text.AddTranslation(GameCulture.Chinese, "啊哈! 最后进行一些适当的电镀来完成我的屋顶!");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("A12");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ах! Наконец-то хорошое покрытие для моей крыши готово!");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "啊哈! 最后进行一些适当的电镀来完成我的屋顶!");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "A12");
             text.SetDefault("No explosives please, ");
-            text.AddTranslation(GameCulture.Russian, "Никакой взрывчатки, пожалуйста, ");
-            text.AddTranslation(GameCulture.Chinese, "请不要乱炸OK? ");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("A13");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Никакой взрывчатки, пожалуйста, ");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "请不要乱炸OK? ");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "A13");
             text.SetDefault(" is already annoying me enough.");
-            text.AddTranslation(GameCulture.Russian, " и так достаточно раздражает меня.");
-            text.AddTranslation(GameCulture.Chinese, " 已经够烦了.");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("A14");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), " и так достаточно раздражает меня.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), " 已经够烦了.");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "A14");
             text.SetDefault("BUILDER POTIONS FREE FOR EVERYONE but you.");
-            text.AddTranslation(GameCulture.Russian, "БЕСПЛАТНЫЕ ЗЕЛЬЯ СТРОИТЕЛЯ ДЛЯ ВСЕХ кроме тебя.");
-            text.AddTranslation(GameCulture.Chinese, "建筑药水对所有人免费, 除了你.");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("A15");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "БЕСПЛАТНЫЕ ЗЕЛЬЯ СТРОИТЕЛЯ ДЛЯ ВСЕХ кроме тебя.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "建筑药水对所有人免费, 除了你.");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "A15");
             text.SetDefault("What? Where I got my architect degree? There's an architect degree?");
-            text.AddTranslation(GameCulture.Russian, "Что? Где я получил диплом архитектора? Такие вообще существуют?");
-            text.AddTranslation(GameCulture.Chinese, "什么玩意儿? 我去哪里搞到我的建筑师学位? 有建筑师学位吗?");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("A16");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Что? Где я получил диплом архитектора? Такие вообще существуют?");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "什么玩意儿? 我去哪里搞到我的建筑师学位? 有建筑师学位吗?");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "A16");
             text.SetDefault("Did'ja know that wood somehow doesn't burn? Though under certain circumstances it does. Weird...");
-            text.AddTranslation(GameCulture.Russian, "Ты знаешь, что дерево каким-то образом не горит? Хотя при некоторых условиях оно может. Странно...");
-            text.AddTranslation(GameCulture.Chinese, "你知道木头怎么才不会烧着吗? 经过一系列操作之后的确不会. 真的怪...");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("A17");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ты знаешь, что дерево каким-то образом не горит? Хотя при некоторых условиях оно может. Странно...");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "你知道木头怎么才不会烧着吗? 经过一系列操作之后的确不会. 真的怪...");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "A17");
             text.SetDefault("No, I am not the guy. I'm the dude.");
-            text.AddTranslation(GameCulture.Russian, "Нет, я не парень. Я чувак.");
-            text.AddTranslation(GameCulture.Chinese, "不, 我不是家伙(guy). 我是老兄(dude).");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("A18");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Нет, я не парень. Я чувак.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "不, 我不是家伙(guy). 我是老兄(dude).");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "A18");
             text.SetDefault("Well, the one you recently made was ALMOST impressive. (not really)");
-            text.AddTranslation(GameCulture.Russian, "Ну, то, что ты недавно построил было почти впечатляющим. (на самом деле НЕТ)");
-            text.AddTranslation(GameCulture.Chinese, "嗯, 你最近做的一件事情几乎让人印象深刻. (不存在的)");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("A19");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ну, то, что ты недавно построил было почти впечатляющим. (на самом деле НЕТ)");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "嗯, 你最近做的一件事情几乎让人印象深刻. (不存在的)");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "A19");
             text.SetDefault("So, you say that chests are furniture too. I reply: Screw you.");
-            text.AddTranslation(GameCulture.Russian, "Так ты утверждаешь, что сундуки - это тоже мебель. Я тебе отвечу: Пошёл ты.");
-            text.AddTranslation(GameCulture.Chinese, "所以, 你说箱子也是家具. 我表示: 去你丫的.");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("A20");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Так ты утверждаешь, что сундуки - это тоже мебель. Я тебе отвечу: Пошёл ты.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "所以, 你说箱子也是家具. 我表示: 去你丫的.");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "A20");
             text.SetDefault("I saw your buildings but I am still not impressed");
-            text.AddTranslation(GameCulture.Russian, "Я видел твои постройки, но я всё ещё не впечатлён.");
-            text.AddTranslation(GameCulture.Chinese, "我看了你的建筑, 但是我仍然觉得不怎么样.");
-            mod.AddTranslation(text);
-			text = mod.CreateTranslation("A21");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Я видел твои постройки, но я всё ещё не впечатлён.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "我看了你的建筑, 但是我仍然觉得不怎么样.");
+            LocalizationLoader.AddTranslation(text);
+			text = LocalizationLoader.CreateTranslation(Mod, "A21");
             text.SetDefault("Have you heard 'bout that FuryForged guy? I taught him all he knows!");
-            text.AddTranslation(GameCulture.Russian, "Ты слышал об этом FuryForged? Я научил его всему, что он знает!");
-            mod.AddTranslation(text);
-			text = mod.CreateTranslation("A22");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ты слышал об этом FuryForged? Я научил его всему, что он знает!");
+            LocalizationLoader.AddTranslation(text);
+			text = LocalizationLoader.CreateTranslation(Mod, "A22");
             text.SetDefault("I was once hired by a certain company to build a supermassive hi-tech, hi-security installation. Lemme tell ya its my magnum opus in terms of security and containment.");
-            text.AddTranslation(GameCulture.Russian, "Как-то раз я был нанят одной компанией, чтобы построить огромный высокотехнологичный комплекс с высочайщей степенью безопасности. Это была моя самая лучшая работа в плане сдерживания и безопасности.");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("AS1");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Как-то раз я был нанят одной компанией, чтобы построить огромный высокотехнологичный комплекс с высочайщей степенью безопасности. Это была моя самая лучшая работа в плане сдерживания и безопасности.");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "AS1");
             text.SetDefault("1st shop (Filler Blocks)       ");
-            text.AddTranslation(GameCulture.Russian, "1-ый магазин (Заполняющие Блоки)");
-            text.AddTranslation(GameCulture.Chinese, "第一商店 (填充方块)");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("AS2");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "1-ый магазин (Заполняющие Блоки)");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "第一商店 (填充方块)");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "AS2");
             text.SetDefault("2nd shop (Building Blocks)     ");
-            text.AddTranslation(GameCulture.Russian, "2-ой магазин (Строительные Блоки)");
-            text.AddTranslation(GameCulture.Chinese, "第二商店 (建筑方块)");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("AS3");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "2-ой магазин (Строительные Блоки)");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "第二商店 (建筑方块)");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "AS3");
             text.SetDefault("3rd shop (Basic Furniture)     ");
-            text.AddTranslation(GameCulture.Russian, "3-ий магазин (Базовая мебель)");
-            text.AddTranslation(GameCulture.Chinese, "第三商店 (基础家具)");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("AS4");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "3-ий магазин (Базовая мебель)");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "第三商店 (基础家具)");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "AS4");
             text.SetDefault("4th shop (Advanced Furniture)  ");
-            text.AddTranslation(GameCulture.Russian, "4-ый магазин (Продвинутая мебель)");
-            text.AddTranslation(GameCulture.Chinese, "第四商店 (高级家具)");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("AS5");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "4-ый магазин (Продвинутая мебель)");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "第四商店 (高级家具)");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "AS5");
             text.SetDefault("5th shop (Torches)             ");
-            text.AddTranslation(GameCulture.Russian, "5-ый магазин (Факелы)");
-            text.AddTranslation(GameCulture.Chinese, "第五商店 (火把)");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("AS6");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "5-ый магазин (Факелы)");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "第五商店 (火把)");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "AS6");
             text.SetDefault("6th shop (Candles)             ");
-            text.AddTranslation(GameCulture.Russian, "6-ый магазин (Свечи)");
-            text.AddTranslation(GameCulture.Chinese, "第六商店 (蜡烛)");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("AS7");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "6-ый магазин (Свечи)");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "第六商店 (蜡烛)");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "AS7");
             text.SetDefault("7th shop (Lamps)               ");
-            text.AddTranslation(GameCulture.Russian, "7-ой магазин (Лампы)");
-            text.AddTranslation(GameCulture.Chinese, "第七商店 (台灯)");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("AS8");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "7-ой магазин (Лампы)");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "第七商店 (台灯)");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "AS8");
             text.SetDefault("8th shop (Lanterns)            ");
-            text.AddTranslation(GameCulture.Russian, "8-ой магазин (Фонари)");
-            text.AddTranslation(GameCulture.Chinese, "第八商店 (灯笼)");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("AS9");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "8-ой магазин (Фонари)");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "第八商店 (灯笼)");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "AS9");
             text.SetDefault("9th shop (Chandeliers)         ");
-            text.AddTranslation(GameCulture.Russian, "9-ый магазин (Люстры)");
-            text.AddTranslation(GameCulture.Chinese, "第九商店 (吊灯)");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("AS10");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "9-ый магазин (Люстры)");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "第九商店 (吊灯)");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "AS10");
             text.SetDefault("10th shop (Candelabras)        ");
-            text.AddTranslation(GameCulture.Russian, "10-ый магазин (Канделябры)");
-            text.AddTranslation(GameCulture.Chinese, "第十商店 (烛台)");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("ShopsChanger");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "10-ый магазин (Канделябры)");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "第十商店 (烛台)");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "ShopsChanger");
             text.SetDefault("Shops Changer");
-            text.AddTranslation(GameCulture.Russian, "Смена магазина");
-            text.AddTranslation(GameCulture.Chinese, "切换商店");
-            mod.AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Смена магазина");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "切换商店");
+            LocalizationLoader.AddTranslation(text);
         }
 
 		public override void SetDefaults()
 		{
-			npc.townNPC = true;
-            npc.friendly = true;
-            npc.width = 18;
-            npc.height = 40;
-            npc.aiStyle = 7;
-            npc.damage = 10;
-            npc.defense = 100;
-            npc.lifeMax = 250;
-			npc.HitSound = SoundID.NPCHit1;
-			npc.DeathSound = SoundID.NPCDeath1;
-            npc.knockBackResist = 0.5f;
-			animationType = NPCID.Guide;
+			NPC.townNPC = true;
+            NPC.friendly = true;
+            NPC.width = 18;
+            NPC.height = 40;
+            NPC.aiStyle = 7;
+            NPC.damage = 10;
+            NPC.defense = 100;
+            NPC.lifeMax = 250;
+			NPC.HitSound = SoundID.NPCHit1;
+			NPC.DeathSound = SoundID.NPCDeath1;
+            NPC.knockBackResist = 0.5f;
+			AnimationType = NPCID.Guide;
         }
 		
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)
@@ -303,10 +303,11 @@ namespace AlchemistNPCLite.NPCs
 			randExtraCooldown = 10;
 		}
 
-		public override void DrawTownAttackSwing(ref Texture2D item, ref int itemSize, ref float scale, ref Vector2 offset)//Allows you to customize how this town NPC's weapon is drawn when this NPC is swinging it (this NPC must have an attack type of 3). ItemType is the Texture2D instance of the item to be drawn (use Main.itemTexture[id of item]), itemSize is the width and height of the item's hitbox
+		public override void DrawTownAttackSwing(ref Texture2D item, ref int itemSize, ref float scale, ref Vector2 offset)//Allows you to customize how this town NPC's weapon is drawn when this NPC is swinging it (this NPC must have an attack type of 3). ItemType is the Texture2D instance of the item to be drawn (use Main.PopupTexture[id of item]), itemSize is the width and height of the item's hitbox
 		{
 			scale = 1f;
-			item = Main.itemTexture[ItemID.IronHammer]; //this defines the item that this npc will use
+			// IMPLEMENT LATER
+			// item = Main.itemTexture[ItemID.IronHammer]; //this defines the item that this npc will use
 			itemSize = 40;
 		}
 
@@ -344,7 +345,7 @@ namespace AlchemistNPCLite.NPCs
 			int goblinTinkerer = NPC.FindFirstNPC(NPCID.GoblinTinkerer);
 			int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
 			int demolitionist = NPC.FindFirstNPC(NPCID.Demolitionist);
-			int Operator = NPC.FindFirstNPC(mod.NPCType("Operator"));
+			int Operator = NPC.FindFirstNPC(ModContent.NPCType<Operator>());
 			if (Main.bloodMoon && partyGirl >= 0 && goblinTinkerer >=0 && Main.rand.Next(4) == 0)
 			{
 			return A1 + Main.npc[partyGirl].GivenName + A2 + Main.npc[goblinTinkerer].GivenName + A3;
@@ -475,7 +476,7 @@ namespace AlchemistNPCLite.NPCs
 			}
 		}
 
-        Mod chadsfurniture = ModLoader.GetMod("chadsfurni");
+        // Mod chadsfurniture = ModLoader.GetMod("chadsfurni");
 
         public override void SetupShop(Chest shop, ref int nextSlot)
         {
@@ -586,15 +587,16 @@ namespace AlchemistNPCLite.NPCs
 				shop.item[nextSlot].SetDefaults (ItemID.RichMahogany);
 				shop.item[nextSlot].shopCustomPrice = 15;
 				nextSlot++;
-			if (ModLoader.GetMod("ThoriumMod") != null)
-			{
-				if (NPC.downedGoblins)
-				{
-					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("YewWood"));
-					shop.item[nextSlot].shopCustomPrice = 500;
-					nextSlot++;
-				}
-			}
+			// if (ModLoader.GetMod("ThoriumMod") != null)
+			// {
+			// 	// IMPLEMENT LATER
+			// 	// if (NPC.downedGoblins)
+			// 	// {
+			// 	// 	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("YewWood"));
+			// 	// 	shop.item[nextSlot].shopCustomPrice = 500;
+			// 	// 	nextSlot++;
+			// 	// }
+			// }
 			shop.item[nextSlot].SetDefaults (ItemID.DynastyWood);
 			shop.item[nextSlot].shopCustomPrice = 100;
 			nextSlot++;
@@ -808,18 +810,19 @@ namespace AlchemistNPCLite.NPCs
 				shop.item[nextSlot].SetDefaults(ItemID.BoneWelder);
 				shop.item[nextSlot].shopCustomPrice = 20000;
 				nextSlot++;
-				if (chadsfurniture != null)
-				{
-					shop.item[nextSlot].SetDefaults(chadsfurniture.ItemType("printer"));
-					shop.item[nextSlot].shopCustomPrice = 20000;
-					nextSlot++;
-					shop.item[nextSlot].SetDefaults(chadsfurniture.ItemType("printer3"));
-					shop.item[nextSlot].shopCustomPrice = 20000;
-					nextSlot++;
-					shop.item[nextSlot].SetDefaults(chadsfurniture.ItemType("wallomatic"));
-					shop.item[nextSlot].shopCustomPrice = 20000;
-					nextSlot++;
-				}
+				// if (chadsfurniture != null)
+				// {
+				// 	// IMPLEMENT LATER
+				// 	// shop.item[nextSlot].SetDefaults(chadsfurniture.ItemType("printer"));
+				// 	// shop.item[nextSlot].shopCustomPrice = 20000;
+				// 	// nextSlot++;
+				// 	// shop.item[nextSlot].SetDefaults(chadsfurniture.ItemType("printer3"));
+				// 	// shop.item[nextSlot].shopCustomPrice = 20000;
+				// 	// nextSlot++;
+				// 	// shop.item[nextSlot].SetDefaults(chadsfurniture.ItemType("wallomatic"));
+				// 	// shop.item[nextSlot].shopCustomPrice = 20000;
+				// 	// nextSlot++;
+				// }
 			}
 			shop.item[nextSlot].SetDefaults(ItemID.GlassKiln);
 			shop.item[nextSlot].shopCustomPrice = 20000;
@@ -844,12 +847,13 @@ namespace AlchemistNPCLite.NPCs
 			nextSlot++;
                 if (Main.hardMode)
                 {
-                    if (chadsfurniture != null)
-                    {
-                        shop.item[nextSlot].SetDefaults(chadsfurniture.ItemType("RimpelstiltskinsLoom"));
-                        shop.item[nextSlot].shopCustomPrice = 200000;
-                        nextSlot++;
-                    }
+                    // if (chadsfurniture != null)
+                    // {
+					// 	// IMPLEMENT LATER
+                    //     // shop.item[nextSlot].SetDefaults(chadsfurniture.ItemType("RimpelstiltskinsLoom"));
+                    //     // shop.item[nextSlot].shopCustomPrice = 200000;
+                    //     // nextSlot++;
+                    // }
 					shop.item[nextSlot].SetDefaults (ItemID.MeatGrinder);
 					shop.item[nextSlot].shopCustomPrice = 15000;
 					nextSlot++;

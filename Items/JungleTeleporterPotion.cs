@@ -19,18 +19,18 @@ namespace AlchemistNPCLite.Items
 			Tooltip.SetDefault("Teleports you to the Jungle"
 			+"\nLeft click teleports to jungle plant"
 			+"\nRight click teleports to living mahogany leaves");
-			DisplayName.AddTranslation(GameCulture.Russian, "Телепортёр к Джунглям");
-            Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас в джунгли\nЛевая кнопка телепортирует к джунглевому растению\nПравая кнопка телепортирует к листьям живой махогани");
+			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Телепортёр к Джунглям");
+            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Телепортирует вас в джунгли\nЛевая кнопка телепортирует к джунглевому растению\nПравая кнопка телепортирует к листьям живой махогани");
         }    
 		public override void SetDefaults()
         {
-            item.CloneDefaults(ItemID.RecallPotion);
-            item.maxStack = 99;
-            item.consumable = true;
+            Item.CloneDefaults(ItemID.RecallPotion);
+            Item.maxStack = 99;
+            Item.consumable = true;
             return;
         }
 		
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			if (Main.myPlayer == player.whoAmI)
 			{

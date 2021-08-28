@@ -20,206 +20,206 @@ namespace AlchemistNPCLite.NPCs
 				return "AlchemistNPCLite/NPCs/Alchemist";
 			}
 		}
-
-		public override bool Autoload(ref string name)
-		{
-			name = "Alchemist";
-			return true;
-		}
+		// Probably Removed
+		// public override bool Autoload(ref string name)
+		// {
+		// 	name = "Alchemist";
+		// 	return true;
+		// }
 		
 		public override void SetStaticDefaults()
 		{
             DisplayName.SetDefault("Alchemist");
-            DisplayName.AddTranslation(GameCulture.Russian, "Алхимик");
-            DisplayName.AddTranslation(GameCulture.Chinese, "炼金师");
-            Main.npcFrameCount[npc.type] = 23;   
-			NPCID.Sets.AttackFrameCount[npc.type] = 2;
-			NPCID.Sets.DangerDetectRange[npc.type] = 500;
-			NPCID.Sets.AttackType[npc.type] = 0;
-			NPCID.Sets.AttackTime[npc.type] = 22;
-			NPCID.Sets.AttackAverageChance[npc.type] = 30;
-			NPCID.Sets.HatOffsetY[npc.type] = -4;
+            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Алхимик");
+            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "炼金师");
+            Main.npcFrameCount[NPC.type] = 23;   
+			NPCID.Sets.AttackFrameCount[NPC.type] = 2;
+			NPCID.Sets.DangerDetectRange[NPC.type] = 500;
+			NPCID.Sets.AttackType[NPC.type] = 0;
+			NPCID.Sets.AttackTime[NPC.type] = 22;
+			NPCID.Sets.AttackAverageChance[NPC.type] = 30;
+			NPCID.Sets.HatOffsetY[NPC.type] = -4;
 
-            ModTranslation text = mod.CreateTranslation("PlantsShop");
+            ModTranslation text = LocalizationLoader.CreateTranslation(Mod, "PlantsShop");
             text.SetDefault("Plants shop");
-            text.AddTranslation(GameCulture.Russian, "Магазин растений");
-            mod.AddTranslation(text);
-			text = mod.CreateTranslation("GetCharm");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Магазин растений");
+            LocalizationLoader.AddTranslation(text);
+			text = LocalizationLoader.CreateTranslation(Mod, "GetCharm");
             text.SetDefault("Get Charm");
-            text.AddTranslation(GameCulture.Russian, "Получить талисман");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("Edward");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Получить талисман");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "Edward");
             text.SetDefault("Edward");
-            text.AddTranslation(GameCulture.Russian, "Эдвард");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("Severus");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Эдвард");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "Severus");
             text.SetDefault("Severus");
-            text.AddTranslation(GameCulture.Russian, "Северус");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("Horace");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Северус");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "Horace");
             text.SetDefault("Horace");
-            text.AddTranslation(GameCulture.Russian, "Гораций");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("Tilyorn");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Гораций");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "Tilyorn");
             text.SetDefault("Tilyorn");
-            text.AddTranslation(GameCulture.Russian, "Тильорн");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("Nicolas");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Тильорн");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "Nicolas");
             text.SetDefault("Nicolas");
-            text.AddTranslation(GameCulture.Russian, "Николас");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("Gregg");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Николас");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "Gregg");
             text.SetDefault("Gregg");
-            text.AddTranslation(GameCulture.Russian, "Грег");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryA1");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Грег");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA1");
             text.SetDefault("My Healing potions will cure your deepest wounds.");
-            text.AddTranslation(GameCulture.Russian, "Мои лечебные зелья излечат твои глубочайшие раны.");
-            text.AddTranslation(GameCulture.Chinese, "我的生命药水可以治疗你的伤口.");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryA2");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Мои лечебные зелья излечат твои глубочайшие раны.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "我的生命药水可以治疗你的伤口.");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA2");
             text.SetDefault("My Mana potions will restore your magic power.");
-            text.AddTranslation(GameCulture.Russian, "Мои зелья маны восстановят твою магическую силу.");
-            text.AddTranslation(GameCulture.Chinese, "我的魔法药水可以回复你的魔力.");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryA3");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Мои зелья маны восстановят твою магическую силу.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "我的魔法药水可以回复你的魔力.");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA3");
             text.SetDefault("Restoration potions... I'm not sure if I trust them...");
-            text.AddTranslation(GameCulture.Russian, "Зелья Восстановления... Не уверен, могу ли я доверять им...");
-            text.AddTranslation(GameCulture.Chinese, "再生药剂...不知道它们是好是坏...");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryA4");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Зелья Восстановления... Не уверен, могу ли я доверять им...");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "再生药剂...不知道它们是好是坏...");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA4");
             text.SetDefault("There's a legendary yoyo known as the Sasscade.");
-            text.AddTranslation(GameCulture.Russian, "Существует Легендарное Йо-йо, известное как Сасскад.");
-            text.AddTranslation(GameCulture.Chinese, "有一个传说中的溜溜球被称为Sasscade.");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryA5");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Существует Легендарное Йо-йо, известное как Сасскад.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "有一个传说中的溜溜球被称为Sasscade.");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA5");
             text.SetDefault("The Strange Brew I bought from the Skeleton Merchant smells awful, but its Mana Restoration effect is awesome!");
-            text.AddTranslation(GameCulture.Russian, "Странное Варево, что я купил у Скелета-торговца пахнет просто ужасно, но его эффект восстановления маны потрясает.");
-            text.AddTranslation(GameCulture.Chinese, "来自骷髅商人的奇异啤酒气味真的很糟糕,但法力恢复效果非常棒!");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryA6");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Странное Варево, что я купил у Скелета-торговца пахнет просто ужасно, но его эффект восстановления маны потрясает.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "来自骷髅商人的奇异啤酒气味真的很糟糕,但法力恢复效果非常棒!");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA6");
             text.SetDefault("Hi, *cough*... That definitely wasn't a Teleporation potion.");
-            text.AddTranslation(GameCulture.Russian, "Привет, *кашель*... Это определённо было не зелье Телепортации.");
-            text.AddTranslation(GameCulture.Chinese, "嗨, *咳咳*.. 那绝对不是柠檬茶.");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryA7");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Привет, *кашель*... Это определённо было не зелье Телепортации.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "嗨, *咳咳*.. 那绝对不是柠檬茶.");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA7");
             text.SetDefault("Have you seen any Mechanical Skulls around?");
-            text.AddTranslation(GameCulture.Russian, "Ты не видел Механических Черепов поблизости?");
-            text.AddTranslation(GameCulture.Chinese, "你有在周围看到一个机械骷髅王吗?");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryA8");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ты не видел Механических Черепов поблизости?");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "你有在周围看到一个机械骷髅王吗?");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA8");
             text.SetDefault("Have you ever heard of Ultra Mushroom? If you find one, I do believe I got some stuff to aid you in boosting that thing.");
-            text.AddTranslation(GameCulture.Russian, "Ты слышал об Ультра Грибах? Если ты найдёшь такой, я уверен что я смогу помочь тебе его усилить.");
-            text.AddTranslation(GameCulture.Chinese, "你有听说过极限蘑菇吗？如果你找到了一个，我相信我能研究出一种可以帮助你的材料.");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryA9");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ты слышал об Ультра Грибах? Если ты найдёшь такой, я уверен что я смогу помочь тебе его усилить.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "你有听说过极限蘑菇吗？如果你找到了一个，我相信我能研究出一种可以帮助你的材料.");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA9");
             text.SetDefault("I asked ");
-            text.AddTranslation(GameCulture.Russian, "Я попросил у ");
-            text.AddTranslation(GameCulture.Chinese, "我向 ");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryA10");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Я попросил у ");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "我向 ");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA10");
             text.SetDefault(" if I could buy the recipe for the Potent Extract. He said no because, and I quote, ''Even an idiot would figure it out.''");
-            text.AddTranslation(GameCulture.Russian, " рецепт Кактусового Экстракта. Он ответил нет, поскольку, я процитирую ''Даже идиот догадается.''");
-            text.AddTranslation(GameCulture.Chinese, " 购买高效萃取配方，因为他说不，然后我就说‘即使是傻子也能研究出那个配方’.");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryA11");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), " рецепт Кактусового Экстракта. Он ответил нет, поскольку, я процитирую ''Даже идиот догадается.''");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), " 购买高效萃取配方，因为他说不，然后我就说‘即使是傻子也能研究出那个配方’.");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA11");
             text.SetDefault("And to think, she's getting the potions and not me... but I can't argue there.");
-            text.AddTranslation(GameCulture.Russian, "И только подумать... Она выбрала зелья, а не меня. Хотя тут и не поспоришь.");
-            text.AddTranslation(GameCulture.Chinese, "想想看, 她正在得到那些药水而我没有...但我对此却又无法反驳.");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryA12");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "И только подумать... Она выбрала зелья, а не меня. Хотя тут и не поспоришь.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "想想看, 她正在得到那些药水而我没有...但我对此却又无法反驳.");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA12");
             text.SetDefault("What is his name? ");
-            text.AddTranslation(GameCulture.Russian, "Как его зовут? ");
-            text.AddTranslation(GameCulture.Chinese, "他叫什么来着? ");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryA13");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Как его зовут? ");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "他叫什么来着? ");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA13");
             text.SetDefault("? So... Teacher's here? Better step up my game!");
-            text.AddTranslation(GameCulture.Russian, "? Так... Учитель здесь? Лучше отойди с дороги!");
-            text.AddTranslation(GameCulture.Chinese, "? 所以... 老师在这儿? 我最好加快脚步!");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryA14");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "? Так... Учитель здесь? Лучше отойди с дороги!");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "? 所以... 老师在这儿? 我最好加快脚步!");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA14");
             text.SetDefault("Thank goodness I got those pieces from Skeletron. Want to check it out?");
-            text.AddTranslation(GameCulture.Russian, "Слава богу, что я добыл эти кусочки из Скелетрона? Не желаешь посмотреть?");
-            text.AddTranslation(GameCulture.Chinese, "感谢上帝，我从骷髅王那里拿到了这些碎片，想要看看吗？");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryA15");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Слава богу, что я добыл эти кусочки из Скелетрона? Не желаешь посмотреть?");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "感谢上帝，我从骷髅王那里拿到了这些碎片，想要看看吗？");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA15");
             text.SetDefault("Can you please ask ");
-            text.AddTranslation(GameCulture.Russian, "Можешь попросить ");
-            text.AddTranslation(GameCulture.Chinese, "你能不能拜托 ");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryA16");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Можешь попросить ");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "你能不能拜托 ");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA16");
             text.SetDefault(" to stop mocking me? I know my potions can't make you stronger, but at least they aren't as dangerous to drink.");
-            text.AddTranslation(GameCulture.Russian, " перестать дразнить меня? Я знаю, что мои зелья не сделают тебя сильнее, но их хотя бы не столь опасно пить.");
-            text.AddTranslation(GameCulture.Chinese, " 别再嘲笑我?我知道我的药剂不能让你变强,但是至少他们喝起来不危险.");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryA17");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), " перестать дразнить меня? Я знаю, что мои зелья не сделают тебя сильнее, но их хотя бы не столь опасно пить.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), " 别再嘲笑我?我知道我的药剂不能让你变强,但是至少他们喝起来不危险.");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA17");
             text.SetDefault("These goblins are so annoying... Thankfully, they cannot stay here for too long.");
-            text.AddTranslation(GameCulture.Russian, "Эти гоблины такие раздражающие... Хорошо, что они не останутся здесь надолго.");
-            text.AddTranslation(GameCulture.Chinese, "这些哥布林是如此的愤怒...幸好，他们在这里的时间不会很久.");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryA18");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Эти гоблины такие раздражающие... Хорошо, что они не останутся здесь надолго.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "这些哥布林是如此的愤怒...幸好，他们在这里的时间不会很久.");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA18");
             text.SetDefault("You better deal with Pirates as fast, as you can. I can't wait to talk with Captain! Haven't seen him for years!");
-            text.AddTranslation(GameCulture.Russian, "Постарайся справиться с Пиратами как можно быстрее. Не могу дождаться возвращения Капитана! Я не видел его уже много лет!");
-            text.AddTranslation(GameCulture.Chinese, "你最好以最快的速度解决这些海盗先，我忍不住想和船长说几句话，好些年没见到过他咯!");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryA19");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Постарайся справиться с Пиратами как можно быстрее. Не могу дождаться возвращения Капитана! Я не видел его уже много лет!");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "你最好以最快的速度解决这些海盗先，我忍不住想和船长说几句话，好些年没见到过他咯!");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA19");
             text.SetDefault("I hope that you will not let them into my house, will you?");
-            text.AddTranslation(GameCulture.Russian, "Я надеюсь, ты не пустишь их в мой дом, правда?");
-            text.AddTranslation(GameCulture.Chinese, "我觉得你不会让他们进我的屋子的，是吧?");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryA20");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Я надеюсь, ты не пустишь их в мой дом, правда?");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "我觉得你不会让他们进我的屋子的，是吧?");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA20");
             text.SetDefault("Perhaps there are better things for you to do, rather than talking to me, at the moment. I don't know... maybe defend us?!");
-            text.AddTranslation(GameCulture.Russian, "Может у тебя найдётся занятие получше, чем говорить со мной сейчас? Ну например... Охранять нас?!");
-            text.AddTranslation(GameCulture.Chinese, "也许在这个时候你有比和我说话更重要的事情要做? 有个血红色的月亮挂在天上哎!");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryA21");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Может у тебя найдётся занятие получше, чем говорить со мной сейчас? Ну например... Охранять нас?!");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "也许在这个时候你有比和我说话更重要的事情要做? 有个血红色的月亮挂在天上哎!");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA21");
             text.SetDefault("...My friend, the best thing to do in this case is not bother me during this time.");
-            text.AddTranslation(GameCulture.Russian, "...Мой друг, лучшее, что ты можешь сделать - это не беспокоить меня сейчас.");
-            text.AddTranslation(GameCulture.Chinese, "...我的朋友，在这个时刻最好的事情就是别来打扰我!");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryA22");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "...Мой друг, лучшее, что ты можешь сделать - это не беспокоить меня сейчас.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "...我的朋友，在这个时刻最好的事情就是别来打扰我!");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA22");
             text.SetDefault("I have an explosive flask. You do NOT want to know what it tastes like.");
-            text.AddTranslation(GameCulture.Russian, "У меня есть взрывная колба. Ты точно НЕ хочешь узнать, какова она на вкус.");
-            text.AddTranslation(GameCulture.Chinese, "我有一个爆炸烧瓶，你不会想知道它尝起来是什么味道的.");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryA23");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "У меня есть взрывная колба. Ты точно НЕ хочешь узнать, какова она на вкус.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "我有一个爆炸烧瓶，你不会想知道它尝起来是什么味道的.");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA23");
             text.SetDefault("How can ");
-            text.AddTranslation(GameCulture.Russian, "Как ");
-            text.AddTranslation(GameCulture.Chinese, "所以 ");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryA24");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Как ");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "所以 ");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA24");
             text.SetDefault(" stay calm in a time like this? I want to know, NOW.");
-            text.AddTranslation(GameCulture.Russian, "может оставаться спокойной в такое время? Я ХОЧУ это узнать.");
-            text.AddTranslation(GameCulture.Chinese, " 是怎么在这种时候保持冷静的? 我现在就想知道, 现在!");
-            mod.AddTranslation(text);
-			text = mod.CreateTranslation("EntryA25");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "может оставаться спокойной в такое время? Я ХОЧУ это узнать.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), " 是怎么在这种时候保持冷静的? 我现在就想知道, 现在!");
+            LocalizationLoader.AddTranslation(text);
+			text = LocalizationLoader.CreateTranslation(Mod, "EntryA25");
             text.SetDefault("Don't let the dark one that came from the Jungle fool you with charming wisdom. Me and ");
-            text.AddTranslation(GameCulture.Russian, "Не позволяй тёмному, пришедшему из Джунглей, одурачить тебя чарующей мудростью. Я и ");
-            mod.AddTranslation(text);
-			text = mod.CreateTranslation("EntryA26");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Не позволяй тёмному, пришедшему из Джунглей, одурачить тебя чарующей мудростью. Я и ");
+            LocalizationLoader.AddTranslation(text);
+			text = LocalizationLoader.CreateTranslation(Mod, "EntryA26");
             text.SetDefault(" were once his apprentices. I quit when his lessons turned too dark but ");
-            text.AddTranslation(GameCulture.Russian, " однажды были его ассистентами. Я ушёл, когда его уроки стали слишком тёмными, но интерес ");
-            mod.AddTranslation(text);
-			text = mod.CreateTranslation("EntryA27");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), " однажды были его ассистентами. Я ушёл, когда его уроки стали слишком тёмными, но интерес ");
+            LocalizationLoader.AddTranslation(text);
+			text = LocalizationLoader.CreateTranslation(Mod, "EntryA27");
             text.SetDefault(" interest in occult Alchemy did nothing but grow.");
-            text.AddTranslation(GameCulture.Russian, " к оккультной алхимии только вырос.");
-            mod.AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), " к оккультной алхимии только вырос.");
+            LocalizationLoader.AddTranslation(text);
         }
 		
 		public override void SetDefaults()
 		{
-			npc.townNPC = true;
-            npc.friendly = true;
-            npc.width = 18;
-            npc.height = 40;
-            npc.aiStyle = 7;
-            npc.damage = 10;
-            npc.defense = 100;
-            npc.lifeMax = 250;
-			npc.HitSound = SoundID.NPCHit1;
-			npc.DeathSound = SoundID.NPCDeath1;
-            npc.knockBackResist = 0.5f;
-			animationType = NPCID.Clothier;
+			NPC.townNPC = true;
+            NPC.friendly = true;
+            NPC.width = 18;
+            NPC.height = 40;
+            NPC.aiStyle = 7;
+            NPC.damage = 10;
+            NPC.defense = 100;
+            NPC.lifeMax = 250;
+			NPC.HitSound = SoundID.NPCHit1;
+			NPC.DeathSound = SoundID.NPCDeath1;
+            NPC.knockBackResist = 0.5f;
+			AnimationType = NPCID.Clothier;
 		}
 		
         public override bool CanTownNPCSpawn(int numTownNPCs, int money)
@@ -281,13 +281,14 @@ namespace AlchemistNPCLite.NPCs
 
 		public override void TownNPCAttackProj(ref int projType, ref int attackDelay)
 		{
+			// IMPLEMENT LATER
 			if (NPC.downedMoonlord)
 			{
-			projType = mod.ProjectileType("CorrosiveFlask");
+				projType = ModContent.ProjectileType<Projectiles.CorrosiveFlask>();
 			}
 			else
 			{
-			projType = ProjectileID.ToxicFlask;
+				projType = ProjectileID.ToxicFlask;
 			}
 			attackDelay = 1;
 		}
@@ -328,7 +329,7 @@ namespace AlchemistNPCLite.NPCs
 		 string EntryA25 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA25");
 		 string EntryA26 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA26");
 		 string EntryA27 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA27");
-		 int Brewer = NPC.FindFirstNPC(mod.NPCType("Brewer"));
+		 int Brewer = NPC.FindFirstNPC(ModContent.NPCType<Brewer>());
 		 int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
 		 int witchDoctor = NPC.FindFirstNPC(NPCID.WitchDoctor);
 			if (Main.bloodMoon && partyGirl >= 0 && Main.rand.Next(4) == 0)
@@ -367,41 +368,44 @@ namespace AlchemistNPCLite.NPCs
 			{
 				return EntryA15 + Main.npc[Brewer].GivenName + EntryA16;
 			}
-			if (ModLoader.GetMod("Tremor") != null)
-			{
-				int Alch = NPC.FindFirstNPC(ModLoader.GetMod("Tremor").NPCType("Alchemist"));
-				if (Alch >= 0 && Main.rand.Next(4) == 0)
-				{
-				return EntryA12 + Main.npc[Alch].GivenName + EntryA13;
-				}
-			}
-			if (ModLoader.GetMod("Tremor") != null)
-			{
-				if (NPC.downedBoss3 && Main.rand.Next(6) == 0)
-				{
-				return EntryA14;
-				}
-			}
-			if (ModLoader.GetMod("ThoriumMod") != null)
-			{
-				int DA = NPC.FindFirstNPC(ModLoader.GetMod("ThoriumMod").NPCType("DesertTraveler"));
-				if (DA >= 0 && Main.rand.Next(7) == 0)
-				{
-				return EntryA9 + Main.npc[DA].GivenName +  EntryA10;
-				}
-			}
-			if (ModLoader.GetMod("ThoriumMod") != null)
-			{
-				int DA = NPC.FindFirstNPC(ModLoader.GetMod("ThoriumMod").NPCType("DesertTraveler"));
-				if (DA >= 0 && Brewer >=0 && Main.rand.Next(8) == 0)
-				{
-				return EntryA11;
-				}
-			}
-			if (ModLoader.GetMod("ThoriumMod") != null && Main.rand.Next(5) == 0)
-			{
-			return EntryA8;
-			}
+			// if (ModLoader.GetMod("Tremor") != null)
+			// {
+			// 	// IMPLEMENT LATER
+			// 	// int Alch = NPC.FindFirstNPC(ModLoader.GetMod("Tremor").NPCType("Alchemist"));
+			// 	// if (Alch >= 0 && Main.rand.Next(4) == 0)
+			// 	// {
+			// 	// return EntryA12 + Main.npc[Alch].GivenName + EntryA13;
+			// 	// }
+			// }
+			// if (ModLoader.GetMod("Tremor") != null)
+			// {
+			// 	if (NPC.downedBoss3 && Main.rand.Next(6) == 0)
+			// 	{
+			// 	return EntryA14;
+			// 	}
+			// }
+			// if (ModLoader.GetMod("ThoriumMod") != null)
+			// {
+			// 	// IMPLEMENT LATER
+			// 	// int DA = NPC.FindFirstNPC(ModLoader.GetMod("ThoriumMod").NPCType("DesertTraveler"));
+			// 	// if (DA >= 0 && Main.rand.Next(7) == 0)
+			// 	// {
+			// 	// return EntryA9 + Main.npc[DA].GivenName +  EntryA10;
+			// 	// }
+			// }
+			// if (ModLoader.GetMod("ThoriumMod") != null)
+			// {
+			// 	// IMPLEMENT LATER
+			// 	// int DA = NPC.FindFirstNPC(ModLoader.GetMod("ThoriumMod").NPCType("DesertTraveler"));
+			// 	// if (DA >= 0 && Brewer >=0 && Main.rand.Next(8) == 0)
+			// 	// {
+			// 	// return EntryA11;
+			// 	// }
+			// }
+			// if (ModLoader.GetMod("ThoriumMod") != null && Main.rand.Next(5) == 0)
+			// {
+			// return EntryA8;
+			// }
             switch (Main.rand.Next(7))
             {
                 case 0:                                     
@@ -429,7 +433,7 @@ namespace AlchemistNPCLite.NPCs
 			button2 = PlantsShop;
 			
 			Player player = Main.player[Main.myPlayer];
-			if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier1 == false && ((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier2 == false && ((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier3 == false && ((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier4 == false)
+			if ((player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier1 == false && (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier2 == false && (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier3 == false && (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier4 == false)
 			{
 				button2 = GetCharm;
 			}
@@ -446,9 +450,9 @@ namespace AlchemistNPCLite.NPCs
 		else
 			{
 				Player player = Main.player[Main.myPlayer];
-				if (((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier1 == false && ((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier2 == false && ((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier3 == false && ((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier4 == false)
+				if ((player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier1 == false && (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier2 == false && (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier3 == false && (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier4 == false)
 				{
-					player.QuickSpawnItem(mod.ItemType("AlchemistCharmTier1"));
+					player.QuickSpawnItem(ModContent.ItemType<Items.Misc.AlchemistCharmTier1>());
 				}
 				baseShop = false;
 				plantShop = true;
@@ -480,21 +484,22 @@ namespace AlchemistNPCLite.NPCs
 		shop.item[nextSlot].shopCustomPrice = 25000;
 		nextSlot++;
 		}
-		Mod Calamity = ModLoader.GetMod("CalamityMod");
-		if(Calamity != null)
+	// Mod Calamity = ModLoader.GetMod("CalamityMod");
+		// if(Calamity != null)
 		{
-			if ((bool)Calamity.Call("Downed", "profaned guardians") && !(bool)Calamity.Call("Downed", "polterghast"))
-			{
-			shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityMod").ItemType("SupremeHealingPotion"));
-			shop.item[nextSlot].shopCustomPrice = 500000;
-			nextSlot++;
-			}
-			if((bool)Calamity.Call("Downed", "polterghast"))
-			{
-			shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityMod").ItemType("OmegaHealingPotion"));
-			shop.item[nextSlot].shopCustomPrice = 1000000;
-			nextSlot++;
-			}
+			// IMPLEMENT LATER
+			// if ((bool)Calamity.Call("Downed", "profaned guardians") && !(bool)Calamity.Call("Downed", "polterghast"))
+			// {
+			// shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityMod").ItemType("SupremeHealingPotion"));
+			// shop.item[nextSlot].shopCustomPrice = 500000;
+			// nextSlot++;
+			// }
+			// if((bool)Calamity.Call("Downed", "polterghast"))
+			// {
+			// shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityMod").ItemType("OmegaHealingPotion"));
+			// shop.item[nextSlot].shopCustomPrice = 1000000;
+			// nextSlot++;
+			// }
 		}
 		shop.item[nextSlot].SetDefaults (ItemID.LesserManaPotion);
 		shop.item[nextSlot].shopCustomPrice = 500;
@@ -533,48 +538,49 @@ namespace AlchemistNPCLite.NPCs
 		shop.item[nextSlot].shopCustomPrice = 7500;
 		nextSlot++;	
 		}
-		if (ModLoader.GetMod("imkSushisMod") != null)
-		{
-		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("BaseSummoningPotion"));
-		shop.item[nextSlot].shopCustomPrice = 2500;
-		nextSlot++;
-		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("AnglerAmnesiaPotion"));
-		shop.item[nextSlot].shopCustomPrice = 10000;
-		nextSlot++;
-		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("MeteoritePotion"));
-		shop.item[nextSlot].shopCustomPrice = 50000;
-		nextSlot++;
-		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("ResurrectionPotion"));
-		shop.item[nextSlot].shopCustomPrice = 25000;
-		nextSlot++;
-		}
+		// if (ModLoader.GetMod("imkSushisMod") != null)
+		// {
+		// 	// IMPLEMENT LATER
+		// 	// shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("BaseSummoningPotion"));
+		// 	// shop.item[nextSlot].shopCustomPrice = 2500;
+		// 	// nextSlot++;
+		// 	// shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("AnglerAmnesiaPotion"));
+		// 	// shop.item[nextSlot].shopCustomPrice = 10000;
+		// 	// nextSlot++;
+		// 	// shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("MeteoritePotion"));
+		// 	// shop.item[nextSlot].shopCustomPrice = 50000;
+		// 	// nextSlot++;
+		// 	// shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("ResurrectionPotion"));
+		// 	// shop.item[nextSlot].shopCustomPrice = 25000;
+		// 	// nextSlot++;
+		// }
 		if (NPC.downedBoss2)
 		{
-		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("BeachTeleporterPotion"));
+		shop.item[nextSlot].SetDefaults (ModContent.ItemType<Items.BeachTeleporterPotion>());
 		shop.item[nextSlot].shopCustomPrice = 20000;
 		nextSlot++;
-		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("JungleTeleporterPotion"));
+		shop.item[nextSlot].SetDefaults (ModContent.ItemType<Items.JungleTeleporterPotion>());
 		shop.item[nextSlot].shopCustomPrice = 50000;
 		nextSlot++;
 		}
 		if (NPC.downedBoss3)
 		{
-		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("OceanTeleporterPotion"));
+		shop.item[nextSlot].SetDefaults (ModContent.ItemType<Items.OceanTeleporterPotion>());
 		shop.item[nextSlot].shopCustomPrice = 20000;
 		nextSlot++;
-		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("DungeonTeleportationPotion"));
+		shop.item[nextSlot].SetDefaults (ModContent.ItemType<Items.DungeonTeleportationPotion>());
 		shop.item[nextSlot].shopCustomPrice = 25000;
 		nextSlot++;
 		}
 		if (Main.hardMode)
 		{
-		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("UnderworldTeleportationPotion"));
+		shop.item[nextSlot].SetDefaults (ModContent.ItemType<Items.UnderworldTeleportationPotion>());
 		shop.item[nextSlot].shopCustomPrice = 50000;
 		nextSlot++;
 		}
 		if (NPC.downedPlantBoss)
 		{
-		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AlchemistNPCLite").ItemType("TempleTeleportationPotion"));
+		shop.item[nextSlot].SetDefaults (ModContent.ItemType<Items.TempleTeleportationPotion>());
 		shop.item[nextSlot].shopCustomPrice = 100000;
 		nextSlot++;
 		}
@@ -598,21 +604,22 @@ namespace AlchemistNPCLite.NPCs
 			shop.item[nextSlot].shopCustomPrice = 1000;
 			nextSlot++;
 			}
-			if (ModLoader.GetMod("ThoriumMod") != null)
-			{
-				if (NPC.downedBoss2)
-				{
-					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("WaterChestnut"));
-					shop.item[nextSlot].shopCustomPrice = 3500;
-					nextSlot++;
-				}
-				if (NPC.downedBoss3)
-				{
-					shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("Jelly"));
-					shop.item[nextSlot].shopCustomPrice = 7500;
-					nextSlot++;
-				}
-			}
+			// if (ModLoader.GetMod("ThoriumMod") != null)
+			// {
+			// 	// IMPLEMENT LATER
+			// 	// if (NPC.downedBoss2)
+			// 	// {
+			// 	// 	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("WaterChestnut"));
+			// 	// 	shop.item[nextSlot].shopCustomPrice = 3500;
+			// 	// 	nextSlot++;
+			// 	// }
+			// 	// if (NPC.downedBoss3)
+			// 	// {
+			// 	// 	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("Jelly"));
+			// 	// 	shop.item[nextSlot].shopCustomPrice = 7500;
+			// 	// 	nextSlot++;
+			// 	// }
+			// }
 			if (Main.hardMode)
 			{
 				shop.item[nextSlot].SetDefaults (ItemID.PixieDust);
@@ -670,36 +677,37 @@ namespace AlchemistNPCLite.NPCs
 					shop.item[nextSlot].shopCustomPrice = 1000;
 					nextSlot++;
 				}
-				if (ModLoader.GetMod("Tremor") != null)
-				{
-					if (NPC.downedBoss3)
-					{
-						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("Gloomstone"));
-						shop.item[nextSlot].shopCustomPrice = 100;
-						nextSlot++;
-						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("UntreatedFlesh"));
-						shop.item[nextSlot].shopCustomPrice = 100;
-						nextSlot++;
-						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("LightBulb"));
-						shop.item[nextSlot].shopCustomPrice = 500;
-						nextSlot++;
-						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("AtisBlood"));
-						shop.item[nextSlot].shopCustomPrice = 2500;
-						nextSlot++;
-						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("TearsofDeath"));
-						shop.item[nextSlot].shopCustomPrice = 2500;
-						nextSlot++;
-						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("TornPapyrus"));
-						shop.item[nextSlot].shopCustomPrice = 5000;
-						nextSlot++;
-						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("PhantomSoul"));
-						shop.item[nextSlot].shopCustomPrice = 5000;
-						nextSlot++;
-						shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("TheRib"));
-						shop.item[nextSlot].shopCustomPrice = 7500;
-						nextSlot++;
-					}	
-				}
+				// if (ModLoader.GetMod("Tremor") != null)
+				// {
+				// 	// IMPLEMENT LATER
+				// 	// if (NPC.downedBoss3)
+				// 	// {
+				// 	// 	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("Gloomstone"));
+				// 	// 	shop.item[nextSlot].shopCustomPrice = 100;
+				// 	// 	nextSlot++;
+				// 	// 	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("UntreatedFlesh"));
+				// 	// 	shop.item[nextSlot].shopCustomPrice = 100;
+				// 	// 	nextSlot++;
+				// 	// 	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("LightBulb"));
+				// 	// 	shop.item[nextSlot].shopCustomPrice = 500;
+				// 	// 	nextSlot++;
+				// 	// 	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("AtisBlood"));
+				// 	// 	shop.item[nextSlot].shopCustomPrice = 2500;
+				// 	// 	nextSlot++;
+				// 	// 	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("TearsofDeath"));
+				// 	// 	shop.item[nextSlot].shopCustomPrice = 2500;
+				// 	// 	nextSlot++;
+				// 	// 	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("TornPapyrus"));
+				// 	// 	shop.item[nextSlot].shopCustomPrice = 5000;
+				// 	// 	nextSlot++;
+				// 	// 	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("PhantomSoul"));
+				// 	// 	shop.item[nextSlot].shopCustomPrice = 5000;
+				// 	// 	nextSlot++;
+				// 	// 	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("TheRib"));
+				// 	// 	shop.item[nextSlot].shopCustomPrice = 7500;
+				// 	// 	nextSlot++;
+				// 	// }	
+				// }
 			}
 		}
 	}

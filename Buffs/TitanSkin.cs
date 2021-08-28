@@ -7,16 +7,16 @@ namespace AlchemistNPCLite.Buffs
 {
 	public class TitanSkin : ModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Titan Skin");
 			Description.SetDefault("You have some heavy debuff immunity");
 			Main.debuff[Type] = false;
-			canBeCleared = true;
-			DisplayName.AddTranslation(GameCulture.Russian, "Кожа Титана");
-			Description.AddTranslation(GameCulture.Russian, "Вы имеете иммунитет к некоторым серьёзным дебаффам");
-            DisplayName.AddTranslation(GameCulture.Chinese, "泰坦皮肤");
-            Description.AddTranslation(GameCulture.Chinese, "你免疫一些Debuff");
+			CanBeCleared = true;
+			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Кожа Титана");
+			Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Вы имеете иммунитет к некоторым серьёзным дебаффам");
+            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "泰坦皮肤");
+            Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "你免疫一些Debuff");
         }
 		public override void Update(Player player, ref int buffIndex)
 		{

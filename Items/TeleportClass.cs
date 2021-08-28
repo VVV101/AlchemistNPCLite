@@ -179,21 +179,22 @@ namespace AlchemistNPCLite.Items
 			int x = Main.maxTilesX - 32;
 				for (int y = 0; y < Main.maxTilesY; y += 16)
 				{
+					//CHECK LIQUID TYPE
 					if (Main.tile[x, y] == null) continue;
-					if (Main.tile[x, y].liquid != 255) continue;
-					if (Main.tile[x, y].liquid == 255) 
+					if (Main.tile[x, y].LiquidAmount != 255) continue;
+					if (Main.tile[x, y].LiquidAmount == 255) 
 					{
 						do
 						{
 							x -= 16;
-						} while (Main.tile[x, y].liquid == 255);
+						} while (Main.tile[x, y].LiquidAmount == 255);
 					}
-					if (Main.tile[x, y] != null && Main.tile[x, y].liquid == 0 && Main.tile[x, y].active()) 
+					if (Main.tile[x, y] != null && Main.tile[x, y].LiquidAmount == 0 && Main.tile[x, y].IsActive) 
 							{
 								do 
 								{
 									y -= 16;
-								} while (Main.tile[x, y] != null && Main.tile[x, y].liquid == 0 && Main.tile[x, y].active());
+								} while (Main.tile[x, y] != null && Main.tile[x, y].LiquidAmount == 0 && Main.tile[x, y].IsActive);
 							}
 					pos = new Vector2((x) * 16, (y-2) * 16);
 					break;
@@ -213,20 +214,20 @@ namespace AlchemistNPCLite.Items
 				for (int y = 0; y < Main.maxTilesY; y += 16)
 				{
 					if (Main.tile[x, y] == null) continue;
-					if (Main.tile[x, y].liquid != 255) continue;
-					if (Main.tile[x, y].liquid == 255) 
+					if (Main.tile[x, y].LiquidAmount != 255) continue;
+					if (Main.tile[x, y].LiquidAmount == 255) 
 					{
 						do
 						{
 							x += 16;
-						} while (Main.tile[x, y].liquid == 255);
+						} while (Main.tile[x, y].LiquidAmount == 255);
 					}
-					if (Main.tile[x, y] != null && Main.tile[x, y].liquid == 0 && Main.tile[x, y].active()) 
+					if (Main.tile[x, y] != null && Main.tile[x, y].LiquidAmount == 0 && Main.tile[x, y].IsActive) 
 							{
 								do 
 								{
 									y -= 16;
-								} while (Main.tile[x, y] != null && Main.tile[x, y].liquid == 0 && Main.tile[x, y].active());
+								} while (Main.tile[x, y] != null && Main.tile[x, y].LiquidAmount == 0 && Main.tile[x, y].IsActive);
 							}
 					pos = new Vector2((x) * 16, (y-2) * 16);
 					break;

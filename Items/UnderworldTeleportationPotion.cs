@@ -19,21 +19,21 @@ namespace AlchemistNPCLite.Items
 			Tooltip.SetDefault("Teleports you to Underworld to leftest or rightest Obsidian Tower"
 			+"\nSide depends of used mouse button"
 			+"\nWould be useful to drink Obsidian Skin potion before drinking that");
-			DisplayName.AddTranslation(GameCulture.Russian, "Телепортёр в Ад");
-            Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас в Ад к крайней Обсидиановой башне\nСторона зависит от нажатой клавиши мыши\nБудет полезно выпить зелье Обсидиановой кожи до того, как пить это");
+			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Телепортёр в Ад");
+            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Телепортирует вас в Ад к крайней Обсидиановой башне\nСторона зависит от нажатой клавиши мыши\nБудет полезно выпить зелье Обсидиановой кожи до того, как пить это");
 
-            DisplayName.AddTranslation(GameCulture.Chinese, "地狱传送药剂");
-            Tooltip.AddTranslation(GameCulture.Chinese, "将你传送至最靠近地狱两端的黑曜石塔楼\n方向取决于鼠标按键\n我建议你这么做之前先来一瓶82年的黑曜石皮肤药剂 XD");
+            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "地狱传送药剂");
+            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "将你传送至最靠近地狱两端的黑曜石塔楼\n方向取决于鼠标按键\n我建议你这么做之前先来一瓶82年的黑曜石皮肤药剂 XD");
         }    
 		public override void SetDefaults()
         {
-            item.CloneDefaults(ItemID.RecallPotion);
-            item.maxStack = 99;
-            item.consumable = true;
+            Item.CloneDefaults(ItemID.RecallPotion);
+            Item.maxStack = 99;
+            Item.consumable = true;
             return;
         }
 		
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			if (Main.myPlayer == player.whoAmI)
 			{

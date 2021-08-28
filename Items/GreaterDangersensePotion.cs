@@ -17,24 +17,24 @@ namespace AlchemistNPCLite.Items
 			DisplayName.SetDefault("Greater Dangersense Potion");
 			Tooltip.SetDefault("Grants Greater Dangersense buff (light up enemy projectiles)"
 			+"\nThis effect is global for all players");
-			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Великого Чувства Опасности");
-			Tooltip.AddTranslation(GameCulture.Russian, "Даёт бафф Великого Чувства Опасности (подсвечивает вражеские снаряды)\nЭффект действует для всех игроков");
+			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Зелье Великого Чувства Опасности");
+			Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Даёт бафф Великого Чувства Опасности (подсвечивает вражеские снаряды)\nЭффект действует для всех игроков");
         }    
 		public override void SetDefaults()
         {
-            item.UseSound = SoundID.Item3;
-            item.useStyle = 2;
-            item.useTurn = true;
-            item.useAnimation = 17;
-            item.useTime = 17;
-            item.maxStack = 99;
-            item.consumable = true;
-            item.width = 20;
-            item.height = 30;
-            item.value = Item.sellPrice(0, 0, 2, 0);
-            item.rare = 7;
-            item.buffType = mod.BuffType("GreaterDangersense");
-            item.buffTime = 36000;
+            Item.UseSound = SoundID.Item3;
+            Item.useStyle = 2;
+            Item.useTurn = true;
+            Item.useAnimation = 17;
+            Item.useTime = 17;
+            Item.maxStack = 99;
+            Item.consumable = true;
+            Item.width = 20;
+            Item.height = 30;
+            Item.value = Item.sellPrice(0, 0, 2, 0);
+            Item.rare = 7;
+            Item.buffType = ModContent.BuffType<Buffs.GreaterDangersense>();
+            Item.buffTime = 36000;
             return;
         }
     }

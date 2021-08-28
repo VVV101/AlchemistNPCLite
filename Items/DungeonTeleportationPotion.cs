@@ -17,21 +17,21 @@ namespace AlchemistNPCLite.Items
 		{
 			DisplayName.SetDefault("Dungeon Teleportation Potion");
 			Tooltip.SetDefault("Teleports you to Dungeon entrance");
-			DisplayName.AddTranslation(GameCulture.Russian, "Зелье телепортации в Данж");
-			Tooltip.AddTranslation(GameCulture.Russian, "Телепортирует вас ко входу в Данж");
+			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Зелье телепортации в Данж");
+			Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Телепортирует вас ко входу в Данж");
 
-            DisplayName.AddTranslation(GameCulture.Chinese, "地牢传送药剂");
-            Tooltip.AddTranslation(GameCulture.Chinese, "将你传送至地牢入口");
+            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "地牢传送药剂");
+            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "将你传送至地牢入口");
         }    
 		public override void SetDefaults()
         {
-            item.CloneDefaults(ItemID.RecallPotion);
-            item.maxStack = 99;
-            item.consumable = true;
+            Item.CloneDefaults(ItemID.RecallPotion);
+            Item.maxStack = 99;
+            Item.consumable = true;
             return;
         }
 		
-		public override bool UseItem(Player player)
+		public override bool? UseItem(Player player)
 		{
 			if (Main.myPlayer == player.whoAmI)
 			{

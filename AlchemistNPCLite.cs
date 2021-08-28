@@ -22,18 +22,13 @@ namespace AlchemistNPCLite
     {
 		public AlchemistNPCLite()
 		{
-			Properties = new ModProperties()
-			{
-				Autoload = true,
-				AutoloadGores = true,
-				AutoloadSounds = true,
-			};
+            ;
 		}
 
 		public static Mod Instance;
 		internal static AlchemistNPCLite instance;
 		internal static ModConfiguration modConfiguration;
-		public static ModHotKey DiscordBuff;
+		public static ModKeybind DiscordBuff;
 		public static bool SF = false;
 		public static bool GreaterDangersense = false;
 		public static int DTH = 0;
@@ -60,46 +55,47 @@ namespace AlchemistNPCLite
 		{
 			Instance = this;
             string DiscordBuffTeleportation = Language.GetTextValue("Discord Buff Teleportation");
-            DiscordBuff = RegisterHotKey(DiscordBuffTeleportation, "Q");
+            DiscordBuff = KeybindLoader.RegisterKeybind(this, DiscordBuffTeleportation, "Q");
             SetTranslation();
 			instance = this;
 			if (!Main.dedServ)
 			{
-			alchemistUI = new ShopChangeUI();
-			alchemistUI.Activate();
-			alchemistUserInterface = new UserInterface();
-			alchemistUserInterface.SetState(alchemistUI);
-			
-			alchemistUIA = new ShopChangeUIA();
-			alchemistUIA.Activate();
-			alchemistUserInterfaceA = new UserInterface();
-			alchemistUserInterfaceA.SetState(alchemistUIA);
-			
-			alchemistUIO = new ShopChangeUIO();
-			alchemistUIO.Activate();
-			alchemistUserInterfaceO = new UserInterface();
-			alchemistUserInterfaceO.SetState(alchemistUIO);
-			
-			alchemistUIM = new ShopChangeUIM();
-			alchemistUIM.Activate();
-			alchemistUserInterfaceM = new UserInterface();
-			alchemistUserInterfaceM.SetState(alchemistUIM);
+                alchemistUI = new ShopChangeUI();
+                alchemistUI.Activate();
+                alchemistUserInterface = new UserInterface();
+                alchemistUserInterface.SetState(alchemistUI);
+                
+                alchemistUIA = new ShopChangeUIA();
+                alchemistUIA.Activate();
+                alchemistUserInterfaceA = new UserInterface();
+                alchemistUserInterfaceA.SetState(alchemistUIA);
+                
+                alchemistUIO = new ShopChangeUIO();
+                alchemistUIO.Activate();
+                alchemistUserInterfaceO = new UserInterface();
+                alchemistUserInterfaceO.SetState(alchemistUIO);
+                
+                alchemistUIM = new ShopChangeUIM();
+                alchemistUIM.Activate();
+                alchemistUserInterfaceM = new UserInterface();
+                alchemistUserInterfaceM.SetState(alchemistUIM);
 			}
 		}
 		
 		public override void PostSetupContent()
 		{
-			Mod censusMod = ModLoader.GetMod("Census");
-			if(censusMod != null)
-			{
-				censusMod.Call("TownNPCCondition", NPCType("Alchemist"), "Defeat Eye of Cthulhu");
-				censusMod.Call("TownNPCCondition", NPCType("Brewer"), "Defeat Eye of Cthulhu");
-				censusMod.Call("TownNPCCondition", NPCType("Jeweler"), "Defeat Eye of Cthulhu");
-				censusMod.Call("TownNPCCondition", NPCType("Architect"), "Have any 3 other NPC present");
-				censusMod.Call("TownNPCCondition", NPCType("Operator"), "Defeat Eater of Worlds/Brain of Cthulhu");
-				censusMod.Call("TownNPCCondition", NPCType("Musician"), "Defeat Skeletron");
-				censusMod.Call("TownNPCCondition", NPCType("Young Brewer"), "World state is Hardmode and both Alchemist and Operator are alive");
-			}
+		// Mod censusMod = ModLoader.GetMod("Census");
+			// if(censusMod != null)
+			// {
+			// 	//censusMod.Call("TownNPCCondition", NPCType("Alchemist"), "Defeat Eye of Cthulhu");
+			// 	censusMod.Call("TownNPCCondition", NPCType<NPCs.Alchemist>(), "Defeat Eye of Cthulhu");
+			// 	censusMod.Call("TownNPCCondition", NPCType<NPCs.Brewer>(), "Defeat Eye of Cthulhu");
+			// 	censusMod.Call("TownNPCCondition", NPCType<NPCs.Jeweler>(), "Defeat Eye of Cthulhu");
+			// 	censusMod.Call("TownNPCCondition", NPCType<NPCs.Architect>(), "Have any 3 other NPC present");
+			// 	censusMod.Call("TownNPCCondition", NPCType<NPCs.Operator>(), "Defeat Eater of Worlds/Brain of Cthulhu");
+			// 	censusMod.Call("TownNPCCondition", NPCType<NPCs.Musician>(), "Defeat Skeletron");
+			// 	censusMod.Call("TownNPCCondition", NPCType<NPCs.YoungBrewer>(), "World state is Hardmode and both Alchemist and Operator are alive");
+			// }
 		}
 		
 		public override void Unload()
@@ -108,74 +104,6 @@ namespace AlchemistNPCLite
 			instance = null;
 			DiscordBuff = null;
 			modConfiguration = null;
-		}
-		
-		public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
-		{
-			int MouseTextIndex = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
-			if (MouseTextIndex != -1)
-			{
-				layers.Insert(MouseTextIndex, new LegacyGameInterfaceLayer(
-					"AlchemistNPC: Shop Selector",
-					delegate
-					{
-						if (ShopChangeUI.visible)
-						{
-							alchemistUI.Draw(Main.spriteBatch);
-						}
-						return true;
-					},
-					InterfaceScaleType.UI)
-				);
-			}
-			int MouseTextIndexA = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
-			if (MouseTextIndexA != -1)
-			{
-				layers.Insert(MouseTextIndexA, new LegacyGameInterfaceLayer(
-					"AlchemistNPC: Shop Selector A",
-					delegate
-					{
-						if (ShopChangeUIA.visible)
-						{
-							alchemistUIA.Draw(Main.spriteBatch);
-						}
-						return true;
-					},
-					InterfaceScaleType.UI)
-				);
-			}
-			int MouseTextIndexO = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
-			if (MouseTextIndexO != -1)
-			{
-				layers.Insert(MouseTextIndexO, new LegacyGameInterfaceLayer(
-					"AlchemistNPC: Shop Selector O",
-					delegate
-					{
-						if (ShopChangeUIO.visible)
-						{
-							alchemistUIO.Draw(Main.spriteBatch);
-						}
-						return true;
-					},
-					InterfaceScaleType.UI)
-				);
-			}
-			int MouseTextIndexM = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
-			if (MouseTextIndexM != -1)
-			{
-				layers.Insert(MouseTextIndexM, new LegacyGameInterfaceLayer(
-					"AlchemistNPC: Shop Selector M",
-					delegate
-					{
-						if (ShopChangeUIM.visible)
-						{
-							alchemistUIM.Draw(Main.spriteBatch);
-						}
-						return true;
-					},
-					InterfaceScaleType.UI)
-				);
-			}
 		}
 		
 		public override void AddRecipeGroups()
@@ -290,758 +218,734 @@ namespace AlchemistNPCLite
 		
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.CelestialStone);
-			recipe.AddIngredient(ItemID.GoldBar, 10);
-			recipe.AddTile(TileID.TinkerersWorkbench);
-			recipe.SetResult(ItemID.Sundial);
-			recipe.AddRecipe();
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.StoneBlock, 10);
-			recipe.needWater = true;
-			recipe.needLava = true;
-			recipe.SetResult(ItemID.Obsidian, 5);
-			recipe.AddRecipe();
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.BottledHoney, 10);
-			recipe.needWater = true;
-			recipe.needHoney = true;
-			recipe.SetResult(ItemID.HoneyBlock, 5);
-			recipe.AddRecipe();
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.BottledHoney, 10);
-			recipe.needLava = true;
-			recipe.needHoney = true;
-			recipe.SetResult(ItemID.CrispyHoneyBlock, 5);
-			recipe.AddRecipe();
-			recipe = new ModRecipe(this);
-			recipe.AddRecipeGroup("AlchemistNPCLite:AnyWatch");
-			recipe.AddIngredient(ItemID.HermesBoots);
-			recipe.AddIngredient(ItemID.Wire, 15);
-			recipe.AddTile(TileID.TinkerersWorkbench);
-			recipe.SetResult(ItemID.Stopwatch);
-			recipe.AddRecipe();
-			recipe = new ModRecipe(this);
-			recipe.AddRecipeGroup("AlchemistNPCLite:EvilBar", 10);
-			recipe.AddRecipeGroup("AlchemistNPCLite:AnyWatch");
-			recipe.AddIngredient(ItemID.Wire, 25);
-			recipe.AddIngredient(ItemID.Chain);
-			recipe.AddTile(TileID.TinkerersWorkbench);
-			recipe.SetResult(ItemID.DPSMeter);
-			recipe.AddRecipe();
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.TallyCounter);
-			recipe.AddIngredient(ItemID.BlackLens);
-			recipe.AddIngredient(ItemID.AntlionMandible);
-			recipe.AddRecipeGroup("AlchemistNPCLite:EvilDrop");
-			recipe.AddRecipeGroup("AlchemistNPCLite:EvilComponent");
-			recipe.AddIngredient(ItemID.Feather);
-			recipe.AddIngredient(ItemID.TatteredCloth);
-			recipe.AddIngredient(ItemID.Bone);
-			recipe.AddIngredient(ItemID.Wire, 25);
-			recipe.AddTile(TileID.TinkerersWorkbench);
-			recipe.SetResult(ItemID.LifeformAnalyzer);
-			recipe.AddRecipe();
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.Mushroom);
-			recipe.AddIngredient(ItemID.Daybloom);
-			recipe.AddTile(TileID.Bottles);
-			recipe.SetResult(ItemID.PurificationPowder, 5);
-			recipe.AddRecipe();
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.CorruptSeeds);
-			recipe.AddIngredient(ItemID.PurificationPowder);
-			recipe.AddIngredient(ItemID.PixieDust);
-			recipe.AddTile(TileID.Bottles);
-			recipe.SetResult(ItemID.HallowedSeeds);
-			recipe.AddRecipe();
-			recipe = new ModRecipe(this);
-			recipe.AddIngredient(ItemID.CrimsonSeeds);
-			recipe.AddIngredient(ItemID.PurificationPowder);
-			recipe.AddIngredient(ItemID.PixieDust);
-			recipe.AddTile(TileID.Bottles);
-			recipe.SetResult(ItemID.HallowedSeeds);
-			recipe.AddRecipe();
+            CreateRecipe(ItemID.Sundial)
+                .AddIngredient(ItemID.CelestialStone)
+                .AddIngredient(ItemID.GoldBar, 10)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+
+            CreateRecipe(ItemID.Obsidian, 5)
+                .AddIngredient(ItemID.StoneBlock, 10)
+                .AddCondition(Recipe.Condition.NearWater)
+                .AddCondition(Recipe.Condition.NearLava)
+                .Register();
+
+            CreateRecipe(ItemID.HoneyBlock, 5)
+                .AddIngredient(ItemID.BottledHoney, 10)
+                .AddCondition(Recipe.Condition.NearWater)
+                .AddCondition(Recipe.Condition.NearHoney)
+                .Register();
+
+            CreateRecipe(ItemID.CrispyHoneyBlock, 5)
+			    .AddIngredient(ItemID.BottledHoney, 10)
+                .AddCondition(Recipe.Condition.NearLava)
+                .AddCondition(Recipe.Condition.NearHoney)
+                .Register();
+
+            CreateRecipe(ItemID.Stopwatch)
+                .AddRecipeGroup("AlchemistNPCLite:AnyWatch")
+                .AddIngredient(ItemID.HermesBoots)
+                .AddIngredient(ItemID.Wire, 15)
+                .AddIngredient(ItemID.Wood, 5)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+
+            CreateRecipe(ItemID.DPSMeter)
+                .AddRecipeGroup("AlchemistNPCLite:EvilBar", 10)
+                .AddRecipeGroup("AlchemistNPCLite:AnyWatch")
+			    .AddIngredient(ItemID.Wire, 25)
+			    .AddIngredient(ItemID.Chain)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+
+            CreateRecipe(ItemID.LifeformAnalyzer)
+				.AddIngredient(ItemID.TallyCounter)
+				.AddIngredient(ItemID.BlackLens)
+				.AddIngredient(ItemID.AntlionMandible)
+				.AddRecipeGroup("AlchemistNPCLite:EvilDrop")
+				.AddRecipeGroup("AlchemistNPCLite:EvilComponent")
+				.AddIngredient(ItemID.Feather)
+				.AddIngredient(ItemID.TatteredCloth)
+				.AddIngredient(ItemID.Bone)
+				.AddIngredient(ItemID.Wire, 25)
+				.AddTile(TileID.TinkerersWorkbench)
+                .Register();
+
+            CreateRecipe(ItemID.PurificationPowder, 5)
+                .AddIngredient(ItemID.Mushroom)
+                .AddIngredient(ItemID.Daybloom)
+                .AddTile(TileID.Bottles)
+                .Register();
+
+            CreateRecipe(ItemID.HallowedSeeds)
+                .AddIngredient(ItemID.CorruptSeeds)
+                .AddIngredient(ItemID.PurificationPowder)
+                .AddIngredient(ItemID.PixieDust)
+                .AddTile(TileID.Bottles)
+                .Register();
+
+            CreateRecipe(ItemID.HallowedSeeds)
+                .AddIngredient(ItemID.CrimsonSeeds)
+                .AddIngredient(ItemID.PurificationPowder)
+                .AddIngredient(ItemID.PixieDust)
+                .AddTile(TileID.Bottles)
+                .Register();
 		}
 		
         //SBMW:Transtation method
         public void SetTranslation()
         {
-            ModTranslation text = CreateTranslation("DiscordBuffTeleportation");
+            ModTranslation text = LocalizationLoader.CreateTranslation(this, "DiscordBuffTeleportation");
             text.SetDefault("Discord Buff Teleportation");
-            text.AddTranslation(GameCulture.Chinese, "混乱药剂传送");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "混乱药剂传送");
+            LocalizationLoader.AddTranslation(text);
 
             //SBMW:RecipeGroups
-            text = CreateTranslation("evilBossMask");
+            text = LocalizationLoader.CreateTranslation("evilBossMask");
             text.SetDefault("Corruption/Crimson boss mask");
-            text.AddTranslation(GameCulture.Chinese, "腐化/血腥Boss面具");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "腐化/血腥Boss面具");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("cultist");
+            text = LocalizationLoader.CreateTranslation("cultist");
             text.SetDefault("Cultist mask/hood");
-            text.AddTranslation(GameCulture.Chinese, "邪教徒面具/兜帽");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "邪教徒面具/兜帽");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("tier3HardmodeBar");
+            text = LocalizationLoader.CreateTranslation("tier3HardmodeBar");
             text.SetDefault("tier 3 Hardmode Bar");
-            text.AddTranslation(GameCulture.Chinese, "三级肉后锭(精金/钛金)");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "三级肉后锭(精金/钛金)");
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("hardmodeComponent");
+			text = LocalizationLoader.CreateTranslation("hardmodeComponent");
             text.SetDefault("Hardmode component");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("evilBar");
+            text = LocalizationLoader.CreateTranslation("evilBar");
             text.SetDefault("Crimson/Corruption bar");
-            text.AddTranslation(GameCulture.Chinese, "魔金/血腥锭");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "魔金/血腥锭");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("evilMushroom");
+            text = LocalizationLoader.CreateTranslation("evilMushroom");
             text.SetDefault("evil mushroom");
-            text.AddTranslation(GameCulture.Chinese, "邪恶蘑菇");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "邪恶蘑菇");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("evilComponent");
+            text = LocalizationLoader.CreateTranslation("evilComponent");
             text.SetDefault("evil component");
-            text.AddTranslation(GameCulture.Chinese, "邪恶材料(暗影鳞片/组织样本)");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "邪恶材料(暗影鳞片/组织样本)");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("evilDrop");
+            text = LocalizationLoader.CreateTranslation("evilDrop");
             text.SetDefault("evil drop");
-            text.AddTranslation(GameCulture.Chinese, "邪恶掉落物(腐肉/椎骨)");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "邪恶掉落物(腐肉/椎骨)");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("tier2anvil");
+            text = LocalizationLoader.CreateTranslation("tier2anvil");
             text.SetDefault("tier 2 anvil");
-            text.AddTranslation(GameCulture.Chinese, "二级砧(秘银/山铜砧)");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "二级砧(秘银/山铜砧)");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("tier2forge");
+            text = LocalizationLoader.CreateTranslation("tier2forge");
             text.SetDefault("tier 2 forge");
-            text.AddTranslation(GameCulture.Chinese, "二级熔炉(精金/钛金熔炉)");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "二级熔炉(精金/钛金熔炉)");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("tier1anvil");
+            text = LocalizationLoader.CreateTranslation("tier1anvil");
             text.SetDefault("tier 1 anvil");
-            text.AddTranslation(GameCulture.Chinese, "一级砧(铁/铅砧)");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "一级砧(铁/铅砧)");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("CelestialWings");
+            text = LocalizationLoader.CreateTranslation("CelestialWings");
             text.SetDefault("Celestial Wings");
-            text.AddTranslation(GameCulture.Chinese, "四柱翅膀");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "四柱翅膀");
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("LunarHamaxe");
+			text = LocalizationLoader.CreateTranslation("LunarHamaxe");
             text.SetDefault("Lunar Hamaxe");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("tier3Watch");
+            text = LocalizationLoader.CreateTranslation("tier3Watch");
             text.SetDefault("tier 3 Watch");
-            text.AddTranslation(GameCulture.Chinese, "三级表(金表/铂金表)");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "三级表(金表/铂金表)");
+            LocalizationLoader.AddTranslation(text);
 
             //SBMW:Vanilla
-            text = CreateTranslation("KingSlime");
+            text = LocalizationLoader.CreateTranslation("KingSlime");
             text.SetDefault("King Slime Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "史莱姆之王宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "史莱姆之王宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("EyeofCthulhu");
+            text = LocalizationLoader.CreateTranslation("EyeofCthulhu");
             text.SetDefault("Eye of Cthulhu Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "克苏鲁之眼宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "克苏鲁之眼宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("EaterOfWorlds");
+            text = LocalizationLoader.CreateTranslation("EaterOfWorlds");
             text.SetDefault("Eater Of Worlds Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "世界吞噬者宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "世界吞噬者宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("BrainOfCthulhu");
+            text = LocalizationLoader.CreateTranslation("BrainOfCthulhu");
             text.SetDefault("Brain Of Cthulhu Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "克苏鲁之脑宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "克苏鲁之脑宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("QueenBee");
+            text = LocalizationLoader.CreateTranslation("QueenBee");
             text.SetDefault("Queen Bee Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "蜂后宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "蜂后宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("Skeletron");
+            text = LocalizationLoader.CreateTranslation("Skeletron");
             text.SetDefault("Skeletron Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "骷髅王宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "骷髅王宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("WallOfFlesh");
+            text = LocalizationLoader.CreateTranslation("WallOfFlesh");
             text.SetDefault("Wall Of Flesh Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "血肉之墙宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "血肉之墙宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("Destroyer");
+            text = LocalizationLoader.CreateTranslation("Destroyer");
             text.SetDefault("Destroyer Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "机械蠕虫宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "机械蠕虫宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("Twins");
+            text = LocalizationLoader.CreateTranslation("Twins");
             text.SetDefault("Twins Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "双子魔眼宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "双子魔眼宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("SkeletronPrime");
+            text = LocalizationLoader.CreateTranslation("SkeletronPrime");
             text.SetDefault("Skeletron Prime Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "机械骷髅王宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "机械骷髅王宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("Plantera");
+            text = LocalizationLoader.CreateTranslation("Plantera");
             text.SetDefault("Plantera Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "世纪之花宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "世纪之花宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("Golem");
+            text = LocalizationLoader.CreateTranslation("Golem");
             text.SetDefault("Golem Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "石巨人宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "石巨人宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-			text = CreateTranslation("Betsy");
+			text = LocalizationLoader.CreateTranslation("Betsy");
             text.SetDefault("Betsy Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-            text = CreateTranslation("DukeFishron");
+            text = LocalizationLoader.CreateTranslation("DukeFishron");
             text.SetDefault("Duke Fishron Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "猪鲨公爵宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "猪鲨公爵宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("MoonLord");
+            text = LocalizationLoader.CreateTranslation("MoonLord");
             text.SetDefault("Moon Lord Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "月亮领主宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "月亮领主宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
             //SBMW:CalamityMod
-            text = CreateTranslation("DesertScourge");
+            text = LocalizationLoader.CreateTranslation("DesertScourge");
             text.SetDefault("Desert Scourge Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "荒漠灾虫宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "荒漠灾虫宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("Crabulon");
+            text = LocalizationLoader.CreateTranslation("Crabulon");
             text.SetDefault("Crabulon Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "蘑菇螃蟹宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "蘑菇螃蟹宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("HiveMind");
+            text = LocalizationLoader.CreateTranslation("HiveMind");
             text.SetDefault("The Hive Mind Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "腐巢意志宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "腐巢意志宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("Perforator");
+            text = LocalizationLoader.CreateTranslation("Perforator");
             text.SetDefault("The Perforators Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "血肉宿主宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "血肉宿主宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("SlimeGod");
+            text = LocalizationLoader.CreateTranslation("SlimeGod");
             text.SetDefault("The Slime God Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "史莱姆之神宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "史莱姆之神宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("Cryogen");
+            text = LocalizationLoader.CreateTranslation("Cryogen");
             text.SetDefault("Cryogen Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "极地之灵宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "极地之灵宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("BrimstoneElemental");
+            text = LocalizationLoader.CreateTranslation("BrimstoneElemental");
             text.SetDefault("Brimstone Elemental Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "硫磺火元素宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "硫磺火元素宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("AquaticScourge");
+            text = LocalizationLoader.CreateTranslation("AquaticScourge");
             text.SetDefault("Aquatic Scourge Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "渊海灾虫宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "渊海灾虫宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("Calamitas");
+            text = LocalizationLoader.CreateTranslation("Calamitas");
             text.SetDefault("Calamitas Doppelganger Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "灾厄之眼宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "灾厄之眼宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("AstrageldonSlime");
+            text = LocalizationLoader.CreateTranslation("AstrageldonSlime");
             text.SetDefault("Astrum Aureus Treasure Bag");
-			text.AddTranslation(GameCulture.Russian, "Сумка Звёздного Заразителя");
-            text.AddTranslation(GameCulture.Chinese, "大彗星史莱姆宝藏袋");
-            AddTranslation(text);
+			text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сумка Звёздного Заразителя");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "大彗星史莱姆宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("AstrumDeus");
+            text = LocalizationLoader.CreateTranslation("AstrumDeus");
             text.SetDefault("Astrum Deus Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "星神吞噬者宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "星神吞噬者宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("Leviathan");
+            text = LocalizationLoader.CreateTranslation("Leviathan");
             text.SetDefault("The Leviathan Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "利维坦宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "利维坦宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("PlaguebringerGoliath");
+            text = LocalizationLoader.CreateTranslation("PlaguebringerGoliath");
             text.SetDefault("The Plaguebringer Goliath Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "瘟疫使者歌莉娅宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "瘟疫使者歌莉娅宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("Ravager");
+            text = LocalizationLoader.CreateTranslation("Ravager");
             text.SetDefault("Ravager Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "毁灭魔像宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "毁灭魔像宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("Providence");
+            text = LocalizationLoader.CreateTranslation("Providence");
             text.SetDefault("Providence Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "亵渎天神宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "亵渎天神宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("Polterghast");
+            text = LocalizationLoader.CreateTranslation("Polterghast");
             text.SetDefault("Polterghast Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "噬魂幽花宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "噬魂幽花宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("OldDuke");
+			text = LocalizationLoader.CreateTranslation("OldDuke");
             text.SetDefault("The Old Duke Treasure Bag");
-			text.AddTranslation(GameCulture.Russian, "Сумка Старого Герцога");
-            AddTranslation(text);
+			text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сумка Старого Герцога");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("DevourerofGods");
+            text = LocalizationLoader.CreateTranslation("DevourerofGods");
             text.SetDefault("The Devourer of Gods Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "神明吞噬者宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "神明吞噬者宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("Bumblebirb");
+            text = LocalizationLoader.CreateTranslation("Bumblebirb");
             text.SetDefault("Bumblebirb Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "癫痫鸟宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "癫痫鸟宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("Yharon");
+            text = LocalizationLoader.CreateTranslation("Yharon");
             text.SetDefault("Jungle Dragon, Yharon Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "犽戎宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "犽戎宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
             //SBMW:ThoriumMod
-			text = CreateTranslation("DarkMage");
+			text = LocalizationLoader.CreateTranslation("DarkMage");
             text.SetDefault("Dark Mage Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Ogre");
+			text = LocalizationLoader.CreateTranslation("Ogre");
             text.SetDefault("Ogre Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-            text = CreateTranslation("ThunderBird");
+            text = LocalizationLoader.CreateTranslation("ThunderBird");
             text.SetDefault("The Great Thunder Bird Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "惊雷王鹰宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "惊雷王鹰宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("QueenJellyfish");
+            text = LocalizationLoader.CreateTranslation("QueenJellyfish");
             text.SetDefault("The Queen Jellyfish Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "水母皇后宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "水母皇后宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("CountEcho");
+			text = LocalizationLoader.CreateTranslation("CountEcho");
             text.SetDefault("Count Echo Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "水母皇后宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "水母皇后宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("GraniteEnergyStorm");
+            text = LocalizationLoader.CreateTranslation("GraniteEnergyStorm");
             text.SetDefault("Granite Energy Storm Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "花岗岩流能风暴宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "花岗岩流能风暴宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("TheBuriedChampion");
+            text = LocalizationLoader.CreateTranslation("TheBuriedChampion");
             text.SetDefault("The Buried Champion Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "英灵遗骸宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "英灵遗骸宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("TheStarScouter");
+            text = LocalizationLoader.CreateTranslation("TheStarScouter");
             text.SetDefault("The Star Scouter Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "星际监察者宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "星际监察者宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("BoreanStrider");
+            text = LocalizationLoader.CreateTranslation("BoreanStrider");
             text.SetDefault("Borean Strider Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "极地遁蛛宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "极地遁蛛宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("CoznixTheFallenBeholder");
+            text = LocalizationLoader.CreateTranslation("CoznixTheFallenBeholder");
             text.SetDefault("Coznix, The Fallen Beholder Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "堕落注视者·克兹尼格斯宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "堕落注视者·克兹尼格斯宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("TheLich");
+            text = LocalizationLoader.CreateTranslation("TheLich");
             text.SetDefault("The Lich Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "巫妖宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "巫妖宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("AbyssionTheForgottenOne");
+            text = LocalizationLoader.CreateTranslation("AbyssionTheForgottenOne");
             text.SetDefault("Abyssion, The Forgotten One Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "被遗忘者-深渊之主宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "被遗忘者-深渊之主宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 
-            text = CreateTranslation("TheRagnarok");
+            text = LocalizationLoader.CreateTranslation("TheRagnarok");
             text.SetDefault("The Ragnarok Treasure Bag");
-            text.AddTranslation(GameCulture.Chinese, "灾难之灵宝藏袋");
-            AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "灾难之灵宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 			
 			//Redemption
-			text = CreateTranslation("KingChicken");
+			text = LocalizationLoader.CreateTranslation("KingChicken");
             text.SetDefault("The Mighty King Chicken Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("ThornBane");
+			text = LocalizationLoader.CreateTranslation("ThornBane");
             text.SetDefault("Thorn, Bane of the Forest Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("TheKeeper");
+			text = LocalizationLoader.CreateTranslation("TheKeeper");
             text.SetDefault("The Keeper Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("XenoCrystal");
+			text = LocalizationLoader.CreateTranslation("XenoCrystal");
             text.SetDefault("Xenomite Crystal Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("IEye");
+			text = LocalizationLoader.CreateTranslation("IEye");
             text.SetDefault("Infected Eye Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("KingSlayer");
+			text = LocalizationLoader.CreateTranslation("KingSlayer");
             text.SetDefault("King Slayer III Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("V1");
+			text = LocalizationLoader.CreateTranslation("V1");
             text.SetDefault("Vlitch Cleaver Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("V2");
+			text = LocalizationLoader.CreateTranslation("V2");
             text.SetDefault("Vlitch Gigipede Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("V3");
+			text = LocalizationLoader.CreateTranslation("V3");
             text.SetDefault("Omega Obliterator Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("PZ");
+			text = LocalizationLoader.CreateTranslation("PZ");
             text.SetDefault("Patient Zero Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("ThornRematch");
+			text = LocalizationLoader.CreateTranslation("ThornRematch");
             text.SetDefault("Thorn, Bane of the Forest Rematch Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Nebuleus");
+			text = LocalizationLoader.CreateTranslation("Nebuleus");
             text.SetDefault("Nebuleus, Angel of the Cosmos Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 
 			 //ElementsAwoken
-			text = CreateTranslation("Wasteland");
+			text = LocalizationLoader.CreateTranslation("Wasteland");
             text.SetDefault("Wasteland Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Infernace");
+			text = LocalizationLoader.CreateTranslation("Infernace");
             text.SetDefault("Infernace Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("ScourgeFighter");
+			text = LocalizationLoader.CreateTranslation("ScourgeFighter");
             text.SetDefault("Scourge Fighter Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Regaroth");
+			text = LocalizationLoader.CreateTranslation("Regaroth");
             text.SetDefault("Regaroth Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("TheCelestials");
+			text = LocalizationLoader.CreateTranslation("TheCelestials");
             text.SetDefault("The Celestials Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Permafrost");
+			text = LocalizationLoader.CreateTranslation("Permafrost");
             text.SetDefault("Permafrost Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Obsidious");
+			text = LocalizationLoader.CreateTranslation("Obsidious");
             text.SetDefault("Obsidious Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Aqueous");
+			text = LocalizationLoader.CreateTranslation("Aqueous");
             text.SetDefault("Aqueous Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("TempleKeepers");
+			text = LocalizationLoader.CreateTranslation("TempleKeepers");
             text.SetDefault("The Temple Keepers Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Guardian");
+			text = LocalizationLoader.CreateTranslation("Guardian");
             text.SetDefault("The Guardian Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Volcanox");
+			text = LocalizationLoader.CreateTranslation("Volcanox");
             text.SetDefault("Volcanox Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("VoidLevi");
+			text = LocalizationLoader.CreateTranslation("VoidLevi");
             text.SetDefault("Void Leviathan Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Azana");
+			text = LocalizationLoader.CreateTranslation("Azana");
             text.SetDefault("Azana Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Ancients");
+			text = LocalizationLoader.CreateTranslation("Ancients");
             text.SetDefault("The Ancients Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 
 			 //SacredTools
-			text = CreateTranslation("Decree");
+			text = LocalizationLoader.CreateTranslation("Decree");
             text.SetDefault("The Decree Treasure Bag");
-	    	text.AddTranslation(GameCulture.Russian, "Сумка Декри");
-			text.AddTranslation(GameCulture.Chinese, "焚炎南瓜宝藏袋");
-            AddTranslation(text);
+	    	text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сумка Декри");
+			text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "焚炎南瓜宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 			 
-            text = CreateTranslation("FlamingPumpkin");
+            text = LocalizationLoader.CreateTranslation("FlamingPumpkin");
             text.SetDefault("The Flaming Pumpkin Treasure Bag");
-	    	text.AddTranslation(GameCulture.Russian, "Сумка Горящей Тыквы");
-            AddTranslation(text);
+	    	text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сумка Горящей Тыквы");
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Jensen");
+			text = LocalizationLoader.CreateTranslation("Jensen");
             text.SetDefault("Jensen, the Grand Harpy Treasure Bag");
-	    	text.AddTranslation(GameCulture.Russian, "Сумка Дженсен, Великой Гарпии");
-			text.AddTranslation(GameCulture.Chinese, "巨型鸟妖詹森宝藏袋");
-            AddTranslation(text);
+	    	text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сумка Дженсен, Великой Гарпии");
+			text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "巨型鸟妖詹森宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Araneas");
+			text = LocalizationLoader.CreateTranslation("Araneas");
             text.SetDefault("Araneas Treasure Bag");
-	    	text.AddTranslation(GameCulture.Russian, "Сумка Аранеи");
-            AddTranslation(text);
+	    	text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сумка Аранеи");
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Raynare");
+			text = LocalizationLoader.CreateTranslation("Raynare");
             text.SetDefault("Harpy Queen, Raynare Treasure Bag");
-	    	text.AddTranslation(GameCulture.Russian, "Сумка Рейнейр, Королевы Гарпий");
-			text.AddTranslation(GameCulture.Chinese, "鸟妖女王雷纳宝藏袋");
-            AddTranslation(text);
+	    	text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сумка Рейнейр, Королевы Гарпий");
+			text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "鸟妖女王雷纳宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Primordia");
+			text = LocalizationLoader.CreateTranslation("Primordia");
             text.SetDefault("Primordia Treasure Bag");
-	    	text.AddTranslation(GameCulture.Russian, "Сумка Примордии");
-            AddTranslation(text);
+	    	text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сумка Примордии");
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Abaddon");
+			text = LocalizationLoader.CreateTranslation("Abaddon");
             text.SetDefault("Abaddon, the Emissary of Nightmares Treasure Bag");
-	    	text.AddTranslation(GameCulture.Russian, "Сумка Абаддона, Эмиссара Кошмаров");
-			text.AddTranslation(GameCulture.Chinese, "梦魇使者亚巴顿宝藏袋");
-            AddTranslation(text);
+	    	text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сумка Абаддона, Эмиссара Кошмаров");
+			text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "梦魇使者亚巴顿宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Araghur");
+			text = LocalizationLoader.CreateTranslation("Araghur");
             text.SetDefault("Araghur, the Flare Serpent Treasure Bag");
-	    	text.AddTranslation(GameCulture.Russian, "Сумка Арагура, Огненного Змия");
-			text.AddTranslation(GameCulture.Chinese, "熔火巨蟒宝藏袋");
-            AddTranslation(text);
+	    	text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сумка Арагура, Огненного Змия");
+			text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "熔火巨蟒宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Lunarians");
+			text = LocalizationLoader.CreateTranslation("Lunarians");
             text.SetDefault("The Lunarians Treasure Bag");
-	    	text.AddTranslation(GameCulture.Russian, "Сумка Лунарианов");
-			text.AddTranslation(GameCulture.Chinese, "月军宝藏袋");
-            AddTranslation(text);
+	    	text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сумка Лунарианов");
+			text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "月军宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Challenger");
+			text = LocalizationLoader.CreateTranslation("Challenger");
             text.SetDefault("Erazor Treasure Bag");
-			text.AddTranslation(GameCulture.Russian, "Сумка Ирэйзора");
-			text.AddTranslation(GameCulture.Chinese, "堕落帝者宝藏袋");
-            AddTranslation(text);
+			text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сумка Ирэйзора");
+			text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "堕落帝者宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Challenger");
+			text = LocalizationLoader.CreateTranslation("Challenger");
             text.SetDefault("Erazor Treasure Bag");
-			text.AddTranslation(GameCulture.Russian, "Сумка Ирэйзора");
-			text.AddTranslation(GameCulture.Chinese, "堕落帝者宝藏袋");
-            AddTranslation(text);
+			text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сумка Ирэйзора");
+			text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "堕落帝者宝藏袋");
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Spookboi");
+			text = LocalizationLoader.CreateTranslation("Spookboi");
             text.SetDefault("Nihilus Treasure Bag");
-			text.AddTranslation(GameCulture.Russian, "Сумка Нигилюса");
-            AddTranslation(text);
+			text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сумка Нигилюса");
+            LocalizationLoader.AddTranslation(text);
 			
 			//SpiritMod
-            text = CreateTranslation("Scarabeus");
+            text = LocalizationLoader.CreateTranslation("Scarabeus");
             text.SetDefault("Scarabeus Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Bane");
+			text = LocalizationLoader.CreateTranslation("Bane");
             text.SetDefault("Vinewrath Bane Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Flier");
+			text = LocalizationLoader.CreateTranslation("Flier");
             text.SetDefault("Ancient Flier Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Raider");
+			text = LocalizationLoader.CreateTranslation("Raider");
             text.SetDefault("Starplate Raider Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Infernon");
+			text = LocalizationLoader.CreateTranslation("Infernon");
             text.SetDefault("Infernon Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Dusking");
+			text = LocalizationLoader.CreateTranslation("Dusking");
             text.SetDefault("Dusking Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("EtherialUmbra");
+			text = LocalizationLoader.CreateTranslation("EtherialUmbra");
             text.SetDefault("Etherial Umbra Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("IlluminantMaster");
+			text = LocalizationLoader.CreateTranslation("IlluminantMaster");
             text.SetDefault("Illuminant Master Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Atlas");
+			text = LocalizationLoader.CreateTranslation("Atlas");
             text.SetDefault("Atlas Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Overseer");
+			text = LocalizationLoader.CreateTranslation("Overseer");
             text.SetDefault("Overseer Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
 			//SpiritMod
-            text = CreateTranslation("Sharkron");
+            text = LocalizationLoader.CreateTranslation("Sharkron");
             text.SetDefault("Dune Sharkron Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Hypothema");
+			text = LocalizationLoader.CreateTranslation("Hypothema");
             text.SetDefault("Hypothema Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Ragnar");
+			text = LocalizationLoader.CreateTranslation("Ragnar");
             text.SetDefault("Ragnar Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("AnDio");
+			text = LocalizationLoader.CreateTranslation("AnDio");
             text.SetDefault("Andesia & Dioritus Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Annihilator");
+			text = LocalizationLoader.CreateTranslation("Annihilator");
             text.SetDefault("The Annihilator Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Slybertron");
+			text = LocalizationLoader.CreateTranslation("Slybertron");
             text.SetDefault("Slybertron Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("SteamTrain");
+			text = LocalizationLoader.CreateTranslation("SteamTrain");
             text.SetDefault("Steam Train Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
 			//Pinky
-            text = CreateTranslation("SunlightTrader");
+            text = LocalizationLoader.CreateTranslation("SunlightTrader");
             text.SetDefault("Sunlight Trader Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("THOFC");
+			text = LocalizationLoader.CreateTranslation("THOFC");
             text.SetDefault("The Heart of the Cavern Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("MythrilSlime");
+			text = LocalizationLoader.CreateTranslation("MythrilSlime");
             text.SetDefault("Mythril Slime Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Valdaris");
+			text = LocalizationLoader.CreateTranslation("Valdaris");
             text.SetDefault("Valdaris Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Gatekeeper");
+			text = LocalizationLoader.CreateTranslation("Gatekeeper");
             text.SetDefault("The Gatekeeper Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
 			//AAMod
-            text = CreateTranslation("Monarch");
+            text = LocalizationLoader.CreateTranslation("Monarch");
             text.SetDefault("Mushroom Monarch Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Grips");
+			text = LocalizationLoader.CreateTranslation("Grips");
             text.SetDefault("Grips of Chaos Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Broodmother");
+			text = LocalizationLoader.CreateTranslation("Broodmother");
             text.SetDefault("Broodmother Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 
-			text = CreateTranslation("Hydra");
+			text = LocalizationLoader.CreateTranslation("Hydra");
             text.SetDefault("Hydra Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Serpent");
+			text = LocalizationLoader.CreateTranslation("Serpent");
             text.SetDefault("Subzero Serpent Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Djinn");
+			text = LocalizationLoader.CreateTranslation("Djinn");
             text.SetDefault("Desert Djinn Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Retriever");
+			text = LocalizationLoader.CreateTranslation("Retriever");
             text.SetDefault("Retriever Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("RaiderU");
+			text = LocalizationLoader.CreateTranslation("RaiderU");
             text.SetDefault("Raider Ultima Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Orthrus");
+			text = LocalizationLoader.CreateTranslation("Orthrus");
             text.SetDefault("Orthrus X Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("EFish");
+			text = LocalizationLoader.CreateTranslation("EFish");
             text.SetDefault("Emperor Fishron Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Nightcrawler");
+			text = LocalizationLoader.CreateTranslation("Nightcrawler");
             text.SetDefault("Nightcrawler Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Daybringer");
+			text = LocalizationLoader.CreateTranslation("Daybringer");
             text.SetDefault("Daybringer Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Yamata");
+			text = LocalizationLoader.CreateTranslation("Yamata");
             text.SetDefault("Yamata Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Akuma");
+			text = LocalizationLoader.CreateTranslation("Akuma");
             text.SetDefault("Akuma Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Zero");
+			text = LocalizationLoader.CreateTranslation("Zero");
             text.SetDefault("Zero Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("Shen");
+			text = LocalizationLoader.CreateTranslation("Shen");
             text.SetDefault("Shen Doragon Treasure Cache");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 			
-			text = CreateTranslation("ShenGrips");
+			text = LocalizationLoader.CreateTranslation("ShenGrips");
             text.SetDefault("Shen Doragon Grips Treasure Bag");
-            AddTranslation(text);
+            LocalizationLoader.AddTranslation(text);
 
         }
-		
-		public override void UpdateUI(GameTime gameTime)
-		{
-			if (alchemistUserInterface != null && ShopChangeUI.visible)
-			{
-				alchemistUserInterface.Update(gameTime);
-			}
-			
-			if (alchemistUserInterfaceA != null && ShopChangeUIA.visible)
-			{
-				alchemistUserInterfaceA.Update(gameTime);
-			}
-			
-			if (alchemistUserInterfaceO != null && ShopChangeUIO.visible)
-			{
-				alchemistUserInterfaceO.Update(gameTime);
-			}
-			
-			if (alchemistUserInterfaceM != null && ShopChangeUIM.visible)
-			{
-				alchemistUserInterfaceM.Update(gameTime);
-			}
-		}
     }
-	
 }
 

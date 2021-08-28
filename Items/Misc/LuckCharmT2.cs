@@ -17,29 +17,28 @@ namespace AlchemistNPCLite.Items.Misc
 			DisplayName.SetDefault("Charm of Absolute Luck");
 			Tooltip.SetDefault("While this is in your inventory, you have better chance of getting better reforges"
 			+"\nAlso affects accessories (Menacing->Lucky->Warding)");
-			DisplayName.AddTranslation(GameCulture.Russian, "Талисман Абсолютной Удачи");
-            Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеете более высокий шанс получить лучшую перековку\nРаботает и с аксессуарами (Грозный->Удачливый->Оберегающий)");
+			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Талисман Абсолютной Удачи");
+            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Если находится в инвентаре, вы имеете более высокий шанс получить лучшую перековку\nРаботает и с аксессуарами (Грозный->Удачливый->Оберегающий)");
         }
 
 		public override void SetDefaults()
 		{
-			item.width = 32;
-			item.height = 32;
-			item.value = 2000000;
-			item.rare = 10;
+			Item.width = 32;
+			Item.height = 32;
+			Item.value = 2000000;
+			Item.rare = 10;
 		}
 		
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "LuckCharm");
-			recipe.AddIngredient(ItemID.ShroomiteBar, 10);
-			recipe.AddIngredient(ItemID.SoulofFright, 10);
-			recipe.AddIngredient(ItemID.SoulofSight, 10);
-			recipe.AddIngredient(ItemID.SoulofMight, 10);
-			recipe.AddTile(TileID.MythrilAnvil);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			CreateRecipe()
+				.AddIngredient(null, "LuckCharm")
+				.AddIngredient(ItemID.ShroomiteBar, 10)
+				.AddIngredient(ItemID.SoulofFright, 10)
+				.AddIngredient(ItemID.SoulofSight, 10)
+				.AddIngredient(ItemID.SoulofMight, 10)
+				.AddTile(TileID.MythrilAnvil)
+				.Register();
 		}
 	}
 }

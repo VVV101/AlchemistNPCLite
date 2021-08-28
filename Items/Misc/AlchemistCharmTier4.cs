@@ -20,36 +20,35 @@ namespace AlchemistNPCLite.Items.Misc
 			+"\nAlchemist, Brewer and Young Brewer are providing 50% discount"
 			+"\nMakes potions non-consumable if Supreme Calamitas is defeated"
 			+"\nBuffs duration is 50% longer");
-			DisplayName.AddTranslation(GameCulture.Russian, "Талисман Алхимика Четвертого Уровня");
-            Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеет очень большой шанс не потратить зелье\nПозволяет использовать зелья из Свиньи-Копилки с помощью клавиши Быстрого Баффа\nАлхимик, Зельеварщица и Юный Зельевар предоставляют скидку в 50%\nЗелья не будут тратиться, если побеждена Supreme Calamitas\nДлительность баффов увеличена на 50%");
+			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Талисман Алхимика Четвертого Уровня");
+            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Если находится в инвентаре, вы имеет очень большой шанс не потратить зелье\nПозволяет использовать зелья из Свиньи-Копилки с помощью клавиши Быстрого Баффа\nАлхимик, Зельеварщица и Юный Зельевар предоставляют скидку в 50%\nЗелья не будут тратиться, если побеждена Supreme Calamitas\nДлительность баффов увеличена на 50%");
         }
 
 		public override void SetDefaults()
 		{
-			item.width = 32;
-			item.height = 32;
-			item.value = 4000000;
-			item.rare = 12;
+			Item.width = 32;
+			Item.height = 32;
+			Item.value = 4000000;
+			Item.rare = 12;
 		}
 		
 		public override void UpdateInventory(Player player)
 		{
-		((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier4 = true;
-		((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).DistantPotionsUse = true;
+		(player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier4 = true;
+		(player.GetModPlayer<AlchemistNPCLitePlayer>()).DistantPotionsUse = true;
 		}
 		
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "AlchemistCharmTier3");
-			recipe.AddIngredient(ItemID.LunarBar, 10);
-			recipe.AddIngredient(ItemID.FragmentSolar, 5);
-			recipe.AddIngredient(ItemID.FragmentNebula, 5);
-			recipe.AddIngredient(ItemID.FragmentVortex, 5);
-			recipe.AddIngredient(ItemID.FragmentStardust, 5);
-			recipe.AddTile(TileID.LunarCraftingStation);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			CreateRecipe()
+				.AddIngredient(null, "AlchemistCharmTier3")
+				.AddIngredient(ItemID.LunarBar, 10)
+				.AddIngredient(ItemID.FragmentSolar, 5)
+				.AddIngredient(ItemID.FragmentNebula, 5)
+				.AddIngredient(ItemID.FragmentVortex, 5)
+				.AddIngredient(ItemID.FragmentStardust, 5)
+				.AddTile(TileID.LunarCraftingStation)
+				.Register();
 		}
 	}
 }

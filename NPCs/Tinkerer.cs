@@ -25,83 +25,83 @@ namespace AlchemistNPCLite.NPCs
 				return "AlchemistNPCLite/NPCs/Tinkerer";
 			}
 		}
-		
-		public override bool Autoload(ref string name)
-		{
-			name = "Tinkerer";
-			return AlchemistNPCLite.modConfiguration.TinkererSpawn;
-		}
+		//Possibly Removed
+		// public override bool Autoload(ref string name)
+		// {
+		// 	name = "Tinkerer";
+		// 	return AlchemistNPCLite.modConfiguration.TinkererSpawn;
+		// }
 
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Tinkerer");
-			DisplayName.AddTranslation(GameCulture.Russian, "Инженер");
-            DisplayName.AddTranslation(GameCulture.Chinese, "工匠");
-            Main.npcFrameCount[npc.type] = 25;   
-			NPCID.Sets.AttackFrameCount[npc.type] = 4;
-			NPCID.Sets.DangerDetectRange[npc.type] = 500;
-			NPCID.Sets.AttackType[npc.type] = 1;
-			NPCID.Sets.AttackTime[npc.type] = 20;
-			NPCID.Sets.AttackAverageChance[npc.type] = 30;
-			NPCID.Sets.HatOffsetY[npc.type] = -4;
+			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Инженер");
+            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "工匠");
+            Main.npcFrameCount[NPC.type] = 25;   
+			NPCID.Sets.AttackFrameCount[NPC.type] = 4;
+			NPCID.Sets.DangerDetectRange[NPC.type] = 500;
+			NPCID.Sets.AttackType[NPC.type] = 1;
+			NPCID.Sets.AttackTime[NPC.type] = 20;
+			NPCID.Sets.AttackAverageChance[NPC.type] = 30;
+			NPCID.Sets.HatOffsetY[NPC.type] = -4;
 
-            ModTranslation text = mod.CreateTranslation("Alexander");
+            ModTranslation text = LocalizationLoader.CreateTranslation(Mod, "Alexander");
             text.SetDefault("Alexander");
-            text.AddTranslation(GameCulture.Russian, "Александр");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("Peter");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Александр");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "Peter");
             text.SetDefault("Peter");
-            text.AddTranslation(GameCulture.Russian, "Пётр");
-            mod.AddTranslation(text);
-			text = mod.CreateTranslation("TinkererButton1");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Пётр");
+            LocalizationLoader.AddTranslation(text);
+			text = LocalizationLoader.CreateTranslation(Mod, "TinkererButton1");
             text.SetDefault("Movement/Misc");
-            text.AddTranslation(GameCulture.Chinese, "出售");
-            mod.AddTranslation(text);
-			text = mod.CreateTranslation("TinkererButton2");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "出售");
+            LocalizationLoader.AddTranslation(text);
+			text = LocalizationLoader.CreateTranslation(Mod, "TinkererButton2");
             text.SetDefault("Combat");
-            text.AddTranslation(GameCulture.Chinese, "商店");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryT1");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "商店");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryT1");
             text.SetDefault("Do you need something special? Just say if so...");
-            text.AddTranslation(GameCulture.Russian, "Нужно что-то особенное? Если так, то только скажи...");
-            text.AddTranslation(GameCulture.Chinese, "需要一些特别的东西? 尽管说...");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryT2");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Нужно что-то особенное? Если так, то только скажи...");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "需要一些特别的东西? 尽管说...");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryT2");
             text.SetDefault("Have you seen my elder sister yet? She is more Steampunker than Tinkerer...");
-            text.AddTranslation(GameCulture.Russian, "Ты ещё не встречал мою старшую сестру? Она больше Паромеханик чем Инженер...");
-            text.AddTranslation(GameCulture.Chinese, "你看见过我的姐姐吗? 比起工匠, 她更像个蒸汽朋克女孩...");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryT3");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ты ещё не встречал мою старшую сестру? Она больше Паромеханик чем Инженер...");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "你看见过我的姐姐吗? 比起工匠, 她更像个蒸汽朋克女孩...");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryT3");
             text.SetDefault("If you seen Paper Tube somewhere, bring it to me and I will unlock it for you.");
-            text.AddTranslation(GameCulture.Russian, "Если найдёшь где-нибудь тубус, неси его мне и я вскрою его для тебя.");
-            text.AddTranslation(GameCulture.Chinese, "如果你在什么地方见过纸管, 把它带给我, 我会为你解锁一些东西.");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryT4");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Если найдёшь где-нибудь тубус, неси его мне и я вскрою его для тебя.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "如果你在什么地方见过纸管, 把它带给我, 我会为你解锁一些东西.");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryT4");
             text.SetDefault("As you will progress through the world, you may found more valueable things. Counting blueprints for creating rarer accessories.");
-            text.AddTranslation(GameCulture.Russian, "По мере твоего продвижения по миру, ты можешь найти всё более ценные вещи. В том числе и чертежи для создания более редких аксессуаров.");
-            text.AddTranslation(GameCulture.Chinese, "随着进度的推进, 你可能会发现更有价值的东西. 攒些蓝图来制作更稀有的饰品.");
-            mod.AddTranslation(text);
-            text = mod.CreateTranslation("EntryT5");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "По мере твоего продвижения по миру, ты можешь найти всё более ценные вещи. В том числе и чертежи для создания более редких аксессуаров.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "随着进度的推进, 你可能会发现更有价值的东西. 攒些蓝图来制作更稀有的饰品.");
+            LocalizationLoader.AddTranslation(text);
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryT5");
             text.SetDefault("You never know where you may get really rare or valueable things. So explore every possible corner with patience.");
-            text.AddTranslation(GameCulture.Russian, "Никогда не знаешь, где ты можешь заполучить что-то действительно редкое или ценное. Поэтому исследуй каждый доступный угол со всем возможным терпением.");
-            text.AddTranslation(GameCulture.Chinese, "你永远不会知道在哪里可以得到真正珍贵的东西. 所以耐心探索每一个可能的角落吧.");
-            mod.AddTranslation(text);
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Никогда не знаешь, где ты можешь заполучить что-то действительно редкое или ценное. Поэтому исследуй каждый доступный угол со всем возможным терпением.");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "你永远不会知道在哪里可以得到真正珍贵的东西. 所以耐心探索每一个可能的角落吧.");
+            LocalizationLoader.AddTranslation(text);
         }
 
 		public override void SetDefaults()
 		{
-			npc.townNPC = true;
-            npc.friendly = true;
-            npc.width = 18;
-            npc.height = 40;
-            npc.aiStyle = 7;
-            npc.damage = 10;
-            npc.defense = 40;
-            npc.lifeMax = 250;
-			npc.HitSound = SoundID.NPCHit1;
-			npc.DeathSound = SoundID.NPCDeath1;
-            npc.knockBackResist = 0.5f;
-			animationType = NPCID.Merchant;
+			NPC.townNPC = true;
+            NPC.friendly = true;
+            NPC.width = 18;
+            NPC.height = 40;
+            NPC.aiStyle = 7;
+            NPC.damage = 10;
+            NPC.defense = 40;
+            NPC.lifeMax = 250;
+			NPC.HitSound = SoundID.NPCHit1;
+			NPC.DeathSound = SoundID.NPCDeath1;
+            NPC.knockBackResist = 0.5f;
+			AnimationType = NPCID.Merchant;
 		}
 		
 		public override bool CanTownNPCSpawn(int numTownNPCs, int money)

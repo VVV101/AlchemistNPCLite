@@ -14,7 +14,7 @@ namespace AlchemistNPCLite.Tiles
 {
 	public class HMCraftPound : ModTile
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.tileSolidTop[Type] = false;
 			Main.tileFrameImportant[Type] = true;
@@ -29,11 +29,11 @@ namespace AlchemistNPCLite.Tiles
 			TileObjectData.addTile(Type);
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Superb Crafting Pound");
-			name.AddTranslation(GameCulture.Russian, "Сложный Крафтовый Фунт");
-            name.AddTranslation(GameCulture.Chinese, "豪华手工英镑");
+			name.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сложный Крафтовый Фунт");
+            name.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "豪华手工英镑");
             AddMapEntry(new Color(200, 200, 200), name);
-			disableSmartCursor = true;
-			adjTiles = new int[]
+			TileID.Sets.DisableSmartCursor[Type] = true;
+			AdjTiles = new int[]
 			{
 			TileID.WorkBenches, 
 			TileID.Anvils, 
@@ -50,8 +50,8 @@ namespace AlchemistNPCLite.Tiles
 			TileID.LihzahrdFurnace,
 			TileID.LunarCraftingStation
 			};
-			dustType = 111;
-			animationFrameHeight = 56;
+			DustType = 111;
+			AnimationFrameHeight = 56;
 		}
 		
 		public override void NumDust(int i, int j, bool fail, ref int num)
@@ -67,7 +67,7 @@ namespace AlchemistNPCLite.Tiles
 		
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 32, 16, mod.ItemType("HMCraftPound"));
+			Item.NewItem(i * 16, j * 16, 32, 16, ModContent.ItemType<Items.Placeable.HMCraftPound>());
 		}
 	}
 }

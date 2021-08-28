@@ -10,17 +10,17 @@ namespace AlchemistNPCLite.Buffs
 {
 	public class ExplorerComb : ModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Explorer Combination");
 			Description.SetDefault("Combination of Dangersense, Hunter, Spelunker, Night Owl, Shine & Mining buffs"
 			+"\nAlso gives effects of Gills, Flippers and Water Walking Potions");
 			Main.debuff[Type] = false;
-			canBeCleared = true;
-			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Исследователя");
-            Description.AddTranslation(GameCulture.Russian, "Сочетания баффов Предчувствия, Охотника, Шахтёра, Ночного Зрения, Сияния и Добычи\nТакже даёт эффекты Подводного Дыхания, Ласт и Хождения по воде");
-            DisplayName.AddTranslation(GameCulture.Chinese, "探索者药剂包");
-            Description.AddTranslation(GameCulture.Chinese, "包含以下Buff：危险感知, 狩猎, 洞穴探险, 夜猫子, 光芒, 挖矿\n同时给予鱼鳃、脚蹼和水上行走药剂效果");
+			CanBeCleared = true;
+			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Комбинация Исследователя");
+            Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сочетания баффов Предчувствия, Охотника, Шахтёра, Ночного Зрения, Сияния и Добычи\nТакже даёт эффекты Подводного Дыхания, Ласт и Хождения по воде");
+            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "探索者药剂包");
+            Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "包含以下Buff：危险感知, 狩猎, 洞穴探险, 夜猫子, 光芒, 挖矿\n同时给予鱼鳃、脚蹼和水上行走药剂效果");
         }
 		public override void Update(Player player, ref int buffIndex)
 		{

@@ -15,7 +15,7 @@ namespace AlchemistNPCLite.Tiles
 {
 	public class MateriaTransmutator : ModTile
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			Main.tileLighted[Type] = true;
 			Main.tileFrameImportant[Type] = true;
@@ -28,13 +28,13 @@ namespace AlchemistNPCLite.Tiles
 			TileObjectData.addTile(Type);
 			ModTranslation name = CreateMapEntryName();
 			name.SetDefault("Materia Transmutator");
-			name.AddTranslation(GameCulture.Russian, "Преобразователь Материи");
-            name.AddTranslation(GameCulture.Chinese, "物质嬗变器");
+			name.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Преобразователь Материи");
+            name.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "物质嬗变器");
             AddMapEntry(new Color(200, 200, 200), name);
-			disableSmartCursor = true;
-			adjTiles = new int[]
+			TileID.Sets.DisableSmartCursor[Type] = true;
+			AdjTiles = new int[]
 			{
-			mod.TileType("WingoftheWorld"),
+			//ModContent.TileType<Tiles.WingoftheWorld),	//Removed in lite
 			TileID.WorkBenches, 
 			TileID.Anvils, 
 			TileID.Furnaces, 
@@ -72,20 +72,22 @@ namespace AlchemistNPCLite.Tiles
 			TileID.AlchemyTable,
 			TileID.LunarCraftingStation
 			};
-			if (ModLoader.GetMod("ThoriumMod") != null)
-				{
-                Array.Resize(ref adjTiles, adjTiles.Length + 3);
-                adjTiles[adjTiles.Length - 1] = ModLoader.GetMod("ThoriumMod").TileType("ThoriumAnvil");
-                adjTiles[adjTiles.Length - 2] = ModLoader.GetMod("ThoriumMod").TileType("ArcaneArmorFabricator");
-                adjTiles[adjTiles.Length - 3] = ModLoader.GetMod("ThoriumMod").TileType("SoulForge");
-				}
-			if (ModLoader.GetMod("FargowiltasSouls") != null)
-				{
-				Array.Resize(ref adjTiles, adjTiles.Length + 1);
-                adjTiles[adjTiles.Length - 1] = ModLoader.GetMod("FargowiltasSouls").TileType("CrucibleCosmosSheet");
-				}
-			dustType = 111;
-			animationFrameHeight = 74;
+			// if (ModLoader.GetMod("ThoriumMod") != null)
+			// 	{
+			// 	//IMPLEMENT LATER
+            //     // Array.Resize(ref AdjTiles, AdjTiles.Length + 3);
+            //     // AdjTiles[AdjTiles.Length - 1] = ModLoader.GetMod("ThoriumMod").TileType("ThoriumAnvil");
+            //     // AdjTiles[AdjTiles.Length - 2] = ModLoader.GetMod("ThoriumMod").TileType("ArcaneArmorFabricator");
+            //     // AdjTiles[AdjTiles.Length - 3] = ModLoader.GetMod("ThoriumMod").TileType("SoulForge");
+			// 	}
+			// if (ModLoader.GetMod("FargowiltasSouls") != null)
+			// 	{
+			// 	//IMPLEMENT LATER
+			// 	// Array.Resize(ref AdjTiles, AdjTiles.Length + 1);
+            //     // AdjTiles[AdjTiles.Length - 1] = ModLoader.GetMod("FargowiltasSouls").TileType("CrucibleCosmosSheet");
+			// 	}
+			DustType = 111;
+			AnimationFrameHeight = 74;
 		}
 		
 		public override void NumDust(int i, int j, bool fail, ref int num)
@@ -112,7 +114,7 @@ namespace AlchemistNPCLite.Tiles
 		
 		public override void KillMultiTile(int i, int j, int frameX, int frameY)
 		{
-			Item.NewItem(i * 16, j * 16, 16, 32, mod.ItemType("MateriaTransmutator"));
+			Item.NewItem(i * 16, j * 16, 16, 32, ModContent.ItemType<Items.Placeable.MateriaTransmutator>());
 		}
 		
 		public override void NearbyEffects(int i, int j, bool closer)
