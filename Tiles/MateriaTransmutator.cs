@@ -34,7 +34,6 @@ namespace AlchemistNPCLite.Tiles
 			TileID.Sets.DisableSmartCursor[Type] = true;
 			AdjTiles = new int[]
 			{
-			//ModContent.TileType<Tiles.WingoftheWorld),	//Removed in lite
 			TileID.WorkBenches, 
 			TileID.Anvils, 
 			TileID.Furnaces, 
@@ -72,22 +71,23 @@ namespace AlchemistNPCLite.Tiles
 			TileID.AlchemyTable,
 			TileID.LunarCraftingStation
 			};
-			// if (ModLoader.GetMod("ThoriumMod") != null)
-			// 	{
-			// 	//IMPLEMENT LATER
-            //     // Array.Resize(ref AdjTiles, AdjTiles.Length + 3);
-            //     // AdjTiles[AdjTiles.Length - 1] = ModLoader.GetMod("ThoriumMod").TileType("ThoriumAnvil");
-            //     // AdjTiles[AdjTiles.Length - 2] = ModLoader.GetMod("ThoriumMod").TileType("ArcaneArmorFabricator");
-            //     // AdjTiles[AdjTiles.Length - 3] = ModLoader.GetMod("ThoriumMod").TileType("SoulForge");
-			// 	}
-			// if (ModLoader.GetMod("FargowiltasSouls") != null)
-			// 	{
-			// 	//IMPLEMENT LATER
-			// 	// Array.Resize(ref AdjTiles, AdjTiles.Length + 1);
-            //     // AdjTiles[AdjTiles.Length - 1] = ModLoader.GetMod("FargowiltasSouls").TileType("CrucibleCosmosSheet");
-			// 	}
+			// IMPLEMENT WHEN WEAKREFERENCES FIXED
+			/*
+			if (ModLoader.GetMod("ThoriumMod") != null)
+				{
+                Array.Resize(ref AdjTiles, AdjTiles.Length + 3);
+                AdjTiles[AdjTiles.Length - 1] = ModLoader.GetMod("ThoriumMod").TileType("ThoriumAnvil");
+                AdjTiles[AdjTiles.Length - 2] = ModLoader.GetMod("ThoriumMod").TileType("ArcaneArmorFabricator");
+                AdjTiles[AdjTiles.Length - 3] = ModLoader.GetMod("ThoriumMod").TileType("SoulForge");
+				}
+			if (ModLoader.GetMod("FargowiltasSouls") != null)
+				{
+				Array.Resize(ref AdjTiles, AdjTiles.Length + 1);
+                AdjTiles[AdjTiles.Length - 1] = ModLoader.GetMod("FargowiltasSouls").TileType("CrucibleCosmosSheet");
+				}
 			DustType = 111;
 			AnimationFrameHeight = 74;
+			*/
 		}
 		
 		public override void NumDust(int i, int j, bool fail, ref int num)

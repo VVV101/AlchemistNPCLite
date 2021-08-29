@@ -42,13 +42,15 @@ namespace AlchemistNPCLite.Items.Placeable
 			Item.createTile = ModContent.TileType<Tiles.MateriaTransmutatorMK2>();
 		}
 
+		// IMPLEMENT WHEN WEAKREFERENCES FIXED
+		/*
 		public override void AddRecipes()
 		{
 			CreateRecipe()
 				.AddIngredient(null, "MateriaTransmutator")
-				// IMPLEMENT LATER
-				// .AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("DraedonsForge")), 1)
+				.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("DraedonsForge")), 1)
 				.Register();
 		}
+		*/
 	}
 }

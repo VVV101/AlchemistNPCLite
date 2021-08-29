@@ -32,14 +32,16 @@ namespace AlchemistNPCLite.Buffs
 			player.buffImmune[110] = true;
 			player.buffImmune[115] = true;
 			player.buffImmune[150] = true;
-			// if (ModLoader.GetMod("MorePotions") != null)
-			// {
-			// 	// IMPLEMENT LATER
-			// 	// if (player.HasBuff(ModContent.BuffType<Buffs.MorePotionsComb>()) || player.HasBuff(ModLoader.GetMod("MorePotions").BuffType("SoulbindingElixerPotionBuff")))
-			// 	// {
-			// 	// 	--player.maxMinions;
-			// 	// }
-			// }
+			// IMPLEMENT WHEN WEAKREFERENCES FIXED
+			/*
+			if (ModLoader.GetMod("MorePotions") != null)
+			{
+				if (player.HasBuff(ModContent.BuffType<Buffs.MorePotionsComb>()) || player.HasBuff(ModLoader.GetMod("MorePotions").BuffType("SoulbindingElixerPotionBuff")))
+				{
+					--player.maxMinions;
+				}
+			}
+			*/
 		}
 	}
 }

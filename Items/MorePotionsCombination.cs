@@ -45,24 +45,26 @@ namespace AlchemistNPCLite.Items
             Item.buffTime = 52000;    //this is the buff duration        10 = 10 Second
         }
 		
+		// IMPLEMENT WHEN WEAKREFERENCES FIXED
+		/*
 		public override void AddRecipes()
 		{
-			// IMPLEMENT LATER
-			// CreateRecipe()
-			// recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("CouragePotion")), 1);
-			// recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("DawnPotion")), 1);
-			// recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("DuskPotion")), 1);
-			// recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("DiamondSkinPotion")), 1);
-			// recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("EnhancedRegenerationPotion")), 1);
-			// recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("GladiatorsPotion")), 1);
-			// recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("RangersDroughtPotion")), 1);
-			// recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("SoulbindingElixerPotion")), 1);
-			// recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("SpeedPotion")), 1);
-			// recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("SummonersDroughtPotion")), 1);
-			// recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("SwiftHandsPotion")), 1);
-			// recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("WarriorsDroughtPotion")), 1);
-			// 	.AddTile(TileID.AlchemyTable)
-			// 	.Register();
+			CreateRecipe()
+			recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("CouragePotion")), 1);
+			recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("DawnPotion")), 1);
+			recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("DuskPotion")), 1);
+			recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("DiamondSkinPotion")), 1);
+			recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("EnhancedRegenerationPotion")), 1);
+			recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("GladiatorsPotion")), 1);
+			recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("RangersDroughtPotion")), 1);
+			recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("SoulbindingElixerPotion")), 1);
+			recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("SpeedPotion")), 1);
+			recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("SummonersDroughtPotion")), 1);
+			recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("SwiftHandsPotion")), 1);
+			recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("WarriorsDroughtPotion")), 1);
+				.AddTile(TileID.AlchemyTable)
+				.Register();
 		}
+		*/
     }
 }

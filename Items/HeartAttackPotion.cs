@@ -43,16 +43,20 @@ namespace AlchemistNPCLite.Items
             Item.height = 30;
             Item.value = Item.sellPrice(0, 1, 0, 0);
             Item.rare = 10;
-			// IMPLEMENT LATER
-            // Item.buffType = ModLoader.GetMod("CalamityMod").BuffType("AbsoluteRage");
+			// IMPLEMENT WHEN WEAKREFERENCES FIXED
+			/*
+            Item.buffType = ModLoader.GetMod("CalamityMod").BuffType("AbsoluteRage");
+			*/
             Item.buffTime = 18000;
         }
 		
-		// IMPLEMENT LATER
-		// public bool CalamityModRevengeance
-		// {
-		// 	get { return CalamityMod.World.CalamityWorld.revenge; }
-        // }
+		// IMPLEMENT WHEN WEAKREFERENCES FIXED
+		/*
+		public bool CalamityModRevengeance
+		{
+			get { return CalamityMod.World.CalamityWorld.revenge; }
+        }
+		*/
 		
 		public override bool CanUseItem(Player player)
 		{
@@ -64,23 +68,26 @@ namespace AlchemistNPCLite.Items
 					return false;
 				}
 			}
-			// IMPLEMENT LATER
-			// if (CalamityModRevengeance)
-			// {
-			// 	return true;
-			// }
+			// IMPLEMENT WHEN WEAKREFERENCES FIXED
+			/*
+			if (CalamityModRevengeance)
+			{
+				return true;
+			}
+			*/
 			return false;
 		}
 		
-		// private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
+		// IMPLEMENT WHEN WEAKREFERENCES FIXED
+		/*
+		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
 		
 		public override bool? UseItem(Player player)
 		{
-			// IMPLEMENT LATER
-			// CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = Player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-			// CalamityPlayer.rage = CalamityPlayer.rageMax;
-			// return true;
-			return false;
+			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = Player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
+			CalamityPlayer.rage = CalamityPlayer.rageMax;
+			return true;
 		}
+		*/
     }
 }

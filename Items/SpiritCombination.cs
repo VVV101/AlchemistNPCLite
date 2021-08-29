@@ -46,18 +46,20 @@ namespace AlchemistNPCLite.Items
             Item.buffTime = 52000;    //this is the buff duration        10 = 10 Second
         }
 		
+		// IMPLEMENT WHEN WEAKREFERENCES FIXED
+		/*
 		public override void AddRecipes()
 		{
-			// IMPLEMENT LATER
-			// CreateRecipe()
-			// recipe.AddIngredient((ModLoader.GetMod("SpiritMod").ItemType("BismitePotion")), 1);
-			// recipe.AddIngredient((ModLoader.GetMod("SpiritMod").ItemType("RunePotion")), 1);
-			// recipe.AddIngredient((ModLoader.GetMod("SpiritMod").ItemType("SoulPotion")), 1);
-			// recipe.AddIngredient((ModLoader.GetMod("SpiritMod").ItemType("SpiritPotion")), 1);
-			// recipe.AddIngredient((ModLoader.GetMod("SpiritMod").ItemType("StarPotion")), 1);
-			// recipe.AddIngredient((ModLoader.GetMod("SpiritMod").ItemType("TurtlePotion")), 1);
-			// 	.AddTile(TileID.AlchemyTable)
-			// 	.Register();
+			CreateRecipe()
+			recipe.AddIngredient((ModLoader.GetMod("SpiritMod").ItemType("BismitePotion")), 1);
+			recipe.AddIngredient((ModLoader.GetMod("SpiritMod").ItemType("RunePotion")), 1);
+			recipe.AddIngredient((ModLoader.GetMod("SpiritMod").ItemType("SoulPotion")), 1);
+			recipe.AddIngredient((ModLoader.GetMod("SpiritMod").ItemType("SpiritPotion")), 1);
+			recipe.AddIngredient((ModLoader.GetMod("SpiritMod").ItemType("StarPotion")), 1);
+			recipe.AddIngredient((ModLoader.GetMod("SpiritMod").ItemType("TurtlePotion")), 1);
+				.AddTile(TileID.AlchemyTable)
+				.Register();
 		}
+		*/
     }
 }

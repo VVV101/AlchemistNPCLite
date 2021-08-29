@@ -37,6 +37,8 @@ namespace AlchemistNPCLite.Items.Placeable
 			Item.createTile = ModContent.TileType<Tiles.MateriaTransmutator>();
 		}
 
+		// IMPLEMENT WHEN WEAKREFERENCES FIXED
+		/*
 		public override void AddRecipes()
 		{
 			CreateRecipe()
@@ -45,20 +47,18 @@ namespace AlchemistNPCLite.Items.Placeable
 				.AddIngredient(null, "SpecCraftPoint")
 				.AddIngredient(ItemID.ManaCrystal)
 				.AddIngredient(ItemID.DD2ElderCrystalStand)
-
+				if (ModLoader.GetMod("ThoriumMod") != null)
+				{
+					recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("ThoriumAnvil")));
+					recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("ArcaneArmorFabricator")));
+					recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("SoulForge")));
+				}
 				.AddIngredient(ItemID.FragmentSolar, 10)
 				.AddIngredient(ItemID.FragmentNebula, 10)
 				.AddIngredient(ItemID.FragmentVortex, 10)
 				.AddIngredient(ItemID.FragmentStardust, 10)
 				.Register();
-			// Moved out of blank space
-			// if (ModLoader.GetMod("ThoriumMod") != null)
-			// {
-			// 	// IMPLEMENT LATER
-			// 	// recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("ThoriumAnvil")));
-			// 	// recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("ArcaneArmorFabricator")));
-			// 	// recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("SoulForge")));
-			// }
 		}
+		*/
 	}
 }

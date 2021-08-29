@@ -5,46 +5,46 @@ using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.Utilities;
 using Terraria.Localization;
- 
+
 namespace AlchemistNPCLite.NPCs
 {
-	[AutoloadHead]
-	public class Alchemist : ModNPC
-	{
-		public static bool baseShop = false;
-		public static bool plantShop = false;
-		public override string Texture
-		{
-			get
-			{
-				return "AlchemistNPCLite/NPCs/Alchemist";
-			}
-		}
-		// Probably Removed
-		// public override bool Autoload(ref string name)
-		// {
-		// 	name = "Alchemist";
-		// 	return true;
-		// }
-		
-		public override void SetStaticDefaults()
-		{
+    [AutoloadHead]
+    public class Alchemist : ModNPC
+    {
+        public static bool baseShop = false;
+        public static bool plantShop = false;
+        public override string Texture
+        {
+            get
+            {
+                return "AlchemistNPCLite/NPCs/Alchemist";
+            }
+        }
+        // Probably Removed
+        // public override bool Autoload(ref string name)
+        // {
+        // 	name = "Alchemist";
+        // 	return true;
+        // }
+
+        public override void SetStaticDefaults()
+        {
             DisplayName.SetDefault("Alchemist");
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Алхимик");
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "炼金师");
-            Main.npcFrameCount[NPC.type] = 23;   
-			NPCID.Sets.AttackFrameCount[NPC.type] = 2;
-			NPCID.Sets.DangerDetectRange[NPC.type] = 500;
-			NPCID.Sets.AttackType[NPC.type] = 0;
-			NPCID.Sets.AttackTime[NPC.type] = 22;
-			NPCID.Sets.AttackAverageChance[NPC.type] = 30;
-			NPCID.Sets.HatOffsetY[NPC.type] = -4;
+            Main.npcFrameCount[NPC.type] = 23;
+            NPCID.Sets.AttackFrameCount[NPC.type] = 2;
+            NPCID.Sets.DangerDetectRange[NPC.type] = 500;
+            NPCID.Sets.AttackType[NPC.type] = 0;
+            NPCID.Sets.AttackTime[NPC.type] = 22;
+            NPCID.Sets.AttackAverageChance[NPC.type] = 30;
+            NPCID.Sets.HatOffsetY[NPC.type] = -4;
 
             ModTranslation text = LocalizationLoader.CreateTranslation(Mod, "PlantsShop");
             text.SetDefault("Plants shop");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Магазин растений");
             LocalizationLoader.AddTranslation(text);
-			text = LocalizationLoader.CreateTranslation(Mod, "GetCharm");
+            text = LocalizationLoader.CreateTranslation(Mod, "GetCharm");
             text.SetDefault("Get Charm");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Получить талисман");
             LocalizationLoader.AddTranslation(text);
@@ -192,23 +192,23 @@ namespace AlchemistNPCLite.NPCs
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "может оставаться спокойной в такое время? Я ХОЧУ это узнать.");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), " 是怎么在这种时候保持冷静的? 我现在就想知道, 现在!");
             LocalizationLoader.AddTranslation(text);
-			text = LocalizationLoader.CreateTranslation(Mod, "EntryA25");
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA25");
             text.SetDefault("Don't let the dark one that came from the Jungle fool you with charming wisdom. Me and ");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Не позволяй тёмному, пришедшему из Джунглей, одурачить тебя чарующей мудростью. Я и ");
             LocalizationLoader.AddTranslation(text);
-			text = LocalizationLoader.CreateTranslation(Mod, "EntryA26");
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA26");
             text.SetDefault(" were once his apprentices. I quit when his lessons turned too dark but ");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), " однажды были его ассистентами. Я ушёл, когда его уроки стали слишком тёмными, но интерес ");
             LocalizationLoader.AddTranslation(text);
-			text = LocalizationLoader.CreateTranslation(Mod, "EntryA27");
+            text = LocalizationLoader.CreateTranslation(Mod, "EntryA27");
             text.SetDefault(" interest in occult Alchemy did nothing but grow.");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), " к оккультной алхимии только вырос.");
             LocalizationLoader.AddTranslation(text);
         }
-		
-		public override void SetDefaults()
-		{
-			NPC.townNPC = true;
+
+        public override void SetDefaults()
+        {
+            NPC.townNPC = true;
             NPC.friendly = true;
             NPC.width = 18;
             NPC.height = 40;
@@ -216,499 +216,507 @@ namespace AlchemistNPCLite.NPCs
             NPC.damage = 10;
             NPC.defense = 100;
             NPC.lifeMax = 250;
-			NPC.HitSound = SoundID.NPCHit1;
-			NPC.DeathSound = SoundID.NPCDeath1;
+            NPC.HitSound = SoundID.NPCHit1;
+            NPC.DeathSound = SoundID.NPCDeath1;
             NPC.knockBackResist = 0.5f;
-			AnimationType = NPCID.Clothier;
-		}
-		
+            AnimationType = NPCID.Clothier;
+        }
+
         public override bool CanTownNPCSpawn(int numTownNPCs, int money)
-		{
-			if (NPC.downedBoss1 && AlchemistNPCLite.modConfiguration.AlchemistSpawn)
-			{
-			return true;
-			}
-			return false;
-		}
- 
+        {
+            if (NPC.downedBoss1 && AlchemistNPCLite.modConfiguration.AlchemistSpawn)
+            {
+                return true;
+            }
+            return false;
+        }
+
         public override string TownNPCName()
         {                                       //NPC names
             string Edward = Language.GetTextValue("Mods.AlchemistNPCLite.Edward");
-			string Severus = Language.GetTextValue("Mods.AlchemistNPCLite.Severus");
-			string Horace = Language.GetTextValue("Mods.AlchemistNPCLite.Horace");
-			string Tilyorn = Language.GetTextValue("Mods.AlchemistNPCLite.Tilyorn");
-			string Nicolas = Language.GetTextValue("Mods.AlchemistNPCLite.Nicolas");
-			string Gregg = Language.GetTextValue("Mods.AlchemistNPCLite.Gregg");
-			switch (WorldGen.genRand.Next(6))
+            string Severus = Language.GetTextValue("Mods.AlchemistNPCLite.Severus");
+            string Horace = Language.GetTextValue("Mods.AlchemistNPCLite.Horace");
+            string Tilyorn = Language.GetTextValue("Mods.AlchemistNPCLite.Tilyorn");
+            string Nicolas = Language.GetTextValue("Mods.AlchemistNPCLite.Nicolas");
+            string Gregg = Language.GetTextValue("Mods.AlchemistNPCLite.Gregg");
+            switch (WorldGen.genRand.Next(6))
             {
-            case 0:
-            return Edward;
-            case 1:
-            return Severus;
-            case 2:
-            return Horace;
-            case 3:
-            return Tilyorn;
-			case 4:
-            return Nicolas;
-            default:
-            return Gregg;
+                case 0:
+                    return Edward;
+                case 1:
+                    return Severus;
+                case 2:
+                    return Horace;
+                case 3:
+                    return Tilyorn;
+                case 4:
+                    return Nicolas;
+                default:
+                    return Gregg;
             }
         }
- 
-		public override void TownNPCAttackStrength(ref int damage, ref float knockback)
-		{
-			if (!Main.hardMode)
-			{
-			damage = 10;
-			}
-			if (!NPC.downedMoonlord && Main.hardMode)
-			{
-			damage = 25;
-			}
-			if (NPC.downedMoonlord)
-			{
-			damage = 100;
-			}
-			knockback = 8f;
-		}
 
-		public override void TownNPCAttackCooldown(ref int cooldown, ref int randExtraCooldown)
-		{
-			cooldown = 15;
-			randExtraCooldown = 5;
-		}
+        public override void TownNPCAttackStrength(ref int damage, ref float knockback)
+        {
+            if (!Main.hardMode)
+            {
+                damage = 10;
+            }
+            if (!NPC.downedMoonlord && Main.hardMode)
+            {
+                damage = 25;
+            }
+            if (NPC.downedMoonlord)
+            {
+                damage = 100;
+            }
+            knockback = 8f;
+        }
 
-		public override void TownNPCAttackProj(ref int projType, ref int attackDelay)
-		{
-			// IMPLEMENT LATER
-			if (NPC.downedMoonlord)
-			{
-				projType = ModContent.ProjectileType<Projectiles.CorrosiveFlask>();
-			}
-			else
-			{
-				projType = ProjectileID.ToxicFlask;
-			}
-			attackDelay = 1;
-		}
+        public override void TownNPCAttackCooldown(ref int cooldown, ref int randExtraCooldown)
+        {
+            cooldown = 15;
+            randExtraCooldown = 5;
+        }
 
-		public override void TownNPCAttackProjSpeed(ref float multiplier, ref float gravityCorrection, ref float randomOffset)
-		{
-			multiplier = 12f;
-			randomOffset = 2f;
-		}
- 
- 
+        public override void TownNPCAttackProj(ref int projType, ref int attackDelay)
+        {
+            if (NPC.downedMoonlord)
+            {
+                projType = ModContent.ProjectileType<Projectiles.CorrosiveFlask>();
+            }
+            else
+            {
+                projType = ProjectileID.ToxicFlask;
+            }
+            attackDelay = 1;
+        }
+
+        public override void TownNPCAttackProjSpeed(ref float multiplier, ref float gravityCorrection, ref float randomOffset)
+        {
+            multiplier = 12f;
+            randomOffset = 2f;
+        }
+
+
         public override string GetChat()
         {                                           //npc chat
-         string EntryA1 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA1");
-		 string EntryA2 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA2");
-		 string EntryA3 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA3");
-		 string EntryA4 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA4");
-		 string EntryA5 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA5");
-		 string EntryA6 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA6");
-		 string EntryA7 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA7");
-		 string EntryA8 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA8");
-		 string EntryA9 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA9");
-		 string EntryA10 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA10");
-		 string EntryA11 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA11");
-		 string EntryA12 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA12");
-		 string EntryA13 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA13");
-		 string EntryA14 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA14");
-		 string EntryA15 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA15");
-		 string EntryA16 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA16");
-		 string EntryA17 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA17");
-		 string EntryA18 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA18");
-		 string EntryA19 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA19");
-		 string EntryA20 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA20");
-		 string EntryA21 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA21");
-		 string EntryA22 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA22");
-		 string EntryA23 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA23");
-		 string EntryA24 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA24");
-		 string EntryA25 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA25");
-		 string EntryA26 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA26");
-		 string EntryA27 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA27");
-		 int Brewer = NPC.FindFirstNPC(ModContent.NPCType<Brewer>());
-		 int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
-		 int witchDoctor = NPC.FindFirstNPC(NPCID.WitchDoctor);
-			if (Main.bloodMoon && partyGirl >= 0 && Main.rand.Next(4) == 0)
-			{
-			return EntryA23 + Main.npc[partyGirl].GivenName + EntryA24;
-			}
-			if (Main.bloodMoon)
-			{
-				switch (Main.rand.Next(3))
-				{
-				case 0:
-				return EntryA20;
-				case 1:
-				return EntryA21;
-				case 2:
-				return EntryA22;
-				}
-			}
-			if (Main.invasionType == 1)
-			{
-				return EntryA17;
-			}
-			if (Main.invasionType == 3)
-			{
-				return EntryA18;
-			}
-			if (Main.invasionType == 4)
-			{
-				return EntryA19;
-			}
-			if (witchDoctor >= 0 && Main.rand.Next(7) == 0)
-			{
-			return EntryA25 + Main.npc[Brewer].GivenName + EntryA26 + Main.npc[Brewer].GivenName + EntryA27;
-			}
-			if (Brewer >= 0 && Main.rand.Next(5) == 0)
-			{
-				return EntryA15 + Main.npc[Brewer].GivenName + EntryA16;
-			}
-			// if (ModLoader.GetMod("Tremor") != null)
-			// {
-			// 	// IMPLEMENT LATER
-			// 	// int Alch = NPC.FindFirstNPC(ModLoader.GetMod("Tremor").NPCType("Alchemist"));
-			// 	// if (Alch >= 0 && Main.rand.Next(4) == 0)
-			// 	// {
-			// 	// return EntryA12 + Main.npc[Alch].GivenName + EntryA13;
-			// 	// }
-			// }
-			// if (ModLoader.GetMod("Tremor") != null)
-			// {
-			// 	if (NPC.downedBoss3 && Main.rand.Next(6) == 0)
-			// 	{
-			// 	return EntryA14;
-			// 	}
-			// }
-			// if (ModLoader.GetMod("ThoriumMod") != null)
-			// {
-			// 	// IMPLEMENT LATER
-			// 	// int DA = NPC.FindFirstNPC(ModLoader.GetMod("ThoriumMod").NPCType("DesertTraveler"));
-			// 	// if (DA >= 0 && Main.rand.Next(7) == 0)
-			// 	// {
-			// 	// return EntryA9 + Main.npc[DA].GivenName +  EntryA10;
-			// 	// }
-			// }
-			// if (ModLoader.GetMod("ThoriumMod") != null)
-			// {
-			// 	// IMPLEMENT LATER
-			// 	// int DA = NPC.FindFirstNPC(ModLoader.GetMod("ThoriumMod").NPCType("DesertTraveler"));
-			// 	// if (DA >= 0 && Brewer >=0 && Main.rand.Next(8) == 0)
-			// 	// {
-			// 	// return EntryA11;
-			// 	// }
-			// }
-			// if (ModLoader.GetMod("ThoriumMod") != null && Main.rand.Next(5) == 0)
-			// {
-			// return EntryA8;
-			// }
+            string EntryA1 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA1");
+            string EntryA2 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA2");
+            string EntryA3 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA3");
+            string EntryA4 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA4");
+            string EntryA5 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA5");
+            string EntryA6 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA6");
+            string EntryA7 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA7");
+            string EntryA8 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA8");
+            string EntryA9 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA9");
+            string EntryA10 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA10");
+            string EntryA11 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA11");
+            string EntryA12 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA12");
+            string EntryA13 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA13");
+            string EntryA14 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA14");
+            string EntryA15 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA15");
+            string EntryA16 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA16");
+            string EntryA17 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA17");
+            string EntryA18 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA18");
+            string EntryA19 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA19");
+            string EntryA20 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA20");
+            string EntryA21 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA21");
+            string EntryA22 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA22");
+            string EntryA23 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA23");
+            string EntryA24 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA24");
+            string EntryA25 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA25");
+            string EntryA26 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA26");
+            string EntryA27 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA27");
+            int Brewer = NPC.FindFirstNPC(ModContent.NPCType<Brewer>());
+            int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
+            int witchDoctor = NPC.FindFirstNPC(NPCID.WitchDoctor);
+            if (Main.bloodMoon && partyGirl >= 0 && Main.rand.Next(4) == 0)
+            {
+                return EntryA23 + Main.npc[partyGirl].GivenName + EntryA24;
+            }
+            if (Main.bloodMoon)
+            {
+                switch (Main.rand.Next(3))
+                {
+                    case 0:
+                        return EntryA20;
+                    case 1:
+                        return EntryA21;
+                    case 2:
+                        return EntryA22;
+                }
+            }
+            if (Main.invasionType == 1)
+            {
+                return EntryA17;
+            }
+            if (Main.invasionType == 3)
+            {
+                return EntryA18;
+            }
+            if (Main.invasionType == 4)
+            {
+                return EntryA19;
+            }
+            if (witchDoctor >= 0 && Main.rand.Next(7) == 0)
+            {
+                return EntryA25 + Main.npc[Brewer].GivenName + EntryA26 + Main.npc[Brewer].GivenName + EntryA27;
+            }
+            if (Brewer >= 0 && Main.rand.Next(5) == 0)
+            {
+                return EntryA15 + Main.npc[Brewer].GivenName + EntryA16;
+            }
+            // IMPLEMENT WHEN WEAKREFERENCES FIXED
+			/*
+            if (ModLoader.GetMod("Tremor") != null)
+            {
+                int Alch = NPC.FindFirstNPC(ModLoader.GetMod("Tremor").NPCType("Alchemist"));
+                if (Alch >= 0 && Main.rand.Next(4) == 0)
+                {
+                    return EntryA12 + Main.npc[Alch].GivenName + EntryA13;
+                }
+            }
+            if (ModLoader.GetMod("Tremor") != null)
+            {
+                if (NPC.downedBoss3 && Main.rand.Next(6) == 0)
+                {
+                    return EntryA14;
+                }
+            }
+            if (ModLoader.GetMod("ThoriumMod") != null)
+            {
+                int DA = NPC.FindFirstNPC(ModLoader.GetMod("ThoriumMod").NPCType("DesertTraveler"));
+                if (DA >= 0 && Main.rand.Next(7) == 0)
+                {
+                    return EntryA9 + Main.npc[DA].GivenName + EntryA10;
+                }
+            }
+            if (ModLoader.GetMod("ThoriumMod") != null)
+            {
+                int DA = NPC.FindFirstNPC(ModLoader.GetMod("ThoriumMod").NPCType("DesertTraveler"));
+                if (DA >= 0 && Brewer >= 0 && Main.rand.Next(8) == 0)
+                {
+                    return EntryA11;
+                }
+            }
+            if (ModLoader.GetMod("ThoriumMod") != null && Main.rand.Next(5) == 0)
+            {
+                return EntryA8;
+            }
+			*/
             switch (Main.rand.Next(7))
             {
-                case 0:                                     
-				return EntryA1;
+                case 0:
+                    return EntryA1;
                 case 1:
-				return EntryA2;
-                case 2:                                                      
-				return EntryA3;
+                    return EntryA2;
+                case 2:
+                    return EntryA3;
                 case 3:
-				return EntryA4;
-                case 4:                                     
-				return EntryA5;
+                    return EntryA4;
+                case 4:
+                    return EntryA5;
                 case 5:
-				return EntryA6;
+                    return EntryA6;
                 default:
-				return EntryA7;
+                    return EntryA7;
             }
         }
- 
+
         public override void SetChatButtons(ref string button, ref string button2)
         {
-			string PlantsShop = Language.GetTextValue("Mods.AlchemistNPC.PlantsShop");
-			string GetCharm = Language.GetTextValue("Mods.AlchemistNPCLite.GetCharm");
+            string PlantsShop = Language.GetTextValue("Mods.AlchemistNPC.PlantsShop");
+            string GetCharm = Language.GetTextValue("Mods.AlchemistNPCLite.GetCharm");
             button = Language.GetTextValue("LegacyInterface.28");
-			button2 = PlantsShop;
-			
-			Player player = Main.player[Main.myPlayer];
-			if ((player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier1 == false && (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier2 == false && (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier3 == false && (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier4 == false)
-			{
-				button2 = GetCharm;
-			}
+            button2 = PlantsShop;
+
+            Player player = Main.player[Main.myPlayer];
+            if ((player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier1 == false && (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier2 == false && (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier3 == false && (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier4 == false)
+            {
+                button2 = GetCharm;
+            }
         }
- 
+
         public override void OnChatButtonClicked(bool firstButton, ref bool shop)
-		{
-		if (firstButton)
-		{
-		baseShop = true;
-		plantShop = false;
-		shop = true;
-		}
-		else
-			{
-				Player player = Main.player[Main.myPlayer];
-				if ((player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier1 == false && (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier2 == false && (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier3 == false && (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier4 == false)
-				{
-					player.QuickSpawnItem(ModContent.ItemType<Items.Misc.AlchemistCharmTier1>());
-				}
-				baseShop = false;
-				plantShop = true;
-				shop = true;
-			}
-		}
- 
+        {
+            if (firstButton)
+            {
+                baseShop = true;
+                plantShop = false;
+                shop = true;
+            }
+            else
+            {
+                Player player = Main.player[Main.myPlayer];
+                if ((player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier1 == false && (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier2 == false && (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier3 == false && (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier4 == false)
+                {
+                    player.QuickSpawnItem(ModContent.ItemType<Items.Misc.AlchemistCharmTier1>());
+                }
+                baseShop = false;
+                plantShop = true;
+                shop = true;
+            }
+        }
+
         public override void SetupShop(Chest shop, ref int nextSlot)
         {
-		if (baseShop){
-		shop.item[nextSlot].SetDefaults (ItemID.LesserHealingPotion);
-		shop.item[nextSlot].shopCustomPrice = 1000;
-		nextSlot++;
-		if (NPC.downedBoss2)
-		{
-		shop.item[nextSlot].SetDefaults (ItemID.HealingPotion);
-		shop.item[nextSlot].shopCustomPrice = 5000;
-		nextSlot++;
-		}
-		if (Main.hardMode)
-		{
-		shop.item[nextSlot].SetDefaults (ItemID.GreaterHealingPotion);
-		shop.item[nextSlot].shopCustomPrice = 10000;
-		nextSlot++;
-		}
-		if (NPC.downedMoonlord)
-		{
-		shop.item[nextSlot].SetDefaults (ItemID.SuperHealingPotion);
-		shop.item[nextSlot].shopCustomPrice = 25000;
-		nextSlot++;
-		}
-	// Mod Calamity = ModLoader.GetMod("CalamityMod");
-		// if(Calamity != null)
-		{
-			// IMPLEMENT LATER
-			// if ((bool)Calamity.Call("Downed", "profaned guardians") && !(bool)Calamity.Call("Downed", "polterghast"))
-			// {
-			// shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityMod").ItemType("SupremeHealingPotion"));
-			// shop.item[nextSlot].shopCustomPrice = 500000;
-			// nextSlot++;
-			// }
-			// if((bool)Calamity.Call("Downed", "polterghast"))
-			// {
-			// shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityMod").ItemType("OmegaHealingPotion"));
-			// shop.item[nextSlot].shopCustomPrice = 1000000;
-			// nextSlot++;
-			// }
-		}
-		shop.item[nextSlot].SetDefaults (ItemID.LesserManaPotion);
-		shop.item[nextSlot].shopCustomPrice = 500;
-		nextSlot++;
-		if (NPC.downedBoss2)
-		{
-		shop.item[nextSlot].SetDefaults (ItemID.ManaPotion);
-		shop.item[nextSlot].shopCustomPrice = 1000;
-		nextSlot++;
-		}
-		if (Main.hardMode)
-		{
-		shop.item[nextSlot].SetDefaults (ItemID.GreaterManaPotion);
-		shop.item[nextSlot].shopCustomPrice = 5000;
-		nextSlot++;		
-		}
-		if (Main.hardMode && NPC.downedMechBoss1 && (NPC.downedMechBoss2 && NPC.downedMechBoss3))
-		{
-		shop.item[nextSlot].SetDefaults (ItemID.SuperManaPotion);
-		shop.item[nextSlot].shopCustomPrice = 10000;
-		nextSlot++;	
-		}
-		if (NPC.downedBoss2)
-		{
-		shop.item[nextSlot].SetDefaults (ItemID.StrangeBrew);
-		shop.item[nextSlot].shopCustomPrice = 10000;
-		nextSlot++;
-		}
-		shop.item[nextSlot].SetDefaults (ItemID.RecallPotion);
-		nextSlot++;
-		shop.item[nextSlot].SetDefaults (ItemID.WormholePotion);
-		nextSlot++;
-		if (Main.hardMode)
-		{
-		shop.item[nextSlot].SetDefaults (ItemID.TeleportationPotion);
-		shop.item[nextSlot].shopCustomPrice = 7500;
-		nextSlot++;	
-		}
-		// if (ModLoader.GetMod("imkSushisMod") != null)
-		// {
-		// 	// IMPLEMENT LATER
-		// 	// shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("BaseSummoningPotion"));
-		// 	// shop.item[nextSlot].shopCustomPrice = 2500;
-		// 	// nextSlot++;
-		// 	// shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("AnglerAmnesiaPotion"));
-		// 	// shop.item[nextSlot].shopCustomPrice = 10000;
-		// 	// nextSlot++;
-		// 	// shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("MeteoritePotion"));
-		// 	// shop.item[nextSlot].shopCustomPrice = 50000;
-		// 	// nextSlot++;
-		// 	// shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("ResurrectionPotion"));
-		// 	// shop.item[nextSlot].shopCustomPrice = 25000;
-		// 	// nextSlot++;
-		// }
-		if (NPC.downedBoss2)
-		{
-		shop.item[nextSlot].SetDefaults (ModContent.ItemType<Items.BeachTeleporterPotion>());
-		shop.item[nextSlot].shopCustomPrice = 20000;
-		nextSlot++;
-		shop.item[nextSlot].SetDefaults (ModContent.ItemType<Items.JungleTeleporterPotion>());
-		shop.item[nextSlot].shopCustomPrice = 50000;
-		nextSlot++;
-		}
-		if (NPC.downedBoss3)
-		{
-		shop.item[nextSlot].SetDefaults (ModContent.ItemType<Items.OceanTeleporterPotion>());
-		shop.item[nextSlot].shopCustomPrice = 20000;
-		nextSlot++;
-		shop.item[nextSlot].SetDefaults (ModContent.ItemType<Items.DungeonTeleportationPotion>());
-		shop.item[nextSlot].shopCustomPrice = 25000;
-		nextSlot++;
-		}
-		if (Main.hardMode)
-		{
-		shop.item[nextSlot].SetDefaults (ModContent.ItemType<Items.UnderworldTeleportationPotion>());
-		shop.item[nextSlot].shopCustomPrice = 50000;
-		nextSlot++;
-		}
-		if (NPC.downedPlantBoss)
-		{
-		shop.item[nextSlot].SetDefaults (ModContent.ItemType<Items.TempleTeleportationPotion>());
-		shop.item[nextSlot].shopCustomPrice = 100000;
-		nextSlot++;
-		}
-		shop.item[nextSlot].SetDefaults (ItemID.Bottle);
-		shop.item[nextSlot].shopCustomPrice = 100;
-		nextSlot++;
-		shop.item[nextSlot].SetDefaults (ItemID.BottledWater);
-		shop.item[nextSlot].shopCustomPrice = 500;
-		nextSlot++;
-			if (NPC.downedBoss2)
-			{
-			shop.item[nextSlot].SetDefaults (ItemID.FallenStar);
-			nextSlot++;
-			}
-			shop.item[nextSlot].SetDefaults (ItemID.Gel);
-			shop.item[nextSlot].shopCustomPrice = 100;
-			nextSlot++;
-			if (NPC.downedBoss2)
-			{
-			shop.item[nextSlot].SetDefaults (ItemID.PinkGel);
-			shop.item[nextSlot].shopCustomPrice = 1000;
-			nextSlot++;
-			}
-			// if (ModLoader.GetMod("ThoriumMod") != null)
-			// {
-			// 	// IMPLEMENT LATER
-			// 	// if (NPC.downedBoss2)
-			// 	// {
-			// 	// 	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("WaterChestnut"));
-			// 	// 	shop.item[nextSlot].shopCustomPrice = 3500;
-			// 	// 	nextSlot++;
-			// 	// }
-			// 	// if (NPC.downedBoss3)
-			// 	// {
-			// 	// 	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("Jelly"));
-			// 	// 	shop.item[nextSlot].shopCustomPrice = 7500;
-			// 	// 	nextSlot++;
-			// 	// }
-			// }
-			if (Main.hardMode)
-			{
-				shop.item[nextSlot].SetDefaults (ItemID.PixieDust);
-				shop.item[nextSlot].shopCustomPrice = 5000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ItemID.CrystalShard);
-				shop.item[nextSlot].shopCustomPrice = 7500;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ItemID.UnicornHorn);
-				shop.item[nextSlot].shopCustomPrice = 15000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ItemID.CursedFlame);
-				shop.item[nextSlot].shopCustomPrice = 7500;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ItemID.Ichor);
-				shop.item[nextSlot].shopCustomPrice = 7500;
-				nextSlot++;
-			}	
-			}
-			if (plantShop)
-			{
-				shop.item[nextSlot].SetDefaults(ItemID.Daybloom);
-				shop.item[nextSlot].shopCustomPrice = 1000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ItemID.Waterleaf);
-				shop.item[nextSlot].shopCustomPrice = 1000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ItemID.Shiverthorn);
-				shop.item[nextSlot].shopCustomPrice = 1000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ItemID.Blinkroot);
-				shop.item[nextSlot].shopCustomPrice = 2000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ItemID.Moonglow);
-				shop.item[nextSlot].shopCustomPrice = 2000;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ItemID.Fireblossom);
-				shop.item[nextSlot].shopCustomPrice = 2500;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults(ItemID.Deathweed);
-				shop.item[nextSlot].shopCustomPrice = 2500;
-				nextSlot++;
-				shop.item[nextSlot].SetDefaults (ItemID.Mushroom);
-				shop.item[nextSlot].shopCustomPrice = 500;
-				nextSlot++;			
-				shop.item[nextSlot].SetDefaults (ItemID.GlowingMushroom);
-				shop.item[nextSlot].shopCustomPrice = 1000;
-				nextSlot++;
-				if (NPC.downedBoss2)
-				{
-					shop.item[nextSlot].SetDefaults (ItemID.VileMushroom);
-					shop.item[nextSlot].shopCustomPrice = 1000;
-					nextSlot++;
-					shop.item[nextSlot].SetDefaults (ItemID.ViciousMushroom);
-					shop.item[nextSlot].shopCustomPrice = 1000;
-					nextSlot++;
-				}
-				// if (ModLoader.GetMod("Tremor") != null)
-				// {
-				// 	// IMPLEMENT LATER
-				// 	// if (NPC.downedBoss3)
-				// 	// {
-				// 	// 	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("Gloomstone"));
-				// 	// 	shop.item[nextSlot].shopCustomPrice = 100;
-				// 	// 	nextSlot++;
-				// 	// 	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("UntreatedFlesh"));
-				// 	// 	shop.item[nextSlot].shopCustomPrice = 100;
-				// 	// 	nextSlot++;
-				// 	// 	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("LightBulb"));
-				// 	// 	shop.item[nextSlot].shopCustomPrice = 500;
-				// 	// 	nextSlot++;
-				// 	// 	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("AtisBlood"));
-				// 	// 	shop.item[nextSlot].shopCustomPrice = 2500;
-				// 	// 	nextSlot++;
-				// 	// 	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("TearsofDeath"));
-				// 	// 	shop.item[nextSlot].shopCustomPrice = 2500;
-				// 	// 	nextSlot++;
-				// 	// 	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("TornPapyrus"));
-				// 	// 	shop.item[nextSlot].shopCustomPrice = 5000;
-				// 	// 	nextSlot++;
-				// 	// 	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("PhantomSoul"));
-				// 	// 	shop.item[nextSlot].shopCustomPrice = 5000;
-				// 	// 	nextSlot++;
-				// 	// 	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("TheRib"));
-				// 	// 	shop.item[nextSlot].shopCustomPrice = 7500;
-				// 	// 	nextSlot++;
-				// 	// }	
-				// }
-			}
-		}
-	}
+            if (baseShop)
+            {
+                shop.item[nextSlot].SetDefaults(ItemID.LesserHealingPotion);
+                shop.item[nextSlot].shopCustomPrice = 1000;
+                nextSlot++;
+                if (NPC.downedBoss2)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.HealingPotion);
+                    shop.item[nextSlot].shopCustomPrice = 5000;
+                    nextSlot++;
+                }
+                if (Main.hardMode)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.GreaterHealingPotion);
+                    shop.item[nextSlot].shopCustomPrice = 10000;
+                    nextSlot++;
+                }
+                if (NPC.downedMoonlord)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.SuperHealingPotion);
+                    shop.item[nextSlot].shopCustomPrice = 25000;
+                    nextSlot++;
+                }
+				// IMPLEMENT WHEN WEAKREFERENCES FIXED
+				/*
+                Mod Calamity = ModLoader.GetMod("CalamityMod");
+                if(Calamity != null)
+                {
+                    if ((bool)Calamity.Call("Downed", "profaned guardians") && !(bool)Calamity.Call("Downed", "polterghast"))
+                    {
+                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityMod").ItemType("SupremeHealingPotion"));
+                    shop.item[nextSlot].shopCustomPrice = 500000;
+                    nextSlot++;
+                    }
+                    if((bool)Calamity.Call("Downed", "polterghast"))
+                    {
+                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityMod").ItemType("OmegaHealingPotion"));
+                    shop.item[nextSlot].shopCustomPrice = 1000000;
+                    nextSlot++;
+                    }
+                }
+				*/
+                shop.item[nextSlot].SetDefaults(ItemID.LesserManaPotion);
+                shop.item[nextSlot].shopCustomPrice = 500;
+                nextSlot++;
+                if (NPC.downedBoss2)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.ManaPotion);
+                    shop.item[nextSlot].shopCustomPrice = 1000;
+                    nextSlot++;
+                }
+                if (Main.hardMode)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.GreaterManaPotion);
+                    shop.item[nextSlot].shopCustomPrice = 5000;
+                    nextSlot++;
+                }
+                if (Main.hardMode && NPC.downedMechBoss1 && (NPC.downedMechBoss2 && NPC.downedMechBoss3))
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.SuperManaPotion);
+                    shop.item[nextSlot].shopCustomPrice = 10000;
+                    nextSlot++;
+                }
+                if (NPC.downedBoss2)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.StrangeBrew);
+                    shop.item[nextSlot].shopCustomPrice = 10000;
+                    nextSlot++;
+                }
+                shop.item[nextSlot].SetDefaults(ItemID.RecallPotion);
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.WormholePotion);
+                nextSlot++;
+                if (Main.hardMode)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.TeleportationPotion);
+                    shop.item[nextSlot].shopCustomPrice = 7500;
+                    nextSlot++;
+                }
+				// IMPLEMENT WHEN WEAKREFERENCES FIXED
+				/*
+                if (ModLoader.GetMod("imkSushisMod") != null)
+                {
+                	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("BaseSummoningPotion"));
+                	shop.item[nextSlot].shopCustomPrice = 2500;
+                	nextSlot++;
+                	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("AnglerAmnesiaPotion"));
+                	shop.item[nextSlot].shopCustomPrice = 10000;
+                	nextSlot++;
+                	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("MeteoritePotion"));
+                	shop.item[nextSlot].shopCustomPrice = 50000;
+                	nextSlot++;
+                	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("ResurrectionPotion"));
+                	shop.item[nextSlot].shopCustomPrice = 25000;
+                	nextSlot++;
+                }
+				*/
+                if (NPC.downedBoss2)
+                {
+                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.BeachTeleporterPotion>());
+                    shop.item[nextSlot].shopCustomPrice = 20000;
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.JungleTeleporterPotion>());
+                    shop.item[nextSlot].shopCustomPrice = 50000;
+                    nextSlot++;
+                }
+                if (NPC.downedBoss3)
+                {
+                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.OceanTeleporterPotion>());
+                    shop.item[nextSlot].shopCustomPrice = 20000;
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.DungeonTeleportationPotion>());
+                    shop.item[nextSlot].shopCustomPrice = 25000;
+                    nextSlot++;
+                }
+                if (Main.hardMode)
+                {
+                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.UnderworldTeleportationPotion>());
+                    shop.item[nextSlot].shopCustomPrice = 50000;
+                    nextSlot++;
+                }
+                if (NPC.downedPlantBoss)
+                {
+                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.TempleTeleportationPotion>());
+                    shop.item[nextSlot].shopCustomPrice = 100000;
+                    nextSlot++;
+                }
+                shop.item[nextSlot].SetDefaults(ItemID.Bottle);
+                shop.item[nextSlot].shopCustomPrice = 100;
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.BottledWater);
+                shop.item[nextSlot].shopCustomPrice = 500;
+                nextSlot++;
+                if (NPC.downedBoss2)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.FallenStar);
+                    nextSlot++;
+                }
+                shop.item[nextSlot].SetDefaults(ItemID.Gel);
+                shop.item[nextSlot].shopCustomPrice = 100;
+                nextSlot++;
+                if (NPC.downedBoss2)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.PinkGel);
+                    shop.item[nextSlot].shopCustomPrice = 1000;
+                    nextSlot++;
+                }
+				// IMPLEMENT WHEN WEAKREFERENCES FIXED
+				/*
+                if (ModLoader.GetMod("ThoriumMod") != null)
+                {
+                	if (NPC.downedBoss2)
+                	{
+                		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("WaterChestnut"));
+                		shop.item[nextSlot].shopCustomPrice = 3500;
+                		nextSlot++;
+                	}
+                	if (NPC.downedBoss3)
+                	{
+                		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("Jelly"));
+                		shop.item[nextSlot].shopCustomPrice = 7500;
+                		nextSlot++;
+                	}
+                }
+				*/
+                if (Main.hardMode)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.PixieDust);
+                    shop.item[nextSlot].shopCustomPrice = 5000;
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ItemID.CrystalShard);
+                    shop.item[nextSlot].shopCustomPrice = 7500;
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ItemID.UnicornHorn);
+                    shop.item[nextSlot].shopCustomPrice = 15000;
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ItemID.CursedFlame);
+                    shop.item[nextSlot].shopCustomPrice = 7500;
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ItemID.Ichor);
+                    shop.item[nextSlot].shopCustomPrice = 7500;
+                    nextSlot++;
+                }
+            }
+            if (plantShop)
+            {
+                shop.item[nextSlot].SetDefaults(ItemID.Daybloom);
+                shop.item[nextSlot].shopCustomPrice = 1000;
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.Waterleaf);
+                shop.item[nextSlot].shopCustomPrice = 1000;
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.Shiverthorn);
+                shop.item[nextSlot].shopCustomPrice = 1000;
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.Blinkroot);
+                shop.item[nextSlot].shopCustomPrice = 2000;
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.Moonglow);
+                shop.item[nextSlot].shopCustomPrice = 2000;
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.Fireblossom);
+                shop.item[nextSlot].shopCustomPrice = 2500;
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.Deathweed);
+                shop.item[nextSlot].shopCustomPrice = 2500;
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.Mushroom);
+                shop.item[nextSlot].shopCustomPrice = 500;
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.GlowingMushroom);
+                shop.item[nextSlot].shopCustomPrice = 1000;
+                nextSlot++;
+                if (NPC.downedBoss2)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.VileMushroom);
+                    shop.item[nextSlot].shopCustomPrice = 1000;
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ItemID.ViciousMushroom);
+                    shop.item[nextSlot].shopCustomPrice = 1000;
+                    nextSlot++;
+                }
+				// IMPLEMENT WHEN WEAKREFERENCES FIXED
+				/*
+                if (ModLoader.GetMod("Tremor") != null)
+                {
+                	if (NPC.downedBoss3)
+                	{
+                		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("Gloomstone"));
+                		shop.item[nextSlot].shopCustomPrice = 100;
+                		nextSlot++;
+                		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("UntreatedFlesh"));
+                		shop.item[nextSlot].shopCustomPrice = 100;
+                		nextSlot++;
+                		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("LightBulb"));
+                		shop.item[nextSlot].shopCustomPrice = 500;
+                		nextSlot++;
+                		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("AtisBlood"));
+                		shop.item[nextSlot].shopCustomPrice = 2500;
+                		nextSlot++;
+                		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("TearsofDeath"));
+                		shop.item[nextSlot].shopCustomPrice = 2500;
+                		nextSlot++;
+                		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("TornPapyrus"));
+                		shop.item[nextSlot].shopCustomPrice = 5000;
+                		nextSlot++;
+                		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("PhantomSoul"));
+                		shop.item[nextSlot].shopCustomPrice = 5000;
+                		nextSlot++;
+                		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("TheRib"));
+                		shop.item[nextSlot].shopCustomPrice = 7500;
+                		nextSlot++;
+                	}	
+                }
+				*/
+            }
+        }
+    }
 }
