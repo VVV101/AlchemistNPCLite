@@ -47,7 +47,7 @@ namespace AlchemistNPCLite.Items
                             num103 *= num105;
                             num104 *= num105;
                             // MUST BE UPDATED FOR 1.4
-                            // Projectile.NewProjectile(source, player.Center.X, player.Center.Y, num103, num104, ModContent.ProjectileType<Projectiles.LocatorProjectile>(), 0, 0f, player.whoAmI, v, 0f);
+                            // Projectile.NewProjectile(player.Center.X, player.Center.Y, num103, num104, ModContent.ProjectileType<Projectiles.LocatorProjectile>(), 0, 0f, player.whoAmI, v, 0f);
                         }
                     }
                 }

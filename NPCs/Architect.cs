@@ -7,8 +7,10 @@ using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.ID;
 using Terraria.Localization;
+using Terraria.GameContent;
 using AlchemistNPCLite.NPCs;
 using AlchemistNPCLite.Interface;
+using ReLogic.Content;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -306,8 +308,7 @@ namespace AlchemistNPCLite.NPCs
         public override void DrawTownAttackSwing(ref Texture2D item, ref int itemSize, ref float scale, ref Vector2 offset)//Allows you to customize how this town NPC's weapon is drawn when this NPC is swinging it (this NPC must have an attack type of 3). ItemType is the Texture2D instance of the item to be drawn (use Main.PopupTexture[id of item]), itemSize is the width and height of the item's hitbox
         {
             scale = 1f;
-            // MUST BE UPDATED FOR 1.4
-            // item = Main.itemTexture[ItemID.IronHammer]; //this defines the item that this npc will use
+            item = (Texture2D) (Asset<Texture2D>) Terraria.GameContent.TextureAssets.Item[ItemID.IronHammer]; //this defines the item that this npc will use
             itemSize = 40;
         }
 

@@ -7,6 +7,7 @@ using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using Terraria.WorldBuilding;
 using AlchemistNPCLite.Interface;
+using Terraria.GameContent.ItemDropRules;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -1017,12 +1018,13 @@ namespace AlchemistNPCLite.NPCs
             get { return Redemption.RedeWorld.downedNebuleus; }
         }
 		*/
+        // Possibly redundant with ModGlobalNPC
+        public override void ModifyNPCLoot(NPCLoot npcLoot)
+        {
+            base.ModifyNPCLoot(npcLoot);
 
-        // MUST BE UPDATED FOR 1.4
-        // public override void NPCLoot()
-        // {
-        // 	Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<APMC>());
-        // }
+            npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Items.Summoning.APMC>(), 1));
+        }
 
         public override void SetupShop(Chest shop, ref int nextSlot)
         {

@@ -34,6 +34,7 @@ using Terraria;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.IO;
+using Terraria.GameContent.ItemDropRules;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -359,75 +360,76 @@ namespace AlchemistNPCLite.NPCs
                 }
             }
         }
-        // MUST BE UPDATED FOR 1.4
-        // public override bool PreNPCLoot(NPC npc)
-        // {
-        // 	if (npc.type == NPCID.EyeofCthulhu)
-        // 	{
-        // 		if (!NPC.downedBoss1)
-        // 		{
-        // 			npc.DropItemInstanced(npc.position, npc.Size, ModContent.ItemType<Items.Misc.AlchemistCharmTier1>());
-        // 		}
-        // 	}
-        // 	return true;
-        // }
+        public override void OnKill(NPC npc)
+        {
+            base.OnKill(npc);
 
-        // MUST BE UPDATED FOR 1.4
-        // public override void NPCLoot(NPC npc)
-        // {
-        //     if (npc.type == 541)
-        //     {
-        //         if (!AlchemistNPCLiteWorld.downedSandElemental)
-        //         {
-        //             AlchemistNPCLiteWorld.downedSandElemental = true;
-        //             if (Main.netMode == NetmodeID.Server)
-        //             {
-        //                 NetMessage.SendData(MessageID.WorldData);
-        //             }
-        //         }
-        //     }
-        // 	// IMPLEMENT WHEN WEAKREFERENCES FIXED
-        // 	/*
-        //     Mod Calamity = ModLoader.GetMod("CalamityMod");
-        //     if (Calamity != null)
-        //     {
-        //         if ((bool)Calamity.Call("Downed", "dog") && npc.type == 327)
-        //         {
-        //             if (!AlchemistNPCLiteWorld.downedDOGPumpking)
-        //             {
-        //                 AlchemistNPCLiteWorld.downedDOGPumpking = true;
-        //                 if (Main.netMode == NetmodeID.Server)
-        //                 {
-        //                     NetMessage.SendData(MessageID.WorldData); // Immediately inform clients of new world state.
-        //                 }
-        //             }
-        //         }
+            if (npc.type == NPCID.SandElemental)
+            {
+                if (!AlchemistNPCLiteWorld.downedSandElemental)
+                {
+                    AlchemistNPCLiteWorld.downedSandElemental = true;
+                    if (Main.netMode == NetmodeID.Server)
+                    {
+                        NetMessage.SendData(MessageID.WorldData);
+                    }
+                }
+            }
+        }
+        public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)
+        {
+            base.ModifyNPCLoot(npc, npcLoot);
 
-        //         if ((bool)Calamity.Call("Downed", "dog") && npc.type == 345)
-        //         {
-        //             if (!AlchemistNPCLiteWorld.downedDOGIceQueen)
-        //             {
-        //                 AlchemistNPCLiteWorld.downedDOGIceQueen = true;
-        //                 if (Main.netMode == NetmodeID.Server)
-        //                 {
-        //                     NetMessage.SendData(MessageID.WorldData); // Immediately inform clients of new world state.
-        //                 }
-        //             }
-        //         }
-        //     }
-        // 	*/
-        //     if (npc.type == NPCID.WallofFlesh)
-        //     {
-        //         Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<LuckCharm>());
-        //     }
-        //     if (npc.type == ModContent.NPCType<Operator>())
-        //     {
-        //         Item.NewItem((int)npc.position.X, (int)npc.position.Y, npc.width, npc.height, ModContent.ItemType<APMC>());
-        //     }
-        // }
+        	if (npc.type == NPCID.EyeofCthulhu)
+        	{
+        		if (!NPC.downedBoss1)
+        		{
+				    npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Items.Misc.AlchemistCharmTier1>(), 1));
+        		}
+        	}
+            if (npc.type == NPCID.WallofFlesh)
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Items.Misc.LuckCharm>(), 1));
+            }
+            if (npc.type == ModContent.NPCType<Operator>())
+            {
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Items.Summoning.APMC>(), 1));
+            }
+        }
 
         // IMPLEMENT WHEN WEAKREFERENCES FIXED
         /*
+        public override void NPCLoot(NPC npc)
+        {
+            Mod Calamity = ModLoader.GetMod("CalamityMod");
+            if (Calamity != null)
+            {
+                if ((bool)Calamity.Call("Downed", "dog") && npc.type == 327)
+                {
+                    if (!AlchemistNPCLiteWorld.downedDOGPumpking)
+                    {
+                        AlchemistNPCLiteWorld.downedDOGPumpking = true;
+                        if (Main.netMode == NetmodeID.Server)
+                        {
+                            NetMessage.SendData(MessageID.WorldData); // Immediately inform clients of new world state.
+                        }
+                    }
+                }
+
+                if ((bool)Calamity.Call("Downed", "dog") && npc.type == 345)
+                {
+                    if (!AlchemistNPCLiteWorld.downedDOGIceQueen)
+                    {
+                        AlchemistNPCLiteWorld.downedDOGIceQueen = true;
+                        if (Main.netMode == NetmodeID.Server)
+                        {
+                            NetMessage.SendData(MessageID.WorldData); // Immediately inform clients of new world state.
+                        }
+                    }
+                }
+            }
+        }
+
 		public bool CalamityModRevengeance
 		{
         	get { return CalamityMod.World.CalamityWorld.revenge; }
