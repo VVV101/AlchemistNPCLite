@@ -142,30 +142,36 @@ namespace AlchemistNPCLite
 			}
             if (ModLoader.GetMod("CalamityMod") == null)
             {
-                if (AllDamage10) Player.GetDamage(DamageClass.Generic) += 0.1f;
-                if (AllCrit10)
-                {
-                    Player.GetCritChance(DamageClass.Melee) += 10;
-                    Player.GetCritChance(DamageClass.Ranged) += 10;
-                    Player.GetCritChance(DamageClass.Magic) += 10;
-                    Player.GetCritChance(DamageClass.Throwing) += 10;
-                    if (ModLoader.GetMod("ThoriumMod") != null)
-                    {
-                        ThoriumBoosts(Player);
-                    }
-                    if (ModLoader.GetMod("Redemption") != null)
-                    {
-                        RedemptionBoost(Player);
-                    }
-                }
-                if (Regeneration) Player.lifeRegen += 4;
-                if (Lifeforce)
-                {
-                    Player.lifeForce = true;
-                    Player.statLifeMax2 += Player.statLifeMax / 5 / 20 * 20;
-                }
+
             }
 			*/
+            //Add to if (ModLoader.GetMod("CalamityMod") == null)
+            if (AllDamage10) Player.GetDamage(DamageClass.Generic) += 0.1f;
+            if (AllCrit10)
+            {
+                Player.GetCritChance(DamageClass.Melee) += 10;
+                Player.GetCritChance(DamageClass.Ranged) += 10;
+                Player.GetCritChance(DamageClass.Magic) += 10;
+                Player.GetCritChance(DamageClass.Throwing) += 10;
+                // IMPLEMENT WHEN WEAKREFERENCES FIXED
+                /*
+                if (ModLoader.GetMod("ThoriumMod") != null)
+                {
+                    ThoriumBoosts(Player);
+                }
+                if (ModLoader.GetMod("Redemption") != null)
+                {
+                    RedemptionBoost(Player);
+                }
+                */
+            }
+            if (Regeneration) Player.lifeRegen += 4;
+            if (Lifeforce)
+            {
+                Player.lifeForce = true;
+                Player.statLifeMax2 += Player.statLifeMax / 5 / 20 * 20;
+            }
+
             if (MS) Player.moveSpeed += 0.25f;
             if (Defense8) Player.statDefense += 8;
             if (DR10) Player.endurance += 0.1f;
