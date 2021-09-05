@@ -1390,6 +1390,12 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].shopCustomPrice = 1500000;
                     nextSlot++;
                 }
+                if (NPC.downedQueenSlime && Main.expertMode) 
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.QueenSlimeBossBag);
+                    shop.item[nextSlot].shopCustomPrice = 1500000;
+                    nextSlot++;
+                }
                 if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3 && Main.expertMode)
                 {
                     shop.item[nextSlot].SetDefaults(ItemID.DestroyerBossBag);
@@ -1417,6 +1423,12 @@ namespace AlchemistNPCLite.NPCs
                 if (NPC.downedPlantBoss && Main.expertMode)
                 {
                     shop.item[nextSlot].SetDefaults(ItemID.PlanteraBossBag);
+                    shop.item[nextSlot].shopCustomPrice = 2500000;
+                    nextSlot++;
+                }
+                if (NPC.downedEmpressOfLight && Main.expertMode)
+                {
+                    shop.item[nextSlot].SetDefaults(ItemID.FairyQueenBossBag);
                     shop.item[nextSlot].shopCustomPrice = 2500000;
                     nextSlot++;
                 }
