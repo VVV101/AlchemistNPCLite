@@ -6,7 +6,8 @@ The spawn condition for the Operator is to beat EoW/BoC.
 The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 v1.8.0
--Port to Terraria 1.4
+-Updated to tModloader 0.12.
+-Added Queen Slime and Empress of Light's bags in Operator's vanilla bags shop.
 v1.7.4
 -Added Old Duke's bag in Operator's modded bags shop.
 -Added Sulphurskin Potion to Brewer's shop.
