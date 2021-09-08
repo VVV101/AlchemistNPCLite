@@ -26,8 +26,7 @@ namespace AlchemistNPCLite.Items
                 if (player.inventory[49].createTile != -1 && player.inventory[49].accessory)
                 {
                     bool r = false;
-                    // MUST BE UPDATED FOR 1.4
-                    // player.VanillaUpdateAccessory(player.whoAmI, player.inventory[49], false, ref r, ref r, ref r);
+                    player.ApplyEquipFunctional(player.inventory[49], r);
                 }
             }
             if (player.accCritterGuide && AlchemistNPCLite.modConfiguration.LifeformAnalyzer)
