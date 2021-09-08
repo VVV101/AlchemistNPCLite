@@ -5,6 +5,8 @@ The Young Brewer spawns while both the Alchemist & the Brewer are in the world i
 The spawn condition for the Operator is to beat EoW/BoC.
 The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
+v1.8.0
+-Port to Terraria 1.4
 v1.7.4
 -Added Old Duke's bag in Operator's modded bags shop.
 -Added Sulphurskin Potion to Brewer's shop.
