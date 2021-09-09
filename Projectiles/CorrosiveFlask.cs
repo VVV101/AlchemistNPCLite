@@ -41,7 +41,7 @@ namespace AlchemistNPCLite.Projectiles
 					Vector2 value17 = new Vector2(Main.rand.Next(-100, 101), Main.rand.Next(-100, 101));
 					value17.Normalize();
 					value17 *= Main.rand.Next(20, 402) * 0.01f;
-					Projectile.NewProjectile(player.GetProjectileSource_TileInteraction((int)Projectile.Center.X, (int)Projectile.Center.Y), Projectile.Center.X, Projectile.Center.Y, value17.X, value17.Y, ModContent.ProjectileType<CorrosiveFlaskCloud>(), Projectile.damage, 1f, Projectile.owner, 0f, Main.rand.Next(-30, 2));
+					Projectile.NewProjectile(Projectile.GetProjectileSource_FromThis(), Projectile.Center.X, Projectile.Center.Y, value17.X, value17.Y, ModContent.ProjectileType<CorrosiveFlaskCloud>(), Projectile.damage, 1f, Projectile.owner, 0f, Main.rand.Next(-30, 2));
 				}
 			}
 		}

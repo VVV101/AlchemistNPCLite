@@ -29,6 +29,8 @@ namespace AlchemistNPCLite.Items
                     player.ApplyEquipFunctional(player.inventory[49], r);
                 }
             }
+            // BUG: Tracking is broken
+            /*
             if (player.accCritterGuide && AlchemistNPCLite.modConfiguration.LifeformAnalyzer)
             {
                 if (Main.GameUpdateCount % 60 == 0)
@@ -50,6 +52,7 @@ namespace AlchemistNPCLite.Items
                     }
                 }
             }
+            */
             if (item.type == ItemType<Items.Misc.LuckCharm>())
             {
                 Luck = true;
