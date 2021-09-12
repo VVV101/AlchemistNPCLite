@@ -54,7 +54,7 @@ namespace AlchemistNPCLite.NPCs
             for (int k = 0; k < 255; k++)
             {
                 Player player = Main.player[k];
-                if (player.active)
+                if (player.active && player == Main.player[Main.myPlayer])
                 {
                     if (type == ModContent.NPCType<Tinkerer>())
                     {
