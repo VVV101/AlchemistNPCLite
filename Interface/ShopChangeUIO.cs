@@ -7,10 +7,12 @@ using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.GameContent.UI.Elements;
 using Terraria.UI;
+using Terraria.Audio;
 using System;
 using Terraria.ID;
 using System.Linq;
 using AlchemistNPCLite.NPCs;
+using ReLogic.Content;
 
 namespace AlchemistNPCLite.Interface
 {
@@ -74,7 +76,7 @@ namespace AlchemistNPCLite.Interface
 			text5.Height.Set(22, 0f);
 			OperatorShopsPanel.Append(text5);
 			
-			Texture2D buttonPlayTexture = ModContent.GetTexture("Terraria/UI/ButtonPlay");
+			Asset<Texture2D> buttonPlayTexture = ModContent.Request<Texture2D>("Terraria/Images/UI/ButtonPlay");
 			UIImageButton playButton = new UIImageButton(buttonPlayTexture);
 			playButton.Left.Set(10, 0f);
 			playButton.Top.Set(10, 0f);
@@ -118,7 +120,7 @@ namespace AlchemistNPCLite.Interface
 			playButton5.OnClick += new MouseEvent(PlayButtonClicked5);
 			OperatorShopsPanel.Append(playButton5);
 
-			Texture2D buttonDeleteTexture = ModContent.GetTexture("Terraria/UI/ButtonDelete");
+			Asset<Texture2D> buttonDeleteTexture = ModContent.Request<Texture2D>("Terraria/Images/UI/ButtonDelete");
 			UIImageButton closeButton = new UIImageButton(buttonDeleteTexture);
 			closeButton.Left.Set(270, 0f);
 			closeButton.Top.Set(10, 0f);
@@ -141,7 +143,7 @@ namespace AlchemistNPCLite.Interface
 			ShopChangeUIO.visible = false;
 			Main.playerInventory = true;
 			Main.npcChatText = "";
-			Main.npcShop = Main.MaxShopIDs - 1;
+			Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
 			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
 		}
 		
@@ -157,7 +159,7 @@ namespace AlchemistNPCLite.Interface
 			ShopChangeUIO.visible = false;
 			Main.playerInventory = true;
 			Main.npcChatText = "";
-			Main.npcShop = Main.MaxShopIDs - 1;
+			Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
 			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
 		}
 		
@@ -173,7 +175,7 @@ namespace AlchemistNPCLite.Interface
 			ShopChangeUIO.visible = false;
 			Main.playerInventory = true;
 			Main.npcChatText = "";
-			Main.npcShop = Main.MaxShopIDs - 1;
+			Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
 			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
 		}
 		
@@ -189,7 +191,7 @@ namespace AlchemistNPCLite.Interface
 			ShopChangeUIO.visible = false;
 			Main.playerInventory = true;
 			Main.npcChatText = "";
-			Main.npcShop = Main.MaxShopIDs - 1;
+			Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
 			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
 		}
 		
@@ -205,7 +207,7 @@ namespace AlchemistNPCLite.Interface
 			ShopChangeUIO.visible = false;
 			Main.playerInventory = true;
 			Main.npcChatText = "";
-			Main.npcShop = Main.MaxShopIDs - 1;
+			Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
 			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
 		}
 		
@@ -221,13 +223,13 @@ namespace AlchemistNPCLite.Interface
 			ShopChangeUIO.visible = false;
 			Main.playerInventory = true;
 			Main.npcChatText = "";
-			Main.npcShop = Main.MaxShopIDs - 1;
+			Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
 			Main.instance.shop[Main.npcShop].SetupShop(npc.type);
 		}
 
 		private void CloseButtonClicked(UIMouseEvent evt, UIElement listeningElement)
 		{
-			Main.PlaySound(SoundID.MenuOpen);
+			SoundEngine.PlaySound(SoundID.MenuOpen);
 			visible = false;
 		}
 

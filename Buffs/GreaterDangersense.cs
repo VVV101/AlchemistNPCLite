@@ -11,13 +11,13 @@ namespace AlchemistNPCLite.Buffs
 {
 	public class GreaterDangersense : ModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Greater Dangersense");
 			Description.SetDefault("Lights up enemy projectiles");
-			canBeCleared = true;
-			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Великого Чувства Опасности");
-			Description.AddTranslation(GameCulture.Russian, "Подсвечивает снаряды противника");
+			CanBeCleared = true;
+			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Зелье Великого Чувства Опасности");
+			Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Подсвечивает снаряды противника");
         }
 		
 		public override void Update(Player player, ref int buffIndex)

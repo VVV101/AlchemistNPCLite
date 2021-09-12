@@ -19,33 +19,32 @@ namespace AlchemistNPCLite.Items.Misc
 			+"\nAllows to use potions from Piggy Bank by Quick Buff"
 			+"\nAlchemist, Brewer and Young Brewer are providing 35% discount"
 			+"\nBuffs duration is 35% longer");
-			DisplayName.AddTranslation(GameCulture.Russian, "Талисман Алхимика Третьего Уровня");
-            Tooltip.AddTranslation(GameCulture.Russian, "Если находится в инвентаре, вы имеет большой шанс не потратить зелье\nПозволяет использовать зелья из Свиньи-Копилки с помощью клавиши Быстрого Баффа\nАлхимик, Зельеварщица и Юный Зельевар предоставляют скидку в 35%\nДлительность баффов увеличена на 35%");
+			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Талисман Алхимика Третьего Уровня");
+            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Если находится в инвентаре, вы имеет большой шанс не потратить зелье\nПозволяет использовать зелья из Свиньи-Копилки с помощью клавиши Быстрого Баффа\nАлхимик, Зельеварщица и Юный Зельевар предоставляют скидку в 35%\nДлительность баффов увеличена на 35%");
         }
 
 		public override void SetDefaults()
 		{
-			item.width = 32;
-			item.height = 32;
-			item.value = 3000000;
-			item.rare = 10;
+			Item.width = 32;
+			Item.height = 32;
+			Item.value = 3000000;
+			Item.rare = 10;
 		}
 		
 		public override void UpdateInventory(Player player)
 		{
-		((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).AlchemistCharmTier3 = true;
-		((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).DistantPotionsUse = true;
+		(player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier3 = true;
+		(player.GetModPlayer<AlchemistNPCLitePlayer>()).DistantPotionsUse = true;
 		}
 		
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "AlchemistCharmTier2");
-			recipe.AddRecipeGroup("AlchemistNPCLite:Tier3Bar", 15);
-			recipe.AddRecipeGroup("AlchemistNPCLite:HardmodeComponent", 20);
-			recipe.AddTile(TileID.MythrilAnvil);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			CreateRecipe()
+				.AddIngredient(null, "AlchemistCharmTier2")
+				.AddRecipeGroup("AlchemistNPCLite:Tier3Bar", 15)
+				.AddRecipeGroup("AlchemistNPCLite:HardmodeComponent", 20)
+				.AddTile(TileID.MythrilAnvil)
+				.Register();
 		}
 	}
 }

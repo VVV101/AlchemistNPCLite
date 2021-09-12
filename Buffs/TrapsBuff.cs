@@ -11,19 +11,19 @@ namespace AlchemistNPCLite.Buffs
 {
 	public class TrapsBuff : ModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Traps Buff");
 			Description.SetDefault("Traps are empowered");
 			Main.debuff[Type] = false;
-			canBeCleared = true;
-			DisplayName.AddTranslation(GameCulture.Russian, "Усилитель ловушек");
-            Description.AddTranslation(GameCulture.Russian, "Ловушки значительно усилены");
+			CanBeCleared = true;
+			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Усилитель ловушек");
+            Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ловушки значительно усилены");
 		}
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
-		((AlchemistNPCLitePlayer)player.GetModPlayer(mod, "AlchemistNPCLitePlayer")).Traps = true;
+		(player.GetModPlayer<AlchemistNPCLitePlayer>()).Traps = true;
 		}
 	}
 }

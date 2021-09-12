@@ -13,24 +13,24 @@ namespace AlchemistNPCLite.Items.Summoning
 		{
 			DisplayName.SetDefault("Musician Horcrux");
 			Tooltip.SetDefault("The piece of Musician's soul is inside it.");
-			DisplayName.AddTranslation(GameCulture.Russian, "Крестраж Музыканта");
-			Tooltip.AddTranslation(GameCulture.Russian, "Часть души Музыканта находится внутри");
+			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Крестраж Музыканта");
+			Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Часть души Музыканта находится внутри");
         }
 
 		public override void SetDefaults()
 		{
-			item.width = 46;
-            item.height = 42;
-            item.maxStack = 1;
-            item.rare = 10;
-            item.useStyle = 1;
-            item.useAnimation = 15;
-            item.useTime = 15;
-            item.consumable = true;
-            item.noMelee = true;
-            item.noUseGraphic = true;
-            item.UseSound = SoundID.Item37;
-			item.makeNPC = (short)mod.NPCType("Musician");
+			Item.width = 46;
+            Item.height = 42;
+            Item.maxStack = 1;
+            Item.rare = 10;
+            Item.useStyle = 1;
+            Item.useAnimation = 15;
+            Item.useTime = 15;
+            Item.consumable = true;
+            Item.noMelee = true;
+            Item.noUseGraphic = true;
+            Item.UseSound = SoundID.Item37;
+			Item.makeNPC = (short)ModContent.NPCType<NPCs.Musician>();
 		}
 
 		public override void HoldItem(Player player)
@@ -41,7 +41,7 @@ namespace AlchemistNPCLite.Items.Summoning
 		
 		public override bool CanUseItem(Player player)
 		{
-			return !NPC.AnyNPCs(mod.NPCType("Musician"));
+			return !NPC.AnyNPCs(ModContent.NPCType<NPCs.Musician>());
 		}
 		
 		public override void OnConsumeItem(Player player)

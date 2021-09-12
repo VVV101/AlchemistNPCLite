@@ -17,16 +17,16 @@ namespace AlchemistNPCLite.Buffs
 {
 	public class RangerComb : ModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Ranger Combination");
 			Description.SetDefault("Combination of Archery, Ammo Reservation, Wrath, Rage buffs");
 			Main.debuff[Type] = false;
-			canBeCleared = true;
-			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Стрелка");
-			Description.AddTranslation(GameCulture.Russian, "Сочетание баффов Лучника, Экономии Боеприпасов, Гнева и Ярости");
-            DisplayName.AddTranslation(GameCulture.Chinese, "射手药剂包");
-            Description.AddTranslation(GameCulture.Chinese, "包含以下Buff：箭术, 弹药储备, 暴怒, 怒气");
+			CanBeCleared = true;
+			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Комбинация Стрелка");
+			Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сочетание баффов Лучника, Экономии Боеприпасов, Гнева и Ярости");
+            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "射手药剂包");
+            Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "包含以下Buff：箭术, 弹药储备, 暴怒, 怒气");
         }
 		public override void Update(Player player, ref int buffIndex)
 		{

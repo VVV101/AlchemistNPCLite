@@ -16,45 +16,44 @@ namespace AlchemistNPCLite.Items.Placeable
             DisplayName.SetDefault("Simple Crafting Penny");
             Tooltip.SetDefault("Makes you look like a master of carpentry"
 			+"\nCan be placed as crafting station");
-            DisplayName.AddTranslation(GameCulture.Russian, "Простой Крафтовый Пенни");
-            Tooltip.AddTranslation(GameCulture.Russian, "Вы теперь мастер-слесарь\nМожет быть размещён как станция крафта");
+            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Простой Крафтовый Пенни");
+            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Вы теперь мастер-слесарь\nМожет быть размещён как станция крафта");
 
-            DisplayName.AddTranslation(GameCulture.Chinese, "简易手工便士");
-            Tooltip.AddTranslation(GameCulture.Chinese, "这让你看起来像是个制造大湿\n可代替工作台");
+            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "简易手工便士");
+            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "这让你看起来像是个制造大湿\n可代替工作台");
         }
         public override void SetDefaults()
         {
-            item.width = 24;
-            item.height = 24;
-            item.maxStack = 1;
-            item.value = 1000000;
-            item.rare = 7;
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.consumable = true;
-			item.createTile = mod.TileType("PreHMPenny");
+            Item.width = 24;
+            Item.height = 24;
+            Item.maxStack = 1;
+            Item.value = 1000000;
+            Item.rare = 7;
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.consumable = true;
+			Item.createTile = ModContent.TileType<Tiles.PreHMPenny>();
         }
 
         public override void AddRecipes()
         {
-            ModRecipe recipe = new ModRecipe(mod);
-            recipe.AddIngredient(ItemID.WorkBench);
-            recipe.AddRecipeGroup("AlchemistNPCLite:AnyPreHMAnvil");
-            recipe.AddIngredient(ItemID.Hellforge);
-            recipe.AddIngredient(ItemID.Loom);
-            recipe.AddIngredient(ItemID.AlchemyTable);
-            recipe.AddIngredient(ItemID.DyeVat);
-            recipe.AddIngredient(ItemID.WoodenTable);
-            recipe.AddIngredient(ItemID.WoodenChair);
-            recipe.AddIngredient(ItemID.CookingPot);
-            recipe.AddIngredient(ItemID.TinkerersWorkshop);
-            recipe.AddIngredient(ItemID.HeavyWorkBench);
-            recipe.AddIngredient(ItemID.Sawmill);
-            recipe.SetResult(this, 1);
-            recipe.AddRecipe();
+            CreateRecipe()
+            	.AddIngredient(ItemID.WorkBench)
+                .AddRecipeGroup("AlchemistNPCLite:AnyPreHMAnvil")
+            	.AddIngredient(ItemID.Hellforge)
+            	.AddIngredient(ItemID.Loom)
+            	.AddIngredient(ItemID.AlchemyTable)
+            	.AddIngredient(ItemID.DyeVat)
+            	.AddIngredient(ItemID.WoodenTable)
+            	.AddIngredient(ItemID.WoodenChair)
+            	.AddIngredient(ItemID.CookingPot)
+            	.AddIngredient(ItemID.TinkerersWorkshop)
+            	.AddIngredient(ItemID.HeavyWorkBench)
+            	.AddIngredient(ItemID.Sawmill)
+            	.Register();
         }
     }
 }

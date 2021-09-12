@@ -14,38 +14,38 @@ namespace AlchemistNPCLite.Items.Summoning
 		{
 			DisplayName.SetDefault("Tinkerer Horcrux");
 			Tooltip.SetDefault("The piece of Tinkerer's soul is inside it.");
-			DisplayName.AddTranslation(GameCulture.Russian, "Крестраж Инженера");
-			Tooltip.AddTranslation(GameCulture.Russian, "Часть души Инженера находится внутри");
-			DisplayName.AddTranslation(GameCulture.Chinese, "音乐家魂器");
-			Tooltip.AddTranslation(GameCulture.Chinese, "里面有音乐家的一片灵魂.");
+			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Крестраж Инженера");
+			Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Часть души Инженера находится внутри");
+			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "音乐家魂器");
+			Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "里面有音乐家的一片灵魂.");
         }
 
 		public override void SetDefaults()
 		{
-			item.width = 46;
-            item.height = 42;
-            item.maxStack = 30;
-            item.rare = 10;
-            item.useStyle = 1;
-            item.useAnimation = 15;
-            item.useTime = 15;
-            item.consumable = true;
-            item.noMelee = true;
-            item.noUseGraphic = true;
-            item.UseSound = SoundID.Item37;
-			item.makeNPC = (short)mod.NPCType("Tinkerer");
+			Item.width = 46;
+            Item.height = 42;
+            Item.maxStack = 30;
+            Item.rare = 10;
+            Item.useStyle = 1;
+            Item.useAnimation = 15;
+            Item.useTime = 15;
+            Item.consumable = true;
+            Item.noMelee = true;
+            Item.noUseGraphic = true;
+            Item.UseSound = SoundID.Item37;
+			Item.makeNPC = (short)ModContent.NPCType<NPCs.Tinkerer>();
 		}
 
 		public override void HoldItem(Player player)
 		{
-		Player.tileRangeX += 600;
-        Player.tileRangeY += 600;
+			Player.tileRangeX += 600;
+			Player.tileRangeY += 600;
 		}
 		
 		public override bool CanUseItem(Player player)
 		{
 			Vector2 vector2 = Main.screenPosition + new Vector2(Main.mouseX, Main.mouseY);
-			return (!NPC.AnyNPCs(mod.NPCType("Tinkerer")) && !Collision.SolidCollision(vector2, player.width, player.height));
+			return (!NPC.AnyNPCs(ModContent.NPCType<NPCs.Tinkerer>()) && !Collision.SolidCollision(vector2, player.width, player.height));
 		}
 		
 		public override void OnConsumeItem(Player player)

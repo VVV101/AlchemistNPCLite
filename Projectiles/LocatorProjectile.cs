@@ -11,35 +11,35 @@ namespace AlchemistNPCLite.Projectiles
 {
 	class LocatorProjectile : ModProjectile
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
-			projectile.width = 22;
-			projectile.height = 28;
-			projectile.light = 0.75f;
-			// NO! projectile.aiStyle = 48;
-			projectile.friendly = false;
-			projectile.hostile = false;
-			projectile.timeLeft = 61; // lowered from 300
-			projectile.penetrate = -1;
-			projectile.tileCollide = false;
+			Projectile.width = 22;
+			Projectile.height = 28;
+			Projectile.light = 0.75f;
+			// NO! Projectile.aiStyle = 48;
+			Projectile.friendly = false;
+			Projectile.hostile = false;
+			Projectile.timeLeft = 61; // lowered from 300
+			Projectile.penetrate = -1;
+			Projectile.tileCollide = false;
 		}
 
 		public override void AI()
 		{
-			int NPCnumber = (int)projectile.ai[0];
+			int NPCnumber = (int)Projectile.ai[0];
 			Vector2 npcpos = new Vector2((int)Main.npc[NPCnumber].Center.X, (int)Main.npc[NPCnumber].Center.Y);
-			Player player = Main.player[projectile.owner];
+			Player player = Main.player[Projectile.owner];
 
-			if (projectile.owner == Main.myPlayer) // Multiplayer support
+			if (Projectile.owner == Main.myPlayer) // Multiplayer support
 			{
 				Vector2 diff = npcpos - player.Center;
 				diff.Normalize();
-				projectile.velocity = diff;
-				projectile.direction = npcpos.X > player.Center.X ? 1 : -1;
-				projectile.netUpdate = true;
+				Projectile.velocity = diff;
+				Projectile.direction = npcpos.X > player.Center.X ? 1 : -1;
+				Projectile.netUpdate = true;
 			}
-			projectile.position = player.position + projectile.velocity * 45f;
-			projectile.rotation = projectile.velocity.ToRotation() + MathHelper.ToRadians(90f);
+			Projectile.position = player.position + Projectile.velocity * 45f;
+			Projectile.rotation = Projectile.velocity.ToRotation() + MathHelper.ToRadians(90f);
 		}
 	}
 }

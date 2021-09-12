@@ -10,25 +10,25 @@ namespace AlchemistNPCLite.Buffs
 {
 	public class MageComb : ModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Mage Combination");
 			Description.SetDefault("Combination of Magic Power, Mana Regeneration, Clairvoyance, Wrath & Rage buffs");
 			Main.debuff[Type] = false;
-			canBeCleared = true;
-			DisplayName.AddTranslation(GameCulture.Russian, "Комбинация Мага");
-            Description.AddTranslation(GameCulture.Russian, "Сочетание баффов Магической Силы, Регенерации Маны, Ясновидения, Гнева и Ярости");
+			CanBeCleared = true;
+			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Комбинация Мага");
+            Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сочетание баффов Магической Силы, Регенерации Маны, Ясновидения, Гнева и Ярости");
 
-            DisplayName.AddTranslation(GameCulture.Chinese, "魔法药剂包");
-            Description.AddTranslation(GameCulture.Chinese, "包含以下Buff：魔能, 魔力再生, 智慧, 暴怒, 怒气");
+            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "魔法药剂包");
+            Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "包含以下Buff：魔能, 魔力再生, 智慧, 暴怒, 怒气");
         }
 		public override void Update(Player player, ref int buffIndex)
 		{
 			AlchemistNPCLitePlayer modPlayer = player.GetModPlayer<AlchemistNPCLitePlayer>();
 			modPlayer.AllDamage10 = true;
 			modPlayer.AllCrit10 = true;
-            player.magicDamage += 0.25f;
-			player.magicCrit += 2;
+            player.GetDamage(DamageClass.Magic) += 0.25f;
+			player.GetCritChance(DamageClass.Magic) += 2;
 			player.statManaMax2 += 20;
             player.manaCost -= 0.02f;
 			player.manaRegenBuff = true;

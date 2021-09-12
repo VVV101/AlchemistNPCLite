@@ -12,37 +12,37 @@ namespace AlchemistNPCLite.Items.Summoning
 		{
 			DisplayName.SetDefault("Architect Horcrux");
 			Tooltip.SetDefault("The piece of Architect's soul is inside it.");
-			DisplayName.AddTranslation(GameCulture.Russian, "Крестраж Архитектора");
-			Tooltip.AddTranslation(GameCulture.Russian, "Часть души Архитектора находится внутри");
+			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Крестраж Архитектора");
+			Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Часть души Архитектора находится внутри");
 
-            DisplayName.AddTranslation(GameCulture.Chinese, "建筑师魂器");
-            Tooltip.AddTranslation(GameCulture.Chinese, "里面有建筑师的一片灵魂");
+            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "建筑师魂器");
+            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "里面有建筑师的一片灵魂");
         }
 
 		public override void SetDefaults()
 		{
-			item.width = 22;
-			item.height = 20;
-			item.maxStack = 30;
-			item.value = 15000;
-			item.rare = 6;
-			item.useAnimation = 30;
-			item.useTime = 30;
-			item.useStyle = 4;
-			item.consumable = true;
-			item.UseSound = SoundID.Item37;
-			item.makeNPC = (short)mod.NPCType("Architect");
+			Item.width = 22;
+			Item.height = 20;
+			Item.maxStack = 30;
+			Item.value = 15000;
+			Item.rare = 6;
+			Item.useAnimation = 30;
+			Item.useTime = 30;
+			Item.useStyle = 4;
+			Item.consumable = true;
+			Item.UseSound = SoundID.Item37;
+			Item.makeNPC = (short)ModContent.NPCType<NPCs.Architect>();
 		}
 
 		public override void HoldItem(Player player)
 		{
-		Player.tileRangeX += 600;
-        Player.tileRangeY += 600;
+			Player.tileRangeX += 600;
+			Player.tileRangeY += 600;
 		}
 		
 		public override bool CanUseItem(Player player)
 		{
-			return !NPC.AnyNPCs(mod.NPCType("Architect"));
+			return !NPC.AnyNPCs(ModContent.NPCType<NPCs.Architect>());
 		}
 
 		public override void OnConsumeItem(Player player)

@@ -16,24 +16,24 @@ namespace AlchemistNPCLite.Items
 		{
 			DisplayName.SetDefault("Nature Blessing Potion");
 			Tooltip.SetDefault("Grants Dryad's Blessing buff");
-			DisplayName.AddTranslation(GameCulture.Russian, "Зелье Благословления Природы");
-			Tooltip.AddTranslation(GameCulture.Russian, "Даёт бафф Благословления Дриады");
+			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Зелье Благословления Природы");
+			Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Даёт бафф Благословления Дриады");
         }    
 		public override void SetDefaults()
         {
-            item.UseSound = SoundID.Item3;
-            item.useStyle = 2;
-            item.useTurn = true;
-            item.useAnimation = 17;
-            item.useTime = 17;
-            item.maxStack = 99;
-            item.consumable = true;
-            item.width = 20;
-            item.height = 30;
-            item.value = Item.sellPrice(0, 5, 0, 0);
-            item.rare = 2;
-            item.buffType = 165;
-            item.buffTime = 36000;
+            Item.UseSound = SoundID.Item3;
+            Item.useStyle = 2;
+            Item.useTurn = true;
+            Item.useAnimation = 17;
+            Item.useTime = 17;
+            Item.maxStack = 99;
+            Item.consumable = true;
+            Item.width = 20;
+            Item.height = 30;
+            Item.value = Item.sellPrice(0, 5, 0, 0);
+            Item.rare = 2;
+            Item.buffType = 165;
+            Item.buffTime = 36000;
             return;
         }
     }

@@ -6,65 +6,70 @@ using Terraria.Localization;
 
 namespace AlchemistNPCLite.Buffs
 {
-	public class NinjaSkill : ModBuff
-	{
-		public override void SetDefaults()
-		{
-			DisplayName.SetDefault("Ninja");
-			Description.SetDefault("You are a true ninja!");
-			Main.debuff[Type] = false;
-			canBeCleared = true;
-			DisplayName.AddTranslation(GameCulture.Russian, "Ниндзя");
-			Description.AddTranslation(GameCulture.Russian, "Вы - истинный ниндзя!");
+    public class NinjaSkill : ModBuff
+    {
+        public override void SetStaticDefaults()
+        {
+            DisplayName.SetDefault("Ninja");
+            Description.SetDefault("You are a true ninja!");
+            Main.debuff[Type] = false;
+            CanBeCleared = true;
+            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ниндзя");
+            Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Вы - истинный ниндзя!");
 
-            DisplayName.AddTranslation(GameCulture.Chinese, "忍者");
-            Description.AddTranslation(GameCulture.Chinese, "现在你是个真正的忍者了!");
+            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "忍者");
+            Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "现在你是个真正的忍者了!");
         }
-		public override void Update(Player player, ref int buffIndex)
-		{
-			player.allDamage += 0.05f;
-			player.meleeCrit += 5;
-            player.rangedCrit += 5;
-            player.magicCrit += 5;
-            player.thrownCrit += 5;
-			player.blackBelt = true;
+        public override void Update(Player player, ref int buffIndex)
+        {
+            player.GetDamage(DamageClass.Generic) += 0.05f;
+            player.GetCritChance(DamageClass.Melee) += 5;
+            player.GetCritChance(DamageClass.Ranged) += 5;
+            player.GetCritChance(DamageClass.Magic) += 5;
+            player.GetCritChance(DamageClass.Throwing) += 5;
+            player.blackBelt = true;
             player.spikedBoots = 2;
-				if (ModLoader.GetMod("ThoriumMod") != null)
-				{
-				ThoriumBoosts(player);
-				}
-				if (ModLoader.GetMod("Redemption") != null)
-				{
-				RedemptionBoost(player);
-				}
-				Mod Calamity = ModLoader.GetMod("CalamityMod");
-				if(Calamity != null)
-				{
-					Calamity.Call("AddRogueCrit", player, 5);
-				}
-		}
-		
-		private void CalamityBoost(Player player)
-        {
-			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-            CalamityPlayer.throwingCrit += 5;
+            // IMPLEMENT WHEN WEAKREFERENCES FIXED
+			/*
+            if (ModLoader.GetMod("ThoriumMod") != null)
+            {
+                ThoriumBoosts(player);
+            }
+            if (ModLoader.GetMod("Redemption") != null)
+            {
+                RedemptionBoost(player);
+            }
+            Mod Calamity = ModLoader.GetMod("CalamityMod");
+            if (Calamity != null)
+            {
+                Calamity.Call("AddRogueCrit", player, 5);
+            }
+			*/
         }
-		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
-		
-		private void RedemptionBoost(Player player)
+
+		// IMPLEMENT WHEN WEAKREFERENCES FIXED
+		/*
+        private void CalamityBoost(Player player)
         {
-			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
-            RedemptionPlayer.druidCrit += 5;
+            CalamityMod.Calplayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.Calplayer.CalamityPlayer>();
+            Calamityplayer.GetDamage(DamageClass.throwing) += 5;
         }
-		private readonly Mod Redemption = ModLoader.GetMod("Redemption");
-		
-		private void ThoriumBoosts(Player player)
+        private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
+
+        private void RedemptionBoost(Player player)
+        {
+            Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
+            Redemptionplayer.GetDamage(DamageClass.druid) += 5;
+        }
+        private readonly Mod Redemption = ModLoader.GetMod("Redemption");
+
+        private void ThoriumBoosts(Player player)
         {
             ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
-            ThoriumPlayer.symphonicCrit += 5;
-            ThoriumPlayer.radiantCrit += 5;
+            Thoriumplayer.GetDamage(DamageClass.symphonic) += 5;
+            Thoriumplayer.GetDamage(DamageClass.radiant) += 5;
         }
-		
-		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
-	}
+        private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
+		*/
+    }
 }

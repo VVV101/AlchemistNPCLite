@@ -14,49 +14,51 @@ namespace AlchemistNPCLite.Items.Placeable
             Tooltip.SetDefault("Same functionality as most of crafting stations in one"
             +"\nAll crafting stations included :)"
             +"\nAlso works as Water/Honey/Lava source");
-            DisplayName.AddTranslation(GameCulture.Russian, "Преобразователь Материи");
-            Tooltip.AddTranslation(GameCulture.Russian, "Выполняет функции большей части станций крафта в одной\nВсе станции крафта включены :)\nРаботает в качестве источника Воды/Мёда/Лавы");
+            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Преобразователь Материи");
+            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Выполняет функции большей части станций крафта в одной\nВсе станции крафта включены :)\nРаботает в качестве источника Воды/Мёда/Лавы");
 
-            DisplayName.AddTranslation(GameCulture.Chinese, "物质嬗变器");
-            Tooltip.AddTranslation(GameCulture.Chinese, "非常多制造环境的集合\n包含了所有的原版制作环境 :)\n同样可作为水/蜂蜜/岩浆环境");
+            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "物质嬗变器");
+            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "非常多制造环境的集合\n包含了所有的原版制作环境 :)\n同样可作为水/蜂蜜/岩浆环境");
         }
 
 		public override void SetDefaults()
 		{
-			item.width = 32;
-			item.height = 32;
-			item.maxStack = 99;
-			item.useTurn = true;
-			item.autoReuse = true;
-			item.useAnimation = 15;
-			item.useTime = 10;
-			item.useStyle = 1;
-			item.consumable = true;
-			item.rare = 11;
-			item.value = 1000000;
-			item.createTile = mod.TileType("MateriaTransmutator");
+			Item.width = 32;
+			Item.height = 32;
+			Item.maxStack = 99;
+			Item.useTurn = true;
+			Item.autoReuse = true;
+			Item.useAnimation = 15;
+			Item.useTime = 10;
+			Item.useStyle = 1;
+			Item.consumable = true;
+			Item.rare = 11;
+			Item.value = 1000000;
+			Item.createTile = ModContent.TileType<Tiles.MateriaTransmutator>();
 		}
 
+		// IMPLEMENT WHEN WEAKREFERENCES FIXED
+		/*
 		public override void AddRecipes()
 		{
-			ModRecipe recipe = new ModRecipe(mod);
-			recipe.AddIngredient(null, "PreHMPenny");
-			recipe.AddIngredient(null, "HMCraftPound");
-			recipe.AddIngredient(null, "SpecCraftPoint");
-			recipe.AddIngredient(ItemID.ManaCrystal);
-			recipe.AddIngredient(ItemID.DD2ElderCrystalStand);
-			if (ModLoader.GetMod("ThoriumMod") != null)
-			{
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("ThoriumAnvil")));
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("ArcaneArmorFabricator")));
-			recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("SoulForge")));
-			}
-			recipe.AddIngredient(ItemID.FragmentSolar, 10);
-			recipe.AddIngredient(ItemID.FragmentNebula, 10);
-			recipe.AddIngredient(ItemID.FragmentVortex, 10);
-			recipe.AddIngredient(ItemID.FragmentStardust, 10);
-			recipe.SetResult(this);
-			recipe.AddRecipe();
+			CreateRecipe()
+				.AddIngredient(null, "PreHMPenny")
+				.AddIngredient(null, "HMCraftPound")
+				.AddIngredient(null, "SpecCraftPoint")
+				.AddIngredient(ItemID.ManaCrystal)
+				.AddIngredient(ItemID.DD2ElderCrystalStand)
+				if (ModLoader.GetMod("ThoriumMod") != null)
+				{
+					recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("ThoriumAnvil")));
+					recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("ArcaneArmorFabricator")));
+					recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("SoulForge")));
+				}
+				.AddIngredient(ItemID.FragmentSolar, 10)
+				.AddIngredient(ItemID.FragmentNebula, 10)
+				.AddIngredient(ItemID.FragmentVortex, 10)
+				.AddIngredient(ItemID.FragmentStardust, 10)
+				.Register();
 		}
+		*/
 	}
 }

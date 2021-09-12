@@ -17,27 +17,27 @@ namespace AlchemistNPCLite.Tiles
 	{
 		public override int[] AdjTiles(int type)
 		{
-			if (type == mod.TileType("MateriaTransmutator"))
+			if (type == ModContent.TileType<MateriaTransmutator>())
 			{
 				Main.LocalPlayer.adjHoney = true;
 				Main.LocalPlayer.adjLava = true;
 				Main.LocalPlayer.adjWater = true;
 				Main.LocalPlayer.alchemyTable = true;
 			}
-			if (type == mod.TileType("MateriaTransmutatorMK2"))
+			if (type == ModContent.TileType<MateriaTransmutatorMK2>())
 			{
 				Main.LocalPlayer.adjHoney = true;
 				Main.LocalPlayer.adjLava = true;
 				Main.LocalPlayer.adjWater = true;
 				Main.LocalPlayer.alchemyTable = true;
 			}
-			if (type == mod.TileType("SpecCraftPoint"))
+			if (type == ModContent.TileType<SpecCraftPoint>())
 			{
 				Main.LocalPlayer.adjHoney = true;
 				Main.LocalPlayer.adjLava = true;
 				Main.LocalPlayer.adjWater = true;
 			}
-			if (type == mod.TileType("PreHMPenny"))
+			if (type == ModContent.TileType<PreHMPenny>())
 			{
 				Main.LocalPlayer.alchemyTable = true;
 			}

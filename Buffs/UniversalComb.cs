@@ -18,16 +18,16 @@ namespace AlchemistNPCLite.Buffs
 {
 	public class UniversalComb : ModBuff
 	{
-		public override void SetDefaults()
+		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Universal Combination");
 			Description.SetDefault("Perfect sum of Tank, Mage, Ranger and Summoner combinations");
 			Main.debuff[Type] = false;
-			canBeCleared = true;
-			DisplayName.AddTranslation(GameCulture.Russian, "Универсальная комбинация");
-			Description.AddTranslation(GameCulture.Russian, "Идеальное сочетание Комбинаций Танка, Мага, Стрелка и Призывателя");
-            DisplayName.AddTranslation(GameCulture.Chinese, "万能药剂包");
-            Description.AddTranslation(GameCulture.Chinese, "完美结合了以下药剂包的Buff：\n坦克药剂包、魔法药剂包、射手药剂包以及召唤师药剂包");
+			CanBeCleared = true;
+			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Универсальная комбинация");
+			Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Идеальное сочетание Комбинаций Танка, Мага, Стрелка и Призывателя");
+            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "万能药剂包");
+            Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "完美结合了以下药剂包的Buff：\n坦克药剂包、魔法药剂包、射手药剂包以及召唤师药剂包");
         }
 		
 		public override void Update(Player player, ref int buffIndex)
@@ -40,8 +40,8 @@ namespace AlchemistNPCLite.Buffs
 			modPlayer.Regeneration = true;
 			modPlayer.Lifeforce = true;
 			modPlayer.MS = true;
-			player.magicDamage += 0.25f;
-            player.magicCrit += 2;
+			player.GetDamage(DamageClass.Magic) += 0.25f;
+            player.GetCritChance(DamageClass.Magic) += 2;
 			player.statManaMax2 += 20;
             player.manaCost -= 0.02f;
 			player.manaRegenBuff = true;
@@ -63,12 +63,12 @@ namespace AlchemistNPCLite.Buffs
 			player.buffImmune[115] = true;
 			player.buffImmune[117] = true;
 			player.buffImmune[150] = true;
-			player.buffImmune[mod.BuffType("BattleComb")] = true;
-			player.buffImmune[mod.BuffType("TankComb")] = true;
-			player.buffImmune[mod.BuffType("VanTankComb")] = true;
-			player.buffImmune[mod.BuffType("RangerComb")] = true;
-			player.buffImmune[mod.BuffType("MageComb")] = true;
-			player.buffImmune[mod.BuffType("SummonerComb")] = true;
+			player.buffImmune[ModContent.BuffType<Buffs.BattleComb>()] = true;
+			player.buffImmune[ModContent.BuffType<Buffs.TankComb>()] = true;
+			player.buffImmune[ModContent.BuffType<Buffs.VanTankComb>()] = true;
+			player.buffImmune[ModContent.BuffType<Buffs.RangerComb>()] = true;
+			player.buffImmune[ModContent.BuffType<Buffs.MageComb>()] = true;
+			player.buffImmune[ModContent.BuffType<Buffs.SummonerComb>()] = true;
 			player.buffImmune[1] = true;
 			player.buffImmune[2] = true;
 			player.buffImmune[5] = true;
@@ -77,17 +77,20 @@ namespace AlchemistNPCLite.Buffs
 			player.buffImmune[14] = true;
 			++player.maxMinions;
 			++player.maxMinions;
+			// IMPLEMENT WHEN WEAKREFERENCES FIXED
+			/*
 			if (ModLoader.GetMod("MorePotions") != null)
 			{
-				if (player.HasBuff(mod.BuffType("MorePotionsComb")) || player.HasBuff(ModLoader.GetMod("MorePotions").BuffType("SoulbindingElixerPotionBuff")))
+				if (player.HasBuff(ModContent.BuffType<Buffs.MorePotionsComb>()) || player.HasBuff(ModLoader.GetMod("MorePotions").BuffType("SoulbindingElixerPotionBuff")))
 				{
 					--player.maxMinions;
 				}
-				if (player.HasBuff(mod.BuffType("MorePotionsComb")) || player.HasBuff(ModLoader.GetMod("MorePotions").BuffType("DiamondSkinPotionBuff")))
+				if (player.HasBuff(ModContent.BuffType<Buffs.MorePotionsComb>()) || player.HasBuff(ModLoader.GetMod("MorePotions").BuffType("DiamondSkinPotionBuff")))
 				{
 					player.statDefense -= 8;
 				}
 			}
+			*/
 			if (player.thorns < 1.0)
 			{
 				player.thorns = 0.3333333f;
