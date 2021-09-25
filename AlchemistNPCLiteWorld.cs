@@ -61,16 +61,14 @@ namespace AlchemistNPCLite
 			}
 		}
 
-		public override TagCompound SaveWorldData()
+		public override void SaveWorldData(TagCompound tag)
 		{
 			var downed = new List<string>();
 			if (downedDOGPumpking) downed.Add("DOGPumpking");
 			if (downedDOGIceQueen) downed.Add("DOGIceQueen");
 			if (downedSandElemental) downed.Add("SandElemental");
 			
-			return new TagCompound {
-				{"downed", downed}
-			};
+			tag["downed"] = downed;
 		}
 		
 		public override void NetSend(BinaryWriter writer)
