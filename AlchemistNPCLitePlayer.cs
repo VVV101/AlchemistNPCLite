@@ -83,9 +83,9 @@ namespace AlchemistNPCLite
             Lifeforce = false;
             MS = false;
 
-            if (Main.netMode == 0)
+            if (Main.netMode != NetmodeID.Server)
             {
-                if (Player.talkNPC == -1)
+                if (Main.player[Main.myPlayer].talkNPC == -1)
                 {
                     ShopChangeUI.visible = false;
                     ShopChangeUIA.visible = false;
