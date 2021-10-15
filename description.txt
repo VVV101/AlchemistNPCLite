@@ -6,6 +6,11 @@ The spawn condition for the Operator is to beat EoW/BoC.
 The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 Mod's Discord: https://discord.gg/WGKyKun
+v1.8.2
+-Fixed multiplayer client freeze bug.
+-Fixed Alchemist Charm tier 4 missing a tooltip.
+v1.8.1
+-Fixed SaveWorldData issue.
 v1.8.0
 Big thanks to b2mauler for porting Lite version to alpha 1.4.
 -Updated to tModloader 0.12.
@@ -67,15 +72,5 @@ It is independant from palms now.
 -Now defeating buffed Pumpking/Ice Queen is required to unlock Nightmare Fuel/Endothermic Energy in Operator's shop.
 -Fixed Thorium combination.
 -Cleaned up a lot of buffs code.
-v1.6.4 hotfix
--Fixed an error which caused mod fail to load.
-v1.6.3
--Updated to tModloader 0.11.5.
--Fixed Titan Scale potion functionality in Calamity Combination.
--Zerg/Zen potions, Chaos/Tranquility Candles were moved to post Plantera.
--Jungle Teleporter potion now has different functions for left and right click.
--Jungle Teleporter potion is now available after beating EoW/BoC.
--Removed Dash from Thorium Combination.
--Cleaned up some code.
 
 Earlier changes can be found in mod's discord.
