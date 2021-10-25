@@ -1444,7 +1444,7 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].shopCustomPrice = 3500000;
                     nextSlot++;
                 }
-                if (NPC.downedAncientCultist && Main.expertMode)
+                if (NPC.downedDuneSharkron && Main.expertMode)
                 {
                     shop.item[nextSlot].SetDefaults(ItemID.FishronBossBag);
                     shop.item[nextSlot].shopCustomPrice = 3500000;
