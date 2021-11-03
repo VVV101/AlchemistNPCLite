@@ -285,10 +285,12 @@ namespace AlchemistNPCLite.Items
             string QueenBee = Language.GetTextValue("Mods.AlchemistNPCLite.QueenBee");
             string Skeletron = Language.GetTextValue("Mods.AlchemistNPCLite.Skeletron");
             string WallOfFlesh = Language.GetTextValue("Mods.AlchemistNPCLite.WallOfFlesh");
+            string QueenSlime = Language.GetTextValue("Mods.AlchemistNPCLite.QueenSlime");
             string Destroyer = Language.GetTextValue("Mods.AlchemistNPCLite.Destroyer");
             string Twins = Language.GetTextValue("Mods.AlchemistNPCLite.Twins");
             string SkeletronPrime = Language.GetTextValue("Mods.AlchemistNPCLite.SkeletronPrime");
             string Plantera = Language.GetTextValue("Mods.AlchemistNPCLite.Plantera");
+            string EmpressOfLight = Language.GetTextValue("Mods.AlchemistNPCLite.EmpressOfLight");
             string Golem = Language.GetTextValue("Mods.AlchemistNPCLite.Golem");
             string Betsy = Language.GetTextValue("Mods.AlchemistNPCLite.Betsy");
             string DukeFishron = Language.GetTextValue("Mods.AlchemistNPCLite.DukeFishron");
@@ -463,6 +465,12 @@ namespace AlchemistNPCLite.Items
                 line.overrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
+            if (item.type == ItemID.QueenSlimeBossBag)
+            {
+                TooltipLine line = new TooltipLine(Mod, "QueenSlime", QueenSlime);
+                line.overrideColor = Color.LimeGreen;
+                tooltips.Insert(1, line);
+            }
             if (item.type == ItemID.DestroyerBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "Destroyer", Destroyer);
@@ -484,6 +492,12 @@ namespace AlchemistNPCLite.Items
             if (item.type == ItemID.PlanteraBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "Plantera", Plantera);
+                line.overrideColor = Color.LimeGreen;
+                tooltips.Insert(1, line);
+            }
+            if (item.type == ItemID.FairyQueenBossBag)
+            {
+                TooltipLine line = new TooltipLine(Mod, "Empress of Light", EmpressOfLight);
                 line.overrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }

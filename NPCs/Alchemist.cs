@@ -426,7 +426,7 @@ namespace AlchemistNPCLite.NPCs
 
         public override void SetChatButtons(ref string button, ref string button2)
         {
-            string PlantsShop = Language.GetTextValue("Mods.AlchemistNPC.PlantsShop");
+            string PlantsShop = Language.GetTextValue("Mods.AlchemistNPCLite.PlantsShop");
             string GetCharm = Language.GetTextValue("Mods.AlchemistNPCLite.GetCharm");
             button = Language.GetTextValue("LegacyInterface.28");
             button2 = PlantsShop;
