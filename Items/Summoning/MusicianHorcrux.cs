@@ -23,7 +23,7 @@ namespace AlchemistNPCLite.Items.Summoning
 		{
 			Item.width = 46;
             Item.height = 42;
-            Item.maxStack = 1;
+            Item.maxStack = 30;
             Item.rare = 10;
             Item.useStyle = 1;
             Item.useAnimation = 15;
