@@ -1,5 +1,6 @@
 using Terraria.Localization;
 using Terraria;
+using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Audio;
@@ -16,6 +17,7 @@ namespace AlchemistNPCLite.Items.Summoning
 			+"\nUse with the extreme care");
 			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Пугающий Череп");
             Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Призывает могущественного противника\nИспользовать с крайней осторожностью");
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 3;
 		}
 
 		public override void SetDefaults()
