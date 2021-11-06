@@ -1,4 +1,5 @@
 using Terraria;
+using Terraria.GameContent.Creative;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -18,13 +19,14 @@ namespace AlchemistNPCLite.Items.Summoning
 
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "炼金师魂器");
             Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "里面有炼金师的一片灵魂");
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
 		public override void SetDefaults()
 		{
 			Item.width = 46;
             Item.height = 42;
-            Item.maxStack = 1;
+            Item.maxStack = 30;
             Item.rare = 10;
             Item.useStyle = 1;
             Item.useAnimation = 15;

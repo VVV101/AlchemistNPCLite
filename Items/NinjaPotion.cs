@@ -3,6 +3,7 @@ using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -22,7 +23,8 @@ namespace AlchemistNPCLite.Items
 
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "忍者药剂");
             Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "增加5%的伤害和暴击几率, 并获得忍者大师的能力");
-        }    
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 20;
+		}    
 		public override void SetDefaults()
         {
             Item.UseSound = SoundID.Item3;                 //this is the sound that plays when you use the item

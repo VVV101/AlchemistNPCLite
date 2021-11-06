@@ -3,6 +3,7 @@ using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -21,7 +22,8 @@ namespace AlchemistNPCLite.Items
 
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "神庙传送药剂");
             Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "将你传送至神庙");
-        }    
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 20;
+		}    
 		public override void SetDefaults()
         {
             Item.CloneDefaults(ItemID.RecallPotion);

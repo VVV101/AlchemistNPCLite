@@ -3,6 +3,7 @@ using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -29,6 +30,7 @@ namespace AlchemistNPCLite.Items
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "瑟银捆绑包");
             Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "获得瑟银的大部分药水Buff" +
                 "\n嗜血, 精准, 对决, 狂怒, 创造力, 耳虫, 灵感爆发, 光辉, 圣洁");
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 20;
 		}    
 
 		public override void SetDefaults()

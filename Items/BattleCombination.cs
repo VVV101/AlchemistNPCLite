@@ -3,6 +3,7 @@ using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -21,6 +22,7 @@ namespace AlchemistNPCLite.Items
 
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "战斗药剂包");
             Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "获得你在战斗时需要的Buff(耐力, 生命力, 铁皮, 恢复, 暴怒, 怒气)");
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 20;
         }    
 		public override void SetDefaults()
         {

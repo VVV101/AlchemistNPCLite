@@ -3,6 +3,7 @@ using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -23,7 +24,8 @@ namespace AlchemistNPCLite.Items
 
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "泰坦皮肤药剂");
             Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "使你免疫部分Debuff (点燃, 霜燃, 诅咒火焰, 寒冷, 冰冻, 腐蚀)\n对诅咒火焰和腐蚀的免疫能力只有在击败双子魔眼后才会生效\n非灾厄BUFF药剂");
-        }    
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 20;
+		}    
 		public override void SetDefaults()
         {
             Item.UseSound = SoundID.Item3;                 //this is the sound that plays when you use the item

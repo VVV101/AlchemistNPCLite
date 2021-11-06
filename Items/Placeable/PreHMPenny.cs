@@ -1,6 +1,7 @@
 using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.GameContent.Creative;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -21,6 +22,7 @@ namespace AlchemistNPCLite.Items.Placeable
 
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "简易手工便士");
             Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "这让你看起来像是个制造大湿\n可代替工作台");
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
         public override void SetDefaults()
         {

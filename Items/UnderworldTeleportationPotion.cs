@@ -3,6 +3,7 @@ using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -24,7 +25,8 @@ namespace AlchemistNPCLite.Items
 
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "地狱传送药剂");
             Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "将你传送至最靠近地狱两端的黑曜石塔楼\n方向取决于鼠标按键\n我建议你这么做之前先来一瓶82年的黑曜石皮肤药剂 XD");
-        }    
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 20;
+		}    
 		public override void SetDefaults()
         {
             Item.CloneDefaults(ItemID.RecallPotion);

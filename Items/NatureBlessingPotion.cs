@@ -3,6 +3,7 @@ using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -18,6 +19,7 @@ namespace AlchemistNPCLite.Items
 			Tooltip.SetDefault("Grants Dryad's Blessing buff");
 			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Зелье Благословления Природы");
 			Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Даёт бафф Благословления Дриады");
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 20;
         }    
 		public override void SetDefaults()
         {

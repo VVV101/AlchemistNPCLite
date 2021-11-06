@@ -3,6 +3,7 @@ using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -21,6 +22,7 @@ namespace AlchemistNPCLite.Items
 
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "探索者药剂包");
             Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "获得你在探索时所需的Buff(危险感知, 狩猎, 洞穴探险, 夜猫子, 光芒, 挖矿, 鱼鳃, 脚蹼, 水上行走)");
+            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 20;
         }    
 		public override void SetDefaults()
         {

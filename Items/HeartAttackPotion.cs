@@ -3,6 +3,7 @@ using System.IO;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Terraria;
+using Terraria.GameContent.Creative;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.Localization;
@@ -28,6 +29,7 @@ namespace AlchemistNPCLite.Items
 			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "黑暗药剂");
 			Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "装填愤怒槽, 造成心脏衰竭"
 			+"\n非灾厄药剂");
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 20;
         }    
 
 		public override void SetDefaults()

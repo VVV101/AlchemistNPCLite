@@ -1,4 +1,5 @@
 using Terraria;
+using Terraria.GameContent.Creative;
 using Terraria.DataStructures;
 using Terraria.ID;
 using Terraria.ModLoader;
@@ -15,13 +16,14 @@ namespace AlchemistNPCLite.Items.Summoning
 			Tooltip.SetDefault("The piece of Musician's soul is inside it.");
 			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Крестраж Музыканта");
 			Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Часть души Музыканта находится внутри");
+			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 1;
         }
 
 		public override void SetDefaults()
 		{
 			Item.width = 46;
             Item.height = 42;
-            Item.maxStack = 1;
+            Item.maxStack = 30;
             Item.rare = 10;
             Item.useStyle = 1;
             Item.useAnimation = 15;
