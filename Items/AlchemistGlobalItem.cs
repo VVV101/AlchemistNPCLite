@@ -30,9 +30,8 @@ namespace AlchemistNPCLite.Items
                     player.ApplyEquipFunctional(player.inventory[49], r);
                 }
             }
-            // BUG: Tracking is broken
-            /*
-            if (player.accCritterGuide && AlchemistNPCLite.modConfiguration.LifeformAnalyzer)
+
+            if (player.accCritterGuide && AlchemistNPCLite.modConfiguration.LifeformAnalyzer && item.type == ItemID.LifeformAnalyzer)
             {
                 if (Main.GameUpdateCount % 60 == 0)
                 {
@@ -48,12 +47,11 @@ namespace AlchemistNPCLite.Items
                             num105 = num102 / num105;
                             num103 *= num105;
                             num104 *= num105;
-                            Projectile.NewProjectile(npc.GetProjectileSpawnSource(), player.Center.X, player.Center.Y, num103, num104, ModContent.ProjectileType<Projectiles.LocatorProjectile>(), 0, 0f, player.whoAmI, v, 0f);
+                            Projectile.NewProjectile(player.GetProjectileSource_Item(item), player.Center.X, player.Center.Y, num103, num104, ModContent.ProjectileType<Projectiles.LocatorProjectile>(), 0, 0f, player.whoAmI, v, 0f);
                         }
                     }
                 }
             }
-            */
             if (item.type == ItemType<Items.Misc.LuckCharm>())
             {
                 Luck = true;
@@ -528,7 +526,7 @@ namespace AlchemistNPCLite.Items
             }
 
             // IMPLEMENT WHEN WEAKREFERENCES FIXED
-			/*
+            /*
             if (ModLoader.GetMod("CalamityMod") != null)
             {
 
