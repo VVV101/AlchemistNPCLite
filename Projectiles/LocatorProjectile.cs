@@ -11,7 +11,7 @@ namespace AlchemistNPCLite.Projectiles
 {
 	class LocatorProjectile : ModProjectile
 	{
-		public override void SetStaticDefaults()
+		public override void SetDefaults()
 		{
 			Projectile.width = 22;
 			Projectile.height = 28;
@@ -29,7 +29,7 @@ namespace AlchemistNPCLite.Projectiles
 			int NPCnumber = (int)Projectile.ai[0];
 			Vector2 npcpos = new Vector2((int)Main.npc[NPCnumber].Center.X, (int)Main.npc[NPCnumber].Center.Y);
 			Player player = Main.player[Projectile.owner];
-
+			
 			if (Projectile.owner == Main.myPlayer) // Multiplayer support
 			{
 				Vector2 diff = npcpos - player.Center;

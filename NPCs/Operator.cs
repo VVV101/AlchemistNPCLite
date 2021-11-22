@@ -676,6 +676,7 @@ namespace AlchemistNPCLite.NPCs
                 }
                 if (Main.expertMode)
                 {
+                    if(!ShopChangeUIO.visible) ShopChangeUIO.timeStart = Main.GameUpdateCount;
                     ShopChangeUIO.visible = true;
                 }
             }
