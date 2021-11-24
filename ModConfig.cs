@@ -66,6 +66,12 @@ namespace AlchemistNPCLite
 		[Label("Lifeform Analyzer laser pointing")]
 		[Tooltip("Enable or disable laser pointing of Lifeform Analyzer (ticks each second). True by default")]
 		public bool LifeformAnalyzer;
+
+		[Range(40, 4000)]
+		[DefaultValue(4000)]
+		[Label("Lifeform Analyzer Pointing Range")]
+		[Tooltip("Max distance the pointer will track. 4000 by default")]
+		public int LocatorRange;
 		
 		[DefaultValue(true)]
 		[Label("Revengeance mode prices scaling")]

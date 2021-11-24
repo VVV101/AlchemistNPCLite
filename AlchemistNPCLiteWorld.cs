@@ -187,7 +187,7 @@ namespace AlchemistNPCLite
                                     Vector2 playerCenter = Main.LocalPlayer.Center + new Vector2(0, Main.LocalPlayer.gfxOffY);
                                     var vector = npc.Center - playerCenter;
                                     var distance = vector.Length();
-                                    if (distance > 40)
+                                    if (distance > 40 && distance <= AlchemistNPCLite.modConfiguration.LocatorRange)
                                     {
                                         var offset = Vector2.Normalize(vector) * Math.Min(70, distance - 20);
                                         float rotation = vector.ToRotation() + (float)(Math.PI / 2);
