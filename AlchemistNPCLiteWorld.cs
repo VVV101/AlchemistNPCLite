@@ -16,6 +16,7 @@ using Microsoft.Xna.Framework.Graphics;
 using AlchemistNPCLite.Interface;
 using Terraria.GameContent;
 using System;
+using Terraria.ModLoader.Config;
 
 namespace AlchemistNPCLite
 {
@@ -181,7 +182,7 @@ namespace AlchemistNPCLite
                             for (int v = 0; v < 200; ++v)
                             {
                                 NPC npc = Main.npc[v];
-                                if (npc.active && npc.rarity >= 1)
+                                if (npc.active && npc.rarity >= 1 && !AlchemistNPCLite.modConfiguration.DisabledLocatorNpcs.Contains(new NPCDefinition(npc.type)))
                                 {
                                     // Adapted from Census mod
                                     Vector2 playerCenter = Main.LocalPlayer.Center + new Vector2(0, Main.LocalPlayer.gfxOffY);
@@ -204,7 +205,6 @@ namespace AlchemistNPCLite
                 );
             }
         }
-
         public override void UpdateUI(GameTime gameTime)
         {
             if (alchemistUserInterface != null && ShopChangeUI.visible)
