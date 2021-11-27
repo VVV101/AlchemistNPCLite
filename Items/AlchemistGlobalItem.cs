@@ -30,28 +30,7 @@ namespace AlchemistNPCLite.Items
                     player.ApplyEquipFunctional(player.inventory[49], r);
                 }
             }
-
-            if (player.accCritterGuide && AlchemistNPCLite.modConfiguration.LifeformAnalyzer && item.type == ItemID.LifeformAnalyzer)
-            {
-                if (Main.GameUpdateCount % 60 == 0)
-                {
-                    for (int v = 0; v < 200; ++v)
-                    {
-                        NPC npc = Main.npc[v];
-                        if (npc.active && npc.rarity >= 1)
-                        {
-                            float num102 = 6f;
-                            float num103 = npc.Center.X + npc.width * 0.5f - player.Center.X;
-                            float num104 = npc.Center.Y + npc.height * 0.5f - player.Center.Y;
-                            float num105 = (float)Math.Sqrt((double)(num103 * num103 + num104 * num104));
-                            num105 = num102 / num105;
-                            num103 *= num105;
-                            num104 *= num105;
-                            Projectile.NewProjectile(player.GetProjectileSource_Item(item), player.Center.X, player.Center.Y, num103, num104, ModContent.ProjectileType<Projectiles.LocatorProjectile>(), 0, 0f, player.whoAmI, v, 0f);
-                        }
-                    }
-                }
-            }
+            
             if (item.type == ItemType<Items.Misc.LuckCharm>())
             {
                 Luck = true;
