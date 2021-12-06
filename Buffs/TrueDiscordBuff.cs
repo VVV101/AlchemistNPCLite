@@ -17,7 +17,7 @@ namespace AlchemistNPCLite.Buffs
 			Description.SetDefault("You may teleport to cursor position by using hotkey"
 			+"\nBehaves exactly like Rod of Discord");
 			Main.debuff[Type] = false;
-			CanBeCleared = true;
+			BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
 			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Истинный Раздор");
             Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Вы можете телепортироваться к курсору, используя горячую клавишу\nПри применении ведёт себя аналогично Жезлу Раздора");
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "真·混乱传送");

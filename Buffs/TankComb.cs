@@ -15,7 +15,7 @@ namespace AlchemistNPCLite.Buffs
 			DisplayName.SetDefault("Tank Combination (w/Modded)");
 			Description.SetDefault("Combination of Swiftness, Endurance, Lifeforce, Ironskin, Obsidian Skin, Thorns, Regeneration, Titan Skin, Invincibility buffs");
 			Main.debuff[Type] = false;
-			CanBeCleared = true;
+			BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
 			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Комбинация Танка (с Модами)");
             Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сочетание баффов Быстроты, Выносливости, Жизненных Сил, Железной Кожи, Обсидиановой Кожи, Шипов, Регенерации, Кожи Титана и Неуязвимости");
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "坦克药剂包 (模组)");

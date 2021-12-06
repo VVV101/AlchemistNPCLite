@@ -20,7 +20,7 @@ namespace AlchemistNPCLite.Buffs
         public override void SetStaticDefaults()
         {
             Main.debuff[Type] = false;
-            CanBeCleared = true;
+            BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
             DisplayName.SetDefault("More Potions Combination");
             Description.SetDefault("Grants most buffs from More Potions *potions"
             + "\nDroughts, Enchanced Regeneration, Courage, Soulbinding, Diamond Skin, Dusk, Dawn, Swift Hands, Speed");

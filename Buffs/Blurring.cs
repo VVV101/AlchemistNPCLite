@@ -21,7 +21,7 @@ namespace AlchemistNPCLite.Buffs
 			DisplayName.SetDefault("Blurring");
 			Description.SetDefault("Enemies cannot clearly see you (Shadow Dodge for 10 sec with 30 sec CD)");
 			Main.debuff[Type] = false;
-			CanBeCleared = true;
+			BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
 			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Размытие");
 			Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Враги едва могут видеть вас (Теневое уклонение с 30-ти секундным откатом)");
 

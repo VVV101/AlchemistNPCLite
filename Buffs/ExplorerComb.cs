@@ -16,7 +16,7 @@ namespace AlchemistNPCLite.Buffs
 			Description.SetDefault("Combination of Dangersense, Hunter, Spelunker, Night Owl, Shine & Mining buffs"
 			+"\nAlso gives effects of Gills, Flippers and Water Walking Potions");
 			Main.debuff[Type] = false;
-			CanBeCleared = true;
+			BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
 			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Комбинация Исследователя");
             Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сочетания баффов Предчувствия, Охотника, Шахтёра, Ночного Зрения, Сияния и Добычи\nТакже даёт эффекты Подводного Дыхания, Ласт и Хождения по воде");
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "探索者药剂包");

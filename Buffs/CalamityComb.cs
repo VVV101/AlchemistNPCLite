@@ -20,7 +20,7 @@ namespace AlchemistNPCLite.Buffs
             Description.SetDefault("Perfect sum of Calamity buffs"
             + "\nYharim's Stimulants, Cadence, Fabsol's Vodka, Soaring, Bounding and Titan Scale");
             Main.debuff[Type] = false;
-            CanBeCleared = true;
+            BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Комбинация Каламити");
             Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Идеальное сочетание баффов Каламити мода\nДает эффект Стимулянтов Ярима, Каденции, Водки Фабсола, Титановой Чешуи и Всевидения");
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "灾厄药剂包");

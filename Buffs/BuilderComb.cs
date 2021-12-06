@@ -21,7 +21,7 @@ namespace AlchemistNPCLite.Buffs
 			DisplayName.SetDefault("Builder Combination");
 			Description.SetDefault("Combination of Building, Mining and Calming buffs");
 			Main.debuff[Type] = false;
-			CanBeCleared = true;
+			BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
 			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Комбинация Строителя");
 			Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сочетание баффов Добычи, Строителя и Покоя");
 

@@ -15,7 +15,7 @@ namespace AlchemistNPCLite.Buffs
 			DisplayName.SetDefault("Mage Combination");
 			Description.SetDefault("Combination of Magic Power, Mana Regeneration, Clairvoyance, Wrath & Rage buffs");
 			Main.debuff[Type] = false;
-			CanBeCleared = true;
+			BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
 			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Комбинация Мага");
             Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сочетание баффов Магической Силы, Регенерации Маны, Ясновидения, Гнева и Ярости");
 

@@ -15,7 +15,7 @@ namespace AlchemistNPCLite.Buffs
 		{
 			DisplayName.SetDefault("Greater Dangersense");
 			Description.SetDefault("Lights up enemy projectiles");
-			CanBeCleared = true;
+			BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
 			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Зелье Великого Чувства Опасности");
 			Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Подсвечивает снаряды противника");
         }

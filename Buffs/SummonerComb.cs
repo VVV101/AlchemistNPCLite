@@ -16,7 +16,7 @@ namespace AlchemistNPCLite.Buffs
 			DisplayName.SetDefault("Summoner Combination");
 			Description.SetDefault("Combination of Summoning, Bewitched and Wrath buffs");
 			Main.debuff[Type] = false;
-			CanBeCleared = true;
+			BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
 			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Комбинация Призывателя");
 			Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сочетание баффов Призыва, Колдовства и Гнева");
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "召唤师药剂包");

@@ -20,7 +20,7 @@ namespace AlchemistNPCLite.Buffs
 		public override void SetStaticDefaults()
 		{
 			Main.debuff[Type] = false;
-			CanBeCleared = true;
+			BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
 			DisplayName.SetDefault("Spirit Combination");
 			Description.SetDefault("Grants most buffs from Spirit Mod potions (Runescribe, Soulguard, Spirit, Starburn, Steadfast and Toxin)");
 			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Комбинация Spirit");
