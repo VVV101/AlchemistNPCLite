@@ -23,7 +23,7 @@ namespace AlchemistNPCLite.Buffs
 			DisplayName.SetDefault("Universal Combination");
 			Description.SetDefault("Perfect sum of Tank, Mage, Ranger and Summoner combinations");
 			Main.debuff[Type] = false;
-			CanBeCleared = true;
+			BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
 			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Универсальная комбинация");
 			Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Идеальное сочетание Комбинаций Танка, Мага, Стрелка и Призывателя");
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "万能药剂包");

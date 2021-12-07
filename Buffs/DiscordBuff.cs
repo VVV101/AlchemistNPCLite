@@ -19,7 +19,7 @@ namespace AlchemistNPCLite.Buffs
 			+"\nInflicts heavy damage while you have Chaos State"
 			+"\nChaos State time is increased to 10 seconds");
 			Main.debuff[Type] = false;
-			CanBeCleared = true;
+			BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
 			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Раздор");
             Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Позволяет телепортироваться на курсор при нажатии горячей клавиши\nНарушает гравитацию игрока на 1 секунду после использования\nНаносит значительные повреждения, если вы в Хаотическом состоянии\nДлительность дебаффа увеличена до 10 секунд");
 

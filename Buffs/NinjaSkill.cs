@@ -3,6 +3,7 @@ using System.Linq;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
+using Terraria.ID;
 
 namespace AlchemistNPCLite.Buffs
 {
@@ -13,7 +14,7 @@ namespace AlchemistNPCLite.Buffs
             DisplayName.SetDefault("Ninja");
             Description.SetDefault("You are a true ninja!");
             Main.debuff[Type] = false;
-            CanBeCleared = true;
+            BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ниндзя");
             Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Вы - истинный ниндзя!");
 
@@ -30,7 +31,7 @@ namespace AlchemistNPCLite.Buffs
             player.blackBelt = true;
             player.spikedBoots = 2;
             // IMPLEMENT WHEN WEAKREFERENCES FIXED
-			/*
+            /*
             if (ModLoader.GetMod("ThoriumMod") != null)
             {
                 ThoriumBoosts(player);
@@ -47,8 +48,8 @@ namespace AlchemistNPCLite.Buffs
 			*/
         }
 
-		// IMPLEMENT WHEN WEAKREFERENCES FIXED
-		/*
+        // IMPLEMENT WHEN WEAKREFERENCES FIXED
+        /*
         private void CalamityBoost(Player player)
         {
             CalamityMod.Calplayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.Calplayer.CalamityPlayer>();

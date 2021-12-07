@@ -22,7 +22,7 @@ namespace AlchemistNPCLite.Buffs
 			DisplayName.SetDefault("Ranger Combination");
 			Description.SetDefault("Combination of Archery, Ammo Reservation, Wrath, Rage buffs");
 			Main.debuff[Type] = false;
-			CanBeCleared = true;
+			BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
 			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Комбинация Стрелка");
 			Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сочетание баффов Лучника, Экономии Боеприпасов, Гнева и Ярости");
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "射手药剂包");

@@ -15,7 +15,7 @@ namespace AlchemistNPCLite.Buffs
 			DisplayName.SetDefault("Sunshine");
 			Description.SetDefault("You are producing light like miniature Sun");
 			Main.debuff[Type] = false;
-			CanBeCleared = true;
+			BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
 			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Солнечное Сияние");
 			Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Вы сияете как миниатюрное Солнце");
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "阳光普照");
