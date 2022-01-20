@@ -30,7 +30,6 @@ namespace AlchemistNPCLite.Buffs
 			modPlayer.DR10 = true;
 			modPlayer.Regeneration = true;
 			modPlayer.Lifeforce = true;
-			player.endurance += 0.1f;
 			player.buffImmune[2] = true;
 			player.buffImmune[5] = true;
 			player.buffImmune[113] = true;

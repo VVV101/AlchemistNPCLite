@@ -411,6 +411,7 @@ namespace AlchemistNPCLite.NPCs
 			}
 			else
 			{
+				if(!ShopChangeUIM.visible) ShopChangeUIM.timeStart = Main.GameUpdateCount;
 				ShopChangeUIM.visible = true;
 			}
 		}

@@ -67,6 +67,17 @@ namespace AlchemistNPCLite
 		[Tooltip("Enable or disable laser pointing of Lifeform Analyzer (ticks each second). True by default")]
 		public bool LifeformAnalyzer;
 		
+		[Range(40, 4000)]
+		[DefaultValue(4000)]
+		[Label("Lifeform Analyzer Pointing Range")]
+		[Tooltip("Max distance the pointer will track. 4000 by default")]
+		public int LocatorRange;
+		
+		//[Range(-4000, 4000)]
+		[Label("Disabled NPCs for Lifeform Analyzer Locator")]
+		[Tooltip("Arrows won't point to these NPCs")]
+		public HashSet<NPCDefinition> DisabledLocatorNpcs = new HashSet<NPCDefinition>();
+		
 		[DefaultValue(true)]
 		[Label("Revengeance mode prices scaling")]
 		[Tooltip("True to make potions prices bigger. True by default")]
@@ -100,6 +111,12 @@ namespace AlchemistNPCLite
 		[Label("Wormhole Potion Price")]
 		[Tooltip("1000 is 10 silver price by default")]
 		public int WormholePrice;
+
+		[Range(1, 100)]
+		[DefaultValue(10)]
+		[Label("Shop Change Delay")]
+		[Tooltip("Delay before shop can be changed after opening interface. 10 frames by default")]
+		public int ShopChangeDelay;
 
 		public override ModConfig Clone() {
 			var clone = (ModConfiguration)base.Clone();

@@ -660,6 +660,7 @@ namespace AlchemistNPCLite.NPCs
 				}
 				if (Main.expertMode)
 				{
+					if(!ShopChangeUIO.visible) ShopChangeUIO.timeStart = Main.GameUpdateCount;
 					ShopChangeUIO.visible = true;
 				}
 			}
@@ -774,11 +775,11 @@ namespace AlchemistNPCLite.NPCs
 		public bool SpiritModDownedDusking
 		{
         get { return SpiritMod.MyWorld.downedDusking; }
-        }
+        }/*
 		public bool SpiritModDownedEtherialUmbra
 		{
         get { return SpiritMod.MyWorld.downedSpiritCore; }
-        }
+        }*/
 		public bool SpiritModDownedIlluminantMaster
 		{
         get { return SpiritMod.MyWorld.downedIlluminantMaster; }
@@ -955,7 +956,7 @@ namespace AlchemistNPCLite.NPCs
 		public bool ReDownedThorn
 		{
         get { return Redemption.RedeWorld.downedThorn; }
-        }
+        }/*
 		public bool ReDownedKeeper
 		{
         get { return Redemption.RedeWorld.downedTheKeeper; }
@@ -967,7 +968,7 @@ namespace AlchemistNPCLite.NPCs
 		public bool ReDownedIEye
 		{
         get { return Redemption.RedeWorld.downedInfectedEye; }
-        }
+        }*/
 		public bool ReDownedKingSlayer
 		{
         get { return Redemption.RedeWorld.downedSlayer; }
@@ -1400,7 +1401,7 @@ namespace AlchemistNPCLite.NPCs
 					shop.item[nextSlot].shopCustomPrice = 3500000;
 					nextSlot++;
 					}
-					if (NPC.downedAncientCultist && Main.expertMode)
+					if (NPC.downedFishron && Main.expertMode)
 					{
 					shop.item[nextSlot].SetDefaults (ItemID.FishronBossBag);
 					shop.item[nextSlot].shopCustomPrice = 3500000;
@@ -1838,12 +1839,12 @@ namespace AlchemistNPCLite.NPCs
 						shop.item[nextSlot].shopCustomPrice = 2500000;
 						nextSlot++;
 						}
-						if (SpiritModDownedEtherialUmbra)
+						/*if (SpiritModDownedEtherialUmbra)
 						{
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("SpiritCoreBag"));
 						shop.item[nextSlot].shopCustomPrice = 2500000;
 						nextSlot++;
-						}
+						}*/
 						if (SpiritModDownedIlluminantMaster)
 						{
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("IlluminantBag"));
@@ -2043,7 +2044,7 @@ namespace AlchemistNPCLite.NPCs
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("ThornBag"));
 						shop.item[nextSlot].shopCustomPrice = 250000;
 						nextSlot++;
-						}
+						}/*
 						if (ReDownedKeeper)
 						{
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("TheKeeperBag"));
@@ -2061,7 +2062,7 @@ namespace AlchemistNPCLite.NPCs
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("InfectedEyeBag"));
 						shop.item[nextSlot].shopCustomPrice = 1000000;
 						nextSlot++;
-						}
+						}*/
 						if (ReDownedKingSlayer)
 						{
 						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("Redemption").ItemType("SlayerBag"));

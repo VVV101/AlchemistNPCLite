@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "dgSpecHash": "lBd+gfWZlKBPTSXEe1Js5M1RzjBjk8hZdXXIW2OPjlM2LcBgcuodrAGCQv4CXrKC7EdZRlap1CI49U9Yc3eFMw==",
+  "success": true,
+  "projectFilePath": "c:\\Users\\b2mau\\Documents\\My Games\\Terraria\\ModLoader\\Mod Sources\\AlchemistNPCLite\\AlchemistNPCLite.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\b2mau\\.nuget\\packages\\tmodloader.codeassist\\0.1.3\\tmodloader.codeassist.0.1.3.nupkg.sha512"
+  ],
+  "logs": []
+}
