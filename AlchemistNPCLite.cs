@@ -626,8 +626,20 @@ namespace AlchemistNPCLite
             AddTranslation(text);
 
             text = CreateTranslation("Providence");
-            text.SetDefault("Providence Treasure Bag");
+            text.SetDefault("Providence, the Profaned Goddess Treasure Bag");
             text.AddTranslation(GameCulture.Chinese, "亵渎天神宝藏袋");
+            AddTranslation(text);
+            
+            text = CreateTranslation("StormWeaver");
+            text.SetDefault("Storm Weaver Treasure Bag");
+            AddTranslation(text);
+
+            text = CreateTranslation("CeaselessVoid");
+            text.SetDefault("Ceaseless Void Treasure Bag");
+            AddTranslation(text);
+
+            text = CreateTranslation("Signus");
+            text.SetDefault("Signus, Envoy of the Devourer Treasure Bag");
             AddTranslation(text);
 
             text = CreateTranslation("Polterghast");
@@ -646,13 +658,21 @@ namespace AlchemistNPCLite
             AddTranslation(text);
 
             text = CreateTranslation("Bumblebirb");
-            text.SetDefault("Bumblebirb Treasure Bag");
+            text.SetDefault("The Dragonfolly Treasure Bag");
             text.AddTranslation(GameCulture.Chinese, "癫痫鸟宝藏袋");
             AddTranslation(text);
 
             text = CreateTranslation("Yharon");
             text.SetDefault("Jungle Dragon, Yharon Treasure Bag");
             text.AddTranslation(GameCulture.Chinese, "犽戎宝藏袋");
+            AddTranslation(text);
+
+            text = CreateTranslation("ExoMechs");
+            text.SetDefault("Exo Mechs Treasure Bag");
+            AddTranslation(text);
+            
+            text = CreateTranslation("SupremeCalamitas");
+            text.SetDefault("Supreme Calamitas Treasure Bag");
             AddTranslation(text);
 
             //SBMW:ThoriumMod
