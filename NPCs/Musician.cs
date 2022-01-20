@@ -779,13 +779,14 @@ namespace AlchemistNPCLite.NPCs
                         shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("Yharon3Musicbox"));
                         shop.item[nextSlot].shopCustomPrice = 500000;
                         nextSlot++;
-                    }
+                    } /*
+					// Too many music boxes for one shop
                     if ((bool)Calamity.Call("Downed", "exomechs"))
                     {
                         shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("ExoMechsMusicboxItem"));
                         shop.item[nextSlot].shopCustomPrice = 500000;
                         nextSlot++;
-                    }
+                    } */
                     if ((bool)Calamity.Call("Downed", "supreme calamitas"))
                     {
                         shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("SCalGMusicbox"));
