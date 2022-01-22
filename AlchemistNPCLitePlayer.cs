@@ -83,7 +83,7 @@ namespace AlchemistNPCLite
 			Lifeforce = false;
 			MS = false;
 			
-			if (Main.netMode == 0)
+			if (Main.netMode != NetmodeID.Server)
 			{
 				if (player.talkNPC == -1)
 				{
