@@ -83,7 +83,7 @@ namespace AlchemistNPCLite
 			Lifeforce = false;
 			MS = false;
 			
-			if (Main.netMode == 0)
+			if (Main.netMode != NetmodeID.Server)
 			{
 				if (player.talkNPC == -1)
 				{
@@ -171,7 +171,7 @@ namespace AlchemistNPCLite
         }
 		private void RedemptionBoost(Player player)
         {
-			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
+			Redemption.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.DruidDamagePlayer>();
 			RedemptionPlayer.druidCrit += 10;
         }
 		private void ThoriumBoosts(Player player)

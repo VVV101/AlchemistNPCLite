@@ -15,58 +15,58 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace AlchemistNPCLite
 {
-	public class AlchemistNPCLiteWorld : ModWorld
-	{
-		private const int saveVersion = 0;
-		public static bool downedDOGPumpking;
-		public static bool downedDOGIceQueen;
-		public static bool downedSandElemental;
+    public class AlchemistNPCLiteWorld : ModWorld
+    {
+        private const int saveVersion = 0;
+        public static bool downedDOGPumpking;
+        public static bool downedDOGIceQueen;
+        public static bool downedSandElemental;
 
-		public override void Initialize()
-		{
-			downedDOGIceQueen = false;
-			downedDOGPumpking = false;
-			downedSandElemental = false;
-		}
+        public override void Initialize()
+        {
+            downedDOGIceQueen = false;
+            downedDOGPumpking = false;
+            downedSandElemental = false;
+        }
 
-		public override TagCompound Save()
-		{
-			var downed = new List<string>();
-			if (downedDOGPumpking) downed.Add("DOGPumpking");
-			if (downedDOGIceQueen) downed.Add("DOGIceQueen");
-			if (downedSandElemental) downed.Add("SandElemental");
-			
-			return new TagCompound {
-				{"downed", downed}
-			};
-		}
-		
-		public override void NetSend(BinaryWriter writer)
-		{
-			BitsByte flags = new BitsByte();
-			flags[0] = downedDOGPumpking;
-			flags[1] = downedDOGIceQueen;
-			flags[2] = downedSandElemental;
-			writer.Write(flags);
-		}
+        public override TagCompound Save()
+        {
+            var downed = new List<string>();
+            if (downedDOGPumpking) downed.Add("DOGPumpking");
+            if (downedDOGIceQueen) downed.Add("DOGIceQueen");
+            if (downedSandElemental) downed.Add("SandElemental");
 
-		public override void NetReceive(BinaryReader reader)
-		{
-			BitsByte flags = reader.ReadByte();
-			downedDOGPumpking = flags[0];
-			downedDOGIceQueen = flags[1];
-			downedSandElemental = flags[2];
-			// As mentioned in NetSend, BitBytes can contain 8 values. If you have more, be sure to read the additional data:
-			// BitsByte flags2 = reader.ReadByte();
-			// downed9thBoss = flags[0];
-		}
+            return new TagCompound {
+                {"downed", downed}
+            };
+        }
 
-		public override void Load(TagCompound tag)
-		{
-			var downed = tag.GetList<string>("downed");
-			downedDOGPumpking = downed.Contains("DOGPumpking");
-			downedDOGIceQueen = downed.Contains("DOGIceQueen");
-			downedSandElemental = downed.Contains("SandElemental");
-		}
-	}
+        public override void NetSend(BinaryWriter writer)
+        {
+            BitsByte flags = new BitsByte();
+            flags[0] = downedDOGPumpking;
+            flags[1] = downedDOGIceQueen;
+            flags[2] = downedSandElemental;
+            writer.Write(flags);
+        }
+
+        public override void NetReceive(BinaryReader reader)
+        {
+            BitsByte flags = reader.ReadByte();
+            downedDOGPumpking = flags[0];
+            downedDOGIceQueen = flags[1];
+            downedSandElemental = flags[2];
+            // As mentioned in NetSend, BitBytes can contain 8 values. If you have more, be sure to read the additional data:
+            // BitsByte flags2 = reader.ReadByte();
+            // downed9thBoss = flags[0];
+        }
+
+        public override void Load(TagCompound tag)
+        {
+            var downed = tag.GetList<string>("downed");
+            downedDOGPumpking = downed.Contains("DOGPumpking");
+            downedDOGIceQueen = downed.Contains("DOGIceQueen");
+            downedSandElemental = downed.Contains("SandElemental");
+        }
+    }
 }
