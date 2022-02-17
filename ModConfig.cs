@@ -112,7 +112,7 @@ namespace AlchemistNPCLite
 		[Tooltip("1000 is 10 silver price by default")]
 		public int WormholePrice;
 
-		[Range(1, 100)]
+		[Range(0, 100)]
 		[DefaultValue(10)]
 		[Label("Shop Change Delay")]
 		[Tooltip("Delay before shop can be changed after opening interface. 10 frames by default")]
