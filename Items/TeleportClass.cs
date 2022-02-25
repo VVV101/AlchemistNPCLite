@@ -93,12 +93,12 @@ namespace AlchemistNPCLite.Items
         {
             Vector2 prePos = player.position;
             Vector2 pos = prePos;
-            for (int x = 0; x < Main.tile.GetLength(0); ++x)
+            for (int x = 0; x < Main.tile.Width; ++x)
             {
-                for (int y = 0; y < Main.tile.GetLength(1); ++y)
+                for (int y = 0; y < Main.tile.Height; ++y)
                 {
                     if (Main.tile[x, y] == null) continue;
-                    if (Main.tile[x, y].type != 81) continue;
+                    if (Main.tile[x, y].TileType != 81) continue;
                     pos = new Vector2((x + 1) * 16, (y - 16) * 16);
                     break;
                 }
@@ -116,10 +116,10 @@ namespace AlchemistNPCLite.Items
             Vector2 pos = prePos;
             for (int x = 8400; x > 0; --x)
             {
-                for (int y = 0; y < Main.tile.GetLength(1); ++y)
+                for (int y = 0; y < Main.tile.Height; ++y)
                 {
                     if (Main.tile[x, y] == null) continue;
-                    if (Main.tile[x, y].type != 81) continue;
+                    if (Main.tile[x, y].TileType != 81) continue;
                     pos = new Vector2((x - 1) * 16, (y - 16) * 16);
                     break;
                 }
@@ -135,12 +135,12 @@ namespace AlchemistNPCLite.Items
         {
             Vector2 prePos = player.position;
             Vector2 pos = prePos;
-            for (int x = 0; x < Main.tile.GetLength(0); ++x)
+            for (int x = 0; x < Main.tile.Width; ++x)
             {
-                for (int y = 0; y < Main.tile.GetLength(1); ++y)
+                for (int y = 0; y < Main.tile.Height; ++y)
                 {
                     if (Main.tile[x, y] == null) continue;
-                    if (Main.tile[x, y].type != 75) continue;
+                    if (Main.tile[x, y].TileType != 75) continue;
                     pos = new Vector2((x - 3) * 16, (y + 2) * 16);
                     break;
                 }
@@ -158,10 +158,10 @@ namespace AlchemistNPCLite.Items
             Vector2 pos = prePos;
             for (int x = 8400; x > 0; --x)
             {
-                for (int y = 0; y < Main.tile.GetLength(1); ++y)
+                for (int y = 0; y < Main.tile.Height; ++y)
                 {
                     if (Main.tile[x, y] == null) continue;
-                    if (Main.tile[x, y].type != 75) continue;
+                    if (Main.tile[x, y].TileType != 75) continue;
                     pos = new Vector2((x + 3) * 16, (y + 2) * 16);
                     break;
                 }
@@ -189,12 +189,12 @@ namespace AlchemistNPCLite.Items
                         x -= 16;
                     } while (Main.tile[x, y].LiquidAmount == 255);
                 }
-                if (Main.tile[x, y] != null && Main.tile[x, y].LiquidAmount == 0 && Main.tile[x, y].IsActive)
+                if (Main.tile[x, y] != null && Main.tile[x, y].LiquidAmount == 0 && Main.tile[x, y].HasTile)
                 {
                     do
                     {
                         y -= 16;
-                    } while (Main.tile[x, y] != null && Main.tile[x, y].LiquidAmount == 0 && Main.tile[x, y].IsActive);
+                    } while (Main.tile[x, y] != null && Main.tile[x, y].LiquidAmount == 0 && Main.tile[x, y].HasTile);
                 }
                 pos = new Vector2((x) * 16, (y - 2) * 16);
                 break;
@@ -222,12 +222,12 @@ namespace AlchemistNPCLite.Items
                         x += 16;
                     } while (Main.tile[x, y].LiquidAmount == 255);
                 }
-                if (Main.tile[x, y] != null && Main.tile[x, y].LiquidAmount == 0 && Main.tile[x, y].IsActive)
+                if (Main.tile[x, y] != null && Main.tile[x, y].LiquidAmount == 0 && Main.tile[x, y].HasTile)
                 {
                     do
                     {
                         y -= 16;
-                    } while (Main.tile[x, y] != null && Main.tile[x, y].LiquidAmount == 0 && Main.tile[x, y].IsActive);
+                    } while (Main.tile[x, y] != null && Main.tile[x, y].LiquidAmount == 0 && Main.tile[x, y].HasTile);
                 }
                 pos = new Vector2((x) * 16, (y - 2) * 16);
                 break;
@@ -248,7 +248,7 @@ namespace AlchemistNPCLite.Items
                 for (int x = 0; x < Main.maxTilesX; ++x)
                 {
                     if (Main.tile[x, y] == null) continue;
-                    if (Main.tile[x, y].type != 233) continue;
+                    if (Main.tile[x, y].TileType != 233) continue;
                     pos = new Vector2((x) * 16, (y - 2) * 16);
                     break;
                 }
@@ -269,7 +269,7 @@ namespace AlchemistNPCLite.Items
                 for (int x = Main.maxTilesX; x > 0; --x)
                 {
                     if (Main.tile[x, y] == null) continue;
-                    if (Main.tile[x, y].type != 384) continue;
+                    if (Main.tile[x, y].TileType != 384) continue;
                     pos = new Vector2((x) * 16, (y - 2) * 16);
                     break;
                 }
@@ -285,12 +285,12 @@ namespace AlchemistNPCLite.Items
         {
             Vector2 prePos = player.position;
             Vector2 pos = prePos;
-            for (int x = 0; x < Main.tile.GetLength(0); ++x)
+            for (int x = 0; x < Main.tile.Width; ++x)
             {
-                for (int y = 0; y < Main.tile.GetLength(1); ++y)
+                for (int y = 0; y < Main.tile.Height; ++y)
                 {
                     if (Main.tile[x, y] == null) continue;
-                    if (Main.tile[x, y].type != 237) continue;
+                    if (Main.tile[x, y].TileType != 237) continue;
                     pos = new Vector2((x + 2) * 16, y * 16);
                     break;
                 }

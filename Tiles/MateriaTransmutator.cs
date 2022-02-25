@@ -98,7 +98,7 @@ namespace AlchemistNPCLite.Tiles
 		public override void ModifyLight(int i, int j, ref float r, ref float g, ref float b)
 		{
 			Tile tile = Main.tile[i, j];
-			if (tile.frameX < 66)
+			if (tile.TileFrameX < 66)
 			{
 				r = 0.9f;
 				g = 0.9f;
@@ -112,7 +112,7 @@ namespace AlchemistNPCLite.Tiles
 			frameCounter = Main.tileFrameCounter[TileID.FireflyinaBottle];
 		}
 		
-		public override void KillMultiTile(int i, int j, int frameX, int frameY)
+		public override void KillMultiTile(int i, int j, int TileFrameX, int TileFrameY)
 		{
 			Item.NewItem(i * 16, j * 16, 16, 32, ModContent.ItemType<Items.Placeable.MateriaTransmutator>());
 		}

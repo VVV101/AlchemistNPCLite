@@ -92,7 +92,7 @@ namespace AlchemistNPCLite.Interface
 
         private void PlayButtonClicked1(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPCLite.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
                 Musician.S1 = true;
                 Musician.S2 = false;
@@ -108,7 +108,7 @@ namespace AlchemistNPCLite.Interface
 
         private void PlayButtonClicked2(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPCLite.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
                 Musician.S1 = false;
                 Musician.S2 = true;
@@ -124,7 +124,7 @@ namespace AlchemistNPCLite.Interface
 
         private void PlayButtonClicked3(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPCLite.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
                 Musician.S1 = false;
                 Musician.S2 = false;
@@ -140,7 +140,7 @@ namespace AlchemistNPCLite.Interface
 
         private void CloseButtonClicked(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPCLite.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
                 SoundEngine.PlaySound(SoundID.MenuOpen);
                 visible = false;

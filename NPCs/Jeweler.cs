@@ -492,6 +492,9 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].SetDefaults(ItemID.GeyserTrap);
                     shop.item[nextSlot].shopCustomPrice = 100000;
                     nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ItemID.CatBast);
+                    shop.item[nextSlot].shopCustomPrice = 100000;
+                    nextSlot++;
                     shop.item[nextSlot].SetDefaults(ItemID.SharpeningStation);
                     shop.item[nextSlot].shopCustomPrice = 150000;
                     nextSlot++;
