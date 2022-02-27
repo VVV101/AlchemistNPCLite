@@ -534,6 +534,17 @@ namespace AlchemistNPCLite.NPCs
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ItemID.WormholePotion);
                 nextSlot++;
+
+                shop.item[nextSlot].SetDefaults(ItemID.LuckPotionLesser);
+                shop.item[nextSlot].shopCustomPrice = 20000;
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.LuckPotion);
+                shop.item[nextSlot].shopCustomPrice = 100000;
+                nextSlot++;
+                shop.item[nextSlot].SetDefaults(ItemID.LuckPotionGreater);
+                shop.item[nextSlot].shopCustomPrice = 500000;
+                nextSlot++;
+
                 if (Main.hardMode)
                 {
                     shop.item[nextSlot].SetDefaults(ItemID.TeleportationPotion);
