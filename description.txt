@@ -6,6 +6,10 @@ The spawn condition for the Operator is to beat EoW/BoC.
 The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 Mod's Discord: https://discord.gg/WGKyKun
+v1.8.10
+-Disable shop changing delay when autopause is on and allow 0 delay for disabling with autopause off
+-Fix UI scale not being 100% drawing the lifeform analyzer arrow in the wrong place
+-Rebalance endgame Calamity bag price
 v1.8.9
 -Fix with shops and multiplayer
 v1.8.8

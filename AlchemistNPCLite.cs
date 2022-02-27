@@ -210,7 +210,7 @@ namespace AlchemistNPCLite
                             }
                         }
                         return true;
-                    }, InterfaceScaleType.None)
+                    }, InterfaceScaleType.Game)
                 );
             }
         }
