@@ -9,10 +9,12 @@ Mod's Discord: https://discord.gg/WGKyKun
 v1.8.10
 -Disable shop changing delay when autopause is on and allow 0 delay for disabling with autopause off
 -Fix UI scale not being 100% drawing the lifeform analyzer arrow in the wrong place
+-Add Tinkerer to Census integration
 -(1.3) Rebalance endgame Calamity bag price
 -(1.4) Update to tModLoader v0.12 Alpha 02024925
 -(1.4) Add Bast Statue to Jeweler's Arena shop
 -(1.4) Temporarily add Luck Potions to Alchemist (will be relocated eventually)
+-(1.4) Add hocruxes back to Jeweler
 v1.8.9
 -Fix with shops and multiplayer
 v1.8.8
