@@ -13,6 +13,7 @@ v1.8.10
 -(1.4) Update to tModLoader v0.12 Alpha 02024925
 -(1.4) Add Bast Statue to Jeweler's Arena shop
 -(1.4) Temporarily add Luck Potions to Alchemist (will be relocated eventually)
+-(1.4) Add hocruxes back to Jeweler
 v1.8.9
 -Fix with shops and multiplayer
 v1.8.8

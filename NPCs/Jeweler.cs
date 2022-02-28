@@ -404,6 +404,7 @@ namespace AlchemistNPCLite.NPCs
                         shop.item[nextSlot].shopCustomPrice = 10000;
                         nextSlot++;
                     }
+                    */
                     if (Main.hardMode)
                     {
                         shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Summoning.AlchemistHorcrux>());
@@ -425,7 +426,6 @@ namespace AlchemistNPCLite.NPCs
                         shop.item[nextSlot].shopCustomPrice = 150000;
                         nextSlot++;
                     }
-					*/
                 }
             }
             if (AS)
