@@ -404,6 +404,7 @@ namespace AlchemistNPCLite.NPCs
                         shop.item[nextSlot].shopCustomPrice = 10000;
                         nextSlot++;
                     }
+                    */
                     if (Main.hardMode)
                     {
                         shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Summoning.AlchemistHorcrux>());
@@ -425,7 +426,6 @@ namespace AlchemistNPCLite.NPCs
                         shop.item[nextSlot].shopCustomPrice = 150000;
                         nextSlot++;
                     }
-					*/
                 }
             }
             if (AS)
@@ -490,6 +490,9 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].shopCustomPrice = 30000;
                     nextSlot++;
                     shop.item[nextSlot].SetDefaults(ItemID.GeyserTrap);
+                    shop.item[nextSlot].shopCustomPrice = 100000;
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ItemID.CatBast);
                     shop.item[nextSlot].shopCustomPrice = 100000;
                     nextSlot++;
                     shop.item[nextSlot].SetDefaults(ItemID.SharpeningStation);
