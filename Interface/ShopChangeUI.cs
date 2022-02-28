@@ -132,7 +132,7 @@ namespace AlchemistNPCLite.Interface
 
         private void PlayButtonClicked1(UIMouseEvent evt, UIElement listeningElement)
         {
-			if (Main.GameUpdateCount - timeStart > AlchemistNPCLite.modConfiguration.ShopChangeDelay)
+			if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
 				Brewer.Shop1 = true;
 				Brewer.Shop2 = false;
@@ -151,7 +151,7 @@ namespace AlchemistNPCLite.Interface
 
         private void PlayButtonClicked2(UIMouseEvent evt, UIElement listeningElement)
         {
-			if (Main.GameUpdateCount - timeStart > AlchemistNPCLite.modConfiguration.ShopChangeDelay)
+			if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
 				Brewer.Shop1 = false;
 				Brewer.Shop2 = true;
@@ -170,7 +170,7 @@ namespace AlchemistNPCLite.Interface
 
         private void PlayButtonClicked21(UIMouseEvent evt, UIElement listeningElement)
         {
-			if (Main.GameUpdateCount - timeStart > AlchemistNPCLite.modConfiguration.ShopChangeDelay)
+			if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
 				Brewer.Shop1 = false;
 				Brewer.Shop2 = false;
@@ -189,7 +189,7 @@ namespace AlchemistNPCLite.Interface
 
         private void PlayButtonClicked3(UIMouseEvent evt, UIElement listeningElement)
         {
-			if (Main.GameUpdateCount - timeStart > AlchemistNPCLite.modConfiguration.ShopChangeDelay)
+			if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
 				Brewer.Shop1 = false;
 				Brewer.Shop2 = false;
@@ -208,7 +208,7 @@ namespace AlchemistNPCLite.Interface
 
         private void PlayButtonClicked4(UIMouseEvent evt, UIElement listeningElement)
         {
-			if (Main.GameUpdateCount - timeStart > AlchemistNPCLite.modConfiguration.ShopChangeDelay)
+			if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
 				Brewer.Shop1 = false;
 				Brewer.Shop2 = false;
@@ -227,7 +227,7 @@ namespace AlchemistNPCLite.Interface
 
         private void PlayButtonClicked5(UIMouseEvent evt, UIElement listeningElement)
         {
-			if (Main.GameUpdateCount - timeStart > AlchemistNPCLite.modConfiguration.ShopChangeDelay)
+			if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
 				Brewer.Shop1 = false;
 				Brewer.Shop2 = false;
@@ -246,7 +246,7 @@ namespace AlchemistNPCLite.Interface
 
         private void CloseButtonClicked(UIMouseEvent evt, UIElement listeningElement)
         {
-			if (Main.GameUpdateCount - timeStart > AlchemistNPCLite.modConfiguration.ShopChangeDelay)
+			if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
 			{
 				Main.PlaySound(SoundID.MenuOpen);
 				visible = false;

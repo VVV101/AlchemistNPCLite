@@ -188,7 +188,7 @@ namespace AlchemistNPCLite.Interface
 
         private void PlayButtonClicked1(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPCLite.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
 				Architect.Shop1 = true;
 				Architect.Shop2 = false;
@@ -211,7 +211,7 @@ namespace AlchemistNPCLite.Interface
 
         private void PlayButtonClicked2(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPCLite.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
 				Architect.Shop1 = false;
 				Architect.Shop2 = true;
@@ -234,7 +234,7 @@ namespace AlchemistNPCLite.Interface
 
         private void PlayButtonClicked3(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPCLite.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
 				Architect.Shop1 = false;
 				Architect.Shop2 = false;
@@ -257,7 +257,7 @@ namespace AlchemistNPCLite.Interface
 
         private void PlayButtonClicked4(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPCLite.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
 				Architect.Shop1 = false;
 				Architect.Shop2 = false;
@@ -280,7 +280,7 @@ namespace AlchemistNPCLite.Interface
 
         private void PlayButtonClicked5(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPCLite.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
 				Architect.Shop1 = false;
 				Architect.Shop2 = false;
@@ -303,7 +303,7 @@ namespace AlchemistNPCLite.Interface
 
         private void PlayButtonClicked6(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPCLite.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
 				Architect.Shop1 = false;
 				Architect.Shop2 = false;
@@ -326,7 +326,7 @@ namespace AlchemistNPCLite.Interface
 
         private void PlayButtonClicked7(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPCLite.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
 				Architect.Shop1 = false;
 				Architect.Shop2 = false;
@@ -349,7 +349,7 @@ namespace AlchemistNPCLite.Interface
 
         private void PlayButtonClicked8(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPCLite.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
 				Architect.Shop1 = false;
 				Architect.Shop2 = false;
@@ -372,7 +372,7 @@ namespace AlchemistNPCLite.Interface
 
         private void PlayButtonClicked9(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPCLite.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
 				Architect.Shop1 = false;
 				Architect.Shop2 = false;
@@ -395,7 +395,7 @@ namespace AlchemistNPCLite.Interface
 
         private void PlayButtonClicked10(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPCLite.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
 				Architect.Shop1 = false;
 				Architect.Shop2 = false;
@@ -418,7 +418,7 @@ namespace AlchemistNPCLite.Interface
 
         private void CloseButtonClicked(UIMouseEvent evt, UIElement listeningElement)
         {
-            if (Main.GameUpdateCount - timeStart > AlchemistNPCLite.modConfiguration.ShopChangeDelay)
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
 				Main.PlaySound(SoundID.MenuOpen);
 				visible = false;
