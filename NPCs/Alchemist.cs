@@ -451,7 +451,8 @@ namespace AlchemistNPCLite.NPCs
                 Player player = Main.player[Main.myPlayer];
                 if ((player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier1 == false && (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier2 == false && (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier3 == false && (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier4 == false)
                 {
-                    player.QuickSpawnItem(ModContent.ItemType<Items.Misc.AlchemistCharmTier1>());
+                    var source = NPC.GetSpawnSourceForNPCFromNPCAI();
+                    player.QuickSpawnItem(source, ModContent.ItemType<Items.Misc.AlchemistCharmTier1>());
                 }
                 baseShop = false;
                 plantShop = true;

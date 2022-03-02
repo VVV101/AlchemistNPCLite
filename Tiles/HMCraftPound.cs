@@ -67,7 +67,7 @@ namespace AlchemistNPCLite.Tiles
 		
 		public override void KillMultiTile(int i, int j, int TileFrameX, int TileFrameY)
 		{
-			Item.NewItem(i * 16, j * 16, 32, 16, ModContent.ItemType<Items.Placeable.HMCraftPound>());
+			Item.NewItem(new EntitySource_TileBreak(i, j) ,i * 16, j * 16, 32, 16, ModContent.ItemType<Items.Placeable.HMCraftPound>());
 		}
 	}
 }
