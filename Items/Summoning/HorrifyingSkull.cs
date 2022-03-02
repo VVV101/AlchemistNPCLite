@@ -35,11 +35,17 @@ namespace AlchemistNPCLite.Items.Summoning
 
 		public override bool? UseItem(Player player)
 		{
-			var itemSource = player.GetItemSource_OpenItem(Type);
-			NPC.NewNPC(itemSource, (int)player.position.X, (int)player.position.Y - 350, NPCID.DungeonGuardian);
-            Main.NewText("Dungeon Guardian has awoken!", 175, 75, 255);
-            NetMessage.SendData(23, -1, -1, null, NPCID.DungeonGuardian, 0f, 0f, 0f, 0);
-			SoundEngine.PlaySound(15, (int)player.position.X, (int)player.position.Y, 0);
+			if (player.whoAmI == Main.myPlayer) {
+				int type = NPCID.DungeonGuardian;
+
+				if (Main.netMode != NetmodeID.MultiplayerClient) {
+					NPC.SpawnOnPlayer(player.whoAmI, type);
+				}
+				else {
+					// NPCID.Sets.MPAllowedEnemies[type] is set in ModGlobalNPC
+					NetMessage.SendData(MessageID.SpawnBoss, number: player.whoAmI, number2: type);
+				}
+			}
 			return true;
 		}
 	}
