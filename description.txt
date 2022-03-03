@@ -8,6 +8,7 @@ The Musician will come if you defeat Skeletron.
 Mod's Discord: https://discord.gg/WGKyKun
 v1.8.11
 -Update to tmodloader Alpha 1.4 67ec6fd5
+-Added Slice of Cake to Jeweler's shop (after beating EoW/BoC)
 v1.8.10
 -Disable shop changing delay when autopause is on and allow 0 delay for disabling with autopause off
 -Fix UI scale not being 100% drawing the lifeform analyzer arrow in the wrong place

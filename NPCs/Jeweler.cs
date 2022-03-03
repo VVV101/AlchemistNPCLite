@@ -444,6 +444,9 @@ namespace AlchemistNPCLite.NPCs
                         nextSlot++;
                     }
 					*/
+					shop.item[nextSlot].SetDefaults(ItemID.SliceOfCake);
+                    shop.item[nextSlot].shopCustomPrice = 100000;
+                    nextSlot++;
                 }
                 if (NPC.downedBoss3)
                 {
