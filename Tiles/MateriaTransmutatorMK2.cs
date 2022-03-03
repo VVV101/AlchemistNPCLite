@@ -120,7 +120,7 @@ namespace AlchemistNPCLite.Tiles
 
         public override void KillMultiTile(int i, int j, int TileFrameX, int TileFrameY)
         {
-            Item.NewItem(i * 16, j * 16, 16, 32, ModContent.ItemType<Items.Placeable.MateriaTransmutatorMK2>());
+            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, ModContent.ItemType<Items.Placeable.MateriaTransmutatorMK2>());
         }
 
         public override void NearbyEffects(int i, int j, bool closer)
