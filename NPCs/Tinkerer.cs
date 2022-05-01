@@ -111,17 +111,15 @@ namespace AlchemistNPCLite.NPCs
 		}
  
  
-        public override string TownNPCName()
+        public override List<string> SetNPCNameList()
         {
             string Alexander = Language.GetTextValue("Mods.AlchemistNPCLite.Alexander");
 			string Peter = Language.GetTextValue("Mods.AlchemistNPCLite.Peter");
-			switch (WorldGen.genRand.Next(1))
-            {
-                case 0:
-                    return Alexander;
-                default:
-                    return Peter;
-            }
+
+            return new List<string>() {
+				Alexander,
+				Peter
+			};
         }
  
 		public override void TownNPCAttackStrength(ref int damage, ref float knockback)

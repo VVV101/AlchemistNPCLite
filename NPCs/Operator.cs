@@ -8,6 +8,7 @@ using Terraria.Localization;
 using Terraria.WorldBuilding;
 using AlchemistNPCLite.Interface;
 using Terraria.GameContent.ItemDropRules;
+using System.Collections.Generic;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -294,19 +295,15 @@ namespace AlchemistNPCLite.NPCs
             return false;
         }
 
-        public override string TownNPCName()
+        public override List<string> SetNPCNameList()
         {
             string Angela = Language.GetTextValue("Mods.AlchemistNPCLite.Angela");
             string Carmen = Language.GetTextValue("Mods.AlchemistNPCLite.Carmen");
-            switch (WorldGen.genRand.Next(2))
-            {
-                case 0:
-                    return Angela;
-                case 1:
-                    return Carmen;
-                default:
-                    return Angela;
-            }
+
+            return new List<string>() {
+				Angela,
+                Carmen
+			};
         }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)

@@ -11,6 +11,7 @@ using Terraria.GameContent;
 using AlchemistNPCLite.NPCs;
 using AlchemistNPCLite.Interface;
 using ReLogic.Content;
+using System.Collections.Generic;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -268,7 +269,7 @@ namespace AlchemistNPCLite.NPCs
         }
 
 
-        public override string TownNPCName()
+        public override List<string> SetNPCNameList()
         {                                       //NPC names
             string Joe = Language.GetTextValue("Mods.AlchemistNPCLite.Joe");
             string Mark = Language.GetTextValue("Mods.AlchemistNPCLite.Mark");
@@ -276,21 +277,15 @@ namespace AlchemistNPCLite.NPCs
             string Archer = Language.GetTextValue("Mods.AlchemistNPCLite.Archer");
             string Frido = Language.GetTextValue("Mods.AlchemistNPCLite.Frido");
             string Li = Language.GetTextValue("Mods.AlchemistNPCLite.Li");
-            switch (WorldGen.genRand.Next(5))
-            {
-                case 0:
-                    return Joe;
-                case 1:
-                    return Mark;
-                case 2:
-                    return Walter;
-                case 3:
-                    return Archer;
-                case 4:
-                    return Frido;
-                default:
-                    return Li;
-            }
+
+            return new List<string>() {
+				Joe,
+				Mark,
+				Walter,
+				Archer,
+                Frido,
+                Li
+			};
         }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)

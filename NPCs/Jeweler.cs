@@ -6,6 +6,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
+using System.Collections.Generic;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -160,7 +161,7 @@ namespace AlchemistNPCLite.NPCs
 
 
 
-        public override string TownNPCName()
+        public override List<string> SetNPCNameList()
         {                                       //NPC names
             string Carl = Language.GetTextValue("Mods.AlchemistNPCLite.Carl");
             string John = Language.GetTextValue("Mods.AlchemistNPCLite.John");
@@ -168,21 +169,15 @@ namespace AlchemistNPCLite.NPCs
             string LuiFransua = Language.GetTextValue("Mods.AlchemistNPCLite.LuiFransua");
             string Daniel = Language.GetTextValue("Mods.AlchemistNPCLite.Daniel");
             string Charley = Language.GetTextValue("Mods.AlchemistNPCLite.Charley");
-            switch (WorldGen.genRand.Next(5))
-            {
-                case 0:
-                    return Carl;
-                case 1:
-                    return John;
-                case 2:
-                    return JanMare;
-                case 3:
-                    return LuiFransua;
-                case 4:
-                    return Daniel;
-                default:
-                    return Charley;
-            }
+
+            return new List<string>() {
+				Carl,
+				John,
+				JanMare,
+				LuiFransua,
+                Daniel,
+                Charley
+			};
         }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)

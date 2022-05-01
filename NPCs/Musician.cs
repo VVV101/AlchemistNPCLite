@@ -7,6 +7,7 @@ using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using Terraria.WorldBuilding;
 using AlchemistNPCLite.Interface;
+using System.Collections.Generic;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -201,7 +202,7 @@ namespace AlchemistNPCLite.NPCs
 
 
 
-        public override string TownNPCName()
+        public override List<string> SetNPCNameList()
         {                                       //NPC names
             string Beethoven = Language.GetTextValue("Mods.AlchemistNPCLite.Beethoven");
             string Bach = Language.GetTextValue("Mods.AlchemistNPCLite.Bach");
@@ -210,25 +211,16 @@ namespace AlchemistNPCLite.NPCs
             string Scott = Language.GetTextValue("Mods.AlchemistNPCLite.Scott");
             string Lloyd = Language.GetTextValue("Mods.AlchemistNPCLite.Lloyd");
             string Gamma = Language.GetTextValue("Mods.AlchemistNPCLite.Gamma");
-            switch (WorldGen.genRand.Next(7))
-            {
-                case 0:
-                    return Beethoven;
-                case 1:
-                    return Bach;
-                case 2:
-                    return Johan;
-                case 3:
-                    return Edison;
-                case 4:
-                    return Scott;
-                case 5:
-                    return Lloyd;
-                case 6:
-                    return Gamma;
-                default:
-                    return Gamma;
-            }
+
+            return new List<string>() {
+				Beethoven,
+				Bach,
+				Johan,
+				Edison,
+                Scott,
+                Lloyd,
+                Gamma
+			};
         }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)

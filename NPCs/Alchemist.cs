@@ -5,6 +5,7 @@ using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.Utilities;
 using Terraria.Localization;
+using System.Collections.Generic;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -231,7 +232,7 @@ namespace AlchemistNPCLite.NPCs
             return false;
         }
 
-        public override string TownNPCName()
+        public override List<string> SetNPCNameList()
         {                                       //NPC names
             string Edward = Language.GetTextValue("Mods.AlchemistNPCLite.Edward");
             string Severus = Language.GetTextValue("Mods.AlchemistNPCLite.Severus");
@@ -239,21 +240,15 @@ namespace AlchemistNPCLite.NPCs
             string Tilyorn = Language.GetTextValue("Mods.AlchemistNPCLite.Tilyorn");
             string Nicolas = Language.GetTextValue("Mods.AlchemistNPCLite.Nicolas");
             string Gregg = Language.GetTextValue("Mods.AlchemistNPCLite.Gregg");
-            switch (WorldGen.genRand.Next(6))
-            {
-                case 0:
-                    return Edward;
-                case 1:
-                    return Severus;
-                case 2:
-                    return Horace;
-                case 3:
-                    return Tilyorn;
-                case 4:
-                    return Nicolas;
-                default:
-                    return Gregg;
-            }
+
+            return new List<string>() {
+				Edward,
+				Severus,
+				Horace,
+				Tilyorn,
+                Nicolas,
+                Gregg
+			};
         }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)
@@ -451,7 +446,7 @@ namespace AlchemistNPCLite.NPCs
                 Player player = Main.player[Main.myPlayer];
                 if ((player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier1 == false && (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier2 == false && (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier3 == false && (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier4 == false)
                 {
-                    var source = NPC.GetSpawnSourceForNPCFromNPCAI();
+                    var source = NPC.GetSource_FromAI();
                     player.QuickSpawnItem(source, ModContent.ItemType<Items.Misc.AlchemistCharmTier1>());
                 }
                 baseShop = false;

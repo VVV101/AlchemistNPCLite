@@ -9,6 +9,7 @@ using AlchemistNPCLite.NPCs;
 using AlchemistNPCLite;
 using AlchemistNPCLite.Interface;
 using Terraria.Localization;
+using System.Collections.Generic;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -228,7 +229,7 @@ namespace AlchemistNPCLite.NPCs
             return false;
         }
 
-        public override string TownNPCName()
+        public override List<string> SetNPCNameList()
         {                                       //NPC names
             string Lillian = Language.GetTextValue("Mods.AlchemistNPCLite.Lillian");
             string Lucy = Language.GetTextValue("Mods.AlchemistNPCLite.Lucy");
@@ -236,21 +237,15 @@ namespace AlchemistNPCLite.NPCs
             string Agness = Language.GetTextValue("Mods.AlchemistNPCLite.Agness");
             string Rocksahn = Language.GetTextValue("Mods.AlchemistNPCLite.Rocksahn");
             string Mary = Language.GetTextValue("Mods.AlchemistNPCLite.Mary");
-            switch (WorldGen.genRand.Next(6))
-            {
-                case 0:
-                    return Lillian;
-                case 1:
-                    return Lucy;
-                case 2:
-                    return Alice;
-                case 3:
-                    return Rocksahn;
-                case 4:
-                    return Agness;
-                default:
-                    return Mary;
-            }
+
+            return new List<string>() {
+				Lillian,
+				Lucy,
+				Alice,
+                Rocksahn,
+				Agness,
+                Mary
+			};
         }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)
