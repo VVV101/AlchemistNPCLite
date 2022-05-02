@@ -6,6 +6,10 @@ The spawn condition for the Operator is to beat EoW/BoC.
 The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 Mod's Discord: https://discord.gg/WGKyKun
+v1.8.12
+-Initial update to 1.4-preview
+-Update IEntitySources
+-Use new SetNPCNameList system
 v1.8.11
 -Update to tmodloader Alpha 1.4 67ec6fd5
 -Added Slice of Cake to Jeweler's shop (after beating EoW/BoC)

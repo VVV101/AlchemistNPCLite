@@ -404,103 +404,103 @@ namespace AlchemistNPCLite.Items
             if (item.type == ItemID.KingSlimeBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "KingSlime", KingSlime);
-                line.overrideColor = Color.LimeGreen;
+                line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
             if (item.type == ItemID.EyeOfCthulhuBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "EyeofCthulhu", EyeofCthulhu);
-                line.overrideColor = Color.LimeGreen;
+                line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
             if (item.type == ItemID.EaterOfWorldsBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "EaterOfWorlds", EaterOfWorlds);
-                line.overrideColor = Color.LimeGreen;
+                line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
             if (item.type == ItemID.BrainOfCthulhuBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "BrainOfCthulhu", BrainOfCthulhu);
-                line.overrideColor = Color.LimeGreen;
+                line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
             if (item.type == ItemID.QueenBeeBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "QueenBeeBossBag", QueenBee);
-                line.overrideColor = Color.LimeGreen;
+                line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
             if (item.type == ItemID.SkeletronBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "Skeletron", Skeletron);
-                line.overrideColor = Color.LimeGreen;
+                line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
             if (item.type == ItemID.WallOfFleshBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "WallOfFleshBoss", WallOfFlesh);
-                line.overrideColor = Color.LimeGreen;
+                line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
             if (item.type == ItemID.QueenSlimeBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "QueenSlime", QueenSlime);
-                line.overrideColor = Color.LimeGreen;
+                line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
             if (item.type == ItemID.DestroyerBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "Destroyer", Destroyer);
-                line.overrideColor = Color.LimeGreen;
+                line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
             if (item.type == ItemID.TwinsBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "Twins", Twins);
-                line.overrideColor = Color.LimeGreen;
+                line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
             if (item.type == ItemID.SkeletronPrimeBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "SkeletronPrime", SkeletronPrime);
-                line.overrideColor = Color.LimeGreen;
+                line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
             if (item.type == ItemID.PlanteraBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "Plantera", Plantera);
-                line.overrideColor = Color.LimeGreen;
+                line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
             if (item.type == ItemID.FairyQueenBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "Empress of Light", EmpressOfLight);
-                line.overrideColor = Color.LimeGreen;
+                line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
             if (item.type == ItemID.GolemBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "Golem", Golem);
-                line.overrideColor = Color.LimeGreen;
+                line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
             if (item.type == ItemID.BossBagBetsy)
             {
                 TooltipLine line = new TooltipLine(Mod, "Betsy", Betsy);
-                line.overrideColor = Color.LimeGreen;
+                line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
             if (item.type == ItemID.FishronBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "DukeFishron", DukeFishron);
-                line.overrideColor = Color.LimeGreen;
+                line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
             if (item.type == ItemID.MoonLordBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "MoonLord", MoonLord);
-                line.overrideColor = Color.LimeGreen;
+                line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
 
@@ -512,122 +512,122 @@ namespace AlchemistNPCLite.Items
                 if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("DesertScourgeBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "DesertScourge", DesertScourge);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("CrabulonBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Crabulon", Crabulon);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("HiveMindBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "HiveMind", HiveMind);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("PerforatorBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Perforator", Perforator);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("SlimeGodBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "SlimeGod", SlimeGod);
 
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("CryogenBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Cryogen", Cryogen);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("BrimstoneWaifuBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "BrimstoneElemental", BrimstoneElemental);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("AquaticScourgeBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "AquaticScourge", AquaticScourge);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("CalamitasBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Calamitas", Calamitas);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("AstrageldonBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "AstrageldonSlime", AstrageldonSlime);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("AstrumDeusBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "AstrumDeus", AstrumDeus);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("LeviathanBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Leviathan", Leviathan);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("PlaguebringerGoliathBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "PlaguebringerGoliath", PlaguebringerGoliath);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("RavagerBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Ravager", Ravager);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("ProvidenceBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Providence", Providence);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("PolterghastBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Polterghast", Polterghast);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("OldDukeBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "OldDuke", OldDuke);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("DevourerofGodsBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "DevourerofGods", DevourerofGods);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("BumblebirbBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Bumblebirb", Bumblebirb);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("YharonBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Yharon", Yharon);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
             }
@@ -636,79 +636,79 @@ namespace AlchemistNPCLite.Items
                 if (item.type == (ModLoader.GetMod("ThoriumMod").ItemType("DarkMageBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "DarkMage", DarkMage);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("ThoriumMod").ItemType("OgreBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Ogre", Ogre);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("ThoriumMod").ItemType("ThunderBirdBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "ThunderBird", ThunderBird);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("ThoriumMod").ItemType("JellyFishBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "QueenJellyfish", QueenJellyfish);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("ThoriumMod").ItemType("CountBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "CountEcho", CountEcho);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("ThoriumMod").ItemType("GraniteBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "GraniteEnergyStorm", GraniteEnergyStorm);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("ThoriumMod").ItemType("HeroBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "TheBuriedChampion", TheBuriedChampion);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("ThoriumMod").ItemType("ScouterBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "TheStarScouter", TheStarScouter);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("ThoriumMod").ItemType("BoreanBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "BoreanStrider", BoreanStrider);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("ThoriumMod").ItemType("BeholderBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "CoznixTheFallenBeholder", CoznixTheFallenBeholder);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("ThoriumMod").ItemType("LichBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "TheLich", TheLich);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("ThoriumMod").ItemType("AbyssionBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "AbyssionTheForgottenOne", AbyssionTheForgottenOne);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("ThoriumMod").ItemType("RagBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "TheRagnarok", TheRagnarok);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
             }
@@ -717,103 +717,103 @@ namespace AlchemistNPCLite.Items
                 if (item.type == (ModLoader.GetMod("AAMod").ItemType("MonarchBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Monarch", Monarch);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("AAMod").ItemType("GripBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Grips", Grips);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("AAMod").ItemType("BroodBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Broodmother", Broodmother);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("AAMod").ItemType("HydraBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Hydra", Hydra);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("AAMod").ItemType("SerpentBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Serpent", Serpent);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("AAMod").ItemType("DjinnBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Djinn", Djinn);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("AAMod").ItemType("RetrieverBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Retriever", Retriever);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("AAMod").ItemType("RaiderBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "RaiderU", RaiderU);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("AAMod").ItemType("OrthrusBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Orthrus", Orthrus);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("AAMod").ItemType("EFishBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "EFish", EFish);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("AAMod").ItemType("DBBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Daybringer", Daybringer);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("AAMod").ItemType("NCBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Nightcrawler", Nightcrawler);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("AAMod").ItemType("YamataBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Yamata", Yamata);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("AAMod").ItemType("AkumaBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Akuma", Akuma);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("AAMod").ItemType("ZeroBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Zero", Zero);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("AAMod").ItemType("ShenCache")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Shen", Shen);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("AAMod").ItemType("GripSBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "ShenGrips", ShenGrips);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
             }
@@ -822,85 +822,85 @@ namespace AlchemistNPCLite.Items
                 if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("WastelandBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Wasteland", Wasteland);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("InfernaceBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Infernace", Infernace);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("ScourgeFighterBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "ScourgeFighter", ScourgeFighter);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("RegarothBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Regaroth", Regaroth);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("TheCelestialBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "TheCelestials", TheCelestials);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("PermafrostBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Permafrost", Permafrost);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("ObsidiousBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Obsidious", Obsidious);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("AqueousBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Aqueous", Aqueous);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("TempleKeepersBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "TempleKeepers", TempleKeepers);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("GuardianBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Guardian", Guardian);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("VolcanoxBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Volcanox", Volcanox);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("VoidLeviathanBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "VoidLevi", VoidLevi);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("AzanaBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Azana", Azana);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("ElementsAwoken").ItemType("AncientsBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Ancients", Ancients);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
             }
@@ -909,73 +909,73 @@ namespace AlchemistNPCLite.Items
                 if (item.type == (ModLoader.GetMod("Redemption").ItemType("KingChickenBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "KingChicken", KingChicken);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("Redemption").ItemType("ThornBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "ThornBane", ThornBane);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("Redemption").ItemType("TheKeeperBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "TheKeeper", TheKeeper);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("Redemption").ItemType("XenomiteCrystalBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "XenoCrystal", XenoCrystal);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("Redemption").ItemType("InfectedEyeBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "IEye", IEye);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("Redemption").ItemType("SlayerBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "KingSlayer", KingSlayer);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("Redemption").ItemType("VlitchCleaverBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "V1", V1);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("Redemption").ItemType("VlitchGigipedeBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "V2", V2);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("Redemption").ItemType("OmegaOblitBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "V3", V3);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("Redemption").ItemType("PZBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "PZ", PZ);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("Redemption").ItemType("ThornPZBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "ThornRematch", ThornRematch);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("Redemption").ItemType("NebBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Nebuleus", Nebuleus);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
             }
@@ -984,67 +984,67 @@ namespace AlchemistNPCLite.Items
                 if (item.type == (ModLoader.GetMod("SacredTools").ItemType("DecreeBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Decree", Decree);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("SacredTools").ItemType("PumpkinBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "FlamingPumpkin", FlamingPumpkin);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("SacredTools").ItemType("HarpyBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Jensen", Jensen);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("SacredTools").ItemType("AraneasBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Araneas", Araneas);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("SacredTools").ItemType("HarpyBag2")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Raynare", Raynare);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("SacredTools").ItemType("PrimordiaBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Primordia", Primordia);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("SacredTools").ItemType("OblivionBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Abaddon", Abaddon);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("SacredTools").ItemType("SerpentBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Araghur", Araghur);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("SacredTools").ItemType("LunarBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Lunarians", Lunarians);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("SacredTools").ItemType("ChallengerBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Challenger", Challenger);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("SacredTools").ItemType("SpookboiBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Spookboi", Spookboi);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
             }
@@ -1053,61 +1053,61 @@ namespace AlchemistNPCLite.Items
                 if (item.type == (ModLoader.GetMod("SpiritMod").ItemType("BagOScarabs")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Scarabeus", Scarabeus);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("SpiritMod").ItemType("ReachBossBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Bane", Bane);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("SpiritMod").ItemType("FlyerBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Flier", Flier);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("SpiritMod").ItemType("SteamRaiderBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Raider", Raider);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("SpiritMod").ItemType("InfernonBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Infernon", Infernon);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("SpiritMod").ItemType("DuskingBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Dusking", Dusking);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("SpiritMod").ItemType("SpiritCoreBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "EqualityComparer", EtherialUmbra);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("SpiritMod").ItemType("IlluminantBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "IlluminantMaster", IlluminantMaster);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("SpiritMod").ItemType("AtlasBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Atlas", Atlas);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("SpiritMod").ItemType("OverseerBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Overseer", Overseer);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
             }
@@ -1116,43 +1116,43 @@ namespace AlchemistNPCLite.Items
                 if (item.type == (ModLoader.GetMod("Laugicality").ItemType("DuneSharkronTreasureBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Sharkron", Sharkron);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("Laugicality").ItemType("HypothemaTreasureBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Hypothema", Hypothema);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("Laugicality").ItemType("RagnarTreasureBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Ragnar", Ragnar);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("Laugicality").ItemType("AnDioTreasureBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "AnDio", AnDio);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("Laugicality").ItemType("AnnihilatorTreasureBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Annihilator", Annihilator);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("Laugicality").ItemType("SlybertronTreasureBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Slybertron", Slybertron);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("Laugicality").ItemType("SteamTrainTreasureBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "SteamTrain", SteamTrain);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
             }
@@ -1161,31 +1161,31 @@ namespace AlchemistNPCLite.Items
                 if (item.type == (ModLoader.GetMod("pinkymod").ItemType("STBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "SunlightTrader", SunlightTrader);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("pinkymod").ItemType("HOTCTreasureBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "THOFC", THOFC);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("pinkymod").ItemType("MythrilBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "MythrilSlime", MythrilSlime);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("pinkymod").ItemType("Valdabag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Valdaris", Valdaris);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
                 if (item.type == (ModLoader.GetMod("pinkymod").ItemType("GatekeeperTreasureBag")))
                 {
                     TooltipLine line = new TooltipLine(Mod, "Gatekeeper", Gatekeeper);
-                    line.overrideColor = Color.LimeGreen;
+                    line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
             }

@@ -4,6 +4,7 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
+using System.Collections.Generic;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -151,7 +152,7 @@ namespace AlchemistNPCLite.NPCs
         }
 
 
-        public override string TownNPCName()
+        public override List<string> SetNPCNameList()
         {                                       //NPC names
             string Harold = Language.GetTextValue("Mods.AlchemistNPCLite.Harold");
             string Charles = Language.GetTextValue("Mods.AlchemistNPCLite.Charles");
@@ -160,23 +161,16 @@ namespace AlchemistNPCLite.NPCs
             string Porky = Language.GetTextValue("Mods.AlchemistNPCLite.Porky");
             string Leeland = Language.GetTextValue("Mods.AlchemistNPCLite.Leeland");
             string Atreus = Language.GetTextValue("Mods.AlchemistNPCLite.Atreus");
-            switch (WorldGen.genRand.Next(6))
-            {
-                case 0:
-                    return Harold;
-                case 1:
-                    return Charles;
-                case 2:
-                    return Monty;
-                case 3:
-                    return Lucas;
-                case 4:
-                    return Porky;
-                case 5:
-                    return Atreus;
-                default:
-                    return Leeland;
-            }
+
+            return new List<string>() {
+				Harold,
+				Charles,
+				Monty,
+				Lucas,
+                Porky,
+                Atreus,
+                Leeland
+			};
         }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)
