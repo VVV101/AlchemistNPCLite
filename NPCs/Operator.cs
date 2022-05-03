@@ -9,6 +9,8 @@ using Terraria.WorldBuilding;
 using AlchemistNPCLite.Interface;
 using Terraria.GameContent.ItemDropRules;
 using System.Collections.Generic;
+using Terraria.GameContent.Bestiary;
+using Terraria.GameContent.Personalities;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -268,6 +270,28 @@ namespace AlchemistNPCLite.NPCs
             text.SetDefault("Кemember Manager, Treasure Bags are valuable but not everything comes inside them. That mutant man can help you get a boss's most elusive drops.");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Помни, Управляющий, хотя Сумки с Сокровищами ценны, но не всё может найтись внутри. Мутант может помочь тебе добыть редчайший лут с боссов.");
             LocalizationLoader.AddTranslation(text);
+			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
+            {
+                Velocity = -1f,
+                Direction = -1
+            };
+            NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
+
+            NPC.Happiness.SetBiomeAffection<OceanBiome>(AffectionLevel.Like);
+            NPC.Happiness.SetBiomeAffection<SnowBiome>(AffectionLevel.Love);
+            NPC.Happiness.SetBiomeAffection<UndergroundBiome>(AffectionLevel.Dislike);
+
+            NPC.Happiness.SetNPCAffection(NPCID.Cyborg,AffectionLevel.Love);
+            NPC.Happiness.SetNPCAffection(NPCID.Steampunker,AffectionLevel.Like);
+            NPC.Happiness.SetNPCAffection(NPCID.Clothier,AffectionLevel.Dislike);
+        }
+		
+		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+        {
+            bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
+                new FlavorTextBestiaryInfoElement("Mods.AlchemistNPCLite.Bestiary.Operator")
+            });
         }
 
         public override void SetDefaults()

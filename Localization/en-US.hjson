@@ -1,0 +1,166 @@
+Mods: 
+{
+	AlchemistNPCLite: 
+	{
+		Bestiary: 
+		{
+			Alchemist: Provides a variety of utility potions, plants, mushrooms and other different stuff for selling. ''Lore-wise'' is an old friend/love interest of Brewer. Currently, ''divorced''.
+			Brewer: Provides a variety of buff potions for selling. ''Lore-wise'' is an old friend/love interest of Alchemist. Currently, ''divorced''.
+			Jeweler: Provides an infinite amounts of different gems for selling. Also can help with goods for setting up an arena for both grinding or boss fights. ''Lore-wise'' should be considered as merchants twin brother.
+			Musician: Provides different music boxes for selling as some progress is made. No real lore currently exists.
+			Operator: Provides a variety of different crafting materials and treasure bags (if playing on Expert+). Is not a human.
+			Architect: Provides a variety of different building blocks and crafting stations. Decoration expert.
+			Tinkerer: Provides a variety of accessories getting unlocked through progression. ''Lore-wise'' is Steampunker's younger brother.
+			YoungBrewer: Provides a variety of potions combinations and flasks for selling. ''Lore-wise'' is son of Alchemist and Brewer.
+		}
+		
+		#This is what displays during all of an NPC's happiness levels. Note that the localization key for these should always be "TownNPCMood.*NPCName*.*Mood*" or else it won't display properly.
+		TownNPCMood: 
+		{
+			Alchemist: 
+			{
+				Content: I'm feeling good!
+				NoHome: Do you have any spare housing? It is really uncomfortable to make potions without roof above my head.
+				LoveSpace: Peace and quiet means I get to live it up!
+				FarFromHome: I think my house was that way... unless you're taking me somewhere?
+				DislikeCrowded: The more the merrier and all, but I'm starting to feel a lil' overcrowded.
+				HateCrowded: I can't kick my legs out and relax without hitting someone...
+				LikeBiome: Warm and peaceful, what can be better for potionsmaking?
+				LoveBiome: This place reminds me of the old days when I was training with my friend.
+				DislikeBiome: It is way too cold here... My hands are freezing.
+				HateBiome: I wanna live elsewhere! This is awful.
+				LikeNPC: "{NPCName} understands the importance of hard work. It is good having her around." 
+				LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
+				LoveNPC: "{NPCName} is here! Who's the dad's boy?"
+				DislikeNPC: I don't think I could focus when {NPCName} is around. She can't stop making jokes of me.
+				HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
+			}
+			Brewer: 
+			{
+				Content: I'm feeling good!
+				NoHome: Do you have any spare housing? It is really uncomfortable to make potions without roof above my head.
+				LoveSpace: Peace and quiet means I get to live it up!
+				FarFromHome: I think my house was that way... unless you're taking me somewhere?
+				DislikeCrowded: The more the merrier and all, but I'm starting to feel a lil' overcrowded.
+				HateCrowded: I can't kick my legs out and relax without hitting someone...
+				LikeBiome: It is a bit too hot here, but the air is perfect.
+				LoveBiome: Warm and peaceful, just as I wanted!
+				DislikeBiome: It is way too cold here... My hands are freezing.
+				HateBiome: I wanna live elsewhere! This is awful.
+				LikeNPC: "{NPCName} is so easy to tease! I can't help it..." 
+				LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
+				LoveNPC: "{NPCName} is here! Who's the momma's boy?"
+				DislikeNPC: "{NPCName} is so annoying with his constant warnings. Can barely stand it."
+				HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
+			}
+			Jeweler: 
+			{
+				Content: I'm feeling good!
+				NoHome: Do you have any spare housing? It is really uncomfortable to make jewelry without roof above my head.
+				LoveSpace: Peace and quiet means I get to live it up!
+				FarFromHome: I think my house was that way... unless you're taking me somewhere?
+				DislikeCrowded: The more the merrier and all, but I'm starting to feel a lil' overcrowded.
+				HateCrowded: I can't kick my legs out and relax without hitting someone...
+				LikeBiome: It is a bit too hot here, but the air is perfect.
+				LoveBiome: Warm and peaceful, just as I wanted!
+				DislikeBiome: It is way too cold here... My hands are freezing.
+				HateBiome: I wanna live elsewhere! This is awful.
+				LikeNPC: "{NPCName} has a sence for money. A bit too greedy, but I can totally relate." 
+				LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
+				LoveNPC: "{NPCName} is here! You can clearly tell that we are almost the same. I don't want to grow a beard, tho."
+				DislikeNPC: I can't stand girls like {NPCName}, she totally distracts my focus.
+				HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
+			}
+			Musician: 
+			{
+				Content: I'm feeling good!
+				NoHome: Do you have any spare housing? How can I do music if I don't have a roof above my head?
+				LoveSpace: Peace and quiet means I get to live it up!
+				FarFromHome: I think my house was that way... unless you're taking me somewhere?
+				DislikeCrowded: The more the merrier and all, but I'm starting to feel a lil' overcrowded.
+				HateCrowded: I can't kick my legs out and relax without hitting someone...
+				LikeBiome: Silence and peace, what else do I need for making music? And acoustics here is amazing!
+				LoveBiome: I like how shiny and bright this place is. Also perfect for parties.
+				DislikeBiome: It is way too cold here... My hands are freezing.
+				HateBiome: I wanna live elsewhere! This is awful.
+				LikeNPC: "{NPCName} is useful when I am out of music boxes. You know how hard is to make them?" 
+				LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
+				LoveNPC: "{NPCName} likes music just as I do! I can hang out with her all day."
+				DislikeNPC: This cheapskate {NPCName} is so annoying. Can you get him somewhere out here?
+				HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
+			}
+			Operator: 
+			{
+				Content: I'm feeling good!
+				NoHome: I need a shelter. I don't like being without a roof above my head.
+				LoveSpace: Peace and quiet means I get to live it up!
+				FarFromHome: I think my house was that way... unless you're taking me somewhere?
+				DislikeCrowded: The more the merrier and all, but I'm starting to feel a lil' overcrowded.
+				HateCrowded: I can't kick my legs out and relax without hitting someone...
+				LikeBiome: Ocean. It is the thing I wanted to see. Thanks.
+				LoveBiome: My circuits are working perfectly here. Surprisingly. I like snow.
+				DislikeBiome: I hate underground. You know it, right?
+				HateBiome: I wanna live elsewhere! This is awful.
+				LikeNPC: "{NPCName} is one of the many persons I could talk about the technology." 
+				LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
+				LoveNPC: "{NPCName} probably is the only person who can understand me. Being a cyborg."
+				DislikeNPC: "{NPCName} seems to be afraid of me. I wonder why, but his fear somewhat annoys me."
+				HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
+			}
+			Architect: 
+			{
+				Content: I'm feeling good!
+				NoHome: Being an Architect, I especially don't like NOT having any house.
+				LoveSpace: Peace and quiet means I get to live it up!
+				FarFromHome: I think my house was that way... unless you're taking me somewhere?
+				DislikeCrowded: The more the merrier and all, but I'm starting to feel a lil' overcrowded.
+				HateCrowded: I can't kick my legs out and relax without hitting someone...
+				LikeBiome: Pretty calming place to be. I like it.
+				LoveBiome: So many colors, so many building materials. Perfect.
+				DislikeBiome: I hate feeling chill. I need a warmer place.
+				HateBiome: I wanna live elsewhere! This is awful.
+				LikeNPC: "{NPCName} may just be an annoying goblin but he understands, how to build. I respect that." 
+				LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
+				LoveNPC: "{NPCName} knows how to make every color. Which is great."
+				DislikeNPC: "{NPCName} is so grumpy and hates colors. Would be fun making him living in Hallow, I guess."
+				HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
+			}
+			Tinkerer: 
+			{
+				Content: I'm feeling good!
+				NoHome: Making accessories requires patience. And I wouldn't be able to do it without any house.
+				LoveSpace: Peace and quiet means I get to live it up!
+				FarFromHome: I think my house was that way... unless you're taking me somewhere?
+				DislikeCrowded: The more the merrier and all, but I'm starting to feel a lil' overcrowded.
+				HateCrowded: I can't kick my legs out and relax without hitting someone...
+				LikeBiome: A bit dark, but I can totally live here.
+				LoveBiome: Me and my sister are used to live in cold places so I am totally ok with that.
+				DislikeBiome: I hate hot weather and sand so no, I wouldn't live here.
+				HateBiome: I wanna live elsewhere! This is awful.
+				LikeNPC: "{NPCName} is so nice and smart. I respect that." 
+				LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
+				LoveNPC: "{NPCName} is finally here? I have a lot to tell, big sis!"
+				DislikeNPC: Don't let {NPCName} anywhere around me. Sand from his clothes always clogs my mechanisms.
+				HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
+			}
+			YoungBrewer: 
+			{
+				Content: I'm feeling good!
+				NoHome: I don't like being outside for a long time. I need a room for myself.
+				LoveSpace: Peace and quiet means I get to live it up!
+				FarFromHome: I think my house was that way... unless you're taking me somewhere?
+				DislikeCrowded: The more the merrier and all, but I'm starting to feel a lil' overcrowded.
+				HateCrowded: I can't kick my legs out and relax without hitting someone...
+				LikeBiome: I can live when it is some warm around, so I am ok with that.
+				LoveBiome: I like forest! Fresh air and greens around. What else may the person need?
+				DislikeBiome: I don't like this. I want a warmer place to live.
+				HateBiome: I wanna live elsewhere! This is awful.
+				LikeNPC: Dad is here too? He can be silly sometimes, but mom respects him for his teleporter potions. She wasn't able to recreate them no matter how she tried.
+				LikeNPC_Princess: I gotta visit {NPCName}. She really likes to play with me. And so do I.
+				LoveNPC: Mom is here? Great! I like my dad, yes, but mom... Her potions can do almost everything and are most useful!
+				DislikeNPC: "{NPCName} is so grumpy. I asked him about making a toy a few times but he ALWAYS don't have any time for that."
+				HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
+			}
+		}
+	}
+}

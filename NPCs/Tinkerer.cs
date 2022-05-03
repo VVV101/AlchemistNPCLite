@@ -11,6 +11,8 @@ using System.IO;
 using System;
 using Terraria.ModLoader.IO;
 using Terraria.Utilities;
+using Terraria.GameContent.Bestiary;
+using Terraria.GameContent.Personalities;
  
 namespace AlchemistNPCLite.NPCs
 {
@@ -86,6 +88,28 @@ namespace AlchemistNPCLite.NPCs
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Никогда не знаешь, где ты можешь заполучить что-то действительно редкое или ценное. Поэтому исследуй каждый доступный угол со всем возможным терпением.");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "你永远不会知道在哪里可以得到真正珍贵的东西. 所以耐心探索每一个可能的角落吧.");
             LocalizationLoader.AddTranslation(text);
+			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
+            {
+                Velocity = -1f,
+                Direction = -1
+            };
+            NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
+
+            NPC.Happiness.SetBiomeAffection<UndergroundBiome>(AffectionLevel.Like);
+            NPC.Happiness.SetBiomeAffection<SnowBiome>(AffectionLevel.Love);
+            NPC.Happiness.SetBiomeAffection<DesertBiome>(AffectionLevel.Dislike);
+
+            NPC.Happiness.SetNPCAffection(NPCID.Steampunker,AffectionLevel.Love);
+            NPC.Happiness.SetNPCAffection(NPCID.Mechanic,AffectionLevel.Like);
+            NPC.Happiness.SetNPCAffection(NPCID.DyeTrader,AffectionLevel.Dislike);
+        }
+		
+		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+        {
+            bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
+                new FlavorTextBestiaryInfoElement("Mods.AlchemistNPCLite.Bestiary.Tinkerer")
+            });
         }
 
 		public override void SetDefaults()

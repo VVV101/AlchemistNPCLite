@@ -10,6 +10,7 @@ v1.8.12
 -Initial update to 1.4-preview
 -Update IEntitySources
 -Use new SetNPCNameList system
+-Added NPCs affections (may be raw, but any suggestions are appreciated).
 v1.8.11
 -Update to tmodloader Alpha 1.4 67ec6fd5
 -Added Slice of Cake to Jeweler's shop (after beating EoW/BoC)

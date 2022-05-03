@@ -12,6 +12,8 @@ using AlchemistNPCLite.NPCs;
 using AlchemistNPCLite.Interface;
 using ReLogic.Content;
 using System.Collections.Generic;
+using Terraria.GameContent.Bestiary;
+using Terraria.GameContent.Personalities;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -241,6 +243,28 @@ namespace AlchemistNPCLite.NPCs
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Смена магазина");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "切换商店");
             LocalizationLoader.AddTranslation(text);
+			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
+            {
+                Velocity = -1f,
+                Direction = -1
+            };
+            NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
+
+            NPC.Happiness.SetBiomeAffection<OceanBiome>(AffectionLevel.Like);
+            NPC.Happiness.SetBiomeAffection<JungleBiome>(AffectionLevel.Love);
+            NPC.Happiness.SetBiomeAffection<SnowBiome>(AffectionLevel.Dislike);
+
+            NPC.Happiness.SetNPCAffection(NPCID.Painter,AffectionLevel.Love);
+            NPC.Happiness.SetNPCAffection(NPCID.GoblinTinkerer,AffectionLevel.Like);
+            NPC.Happiness.SetNPCAffection(NPCID.TaxCollector,AffectionLevel.Dislike);
+        }
+		
+		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+        {
+            bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
+                new FlavorTextBestiaryInfoElement("Mods.AlchemistNPCLite.Bestiary.Architect")
+            });
         }
 
         public override void SetDefaults()

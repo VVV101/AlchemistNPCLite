@@ -7,6 +7,8 @@ using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using System.Collections.Generic;
+using Terraria.GameContent.Bestiary;
+using Terraria.GameContent.Personalities;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -132,6 +134,29 @@ namespace AlchemistNPCLite.NPCs
             text.SetDefault("Should you find enought of those torn notes, bring the to me and ill decipher them for you. Dont ask me why, just know that they hold a value for me.");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Как только найдёшь достаточно изорванных записок, неси их мне и я расшифрую их для тебя. Не спрашивай зачем, просто знай, что они имеют значение для меня.");
             LocalizationLoader.AddTranslation(text);
+			
+			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
+            {
+                Velocity = -1f,
+                Direction = -1
+            };
+            NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
+
+            NPC.Happiness.SetBiomeAffection<JungleBiome>(AffectionLevel.Like);
+            NPC.Happiness.SetBiomeAffection<ForestBiome>(AffectionLevel.Love);
+            NPC.Happiness.SetBiomeAffection<SnowBiome>(AffectionLevel.Dislike);
+
+            NPC.Happiness.SetNPCAffection(NPCID.Merchant,AffectionLevel.Love);
+            NPC.Happiness.SetNPCAffection(NPCID.TaxCollector,AffectionLevel.Like);
+            NPC.Happiness.SetNPCAffection(NPCID.PartyGirl,AffectionLevel.Dislike);
+        }
+		
+		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+        {
+            bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
+                new FlavorTextBestiaryInfoElement("Mods.AlchemistNPCLite.Bestiary.Jeweler")
+            });
         }
 
         public override void SetDefaults()

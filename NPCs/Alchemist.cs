@@ -6,6 +6,8 @@ using static Terraria.ModLoader.ModContent;
 using Terraria.Utilities;
 using Terraria.Localization;
 using System.Collections.Generic;
+using Terraria.GameContent.Bestiary;
+using Terraria.GameContent.Personalities;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -205,6 +207,28 @@ namespace AlchemistNPCLite.NPCs
             text.SetDefault(" interest in occult Alchemy did nothing but grow.");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), " к оккультной алхимии только вырос.");
             LocalizationLoader.AddTranslation(text);
+			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
+            {
+                Velocity = -1f,
+                Direction = -1
+            };
+            NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
+
+            NPC.Happiness.SetBiomeAffection<ForestBiome>(AffectionLevel.Like);
+            NPC.Happiness.SetBiomeAffection<UndergroundBiome>(AffectionLevel.Love);
+            NPC.Happiness.SetBiomeAffection<SnowBiome>(AffectionLevel.Dislike);
+
+            NPC.Happiness.SetNPCAffection<YoungBrewer>(AffectionLevel.Love);
+            NPC.Happiness.SetNPCAffection(NPCID.Mechanic,AffectionLevel.Like);
+            NPC.Happiness.SetNPCAffection<Brewer>(AffectionLevel.Dislike);
+        }
+		
+		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+        {
+            bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
+                new FlavorTextBestiaryInfoElement("Mods.AlchemistNPCLite.Bestiary.Alchemist")
+            });
         }
 
         public override void SetDefaults()

@@ -8,6 +8,8 @@ using Terraria.Localization;
 using Terraria.WorldBuilding;
 using AlchemistNPCLite.Interface;
 using System.Collections.Generic;
+using Terraria.GameContent.Bestiary;
+using Terraria.GameContent.Personalities;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -172,7 +174,28 @@ namespace AlchemistNPCLite.NPCs
             text.SetDefault("You are hurting my ears! Turn it down!");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "У меня уже болят уши! Сделай потише!");
             LocalizationLoader.AddTranslation(text);
+			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
+            {
+                Velocity = -1f,
+                Direction = -1
+            };
+            NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
 
+            NPC.Happiness.SetBiomeAffection<UndergroundBiome>(AffectionLevel.Like);
+            NPC.Happiness.SetBiomeAffection<HallowBiome>(AffectionLevel.Love);
+            NPC.Happiness.SetBiomeAffection<SnowBiome>(AffectionLevel.Dislike);
+
+            NPC.Happiness.SetNPCAffection(NPCID.PartyGirl,AffectionLevel.Love);
+            NPC.Happiness.SetNPCAffection(NPCID.Wizard,AffectionLevel.Like);
+            NPC.Happiness.SetNPCAffection(NPCID.GoblinTinkerer,AffectionLevel.Dislike);
+        }
+		
+		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+        {
+            bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
+                new FlavorTextBestiaryInfoElement("Mods.AlchemistNPCLite.Bestiary.Musician")
+            });
         }
 
         public override void SetDefaults()

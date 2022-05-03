@@ -5,6 +5,8 @@ using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
 using System.Collections.Generic;
+using Terraria.GameContent.Bestiary;
+using Terraria.GameContent.Personalities;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -118,6 +120,28 @@ namespace AlchemistNPCLite.NPCs
             text.SetDefault("Certain combinations can only be brewed if certain types of magic are present in the world.");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Некоторые комбинации могут быть изготовлены только если в мире присутсвуют особенные виды магии.");
             LocalizationLoader.AddTranslation(text);
+			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
+            {
+                Velocity = -1f,
+                Direction = -1
+            };
+            NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
+
+            NPC.Happiness.SetBiomeAffection<DesertBiome>(AffectionLevel.Like);
+            NPC.Happiness.SetBiomeAffection<ForestBiome>(AffectionLevel.Love);
+            NPC.Happiness.SetBiomeAffection<SnowBiome>(AffectionLevel.Dislike);
+
+            NPC.Happiness.SetNPCAffection<Brewer>(AffectionLevel.Love);
+            NPC.Happiness.SetNPCAffection<Alchemist>(AffectionLevel.Like);
+            NPC.Happiness.SetNPCAffection(NPCID.GoblinTinkerer,AffectionLevel.Dislike);
+        }
+		
+		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+        {
+            bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
+                new FlavorTextBestiaryInfoElement("Mods.AlchemistNPCLite.Bestiary.YoungBrewer")
+            });
         }
 
         public override void SetDefaults()

@@ -10,6 +10,8 @@ using AlchemistNPCLite;
 using AlchemistNPCLite.Interface;
 using Terraria.Localization;
 using System.Collections.Generic;
+using Terraria.GameContent.Bestiary;
+using Terraria.GameContent.Personalities;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -50,7 +52,7 @@ namespace AlchemistNPCLite.NPCs
             NPCID.Sets.HatOffsetY[NPC.type] = -4;
 
             ModTranslation text = LocalizationLoader.CreateTranslation(Mod, "ShopB1");
-            text.SetDefault("1st shop (Vanilla)                     ");
+            text.SetDefault("1st shop (Vanilla)");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "1-ый магазин (без модовых)");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "第一商店 (原版)              ");
             LocalizationLoader.AddTranslation(text);
@@ -202,6 +204,28 @@ namespace AlchemistNPCLite.NPCs
             text.SetDefault("I once traveled far away from Terraria to learn more about Alchemy. In my travels I met a ''scientist of magic'' called Azanor. He showed me the secrets of something called ''thaumaturgy''.");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Я однажды выбралась из мира Террарии чтобы узнать больше об Алхимии. В своих путешествиях я встретила ''учёного магии'' по имени Азанор. Он показал мне тайны чего-то, названного ''тауматургия''.");
             LocalizationLoader.AddTranslation(text);
+			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
+            {
+                Velocity = -1f,
+                Direction = -1
+            };
+            NPCID.Sets.NPCBestiaryDrawOffset.Add(Type, drawModifiers);
+
+            NPC.Happiness.SetBiomeAffection<JungleBiome>(AffectionLevel.Like);
+            NPC.Happiness.SetBiomeAffection<ForestBiome>(AffectionLevel.Love);
+            NPC.Happiness.SetBiomeAffection<SnowBiome>(AffectionLevel.Dislike);
+
+            NPC.Happiness.SetNPCAffection<YoungBrewer>(AffectionLevel.Love);
+            NPC.Happiness.SetNPCAffection<Alchemist>(AffectionLevel.Like);
+            NPC.Happiness.SetNPCAffection(NPCID.WitchDoctor,AffectionLevel.Dislike);
+        }
+		
+		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+        {
+            bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
+                new FlavorTextBestiaryInfoElement("Mods.AlchemistNPCLite.Bestiary.Brewer")
+            });
         }
 
         public override void SetDefaults()
