@@ -199,7 +199,8 @@ namespace AlchemistNPCLite
         {
             if (DistantPotionsUse && PlayerInput.Triggers.Current.QuickBuff)
             {
-                LegacySoundStyle type1 = (LegacySoundStyle)null;
+                SoundStyle type1 = SoundID.Item3;
+				bool flag = true;
                 for (int index1 = 0; index1 < 40; ++index1)
                 {
                     if (Player.CountBuffs() == 22)
@@ -225,7 +226,6 @@ namespace AlchemistNPCLite
                         }
 						*/
                         int type2 = Player.bank.item[index1].buffType;
-                        bool flag = true;
                         for (int index2 = 0; index2 < 22; ++index2)
                         {
                             if (type2 == 27 && (Player.buffType[index2] == type2 || Player.buffType[index2] == 101 || Player.buffType[index2] == 102))
@@ -278,7 +278,7 @@ namespace AlchemistNPCLite
                         }
                         if (flag)
                         {
-                            type1 = Player.bank.item[index1].UseSound;
+                            type1 = (SoundStyle)Player.bank.item[index1].UseSound;
                             int time1 = Player.bank.item[index1].buffTime;
                             if (time1 == 0)
                                 time1 = 3600;
@@ -374,10 +374,10 @@ namespace AlchemistNPCLite
                         }
                     }
                 }
-                if (type1 == null)
-                    return;
-                SoundEngine.PlaySound(type1, Player.position);
-                Recipe.FindRecipes();
+                //if (type1 == null)
+                    //return;
+                if (flag) SoundEngine.PlaySound(type1, Player.position);
+                //Recipe.FindRecipes();
             }
             if (AlchemistNPCLite.DiscordBuff.JustPressed)
             {

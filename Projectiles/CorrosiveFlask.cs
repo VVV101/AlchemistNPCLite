@@ -31,7 +31,7 @@ namespace AlchemistNPCLite.Projectiles
 		public override void Kill(int timeLeft)
 		{
 			Player player = Main.player[Projectile.owner];
-			SoundEngine.PlaySound(2, (int)Projectile.position.X, (int)Projectile.position.Y, 107);
+			SoundEngine.PlaySound(SoundID.Item107, Projectile.position);
 			Gore.NewGore(Projectile.GetSource_FromThis(), Projectile.position, -Projectile.oldVelocity * 0.2f, 704, 1f);
 			if (Projectile.owner == Main.myPlayer)
 			{
