@@ -40,23 +40,23 @@ namespace AlchemistNPCLite.Buffs
             {
                 RedemptionBoost(player);
             }
-            Mod Calamity = ModLoader.GetMod("CalamityMod");
+			*/
+            ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
             if (Calamity != null)
             {
                 Calamity.Call("AddRogueCrit", player, 5);
             }
-			*/
         }
+
+        private void CalamityBoost(Player player)
+        {
+			// CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
+            player.GetDamage(DamageClass.Throwing) += 5;
+        }
+        // private readonly ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
 
         // IMPLEMENT WHEN WEAKREFERENCES FIXED
         /*
-        private void CalamityBoost(Player player)
-        {
-            CalamityMod.Calplayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.Calplayer.CalamityPlayer>();
-            Calamityplayer.GetDamage(DamageClass.throwing) += 5;
-        }
-        private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
-
         private void RedemptionBoost(Player player)
         {
             Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();

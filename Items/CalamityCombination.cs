@@ -47,20 +47,25 @@ namespace AlchemistNPCLite.Items
             Item.buffType = Item.buffType = ModContent.BuffType<Buffs.CalamityComb>();           //this is where you put your Buff
             Item.buffTime = 52000;    //this is the buff duration        10 = 10 Second
         }
-		// IMPLEMENT WHEN WEAKREFERENCES FIXED
-        /*
+        
 		public override void AddRecipes()
 		{
-			CreateRecipe()
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("YharimsStimulants")), 1);
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("FabsolsVodka")), 1);
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("CadencePotion")), 1);
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("TitanScalePotion")), 1);
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("SoaringPotion")), 1);
-			recipe.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("BoundingPotion")), 1);
-                .AddTile(TileID.AlchemyTable)
-				.Register();
+			Recipe recipe = CreateRecipe();
+            recipe.AddTile(TileID.AlchemyTable);
+            string[][] modComponents = new string[][]{
+                new string[] {"CalamityMod", "YharimsStimulants"},
+                new string[] {"CalamityMod", "FabsolsVodka"},
+                new string[] {"CalamityMod", "CadencePotion"},
+                new string[] {"CalamityMod", "TitanScalePotion"},
+                new string[] {"CalamityMod", "SoaringPotion"},
+                new string[] {"CalamityMod", "BoundingPotion"}
+            };
+            foreach (string[] arr in modComponents) {
+                if (ModContent.TryFind<ModItem>(arr[0], arr[1], out ModItem currItem)) {
+			        recipe.AddIngredient(currItem, 1);
+                }
+            }
+            recipe.Register();
 		}
-        */
     }
 }

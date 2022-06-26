@@ -6,6 +6,10 @@ The spawn condition for the Operator is to beat EoW/BoC.
 The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 Mod's Discord: https://discord.gg/WGKyKun
+v1.8.14
+-Reimplement Calamity for 1.4
+v1.8.13
+-Updated to current 1.4-stable.
 v1.8.12
 -Initial update to 1.4-preview
 -Update IEntitySources

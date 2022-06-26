@@ -11,11 +11,11 @@ namespace AlchemistNPCLite.Buffs
 {
     public class MorePotionsComb : ModBuff
     {
-        //Probably removed
-        // public override bool Autoload(ref string name, ref string texture)
-        // {
-        // return ModLoader.GetMod("MorePotions") != null;
-        // }
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            ModLoader.TryGetMod("MorePotions", out MorePotions);
+            return MorePotions != null;
+        }
 
         public override void SetStaticDefaults()
         {
@@ -70,7 +70,7 @@ namespace AlchemistNPCLite.Buffs
             MorePotions.GetBuff("SwiftHandsPotionBuff").Update(player, ref buffIndex);
             MorePotions.GetBuff("WarriorsDroughtPotionBuff").Update(player, ref buffIndex);
         }
-        private readonly Mod MorePotions = ModLoader.GetMod("MorePotions");
 		*/
+        private Mod MorePotions;
     }
 }

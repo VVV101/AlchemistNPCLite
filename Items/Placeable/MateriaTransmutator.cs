@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -38,29 +39,29 @@ namespace AlchemistNPCLite.Items.Placeable
 			Item.value = 1000000;
 			Item.createTile = ModContent.TileType<Tiles.MateriaTransmutator>();
 		}
-
-		// IMPLEMENT WHEN WEAKREFERENCES FIXED
-		/*
+		
 		public override void AddRecipes()
 		{
-			CreateRecipe()
+			Recipe recipe = CreateRecipe()
 				.AddIngredient(null, "PreHMPenny")
 				.AddIngredient(null, "HMCraftPound")
 				.AddIngredient(null, "SpecCraftPoint")
 				.AddIngredient(ItemID.ManaCrystal)
 				.AddIngredient(ItemID.DD2ElderCrystalStand)
-				if (ModLoader.GetMod("ThoriumMod") != null)
-				{
-					recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("ThoriumAnvil")));
-					recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("ArcaneArmorFabricator")));
-					recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("SoulForge")));
-				}
 				.AddIngredient(ItemID.FragmentSolar, 10)
 				.AddIngredient(ItemID.FragmentNebula, 10)
 				.AddIngredient(ItemID.FragmentVortex, 10)
-				.AddIngredient(ItemID.FragmentStardust, 10)
-				.Register();
+				.AddIngredient(ItemID.FragmentStardust, 10);
+            // IMPLEMENT WHEN WEAKREFERENCES FIXED
+            /*
+			if (ModLoader.GetMod("ThoriumMod") != null)
+			{
+				recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("ThoriumAnvil")));
+				recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("ArcaneArmorFabricator")));
+				recipe.AddIngredient((ModLoader.GetMod("ThoriumMod").ItemType("SoulForge")));
+			}
+			*/
+			recipe.Register();
 		}
-		*/
 	}
 }

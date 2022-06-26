@@ -32,45 +32,45 @@ namespace AlchemistNPCLite.Tiles
             name.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "物质嬗变器MK2");
             AddMapEntry(new Color(200, 200, 200), name);
             TileID.Sets.DisableSmartCursor[Type] = true;
-            AdjTiles = new int[]
+            int[] tempTiles = new int[]
             {
-            ModContent.TileType<MateriaTransmutator>(),
-			TileID.WorkBenches,
-            TileID.Anvils,
-            TileID.Furnaces,
-            TileID.Hellforge,
-            TileID.Bookcases,
-            TileID.Sinks,
-            TileID.Solidifier,
-            TileID.Blendomatic,
-            TileID.MeatGrinder,
-            TileID.Loom,
-            TileID.LivingLoom,
-            TileID.FleshCloningVat,
-            TileID.GlassKiln,
-            TileID.BoneWelder,
-            TileID.SteampunkBoiler,
-            TileID.Bottles,
-            TileID.LihzahrdFurnace,
-            TileID.ImbuingStation,
-            TileID.DyeVat,
-            TileID.Kegs,
-            TileID.HeavyWorkBench,
-            TileID.Tables,
-            TileID.Chairs,
-            TileID.CookingPots,
-            TileID.DemonAltar,
-            TileID.Sawmill,
-            TileID.CrystalBall,
-            TileID.AdamantiteForge,
-            TileID.MythrilAnvil,
-            TileID.TinkerersWorkbench,
-            TileID.Autohammer,
-            TileID.IceMachine,
-            TileID.SkyMill,
-            TileID.HoneyDispenser,
-            TileID.AlchemyTable,
-            TileID.LunarCraftingStation
+                ModContent.TileType<MateriaTransmutator>(),
+                TileID.WorkBenches,
+                TileID.Anvils,
+                TileID.Furnaces,
+                TileID.Hellforge,
+                TileID.Bookcases,
+                TileID.Sinks,
+                TileID.Solidifier,
+                TileID.Blendomatic,
+                TileID.MeatGrinder,
+                TileID.Loom,
+                TileID.LivingLoom,
+                TileID.FleshCloningVat,
+                TileID.GlassKiln,
+                TileID.BoneWelder,
+                TileID.SteampunkBoiler,
+                TileID.Bottles,
+                TileID.LihzahrdFurnace,
+                TileID.ImbuingStation,
+                TileID.DyeVat,
+                TileID.Kegs,
+                TileID.HeavyWorkBench,
+                TileID.Tables,
+                TileID.Chairs,
+                TileID.CookingPots,
+                TileID.DemonAltar,
+                TileID.Sawmill,
+                TileID.CrystalBall,
+                TileID.AdamantiteForge,
+                TileID.MythrilAnvil,
+                TileID.TinkerersWorkbench,
+                TileID.Autohammer,
+                TileID.IceMachine,
+                TileID.SkyMill,
+                TileID.HoneyDispenser,
+                TileID.AlchemyTable,
+                TileID.LunarCraftingStation
             };
             // IMPLEMENT WHEN WEAKREFERENCES FIXED
 			/*
@@ -86,12 +86,12 @@ namespace AlchemistNPCLite.Tiles
                 Array.Resize(ref adjTiles, adjTiles.Length + 1);
                 adjTiles[adjTiles.Length - 1] = ModLoader.GetMod("FargowiltasSouls").TileType("CrucibleCosmosSheet");
             }
-            if (ModLoader.GetMod("CalamityMod") != null)
-            {
-                Array.Resize(ref adjTiles, adjTiles.Length + 1);
-                adjTiles[adjTiles.Length - 1] = ModLoader.GetMod("CalamityMod").TileType("DraedonsForge");
-            } 
 			*/
+            if(ModLoader.TryGetMod("CalamityMod", out Mod Calamity) && Calamity.TryFind<ModTile>("DraedonsForge", out ModTile currTile)) {
+                Array.Resize(ref tempTiles, tempTiles.Length + 1);
+                tempTiles[tempTiles.Length - 1] = currTile.Type;
+            }
+            AdjTiles = tempTiles;
             DustType = 111;
             AnimationFrameHeight = 74;
         }

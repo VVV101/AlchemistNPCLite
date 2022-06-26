@@ -11,11 +11,11 @@ namespace AlchemistNPCLite.Buffs
 {
 	public class SpiritComb : ModBuff
 	{
-		//Probably removed
-		// public override bool Autoload(ref string name, ref string texture)
-		// {
-		// return ModLoader.GetMod("SpiritMod") != null;
-		// }
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			ModLoader.TryGetMod("SpiritMod", out Mod Spirit);
+			return Spirit != null;
+		}
 		
 		public override void SetStaticDefaults()
 		{
@@ -55,7 +55,7 @@ namespace AlchemistNPCLite.Buffs
 			Spirit.GetBuff("TurtlePotionBuff").Update(player, ref buffIndex);
 			Spirit.GetBuff("BismitePotionBuff").Update(player, ref buffIndex);
         }
-		private readonly Mod Spirit = ModLoader.GetMod("SpiritMod");
 		*/
+		private Mod Spirit;
 	}
 }

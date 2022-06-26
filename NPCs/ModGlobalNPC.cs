@@ -68,16 +68,13 @@ namespace AlchemistNPCLite.NPCs
                         for (nextSlot = 0; nextSlot < 40; ++nextSlot)
                         {
                             shop.item[nextSlot].shopCustomPrice *= AlchemistNPCLite.modConfiguration.PotsPriceMulti;
-                            // IMPLEMENT WHEN WEAKREFERENCES FIXED
-                            /*
-							if (ModLoader.GetMod("CalamityMod") != null)
+							if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
                             {
                                 if (AlchemistNPCLite.modConfiguration.RevPrices && CalamityModRevengeance)
                                 {
                                     shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice;
                                 }
                             }
-							*/
                             if ((player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier4)
                             {
                                 shop.item[nextSlot].shopCustomPrice -= shop.item[nextSlot].shopCustomPrice / 2;
@@ -104,60 +101,24 @@ namespace AlchemistNPCLite.NPCs
             {
                 if (type == ModLoader.GetMod("Tremor").NPCType("Lady Moon"))
                 {
-                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("DarkMass"));
-                    shop.item[nextSlot].shopCustomPrice = 7500;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("CarbonSteel"));
-                    shop.item[nextSlot].shopCustomPrice = 10000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("Doomstone"));
-                    shop.item[nextSlot].shopCustomPrice = 25000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("NightmareBar"));
-                    shop.item[nextSlot].shopCustomPrice = 25000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("VoidBar"));
-                    shop.item[nextSlot].shopCustomPrice = 50000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("AngryShard"));
-                    shop.item[nextSlot].shopCustomPrice = 50000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("Phantaplasm"));
-                    shop.item[nextSlot].shopCustomPrice = 50000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("ClusterShard"));
-                    shop.item[nextSlot].shopCustomPrice = 50000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("DragonCapsule"));
-                    shop.item[nextSlot].shopCustomPrice = 50000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("HuskofDusk"));
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("NightCore"));
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("GoldenClaw"));
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("StoneDice"));
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("ConcentratedEther"));
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("Squorb"));
-                    shop.item[nextSlot].shopCustomPrice = 250000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("ToothofAbraxas"));
-                    shop.item[nextSlot].shopCustomPrice = 250000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("CosmicFuel"));
-                    shop.item[nextSlot].shopCustomPrice = 1000000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("EyeofOblivion"));
-                    shop.item[nextSlot].shopCustomPrice = 3000000;
-                    nextSlot++;
+                    addModItemToShop(Tremor, "DarkMass", 7500, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "CarbonSteel", 10000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "Doomstone", 25000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "NightmareBar", 25000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "VoidBar", 50000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "AngryShard", 50000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "Phantaplasm", 50000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "ClusterShard", 50000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "DragonCapsule", 50000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "HuskofDusk", 100000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "NightCore", 100000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "GoldenClaw", 100000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "StoneDice", 100000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "ConcentratedEther", 100000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "Squorb", 250000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "ToothofAbraxas", 250000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "CosmicFuel", 1000000, ref shop, ref nextSlot);
+                    addModItemToShop(Tremor, "EyeofOblivion", 3000000, ref shop, ref nextSlot);
                 }
             }
 			*/
@@ -405,7 +366,7 @@ namespace AlchemistNPCLite.NPCs
         /*
         public override void NPCLoot(NPC npc)
         {
-            Mod Calamity = ModLoader.GetMod("CalamityMod");
+            ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
             if (Calamity != null)
             {
                 if ((bool)Calamity.Call("Downed", "dog") && npc.type == 327)
@@ -433,13 +394,18 @@ namespace AlchemistNPCLite.NPCs
                 }
             }
         }
-
+        
+		*/
 		public bool CalamityModRevengeance
-		{
-        	get { return CalamityMod.World.CalamityWorld.revenge; }
+		{            
+            get {
+                if(ModLoader.TryGetMod("CalamityMod", out Mod Calamity)) {
+                    return (bool)Calamity.Call("GetDifficultyActive", "revengeance");
+                }
+                return false;
+            }
         }
 		
-		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
-		*/
+		// private readonly ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
     }
 }

@@ -52,13 +52,15 @@ namespace AlchemistNPCLite.Items
             Item.buffTime = 18000;
         }
 		
-		// IMPLEMENT WHEN WEAKREFERENCES FIXED
-		/*
 		public bool CalamityModRevengeance
 		{
-			get { return CalamityMod.World.CalamityWorld.revenge; }
+			get {
+                if(ModLoader.TryGetMod("CalamityMod", out Mod Calamity)) {
+                    return (bool)Calamity.Call("GetDifficultyActive", "revengeance");
+                }
+                return false;
+            }
         }
-		*/
 		
 		public override bool CanUseItem(Player player)
 		{
@@ -70,19 +72,16 @@ namespace AlchemistNPCLite.Items
 					return false;
 				}
 			}
-			// IMPLEMENT WHEN WEAKREFERENCES FIXED
-			/*
 			if (CalamityModRevengeance)
 			{
 				return true;
 			}
-			*/
 			return false;
 		}
 		
 		// IMPLEMENT WHEN WEAKREFERENCES FIXED
 		/*
-		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
+		private readonly ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
 		
 		public override bool? UseItem(Player player)
 		{

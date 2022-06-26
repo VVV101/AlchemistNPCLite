@@ -11,11 +11,11 @@ namespace AlchemistNPCLite.Buffs
 {
 	public class ThoriumComb : ModBuff
 	{
-		//Probably removed
-		// public override bool Autoload(ref string name, ref string texture)
-		// {
-		// 	return ModLoader.GetMod("ThoriumMod") != null;
-		// }
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			ModLoader.TryGetMod("ThoriumMod", out Mod Thorium);
+			return Thorium != null;
+		}
 		
 		public override void SetStaticDefaults()
 		{
@@ -61,7 +61,7 @@ namespace AlchemistNPCLite.Buffs
 			Thorium.GetBuff("InspirationReach").Update(player, ref buffIndex);
 			Thorium.GetBuff("HydrationBuff").Update(player, ref buffIndex);
         }
-		private readonly Mod Thorium = ModLoader.GetMod("ThoriumMod");
 		*/
+		private Mod Thorium;
 	}
 }

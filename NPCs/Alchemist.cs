@@ -504,25 +504,26 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].shopCustomPrice = 25000;
                     nextSlot++;
                 }
-				// IMPLEMENT WHEN WEAKREFERENCES FIXED
-				/*
-                Mod Calamity = ModLoader.GetMod("CalamityMod");
+                ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
                 if(Calamity != null)
                 {
                     if ((bool)Calamity.Call("Downed", "profaned guardians") && !(bool)Calamity.Call("Downed", "polterghast"))
                     {
-                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityMod").ItemType("SupremeHealingPotion"));
-                    shop.item[nextSlot].shopCustomPrice = 500000;
-                    nextSlot++;
+                        if(Calamity.TryFind<ModItem>("SupremeHealingPotion", out ModItem currItem)) {
+                            shop.item[nextSlot].SetDefaults(currItem.Type);
+                            shop.item[nextSlot].shopCustomPrice = 500000;
+                            nextSlot++;
+                        }
                     }
                     if((bool)Calamity.Call("Downed", "polterghast"))
                     {
-                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityMod").ItemType("OmegaHealingPotion"));
-                    shop.item[nextSlot].shopCustomPrice = 1000000;
-                    nextSlot++;
+                        if(Calamity.TryFind<ModItem>("OmegaHealingPotion", out ModItem currItem)) {
+                            shop.item[nextSlot].SetDefaults(currItem.Type);
+                            shop.item[nextSlot].shopCustomPrice = 1000000;
+                            nextSlot++;
+                        }
                     }
                 }
-				*/
                 shop.item[nextSlot].SetDefaults(ItemID.LesserManaPotion);
                 shop.item[nextSlot].shopCustomPrice = 500;
                 nextSlot++;
@@ -575,18 +576,10 @@ namespace AlchemistNPCLite.NPCs
 				/*
                 if (ModLoader.GetMod("imkSushisMod") != null)
                 {
-                	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("BaseSummoningPotion"));
-                	shop.item[nextSlot].shopCustomPrice = 2500;
-                	nextSlot++;
-                	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("AnglerAmnesiaPotion"));
-                	shop.item[nextSlot].shopCustomPrice = 10000;
-                	nextSlot++;
-                	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("MeteoritePotion"));
-                	shop.item[nextSlot].shopCustomPrice = 50000;
-                	nextSlot++;
-                	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("imkSushisMod").ItemType("ResurrectionPotion"));
-                	shop.item[nextSlot].shopCustomPrice = 25000;
-                	nextSlot++;
+                	addModItemToShop(imkSushisMod, "BaseSummoningPotion", 2500, ref shop, ref nextSlot);
+                	addModItemToShop(imkSushisMod, "AnglerAmnesiaPotion", 10000, ref shop, ref nextSlot);
+                	addModItemToShop(imkSushisMod, "MeteoritePotion", 50000, ref shop, ref nextSlot);
+                	addModItemToShop(imkSushisMod, "ResurrectionPotion", 25000, ref shop, ref nextSlot);
                 }
 				*/
                 if (NPC.downedBoss2)
@@ -645,15 +638,11 @@ namespace AlchemistNPCLite.NPCs
                 {
                 	if (NPC.downedBoss2)
                 	{
-                		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("WaterChestnut"));
-                		shop.item[nextSlot].shopCustomPrice = 3500;
-                		nextSlot++;
+                		addModItemToShop(ThoriumMod, "WaterChestnut", 3500, ref shop, ref nextSlot);
                 	}
                 	if (NPC.downedBoss3)
                 	{
-                		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("Jelly"));
-                		shop.item[nextSlot].shopCustomPrice = 7500;
-                		nextSlot++;
+                		addModItemToShop(ThoriumMod, "Jelly", 7500, ref shop, ref nextSlot);
                 	}
                 }
 				*/
@@ -720,30 +709,14 @@ namespace AlchemistNPCLite.NPCs
                 {
                 	if (NPC.downedBoss3)
                 	{
-                		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("Gloomstone"));
-                		shop.item[nextSlot].shopCustomPrice = 100;
-                		nextSlot++;
-                		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("UntreatedFlesh"));
-                		shop.item[nextSlot].shopCustomPrice = 100;
-                		nextSlot++;
-                		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("LightBulb"));
-                		shop.item[nextSlot].shopCustomPrice = 500;
-                		nextSlot++;
-                		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("AtisBlood"));
-                		shop.item[nextSlot].shopCustomPrice = 2500;
-                		nextSlot++;
-                		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("TearsofDeath"));
-                		shop.item[nextSlot].shopCustomPrice = 2500;
-                		nextSlot++;
-                		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("TornPapyrus"));
-                		shop.item[nextSlot].shopCustomPrice = 5000;
-                		nextSlot++;
-                		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("PhantomSoul"));
-                		shop.item[nextSlot].shopCustomPrice = 5000;
-                		nextSlot++;
-                		shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("TheRib"));
-                		shop.item[nextSlot].shopCustomPrice = 7500;
-                		nextSlot++;
+                		addModItemToShop(Tremor, "Gloomstone", 100, ref shop, ref nextSlot);
+                		addModItemToShop(Tremor, "UntreatedFlesh", 100, ref shop, ref nextSlot);
+                		addModItemToShop(Tremor, "LightBulb", 500, ref shop, ref nextSlot);
+                		addModItemToShop(Tremor, "AtisBlood", 2500, ref shop, ref nextSlot);
+                		addModItemToShop(Tremor, "TearsofDeath", 2500, ref shop, ref nextSlot);
+                		addModItemToShop(Tremor, "TornPapyrus", 5000, ref shop, ref nextSlot);
+                		addModItemToShop(Tremor, "PhantomSoul", 5000, ref shop, ref nextSlot);
+                		addModItemToShop(Tremor, "TheRib", 7500, ref shop, ref nextSlot);
                 	}	
                 }
 				*/
