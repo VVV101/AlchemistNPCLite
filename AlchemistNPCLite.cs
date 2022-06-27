@@ -526,8 +526,20 @@ namespace AlchemistNPCLite
             LocalizationLoader.AddTranslation(text);
 
             text = LocalizationLoader.CreateTranslation(this, "Providence");
-            text.SetDefault("Providence Treasure Bag");
+            text.SetDefault("Providence, the Profaned Goddess Treasure Bag");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "亵渎天神宝藏袋");
+            LocalizationLoader.AddTranslation(text);
+
+            text = LocalizationLoader.CreateTranslation(this, "StormWeaver");
+            text.SetDefault("Storm Weaver Treasure Bag");
+            LocalizationLoader.AddTranslation(text);
+
+            text = LocalizationLoader.CreateTranslation(this, "CeaselessVoid");
+            text.SetDefault("Ceaseless Void Treasure Bag");
+            LocalizationLoader.AddTranslation(text);
+
+            text = LocalizationLoader.CreateTranslation(this, "Signus");
+            text.SetDefault("Signus, Envoy of the Devourer Treasure Bag");
             LocalizationLoader.AddTranslation(text);
 
             text = LocalizationLoader.CreateTranslation(this, "Polterghast");
@@ -546,13 +558,21 @@ namespace AlchemistNPCLite
             LocalizationLoader.AddTranslation(text);
 
             text = LocalizationLoader.CreateTranslation(this, "Bumblebirb");
-            text.SetDefault("Bumblebirb Treasure Bag");
+            text.SetDefault("The Dragonfolly Treasure Bag");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "癫痫鸟宝藏袋");
             LocalizationLoader.AddTranslation(text);
 
             text = LocalizationLoader.CreateTranslation(this, "Yharon");
             text.SetDefault("Jungle Dragon, Yharon Treasure Bag");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "犽戎宝藏袋");
+            LocalizationLoader.AddTranslation(text);
+
+            text = LocalizationLoader.CreateTranslation(this, "ExoMechs");
+            text.SetDefault("Exo Mechs Treasure Bag");
+            LocalizationLoader.AddTranslation(text);
+
+            text = LocalizationLoader.CreateTranslation(this, "SupremeCalamitas");
+            text.SetDefault("Supreme Calamitas Treasure Bag");
             LocalizationLoader.AddTranslation(text);
 
             //SBMW:ThoriumMod

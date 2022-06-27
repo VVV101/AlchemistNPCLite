@@ -716,7 +716,7 @@ namespace AlchemistNPCLite.NPCs
                             addModItemToShop(Calamity, "CrumblingPotion", 50000, ref shop, ref nextSlot);
                             addModItemToShop(Calamity, "PhotosynthesisPotion", 50000, ref shop, ref nextSlot);
                             addModItemToShop(Calamity, "SoaringPotion", 40000, ref shop, ref nextSlot);
-                            addModItemToShop(Calamity, "CadencePotion", 40000, ref shop, ref nextSlot);
+                            addModItemToShop(Calamity, "CadancePotion", 40000, ref shop, ref nextSlot);
                             addModItemToShop(Calamity, "FabsolsVodka", 100000, ref shop, ref nextSlot);
                             addModItemToShop(Calamity, "RevivifyPotion", 50000, ref shop, ref nextSlot);
                             if ((bool)Calamity.Call("Downed", "astrum aureus"))

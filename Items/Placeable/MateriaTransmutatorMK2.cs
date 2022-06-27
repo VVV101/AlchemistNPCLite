@@ -1,3 +1,4 @@
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
@@ -8,11 +9,11 @@ namespace AlchemistNPCLite.Items.Placeable
 {
 	public class MateriaTransmutatorMK2 : ModItem
 	{
-		//Probably removed
-		// public override bool Autoload(ref string name)
-		// {
-		// 	return ModLoader.GetMod("CalamityMod") != null;
-		// }
+		public override bool IsLoadingEnabled(Mod mod)
+		{
+			ModLoader.TryGetMod("CalamityMod", out Calamity);
+			return Calamity != null;
+		}
 		
 		public override void SetStaticDefaults()
 		{
@@ -44,15 +45,15 @@ namespace AlchemistNPCLite.Items.Placeable
 			Item.createTile = ModContent.TileType<Tiles.MateriaTransmutatorMK2>();
 		}
 
-		// IMPLEMENT WHEN WEAKREFERENCES FIXED
-		/*
 		public override void AddRecipes()
 		{
-			CreateRecipe()
-				.AddIngredient(null, "MateriaTransmutator")
-				.AddIngredient((ModLoader.GetMod("CalamityMod").ItemType("DraedonsForge")), 1)
-				.Register();
+			Recipe recipe = CreateRecipe()
+				.AddIngredient(Mod, "MateriaTransmutator");
+			if(Calamity != null && Calamity.TryFind<ModItem>("DraedonsForge", out ModItem currItem)) {
+				recipe.AddIngredient(currItem.Type);
+			}
+			recipe.Register();
 		}
-		*/
+		private Mod Calamity;
 	}
 }

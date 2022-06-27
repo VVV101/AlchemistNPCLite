@@ -327,7 +327,33 @@ namespace AlchemistNPCLite.NPCs
         }
         public override void OnKill(NPC npc)
         {
-            base.OnKill(npc);
+            ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
+            if (Calamity != null)
+            {
+                if ((bool)Calamity.Call("Downed", "dog") && npc.type == 327)
+                {
+                    if (!AlchemistNPCLiteWorld.downedDOGPumpking)
+                    {
+                        AlchemistNPCLiteWorld.downedDOGPumpking = true;
+                        if (Main.netMode == NetmodeID.Server)
+                        {
+                            NetMessage.SendData(MessageID.WorldData); // Immediately inform clients of new world state.
+                        }
+                    }
+                }
+
+                if ((bool)Calamity.Call("Downed", "dog") && npc.type == 345)
+                {
+                    if (!AlchemistNPCLiteWorld.downedDOGIceQueen)
+                    {
+                        AlchemistNPCLiteWorld.downedDOGIceQueen = true;
+                        if (Main.netMode == NetmodeID.Server)
+                        {
+                            NetMessage.SendData(MessageID.WorldData); // Immediately inform clients of new world state.
+                        }
+                    }
+                }
+            }
 
             if (npc.type == NPCID.SandElemental)
             {
@@ -362,40 +388,6 @@ namespace AlchemistNPCLite.NPCs
             }
         }
 
-        // IMPLEMENT WHEN WEAKREFERENCES FIXED
-        /*
-        public override void NPCLoot(NPC npc)
-        {
-            ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
-            if (Calamity != null)
-            {
-                if ((bool)Calamity.Call("Downed", "dog") && npc.type == 327)
-                {
-                    if (!AlchemistNPCLiteWorld.downedDOGPumpking)
-                    {
-                        AlchemistNPCLiteWorld.downedDOGPumpking = true;
-                        if (Main.netMode == NetmodeID.Server)
-                        {
-                            NetMessage.SendData(MessageID.WorldData); // Immediately inform clients of new world state.
-                        }
-                    }
-                }
-
-                if ((bool)Calamity.Call("Downed", "dog") && npc.type == 345)
-                {
-                    if (!AlchemistNPCLiteWorld.downedDOGIceQueen)
-                    {
-                        AlchemistNPCLiteWorld.downedDOGIceQueen = true;
-                        if (Main.netMode == NetmodeID.Server)
-                        {
-                            NetMessage.SendData(MessageID.WorldData); // Immediately inform clients of new world state.
-                        }
-                    }
-                }
-            }
-        }
-        
-		*/
 		public bool CalamityModRevengeance
 		{            
             get {

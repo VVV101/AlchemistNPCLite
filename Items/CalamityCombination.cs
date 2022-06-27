@@ -13,16 +13,17 @@ namespace AlchemistNPCLite.Items
 {
     public class CalamityCombination : ModItem
     {
-        // Probably removed
-		// public override bool Autoload(ref string name)
-		// {
-		// return ModLoader.GetMod("CalamityMod") != null;
-		// }
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+			ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
+			return Calamity != null;
+        }
+
 		
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Calamity Combination");
-			Tooltip.SetDefault("Grants most buffs from Calamity Mod potions (Yharim's Stimulants, Cadence, Titan Scale, Soaring, Bounding and Fabsol's Vodka)");
+			Tooltip.SetDefault("Grants most buffs from Calamity Mod potions (Yharim's Stimulants, Cadance, Titan Scale, Soaring, Bounding and Fabsol's Vodka)");
 			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Комбинация Calamity");
             Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Даёт большинство баффов от зелий мода Calamity (Стимулянты Ярима, Каденции, Титановой Чешуи, Полёта, Связующее и Водки Фабсола)");
 
@@ -55,7 +56,7 @@ namespace AlchemistNPCLite.Items
             string[][] modComponents = new string[][]{
                 new string[] {"CalamityMod", "YharimsStimulants"},
                 new string[] {"CalamityMod", "FabsolsVodka"},
-                new string[] {"CalamityMod", "CadencePotion"},
+                new string[] {"CalamityMod", "CadancePotion"},
                 new string[] {"CalamityMod", "TitanScalePotion"},
                 new string[] {"CalamityMod", "SoaringPotion"},
                 new string[] {"CalamityMod", "BoundingPotion"}

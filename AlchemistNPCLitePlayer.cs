@@ -134,7 +134,7 @@ namespace AlchemistNPCLite
                     */
 					Calamity.Call("AddRogueCrit", Player, 10);
 				}
-                Calamity.TryFind<ModBuff>("Cadence", out buff);
+                Calamity.TryFind<ModBuff>("CadancesGrace", out buff);
 				if (!Player.HasBuff(ModContent.BuffType<Buffs.CalamityComb>()) && buff != null && !Player.HasBuff(buff.Type) && Regeneration) Player.lifeRegen += 4;
 				if (!Player.HasBuff(ModContent.BuffType<Buffs.CalamityComb>()) && buff != null && !Player.HasBuff(buff.Type) && Regeneration) Player.lifeRegen += 4;
 				if (!Player.HasBuff(ModContent.BuffType<Buffs.CalamityComb>()) && buff != null && !Player.HasBuff(buff.Type) && Lifeforce)

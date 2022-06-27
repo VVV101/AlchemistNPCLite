@@ -699,8 +699,17 @@ namespace AlchemistNPCLite.NPCs
                     if ((bool)Calamity.Call("Downed", "providence"))
                     {
                         addModItemToShop(CalamityMusic, "ProvidenceMusicbox", 250000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)Calamity.Call("Downed", "stormweaver"))
+                    {
                         addModItemToShop(CalamityMusic, "StormWeaverMusicbox", 150000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)Calamity.Call("Downed", "ceaselessvoid"))
+                    {
                         addModItemToShop(CalamityMusic, "CeaselessVoidMusicbox", 150000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)Calamity.Call("Downed", "signus"))
+                    {
                         addModItemToShop(CalamityMusic, "SignusMusicbox", 150000, ref shop, ref nextSlot);
                     }
                     if ((bool)Calamity.Call("Downed", "polterghast"))

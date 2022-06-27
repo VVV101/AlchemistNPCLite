@@ -3,31 +3,32 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
+using Terraria.DataStructures;
 
 namespace AlchemistNPCLite.Buffs
 {
     public class CalamityComb : ModBuff
-    {            
+    {
         private string[] BuffList = {
-                "Cadence",
+                "CadancesGrace",
                 "YharimPower",
                 "TitanScale",
                 "FabsolVodkaBuff",
                 "Soaring",
                 "BoundingBuff"
         };
-        
-        public override bool IsLoadingEnabled (Mod mod)
+
+        public override bool IsLoadingEnabled(Mod mod)
         {
-            ModLoader.TryGetMod("CalamityMod", out Calamity);
-        	return Calamity != null;
+			ModLoader.TryGetMod("CalamityMod", out Calamity);
+			return Calamity != null;
         }
 
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Calamity Combination");
             Description.SetDefault("Perfect sum of Calamity buffs"
-            + "\nYharim's Stimulants, Cadence, Fabsol's Vodka, Soaring, Bounding and Titan Scale");
+            + "\nYharim's Stimulants, Cadance, Fabsol's Vodka, Soaring, Bounding and Titan Scale");
             Main.debuff[Type] = false;
             BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Комбинация Каламити");
@@ -39,9 +40,10 @@ namespace AlchemistNPCLite.Buffs
         public override void Update(Player player, ref int buffIndex)
         {
 
-            foreach (string BuffString in BuffList) {
-                Calamity.TryFind<ModBuff>(BuffString, out ModBuff buff);
-			    player.buffImmune[buff.Type] = true;
+            foreach (string BuffString in BuffList)
+            {
+                if (Calamity.TryFind<ModBuff>(BuffString, out ModBuff buff))
+                    player.buffImmune[buff.Type] = true;
             }
             // IMPLEMENT WHEN WEAKREFERENCES FIXED
             /*
@@ -54,22 +56,23 @@ namespace AlchemistNPCLite.Buffs
 				RedemptionBoost(player);
 			}
 			*/
-			if (ModLoader.GetMod("CalamityMod") != null)
-			{
-				CalamityBoost(player, ref buffIndex);
-			}
-        }
-
-
-		private void CalamityBoost(Player player, ref int buffIndex)
-        {    
-            foreach (string BuffString in BuffList) {
-                Calamity.TryFind<ModBuff>(BuffString, out ModBuff buff);
-			    buff.Update(player, ref buffIndex);
+            if (ModLoader.GetMod("CalamityMod") != null)
+            {
+                CalamityBoost(player, ref buffIndex);
             }
         }
-		private Mod Calamity;
-        
+
+
+        private void CalamityBoost(Player player, ref int buffIndex)
+        {
+            foreach (string BuffString in BuffList)
+            {
+                if (Calamity.TryFind<ModBuff>(BuffString, out ModBuff buff))
+                    buff.Update(player, ref buffIndex);
+            }
+        }
+        private Mod Calamity;
+
         // IMPLEMENT WHEN WEAKREFERENCES FIXED
         /*
 		private void RedemptionBoost(Player player)

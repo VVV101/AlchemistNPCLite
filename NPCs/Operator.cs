@@ -473,8 +473,6 @@ namespace AlchemistNPCLite.NPCs
                     return EntryO8;
                 }
             }
-            // IMPLEMENT WHEN WEAKREFERENCES FIXED
-            /*
             if (Calamity != null && NPC.downedBoss3)
             {
             	if (Main.rand.Next(7) == 0)
@@ -482,7 +480,6 @@ namespace AlchemistNPCLite.NPCs
             		return EntryO17;
             	} 
             }
-            */
             if (NPC.downedPlantBoss)
             {
                 if (Main.rand.Next(7) == 0)
@@ -497,8 +494,6 @@ namespace AlchemistNPCLite.NPCs
                     return EntryO20;
                 }
             }
-            // IMPLEMENT WHEN WEAKREFERENCES FIXED
-            /*
             if (Calamity != null && NPC.downedMoonlord)
             {
             	if (Main.rand.Next(7) == 0)
@@ -506,6 +501,8 @@ namespace AlchemistNPCLite.NPCs
             		return EntryO18;
             	} 
             }
+            // IMPLEMENT WHEN WEAKREFERENCES FIXED
+            /*
             if (ModLoader.GetMod("ThoriumMod") != null)
             {
             	if (Main.rand.Next(6) == 0)
@@ -536,8 +533,6 @@ namespace AlchemistNPCLite.NPCs
             {
                 return EntryO21;
             }
-            // IMPLEMENT WHEN WEAKREFERENCES FIXED
-            /*
             if (Calamity != null && Main.hardMode)
             {
                 if (Main.rand.Next(5) == 0 && (bool)Calamity.Call("Downed", "plaguebringer goliath"))
@@ -569,7 +564,8 @@ namespace AlchemistNPCLite.NPCs
                     return EntryO33;
                 }
             }
-
+            // IMPLEMENT WHEN WEAKREFERENCES FIXED
+            /*
             if (ModLoader.GetMod("ThoriumMod") != null && Main.hardMode)
             {
                 if (Main.rand.Next(5) == 0 && ThoriumModDownedFallenBeholder)
@@ -1406,11 +1402,11 @@ namespace AlchemistNPCLite.NPCs
                     {
                     	if ((bool)Calamity.Call("Downed", "desert scourge"))
                     	{
-                    		addModItemToShop(Calamity, "DesertScourgeBag", 350000, ref shop, ref nextSlot);
+                    		addModItemToShop(Calamity, "DesertScourgeBag", 375000, ref shop, ref nextSlot);
                     	}
                     	if ((bool)Calamity.Call("Downed", "crabulon"))
                     	{
-                    		addModItemToShop(Calamity, "CrabulonBag", 650000, ref shop, ref nextSlot);
+                    		addModItemToShop(Calamity, "CrabulonBag", 700000, ref shop, ref nextSlot);
                     	}
                     	if ((bool)Calamity.Call("Downed", "hive mind") || (bool)Calamity.Call("Downed", "perforators"))
                     	{
@@ -1419,7 +1415,7 @@ namespace AlchemistNPCLite.NPCs
                     	}
                     	if ((bool)Calamity.Call("Downed", "slime god"))
                     	{
-                    		addModItemToShop(Calamity, "SlimeGodBag", 1750000, ref shop, ref nextSlot);
+                    		addModItemToShop(Calamity, "SlimeGodBag", 1000000, ref shop, ref nextSlot);
                     	}
                     	if ((bool)Calamity.Call("Downed", "cryogen"))
                     	{
@@ -1428,13 +1424,9 @@ namespace AlchemistNPCLite.NPCs
                     	if ((bool)Calamity.Call("Downed", "brimstone elemental"))
                     	{
                     		if (!(bool)Calamity.Call("Downed", "providence"))
-                    		{
-                    			addModItemToShop(Calamity, "BrimstoneWaifuBag", 2000000, ref shop, ref nextSlot);
-                    		}
-                    		if ((bool)Calamity.Call("Downed", "providence"))
-                    		{
+                    			addModItemToShop(Calamity, "BrimstoneWaifuBag", 3000000, ref shop, ref nextSlot);
+                    		else
                     			addModItemToShop(Calamity, "BrimstoneWaifuBag", 5000000, ref shop, ref nextSlot);
-                    		}
                     	}
                     	if ((bool)Calamity.Call("Downed", "aquatic scourge"))
                     	{
@@ -1443,62 +1435,77 @@ namespace AlchemistNPCLite.NPCs
                     	if ((bool)Calamity.Call("Downed", "calamitas doppelganger"))
                     	{
                     		if (!(bool)Calamity.Call("Downed", "providence"))
-                    		{
-                    			addModItemToShop(Calamity, "CalamitasBag", 3000000, ref shop, ref nextSlot);
-                    		}
-                    		if ((bool)Calamity.Call("Downed", "providence"))
-                    		{
+                    			addModItemToShop(Calamity, "CalamitasBag", 4000000, ref shop, ref nextSlot);
+                    		else
                     			addModItemToShop(Calamity, "CalamitasBag", 5000000, ref shop, ref nextSlot);
-                    		}
                     	}
                     	if ((bool)Calamity.Call("Downed", "leviathan"))
                     	{
-                    		addModItemToShop(Calamity, "LeviathanBag", 3500000, ref shop, ref nextSlot);
+                    		addModItemToShop(Calamity, "LeviathanBag", 4250000, ref shop, ref nextSlot);
                     	}
-                    	if (!(bool)Calamity.Call("Downed", "providence") && (bool)Calamity.Call("Downed", "astrum aureus"))
+                    	if ((bool)Calamity.Call("Downed", "astrum aureus"))
                     	{
-                    		addModItemToShop(Calamity, "AstrageldonBag", 3000000, ref shop, ref nextSlot);
-                    	}
-                    	if ((bool)Calamity.Call("Downed", "providence") && (bool)Calamity.Call("Downed", "astrum aureus"))
-                    	{
-                    		addModItemToShop(Calamity, "AstrageldonBag", 5000000, ref shop, ref nextSlot);
+                            if(!(bool)Calamity.Call("Downed", "providence"))
+                    		    addModItemToShop(Calamity, "AstrageldonBag", 4000000, ref shop, ref nextSlot);
+                            else
+                                addModItemToShop(Calamity, "AstrageldonBag", 5000000, ref shop, ref nextSlot);
                     	}
                     	if ((bool)Calamity.Call("Downed", "astrum deus"))
                     	{
-                    		addModItemToShop(Calamity, "AstrumDeusBag", 3500000, ref shop, ref nextSlot);
+                    		addModItemToShop(Calamity, "AstrumDeusBag", 6500000, ref shop, ref nextSlot);
                     	}
                     	if ((bool)Calamity.Call("Downed", "plaguebringer goliath"))
                     	{
-                    		addModItemToShop(Calamity, "PlaguebringerGoliathBag", 4000000, ref shop, ref nextSlot); 
+                    		addModItemToShop(Calamity, "PlaguebringerGoliathBag", 5750000, ref shop, ref nextSlot); 
                     	}
                     	if ((bool)Calamity.Call("Downed", "ravager"))
                     	{
-                    		addModItemToShop(Calamity, "RavagerBag", 4000000, ref shop, ref nextSlot); 
+                    		addModItemToShop(Calamity, "RavagerBag", 5500000, ref shop, ref nextSlot); 
                     	}
                     	if ((bool)Calamity.Call("Downed", "bumblebirb"))
                     	{
-                    		addModItemToShop(Calamity, "BumblebirbBag", 3000000, ref shop, ref nextSlot);
+                    		addModItemToShop(Calamity, "BumblebirbBag", 8500000, ref shop, ref nextSlot);
                     	}
                     	if ((bool)Calamity.Call("Downed", "providence"))
                     	{
-                    		addModItemToShop(Calamity, "ProvidenceBag", 6000000, ref shop, ref nextSlot);
+                    		addModItemToShop(Calamity, "ProvidenceBag", 22000000, ref shop, ref nextSlot);
                     	}
+                        if ((bool)Calamity.Call("Downed", "stormweaver"))
+                        {
+                    		addModItemToShop(Calamity, "StormWeaverBag", 12500000, ref shop, ref nextSlot);
+                        }
+                        if ((bool)Calamity.Call("Downed", "ceaselessvoid"))
+                        {
+                    		addModItemToShop(Calamity, "CeaselessVoidBag", 12500000, ref shop, ref nextSlot);
+                        }
+                        if ((bool)Calamity.Call("Downed", "signus"))
+                        {
+                    		addModItemToShop(Calamity, "SignusBag", 12500000, ref shop, ref nextSlot);
+                        }
                     	if ((bool)Calamity.Call("Downed", "polterghast"))
                     	{
-                    		addModItemToShop(Calamity, "PolterghastBag", 7500000, ref shop, ref nextSlot);
+                    		addModItemToShop(Calamity, "PolterghastBag", 22500000, ref shop, ref nextSlot);
                     	}
                     	if ((bool)Calamity.Call("Downed", "old duke"))
                     	{
-                    		addModItemToShop(Calamity, "OldDukeBag", 8500000, ref shop, ref nextSlot);
+                    		addModItemToShop(Calamity, "OldDukeBag", 25000000, ref shop, ref nextSlot);
                     	}
                     	if ((bool)Calamity.Call("Downed", "dog"))
                     	{
-                    		addModItemToShop(Calamity, "DevourerofGodsBag", 10000000, ref shop, ref nextSlot);
+                    		addModItemToShop(Calamity, "DevourerofGodsBag", 25000000, ref shop, ref nextSlot);
                     	}
                     	if ((bool)Calamity.Call("Downed", "yharon"))
                     	{
-                    		addModItemToShop(Calamity, "YharonBag", 15000000, ref shop, ref nextSlot);
+                    		addModItemToShop(Calamity, "YharonBag", 75000000, ref shop, ref nextSlot);
                     	}
+                        if ((bool)Calamity.Call("Downed", "exomechs"))
+                        {
+                    		addModItemToShop(Calamity, "DraedonTreasureBag", 115000000, ref shop, ref nextSlot);
+                        }
+                        if ((bool)Calamity.Call("Downed", "supremecalamitas"))
+                        {
+                    		addModItemToShop(Calamity, "SCalBag", 200000000, ref shop, ref nextSlot);
+                        }
                     }
                 }
                 // IMPLEMENT WHEN WEAKREFERENCES FIXED

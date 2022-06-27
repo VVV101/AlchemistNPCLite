@@ -30,7 +30,7 @@ namespace AlchemistNPCLite.Items
                     player.ApplyEquipFunctional(player.inventory[49], r);
                 }
             }
-            
+
             if (item.type == ItemType<Items.Misc.LuckCharm>())
             {
                 Luck = true;
@@ -111,10 +111,10 @@ namespace AlchemistNPCLite.Items
                 ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
                 if (Calamity != null)
                 {
-                	if ((bool)Calamity.Call("Downed", "supreme calamitas"))
-                	{
-                		return false;
-                	}
+                    if ((bool)Calamity.Call("Downed", "supreme calamitas"))
+                    {
+                        return false;
+                    }
                 }
                 if (Main.rand.NextFloat() >= .25f)
                 {
@@ -287,11 +287,16 @@ namespace AlchemistNPCLite.Items
             string PlaguebringerGoliath = Language.GetTextValue("Mods.AlchemistNPCLite.PlaguebringerGoliath");
             string Ravager = Language.GetTextValue("Mods.AlchemistNPCLite.Ravager");
             string Providence = Language.GetTextValue("Mods.AlchemistNPCLite.Providence");
+            string StormWeaver = Language.GetTextValue("Mods.AlchemistNPCLite.StormWeaver");
+            string CeaselessVoid = Language.GetTextValue("Mods.AlchemistNPCLite.CeaselessVoid");
+            string Signus = Language.GetTextValue("Mods.AlchemistNPCLite.Signus");
             string Polterghast = Language.GetTextValue("Mods.AlchemistNPCLite.Polterghast");
             string OldDuke = Language.GetTextValue("Mods.AlchemistNPCLite.OldDuke");
             string DevourerofGods = Language.GetTextValue("Mods.AlchemistNPCLite.DevourerofGods");
             string Bumblebirb = Language.GetTextValue("Mods.AlchemistNPCLite.Bumblebirb");
             string Yharon = Language.GetTextValue("Mods.AlchemistNPCLite.Yharon");
+            string ExoMechs = Language.GetTextValue("Mods.AlchemistNPCLite.ExoMechs");
+            string SupremeCalamitas = Language.GetTextValue("Mods.AlchemistNPCLite.SupremeCalamitas");
 
             //SBMW:ThoriumMod
             string DarkMage = Language.GetTextValue("Mods.AlchemistNPCLite.DarkMage");
@@ -594,6 +599,24 @@ namespace AlchemistNPCLite.Items
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+                if (Calamity.TryFind<ModItem>("StormWeaverBag", out currItem) && item.type == currItem.Type)
+                {
+                    TooltipLine line = new TooltipLine(Mod, "StormWeaver", StormWeaver);
+                    line.OverrideColor = Color.LimeGreen;
+                    tooltips.Insert(1, line);
+                }
+                if (Calamity.TryFind<ModItem>("CeaselessVoidBag", out currItem) && item.type == currItem.Type)
+                {
+                    TooltipLine line = new TooltipLine(Mod, "CeaselessVoid", CeaselessVoid);
+                    line.OverrideColor = Color.LimeGreen;
+                    tooltips.Insert(1, line);
+                }
+                if (Calamity.TryFind<ModItem>("SignusBag", out currItem) && item.type == currItem.Type)
+                {
+                    TooltipLine line = new TooltipLine(Mod, "Signus", Signus);
+                    line.OverrideColor = Color.LimeGreen;
+                    tooltips.Insert(1, line);
+                }
                 if (Calamity.TryFind<ModItem>("PolterghastBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "Polterghast", Polterghast);
@@ -621,6 +644,18 @@ namespace AlchemistNPCLite.Items
                 if (Calamity.TryFind<ModItem>("YharonBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "Yharon", Yharon);
+                    line.OverrideColor = Color.LimeGreen;
+                    tooltips.Insert(1, line);
+                }
+                if (Calamity.TryFind<ModItem>("DraedonTreasureBag", out currItem) && item.type == currItem.Type)
+                {
+                    TooltipLine line = new TooltipLine(Mod, "ExoMechs", ExoMechs);
+                    line.OverrideColor = Color.LimeGreen;
+                    tooltips.Insert(1, line);
+                }
+                if (Calamity.TryFind<ModItem>("SCalBag", out currItem) && item.type == currItem.Type)
+                {
+                    TooltipLine line = new TooltipLine(Mod, "SupremeCalamitas", SupremeCalamitas);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
