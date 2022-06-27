@@ -400,6 +400,10 @@ namespace AlchemistNPCLite
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "骷髅王宝藏袋");
             LocalizationLoader.AddTranslation(text);
 
+            text = LocalizationLoader.CreateTranslation(this, "Deerclops");
+            text.SetDefault("Deerclops Treasure Bag");
+            LocalizationLoader.AddTranslation(text);
+
             text = LocalizationLoader.CreateTranslation(this, "WallOfFlesh");
             text.SetDefault("Wall Of Flesh Treasure Bag");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "血肉之墙宝藏袋");

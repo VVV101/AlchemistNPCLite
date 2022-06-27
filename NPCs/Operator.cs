@@ -1312,6 +1312,12 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].SetDefaults(ItemID.SkeletronBossBag);
                     shop.item[nextSlot].shopCustomPrice = 1000000;
                     nextSlot++;
+                    if(NPC.downedDeerclops) 
+                    {
+                        shop.item[nextSlot].SetDefaults(ItemID.DeerclopsBossBag);
+                        shop.item[nextSlot].shopCustomPrice = 2500000;
+                        nextSlot++;
+                    }
                 }
                 // IMPLEMENT WHEN WEAKREFERENCES FIXED
                 /*

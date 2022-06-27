@@ -259,6 +259,7 @@ namespace AlchemistNPCLite.Items
             string BrainOfCthulhu = Language.GetTextValue("Mods.AlchemistNPCLite.BrainOfCthulhu");
             string QueenBee = Language.GetTextValue("Mods.AlchemistNPCLite.QueenBee");
             string Skeletron = Language.GetTextValue("Mods.AlchemistNPCLite.Skeletron");
+            string Deerclops = Language.GetTextValue("Mods.AlchemistNPCLite.Deerclops");
             string WallOfFlesh = Language.GetTextValue("Mods.AlchemistNPCLite.WallOfFlesh");
             string QueenSlime = Language.GetTextValue("Mods.AlchemistNPCLite.QueenSlime");
             string Destroyer = Language.GetTextValue("Mods.AlchemistNPCLite.Destroyer");
@@ -436,6 +437,12 @@ namespace AlchemistNPCLite.Items
             if (item.type == ItemID.SkeletronBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "Skeletron", Skeletron);
+                line.OverrideColor = Color.LimeGreen;
+                tooltips.Insert(1, line);
+            }
+            if (item.type == ItemID.DeerclopsBossBag)
+            {
+                TooltipLine line = new TooltipLine(Mod, "Deerclops", Deerclops);
                 line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
