@@ -51,7 +51,7 @@ namespace AlchemistNPCLite.Items
         
 		public override void AddRecipes()
 		{
-			Recipe recipe = CreateRecipe();
+			Recipe recipe = Recipe.Create(Item.type);;
             recipe.AddTile(TileID.AlchemyTable);
             string[][] modComponents = new string[][]{
                 new string[] {"CalamityMod", "YharimsStimulants"},

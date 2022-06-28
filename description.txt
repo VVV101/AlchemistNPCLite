@@ -10,6 +10,7 @@ v1.8.14
 -Add Deerclops bag to Operator
 -Reimplement Calamity for 1.4
 -Adjust Calamity boss bag prices
+-Update recipe creation
 v1.8.13
 -Updated to current 1.4-stable.
 v1.8.12

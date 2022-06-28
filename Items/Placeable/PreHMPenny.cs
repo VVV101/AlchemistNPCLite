@@ -42,20 +42,20 @@ namespace AlchemistNPCLite.Items.Placeable
 
         public override void AddRecipes()
         {
-            CreateRecipe()
-            	.AddIngredient(ItemID.WorkBench)
-                .AddRecipeGroup("AlchemistNPCLite:AnyPreHMAnvil")
-            	.AddIngredient(ItemID.Hellforge)
-            	.AddIngredient(ItemID.Loom)
-            	.AddIngredient(ItemID.AlchemyTable)
-            	.AddIngredient(ItemID.DyeVat)
-            	.AddIngredient(ItemID.WoodenTable)
-            	.AddIngredient(ItemID.WoodenChair)
-            	.AddIngredient(ItemID.CookingPot)
-            	.AddIngredient(ItemID.TinkerersWorkshop)
-            	.AddIngredient(ItemID.HeavyWorkBench)
-            	.AddIngredient(ItemID.Sawmill)
-            	.Register();
+            Recipe recipe = Recipe.Create(Item.type);
+            recipe.AddIngredient(ItemID.WorkBench);
+            recipe.AddRecipeGroup("AlchemistNPCLite:AnyPreHMAnvil");
+            recipe.AddIngredient(ItemID.Hellforge);
+            recipe.AddIngredient(ItemID.Loom);
+            recipe.AddIngredient(ItemID.AlchemyTable);
+            recipe.AddIngredient(ItemID.DyeVat);
+            recipe.AddIngredient(ItemID.WoodenTable);
+            recipe.AddIngredient(ItemID.WoodenChair);
+            recipe.AddIngredient(ItemID.CookingPot);
+            recipe.AddIngredient(ItemID.TinkerersWorkshop);
+            recipe.AddIngredient(ItemID.HeavyWorkBench);
+            recipe.AddIngredient(ItemID.Sawmill);
+            recipe.Register();
         }
     }
 }

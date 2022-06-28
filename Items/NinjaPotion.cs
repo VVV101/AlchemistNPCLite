@@ -45,34 +45,26 @@ namespace AlchemistNPCLite.Items
 		
 		public override void AddRecipes()
 		{
-			CreateRecipe()
-				.AddIngredient(ItemID.Daybloom, 1)
-				.AddIngredient(ItemID.Waterleaf, 1)
-				.AddIngredient(ItemID.Fireblossom, 1)
-				.AddIngredient(ItemID.Deathweed, 1)
-				.AddIngredient(ItemID.HellstoneBar, 1)
-				.AddIngredient(ItemID.RottenChunk, 2)
-				.AddIngredient(ItemID.CursedFlame, 1)
-				.AddIngredient(ItemID.SoulofNight, 3)
-				.AddIngredient(ItemID.BottledWater, 1)
-				.AddIngredient(ItemID.ChlorophyteOre, 1)
-				.AddIngredient(ItemID.Ectoplasm, 1)
-				.AddTile(TileID.Bottles)
-				.Register();
-			CreateRecipe()
-				.AddIngredient(ItemID.Daybloom, 1)
-				.AddIngredient(ItemID.Waterleaf, 1)
-				.AddIngredient(ItemID.Fireblossom, 1)
-				.AddIngredient(ItemID.Deathweed, 1)
-				.AddIngredient(ItemID.HellstoneBar, 1)
-				.AddIngredient(ItemID.Vertebrae, 2)
-				.AddIngredient(ItemID.Ichor, 1)
-				.AddIngredient(ItemID.SoulofNight, 3)
-				.AddIngredient(ItemID.BottledWater, 1)
-				.AddIngredient(ItemID.ChlorophyteOre, 1)
-				.AddIngredient(ItemID.Ectoplasm, 1)
-				.AddTile(TileID.Bottles)
-				.Register();
+			Recipe recipeCursedFlame = Recipe.Create(Item.type);
+			recipeCursedFlame.AddIngredient(ItemID.Daybloom, 1);
+			recipeCursedFlame.AddIngredient(ItemID.Waterleaf, 1);
+			recipeCursedFlame.AddIngredient(ItemID.Fireblossom, 1);
+			recipeCursedFlame.AddIngredient(ItemID.Deathweed, 1);
+			recipeCursedFlame.AddIngredient(ItemID.HellstoneBar, 1);
+			recipeCursedFlame.AddIngredient(ItemID.RottenChunk, 2);
+			recipeCursedFlame.AddIngredient(ItemID.SoulofNight, 3);
+			recipeCursedFlame.AddIngredient(ItemID.BottledWater, 1);
+			recipeCursedFlame.AddIngredient(ItemID.ChlorophyteOre, 1);
+			recipeCursedFlame.AddIngredient(ItemID.Ectoplasm, 1);
+			recipeCursedFlame.AddTile(TileID.Bottles);
+
+			Recipe recipeIchor = recipeCursedFlame.Clone();
+			
+			recipeCursedFlame.AddIngredient(ItemID.CursedFlame, 1);
+			recipeIchor.AddIngredient(ItemID.Ichor, 1);
+			
+			recipeCursedFlame.Register();
+			recipeIchor.Register();
 		}
     }
 }

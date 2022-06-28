@@ -41,11 +41,11 @@ namespace AlchemistNPCLite.Items
 		
 		public override void AddRecipes()
 		{
-			CreateRecipe()
-				.AddIngredient(ItemID.Sunflower, 1)
-				.AddIngredient(ItemID.BottledWater, 1)
-				.AddTile(TileID.Bottles)
-				.Register();
+			Recipe recipe = Recipe.Create(Item.type);
+			recipe.AddIngredient(ItemID.Sunflower, 1);
+			recipe.AddIngredient(ItemID.BottledWater, 1);
+			recipe.AddTile(TileID.Bottles);
+			recipe.Register();
 		}
     }
 }

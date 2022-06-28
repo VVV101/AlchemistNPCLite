@@ -41,12 +41,12 @@ namespace AlchemistNPCLite.Items.Misc
 		
 		public override void AddRecipes()
 		{
-			CreateRecipe()
-				.AddIngredient(null, "AlchemistCharmTier2")
-				.AddRecipeGroup("AlchemistNPCLite:Tier3Bar", 15)
-				.AddRecipeGroup("AlchemistNPCLite:HardmodeComponent", 20)
-				.AddTile(TileID.MythrilAnvil)
-				.Register();
+			Recipe recipe = Recipe.Create(Item.type);
+			recipe.AddIngredient(null, "AlchemistCharmTier2");
+			recipe.AddRecipeGroup("AlchemistNPCLite:Tier3Bar", 15);
+			recipe.AddRecipeGroup("AlchemistNPCLite:HardmodeComponent", 20);
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.Register();
 		}
 	}
 }

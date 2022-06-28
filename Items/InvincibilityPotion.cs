@@ -45,17 +45,17 @@ namespace AlchemistNPCLite.Items
 		
 		public override void AddRecipes()
 		{
-			CreateRecipe()
-				.AddIngredient(ItemID.Fireblossom, 1)
-				.AddIngredient(ItemID.Daybloom, 1)
-				.AddIngredient(ItemID.Moonglow, 1)
-				.AddIngredient(ItemID.Deathweed, 1)
-				.AddIngredient(ItemID.Obsidian, 1)
-				.AddIngredient(ItemID.SoulofLight, 1)
-				.AddIngredient(ItemID.SoulofNight, 1)
-				.AddIngredient(ItemID.BottledWater, 1)
-				.AddTile(TileID.Bottles)
-				.Register();
+			Recipe recipe = Recipe.Create(Item.type);
+			recipe.AddIngredient(ItemID.Fireblossom, 1);
+			recipe.AddIngredient(ItemID.Daybloom, 1);
+			recipe.AddIngredient(ItemID.Moonglow, 1);
+			recipe.AddIngredient(ItemID.Deathweed, 1);
+			recipe.AddIngredient(ItemID.Obsidian, 1);
+			recipe.AddIngredient(ItemID.SoulofLight, 1);
+			recipe.AddIngredient(ItemID.SoulofNight, 1);
+			recipe.AddIngredient(ItemID.BottledWater, 1);
+			recipe.AddTile(TileID.Bottles);
+			recipe.Register();
 		}
     }
 }

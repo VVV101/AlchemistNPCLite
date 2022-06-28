@@ -42,15 +42,15 @@ namespace AlchemistNPCLite.Items.Misc
 		
 		public override void AddRecipes()
 		{
-			CreateRecipe()
-				.AddIngredient(null, "AlchemistCharmTier3")
-				.AddIngredient(ItemID.LunarBar, 10)
-				.AddIngredient(ItemID.FragmentSolar, 5)
-				.AddIngredient(ItemID.FragmentNebula, 5)
-				.AddIngredient(ItemID.FragmentVortex, 5)
-				.AddIngredient(ItemID.FragmentStardust, 5)
-				.AddTile(TileID.LunarCraftingStation)
-				.Register();
+			Recipe recipe = Recipe.Create(Item.type);
+			recipe.AddIngredient(null, "AlchemistCharmTier3");
+			recipe.AddIngredient(ItemID.LunarBar, 10);
+			recipe.AddIngredient(ItemID.FragmentSolar, 5);
+			recipe.AddIngredient(ItemID.FragmentNebula, 5);
+			recipe.AddIngredient(ItemID.FragmentVortex, 5);
+			recipe.AddIngredient(ItemID.FragmentStardust, 5);
+			recipe.AddTile(TileID.LunarCraftingStation);
+			recipe.Register();
 		}
 	}
 }

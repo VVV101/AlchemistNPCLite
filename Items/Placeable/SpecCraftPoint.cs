@@ -44,22 +44,22 @@ namespace AlchemistNPCLite.Items.Placeable
 
 		public override void AddRecipes()
 		{
-			CreateRecipe()
-				.AddIngredient(ItemID.HoneyDispenser)
-				.AddIngredient(ItemID.SteampunkBoiler)
-				.AddIngredient(ItemID.FleshCloningVaat)
-				.AddIngredient(ItemID.SkyMill)
-				.AddIngredient(ItemID.Solidifier)
-				.AddIngredient(ItemID.Keg)
-				.AddIngredient(ItemID.IceMachine)
-				.AddIngredient(ItemID.GlassKiln)
-				.AddIngredient(ItemID.LivingLoom)
-				.AddIngredient(ItemID.BoneWelder)
-				.AddIngredient(ItemID.WaterBucket)
-				.AddIngredient(ItemID.LavaBucket)
-				.AddIngredient(ItemID.HoneyBucket)
-				.AddTile(TileID.CrystalBall)
-				.Register();
+			Recipe recipe = Recipe.Create(Item.type);
+			recipe.AddIngredient(ItemID.HoneyDispenser);
+			recipe.AddIngredient(ItemID.SteampunkBoiler);
+			recipe.AddIngredient(ItemID.FleshCloningVaat);
+			recipe.AddIngredient(ItemID.SkyMill);
+			recipe.AddIngredient(ItemID.Solidifier);
+			recipe.AddIngredient(ItemID.Keg);
+			recipe.AddIngredient(ItemID.IceMachine);
+			recipe.AddIngredient(ItemID.GlassKiln);
+			recipe.AddIngredient(ItemID.LivingLoom);
+			recipe.AddIngredient(ItemID.BoneWelder);
+			recipe.AddIngredient(ItemID.WaterBucket);
+			recipe.AddIngredient(ItemID.LavaBucket);
+			recipe.AddIngredient(ItemID.HoneyBucket);
+			recipe.AddTile(TileID.CrystalBall);
+			recipe.Register();
         }
     }
 }

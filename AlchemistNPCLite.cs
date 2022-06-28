@@ -1,4 +1,4 @@
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using System.IO;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Graphics;
@@ -218,31 +218,31 @@ namespace AlchemistNPCLite
 
         public override void AddRecipes()
         {
-            CreateRecipe(ItemID.Sundial)
+            Recipe.Create(ItemID.Sundial)
                 .AddIngredient(ItemID.CelestialStone)
                 .AddIngredient(ItemID.GoldBar, 10)
                 .AddTile(TileID.TinkerersWorkbench)
                 .Register();
 
-            CreateRecipe(ItemID.Obsidian, 5)
+            Recipe.Create(ItemID.Obsidian, 5)
                 .AddIngredient(ItemID.StoneBlock, 10)
                 .AddCondition(Recipe.Condition.NearWater)
                 .AddCondition(Recipe.Condition.NearLava)
                 .Register();
 
-            CreateRecipe(ItemID.HoneyBlock, 5)
+            Recipe.Create(ItemID.HoneyBlock, 5)
                 .AddIngredient(ItemID.BottledHoney, 10)
                 .AddCondition(Recipe.Condition.NearWater)
                 .AddCondition(Recipe.Condition.NearHoney)
                 .Register();
 
-            CreateRecipe(ItemID.CrispyHoneyBlock, 5)
+            Recipe.Create(ItemID.CrispyHoneyBlock, 5)
                 .AddIngredient(ItemID.BottledHoney, 10)
                 .AddCondition(Recipe.Condition.NearLava)
                 .AddCondition(Recipe.Condition.NearHoney)
                 .Register();
 
-            CreateRecipe(ItemID.Stopwatch)
+            Recipe.Create(ItemID.Stopwatch)
                 .AddRecipeGroup("AlchemistNPCLite:AnyWatch")
                 .AddIngredient(ItemID.HermesBoots)
                 .AddIngredient(ItemID.Wire, 15)
@@ -250,7 +250,7 @@ namespace AlchemistNPCLite
                 .AddTile(TileID.TinkerersWorkbench)
                 .Register();
 
-            CreateRecipe(ItemID.DPSMeter)
+            Recipe.Create(ItemID.DPSMeter)
                 .AddRecipeGroup("AlchemistNPCLite:EvilBar", 10)
                 .AddRecipeGroup("AlchemistNPCLite:AnyWatch")
                 .AddIngredient(ItemID.Wire, 25)
@@ -258,7 +258,7 @@ namespace AlchemistNPCLite
                 .AddTile(TileID.TinkerersWorkbench)
                 .Register();
 
-            CreateRecipe(ItemID.LifeformAnalyzer)
+            Recipe.Create(ItemID.LifeformAnalyzer)
                 .AddIngredient(ItemID.TallyCounter)
                 .AddIngredient(ItemID.BlackLens)
                 .AddIngredient(ItemID.AntlionMandible)
@@ -271,20 +271,20 @@ namespace AlchemistNPCLite
                 .AddTile(TileID.TinkerersWorkbench)
                 .Register();
 
-            CreateRecipe(ItemID.PurificationPowder, 5)
+            Recipe.Create(ItemID.PurificationPowder, 5)
                 .AddIngredient(ItemID.Mushroom)
                 .AddIngredient(ItemID.Daybloom)
                 .AddTile(TileID.Bottles)
                 .Register();
 
-            CreateRecipe(ItemID.HallowedSeeds)
+            Recipe.Create(ItemID.HallowedSeeds)
                 .AddIngredient(ItemID.CorruptSeeds)
                 .AddIngredient(ItemID.PurificationPowder)
                 .AddIngredient(ItemID.PixieDust)
                 .AddTile(TileID.Bottles)
                 .Register();
 
-            CreateRecipe(ItemID.HallowedSeeds)
+            Recipe.Create(ItemID.HallowedSeeds)
                 .AddIngredient(ItemID.CrimsonSeeds)
                 .AddIngredient(ItemID.PurificationPowder)
                 .AddIngredient(ItemID.PixieDust)

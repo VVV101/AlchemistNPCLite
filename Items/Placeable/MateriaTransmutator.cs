@@ -42,16 +42,16 @@ namespace AlchemistNPCLite.Items.Placeable
 		
 		public override void AddRecipes()
 		{
-			Recipe recipe = CreateRecipe()
-				.AddIngredient(null, "PreHMPenny")
-				.AddIngredient(null, "HMCraftPound")
-				.AddIngredient(null, "SpecCraftPoint")
-				.AddIngredient(ItemID.ManaCrystal)
-				.AddIngredient(ItemID.DD2ElderCrystalStand)
-				.AddIngredient(ItemID.FragmentSolar, 10)
-				.AddIngredient(ItemID.FragmentNebula, 10)
-				.AddIngredient(ItemID.FragmentVortex, 10)
-				.AddIngredient(ItemID.FragmentStardust, 10);
+			Recipe recipe = Recipe.Create(Item.type);
+			recipe.AddIngredient(null, "PreHMPenny");
+			recipe.AddIngredient(null, "HMCraftPound");
+			recipe.AddIngredient(null, "SpecCraftPoint");
+			recipe.AddIngredient(ItemID.ManaCrystal);
+			recipe.AddIngredient(ItemID.DD2ElderCrystalStand);
+			recipe.AddIngredient(ItemID.FragmentSolar, 10);
+			recipe.AddIngredient(ItemID.FragmentNebula, 10);
+			recipe.AddIngredient(ItemID.FragmentVortex, 10);
+			recipe.AddIngredient(ItemID.FragmentStardust, 10);
             // IMPLEMENT WHEN WEAKREFERENCES FIXED
             /*
 			if (ModLoader.GetMod("ThoriumMod") != null)

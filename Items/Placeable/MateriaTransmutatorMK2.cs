@@ -47,8 +47,8 @@ namespace AlchemistNPCLite.Items.Placeable
 
 		public override void AddRecipes()
 		{
-			Recipe recipe = CreateRecipe()
-				.AddIngredient(Mod, "MateriaTransmutator");
+			Recipe recipe = Recipe.Create(Item.type);
+			recipe.AddIngredient(Mod, "MateriaTransmutator");
 			if(Calamity != null && Calamity.TryFind<ModItem>("DraedonsForge", out ModItem currItem)) {
 				recipe.AddIngredient(currItem.Type);
 			}

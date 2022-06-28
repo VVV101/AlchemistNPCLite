@@ -52,15 +52,15 @@ namespace AlchemistNPCLite.Items
 		/*
 		public override void AddRecipes()
 		{
-			CreateRecipe()
+			Recipe recipe = Recipe.Create(Item.type);
 			recipe.AddIngredient((ModLoader.GetMod("SpiritMod").ItemType("BismitePotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("SpiritMod").ItemType("RunePotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("SpiritMod").ItemType("SoulPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("SpiritMod").ItemType("SpiritPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("SpiritMod").ItemType("StarPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("SpiritMod").ItemType("TurtlePotion")), 1);
-				.AddTile(TileID.AlchemyTable)
-				.Register();
+			recipe.AddTile(TileID.AlchemyTable);
+			recipe.Register();
 		}
 		*/
     }

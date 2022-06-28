@@ -42,18 +42,18 @@ namespace AlchemistNPCLite.Items.Placeable
 
         public override void AddRecipes()
         {
-            CreateRecipe()
-            	.AddIngredient(ItemID.Bookcase)
-                .AddRecipeGroup("AlchemistNPCLite:AnyAnvil")
-                .AddRecipeGroup("AlchemistNPCLite:AnyForge")
-				.AddIngredient(ItemID.ImbuingStation)
-            	.AddIngredient(ItemID.CrystalBall)
-            	.AddIngredient(ItemID.Autohammer)
-				.AddIngredient(ItemID.BlendOMatic)
-            	.AddIngredient(ItemID.MeatGrinder)
-				.AddIngredient(ItemID.LihzahrdFurnace)
-            	.AddIngredient(ItemID.LunarCraftingStation)
-            	.Register();
+            Recipe recipe = Recipe.Create(Item.type);
+            recipe.AddIngredient(ItemID.Bookcase);
+            recipe.AddRecipeGroup("AlchemistNPCLite:AnyAnvil");
+            recipe.AddRecipeGroup("AlchemistNPCLite:AnyForge");
+			recipe.AddIngredient(ItemID.ImbuingStation);
+            recipe.AddIngredient(ItemID.CrystalBall);
+            recipe.AddIngredient(ItemID.Autohammer);
+			recipe.AddIngredient(ItemID.BlendOMatic);
+            recipe.AddIngredient(ItemID.MeatGrinder);
+			recipe.AddIngredient(ItemID.LihzahrdFurnace);
+            recipe.AddIngredient(ItemID.LunarCraftingStation);
+            recipe.Register();
         }
     }
 }
