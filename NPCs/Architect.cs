@@ -617,9 +617,7 @@ namespace AlchemistNPCLite.NPCs
                 {
                     if (NPC.downedGoblins)
                     {
-                    	shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("YewWood"));
-                    	shop.item[nextSlot].shopCustomPrice = 500;
-                    	nextSlot++;
+                    	addModItemToShop(ThoriumMod, "YewWood", 500, ref shop, ref nextSlot);
                     }
                 }
 				*/

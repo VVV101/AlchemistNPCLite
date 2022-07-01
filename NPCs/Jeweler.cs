@@ -339,12 +339,8 @@ namespace AlchemistNPCLite.NPCs
 					/*
                     if (ModLoader.GetMod("ThoriumMod") != null)
                     {
-                    	shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("Opal"));
-                    	shop.item[nextSlot].shopCustomPrice = 5000;
-                    	nextSlot++;
-                    	shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("Onyx"));
-                    	shop.item[nextSlot].shopCustomPrice = 5000;
-                    	nextSlot++;	
+                    	addModItemToShop(ThoriumMod, "Opal", 5000, ref shop, ref nextSlot);
+                    	addModItemToShop(ThoriumMod, "Onyx", 5000, ref shop, ref nextSlot);	
                     }
 					*/
                     shop.item[nextSlot].SetDefaults(ItemID.BandofStarpower);
@@ -384,45 +380,27 @@ namespace AlchemistNPCLite.NPCs
                     /*
                     if (ModLoader.GetMod("Tremor") != null)
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("Rupicide"));
-                        shop.item[nextSlot].shopCustomPrice = 5000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("Opal"));
-                        shop.item[nextSlot].shopCustomPrice = 30000;
-                        nextSlot++;
+                        addModItemToShop(Tremor, "Rupicide", 5000, ref shop, ref nextSlot);
+                        addModItemToShop(Tremor, "Opal", 30000, ref shop, ref nextSlot);
                         if (Main.hardMode)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("MagiumShard"));
-                            shop.item[nextSlot].shopCustomPrice = 7500;
-                            nextSlot++;
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("RuneBar"));
-                            shop.item[nextSlot].shopCustomPrice = 7500;
-                            nextSlot++;
+                            addModItemToShop(Tremor, "MagiumShard", 7500, ref shop, ref nextSlot);
+                            addModItemToShop(Tremor, "RuneBar", 7500, ref shop, ref nextSlot);
                         }
                         if (NPC.downedMoonlord)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Tremor").ItemType("LapisLazuli"));
-                            shop.item[nextSlot].shopCustomPrice = 150000;
-                            nextSlot++;
+                            addModItemToShop(Tremor, "LapisLazuli", 150000, ref shop, ref nextSlot);
                         }
                     }
                     if (ModLoader.GetMod("ThoriumMod") != null)
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("GraniteEnergyCore"));
-                        shop.item[nextSlot].shopCustomPrice = 10000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("BronzeFragments"));
-                        shop.item[nextSlot].shopCustomPrice = 10000;
-                        nextSlot++;
+                        addModItemToShop(ThoriumMod, "GraniteEnergyCore", 10000, ref shop, ref nextSlot);
+                        addModItemToShop(ThoriumMod, "BronzeFragments", 10000, ref shop, ref nextSlot);
                     }
                     if (ModLoader.GetMod("SpiritMod") != null)
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SpiritMod").ItemType("GraniteChunk"));
-                        shop.item[nextSlot].shopCustomPrice = 10000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SpiritMod").ItemType("MarbleChunk"));
-                        shop.item[nextSlot].shopCustomPrice = 10000;
-                        nextSlot++;
+                        addModItemToShop(SpiritMod, "GraniteChunk", 10000, ref shop, ref nextSlot);
+                        addModItemToShop(SpiritMod, "MarbleChunk", 10000, ref shop, ref nextSlot);
                     }
                     */
                     if (Main.hardMode)
@@ -459,9 +437,7 @@ namespace AlchemistNPCLite.NPCs
 					/*
                     if (ModLoader.GetMod("ThoriumMod") != null)
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("Mistletoe"));
-                        shop.item[nextSlot].shopCustomPrice = 50000;
-                        nextSlot++;
+                        addModItemToShop(ThoriumMod, "Mistletoe", 50000, ref shop, ref nextSlot);
                     }
 					*/
 					shop.item[nextSlot].SetDefaults(ItemID.SliceOfCake);
@@ -491,21 +467,14 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].SetDefaults(ItemID.PeaceCandle);
                     shop.item[nextSlot].shopCustomPrice = 50000;
                     nextSlot++;
-					// IMPLEMENT WHEN WEAKREFERENCES FIXED
-					/*
-                    if (ModLoader.GetMod("CalamityMod") != null)
+                    if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
                     {
                     	if (NPC.downedPlantBoss)
                     	{
-                    		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("TranquilityCandle"));
-                    		shop.item[nextSlot].shopCustomPrice = 100000;
-                    		nextSlot++;
-                    		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("ChaosCandle"));
-                    		shop.item[nextSlot].shopCustomPrice = 150000;
-                    		nextSlot++;
+                            addModItemToShop(Calamity, "TranquilityCandle", 100000, ref shop, ref nextSlot);
+                            addModItemToShop(Calamity, "ChaosCandle", 150000, ref shop, ref nextSlot);
                     	}
                     }
-					*/
                     shop.item[nextSlot].SetDefaults(ItemID.Spike);
                     shop.item[nextSlot].shopCustomPrice = 10000;
                     nextSlot++;
@@ -553,6 +522,12 @@ namespace AlchemistNPCLite.NPCs
                     }
                 }
             }
+        }
+                private void addModItemToShop(Mod mod, String itemName, int price, ref Chest shop, ref int nextSlot) {
+            if(mod.TryFind<ModItem>(itemName, out ModItem currItem))
+            shop.item[nextSlot].SetDefaults(currItem.Type);
+            shop.item[nextSlot].shopCustomPrice = price;
+            nextSlot++;
         }
     }
 }

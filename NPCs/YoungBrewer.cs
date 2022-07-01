@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Terraria;
 using Terraria.ID;
@@ -341,7 +342,8 @@ namespace AlchemistNPCLite.NPCs
                         nextSlot++;
                     }
                 }
-                if (ModLoader.GetMod("CalamityMod") != null)
+                */
+                if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
                 {
                     if (NPC.downedGolemBoss)
                     {
@@ -350,6 +352,8 @@ namespace AlchemistNPCLite.NPCs
                         nextSlot++;
                     }
                 }
+                // IMPLEMENT WHEN WEAKREFERENCES FIXED
+				/*
                 if (ModLoader.GetMod("MorePotions") != null)
                 {
                     if (Main.hardMode)
@@ -382,17 +386,7 @@ namespace AlchemistNPCLite.NPCs
                 {
                     if (NPC.downedBoss3)
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("FrostCoatingItem"));
-                        shop.item[nextSlot].shopCustomPrice = 5000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("ExplosiveCoatingItem"));
-                        shop.item[nextSlot].shopCustomPrice = 5000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("GorganCoatingItem"));
-                        shop.item[nextSlot].shopCustomPrice = 5000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("SporeCoatingItem"));
-                        shop.item[nextSlot].shopCustomPrice = 2500;
+                        addModItemToShop(ThoriumMod, "FrostCoatingItem", 5000, ref shop, ref nextSlot);addModItemToShop(ThoriumMod, "FrostCoatingItem", 5000, ref shop, ref nextSlot);extSlot].shopCustomPrice =addModItemToShop(ThoriumMod, "FrostCoatingItem", 5000, ref shop, ref nextSlot);extSlot].SetDefaults(ModLoaddModItemToShop(ThoriumMod, "FrostCoatingItem", 5000, ref shop, ref nextSlot);addModItemToShop(ThoriumMod, "FrostCoatingItem", 5000, ref shop, ref nextSlot);extSlot].shopCustomPrice = 2500;
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("ToxicCoatingItem"));
                         shop.item[nextSlot].shopCustomPrice = 2500;
@@ -400,26 +394,14 @@ namespace AlchemistNPCLite.NPCs
                     }
                     if (Main.hardMode)
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("GasContainer"));
-                        shop.item[nextSlot].shopCustomPrice = 200;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("CorrosionBeaker"));
-                        shop.item[nextSlot].shopCustomPrice = 250;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("CombustionFlask"));
-                        shop.item[nextSlot].shopCustomPrice = 250;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("NitrogenVial"));
-                        shop.item[nextSlot].shopCustomPrice = 250;
+                        addModItemToShop(ThoriumMod, "GasContainer", 200, ref shop, ref nextSlot);addModItemToShop(ThoriumMod, "GasContainer", 200, ref shop, ref nextSlot);extSlot].shopCustomPrice =addModItemToShop(ThoriumMod, "GasContainer", 200, ref shop, ref nextSlot);extSlot].SetDefaults(ModLoaddModItemToShop(ThoriumMod, "GasContainer", 200, ref shop, ref nextSlot);addModItemToShop(ThoriumMod, "GasContainer", 200, ref shop, ref nextSlot);extSlot].shopCustomPrice = 250;
                         nextSlot++;
                         shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("AphrodisiacVial"));
                         shop.item[nextSlot].shopCustomPrice = 250;
                         nextSlot++;
                         if (NPC.downedPlantBoss)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("PlasmaVial"));
-                            shop.item[nextSlot].shopCustomPrice = 350;
-                            nextSlot++;
+                            addModItemToShop(ThoriumMod, "PlasmaVial", 350, ref shop, ref nextSlot);
                         }
                     }
                 }
@@ -466,34 +448,32 @@ namespace AlchemistNPCLite.NPCs
                 {
                 	if (Main.hardMode)
                 	{
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("DragonfireFlask"));
-                		shop.item[nextSlot].shopCustomPrice = 20000;
-                		nextSlot++;
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("AAMod").ItemType("HydratoxinFlask"));
-                		shop.item[nextSlot].shopCustomPrice = 20000;
-                		nextSlot++;
+                		addModItemToShop(AAMod, "DragonfireFlask", 20000, ref shop, ref nextSlot);
+                		addModItemToShop(AAMod, "HydratoxinFlask", 20000, ref shop, ref nextSlot);
                 	}
                 }
                 if (ModLoader.GetMod("SpiritMod") != null)
                 {
                 	if (Main.hardMode)
                 	{
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("AcidVial"));
-                		shop.item[nextSlot].shopCustomPrice = 30000;
-                		nextSlot++;
-                	}
-                }
-                if (ModLoader.GetMod("CalamityMod") != null)
-                {
-                	if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
-                	{
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("CalamitasBrew"));
-                		shop.item[nextSlot].shopCustomPrice = 50000;
-                		nextSlot++;
+                		addModItemToShop(SpiritMod, "AcidVial", 30000, ref shop, ref nextSlot);
                 	}
                 }
 				*/
+                if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
+                {
+                	if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
+                	{
+                		addModItemToShop(Calamity, "CalamitasBrew", 50000, ref shop, ref nextSlot);
+                	}
+                }
             }
         }
+        private void addModItemToShop(Mod mod, String itemName, int price, ref Chest shop, ref int nextSlot) {
+            if(mod.TryFind<ModItem>(itemName, out ModItem currItem))
+            shop.item[nextSlot].SetDefaults(currItem.Type);
+            shop.item[nextSlot].shopCustomPrice = price;
+            nextSlot++;
+        }	
     }
 }

@@ -44,13 +44,13 @@ namespace AlchemistNPCLite.Items
 		
 		public override void AddRecipes()
 		{
-			CreateRecipe()
-				.AddIngredient(ItemID.ArcheryPotion, 1)
-				.AddIngredient(ItemID.AmmoReservationPotion, 1)
-				.AddIngredient(ItemID.WrathPotion, 1)
-				.AddIngredient(ItemID.RagePotion, 1)
-				.AddTile(TileID.AlchemyTable)
-				.Register();
+			Recipe recipe = Recipe.Create(Item.type);
+			recipe.AddIngredient(ItemID.ArcheryPotion, 1);
+			recipe.AddIngredient(ItemID.AmmoReservationPotion, 1);
+			recipe.AddIngredient(ItemID.WrathPotion, 1);
+			recipe.AddIngredient(ItemID.RagePotion, 1);
+			recipe.AddTile(TileID.AlchemyTable);
+			recipe.Register();
 		}
     }
 }

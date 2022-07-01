@@ -109,19 +109,20 @@ namespace AlchemistNPCLite
         // public override void UpdateEquips(ref bool wallSpeedBuff, ref bool tileSpeedBuff, ref bool tileRangeBuff)
         public override void UpdateEquips()
         {
-            // IMPLEMENT WHEN WEAKREFERENCES FIXED
-            /*
-            Mod Calamity = ModLoader.GetMod("CalamityMod");
+            ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
 			if(Calamity != null)
 			{
-				if (!Player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("HolyWrathBuff")) && AllDamage10) Player.GetDamage(DamageClass.Generic)+= 0.1f;
-				if (!Player.HasBuff(ModLoader.GetMod("CalamityMod").GetContent<>()) && AllDamage10) Player.GetDamage(DamageClass.Generic)+= 0.1f;
-				if (!Player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("ProfanedRageBuff")) && AllCrit10)
+                Calamity.TryFind<ModBuff>("HolyWrathBuff", out ModBuff buff);
+				if (buff != null && !Player.HasBuff(buff.Type) && AllDamage10) Player.GetDamage(DamageClass.Generic)+= 0.1f;
+                Calamity.TryFind<ModBuff>("ProfanedRageBuff", out buff);
+				if (buff != null && !Player.HasBuff(buff.Type) && AllCrit10)
 				{
 					Player.GetCritChance(DamageClass.Melee) += 10;
 					Player.GetCritChance(DamageClass.Ranged) += 10;
 					Player.GetCritChance(DamageClass.Magic) += 10;
 					Player.GetCritChance(DamageClass.Throwing) += 10;
+                    // IMPLEMENT WHEN WEAKREFERENCES FIXED
+                    /*
 					if (ModLoader.GetMod("ThoriumMod") != null)
 					{
 						ThoriumBoosts(Player);
@@ -130,58 +131,59 @@ namespace AlchemistNPCLite
 					{
 						RedemptionBoost(Player);
 					}
+                    */
 					Calamity.Call("AddRogueCrit", Player, 10);
 				}
-				if (!Player.HasBuff(ModContent.BuffType<Buffs.CalamityComb>()) && !Player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("Cadence")) && Regeneration) Player.lifeRegen += 4;
-				if (!Player.HasBuff(ModContent.BuffType<Buffs.CalamityComb>()) && !Player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("Cadence")) && Regeneration) Player.lifeRegen += 4;
-				if (!Player.HasBuff(ModContent.BuffType<Buffs.CalamityComb>()) && !Player.HasBuff(ModLoader.GetMod("CalamityMod").BuffType("Cadence")) && Lifeforce)
+                Calamity.TryFind<ModBuff>("CadancesGrace", out buff);
+				if (!Player.HasBuff(ModContent.BuffType<Buffs.CalamityComb>()) && buff != null && !Player.HasBuff(buff.Type) && Regeneration) Player.lifeRegen += 4;
+				if (!Player.HasBuff(ModContent.BuffType<Buffs.CalamityComb>()) && buff != null && !Player.HasBuff(buff.Type) && Regeneration) Player.lifeRegen += 4;
+				if (!Player.HasBuff(ModContent.BuffType<Buffs.CalamityComb>()) && buff != null && !Player.HasBuff(buff.Type) && Lifeforce)
 				{
 					Player.lifeForce = true;
 					Player.statLifeMax2 += Player.statLifeMax / 5 / 20 * 20;
 				}
 			}
-            if (ModLoader.GetMod("CalamityMod") == null)
+            if (Calamity == null)
             {
-
-            }
-			*/
-            //Add to if (ModLoader.GetMod("CalamityMod") == null)
-            if (AllDamage10) Player.GetDamage(DamageClass.Generic) += 0.1f;
-            if (AllCrit10)
-            {
-                Player.GetCritChance(DamageClass.Melee) += 10;
-                Player.GetCritChance(DamageClass.Ranged) += 10;
-                Player.GetCritChance(DamageClass.Magic) += 10;
-                Player.GetCritChance(DamageClass.Throwing) += 10;
-                // IMPLEMENT WHEN WEAKREFERENCES FIXED
-                /*
-                if (ModLoader.GetMod("ThoriumMod") != null)
+                if (AllDamage10) Player.GetDamage(DamageClass.Generic) += 0.1f;
+                if (AllCrit10)
                 {
-                    ThoriumBoosts(Player);
+                    Player.GetCritChance(DamageClass.Melee) += 10;
+                    Player.GetCritChance(DamageClass.Ranged) += 10;
+                    Player.GetCritChance(DamageClass.Magic) += 10;
+                    Player.GetCritChance(DamageClass.Throwing) += 10;
+                    // IMPLEMENT WHEN WEAKREFERENCES FIXED
+                    /*
+                    if (ModLoader.GetMod("ThoriumMod") != null)
+                    {
+                        ThoriumBoosts(Player);
+                    }
+                    if (ModLoader.GetMod("Redemption") != null)
+                    {
+                        RedemptionBoost(Player);
+                    }
+                    */
                 }
-                if (ModLoader.GetMod("Redemption") != null)
+                if (Regeneration) Player.lifeRegen += 4;
+                if (Lifeforce)
                 {
-                    RedemptionBoost(Player);
+                    Player.lifeForce = true;
+                    Player.statLifeMax2 += Player.statLifeMax / 5 / 20 * 20;
                 }
-                */
-            }
-            if (Regeneration) Player.lifeRegen += 4;
-            if (Lifeforce)
-            {
-                Player.lifeForce = true;
-                Player.statLifeMax2 += Player.statLifeMax / 5 / 20 * 20;
             }
 
             if (MS) Player.moveSpeed += 0.25f;
             if (Defense8) Player.statDefense += 8;
             if (DR10) Player.endurance += 0.1f;
         }
-        /*
         private void CalamityBoost(Player player)
         {
-            CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = Player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-            CalamityPlayer.throwingCrit += 10;
+            // CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = Player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
+            // CalamityPlayer.throwingCrit += 10;
+            player.GetCritChance<ThrowingDamageClass>() += 10;
         }
+        // IMPLEMENT WHEN WEAKREFERENCES FIXED
+        /*
         private void RedemptionBoost(Player player)
         {
             Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = Player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
@@ -207,24 +209,24 @@ namespace AlchemistNPCLite
                         return;
                     if (Player.bank.item[index1].stack > 0 && Player.bank.item[index1].type > 0 && (Player.bank.item[index1].buffType > 0 && !Player.bank.item[index1].CountsAsClass(DamageClass.Summon)) && Player.bank.item[index1].buffType != 90)
                     {
-                        // IMPLEMENT WHEN WEAKREFERENCES FIXED
-                        /*
-                        if (ModLoader.GetMod("CalamityMod") != null)
+                        ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
+                        if (Calamity != null)
                         {
-                        	if (Player.bank.item[index1].buffType == ModLoader.GetMod("CalamityMod").BuffType("AbsoluteRage"))
+                            Calamity.TryFind<ModBuff>("AbsoluteRage", out ModBuff buff);
+                        	if (Player.bank.item[index1].buffType == buff.Type)
                         	{
                         		for (int v = 0; v < 200; ++v)
                         		{
                         			NPC npc = Main.npc[v];
-                        			if (NPC.active && NPC.boss)
+                        			if (npc.active && npc.boss)
                         			{
                         				return;
                         			}
                         		}
-                        		CalamityRage(Player);
+                                // IMPLEMENT
+                        		// CalamityRage(Player);
                         	}
                         }
-						*/
                         int type2 = Player.bank.item[index1].buffType;
                         for (int index2 = 0; index2 < 22; ++index2)
                         {
@@ -306,9 +308,7 @@ namespace AlchemistNPCLite
                             {
                                 if (AlchemistCharmTier4 == true)
                                 {
-									// IMPLEMENT WHEN WEAKREFERENCES FIXED
-									/*
-                                    Mod Calamity = ModLoader.GetMod("CalamityMod");
+                                    ModLoader.TryGetMod("CalamityMod", out Calamity);
                                     if (Calamity != null)
                                     {
                                         if ((bool)Calamity.Call("Downed", "supreme calamitas"))
@@ -322,8 +322,7 @@ namespace AlchemistNPCLite
                                             --Player.bank.item[index1].stack;
                                         }
                                     }
-									*/
-                                    if (Main.rand.NextFloat() >= .25f)  //Replaced else if until weakreferences fixed
+                                    else if (Main.rand.NextFloat() >= .25f)
                                     {
                                     }
                                     else
@@ -426,14 +425,11 @@ namespace AlchemistNPCLite
                 }
             }
         }
-
-		// IMPLEMENT WHEN WEAKREFERENCES FIXED
-		/*
-        private void CalamityRage(Player player)
-        {
-            CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = Player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-            CalamityPlayer.rage = CalamityPlayer.rageMax;
-        }
-		*/
+        // IMPLEMENT
+        // private void CalamityRage(Player player)
+        // {
+        //     CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = Player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
+        //     CalamityPlayer.rage = CalamityPlayer.rageMax;
+        // }
     }
 }

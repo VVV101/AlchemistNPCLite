@@ -46,32 +46,25 @@ namespace AlchemistNPCLite.Items
 		
 		public override void AddRecipes()
 		{
-			CreateRecipe()
-				.AddIngredient(ItemID.Waterleaf, 1)
-				.AddIngredient(ItemID.Fireblossom, 1)
-				.AddIngredient(ItemID.Shiverthorn, 1)
-				.AddIngredient(ItemID.Deathweed, 1)
-				.AddIngredient(ItemID.Obsidian, 1)
-				.AddIngredient(ItemID.CrystalShard, 1)
-				.AddIngredient(ItemID.CursedFlame, 1)
-				.AddIngredient(ItemID.SoulofLight, 1)
-				.AddIngredient(ItemID.SoulofNight, 1)
-				.AddIngredient(ItemID.BottledWater, 1)
-				.AddTile(TileID.Bottles)
-				.Register();
-			CreateRecipe()
-				.AddIngredient(ItemID.Waterleaf, 1)
-				.AddIngredient(ItemID.Fireblossom, 1)
-				.AddIngredient(ItemID.Shiverthorn, 1)
-				.AddIngredient(ItemID.Deathweed, 1)
-				.AddIngredient(ItemID.Obsidian, 1)
-				.AddIngredient(ItemID.CrystalShard, 1)
-				.AddIngredient(ItemID.Ichor, 1)
-				.AddIngredient(ItemID.SoulofLight, 1)
-				.AddIngredient(ItemID.SoulofNight, 1)
-				.AddIngredient(ItemID.BottledWater, 1)
-				.AddTile(TileID.Bottles)
-				.Register();
+			Recipe recipeCursedFlame = Recipe.Create(Item.type);
+			recipeCursedFlame.AddIngredient(ItemID.Waterleaf, 1);
+			recipeCursedFlame.AddIngredient(ItemID.Fireblossom, 1);
+			recipeCursedFlame.AddIngredient(ItemID.Shiverthorn, 1);
+			recipeCursedFlame.AddIngredient(ItemID.Deathweed, 1);
+			recipeCursedFlame.AddIngredient(ItemID.Obsidian, 1);
+			recipeCursedFlame.AddIngredient(ItemID.CrystalShard, 1);
+			recipeCursedFlame.AddIngredient(ItemID.SoulofLight, 1);
+			recipeCursedFlame.AddIngredient(ItemID.SoulofNight, 1);
+			recipeCursedFlame.AddIngredient(ItemID.BottledWater, 1);
+			recipeCursedFlame.AddTile(TileID.Bottles);
+
+			Recipe recipeIchor = recipeCursedFlame.Clone();
+			
+			recipeCursedFlame.AddIngredient(ItemID.CursedFlame, 1);
+			recipeIchor.AddIngredient(ItemID.Ichor, 1);
+
+			recipeCursedFlame.Register();
+			recipeIchor.Register();
 		}
     }
 }

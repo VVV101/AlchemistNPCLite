@@ -33,20 +33,20 @@ namespace AlchemistNPCLite.Items.Misc
 			Item.rare = 8;
 		}
 		
-		public override void UpdateInventory(Player player)
-		{
-			(player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier2 = true;
-			(player.GetModPlayer<AlchemistNPCLitePlayer>()).DistantPotionsUse = true;
-		}
+        public override void UpdateInventory(Player player)
+        {
+            (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier2 = true;
+            (player.GetModPlayer<AlchemistNPCLitePlayer>()).DistantPotionsUse = true;
+        }
 		
 		public override void AddRecipes()
 		{
-			CreateRecipe()
-				.AddIngredient(null, "AlchemistCharmTier1")
-				.AddRecipeGroup("AlchemistNPCLite:EvilBar", 15)
-				.AddRecipeGroup("AlchemistNPCLite:EvilComponent", 20)
-				.AddTile(TileID.Anvils)
-				.Register();
+			Recipe recipe = Recipe.Create(Item.type);
+			recipe.AddIngredient(null, "AlchemistCharmTier1");
+			recipe.AddRecipeGroup("AlchemistNPCLite:EvilBar", 15);
+			recipe.AddRecipeGroup("AlchemistNPCLite:EvilComponent", 20);
+			recipe.AddTile(TileID.Anvils);
+			recipe.Register();
 		}
 	}
 }

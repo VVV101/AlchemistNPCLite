@@ -12,11 +12,16 @@ namespace AlchemistNPCLite.Items
 {
     public class HeartAttackPotion : ModItem
     {
-		// Probably removed
-		// public override bool Autoload(ref string name)
-		// {
-		// 	return ModLoader.GetMod("CalamityMod") != null;
-		// }
+		public override bool IsLoadingEnabled(Mod mod)
+        {
+			return false;
+			// IMPLEMENT, DISABLED UNTIL THEN
+			/*
+			ModLoader.TryGetMod("CalamityMod", out Calamity);
+			return Calamity != null;
+			*/
+        }
+
 		
 		public override void SetStaticDefaults()
 		{
@@ -45,20 +50,20 @@ namespace AlchemistNPCLite.Items
             Item.height = 30;
             Item.value = Item.sellPrice(0, 1, 0, 0);
             Item.rare = 10;
-			// IMPLEMENT WHEN WEAKREFERENCES FIXED
-			/*
-            Item.buffType = ModLoader.GetMod("CalamityMod").BuffType("AbsoluteRage");
-			*/
+			if(Calamity.TryFind<ModBuff>("AbsoluteRage", out ModBuff currBuff))
+            	Item.buffType = currBuff.Type;
             Item.buffTime = 18000;
         }
 		
-		// IMPLEMENT WHEN WEAKREFERENCES FIXED
-		/*
 		public bool CalamityModRevengeance
 		{
-			get { return CalamityMod.World.CalamityWorld.revenge; }
+			get {
+                if(ModLoader.TryGetMod("CalamityMod", out Mod Calamity)) {
+                    return (bool)Calamity.Call("GetDifficultyActive", "revengeance");
+                }
+                return false;
+            }
         }
-		*/
 		
 		public override bool CanUseItem(Player player)
 		{
@@ -70,20 +75,17 @@ namespace AlchemistNPCLite.Items
 					return false;
 				}
 			}
-			// IMPLEMENT WHEN WEAKREFERENCES FIXED
-			/*
 			if (CalamityModRevengeance)
 			{
 				return true;
 			}
-			*/
 			return false;
 		}
 		
-		// IMPLEMENT WHEN WEAKREFERENCES FIXED
-		/*
-		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
+		private Mod Calamity;
 		
+		// IMPLEMENT
+		/*
 		public override bool? UseItem(Player player)
 		{
 			CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = Player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();

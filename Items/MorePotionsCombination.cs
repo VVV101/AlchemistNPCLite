@@ -51,7 +51,7 @@ namespace AlchemistNPCLite.Items
 		/*
 		public override void AddRecipes()
 		{
-			CreateRecipe()
+			Recipe recipe = Recipe.Create(Item.type);
 			recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("CouragePotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("DawnPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("DuskPotion")), 1);
@@ -64,8 +64,8 @@ namespace AlchemistNPCLite.Items
 			recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("SummonersDroughtPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("SwiftHandsPotion")), 1);
 			recipe.AddIngredient((ModLoader.GetMod("MorePotions").ItemType("WarriorsDroughtPotion")), 1);
-				.AddTile(TileID.AlchemyTable)
-				.Register();
+			recipe.AddTile(TileID.AlchemyTable);
+			recipe.Register();
 		}
 		*/
     }

@@ -33,14 +33,14 @@ namespace AlchemistNPCLite.Items.Misc
 		
 		public override void AddRecipes()
 		{
-			CreateRecipe()
-				.AddIngredient(null, "LuckCharm")
-				.AddIngredient(ItemID.ShroomiteBar, 10)
-				.AddIngredient(ItemID.SoulofFright, 10)
-				.AddIngredient(ItemID.SoulofSight, 10)
-				.AddIngredient(ItemID.SoulofMight, 10)
-				.AddTile(TileID.MythrilAnvil)
-				.Register();
+			Recipe recipe = Recipe.Create(Item.type);
+			recipe.AddIngredient(null, "LuckCharm");
+			recipe.AddIngredient(ItemID.ShroomiteBar, 10);
+			recipe.AddIngredient(ItemID.SoulofFright, 10);
+			recipe.AddIngredient(ItemID.SoulofSight, 10);
+			recipe.AddIngredient(ItemID.SoulofMight, 10);
+			recipe.AddTile(TileID.MythrilAnvil);
+			recipe.Register();
 		}
 	}
 }

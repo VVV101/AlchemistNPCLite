@@ -3,22 +3,32 @@ using Terraria.ID;
 using Terraria.ModLoader;
 using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
+using Terraria.DataStructures;
 
 namespace AlchemistNPCLite.Buffs
 {
     public class CalamityComb : ModBuff
     {
-        //Possibly removed
-        // public override bool Autoload(ref string name, ref string texture)
-        // {
-        // 	return ModLoader.GetMod("CalamityMod") != null;
-        // }
+        private string[] BuffList = {
+                "CadancesGrace",
+                "YharimPower",
+                "TitanScale",
+                "FabsolVodkaBuff",
+                "Soaring",
+                "BoundingBuff"
+        };
+
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+			ModLoader.TryGetMod("CalamityMod", out Calamity);
+			return Calamity != null;
+        }
 
         public override void SetStaticDefaults()
         {
             DisplayName.SetDefault("Calamity Combination");
             Description.SetDefault("Perfect sum of Calamity buffs"
-            + "\nYharim's Stimulants, Cadence, Fabsol's Vodka, Soaring, Bounding and Titan Scale");
+            + "\nYharim's Stimulants, Cadance, Fabsol's Vodka, Soaring, Bounding and Titan Scale");
             Main.debuff[Type] = false;
             BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Комбинация Каламити");
@@ -29,14 +39,14 @@ namespace AlchemistNPCLite.Buffs
 
         public override void Update(Player player, ref int buffIndex)
         {
+
+            foreach (string BuffString in BuffList)
+            {
+                if (Calamity.TryFind<ModBuff>(BuffString, out ModBuff buff))
+                    player.buffImmune[buff.Type] = true;
+            }
             // IMPLEMENT WHEN WEAKREFERENCES FIXED
             /*
-			player.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("Cadence")] = true;
-			player.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("YharimPower")] = true;
-			player.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("TitanScale")] = true;
-			player.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("FabsolVodkaBuff")] = true;
-			player.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("Soaring")] = true;
-			player.buffImmune[ModLoader.GetMod("CalamityMod").BuffType("BoundingBuff")] = true;
 			if (ModLoader.GetMod("ThoriumMod") != null)
 			{
 				ThoriumBoosts(player);
@@ -45,26 +55,26 @@ namespace AlchemistNPCLite.Buffs
 			{
 				RedemptionBoost(player);
 			}
-			if (ModLoader.GetMod("CalamityMod") != null)
-			{
-				CalamityBoost(player, ref buffIndex);
-			}
 			*/
+            if (ModLoader.GetMod("CalamityMod") != null)
+            {
+                CalamityBoost(player, ref buffIndex);
+            }
         }
+
+
+        private void CalamityBoost(Player player, ref int buffIndex)
+        {
+            foreach (string BuffString in BuffList)
+            {
+                if (Calamity.TryFind<ModBuff>(BuffString, out ModBuff buff))
+                    buff.Update(player, ref buffIndex);
+            }
+        }
+        private Mod Calamity;
 
         // IMPLEMENT WHEN WEAKREFERENCES FIXED
         /*
-		private void CalamityBoost(Player player, ref int buffIndex)
-        {
-			Calamity.GetBuff("Cadence").Update(player, ref buffIndex);
-			Calamity.GetBuff("YharimPower").Update(player, ref buffIndex);
-			Calamity.GetBuff("TitanScale").Update(player, ref buffIndex);
-			Calamity.GetBuff("FabsolVodkaBuff").Update(player, ref buffIndex);
-			Calamity.GetBuff("Soaring").Update(player, ref buffIndex);
-			Calamity.GetBuff("BoundingBuff").Update(player, ref buffIndex);
-        }
-		private readonly Mod Calamity = ModLoader.GetMod("CalamityMod");
-		
 		private void RedemptionBoost(Player player)
         {
 			Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();

@@ -1,4 +1,5 @@
 using System.Linq;
+using System;
 using Terraria;
 using Terraria.ID;
 using Terraria.GameContent.Events;
@@ -362,14 +363,14 @@ namespace AlchemistNPCLite.NPCs
             	    return EntryM18;
             	}
             }
-            if (ModLoader.GetMod("CalamityModMusic") != null)
+            */
+            if (ModLoader.TryGetMod("CalamityModMusic", out Mod CalamityMusic))
             {
             	if (Main.rand.Next(15) == 0)
             	{
             	    return EntryM17;
             	}
             }
-            */
             switch (Main.rand.Next(9))
             {
                 case 0:
@@ -621,191 +622,119 @@ namespace AlchemistNPCLite.NPCs
             }
             if (S2)
             {
-                // IMPLEMENT WHEN WEAKREFERENCES FIXED
-                /*
-                Mod Calamity = ModLoader.GetMod("CalamityMod");
-                Mod CalamityMusic = ModLoader.GetMod("CalamityModMusic");
+                ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
+                ModLoader.TryGetMod("CalamityModMusic", out Mod CalamityMusic);
                 if (Calamity != null && CalamityMusic != null)
                 {
                     if ((bool)Calamity.Call("Downed", "desert scourge"))
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("DesertScourgeMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("SunkenSeaMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
+                        addModItemToShop(CalamityMusic, "DesertScourgeMusicbox", 150000, ref shop, ref nextSlot);
+                        addModItemToShop(CalamityMusic, "SunkenSeaMusicbox", 150000, ref shop, ref nextSlot);
                     }
                     if ((bool)Calamity.Call("Downed", "crabulon"))
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("CrabulonMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
+                        addModItemToShop(CalamityMusic, "CrabulonMusicbox", 150000, ref shop, ref nextSlot);
                     }
                     if ((bool)Calamity.Call("Downed", "hive mind"))
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("HiveMindMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
+                        addModItemToShop(CalamityMusic, "HiveMindMusicbox", 150000, ref shop, ref nextSlot);
                     }
                     if ((bool)Calamity.Call("Downed", "perforators"))
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("PerforatorMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
+                        addModItemToShop(CalamityMusic, "PerforatorMusicbox", 150000, ref shop, ref nextSlot);
                     }
                     if ((bool)Calamity.Call("Downed", "slime god"))
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("SlimeGodMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("CragMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
+                        addModItemToShop(CalamityMusic, "SlimeGodMusicbox", 150000, ref shop, ref nextSlot);
+                        addModItemToShop(CalamityMusic, "CragMusicbox", 150000, ref shop, ref nextSlot);
                     }
-                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("SirenIdleMusicbox"));
-                    shop.item[nextSlot].shopCustomPrice = 150000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("SulphurousMusicbox"));
-                    shop.item[nextSlot].shopCustomPrice = 150000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("HigherAbyssMusicbox"));
-                    shop.item[nextSlot].shopCustomPrice = 150000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("AbyssLowerMusicbox"));
-                    shop.item[nextSlot].shopCustomPrice = 150000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("VoidMusicbox"));
-                    shop.item[nextSlot].shopCustomPrice = 150000;
-                    nextSlot++;
+                    addModItemToShop(CalamityMusic, "SirenIdleMusicbox", 150000, ref shop, ref nextSlot);
+                    addModItemToShop(CalamityMusic, "SulphurousMusicbox", 150000, ref shop, ref nextSlot);
+                    addModItemToShop(CalamityMusic, "HigherAbyssMusicbox", 150000, ref shop, ref nextSlot);
+                    addModItemToShop(CalamityMusic, "AbyssLowerMusicbox", 150000, ref shop, ref nextSlot);
+                    addModItemToShop(CalamityMusic, "VoidMusicbox", 150000, ref shop, ref nextSlot);
                     if ((bool)Calamity.Call("Downed", "cryogen"))
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("CryogenMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
+                        addModItemToShop(CalamityMusic, "CryogenMusicbox", 150000, ref shop, ref nextSlot);
                     }
                     if ((bool)Calamity.Call("Downed", "aquatic scourge"))
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("AquaticScourgeMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
+                        addModItemToShop(CalamityMusic, "AquaticScourgeMusicbox", 150000, ref shop, ref nextSlot);
                     }
                     if ((bool)Calamity.Call("Downed", "brimstone elemental"))
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("BrimmyMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
+                        addModItemToShop(CalamityMusic, "BrimmyMusicbox", 150000, ref shop, ref nextSlot);
                     }
                     if ((bool)Calamity.Call("Downed", "calamitas doppelganger"))
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("CalamitasMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("CalamityMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
+                        addModItemToShop(CalamityMusic, "CalamitasMusicbox", 150000, ref shop, ref nextSlot);
+                        addModItemToShop(CalamityMusic, "CalamityMusicbox", 150000, ref shop, ref nextSlot);
                     }
                     if ((bool)Calamity.Call("Downed", "leviathan"))
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("SirenMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("LeviathanMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
+                        addModItemToShop(CalamityMusic, "SirenMusicbox", 150000, ref shop, ref nextSlot);
+                        addModItemToShop(CalamityMusic, "LeviathanMusicbox", 150000, ref shop, ref nextSlot);
                     }
                     if ((bool)Calamity.Call("Downed", "astrum aureus"))
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("AstralMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("AstrageldonMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
+                        addModItemToShop(CalamityMusic, "AstralMusicbox", 150000, ref shop, ref nextSlot);
+                        addModItemToShop(CalamityMusic, "AstrageldonMusicbox", 150000, ref shop, ref nextSlot);
                     }
                     if ((bool)Calamity.Call("Downed", "astrum deus"))
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("AstrumDeusMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
+                        addModItemToShop(CalamityMusic, "AstrumDeusMusicbox", 150000, ref shop, ref nextSlot);
                     }
                     if ((bool)Calamity.Call("Downed", "plaguebringer goliath"))
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("PlaguebringerMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
+                        addModItemToShop(CalamityMusic, "PlaguebringerMusicbox", 150000, ref shop, ref nextSlot);
                     }
                     if ((bool)Calamity.Call("Downed", "ravager"))
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("RavagerMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
+                        addModItemToShop(CalamityMusic, "RavagerMusicbox", 150000, ref shop, ref nextSlot);
                     }
                     if ((bool)Calamity.Call("Downed", "profaned guardians"))
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("ProfanedGuardianMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
+                        addModItemToShop(CalamityMusic, "ProfanedGuardianMusicbox", 150000, ref shop, ref nextSlot);
                     }
                     if ((bool)Calamity.Call("Downed", "providence"))
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("ProvidenceMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 250000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("StormWeaverMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("CeaselessVoidMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("SignusMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
+                        addModItemToShop(CalamityMusic, "ProvidenceMusicbox", 250000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)Calamity.Call("Downed", "stormweaver"))
+                    {
+                        addModItemToShop(CalamityMusic, "StormWeaverMusicbox", 150000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)Calamity.Call("Downed", "ceaselessvoid"))
+                    {
+                        addModItemToShop(CalamityMusic, "CeaselessVoidMusicbox", 150000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)Calamity.Call("Downed", "signus"))
+                    {
+                        addModItemToShop(CalamityMusic, "SignusMusicbox", 150000, ref shop, ref nextSlot);
                     }
                     if ((bool)Calamity.Call("Downed", "polterghast"))
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("PolterghastMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 300000;
-                        nextSlot++;
+                        addModItemToShop(CalamityMusic, "PolterghastMusicbox", 300000, ref shop, ref nextSlot);
                     }
                     if ((bool)Calamity.Call("Downed", "dog"))
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("DoGMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 500000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("DoGP2Musicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 500000;
-                        nextSlot++;
+                        addModItemToShop(CalamityMusic, "DoGMusicbox", 500000, ref shop, ref nextSlot);
+                        addModItemToShop(CalamityMusic, "DoGP2Musicbox", 500000, ref shop, ref nextSlot);
                     }
                     if ((bool)Calamity.Call("Downed", "yharon"))
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("Yharon1Musicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 500000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("Yharon2Musicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 500000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("Yharon3Musicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 500000;
-                        nextSlot++;
+                        addModItemToShop(CalamityMusic, "Yharon1Musicbox", 500000, ref shop, ref nextSlot);
+                        addModItemToShop(CalamityMusic, "Yharon2Musicbox", 500000, ref shop, ref nextSlot);
+                        addModItemToShop(CalamityMusic, "Yharon3Musicbox", 500000, ref shop, ref nextSlot);
                     }
                     if ((bool)Calamity.Call("Downed", "supreme calamitas"))
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("SCalGMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 500000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("SCalLMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 500000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("SCalEMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 500000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("CalamityModMusic").ItemType("SCalAMusicbox"));
-                        shop.item[nextSlot].shopCustomPrice = 500000;
-                        nextSlot++;
+                        addModItemToShop(CalamityMusic, "SCalGMusicbox", 500000, ref shop, ref nextSlot);
+                        addModItemToShop(CalamityMusic, "SCalLMusicbox", 500000, ref shop, ref nextSlot);
+                        addModItemToShop(CalamityMusic, "SCalEMusicbox", 500000, ref shop, ref nextSlot);
+                        addModItemToShop(CalamityMusic, "SCalAMusicbox", 500000, ref shop, ref nextSlot);
                     }
                 }
-				*/
             }
             if (S3)
             {
@@ -818,37 +747,33 @@ namespace AlchemistNPCLite.NPCs
                 {
                     if (ThoriumModDownedGTBird)
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("ThunderBirdMusicBox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
+                        addModItemToShop(ThoriumMod, "ThunderBirdMusicBox", 150000, ref shop, ref nextSlot);
                     }
                     if (ThoriumModDownedViscount)
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("ViscountMusicBox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
+                        addModItemToShop(ThoriumMod, "ViscountMusicBox", 150000, ref shop, ref nextSlot);
                     }
                     if (ThoriumModDownedBoreanStrider)
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("BoreanStriderMusicBox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
+                        addModItemToShop(ThoriumMod, "BoreanStriderMusicBox", 150000, ref shop, ref nextSlot);
                     }
                     if (ThoriumModDownedFallenBeholder)
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("FallenBeholderMusicBox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
+                        addModItemToShop(ThoriumMod, "FallenBeholderMusicBox", 150000, ref shop, ref nextSlot);
                     }
                     if (ThoriumModDownedAbyssion)
                     {
-                        shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("DepthsMusicBox"));
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
+                        addModItemToShop(ThoriumMod, "DepthsMusicBox", 150000, ref shop, ref nextSlot);
                     }
                 }
 				*/
             }
         }
+        private void addModItemToShop(Mod mod, String itemName, int price, ref Chest shop, ref int nextSlot) {
+            if(mod.TryFind<ModItem>(itemName, out ModItem currItem))
+            shop.item[nextSlot].SetDefaults(currItem.Type);
+            shop.item[nextSlot].shopCustomPrice = price;
+            nextSlot++;
+        }	
     }
 }

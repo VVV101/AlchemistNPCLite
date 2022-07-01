@@ -1,3 +1,4 @@
+using System;
 using System.Linq;
 using Terraria;
 using Terraria.ID;
@@ -270,7 +271,7 @@ namespace AlchemistNPCLite.NPCs
             text.SetDefault("Кemember Manager, Treasure Bags are valuable but not everything comes inside them. That mutant man can help you get a boss's most elusive drops.");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Помни, Управляющий, хотя Сумки с Сокровищами ценны, но не всё может найтись внутри. Мутант может помочь тебе добыть редчайший лут с боссов.");
             LocalizationLoader.AddTranslation(text);
-			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
+            NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             {
                 Velocity = -1f,
                 Direction = -1
@@ -281,12 +282,12 @@ namespace AlchemistNPCLite.NPCs
             NPC.Happiness.SetBiomeAffection<SnowBiome>(AffectionLevel.Love);
             NPC.Happiness.SetBiomeAffection<UndergroundBiome>(AffectionLevel.Dislike);
 
-            NPC.Happiness.SetNPCAffection(NPCID.Cyborg,AffectionLevel.Love);
-            NPC.Happiness.SetNPCAffection(NPCID.Steampunker,AffectionLevel.Like);
-            NPC.Happiness.SetNPCAffection(NPCID.Clothier,AffectionLevel.Dislike);
+            NPC.Happiness.SetNPCAffection(NPCID.Cyborg, AffectionLevel.Love);
+            NPC.Happiness.SetNPCAffection(NPCID.Steampunker, AffectionLevel.Like);
+            NPC.Happiness.SetNPCAffection(NPCID.Clothier, AffectionLevel.Dislike);
         }
-		
-		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+
+        public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
@@ -325,9 +326,9 @@ namespace AlchemistNPCLite.NPCs
             string Carmen = Language.GetTextValue("Mods.AlchemistNPCLite.Carmen");
 
             return new List<string>() {
-				Angela,
+                Angela,
                 Carmen
-			};
+            };
         }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)
@@ -434,10 +435,9 @@ namespace AlchemistNPCLite.NPCs
             string EntryO34 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryO34");
             string EntryO35 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryO35");
             string EntryO36 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryO36");
-            // IMPLEMENT WHEN WEAKREFERENCES FIXED
-            /*
-            Mod Calamity = ModLoader.GetMod("CalamityMod");
-            */
+
+            ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
+
             if (Main.bloodMoon)
             {
                 switch (Main.rand.Next(3))
@@ -473,8 +473,6 @@ namespace AlchemistNPCLite.NPCs
                     return EntryO8;
                 }
             }
-            // IMPLEMENT WHEN WEAKREFERENCES FIXED
-            /*
             if (Calamity != null && NPC.downedBoss3)
             {
             	if (Main.rand.Next(7) == 0)
@@ -482,7 +480,6 @@ namespace AlchemistNPCLite.NPCs
             		return EntryO17;
             	} 
             }
-            */
             if (NPC.downedPlantBoss)
             {
                 if (Main.rand.Next(7) == 0)
@@ -497,8 +494,6 @@ namespace AlchemistNPCLite.NPCs
                     return EntryO20;
                 }
             }
-            // IMPLEMENT WHEN WEAKREFERENCES FIXED
-            /*
             if (Calamity != null && NPC.downedMoonlord)
             {
             	if (Main.rand.Next(7) == 0)
@@ -506,6 +501,8 @@ namespace AlchemistNPCLite.NPCs
             		return EntryO18;
             	} 
             }
+            // IMPLEMENT WHEN WEAKREFERENCES FIXED
+            /*
             if (ModLoader.GetMod("ThoriumMod") != null)
             {
             	if (Main.rand.Next(6) == 0)
@@ -536,8 +533,6 @@ namespace AlchemistNPCLite.NPCs
             {
                 return EntryO21;
             }
-            // IMPLEMENT WHEN WEAKREFERENCES FIXED
-            /*
             if (Calamity != null && Main.hardMode)
             {
                 if (Main.rand.Next(5) == 0 && (bool)Calamity.Call("Downed", "plaguebringer goliath"))
@@ -569,7 +564,8 @@ namespace AlchemistNPCLite.NPCs
                     return EntryO33;
                 }
             }
-
+            // IMPLEMENT WHEN WEAKREFERENCES FIXED
+            /*
             if (ModLoader.GetMod("ThoriumMod") != null && Main.hardMode)
             {
                 if (Main.rand.Next(5) == 0 && ThoriumModDownedFallenBeholder)
@@ -697,7 +693,7 @@ namespace AlchemistNPCLite.NPCs
                 }
                 if (Main.expertMode)
                 {
-                    if(!ShopChangeUIO.visible) ShopChangeUIO.timeStart = Main.GameUpdateCount;
+                    if (!ShopChangeUIO.visible) ShopChangeUIO.timeStart = Main.GameUpdateCount;
                     ShopChangeUIO.visible = true;
                 }
             }
@@ -1050,10 +1046,7 @@ namespace AlchemistNPCLite.NPCs
 
         public override void SetupShop(Chest shop, ref int nextSlot)
         {
-            // IMPLEMENT WHEN WEAKREFERENCES FIXED
-            /*
-            Mod Calamity = ModLoader.GetMod("CalamityMod");
-			*/
+            ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
             if (Shop1)
             {
                 shop.item[nextSlot].SetDefaults(ItemID.Lens);
@@ -1174,197 +1167,123 @@ namespace AlchemistNPCLite.NPCs
                 /*
                 if (ModLoader.GetMod("ThoriumMod") != null)
                 {
-                	shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("Petal"));
-                	shop.item[nextSlot].shopCustomPrice = 10000;
-                	nextSlot++;
+                	addModItemToShop(ThoriumMod, "Petal", 10000, ref shop, ref nextSlot);
                 	if (NPC.downedMoonlord)
                 	{
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("WhiteDwarfFragment"));
-                		shop.item[nextSlot].shopCustomPrice = 100000;
-                		nextSlot++;
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("CometFragment"));
-                		shop.item[nextSlot].shopCustomPrice = 100000;
-                		nextSlot++;
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("CelestialFragment"));
-                		shop.item[nextSlot].shopCustomPrice = 100000;
-                		nextSlot++;
+                		addModItemToShop(ThoriumMod, "WhiteDwarfFragment", 100000, ref shop, ref nextSlot);
+                		addModItemToShop(ThoriumMod, "CometFragment", 100000, ref shop, ref nextSlot);
+                		addModItemToShop(ThoriumMod, "CelestialFragment", 100000, ref shop, ref nextSlot);
                 	}
                 	if (NPC.downedGolemBoss)
                 	{
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("BrokenHeroFragment"));
-                		shop.item[nextSlot].shopCustomPrice = 250000;
-                		nextSlot++;
+                		addModItemToShop(ThoriumMod, "BrokenHeroFragment", 250000, ref shop, ref nextSlot);
                 	}
                 }
                 if (ModLoader.GetMod("SpiritMod") != null)
                 {
                 	if (NPC.downedGolemBoss)
                 	{
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("BrokenParts"));
-                		shop.item[nextSlot].shopCustomPrice = 500000;
-                		nextSlot++;
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("SpiritMod").ItemType("BrokenStaff"));
-                		shop.item[nextSlot].shopCustomPrice = 500000;
-                		nextSlot++;
+                		addModItemToShop(SpiritMod, "BrokenParts", 500000, ref shop, ref nextSlot);
+                		addModItemToShop(SpiritMod, "BrokenStaff", 500000, ref shop, ref nextSlot);
                 	}
                 }
                 if (ModLoader.GetMod("LithosArmory") != null)
                 {
                 	if (NPC.downedGolemBoss)
                 	{
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("LithosArmory").ItemType("BrokenHeroFlail"));
-                		shop.item[nextSlot].shopCustomPrice = 500000;
-                		nextSlot++;
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("LithosArmory").ItemType("BrokenHeroGreatbow"));
-                		shop.item[nextSlot].shopCustomPrice = 500000;
-                		nextSlot++;
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("LithosArmory").ItemType("BrokenHeroShotgun"));
-                		shop.item[nextSlot].shopCustomPrice = 500000;
-                		nextSlot++;
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("LithosArmory").ItemType("BrokenHeroSling"));
-                		shop.item[nextSlot].shopCustomPrice = 500000;
-                		nextSlot++;
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("LithosArmory").ItemType("BrokenHeroSpear"));
-                		shop.item[nextSlot].shopCustomPrice = 500000;
-                		nextSlot++;
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("LithosArmory").ItemType("BrokenHeroWand"));
-                		shop.item[nextSlot].shopCustomPrice = 500000;
-                		nextSlot++;
-                	}
-                }
-                if (Calamity != null)
-                {
-                	if ((bool)Calamity.Call("Downed", "hive mind"))
-                	{
-                	shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("TrueShadowScale"));
-                	shop.item[nextSlot].shopCustomPrice = 20000;
-                	nextSlot++;
-                	}
-                	if ((bool)Calamity.Call("Downed", "perforators"))
-                	{
-                	shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BloodSample"));
-                	shop.item[nextSlot].shopCustomPrice = 20000;
-                	nextSlot++;
-                	}
-                	if ((bool)Calamity.Call("Downed", "slime god"))
-                	{
-                	shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("EbonianGel"));
-                	shop.item[nextSlot].shopCustomPrice = 25000;
-                	nextSlot++;
-                	shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("PurifiedGel"));
-                	shop.item[nextSlot].shopCustomPrice = 30000;
-                	nextSlot++;
-                	}
-                	if (NPC.downedMechBoss2)
-                	{
-                	shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BlightedLens"));
-                	shop.item[nextSlot].shopCustomPrice = 150000;
-                	nextSlot++;
-                	}
-                	if ((bool)Calamity.Call("Downed", "calamitas doppelganger"))
-                	{
-                	shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("UnholyCore"));
-                	shop.item[nextSlot].shopCustomPrice = 100000;
-                	nextSlot++;
-                	}
-                	if (NPC.downedPlantBoss || (bool)Calamity.Call("Downed", "cryogen"))
-                	{
-                	shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("EssenceofEleum"));
-                	shop.item[nextSlot].shopCustomPrice = 25000;
-                	nextSlot++; 
-                	}
-                	if (NPC.downedPlantBoss || (bool)Calamity.Call("Downed", "aquatic scourge"))
-                	{
-                	shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("EssenceofCinder"));
-                	shop.item[nextSlot].shopCustomPrice = 25000;
-                	nextSlot++;
-                	}
-                	if (NPC.downedPlantBoss || (bool)Calamity.Call("Downed", "brimstone elemental"))
-                	{
-                	shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("EssenceofChaos"));
-                	shop.item[nextSlot].shopCustomPrice = 25000;
-                	nextSlot++;
-                	}
-                	if (NPC.downedPlantBoss)
-                	{
-                	shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("Tenebris"));
-                	shop.item[nextSlot].shopCustomPrice = 30000;
-                	nextSlot++;
-                	shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("Lumenite"));
-                	shop.item[nextSlot].shopCustomPrice = 50000;
-                	nextSlot++;
-                	shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("DepthCells"));
-                	shop.item[nextSlot].shopCustomPrice = 30000;
-                	nextSlot++;
-                	}
-                	if ((bool)Calamity.Call("Downed", "astrum aureus"))
-                	{
-                	shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstralJelly"));
-                	shop.item[nextSlot].shopCustomPrice = 50000;
-                	nextSlot++;
-                	shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("Stardust"));
-                	shop.item[nextSlot].shopCustomPrice = 10000;
-                	nextSlot++;
-                	}
-                	if ((bool)Calamity.Call("Downed", "leviathan"))
-                	{
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("LivingShard"));
-                		shop.item[nextSlot].shopCustomPrice = 30000;
-                		nextSlot++;
-                	}
-                	if (NPC.downedPlantBoss)
-                	{
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("SolarVeil"));
-                		shop.item[nextSlot].shopCustomPrice = 50000;
-                		nextSlot++;
-                	}
-                	if ((bool)Calamity.Call("Downed", "ravager"))
-                	{
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BarofLife"));
-                		shop.item[nextSlot].shopCustomPrice = 100000;
-                		nextSlot++;
-                	}
-                	if ((bool)Calamity.Call("Downed", "astrum deus"))
-                	{
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("MeldBlob"));
-                		shop.item[nextSlot].shopCustomPrice = 10000;
-                		nextSlot++;
-                	}
-                	if ((bool)Calamity.Call("Downed", "profaned guardians"))
-                	{
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("UnholyEssence"));
-                		shop.item[nextSlot].shopCustomPrice = 50000;
-                		nextSlot++;
-                	}
-                	if ((bool)Calamity.Call("Downed", "polterghast"))
-                	{
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BloodOrb"));
-                		shop.item[nextSlot].shopCustomPrice = 50000;
-                		nextSlot++;
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("Phantoplasm"));
-                		shop.item[nextSlot].shopCustomPrice = 100000;
-                		nextSlot++;
-                	}
-                	if ((bool)Calamity.Call("Downed", "dog") && AlchemistNPCLiteWorld.downedDOGPumpking)
-                	{
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("NightmareFuel"));
-                		shop.item[nextSlot].shopCustomPrice = 120000;
-                		nextSlot++;			
-                	}
-                	if ((bool)Calamity.Call("Downed", "dog") && AlchemistNPCLiteWorld.downedDOGIceQueen)
-                	{
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("EndothermicEnergy"));
-                		shop.item[nextSlot].shopCustomPrice = 120000;
-                		nextSlot++;
-                	}
-                	if ((bool)Calamity.Call("Downed", "buffed mothron"))
-                	{
-                		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("DarksunFragment"));
-                		shop.item[nextSlot].shopCustomPrice = 150000;
-                		nextSlot++;
+                		addModItemToShop(LithosArmory, "BrokenHeroFlail", 500000, ref shop, ref nextSlot);
+                		addModItemToShop(LithosArmory, "BrokenHeroGreatbow", 500000, ref shop, ref nextSlot);
+                		addModItemToShop(LithosArmory, "BrokenHeroShotgun", 500000, ref shop, ref nextSlot);
+                		addModItemToShop(LithosArmory, "BrokenHeroSling", 500000, ref shop, ref nextSlot);
+                		addModItemToShop(LithosArmory, "BrokenHeroSpear", 500000, ref shop, ref nextSlot);
+                		addModItemToShop(LithosArmory, "BrokenHeroWand", 500000, ref shop, ref nextSlot);
                 	}
                 }
 				*/
+                if (Calamity != null)
+                {
+                    if ((bool)Calamity.Call("Downed", "hive mind"))
+                    {
+                        addModItemToShop(Calamity, "TrueShadowScale", 20000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)Calamity.Call("Downed", "perforators"))
+                    {
+                        addModItemToShop(Calamity, "BloodSample", 20000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)Calamity.Call("Downed", "slime god"))
+                    {
+                        addModItemToShop(Calamity, "EbonianGel", 25000, ref shop, ref nextSlot);
+                        addModItemToShop(Calamity, "PurifiedGel", 30000, ref shop, ref nextSlot);
+                    }
+                    if (NPC.downedMechBoss2)
+                    {
+                        addModItemToShop(Calamity, "BlightedLens", 150000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)Calamity.Call("Downed", "calamitas doppelganger"))
+                    {
+                        addModItemToShop(Calamity, "UnholyCore", 100000, ref shop, ref nextSlot);
+                    }
+                    if (NPC.downedPlantBoss || (bool)Calamity.Call("Downed", "cryogen"))
+                    {
+                        addModItemToShop(Calamity, "EssenceofEleum", 25000, ref shop, ref nextSlot);
+                    }
+                    if (NPC.downedPlantBoss || (bool)Calamity.Call("Downed", "aquatic scourge"))
+                    {
+                        addModItemToShop(Calamity, "EssenceofCinder", 25000, ref shop, ref nextSlot);
+                    }
+                    if (NPC.downedPlantBoss || (bool)Calamity.Call("Downed", "brimstone elemental"))
+                    {
+                        addModItemToShop(Calamity, "EssenceofChaos", 25000, ref shop, ref nextSlot);
+                    }
+                    if (NPC.downedPlantBoss)
+                    {
+                        addModItemToShop(Calamity, "Tenebris", 30000, ref shop, ref nextSlot);
+                        addModItemToShop(Calamity, "Lumenite", 50000, ref shop, ref nextSlot);
+                        addModItemToShop(Calamity, "DepthCells", 30000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)Calamity.Call("Downed", "astrum aureus"))
+                    {
+                        addModItemToShop(Calamity, "AstralJelly", 50000, ref shop, ref nextSlot);
+                        addModItemToShop(Calamity, "Stardust", 10000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)Calamity.Call("Downed", "leviathan"))
+                    {
+                        addModItemToShop(Calamity, "LivingShard", 30000, ref shop, ref nextSlot);
+                    }
+                    if (NPC.downedPlantBoss)
+                    {
+                        addModItemToShop(Calamity, "SolarVeil", 50000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)Calamity.Call("Downed", "ravager"))
+                    {
+                        addModItemToShop(Calamity, "BarofLife", 100000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)Calamity.Call("Downed", "astrum deus"))
+                    {
+                        addModItemToShop(Calamity, "MeldBlob", 10000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)Calamity.Call("Downed", "profaned guardians"))
+                    {
+                        addModItemToShop(Calamity, "UnholyEssence", 50000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)Calamity.Call("Downed", "polterghast"))
+                    {
+                        addModItemToShop(Calamity, "BloodOrb", 50000, ref shop, ref nextSlot);
+                        addModItemToShop(Calamity, "Phantoplasm", 100000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)Calamity.Call("Downed", "dog") && AlchemistNPCLiteWorld.downedDOGPumpking)
+                    {
+                        addModItemToShop(Calamity, "NightmareFuel", 120000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)Calamity.Call("Downed", "dog") && AlchemistNPCLiteWorld.downedDOGIceQueen)
+                    {
+                        addModItemToShop(Calamity, "EndothermicEnergy", 120000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)Calamity.Call("Downed", "buffed mothron"))
+                    {
+                        addModItemToShop(Calamity, "DarksunFragment", 150000, ref shop, ref nextSlot);
+                    }
+                }
             }
             if (Shop3)
             {
@@ -1393,6 +1312,12 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].SetDefaults(ItemID.SkeletronBossBag);
                     shop.item[nextSlot].shopCustomPrice = 1000000;
                     nextSlot++;
+                    if(NPC.downedDeerclops) 
+                    {
+                        shop.item[nextSlot].SetDefaults(ItemID.DeerclopsBossBag);
+                        shop.item[nextSlot].shopCustomPrice = 2500000;
+                        nextSlot++;
+                    }
                 }
                 // IMPLEMENT WHEN WEAKREFERENCES FIXED
                 /*
@@ -1400,9 +1325,7 @@ namespace AlchemistNPCLite.NPCs
 				{
 					if (DD2Event.DownedInvasionT1)
 					{
-						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("DarkMageBag"));
-						shop.item[nextSlot].shopCustomPrice = 1000000;
-						nextSlot++;
+						addModItemToShop(ThoriumMod, "DarkMageBag", 1000000, ref shop, ref nextSlot);
 					}
 				}
 				*/
@@ -1412,7 +1335,7 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].shopCustomPrice = 1500000;
                     nextSlot++;
                 }
-                if (NPC.downedQueenSlime && Main.expertMode) 
+                if (NPC.downedQueenSlime && Main.expertMode)
                 {
                     shop.item[nextSlot].SetDefaults(ItemID.QueenSlimeBossBag);
                     shop.item[nextSlot].shopCustomPrice = 1500000;
@@ -1436,9 +1359,7 @@ namespace AlchemistNPCLite.NPCs
 				{
 					if (DD2Event.DownedInvasionT2 && NPC.downedMechBossAny)
 					{
-						shop.item[nextSlot].SetDefaults (ModLoader.GetMod("ThoriumMod").ItemType("OgreBag"));
-						shop.item[nextSlot].shopCustomPrice = 2500000;
-						nextSlot++;
+						addModItemToShop(ThoriumMod, "OgreBag", 2500000, ref shop, ref nextSlot);
 					}
 				}
 				*/
@@ -1481,230 +1402,172 @@ namespace AlchemistNPCLite.NPCs
             }
             if (Shop4)
             {
-                // IMPLEMENT WHEN WEAKREFERENCES FIXED
-                /*
                 if (Calamity != null)
 				{
                     if (NPC.downedBoss3 && Main.expertMode)
                     {
                     	if ((bool)Calamity.Call("Downed", "desert scourge"))
                     	{
-                    		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("DesertScourgeBag"));
-                    		shop.item[nextSlot].shopCustomPrice = 350000;
-                    		nextSlot++;
+                    		addModItemToShop(Calamity, "DesertScourgeBag", 375000, ref shop, ref nextSlot);
                     	}
                     	if ((bool)Calamity.Call("Downed", "crabulon"))
                     	{
-                    		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("CrabulonBag"));
-                    		shop.item[nextSlot].shopCustomPrice = 650000;
-                    		nextSlot++;
+                    		addModItemToShop(Calamity, "CrabulonBag", 700000, ref shop, ref nextSlot);
                     	}
                     	if ((bool)Calamity.Call("Downed", "hive mind") || (bool)Calamity.Call("Downed", "perforators"))
                     	{
-                    		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("HiveMindBag"));
-                    		shop.item[nextSlot].shopCustomPrice = 1000000;
-                    		nextSlot++;
-                    		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("PerforatorBag"));
-                    		shop.item[nextSlot].shopCustomPrice = 1000000;
-                    		nextSlot++;
+                    		addModItemToShop(Calamity, "HiveMindBag", 1000000, ref shop, ref nextSlot);
+                    		addModItemToShop(Calamity, "PerforatorBag", 1000000, ref shop, ref nextSlot);
                     	}
                     	if ((bool)Calamity.Call("Downed", "slime god"))
                     	{
-                    		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("SlimeGodBag"));
-                    		shop.item[nextSlot].shopCustomPrice = 1750000;
-                    		nextSlot++;
+                    		addModItemToShop(Calamity, "SlimeGodBag", 1000000, ref shop, ref nextSlot);
                     	}
                     	if ((bool)Calamity.Call("Downed", "cryogen"))
                     	{
-                    		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("CryogenBag"));
-                    		shop.item[nextSlot].shopCustomPrice = 2000000;
-                    		nextSlot++;
+                    		addModItemToShop(Calamity, "CryogenBag", 2000000, ref shop, ref nextSlot);
                     	}
                     	if ((bool)Calamity.Call("Downed", "brimstone elemental"))
                     	{
                     		if (!(bool)Calamity.Call("Downed", "providence"))
-                    		{
-                    			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BrimstoneWaifuBag"));
-                    			shop.item[nextSlot].shopCustomPrice = 2000000;
-                    			nextSlot++;
-                    		}
-                    		if ((bool)Calamity.Call("Downed", "providence"))
-                    		{
-                    			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BrimstoneWaifuBag"));
-                    			shop.item[nextSlot].shopCustomPrice = 5000000;
-                    			nextSlot++;
-                    		}
+                    			addModItemToShop(Calamity, "BrimstoneWaifuBag", 3000000, ref shop, ref nextSlot);
+                    		else
+                    			addModItemToShop(Calamity, "BrimstoneWaifuBag", 5000000, ref shop, ref nextSlot);
                     	}
                     	if ((bool)Calamity.Call("Downed", "aquatic scourge"))
                     	{
-                    		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AquaticScourgeBag"));
-                    		shop.item[nextSlot].shopCustomPrice = 2000000;
-                    		nextSlot++;
+                    		addModItemToShop(Calamity, "AquaticScourgeBag", 2000000, ref shop, ref nextSlot);
                     	}
                     	if ((bool)Calamity.Call("Downed", "calamitas doppelganger"))
                     	{
                     		if (!(bool)Calamity.Call("Downed", "providence"))
-                    		{
-                    			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("CalamitasBag"));
-                    			shop.item[nextSlot].shopCustomPrice = 3000000;
-                    			nextSlot++;
-                    		}
-                    		if ((bool)Calamity.Call("Downed", "providence"))
-                    		{
-                    			shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("CalamitasBag"));
-                    			shop.item[nextSlot].shopCustomPrice = 5000000;
-                    			nextSlot++;
-                    		}
+                    			addModItemToShop(Calamity, "CalamitasBag", 4000000, ref shop, ref nextSlot);
+                    		else
+                    			addModItemToShop(Calamity, "CalamitasBag", 5000000, ref shop, ref nextSlot);
                     	}
                     	if ((bool)Calamity.Call("Downed", "leviathan"))
                     	{
-                    		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("LeviathanBag"));
-                    		shop.item[nextSlot].shopCustomPrice = 3500000;
-                    		nextSlot++;
+                    		addModItemToShop(Calamity, "LeviathanBag", 4250000, ref shop, ref nextSlot);
                     	}
-                    	if (!(bool)Calamity.Call("Downed", "providence") && (bool)Calamity.Call("Downed", "astrum aureus"))
+                    	if ((bool)Calamity.Call("Downed", "astrum aureus"))
                     	{
-                    		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstrageldonBag"));
-                    		shop.item[nextSlot].shopCustomPrice = 3000000;
-                    		nextSlot++;
-                    	}
-                    	if ((bool)Calamity.Call("Downed", "providence") && (bool)Calamity.Call("Downed", "astrum aureus"))
-                    	{
-                    		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstrageldonBag"));
-                    		shop.item[nextSlot].shopCustomPrice = 5000000;
-                    		nextSlot++;
+                            if(!(bool)Calamity.Call("Downed", "providence"))
+                    		    addModItemToShop(Calamity, "AstrageldonBag", 4000000, ref shop, ref nextSlot);
+                            else
+                                addModItemToShop(Calamity, "AstrageldonBag", 5000000, ref shop, ref nextSlot);
                     	}
                     	if ((bool)Calamity.Call("Downed", "astrum deus"))
                     	{
-                    		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("AstrumDeusBag"));
-                    		shop.item[nextSlot].shopCustomPrice = 3500000;
-                    		nextSlot++;
+                    		addModItemToShop(Calamity, "AstrumDeusBag", 6500000, ref shop, ref nextSlot);
                     	}
                     	if ((bool)Calamity.Call("Downed", "plaguebringer goliath"))
                     	{
-                    		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("PlaguebringerGoliathBag"));
-                    		shop.item[nextSlot].shopCustomPrice = 4000000;
-                    		nextSlot++; 
+                    		addModItemToShop(Calamity, "PlaguebringerGoliathBag", 5750000, ref shop, ref nextSlot); 
                     	}
                     	if ((bool)Calamity.Call("Downed", "ravager"))
                     	{
-                    		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("RavagerBag"));
-                    		shop.item[nextSlot].shopCustomPrice = 4000000;
-                    		nextSlot++; 
+                    		addModItemToShop(Calamity, "RavagerBag", 5500000, ref shop, ref nextSlot); 
                     	}
                     	if ((bool)Calamity.Call("Downed", "bumblebirb"))
                     	{
-                    		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("BumblebirbBag"));
-                    		shop.item[nextSlot].shopCustomPrice = 3000000;
-                    		nextSlot++;
+                    		addModItemToShop(Calamity, "BumblebirbBag", 8500000, ref shop, ref nextSlot);
                     	}
                     	if ((bool)Calamity.Call("Downed", "providence"))
                     	{
-                    		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("ProvidenceBag"));
-                    		shop.item[nextSlot].shopCustomPrice = 6000000;
-                    		nextSlot++;
+                    		addModItemToShop(Calamity, "ProvidenceBag", 22000000, ref shop, ref nextSlot);
                     	}
+                        if ((bool)Calamity.Call("Downed", "stormweaver"))
+                        {
+                    		addModItemToShop(Calamity, "StormWeaverBag", 12500000, ref shop, ref nextSlot);
+                        }
+                        if ((bool)Calamity.Call("Downed", "ceaselessvoid"))
+                        {
+                    		addModItemToShop(Calamity, "CeaselessVoidBag", 12500000, ref shop, ref nextSlot);
+                        }
+                        if ((bool)Calamity.Call("Downed", "signus"))
+                        {
+                    		addModItemToShop(Calamity, "SignusBag", 12500000, ref shop, ref nextSlot);
+                        }
                     	if ((bool)Calamity.Call("Downed", "polterghast"))
                     	{
-                    		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("PolterghastBag"));
-                    		shop.item[nextSlot].shopCustomPrice = 7500000;
-                    		nextSlot++;
+                    		addModItemToShop(Calamity, "PolterghastBag", 22500000, ref shop, ref nextSlot);
                     	}
                     	if ((bool)Calamity.Call("Downed", "old duke"))
                     	{
-                    		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("OldDukeBag"));
-                    		shop.item[nextSlot].shopCustomPrice = 8500000;
-                    		nextSlot++;
+                    		addModItemToShop(Calamity, "OldDukeBag", 25000000, ref shop, ref nextSlot);
                     	}
                     	if ((bool)Calamity.Call("Downed", "dog"))
                     	{
-                    		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("DevourerofGodsBag"));
-                    		shop.item[nextSlot].shopCustomPrice = 10000000;
-                    		nextSlot++;
+                    		addModItemToShop(Calamity, "DevourerofGodsBag", 25000000, ref shop, ref nextSlot);
                     	}
                     	if ((bool)Calamity.Call("Downed", "yharon"))
                     	{
-                    		shop.item[nextSlot].SetDefaults (ModLoader.GetMod("CalamityMod").ItemType("YharonBag"));
-                    		shop.item[nextSlot].shopCustomPrice = 15000000;
-                    		nextSlot++;
+                    		addModItemToShop(Calamity, "YharonBag", 75000000, ref shop, ref nextSlot);
                     	}
+                        if ((bool)Calamity.Call("Downed", "exomechs"))
+                        {
+                    		addModItemToShop(Calamity, "DraedonTreasureBag", 115000000, ref shop, ref nextSlot);
+                        }
+                        if ((bool)Calamity.Call("Downed", "supremecalamitas"))
+                        {
+                    		addModItemToShop(Calamity, "SCalBag", 200000000, ref shop, ref nextSlot);
+                        }
                     }
                 }
-
+                // IMPLEMENT WHEN WEAKREFERENCES FIXED
+                /*
                 if (ModLoader.GetMod("ThoriumMod") != null)
                 {
                     if (NPC.downedBoss3)
                     {
                         if (ThoriumModDownedGTBird)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("ThunderBirdBag"));
-                            shop.item[nextSlot].shopCustomPrice = 500000;
-                            nextSlot++;
+                            addModItemToShop(ThoriumMod, "ThunderBirdBag", 500000, ref shop, ref nextSlot);
                         }
                         if (ThoriumModDownedQueenJelly)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("JellyFishBag"));
-                            shop.item[nextSlot].shopCustomPrice = 750000;
-                            nextSlot++;
+                            addModItemToShop(ThoriumMod, "JellyFishBag", 750000, ref shop, ref nextSlot);
                         }
                         if (ThoriumModDownedViscount)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("CountBag"));
-                            shop.item[nextSlot].shopCustomPrice = 850000;
-                            nextSlot++;
+                            addModItemToShop(ThoriumMod, "CountBag", 850000, ref shop, ref nextSlot);
                         }
                         if (ThoriumModDownedStorm)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("GraniteBag"));
-                            shop.item[nextSlot].shopCustomPrice = 1000000;
-                            nextSlot++;
+                            addModItemToShop(ThoriumMod, "GraniteBag", 1000000, ref shop, ref nextSlot);
                         }
                         if (ThoriumModDownedChampion)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("HeroBag"));
-                            shop.item[nextSlot].shopCustomPrice = 1000000;
-                            nextSlot++;
+                            addModItemToShop(ThoriumMod, "HeroBag", 1000000, ref shop, ref nextSlot);
                         }
                         if (ThoriumModDownedStarScout)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("ScouterBag"));
-                            shop.item[nextSlot].shopCustomPrice = 1250000;
-                            nextSlot++;
+                            addModItemToShop(ThoriumMod, "ScouterBag", 1250000, ref shop, ref nextSlot);
                         }
                         if (Main.hardMode)
                         {
                             if (ThoriumModDownedBoreanStrider)
                             {
-                                shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("BoreanBag"));
-                                shop.item[nextSlot].shopCustomPrice = 1500000;
-                                nextSlot++;
+                                addModItemToShop(ThoriumMod, "BoreanBag", 1500000, ref shop, ref nextSlot);
                             }
                             if (ThoriumModDownedFallenBeholder)
                             {
-                                shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("BeholderBag"));
-                                shop.item[nextSlot].shopCustomPrice = 2000000;
-                                nextSlot++;
+                                addModItemToShop(ThoriumMod, "BeholderBag", 2000000, ref shop, ref nextSlot);
                             }
                             if (ThoriumModDownedLich)
                             {
-                                shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("LichBag"));
-                                shop.item[nextSlot].shopCustomPrice = 3000000;
-                                nextSlot++;
+                                addModItemToShop(ThoriumMod, "LichBag", 3000000, ref shop, ref nextSlot);
                             }
                             if (ThoriumModDownedAbyssion)
                             {
-                                shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("AbyssionBag"));
-                                shop.item[nextSlot].shopCustomPrice = 3500000;
-                                nextSlot++;
+                                addModItemToShop(ThoriumMod, "AbyssionBag", 3500000, ref shop, ref nextSlot);
                             }
                         }
                         if (NPC.downedMoonlord)
                         {
                             if (ThoriumModDownedRagnarok)
                             {
-                                shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ThoriumMod").ItemType("RagBag"));
-                                shop.item[nextSlot].shopCustomPrice = 5000000;
-                                nextSlot++;
+                                addModItemToShop(ThoriumMod, "RagBag", 5000000, ref shop, ref nextSlot);
                             }
                         }
                     }
@@ -1716,63 +1579,43 @@ namespace AlchemistNPCLite.NPCs
                     {
                         if (SacredToolsDownedDecree)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SacredTools").ItemType("DecreeBag"));
-                            shop.item[nextSlot].shopCustomPrice = 330000;
-                            nextSlot++;
+                            addModItemToShop(SacredTools, "DecreeBag", 330000, ref shop, ref nextSlot);
                         }
                         if (SacredToolsDownedPumpkin)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SacredTools").ItemType("PumpkinBag"));
-                            shop.item[nextSlot].shopCustomPrice = 500000;
-                            nextSlot++;
+                            addModItemToShop(SacredTools, "PumpkinBag", 500000, ref shop, ref nextSlot);
                         }
                         if (SacredToolsDownedHarpyPreHM)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SacredTools").ItemType("HarpyBag"));
-                            shop.item[nextSlot].shopCustomPrice = 1000000;
-                            nextSlot++;
+                            addModItemToShop(SacredTools, "HarpyBag", 1000000, ref shop, ref nextSlot);
                         }
                         if (SacredToolsDownedAraneas)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SacredTools").ItemType("AraneasBag"));
-                            shop.item[nextSlot].shopCustomPrice = 1500000;
-                            nextSlot++;
+                            addModItemToShop(SacredTools, "AraneasBag", 1500000, ref shop, ref nextSlot);
                         }
                         if (SacredToolsDownedHarpyHM)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SacredTools").ItemType("HarpyBag2"));
-                            shop.item[nextSlot].shopCustomPrice = 2000000;
-                            nextSlot++;
+                            addModItemToShop(SacredTools, "HarpyBag2", 2000000, ref shop, ref nextSlot);
                         }
                         if (SacredToolsDownedPrimordia)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SacredTools").ItemType("PrimordiaBag"));
-                            shop.item[nextSlot].shopCustomPrice = 3000000;
-                            nextSlot++;
+                            addModItemToShop(SacredTools, "PrimordiaBag", 3000000, ref shop, ref nextSlot);
                         }
                         if (SacredToolsDownedAbbadon)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SacredTools").ItemType("OblivionBag"));
-                            shop.item[nextSlot].shopCustomPrice = 5000000;
-                            nextSlot++;
+                            addModItemToShop(SacredTools, "OblivionBag", 5000000, ref shop, ref nextSlot);
                         }
                         if (SacredToolsDownedAraghur)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SacredTools").ItemType("SerpentBag"));
-                            shop.item[nextSlot].shopCustomPrice = 7500000;
-                            nextSlot++;
+                            addModItemToShop(SacredTools, "SerpentBag", 7500000, ref shop, ref nextSlot);
                         }
                         if (SacredToolsDownedLunarians)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SacredTools").ItemType("LunarBag"));
-                            shop.item[nextSlot].shopCustomPrice = 10000000;
-                            nextSlot++;
+                            addModItemToShop(SacredTools, "LunarBag", 10000000, ref shop, ref nextSlot);
                         }
                         if (SacredToolsDownedChallenger)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SacredTools").ItemType("ChallengerBag"));
-                            shop.item[nextSlot].shopCustomPrice = 15000000;
-                            nextSlot++;
+                            addModItemToShop(SacredTools, "ChallengerBag", 15000000, ref shop, ref nextSlot);
                         }
                     }
                 }
@@ -1793,222 +1636,150 @@ namespace AlchemistNPCLite.NPCs
                     {
                         if (AAModDownedMonarch)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AAMod").ItemType("MonarchBag"));
-                            shop.item[nextSlot].shopCustomPrice = 150000;
-                            nextSlot++;
+                            addModItemToShop(AAMod, "MonarchBag", 150000, ref shop, ref nextSlot);
                         }
                         if (AAModDownedGrips)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AAMod").ItemType("GripsBag"));
-                            shop.item[nextSlot].shopCustomPrice = 300000;
-                            nextSlot++;
+                            addModItemToShop(AAMod, "GripsBag", 300000, ref shop, ref nextSlot);
                         }
                         if (AAModDownedTruffleToad)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AAMod").ItemType("TruffleBag"));
-                            shop.item[nextSlot].shopCustomPrice = 350000;
-                            nextSlot++;
+                            addModItemToShop(AAMod, "TruffleBag", 350000, ref shop, ref nextSlot);
                         }
                         if (AAModDownedBrood)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AAMod").ItemType("BroodBag"));
-                            shop.item[nextSlot].shopCustomPrice = 500000;
-                            nextSlot++;
+                            addModItemToShop(AAMod, "BroodBag", 500000, ref shop, ref nextSlot);
                         }
                         if (AAModDownedHydra)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AAMod").ItemType("HydraBag"));
-                            shop.item[nextSlot].shopCustomPrice = 750000;
-                            nextSlot++;
+                            addModItemToShop(AAMod, "HydraBag", 750000, ref shop, ref nextSlot);
                         }
                         if (AAModDownedSerpent)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AAMod").ItemType("SerpentBag"));
-                            shop.item[nextSlot].shopCustomPrice = 1000000;
-                            nextSlot++;
+                            addModItemToShop(AAMod, "SerpentBag", 1000000, ref shop, ref nextSlot);
                         }
                         if (AAModDownedDjinn)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AAMod").ItemType("DjinnBag"));
-                            shop.item[nextSlot].shopCustomPrice = 1000000;
-                            nextSlot++;
+                            addModItemToShop(AAMod, "DjinnBag", 1000000, ref shop, ref nextSlot);
                         }
                         if (AAModDownedEquinox)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AAMod").ItemType("DBBag"));
-                            shop.item[nextSlot].shopCustomPrice = 2500000;
-                            nextSlot++;
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AAMod").ItemType("NCBag"));
-                            shop.item[nextSlot].shopCustomPrice = 2500000;
-                            nextSlot++;
+                            addModItemToShop(AAMod, "DBBag", 2500000, ref shop, ref nextSlot);
+                            addModItemToShop(AAMod, "NCBag", 2500000, ref shop, ref nextSlot);
                         }
                         if (AAModDownedSisters)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AAMod").ItemType("AHBag"));
-                            shop.item[nextSlot].shopCustomPrice = 5000000;
-                            nextSlot++;
+                            addModItemToShop(AAMod, "AHBag", 5000000, ref shop, ref nextSlot);
                         }
                         if (AAModDownedYamata)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AAMod").ItemType("YamataBag"));
-                            shop.item[nextSlot].shopCustomPrice = 5000000;
-                            nextSlot++;
+                            addModItemToShop(AAMod, "YamataBag", 5000000, ref shop, ref nextSlot);
                         }
                         if (AAModDownedAkuma)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AAMod").ItemType("AkumaBag"));
-                            shop.item[nextSlot].shopCustomPrice = 5000000;
-                            nextSlot++;
+                            addModItemToShop(AAMod, "AkumaBag", 5000000, ref shop, ref nextSlot);
                         }
                         if (AAModDownedZero)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AAMod").ItemType("ZeroBag"));
-                            shop.item[nextSlot].shopCustomPrice = 10000000;
-                            nextSlot++;
+                            addModItemToShop(AAMod, "ZeroBag", 10000000, ref shop, ref nextSlot);
                         }
                         if (AAModDownedShen)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("AAMod").ItemType("ShenCache"));
-                            shop.item[nextSlot].shopCustomPrice = 15000000;
-                            nextSlot++;
+                            addModItemToShop(AAMod, "ShenCache", 15000000, ref shop, ref nextSlot);
                         }
                     }
                     if (ModLoader.GetMod("SpiritMod") != null)
                     {
                         if (SpiritModDownedScarabeus)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SpiritMod").ItemType("BagOScarabs"));
-                            shop.item[nextSlot].shopCustomPrice = 300000;
-                            nextSlot++;
+                            addModItemToShop(SpiritMod, "BagOScarabs", 300000, ref shop, ref nextSlot);
                         }
                         if (SpiritModDownedBane)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SpiritMod").ItemType("ReachBossBag"));
-                            shop.item[nextSlot].shopCustomPrice = 500000;
-                            nextSlot++;
+                            addModItemToShop(SpiritMod, "ReachBossBag", 500000, ref shop, ref nextSlot);
                         }
                         if (SpiritModDownedFlier)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SpiritMod").ItemType("FlyerBag"));
-                            shop.item[nextSlot].shopCustomPrice = 750000;
-                            nextSlot++;
+                            addModItemToShop(SpiritMod, "FlyerBag", 750000, ref shop, ref nextSlot);
                         }
                         if (SpiritModDownedStarplateRaider)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SpiritMod").ItemType("SteamRaiderBag"));
-                            shop.item[nextSlot].shopCustomPrice = 1000000;
-                            nextSlot++;
+                            addModItemToShop(SpiritMod, "SteamRaiderBag", 1000000, ref shop, ref nextSlot);
                         }
                         if (SpiritModDownedInfernon)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SpiritMod").ItemType("InfernonBag"));
-                            shop.item[nextSlot].shopCustomPrice = 2000000;
-                            nextSlot++;
+                            addModItemToShop(SpiritMod, "InfernonBag", 2000000, ref shop, ref nextSlot);
                         }
                         if (SpiritModDownedDusking)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SpiritMod").ItemType("DuskingBag"));
-                            shop.item[nextSlot].shopCustomPrice = 2500000;
-                            nextSlot++;
+                            addModItemToShop(SpiritMod, "DuskingBag", 2500000, ref shop, ref nextSlot);
                         }
                         if (SpiritModDownedEtherialUmbra)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SpiritMod").ItemType("SpiritCoreBag"));
-                            shop.item[nextSlot].shopCustomPrice = 2500000;
-                            nextSlot++;
+                            addModItemToShop(SpiritMod, "SpiritCoreBag", 2500000, ref shop, ref nextSlot);
                         }
                         if (SpiritModDownedIlluminantMaster)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SpiritMod").ItemType("IlluminantBag"));
-                            shop.item[nextSlot].shopCustomPrice = 3000000;
-                            nextSlot++;
+                            addModItemToShop(SpiritMod, "IlluminantBag", 3000000, ref shop, ref nextSlot);
                         }
                         if (SpiritModDownedAtlas)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SpiritMod").ItemType("AtlasBag"));
-                            shop.item[nextSlot].shopCustomPrice = 4000000;
-                            nextSlot++;
+                            addModItemToShop(SpiritMod, "AtlasBag", 4000000, ref shop, ref nextSlot);
                         }
                         if (SpiritModDownedOverseer)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("SpiritMod").ItemType("OverseerBag"));
-                            shop.item[nextSlot].shopCustomPrice = 8000000;
-                            nextSlot++;
+                            addModItemToShop(SpiritMod, "OverseerBag", 8000000, ref shop, ref nextSlot);
                         }
                     }
                     if (ModLoader.GetMod("Laugicality") != null)
                     {
                         if (EnigmaDownedSharkron)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Laugicality").ItemType("DuneSharkronTreasureBag"));
-                            shop.item[nextSlot].shopCustomPrice = 300000;
-                            nextSlot++;
+                            addModItemToShop(Laugicality, "DuneSharkronTreasureBag", 300000, ref shop, ref nextSlot);
                         }
                         if (EnigmaDownedHypothema)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Laugicality").ItemType("HypothemaTreasureBag"));
-                            shop.item[nextSlot].shopCustomPrice = 500000;
-                            nextSlot++;
+                            addModItemToShop(Laugicality, "HypothemaTreasureBag", 500000, ref shop, ref nextSlot);
                         }
                         if (EnigmaDownedRagnar)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Laugicality").ItemType("RagnarTreasureBag"));
-                            shop.item[nextSlot].shopCustomPrice = 750000;
-                            nextSlot++;
+                            addModItemToShop(Laugicality, "RagnarTreasureBag", 750000, ref shop, ref nextSlot);
                         }
                         if (EnigmaDownedAnDio)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Laugicality").ItemType("AnDioTreasureBag"));
-                            shop.item[nextSlot].shopCustomPrice = 1000000;
-                            nextSlot++;
+                            addModItemToShop(Laugicality, "AnDioTreasureBag", 1000000, ref shop, ref nextSlot);
                         }
                         if (EnigmaDownedAnnihilator)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Laugicality").ItemType("AnnihilatorTreasureBag"));
-                            shop.item[nextSlot].shopCustomPrice = 2000000;
-                            nextSlot++;
+                            addModItemToShop(Laugicality, "AnnihilatorTreasureBag", 2000000, ref shop, ref nextSlot);
                         }
                         if (EnigmaDownedSlybertron)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Laugicality").ItemType("SlybertronTreasureBag"));
-                            shop.item[nextSlot].shopCustomPrice = 2000000;
-                            nextSlot++;
+                            addModItemToShop(Laugicality, "SlybertronTreasureBag", 2000000, ref shop, ref nextSlot);
                         }
                         if (EnigmaDownedSteamTrain)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Laugicality").ItemType("SteamTrainTreasureBag"));
-                            shop.item[nextSlot].shopCustomPrice = 2000000;
-                            nextSlot++;
+                            addModItemToShop(Laugicality, "SteamTrainTreasureBag", 2000000, ref shop, ref nextSlot);
                         }
                     }
                     if (ModLoader.GetMod("pinkymod") != null)
                     {
                         if (PinkymodDownedST)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("pinkymod").ItemType("STBag"));
-                            shop.item[nextSlot].shopCustomPrice = 500000;
-                            nextSlot++;
+                            addModItemToShop(pinkymod, "STBag", 500000, ref shop, ref nextSlot);
                         }
                         if (PinkymodDownedMS)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("pinkymod").ItemType("HOTCTreasureBag"));
-                            shop.item[nextSlot].shopCustomPrice = 750000;
-                            nextSlot++;
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("pinkymod").ItemType("MythrilBag"));
-                            shop.item[nextSlot].shopCustomPrice = 1000000;
-                            nextSlot++;
+                            addModItemToShop(pinkymod, "HOTCTreasureBag", 750000, ref shop, ref nextSlot);
+                            addModItemToShop(pinkymod, "MythrilBag", 1000000, ref shop, ref nextSlot);
                         }
                         if (PinkymodDownedVD)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("pinkymod").ItemType("Valdabag"));
-                            shop.item[nextSlot].shopCustomPrice = 1500000;
-                            nextSlot++;
+                            addModItemToShop(pinkymod, "Valdabag", 1500000, ref shop, ref nextSlot);
                         }
                         if (PinkymodDownedAD)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("pinkymod").ItemType("GatekeeperTreasureBag"));
-                            shop.item[nextSlot].shopCustomPrice = 2500000;
-                            nextSlot++;
+                            addModItemToShop(pinkymod, "GatekeeperTreasureBag", 2500000, ref shop, ref nextSlot);
                         }
                     }
 					*/
@@ -2024,166 +1795,123 @@ namespace AlchemistNPCLite.NPCs
                 if (NPC.downedBoss3 && Main.expertMode)
                 {
                     // IMPLEMENT WHEN WEAKREFERENCES FIXED
-					/*
+                    /*
                     if (ModLoader.GetMod("ElementsAwoken") != null)
                     {
                         if (EADownedWasteland)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ElementsAwoken").ItemType("WastelandBag"));
-                            shop.item[nextSlot].shopCustomPrice = 300000;
-                            nextSlot++;
+                            addModItemToShop(ElementsAwoken, "WastelandBag", 300000, ref shop, ref nextSlot);
                         }
                         if (EADownedInfernace)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ElementsAwoken").ItemType("InfernaceBag"));
-                            shop.item[nextSlot].shopCustomPrice = 500000;
-                            nextSlot++;
+                            addModItemToShop(ElementsAwoken, "InfernaceBag", 500000, ref shop, ref nextSlot);
                         }
                         if (EADownedScourgeFighter)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ElementsAwoken").ItemType("ScourgeFighterBag"));
-                            shop.item[nextSlot].shopCustomPrice = 1500000;
-                            nextSlot++;
+                            addModItemToShop(ElementsAwoken, "ScourgeFighterBag", 1500000, ref shop, ref nextSlot);
                         }
                         if (EADownedRegaroth)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ElementsAwoken").ItemType("RegarothBag"));
-                            shop.item[nextSlot].shopCustomPrice = 1750000;
-                            nextSlot++;
+                            addModItemToShop(ElementsAwoken, "RegarothBag", 1750000, ref shop, ref nextSlot);
                         }
                         if (EADownedPermafrost)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ElementsAwoken").ItemType("PermafrostBag"));
-                            shop.item[nextSlot].shopCustomPrice = 2250000;
-                            nextSlot++;
+                            addModItemToShop(ElementsAwoken, "PermafrostBag", 2250000, ref shop, ref nextSlot);
                         }
                         if (EADownedObsidious)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ElementsAwoken").ItemType("ObsidiousBag"));
-                            shop.item[nextSlot].shopCustomPrice = 2250000;
-                            nextSlot++;
+                            addModItemToShop(ElementsAwoken, "ObsidiousBag", 2250000, ref shop, ref nextSlot);
                         }
                         if (EADownedAqueous)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ElementsAwoken").ItemType("AqueousBag"));
-                            shop.item[nextSlot].shopCustomPrice = 2500000;
-                            nextSlot++;
+                            addModItemToShop(ElementsAwoken, "AqueousBag", 2500000, ref shop, ref nextSlot);
                         }
                         if (EADownedWyrm)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ElementsAwoken").ItemType("TempleKeepersBag"));
-                            shop.item[nextSlot].shopCustomPrice = 2750000;
-                            nextSlot++;
+                            addModItemToShop(ElementsAwoken, "TempleKeepersBag", 2750000, ref shop, ref nextSlot);
                         }
                         if (EADownedGuardian)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ElementsAwoken").ItemType("GuardianBag"));
-                            shop.item[nextSlot].shopCustomPrice = 3000000;
-                            nextSlot++;
+                            addModItemToShop(ElementsAwoken, "GuardianBag", 3000000, ref shop, ref nextSlot);
                         }
                         if (EADownedVolcanox)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ElementsAwoken").ItemType("VolcanoxBag"));
-                            shop.item[nextSlot].shopCustomPrice = 5000000;
-                            nextSlot++;
+                            addModItemToShop(ElementsAwoken, "VolcanoxBag", 5000000, ref shop, ref nextSlot);
                         }
                         if (EADownedVoidLevi)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ElementsAwoken").ItemType("VoidLeviathanBag"));
-                            shop.item[nextSlot].shopCustomPrice = 6000000;
-                            nextSlot++;
+                            addModItemToShop(ElementsAwoken, "VoidLeviathanBag", 6000000, ref shop, ref nextSlot);
                         }
                         if (EADownedAzana)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ElementsAwoken").ItemType("AzanaBag"));
-                            shop.item[nextSlot].shopCustomPrice = 8000000;
-                            nextSlot++;
+                            addModItemToShop(ElementsAwoken, "AzanaBag", 8000000, ref shop, ref nextSlot);
                         }
                         if (EADownedAncients)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("ElementsAwoken").ItemType("AncientsBag"));
-                            shop.item[nextSlot].shopCustomPrice = 10000000;
-                            nextSlot++;
+                            addModItemToShop(ElementsAwoken, "AncientsBag", 10000000, ref shop, ref nextSlot);
                         }
                     }
                     if (ModLoader.GetMod("Redemption") != null)
                     {
                         if (ReDownedChicken)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Redemption").ItemType("KingChickenBag"));
-                            shop.item[nextSlot].shopCustomPrice = 150000;
-                            nextSlot++;
+                            addModItemToShop(Redemption, "KingChickenBag", 150000, ref shop, ref nextSlot);
                         }
                         if (ReDownedThorn)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Redemption").ItemType("ThornBag"));
-                            shop.item[nextSlot].shopCustomPrice = 250000;
-                            nextSlot++;
+                            addModItemToShop(Redemption, "ThornBag", 250000, ref shop, ref nextSlot);
                         }
                         if (ReDownedKeeper)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Redemption").ItemType("TheKeeperBag"));
-                            shop.item[nextSlot].shopCustomPrice = 350000;
-                            nextSlot++;
+                            addModItemToShop(Redemption, "TheKeeperBag", 350000, ref shop, ref nextSlot);
                         }
                         if (ReDownedCrystal)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Redemption").ItemType("XenomiteCrystalBag"));
-                            shop.item[nextSlot].shopCustomPrice = 500000;
-                            nextSlot++;
+                            addModItemToShop(Redemption, "XenomiteCrystalBag", 500000, ref shop, ref nextSlot);
                         }
                         if (ReDownedIEye)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Redemption").ItemType("InfectedEyeBag"));
-                            shop.item[nextSlot].shopCustomPrice = 1000000;
-                            nextSlot++;
+                            addModItemToShop(Redemption, "InfectedEyeBag", 1000000, ref shop, ref nextSlot);
                         }
                         if (ReDownedKingSlayer)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Redemption").ItemType("SlayerBag"));
-                            shop.item[nextSlot].shopCustomPrice = 1500000;
-                            nextSlot++;
+                            addModItemToShop(Redemption, "SlayerBag", 1500000, ref shop, ref nextSlot);
                         }
                         if (ReDownedVCleaver)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Redemption").ItemType("VlitchCleaverBag"));
-                            shop.item[nextSlot].shopCustomPrice = 2000000;
-                            nextSlot++;
+                            addModItemToShop(Redemption, "VlitchCleaverBag", 2000000, ref shop, ref nextSlot);
                         }
                         if (ReDownedVGigipede)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Redemption").ItemType("VlitchGigipedeBag"));
-                            shop.item[nextSlot].shopCustomPrice = 3000000;
-                            nextSlot++;
+                            addModItemToShop(Redemption, "VlitchGigipedeBag", 3000000, ref shop, ref nextSlot);
                         }
                         if (ReDownedObliterator)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Redemption").ItemType("OmegaOblitBag"));
-                            shop.item[nextSlot].shopCustomPrice = 5000000;
-                            nextSlot++;
+                            addModItemToShop(Redemption, "OmegaOblitBag", 5000000, ref shop, ref nextSlot);
                         }
                         if (ReDownedPZero)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Redemption").ItemType("PZBag"));
-                            shop.item[nextSlot].shopCustomPrice = 6000000;
-                            nextSlot++;
+                            addModItemToShop(Redemption, "PZBag", 6000000, ref shop, ref nextSlot);
                         }
                         if (ReDownedThornRe && ReDownedGolemRe)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Redemption").ItemType("ThornPZBag"));
-                            shop.item[nextSlot].shopCustomPrice = 7000000;
-                            nextSlot++;
+                            addModItemToShop(Redemption, "ThornPZBag", 7000000, ref shop, ref nextSlot);
                         }
                         if (ReDownedNebuleus)
                         {
-                            shop.item[nextSlot].SetDefaults(ModLoader.GetMod("Redemption").ItemType("NebBag"));
-                            shop.item[nextSlot].shopCustomPrice = 10000000;
-                            nextSlot++;
+                            addModItemToShop(Redemption, "NebBag", 10000000, ref shop, ref nextSlot);
                         }
                     }
 					*/
                 }
             }
+        }
+        private void addModItemToShop(Mod mod, String itemName, int price, ref Chest shop, ref int nextSlot)
+        {
+            if (mod.TryFind<ModItem>(itemName, out ModItem currItem))
+                shop.item[nextSlot].SetDefaults(currItem.Type);
+            shop.item[nextSlot].shopCustomPrice = price;
+            nextSlot++;
         }
     }
 }

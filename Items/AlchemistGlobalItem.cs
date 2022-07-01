@@ -30,7 +30,7 @@ namespace AlchemistNPCLite.Items
                     player.ApplyEquipFunctional(player.inventory[49], r);
                 }
             }
-            
+
             if (item.type == ItemType<Items.Misc.LuckCharm>())
             {
                 Luck = true;
@@ -108,17 +108,14 @@ namespace AlchemistNPCLite.Items
         {
             if ((player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier4 == true && (item.buffTime > 0 || item.healLife > 0 || item.healMana > 0 || item.UseSound == SoundID.Item3))
             {
-                // IMPLEMENT WHEN WEAKREFERENCES FIXED
-                /*
-                Mod Calamity = ModLoader.GetMod("CalamityMod");
+                ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
                 if (Calamity != null)
                 {
-                	if ((bool)Calamity.Call("Downed", "supreme calamitas"))
-                	{
-                		return false;
-                	}
+                    if ((bool)Calamity.Call("Downed", "supreme calamitas"))
+                    {
+                        return false;
+                    }
                 }
-                */
                 if (Main.rand.NextFloat() >= .25f)
                 {
                     return false;
@@ -262,6 +259,7 @@ namespace AlchemistNPCLite.Items
             string BrainOfCthulhu = Language.GetTextValue("Mods.AlchemistNPCLite.BrainOfCthulhu");
             string QueenBee = Language.GetTextValue("Mods.AlchemistNPCLite.QueenBee");
             string Skeletron = Language.GetTextValue("Mods.AlchemistNPCLite.Skeletron");
+            string Deerclops = Language.GetTextValue("Mods.AlchemistNPCLite.Deerclops");
             string WallOfFlesh = Language.GetTextValue("Mods.AlchemistNPCLite.WallOfFlesh");
             string QueenSlime = Language.GetTextValue("Mods.AlchemistNPCLite.QueenSlime");
             string Destroyer = Language.GetTextValue("Mods.AlchemistNPCLite.Destroyer");
@@ -290,11 +288,16 @@ namespace AlchemistNPCLite.Items
             string PlaguebringerGoliath = Language.GetTextValue("Mods.AlchemistNPCLite.PlaguebringerGoliath");
             string Ravager = Language.GetTextValue("Mods.AlchemistNPCLite.Ravager");
             string Providence = Language.GetTextValue("Mods.AlchemistNPCLite.Providence");
+            string StormWeaver = Language.GetTextValue("Mods.AlchemistNPCLite.StormWeaver");
+            string CeaselessVoid = Language.GetTextValue("Mods.AlchemistNPCLite.CeaselessVoid");
+            string Signus = Language.GetTextValue("Mods.AlchemistNPCLite.Signus");
             string Polterghast = Language.GetTextValue("Mods.AlchemistNPCLite.Polterghast");
             string OldDuke = Language.GetTextValue("Mods.AlchemistNPCLite.OldDuke");
             string DevourerofGods = Language.GetTextValue("Mods.AlchemistNPCLite.DevourerofGods");
             string Bumblebirb = Language.GetTextValue("Mods.AlchemistNPCLite.Bumblebirb");
             string Yharon = Language.GetTextValue("Mods.AlchemistNPCLite.Yharon");
+            string ExoMechs = Language.GetTextValue("Mods.AlchemistNPCLite.ExoMechs");
+            string SupremeCalamitas = Language.GetTextValue("Mods.AlchemistNPCLite.SupremeCalamitas");
 
             //SBMW:ThoriumMod
             string DarkMage = Language.GetTextValue("Mods.AlchemistNPCLite.DarkMage");
@@ -437,6 +440,12 @@ namespace AlchemistNPCLite.Items
                 line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
+            if (item.type == ItemID.DeerclopsBossBag)
+            {
+                TooltipLine line = new TooltipLine(Mod, "Deerclops", Deerclops);
+                line.OverrideColor = Color.LimeGreen;
+                tooltips.Insert(1, line);
+            }
             if (item.type == ItemID.WallOfFleshBossBag)
             {
                 TooltipLine line = new TooltipLine(Mod, "WallOfFleshBoss", WallOfFlesh);
@@ -503,134 +512,163 @@ namespace AlchemistNPCLite.Items
                 line.OverrideColor = Color.LimeGreen;
                 tooltips.Insert(1, line);
             }
-
-            // IMPLEMENT WHEN WEAKREFERENCES FIXED
-            /*
-            if (ModLoader.GetMod("CalamityMod") != null)
+            ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
+            if (Calamity != null)
             {
-
-                if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("DesertScourgeBag")))
+                if (Calamity.TryFind<ModItem>("DesertScourgeBag", out ModItem currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "DesertScourge", DesertScourge);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("CrabulonBag")))
+                if (Calamity.TryFind<ModItem>("CrabulonBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "Crabulon", Crabulon);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("HiveMindBag")))
+                if (Calamity.TryFind<ModItem>("HiveMindBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "HiveMind", HiveMind);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("PerforatorBag")))
+                if (Calamity.TryFind<ModItem>("PerforatorBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "Perforator", Perforator);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("SlimeGodBag")))
+                if (Calamity.TryFind<ModItem>("SlimeGodBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "SlimeGod", SlimeGod);
 
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("CryogenBag")))
+                if (Calamity.TryFind<ModItem>("CryogenBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "Cryogen", Cryogen);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("BrimstoneWaifuBag")))
+                if (Calamity.TryFind<ModItem>("BrimstoneWaifuBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "BrimstoneElemental", BrimstoneElemental);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("AquaticScourgeBag")))
+                if (Calamity.TryFind<ModItem>("AquaticScourgeBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "AquaticScourge", AquaticScourge);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("CalamitasBag")))
+                if (Calamity.TryFind<ModItem>("CalamitasBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "Calamitas", Calamitas);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("AstrageldonBag")))
+                if (Calamity.TryFind<ModItem>("AstrageldonBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "AstrageldonSlime", AstrageldonSlime);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("AstrumDeusBag")))
+                if (Calamity.TryFind<ModItem>("AstrumDeusBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "AstrumDeus", AstrumDeus);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("LeviathanBag")))
+                if (Calamity.TryFind<ModItem>("LeviathanBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "Leviathan", Leviathan);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("PlaguebringerGoliathBag")))
+                if (Calamity.TryFind<ModItem>("PlaguebringerGoliathBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "PlaguebringerGoliath", PlaguebringerGoliath);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("RavagerBag")))
+                if (Calamity.TryFind<ModItem>("RavagerBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "Ravager", Ravager);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("ProvidenceBag")))
+                if (Calamity.TryFind<ModItem>("ProvidenceBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "Providence", Providence);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("PolterghastBag")))
+                if (Calamity.TryFind<ModItem>("StormWeaverBag", out currItem) && item.type == currItem.Type)
+                {
+                    TooltipLine line = new TooltipLine(Mod, "StormWeaver", StormWeaver);
+                    line.OverrideColor = Color.LimeGreen;
+                    tooltips.Insert(1, line);
+                }
+                if (Calamity.TryFind<ModItem>("CeaselessVoidBag", out currItem) && item.type == currItem.Type)
+                {
+                    TooltipLine line = new TooltipLine(Mod, "CeaselessVoid", CeaselessVoid);
+                    line.OverrideColor = Color.LimeGreen;
+                    tooltips.Insert(1, line);
+                }
+                if (Calamity.TryFind<ModItem>("SignusBag", out currItem) && item.type == currItem.Type)
+                {
+                    TooltipLine line = new TooltipLine(Mod, "Signus", Signus);
+                    line.OverrideColor = Color.LimeGreen;
+                    tooltips.Insert(1, line);
+                }
+                if (Calamity.TryFind<ModItem>("PolterghastBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "Polterghast", Polterghast);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("OldDukeBag")))
+                if (Calamity.TryFind<ModItem>("OldDukeBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "OldDuke", OldDuke);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("DevourerofGodsBag")))
+                if (Calamity.TryFind<ModItem>("DevourerofGodsBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "DevourerofGods", DevourerofGods);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("BumblebirbBag")))
+                if (Calamity.TryFind<ModItem>("BumblebirbBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "Bumblebirb", Bumblebirb);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("CalamityMod").ItemType("YharonBag")))
+                if (Calamity.TryFind<ModItem>("YharonBag", out currItem) && item.type == currItem.Type)
                 {
                     TooltipLine line = new TooltipLine(Mod, "Yharon", Yharon);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
+                if (Calamity.TryFind<ModItem>("DraedonTreasureBag", out currItem) && item.type == currItem.Type)
+                {
+                    TooltipLine line = new TooltipLine(Mod, "ExoMechs", ExoMechs);
+                    line.OverrideColor = Color.LimeGreen;
+                    tooltips.Insert(1, line);
+                }
+                if (Calamity.TryFind<ModItem>("SCalBag", out currItem) && item.type == currItem.Type)
+                {
+                    TooltipLine line = new TooltipLine(Mod, "SupremeCalamitas", SupremeCalamitas);
+                    line.OverrideColor = Color.LimeGreen;
+                    tooltips.Insert(1, line);
+                }
             }
+            // IMPLEMENT WHEN WEAKREFERENCES FIXED
+            /*
             if (ModLoader.GetMod("ThoriumMod") != null)
             {
                 if (item.type == (ModLoader.GetMod("ThoriumMod").ItemType("DarkMageBag")))
