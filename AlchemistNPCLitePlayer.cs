@@ -210,7 +210,7 @@ namespace AlchemistNPCLite
                     if (Player.bank.item[index1].stack > 0 && Player.bank.item[index1].type > 0 && (Player.bank.item[index1].buffType > 0 && !Player.bank.item[index1].CountsAsClass(DamageClass.Summon)) && Player.bank.item[index1].buffType != 90)
                     {
                         ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
-                        if (Calamity != null)
+                        /*if (Calamity != null)
                         {
                             Calamity.TryFind<ModBuff>("AbsoluteRage", out ModBuff buff);
                         	if (Player.bank.item[index1].buffType == buff.Type)
@@ -226,7 +226,7 @@ namespace AlchemistNPCLite
                                 // IMPLEMENT
                         		// CalamityRage(Player);
                         	}
-                        }
+                        }*/
                         int type2 = Player.bank.item[index1].buffType;
                         for (int index2 = 0; index2 < 22; ++index2)
                         {

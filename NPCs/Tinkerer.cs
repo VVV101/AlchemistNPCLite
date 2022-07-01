@@ -280,6 +280,9 @@ namespace AlchemistNPCLite.NPCs
 				shop.item[nextSlot].SetDefaults (ItemID.Flipper);
 				shop.item[nextSlot].shopCustomPrice = 50000;
 				nextSlot++;
+				shop.item[nextSlot].SetDefaults (ItemID.DivingHelmet);
+				shop.item[nextSlot].shopCustomPrice = 250000;
+				nextSlot++;
 				if (NPC.downedPlantBoss)
 				{
 					shop.item[nextSlot].SetDefaults (ItemID.NeptunesShell);
