@@ -33,11 +33,11 @@ namespace AlchemistNPCLite.Items.Misc
 			Item.rare = 8;
 		}
 		
-		public override void UpdateInventory(Player player)
-		{
-			(player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier2 = true;
-			(player.GetModPlayer<AlchemistNPCLitePlayer>()).DistantPotionsUse = true;
-		}
+        public override void UpdateInventory(Player player)
+        {
+            (player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier2 = true;
+            (player.GetModPlayer<AlchemistNPCLitePlayer>()).DistantPotionsUse = true;
+        }
 		
 		public override void AddRecipes()
 		{

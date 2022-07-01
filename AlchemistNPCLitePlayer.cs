@@ -322,7 +322,7 @@ namespace AlchemistNPCLite
                                             --Player.bank.item[index1].stack;
                                         }
                                     }
-                                    if (Main.rand.NextFloat() >= .25f)  //Replaced else if until weakreferences fixed
+                                    else if (Main.rand.NextFloat() >= .25f)
                                     {
                                     }
                                     else
