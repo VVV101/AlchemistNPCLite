@@ -1046,10 +1046,11 @@ namespace AlchemistNPCLite.NPCs
             }
         }
         private void addModItemToShop(Mod mod, String itemName, int price, ref Chest shop, ref int nextSlot) {
-            if(mod.TryFind<ModItem>(itemName, out ModItem currItem))
-            shop.item[nextSlot].SetDefaults(currItem.Type);
-            shop.item[nextSlot].shopCustomPrice = price;
-            nextSlot++;
+            if(mod.TryFind<ModItem>(itemName, out ModItem currItem)) {
+                shop.item[nextSlot].SetDefaults(currItem.Type);
+                shop.item[nextSlot].shopCustomPrice = price;
+                nextSlot++;
+            }
         }
     }
 }
