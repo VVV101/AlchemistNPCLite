@@ -558,7 +558,7 @@ namespace AlchemistNPCLite.NPCs
                 shop.item[nextSlot].shopCustomPrice = 1;
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ItemID.SiltBlock);
-                shop.item[nextSlot].shopCustomPrice = 100;
+                shop.item[nextSlot].shopCustomPrice = 700;
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ItemID.SnowBlock);
                 shop.item[nextSlot].shopCustomPrice = 1;
@@ -745,7 +745,7 @@ namespace AlchemistNPCLite.NPCs
                 shop.item[nextSlot].shopCustomPrice = 100;
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ItemID.GoldChandelier);
-                shop.item[nextSlot].shopCustomPrice = 250;
+                shop.item[nextSlot].shopCustomPrice = 25000;
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ItemID.ChainLantern);
                 shop.item[nextSlot].shopCustomPrice = 200;
