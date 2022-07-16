@@ -10,9 +10,10 @@ v1.8.15
 -Fix shops having empty spaces if mod item doesn't exist
 -Increase some shop prices for balance
 v1.8.14
--Add Deerclops bag to Operator
+-Add Deerclop's bag to Operator
 -Reimplement Calamity for 1.4
 -Adjust Calamity boss bag prices
+-Added Diving Helmet to Tinkerer.
 -Update recipe creation
 v1.8.13
 -Updated to current 1.4-stable.

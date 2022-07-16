@@ -1215,10 +1215,10 @@ namespace AlchemistNPCLite.NPCs
                         addModItemToShop(Calamity, "EbonianGel", 25000, ref shop, ref nextSlot);
                         addModItemToShop(Calamity, "PurifiedGel", 30000, ref shop, ref nextSlot);
                     }
-                    if (NPC.downedMechBoss2)
+                    /*if (NPC.downedMechBoss2)
                     {
                         addModItemToShop(Calamity, "BlightedLens", 150000, ref shop, ref nextSlot);
-                    }
+                    }*/
                     if ((bool)Calamity.Call("Downed", "calamitas doppelganger"))
                     {
                         addModItemToShop(Calamity, "UnholyCore", 100000, ref shop, ref nextSlot);
