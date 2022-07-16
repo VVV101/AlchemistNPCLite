@@ -333,6 +333,9 @@ namespace AlchemistNPCLite.NPCs
 					shop.item[nextSlot].SetDefaults (ItemID.CelestialMagnet);
 					shop.item[nextSlot].shopCustomPrice = 200000;
 					nextSlot++;
+					shop.item[nextSlot].SetDefaults (ItemID.PocketMirror);
+					shop.item[nextSlot].shopCustomPrice = 250000;
+					nextSlot++;
 				}
 				if (NPC.downedMechBossAny)
 				{

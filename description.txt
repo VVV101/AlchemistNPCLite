@@ -7,8 +7,11 @@ The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 Mod's Discord: https://discord.gg/WGKyKun
 v1.8.15
--Fix shops having empty spaces if mod item doesn't exist
--Increase some shop prices for balance
+-Fixed an issue with Alchemist Charm of 2+ tier was not using potions from piggy bank
+-Fixed shops having empty spaces if mod item doesn't exist
+-Increased some of the shop prices for balance
+-Added a new buff item, Ultima Cake. Can be bought from the Jeweler after entering hardmode in Arena Shop.
+-Added Pocket Mirror to Tinkerer's 1st shop (available in hardmode).
 v1.8.14
 -Add Deerclop's bag to Operator
 -Reimplement Calamity for 1.4

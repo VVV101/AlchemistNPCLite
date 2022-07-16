@@ -27,7 +27,7 @@ namespace AlchemistNPCLite.Buffs
 		{
 			AlchemistNPCLitePlayer modPlayer = player.GetModPlayer<AlchemistNPCLitePlayer>();
 			modPlayer.AllDamage10 = true;
-			++player.maxMinions;
+			modPlayer.Bewitched = true;
 			++player.maxMinions;
 			player.buffImmune[110] = true;
 			player.buffImmune[115] = true;

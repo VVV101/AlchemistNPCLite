@@ -19,11 +19,11 @@ namespace AlchemistNPCLite.Buffs
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Blurring");
-			Description.SetDefault("Enemies cannot clearly see you (Shadow Dodge for 10 sec with 30 sec CD)");
+			Description.SetDefault("Enemies cannot clearly see you (Holy Protection for 10 sec with 30 sec CD)");
 			Main.debuff[Type] = false;
 			BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
 			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Размытие");
-			Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Враги едва могут видеть вас (Теневое уклонение с 30-ти секундным откатом)");
+			Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Враги едва могут видеть вас (Святое уклонение с 30-ти секундным откатом)");
 
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "模糊");
             Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "敌人并看不清你 (暗影躲避有30秒CD)");

@@ -27,10 +27,8 @@ namespace AlchemistNPCLite.Buffs
 			AlchemistNPCLitePlayer modPlayer = player.GetModPlayer<AlchemistNPCLitePlayer>();
 			modPlayer.AllDamage10 = true;
 			modPlayer.AllCrit10 = true;
-            player.GetDamage(DamageClass.Magic) += 0.25f;
-			player.GetCritChance(DamageClass.Magic) += 2;
-			player.statManaMax2 += 20;
-            player.manaCost -= 0.02f;
+            modPlayer.Clairvoyance = true;
+			player.GetDamage(DamageClass.Magic) += 0.2f;
 			player.manaRegenBuff = true;
 			player.buffImmune[6] = true;
 			player.buffImmune[7] = true;

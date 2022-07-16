@@ -60,6 +60,12 @@ namespace AlchemistNPCLite
         public bool Regeneration = false;
         public bool Lifeforce = false;
         public bool MS = false;
+		public bool Bewitched = false;
+		public bool Sharpen = false;
+		public bool Clairvoyance = false;
+		public bool AmmoBox = false;
+		public bool SugarRush = false;
+		public bool Lamps = false;
 
         public override void ResetEffects()
         {
@@ -82,6 +88,12 @@ namespace AlchemistNPCLite
             Regeneration = false;
             Lifeforce = false;
             MS = false;
+			Bewitched = false;
+			Sharpen = false;
+			Clairvoyance = false;
+			AmmoBox = false;
+			SugarRush = false;
+			Lamps = false;
 
             if (Main.netMode != NetmodeID.Server)
             {
@@ -175,6 +187,31 @@ namespace AlchemistNPCLite
             if (MS) Player.moveSpeed += 0.25f;
             if (Defense8) Player.statDefense += 8;
             if (DR10) Player.endurance += 0.1f;
+			if (Bewitched) ++Player.maxMinions;
+			if (Sharpen)
+			{
+				Player.GetArmorPenetration(DamageClass.Melee) += 12;
+				Player.GetArmorPenetration(DamageClass.Summon) += 12;
+			}
+			if (Clairvoyance) 
+			{
+				Player.GetDamage(DamageClass.Magic) += 0.05f;
+				Player.GetCritChance(DamageClass.Magic) += 2;
+				Player.statManaMax2 += 20;
+				Player.manaCost -= 0.02f;
+			}
+			if (AmmoBox) Player.ammoBox = true;
+			if (SugarRush) 
+			{
+				Player.pickSpeed -= 0.2f;
+				Player.moveSpeed += 0.2f;
+			}
+			if (Lamps)
+			{
+				Player.manaRegenBonus += 2;
+				Main.SceneMetrics.HasHeartLantern = true;
+				Main.SceneMetrics.HasCampfire = true;
+			}
         }
         private void CalamityBoost(Player player)
         {
@@ -203,8 +240,10 @@ namespace AlchemistNPCLite
             {
                 SoundStyle type1 = SoundID.Item3;
 				bool flag = true;
+				bool dosound = false;
                 for (int index1 = 0; index1 < 40; ++index1)
                 {
+					flag = true;
                     if (Player.CountBuffs() == 22)
                         return;
                     if (Player.bank.item[index1].stack > 0 && Player.bank.item[index1].type > 0 && (Player.bank.item[index1].buffType > 0 && !Player.bank.item[index1].CountsAsClass(DamageClass.Summon)) && Player.bank.item[index1].buffType != 90)
@@ -228,34 +267,14 @@ namespace AlchemistNPCLite
                         	}
                         }*/
                         int type2 = Player.bank.item[index1].buffType;
-                        for (int index2 = 0; index2 < 22; ++index2)
-                        {
-                            if (type2 == 27 && (Player.buffType[index2] == type2 || Player.buffType[index2] == 101 || Player.buffType[index2] == 102))
-                            {
-                                flag = false;
-                                break;
-                            }
-                            if (Player.buffType[index2] == type2)
-                            {
-                                flag = false;
-                                break;
-                            }
-                            if (Main.meleeBuff[type2] && Main.meleeBuff[Player.buffType[index2]])
-                            {
-                                flag = false;
-                                break;
-                            }
-                        }
-                        if (Main.lightPet[Player.bank.item[index1].buffType] || Main.vanityPet[Player.bank.item[index1].buffType])
-                        {
-                            for (int index2 = 0; index2 < 22; ++index2)
-                            {
-                                if (Main.lightPet[Player.buffType[index2]] && Main.lightPet[Player.bank.item[index1].buffType])
-                                    flag = false;
-                                if (Main.vanityPet[Player.buffType[index2]] && Main.vanityPet[Player.bank.item[index1].buffType])
-                                    flag = false;
-                            }
-                        }
+						int buffIndex = Player.FindBuffIndex(type2);
+						if (buffIndex >= 0) flag = false;
+						if (Main.meleeBuff[type2] && Main.meleeBuff[Player.buffType[buffIndex]])
+						{
+							flag = false;
+							break;
+						}
+						if (Main.lightPet[Player.bank.item[index1].buffType] || Main.vanityPet[Player.bank.item[index1].buffType]) flag = false;
                         if (Player.bank.item[index1].mana > 0 & flag)
                         {
                             if (Player.statMana >= (int)((double)Player.bank.item[index1].mana * (double)Player.manaCost))
@@ -265,18 +284,6 @@ namespace AlchemistNPCLite
                             }
                             else
                                 flag = false;
-                        }
-                        if (Player.whoAmI == Main.myPlayer && Player.bank.item[index1].type == 603 && !Main.runningCollectorsEdition)
-                            flag = false;
-                        if (type2 == 27)
-                        {
-                            type2 = Main.rand.Next(3);
-                            if (type2 == 0)
-                                type2 = 27;
-                            if (type2 == 1)
-                                type2 = 101;
-                            if (type2 == 2)
-                                type2 = 102;
                         }
                         if (flag)
                         {
@@ -303,6 +310,7 @@ namespace AlchemistNPCLite
                             }
 
                             Player.AddBuff(type2, time1, true);
+							dosound = true;
 
                             if (Player.bank.item[index1].consumable)
                             {
@@ -375,7 +383,7 @@ namespace AlchemistNPCLite
                 }
                 //if (type1 == null)
                     //return;
-                if (flag) SoundEngine.PlaySound(type1, Player.position);
+                if (dosound) SoundEngine.PlaySound(type1, Player.position);
                 //Recipe.FindRecipes();
             }
             if (AlchemistNPCLite.DiscordBuff.JustPressed)

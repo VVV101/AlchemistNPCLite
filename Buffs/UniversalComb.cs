@@ -40,10 +40,9 @@ namespace AlchemistNPCLite.Buffs
 			modPlayer.Regeneration = true;
 			modPlayer.Lifeforce = true;
 			modPlayer.MS = true;
-			player.GetDamage(DamageClass.Magic) += 0.25f;
-            player.GetCritChance(DamageClass.Magic) += 2;
-			player.statManaMax2 += 20;
-            player.manaCost -= 0.02f;
+			modPlayer.Bewitched = true;
+			modPlayer.Clairvoyance = true;
+			player.GetDamage(DamageClass.Magic) += 0.2f;
 			player.manaRegenBuff = true;
 			player.archery = true;
 			player.ammoPotion = true;
@@ -75,7 +74,6 @@ namespace AlchemistNPCLite.Buffs
 			player.buffImmune[6] = true;
 			player.buffImmune[7] = true;
 			player.buffImmune[14] = true;
-			++player.maxMinions;
 			++player.maxMinions;
 			// IMPLEMENT WHEN WEAKREFERENCES FIXED
 			/*
