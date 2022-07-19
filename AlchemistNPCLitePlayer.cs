@@ -233,6 +233,49 @@ namespace AlchemistNPCLite
             ThoriumPlayer.radiantCrit += 10;
         }
 		*/
+		
+		private bool QuickBuff_ShouldBotherUsingThisBuff(int attemptedType)
+		{
+			bool result = true;
+			for (int i = 0; i < 22; i++)
+			{
+				if (attemptedType == 27 && (Player.buffType[i] == 27 || Player.buffType[i] == 101 || Player.buffType[i] == 102))
+				{
+					result = false;
+					break;
+				}
+				if (BuffID.Sets.IsWellFed[attemptedType] && BuffID.Sets.IsWellFed[Player.buffType[i]])
+				{
+					result = false;
+					break;
+				}
+				if (Player.buffType[i] == attemptedType)
+				{
+					result = false;
+					break;
+				}
+				if (Main.meleeBuff[attemptedType] && Main.meleeBuff[Player.buffType[i]])
+				{
+					result = false;
+					break;
+				}
+			}
+			if (Main.lightPet[attemptedType] || Main.vanityPet[attemptedType])
+			{
+				for (int j = 0; j < 22; j++)
+				{
+					if (Main.lightPet[Player.buffType[j]] && Main.lightPet[attemptedType])
+					{
+						result = false;
+					}
+					if (Main.vanityPet[Player.buffType[j]] && Main.vanityPet[attemptedType])
+					{
+						result = false;
+					}
+				}
+			}
+			return result;
+		}
 
         public override void ProcessTriggers(TriggersSet triggersSet)
         {
@@ -244,143 +287,147 @@ namespace AlchemistNPCLite
                 for (int index1 = 0; index1 < 40; ++index1)
                 {
 					flag = true;
-                    if (Player.CountBuffs() == 22)
-                        return;
-                    if (Player.bank.item[index1].stack > 0 && Player.bank.item[index1].type > 0 && (Player.bank.item[index1].buffType > 0 && !Player.bank.item[index1].CountsAsClass(DamageClass.Summon)) && Player.bank.item[index1].buffType != 90)
-                    {
-                        ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
-                        /*if (Calamity != null)
-                        {
-                            Calamity.TryFind<ModBuff>("AbsoluteRage", out ModBuff buff);
-                        	if (Player.bank.item[index1].buffType == buff.Type)
-                        	{
-                        		for (int v = 0; v < 200; ++v)
-                        		{
-                        			NPC npc = Main.npc[v];
-                        			if (npc.active && npc.boss)
-                        			{
-                        				return;
-                        			}
-                        		}
-                                // IMPLEMENT
-                        		// CalamityRage(Player);
-                        	}
-                        }*/
-                        int type2 = Player.bank.item[index1].buffType;
-						int buffIndex = Player.FindBuffIndex(type2);
-						if (buffIndex >= 0) flag = false;
-						if (Main.meleeBuff[type2] && Main.meleeBuff[Player.buffType[buffIndex]])
+                    if (Player.CountBuffs() == 22) return;
+					Item bankitem = Player.bank.item[index1];
+					if (bankitem.stack <= 0 || bankitem.type <= 0 || bankitem.buffType <= 0 || bankitem.CountsAsClass(DamageClass.Summon))
+					{
+						continue;
+					}
+					//ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
+					/*if (Calamity != null)
+					{
+						Calamity.TryFind<ModBuff>("AbsoluteRage", out ModBuff buff);
+						if (Player.bank.item[index1].buffType == buff.Type)
+						{
+							for (int v = 0; v < 200; ++v)
+							{
+								NPC npc = Main.npc[v];
+								if (npc.active && npc.boss)
+								{
+									return;
+								}
+							}
+							// IMPLEMENT
+							// CalamityRage(Player);
+						}
+					}*/
+					int num2 = bankitem.buffType;
+					flag = QuickBuff_ShouldBotherUsingThisBuff(num2);
+					if (bankitem.mana > 0 && flag)
+					{
+						if (Player.statMana >= (int)((float)bankitem.mana * Player.manaCost))
+						{
+							Player.manaRegenDelay = (int)Player.maxRegenDelay;
+							Player.statMana -= (int)((float)bankitem.mana * Player.manaCost);
+						}
+						else
 						{
 							flag = false;
-							break;
 						}
-						if (Main.lightPet[Player.bank.item[index1].buffType] || Main.vanityPet[Player.bank.item[index1].buffType]) flag = false;
-                        if (Player.bank.item[index1].mana > 0 & flag)
-                        {
-                            if (Player.statMana >= (int)((double)Player.bank.item[index1].mana * (double)Player.manaCost))
-                            {
-                                Player.manaRegenDelay = (int)Player.maxRegenDelay;
-                                Player.statMana = Player.statMana - (int)((double)Player.bank.item[index1].mana * (double)Player.manaCost);
-                            }
-                            else
-                                flag = false;
-                        }
-                        if (flag)
-                        {
-                            type1 = (SoundStyle)Player.bank.item[index1].UseSound;
-                            int time1 = Player.bank.item[index1].buffTime;
-                            if (time1 == 0)
-                                time1 = 3600;
+					}
+					if (Player.whoAmI == Main.myPlayer && bankitem.type == 603 && !Main.runningCollectorsEdition)
+					{
+						flag = false;
+					}
+					if (num2 == 27)
+					{
+						num2 = Main.rand.Next(3);
+						if (num2 == 0)
+						{
+							num2 = 27;
+						}
+						if (num2 == 1)
+						{
+							num2 = 101;
+						}
+						if (num2 == 2)
+						{
+							num2 = 102;
+						}
+					}
+					if (!flag)
+					{
+						continue;
+					}
+					int num3 = bankitem.buffTime;
+					if (num3 == 0)
+					{
+						num3 = 3600;
+					}
+					Player.AddBuff(num2, num3);
+					if (Player.CountBuffs() == 22)
+					{
+						break;
+					}
+					dosound = true;
 
-                            if (AlchemistCharmTier4)
-                            {
-                                time1 += time1 / 2;
-                            }
-                            else if (AlchemistCharmTier3)
-                            {
-                                time1 += (time1 / 20) * 7;
-                            }
-                            else if (AlchemistCharmTier2)
-                            {
-                                time1 += time1 / 4;
-                            }
-                            else if (AlchemistCharmTier1)
-                            {
-                                time1 += time1 / 10;
-                            }
+					if (bankitem.consumable)
+					{
+						if (AlchemistCharmTier4 == true)
+						{
+							ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
+							if (Calamity != null)
+							{
+								if ((bool)Calamity.Call("Downed", "supreme calamitas"))
+								{
+								}
+								else if (Main.rand.NextFloat() >= .25f)
+								{
+								}
+								else
+								{
+									--bankitem.stack;
+								}
+							}
+							else if (Main.rand.NextFloat() >= .25f)
+							{
+							}
+							else
+							{
+								--bankitem.stack;
+							}
+						}
 
-                            Player.AddBuff(type2, time1, true);
-							dosound = true;
+						else if (AlchemistCharmTier3 == true)
+						{
+							if (Main.rand.Next(2) == 0)
+							{
+							}
+							else
+							{
+								--bankitem.stack;
+							}
+						}
 
-                            if (Player.bank.item[index1].consumable)
-                            {
-                                if (AlchemistCharmTier4 == true)
-                                {
-                                    ModLoader.TryGetMod("CalamityMod", out Calamity);
-                                    if (Calamity != null)
-                                    {
-                                        if ((bool)Calamity.Call("Downed", "supreme calamitas"))
-                                        {
-                                        }
-                                        else if (Main.rand.NextFloat() >= .25f)
-                                        {
-                                        }
-                                        else
-                                        {
-                                            --Player.bank.item[index1].stack;
-                                        }
-                                    }
-                                    else if (Main.rand.NextFloat() >= .25f)
-                                    {
-                                    }
-                                    else
-                                    {
-                                        --Player.bank.item[index1].stack;
-                                    }
-                                }
+						else if (AlchemistCharmTier2 == true)
+						{
+							if (Main.rand.Next(4) == 0)
+							{
+							}
+							else
+							{
+								--bankitem.stack;
+							}
+						}
 
-                                else if (AlchemistCharmTier3 == true)
-                                {
-                                    if (Main.rand.Next(2) == 0)
-                                    {
-                                    }
-                                    else
-                                    {
-                                        --Player.bank.item[index1].stack;
-                                    }
-                                }
-
-                                else if (AlchemistCharmTier2 == true)
-                                {
-                                    if (Main.rand.Next(4) == 0)
-                                    {
-                                    }
-                                    else
-                                    {
-                                        --Player.bank.item[index1].stack;
-                                    }
-                                }
-
-                                else if (AlchemistCharmTier1 == true)
-                                {
-                                    if (Main.rand.Next(10) == 0)
-                                    {
-                                    }
-                                    else
-                                    {
-                                        --Player.bank.item[index1].stack;
-                                    }
-                                }
-                                else
-                                {
-                                    --Player.bank.item[index1].stack;
-                                }
-                                if (Player.bank.item[index1].stack <= 0)
-                                    Player.bank.item[index1].TurnToAir();
-                            }
-                        }
-                    }
-                }
+						else if (AlchemistCharmTier1 == true)
+						{
+							if (Main.rand.Next(10) == 0)
+							{
+							}
+							else
+							{
+								--bankitem.stack;
+							}
+						}
+						else
+						{
+							--bankitem.stack;
+						}
+						if (bankitem.stack <= 0)
+							bankitem.TurnToAir();
+					}
+				}
                 //if (type1 == null)
                     //return;
                 if (dosound) SoundEngine.PlaySound(type1, Player.position);
