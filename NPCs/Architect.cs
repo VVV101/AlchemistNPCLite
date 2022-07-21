@@ -548,7 +548,6 @@ namespace AlchemistNPCLite.NPCs
                 if (NPC.downedBoss2)
                 {
                     shop.item[nextSlot].SetDefaults(ItemID.DesertFossil);
-                    shop.item[nextSlot].shopCustomPrice = 1000;
                     nextSlot++;
                     shop.item[nextSlot].SetDefaults(ItemID.Obsidian);
                     shop.item[nextSlot].shopCustomPrice = 2500;
@@ -558,7 +557,8 @@ namespace AlchemistNPCLite.NPCs
                 shop.item[nextSlot].shopCustomPrice = 1;
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ItemID.SiltBlock);
-                shop.item[nextSlot].shopCustomPrice = 700;
+                nextSlot++;
+				shop.item[nextSlot].SetDefaults(ItemID.SlushBlock);
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ItemID.SnowBlock);
                 shop.item[nextSlot].shopCustomPrice = 1;

@@ -111,6 +111,18 @@ namespace AlchemistNPCLite
 		[Label("Wormhole Potion Price")]
 		[Tooltip("1000 is 10 silver price by default")]
 		public int WormholePrice;
+		
+		[Range(1, 1000000)]
+		[DefaultValue(700)]
+		[Label("Silt/Slush blocks Price")]
+		[Tooltip("700 is 7 silver price by default")]
+		public int SiltSlushPrice;
+		
+		[Range(1, 1000000)]
+		[DefaultValue(1000)]
+		[Label("Desert Fossil Price")]
+		[Tooltip("1000 is 10 silver price by default")]
+		public int DesertFossilPrice;
 
 		[Range(0, 100)]
 		[DefaultValue(10)]

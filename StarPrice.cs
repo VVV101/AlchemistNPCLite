@@ -39,6 +39,15 @@ namespace AlchemistNPCLite
 				case 1272:
                     item.value = 130;
                     break;
+				case ItemID.SiltBlock:
+                    item.value = AlchemistNPCLite.modConfiguration.SiltSlushPrice;
+                    break;
+				case ItemID.SlushBlock:
+                    item.value = AlchemistNPCLite.modConfiguration.SiltSlushPrice;
+                    break;
+				case ItemID.DesertFossil:
+                    item.value = AlchemistNPCLite.modConfiguration.DesertFossilPrice;
+                    break;
             }
         }
     }

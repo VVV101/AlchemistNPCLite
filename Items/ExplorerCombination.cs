@@ -51,6 +51,9 @@ namespace AlchemistNPCLite.Items
 			recipe.AddIngredient(ItemID.NightOwlPotion, 1);
 			recipe.AddIngredient(ItemID.ShinePotion, 1);
 			recipe.AddIngredient(ItemID.MiningPotion, 1);
+			recipe.AddIngredient(ItemID.GillsPotion, 1);
+			recipe.AddIngredient(ItemID.FlipperPotion, 1);
+			recipe.AddIngredient(ItemID.WaterWalkingPotion, 1);
 			recipe.AddTile(TileID.AlchemyTable);
 			recipe.Register();
 		}
