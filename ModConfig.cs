@@ -1,4 +1,4 @@
-﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Newtonsoft.Json;
 using Newtonsoft.Json.Converters;
@@ -88,6 +88,11 @@ namespace AlchemistNPCLite
 		[Tooltip("True to make mod's town NPCs catcheable. True by default")]
 		public bool CatchNPC;
 		
+        [DefaultValue(true)]
+        [Label("Custom Potions toggle")]
+        [Tooltip("True to allow the Brewer to sell Alchemist NPC Lite's custom potions. True by default")]
+        public bool CustomPotions;
+
 		[Range(1, 1000)]
 		[DefaultValue(1)]
 		[Label("Potions price multiplier")]
