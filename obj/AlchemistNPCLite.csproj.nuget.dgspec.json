@@ -1,20 +1,20 @@
 {
   "format": 1,
   "restore": {
-    "c:\\Users\\b2mau\\Documents\\My Games\\Terraria\\ModLoader\\Beta\\Mod Sources\\AlchemistNPCLite\\AlchemistNPCLite.csproj": {}
+    "C:\\Users\\Sage Quintin\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\AlchemistNPCLite\\AlchemistNPCLite.csproj": {}
   },
   "projects": {
-    "c:\\Users\\b2mau\\Documents\\My Games\\Terraria\\ModLoader\\Beta\\Mod Sources\\AlchemistNPCLite\\AlchemistNPCLite.csproj": {
+    "C:\\Users\\Sage Quintin\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\AlchemistNPCLite\\AlchemistNPCLite.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "c:\\Users\\b2mau\\Documents\\My Games\\Terraria\\ModLoader\\Beta\\Mod Sources\\AlchemistNPCLite\\AlchemistNPCLite.csproj",
+        "projectUniqueName": "C:\\Users\\Sage Quintin\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\AlchemistNPCLite\\AlchemistNPCLite.csproj",
         "projectName": "AlchemistNPCLite",
-        "projectPath": "c:\\Users\\b2mau\\Documents\\My Games\\Terraria\\ModLoader\\Beta\\Mod Sources\\AlchemistNPCLite\\AlchemistNPCLite.csproj",
-        "packagesPath": "C:\\Users\\b2mau\\.nuget\\packages\\",
-        "outputPath": "c:\\Users\\b2mau\\Documents\\My Games\\Terraria\\ModLoader\\Beta\\Mod Sources\\AlchemistNPCLite\\obj\\",
+        "projectPath": "C:\\Users\\Sage Quintin\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\AlchemistNPCLite\\AlchemistNPCLite.csproj",
+        "packagesPath": "C:\\Users\\Sage Quintin\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Sage Quintin\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\AlchemistNPCLite\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
-          "C:\\Users\\b2mau\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Sage Quintin\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
         "originalTargetFrameworks": [
@@ -22,7 +22,8 @@
         ],
         "sources": {
           "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-          "https://api.nuget.org/v3/index.json": {}
+          "https://api.nuget.org/v3/index.json": {},
+          "https://nuget.emzi0767.com/api/v3/index.json": {}
         },
         "frameworks": {
           "net6.0": {
@@ -51,7 +52,8 @@
             "net47",
             "net471",
             "net472",
-            "net48"
+            "net48",
+            "net481"
           ],
           "assetTargetFallback": true,
           "warn": true,
@@ -60,7 +62,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.1.21463.6\\RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
         }
       }
     }

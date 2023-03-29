@@ -2,23 +2,23 @@
   "version": 3,
   "targets": {
     "net6.0": {
-      "tModLoader.CodeAssist/0.1.3": {
+      "tModLoader.CodeAssist/0.1.5": {
         "type": "package"
       }
     }
   },
   "libraries": {
-    "tModLoader.CodeAssist/0.1.3": {
-      "sha512": "2TVpwEsbJF+LZOGZ7q/VTTcsnFnQzngjVOcwkzGlXimFXEMjPROLjDv32F/eA+k2MLHtdL0DJ0JNWudUVs70fw==",
+    "tModLoader.CodeAssist/0.1.5": {
+      "sha512": "Sg/jKEg/z5eN+Cdi3/9CU4JfJwvXHVH+UDJf4Lipo26uTa+guLLJXH1XDJNPShTFwKK8jMUYbthINP4QhsgHSA==",
       "type": "package",
-      "path": "tmodloader.codeassist/0.1.3",
+      "path": "tmodloader.codeassist/0.1.5",
       "hasTools": true,
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "NugetIcon.png",
         "analyzers/dotnet/cs/tModLoader.CodeAssist.dll",
-        "tmodloader.codeassist.0.1.3.nupkg.sha512",
+        "tmodloader.codeassist.0.1.5.nupkg.sha512",
         "tmodloader.codeassist.nuspec",
         "tools/install.ps1",
         "tools/uninstall.ps1"
@@ -31,19 +31,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\b2mau\\.nuget\\packages\\": {}
+    "C:\\Users\\Sage Quintin\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "c:\\Users\\b2mau\\Documents\\My Games\\Terraria\\ModLoader\\Beta\\Mod Sources\\AlchemistNPCLite\\AlchemistNPCLite.csproj",
+      "projectUniqueName": "C:\\Users\\Sage Quintin\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\AlchemistNPCLite\\AlchemistNPCLite.csproj",
       "projectName": "AlchemistNPCLite",
-      "projectPath": "c:\\Users\\b2mau\\Documents\\My Games\\Terraria\\ModLoader\\Beta\\Mod Sources\\AlchemistNPCLite\\AlchemistNPCLite.csproj",
-      "packagesPath": "C:\\Users\\b2mau\\.nuget\\packages\\",
-      "outputPath": "c:\\Users\\b2mau\\Documents\\My Games\\Terraria\\ModLoader\\Beta\\Mod Sources\\AlchemistNPCLite\\obj\\",
+      "projectPath": "C:\\Users\\Sage Quintin\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\AlchemistNPCLite\\AlchemistNPCLite.csproj",
+      "packagesPath": "C:\\Users\\Sage Quintin\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\Sage Quintin\\Documents\\My Games\\Terraria\\tModLoader\\ModSources\\AlchemistNPCLite\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\b2mau\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\Sage Quintin\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -51,7 +51,8 @@
       ],
       "sources": {
         "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
-        "https://api.nuget.org/v3/index.json": {}
+        "https://api.nuget.org/v3/index.json": {},
+        "https://nuget.emzi0767.com/api/v3/index.json": {}
       },
       "frameworks": {
         "net6.0": {
@@ -80,7 +81,8 @@
           "net47",
           "net471",
           "net472",
-          "net48"
+          "net48",
+          "net481"
         ],
         "assetTargetFallback": true,
         "warn": true,
@@ -89,7 +91,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.100-rc.1.21463.6\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\6.0.401\\RuntimeIdentifierGraph.json"
       }
     }
   }
