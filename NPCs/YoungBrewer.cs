@@ -245,7 +245,7 @@ namespace AlchemistNPCLite.NPCs
             string Entry9 = Language.GetTextValue("Mods.AlchemistNPCLite.Entry9");
             string Entry10 = Language.GetTextValue("Mods.AlchemistNPCLite.Entry10");
             int Brewer = NPC.FindFirstNPC(ModContent.NPCType<Brewer>());
-            if (Brewer >= 0 && Main.rand.Next(4) == 0)
+            if (Brewer >= 0 && Main.rand.NextBool(4))
             {
                 return Entry8 + Main.npc[Brewer].GivenName + Entry9;
             }
@@ -329,8 +329,6 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].shopCustomPrice = 100000;
                     nextSlot++;
                 }
-                // IMPLEMENT WHEN WEAKREFERENCES FIXED
-                /*
                 if (ModLoader.GetMod("ThoriumMod") != null)
                 {
                     if (NPC.downedMechBossAny)
@@ -340,7 +338,6 @@ namespace AlchemistNPCLite.NPCs
                         nextSlot++;
                     }
                 }
-                */
                 if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
                 {
                     if (NPC.downedGolemBoss)

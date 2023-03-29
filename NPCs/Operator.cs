@@ -459,7 +459,7 @@ namespace AlchemistNPCLite.NPCs
             {
                 return EntryO13;
             }
-            if (Main.rand.Next(5) == 0)
+            if (Main.rand.NextBool(5))
             {
                 if (!WorldGen.crimson)
                 {
@@ -516,7 +516,7 @@ namespace AlchemistNPCLite.NPCs
             	}
             }
             */
-            if (Main.rand.Next(5) == 0 && Main.hardMode)
+            if (Main.rand.NextBool(5) && Main.hardMode)
             {
                 switch (Main.rand.Next(2))
                 {
@@ -526,58 +526,58 @@ namespace AlchemistNPCLite.NPCs
                         return EntryO10;
                 }
             }
-            if (Main.rand.Next(5) == 0 && NPC.downedQueenBee)
+            if (Main.rand.NextBool(5) && NPC.downedQueenBee)
             {
                 return EntryO21;
             }
             if (Calamity != null && Main.hardMode)
             {
-                if (Main.rand.Next(5) == 0 && (bool)Calamity.Call("Downed", "plaguebringer goliath"))
+                if (Main.rand.NextBool(5) && (bool)Calamity.Call("Downed", "plaguebringer goliath"))
                 {
                     return EntryO22;
                 }
-                if (Main.rand.Next(5) == 0 && (bool)Calamity.Call("Downed", "cryogen"))
+                if (Main.rand.NextBool(5) && (bool)Calamity.Call("Downed", "cryogen"))
                 {
                     return EntryO25;
                 }
-                if (Main.rand.Next(5) == 0 && (bool)Calamity.Call("Downed", "providence"))
+                if (Main.rand.NextBool(5) && (bool)Calamity.Call("Downed", "providence"))
                 {
                     return EntryO28;
                 }
-                if (Main.rand.Next(5) == 0 && (bool)Calamity.Call("Downed", "ravager"))
+                if (Main.rand.NextBool(5) && (bool)Calamity.Call("Downed", "ravager"))
                 {
                     return EntryO29;
                 }
-                if (Main.rand.Next(5) == 0 && (bool)Calamity.Call("Downed", "bumblebirb"))
+                if (Main.rand.NextBool(5) && (bool)Calamity.Call("Downed", "bumblebirb"))
                 {
                     return EntryO30;
                 }
-                if (Main.rand.Next(5) == 0 && (bool)Calamity.Call("Downed", "dog"))
+                if (Main.rand.NextBool(5) && (bool)Calamity.Call("Downed", "dog"))
                 {
                     return EntryO31;
                 }
-                if (Main.rand.Next(5) == 0 && (bool)Calamity.Call("Downed", "supreme calamitas"))
+                if (Main.rand.NextBool(5) && (bool)Calamity.Call("Downed", "supreme calamitas"))
                 {
                     return EntryO33;
                 }
             }
-            // IMPLEMENT WHEN WEAKREFERENCES FIXED
-            /*
-            if (ModLoader.GetMod("ThoriumMod") != null && Main.hardMode)
+            if (ModLoader.TryGetMod("ThoriumMod", out Mod ThoriumMod) && Main.hardMode)
             {
-                if (Main.rand.Next(5) == 0 && ThoriumModDownedFallenBeholder)
+                if (Main.rand.NextBool(5) && (bool)ThoriumMod.Call("GetDownedBoss", "FallenBeholder"))
                 {
                     return EntryO23;
                 }
-                if (Main.rand.Next(5) == 0 && ThoriumModDownedStarScout)
+                if (Main.rand.NextBool(5) && (bool)ThoriumMod.Call("GetDownedBoss", "StarScouter"))
                 {
                     return EntryO24;
                 }
             }
 
+            // IMPLEMENT WHEN WEAKREFERENCES FIXED
+            /*
             if (ModLoader.GetMod("SacredTools") != null && Main.hardMode)
             {
-                if (Main.rand.Next(5) == 0 && SacredToolsDownedAbbadon)
+                if (Main.rand.NextBool(5) && SacredToolsDownedAbbadon)
                 {
                     return EntryO32;
                 }
@@ -585,11 +585,11 @@ namespace AlchemistNPCLite.NPCs
 
             if (ModLoader.GetMod("SpiritMod") != null && Main.hardMode)
             {
-                if (Main.rand.Next(5) == 0 && SpiritModDownedStarplateRaider)
+                if (Main.rand.NextBool(5) && SpiritModDownedStarplateRaider)
                 {
                     return EntryO26;
                 }
-                if (Main.rand.Next(5) == 0 && SpiritModDownedOverseer)
+                if (Main.rand.NextBool(5) && SpiritModDownedOverseer)
                 {
                     return EntryO27;
                 }
@@ -1044,6 +1044,7 @@ namespace AlchemistNPCLite.NPCs
         public override void SetupShop(Chest shop, ref int nextSlot)
         {
             ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
+            ModLoader.TryGetMod("ThoriumMod", out Mod ThoriumMod);
             if (Shop1)
             {
                 shop.item[nextSlot].SetDefaults(ItemID.Lens);
@@ -1160,22 +1161,23 @@ namespace AlchemistNPCLite.NPCs
             }
             if (Shop2)
             {
+                if (ThoriumMod != null)
+                {
+                    addModItemToShop(ThoriumMod, "Petal", 10000, ref shop, ref nextSlot);
+                    if (NPC.downedGolemBoss)
+                    {
+                        addModItemToShop(ThoriumMod, "BrokenHeroFragment", 250000, ref shop, ref nextSlot);
+                    }
+                    if (NPC.downedMoonlord)
+                    {
+                        addModItemToShop(ThoriumMod, "WhiteDwarfFragment", 100000, ref shop, ref nextSlot);
+                        addModItemToShop(ThoriumMod, "CometFragment", 100000, ref shop, ref nextSlot);
+                        addModItemToShop(ThoriumMod, "CelestialFragment", 100000, ref shop, ref nextSlot);
+                    }
+                }
+
                 // IMPLEMENT WHEN WEAKREFERENCES FIXED
                 /*
-                if (ModLoader.GetMod("ThoriumMod") != null)
-                {
-                	addModItemToShop(ThoriumMod, "Petal", 10000, ref shop, ref nextSlot);
-                	if (NPC.downedMoonlord)
-                	{
-                		addModItemToShop(ThoriumMod, "WhiteDwarfFragment", 100000, ref shop, ref nextSlot);
-                		addModItemToShop(ThoriumMod, "CometFragment", 100000, ref shop, ref nextSlot);
-                		addModItemToShop(ThoriumMod, "CelestialFragment", 100000, ref shop, ref nextSlot);
-                	}
-                	if (NPC.downedGolemBoss)
-                	{
-                		addModItemToShop(ThoriumMod, "BrokenHeroFragment", 250000, ref shop, ref nextSlot);
-                	}
-                }
                 if (ModLoader.GetMod("SpiritMod") != null)
                 {
                 	if (NPC.downedGolemBoss)

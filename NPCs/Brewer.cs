@@ -749,33 +749,35 @@ namespace AlchemistNPCLite.NPCs
             }
             if (Shop21)
             {
-                // IMPLEMENT WHEN WEAKREFERENCES FIXED
-                /*
-                if (ModLoader.GetMod("ThoriumMod") != null)
+                if (ModLoader.TryGetMod("ThoriumMod", out Mod ThoriumMod))
                 {
-                	if (NPC.downedBoss3)
-                	{
-                		addModItemToShop(ThoriumMod, "CreativityPotion", 10000, ref shop, ref nextSlot);
-                		addModItemToShop(ThoriumMod, "EarwormPotion", 10000, ref shop, ref nextSlot);
-                		addModItemToShop(ThoriumMod, "AssassinPotion", 10000, ref shop, ref nextSlot);
-                	}
-                	if (Main.hardMode)
-                	{
-                		addModItemToShop(ThoriumMod, "InspirationReachPotion", 20000, ref shop, ref nextSlot);
-                	}
-                	addModItemToShop(ThoriumMod, "GlowingPotion", 20000, ref shop, ref nextSlot);
-                	if (Main.hardMode)
-                	{
-                		addModItemToShop(ThoriumMod, "HolyPotion", 20000, ref shop, ref nextSlot);
-                		addModItemToShop(ThoriumMod, "DashPotion", 20000, ref shop, ref nextSlot);
-                	}
-                	addModItemToShop(ThoriumMod, "HydrationPotion", 10000, ref shop, ref nextSlot);
-                	addModItemToShop(ThoriumMod, "BloodPotion", 10000, ref shop, ref nextSlot);
-                	addModItemToShop(ThoriumMod, "ConflagrationPotion", 10000, ref shop, ref nextSlot);
-                	addModItemToShop(ThoriumMod, "SilverTonguePotion", 20000, ref shop, ref nextSlot);
-                	addModItemToShop(ThoriumMod, "AquaPotion", 10000, ref shop, ref nextSlot);
-                	addModItemToShop(ThoriumMod, "FrenzyPotion", 20000, ref shop, ref nextSlot);
+                    if (NPC.downedBoss3)
+                    {
+                        addModItemToShop(ThoriumMod, "WarmongerPotion", 10000, ref shop, ref nextSlot);
+                        addModItemToShop(ThoriumMod, "ArtilleryPotion", 10000, ref shop, ref nextSlot);
+                        addModItemToShop(ThoriumMod, "BouncingFlamePotion", 10000, ref shop, ref nextSlot);
+                        addModItemToShop(ThoriumMod, "CreativityPotion", 10000, ref shop, ref nextSlot);
+                        addModItemToShop(ThoriumMod, "EarwormPotion", 10000, ref shop, ref nextSlot);
+                        addModItemToShop(ThoriumMod, "AssassinPotion", 10000, ref shop, ref nextSlot);
+                    }
+                    if (Main.hardMode)
+                    {
+                        addModItemToShop(ThoriumMod, "InspirationReachPotion", 20000, ref shop, ref nextSlot);
+                    }
+                    addModItemToShop(ThoriumMod, "GlowingPotion", 20000, ref shop, ref nextSlot);
+                    if (Main.hardMode)
+                    {
+                        addModItemToShop(ThoriumMod, "HolyPotion", 20000, ref shop, ref nextSlot);
+                        addModItemToShop(ThoriumMod, "ArcanePotion", 20000, ref shop, ref nextSlot);
+                    }
+                    addModItemToShop(ThoriumMod, "HydrationPotion", 10000, ref shop, ref nextSlot);
+                    addModItemToShop(ThoriumMod, "BloodPotion", 10000, ref shop, ref nextSlot);
+                    addModItemToShop(ThoriumMod, "ConflagrationPotion", 10000, ref shop, ref nextSlot);
+                    addModItemToShop(ThoriumMod, "AquaPotion", 10000, ref shop, ref nextSlot);
+                    addModItemToShop(ThoriumMod, "FrenzyPotion", 20000, ref shop, ref nextSlot);
+                    addModItemToShop(ThoriumMod, "KineticPotion", 20000, ref shop, ref nextSlot);
                 }
+                /*
                 if (ModLoader.GetMod("ReducedGrinding") != null)
                 {
                 	addModItemToShop(ReducedGrinding, "War_Potion", 15000, ref shop, ref nextSlot);

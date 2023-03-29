@@ -347,7 +347,7 @@ namespace AlchemistNPCLite.NPCs
             int Brewer = NPC.FindFirstNPC(ModContent.NPCType<Brewer>());
             int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
             int witchDoctor = NPC.FindFirstNPC(NPCID.WitchDoctor);
-            if (Main.bloodMoon && partyGirl >= 0 && Main.rand.Next(4) == 0)
+            if (Main.bloodMoon && partyGirl >= 0 && Main.rand.NextBool(4))
             {
                 return EntryA23 + Main.npc[partyGirl].GivenName + EntryA24;
             }
@@ -375,11 +375,11 @@ namespace AlchemistNPCLite.NPCs
             {
                 return EntryA19;
             }
-            if (witchDoctor >= 0 && Main.rand.Next(7) == 0)
+            if (witchDoctor >= 0 && Main.rand.NextBool(7))
             {
                 return EntryA25 + Main.npc[Brewer].GivenName + EntryA26 + Main.npc[Brewer].GivenName + EntryA27;
             }
-            if (Brewer >= 0 && Main.rand.Next(5) == 0)
+            if (Brewer >= 0 && Main.rand.NextBool(5))
             {
                 return EntryA15 + Main.npc[Brewer].GivenName + EntryA16;
             }

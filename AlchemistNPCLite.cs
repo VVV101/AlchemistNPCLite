@@ -1,20 +1,12 @@
-﻿using Microsoft.Xna.Framework;
+﻿using AlchemistNPCLite.Interface;
+using AlchemistNPCLite.Items;
 using System.IO;
-using Microsoft.Xna.Framework.Graphics;
-using ReLogic.Graphics;
-using System;
-using System.Collections.Generic;
-using System.Linq;
 using Terraria;
 using Terraria.ID;
-using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
 using Terraria.Localization;
+using Terraria.ModLoader;
 using Terraria.UI;
-using Terraria.DataStructures;
-using Terraria.GameContent.UI;
-using AlchemistNPCLite.Items;
-using AlchemistNPCLite.Interface;
+using static Terraria.ModLoader.ModContent;
 
 namespace AlchemistNPCLite
 {
@@ -82,21 +74,21 @@ namespace AlchemistNPCLite
             }
         }
 
-		public override void PostSetupContent()
-		{
+        public override void PostSetupContent()
+        {
             ModLoader.TryGetMod("Census", out Mod censusMod);
-			if(censusMod != null)
-			{
-				censusMod.Call("TownNPCCondition", NPCType<NPCs.Alchemist>(), "Defeat Eye of Cthulhu");
-				censusMod.Call("TownNPCCondition", NPCType<NPCs.Brewer>(), "Defeat Eye of Cthulhu");
-				censusMod.Call("TownNPCCondition", NPCType<NPCs.Jeweler>(), "Defeat Eye of Cthulhu");
-				censusMod.Call("TownNPCCondition", NPCType<NPCs.Tinkerer>(), "Defeat Eye of Cthulhu");
-				censusMod.Call("TownNPCCondition", NPCType<NPCs.Architect>(), "Have any 3 other NPC present");
-				censusMod.Call("TownNPCCondition", NPCType<NPCs.Operator>(), "Defeat Eater of Worlds/Brain of Cthulhu");
-				censusMod.Call("TownNPCCondition", NPCType<NPCs.Musician>(), "Defeat Skeletron");
-				censusMod.Call("TownNPCCondition", NPCType<NPCs.YoungBrewer>(), "World state is Hardmode and both Alchemist and Operator are alive");
-			}
-		}
+            if (censusMod != null)
+            {
+                censusMod.Call("TownNPCCondition", NPCType<NPCs.Alchemist>(), "Defeat Eye of Cthulhu");
+                censusMod.Call("TownNPCCondition", NPCType<NPCs.Brewer>(), "Defeat Eye of Cthulhu");
+                censusMod.Call("TownNPCCondition", NPCType<NPCs.Jeweler>(), "Defeat Eye of Cthulhu");
+                censusMod.Call("TownNPCCondition", NPCType<NPCs.Tinkerer>(), "Defeat Eye of Cthulhu");
+                censusMod.Call("TownNPCCondition", NPCType<NPCs.Architect>(), "Have any 3 other NPC present");
+                censusMod.Call("TownNPCCondition", NPCType<NPCs.Operator>(), "Defeat Eater of Worlds/Brain of Cthulhu");
+                censusMod.Call("TownNPCCondition", NPCType<NPCs.Musician>(), "Defeat Skeletron");
+                censusMod.Call("TownNPCCondition", NPCType<NPCs.YoungBrewer>(), "World state is Hardmode and both Alchemist and Operator are alive");
+            }
+        }
 
         public override void Unload()
         {
@@ -408,7 +400,7 @@ namespace AlchemistNPCLite
             text.SetDefault("Wall Of Flesh Treasure Bag");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "血肉之墙宝藏袋");
             LocalizationLoader.AddTranslation(text);
-            
+
             text = LocalizationLoader.CreateTranslation(this, "QueenSlime");
             text.SetDefault("Queen Slime Treasure Bag");
             LocalizationLoader.AddTranslation(text);
@@ -432,7 +424,7 @@ namespace AlchemistNPCLite
             text.SetDefault("Plantera Treasure Bag");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "世纪之花宝藏袋");
             LocalizationLoader.AddTranslation(text);
-            
+
             text = LocalizationLoader.CreateTranslation(this, "EmpressOfLight");
             text.SetDefault("Empress of Light Treasure Bag");
             LocalizationLoader.AddTranslation(text);

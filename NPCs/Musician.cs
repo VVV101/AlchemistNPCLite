@@ -339,15 +339,15 @@ namespace AlchemistNPCLite.NPCs
             {
                 return EntryM3;
             }
-            if (Mechanic >= 0 && Main.rand.Next(20) == 0)
+            if (Mechanic >= 0 && Main.rand.NextBool(20))
             {
                 return EntryM8 + Main.npc[Mechanic].GivenName + EntryM9;
             }
-            if (Wizard >= 0 && Main.rand.Next(20) == 0)
+            if (Wizard >= 0 && Main.rand.NextBool(20))
             {
                 return EntryM10 + Main.npc[Wizard].GivenName + EntryM11;
             }
-            if (Clothier >= 0 && Main.rand.Next(20) == 0)
+            if (Clothier >= 0 && Main.rand.NextBool(20))
             {
                 return EntryM12 + Main.npc[Clothier].GivenName + EntryM13;
             }
@@ -739,33 +739,63 @@ namespace AlchemistNPCLite.NPCs
                 shop.item[nextSlot].shopCustomPrice = 250000;
                 nextSlot++;
                 // IMPLEMENT WHEN WEAKREFERENCES FIXED
-                /*
-                if (ModLoader.GetMod("ThoriumMod") != null)
+                if (ModLoader.TryGetMod("ThoriumMod", out Mod ThoriumMod))
                 {
-                    if (ThoriumModDownedGTBird)
+                    if ((bool)ThoriumMod.Call("GetDownedBoss", "TheGrandThunderBird"))
                     {
                         addModItemToShop(ThoriumMod, "ThunderBirdMusicBox", 150000, ref shop, ref nextSlot);
                     }
-                    if (ThoriumModDownedViscount)
+                    if ((bool)ThoriumMod.Call("GetDownedBoss", "QueenJellyfish"))
+                    {
+                        addModItemToShop(ThoriumMod, "QueenJellyfishMusicBox", 150000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)ThoriumMod.Call("GetDownedBoss", "Viscount"))
                     {
                         addModItemToShop(ThoriumMod, "ViscountMusicBox", 150000, ref shop, ref nextSlot);
                     }
-                    if (ThoriumModDownedBoreanStrider)
+                    if ((bool)ThoriumMod.Call("GetDownedBoss", "GraniteEnergyStorm"))
+                    {
+                        addModItemToShop(ThoriumMod, "EnergyStormMusicBox", 150000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)ThoriumMod.Call("GetDownedBoss", "BuriedChampion"))
+                    {
+                        addModItemToShop(ThoriumMod, "BuriedChampionMusicBox", 150000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)ThoriumMod.Call("GetDownedBoss", "StarScouter"))
+                    {
+                        addModItemToShop(ThoriumMod, "StarScouterMusicBox", 150000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)ThoriumMod.Call("GetDownedBoss", "BoreanStrider"))
                     {
                         addModItemToShop(ThoriumMod, "BoreanStriderMusicBox", 150000, ref shop, ref nextSlot);
                     }
-                    if (ThoriumModDownedFallenBeholder)
+                    if ((bool)ThoriumMod.Call("GetDownedBoss", "FallenBeholder"))
                     {
                         addModItemToShop(ThoriumMod, "FallenBeholderMusicBox", 150000, ref shop, ref nextSlot);
                     }
-                    if (ThoriumModDownedAbyssion)
+                    if ((bool)ThoriumMod.Call("GetDownedBoss", "Lich"))
+                    {
+                        addModItemToShop(ThoriumMod, "LichMusicBox", 150000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)ThoriumMod.Call("GetDownedBoss", "ForgottenOne"))
                     {
                         addModItemToShop(ThoriumMod, "DepthsMusicBox", 150000, ref shop, ref nextSlot);
+                        addModItemToShop(ThoriumMod, "AbyssMusicBox", 150000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)ThoriumMod.Call("GetDownedBoss", "ThePrimordials"))
+                    {
+                        addModItemToShop(ThoriumMod, "PrimordialsMusicBox", 150000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)ThoriumMod.Call("GetDownedBoss", "PatchWerk") ||
+                        (bool)ThoriumMod.Call("GetDownedBoss", "CorpseBloom") ||
+                        (bool)ThoriumMod.Call("GetDownedBoss", "Illusionist"))
+                    {
+                        addModItemToShop(ThoriumMod, "MiniBossMusicBox", 150000, ref shop, ref nextSlot);
                     }
                 }
-				*/
             }
         }
+
         private void addModItemToShop(Mod mod, String itemName, int price, ref Chest shop, ref int nextSlot)
         {
             if (mod.TryFind<ModItem>(itemName, out ModItem currItem))
