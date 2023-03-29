@@ -769,13 +769,13 @@ namespace AlchemistNPCLite.NPCs
                     {
                         addModItemToShop(ThoriumMod, "HolyPotion", 20000, ref shop, ref nextSlot);
                         addModItemToShop(ThoriumMod, "ArcanePotion", 20000, ref shop, ref nextSlot);
+                        addModItemToShop(ThoriumMod, "KineticPotion", 20000, ref shop, ref nextSlot);
                     }
                     addModItemToShop(ThoriumMod, "HydrationPotion", 10000, ref shop, ref nextSlot);
                     addModItemToShop(ThoriumMod, "BloodPotion", 10000, ref shop, ref nextSlot);
                     addModItemToShop(ThoriumMod, "ConflagrationPotion", 10000, ref shop, ref nextSlot);
                     addModItemToShop(ThoriumMod, "AquaPotion", 10000, ref shop, ref nextSlot);
                     addModItemToShop(ThoriumMod, "FrenzyPotion", 20000, ref shop, ref nextSlot);
-                    addModItemToShop(ThoriumMod, "KineticPotion", 20000, ref shop, ref nextSlot);
                 }
                 /*
                 if (ModLoader.GetMod("ReducedGrinding") != null)

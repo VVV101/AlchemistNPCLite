@@ -738,7 +738,6 @@ namespace AlchemistNPCLite.NPCs
                 shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Misc.BoomBox>());
                 shop.item[nextSlot].shopCustomPrice = 250000;
                 nextSlot++;
-                // IMPLEMENT WHEN WEAKREFERENCES FIXED
                 if (ModLoader.TryGetMod("ThoriumMod", out Mod ThoriumMod))
                 {
                     if ((bool)ThoriumMod.Call("GetDownedBoss", "TheGrandThunderBird"))

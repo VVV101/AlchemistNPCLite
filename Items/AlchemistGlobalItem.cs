@@ -1,16 +1,11 @@
-using Terraria.Utilities;
 using Microsoft.Xna.Framework;
-using System;
 using System.Collections.Generic;
-using System.IO;
-using System.Linq;
 using Terraria;
-using Terraria.GameContent.Creative;
 using Terraria.ID;
-using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
-using Terraria.ModLoader.IO;
 using Terraria.Localization;
+using Terraria.ModLoader;
+using Terraria.Utilities;
+using static Terraria.ModLoader.ModContent;
 
 namespace AlchemistNPCLite.Items
 {
@@ -335,6 +330,7 @@ namespace AlchemistNPCLite.Items
             string ThornBane = Language.GetTextValue("Mods.AlchemistNPCLite.ThornBane");
             string TheKeeper = Language.GetTextValue("Mods.AlchemistNPCLite.TheKeeper");
             string XenoCrystal = Language.GetTextValue("Mods.AlchemistNPCLite.XenoCrystal");
+            string SeedInfection = Language.GetTextValue("Mods.AlchemistNPCLite.SeedInfection");
             string IEye = Language.GetTextValue("Mods.AlchemistNPCLite.IEye");
             string KingSlayer = Language.GetTextValue("Mods.AlchemistNPCLite.KingSlayer");
             string V1 = Language.GetTextValue("Mods.AlchemistNPCLite.V1");
@@ -942,81 +938,89 @@ namespace AlchemistNPCLite.Items
                     tooltips.Insert(1, line);
                 }
             }
+            */
             if (ModLoader.GetMod("Redemption") != null)
             {
-                if (item.type == (ModLoader.GetMod("Redemption").ItemType("KingChickenBag")))
-                {
-                    TooltipLine line = new TooltipLine(Mod, "KingChicken", KingChicken);
-                    line.OverrideColor = Color.LimeGreen;
-                    tooltips.Insert(1, line);
-                }
-                if (item.type == (ModLoader.GetMod("Redemption").ItemType("ThornBag")))
+                //if (item.type == (ModLoader.GetMod("Redemption").ItemType("KingChickenBag")))
+                //{
+                //    TooltipLine line = new TooltipLine(Mod, "KingChicken", KingChicken);
+                //    line.OverrideColor = Color.LimeGreen;
+                //    tooltips.Insert(1, line);
+                //}
+                if (item.type == ItemType<Redemption.Items.Usable.ThornBag>())
                 {
                     TooltipLine line = new TooltipLine(Mod, "ThornBane", ThornBane);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("Redemption").ItemType("TheKeeperBag")))
+                if (item.type == ItemType<Redemption.Items.Usable.KeeperBag>())
                 {
                     TooltipLine line = new TooltipLine(Mod, "TheKeeper", TheKeeper);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("Redemption").ItemType("XenomiteCrystalBag")))
+                //if (item.type == (ModLoader.GetMod("Redemption").ItemType("XenomiteCrystalBag")))
+                //{
+                //    TooltipLine line = new TooltipLine(Mod, "XenoCrystal", XenoCrystal);
+                //    line.OverrideColor = Color.LimeGreen;
+                //    tooltips.Insert(1, line);
+                //}
+                if (item.type == ItemType<Redemption.Items.Usable.SoIBag>())
                 {
-                    TooltipLine line = new TooltipLine(Mod, "XenoCrystal", XenoCrystal);
+                    TooltipLine line = new TooltipLine(Mod, "SeedInfection", SeedInfection);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("Redemption").ItemType("InfectedEyeBag")))
-                {
-                    TooltipLine line = new TooltipLine(Mod, "IEye", IEye);
-                    line.OverrideColor = Color.LimeGreen;
-                    tooltips.Insert(1, line);
-                }
-                if (item.type == (ModLoader.GetMod("Redemption").ItemType("SlayerBag")))
+                //if (item.type == (ModLoader.GetMod("Redemption").ItemType("InfectedEyeBag")))
+                //{
+                //    TooltipLine line = new TooltipLine(Mod, "IEye", IEye);
+                //    line.OverrideColor = Color.LimeGreen;
+                //    tooltips.Insert(1, line);
+                //}
+                if (item.type == ItemType<Redemption.Items.Usable.SlayerBag>())
                 {
                     TooltipLine line = new TooltipLine(Mod, "KingSlayer", KingSlayer);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("Redemption").ItemType("VlitchCleaverBag")))
+                if (item.type == ItemType<Redemption.Items.Usable.OmegaCleaverBag>())
                 {
                     TooltipLine line = new TooltipLine(Mod, "V1", V1);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("Redemption").ItemType("VlitchGigipedeBag")))
+                if (item.type == ItemType<Redemption.Items.Usable.OmegaGigaporaBag>())
                 {
                     TooltipLine line = new TooltipLine(Mod, "V2", V2);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("Redemption").ItemType("OmegaOblitBag")))
+                if (item.type == ItemType<Redemption.Items.Usable.OmegaOblitBag>())
                 {
                     TooltipLine line = new TooltipLine(Mod, "V3", V3);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("Redemption").ItemType("PZBag")))
+                if (item.type == ItemType<Redemption.Items.Usable.PZBag>())
                 {
                     TooltipLine line = new TooltipLine(Mod, "PZ", PZ);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("Redemption").ItemType("ThornPZBag")))
+                if (item.type == ItemType<Redemption.Items.Usable.ThornBag>())
                 {
                     TooltipLine line = new TooltipLine(Mod, "ThornRematch", ThornRematch);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
-                if (item.type == (ModLoader.GetMod("Redemption").ItemType("NebBag")))
+                if (item.type == ItemType<Redemption.Items.Usable.NebBag>())
                 {
                     TooltipLine line = new TooltipLine(Mod, "Nebuleus", Nebuleus);
                     line.OverrideColor = Color.LimeGreen;
                     tooltips.Insert(1, line);
                 }
             }
+            /*
             if (ModLoader.GetMod("SacredTools") != null)
             {
                 if (item.type == (ModLoader.GetMod("SacredTools").ItemType("DecreeBag")))

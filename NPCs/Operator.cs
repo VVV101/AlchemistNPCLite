@@ -979,60 +979,68 @@ namespace AlchemistNPCLite.NPCs
         {
             get { return ElementsAwoken.MyWorld.downedAncients; }
         }
+		*/
 
-        public bool ReDownedChicken
-        {
-            get { return Redemption.RedeWorld.downedKingChicken; }
-        }
+        //public bool ReDownedChicken
+        //{
+        //    get { return Redemption.Globals.RedeBossDowned.downedKingChicken; }
+        //}
         public bool ReDownedThorn
         {
-            get { return Redemption.RedeWorld.downedThorn; }
+            get { return Redemption.Globals.RedeBossDowned.downedThorn; }
         }
         public bool ReDownedKeeper
         {
-            get { return Redemption.RedeWorld.downedTheKeeper; }
+            get { return Redemption.Globals.RedeBossDowned.downedKeeper; }
         }
-        public bool ReDownedCrystal
+        public bool ReDownedSkullDigger
         {
-            get { return Redemption.RedeWorld.downedXenomiteCrystal; }
+            get { return Redemption.Globals.RedeBossDowned.downedSkullDigger; }
         }
-        public bool ReDownedIEye
+        public bool ReDownedSeedInfection
         {
-            get { return Redemption.RedeWorld.downedInfectedEye; }
+            get { return Redemption.Globals.RedeBossDowned.downedSeed; }
         }
+        //public bool ReDownedIEye
+        //{
+        //    get { return Redemption.Globals.RedeBossDowned.downedInfectedEye; }
+        //}
         public bool ReDownedKingSlayer
         {
-            get { return Redemption.RedeWorld.downedSlayer; }
+            get { return Redemption.Globals.RedeBossDowned.downedSlayer; }
         }
-        public bool ReDownedVCleaver
+        public bool ReDownedOCleaver
         {
-            get { return Redemption.RedeWorld.downedVlitch1; }
+            get { return Redemption.Globals.RedeBossDowned.downedOmega1; }
         }
-        public bool ReDownedVGigipede
+        public bool ReDownedOGigapora
         {
-            get { return Redemption.RedeWorld.downedVlitch2; }
+            get { return Redemption.Globals.RedeBossDowned.downedOmega2; }
         }
         public bool ReDownedObliterator
         {
-            get { return Redemption.RedeWorld.downedVlitch3; }
+            get { return Redemption.Globals.RedeBossDowned.downedOmega3; }
         }
         public bool ReDownedPZero
         {
-            get { return Redemption.RedeWorld.downedPatientZero; }
+            get { return Redemption.Globals.RedeBossDowned.downedPZ; }
         }
         public bool ReDownedThornRe
         {
-            get { return Redemption.RedeWorld.downedThornPZ; }
+            get { return Redemption.Globals.RedeBossDowned.downedThorn; }
         }
         public bool ReDownedGolemRe
         {
-            get { return Redemption.RedeWorld.downedEaglecrestGolemPZ; }
+            get { return Redemption.Globals.RedeBossDowned.downedEaglecrestGolem; }
+        }
+        public bool ReDownedDeityDuo
+        {
+            get { return Redemption.Globals.RedeBossDowned.downedADD; }
         }
         public bool ReDownedNebuleus
         {
-            get { return Redemption.RedeWorld.downedNebuleus; }
+            get { return Redemption.Globals.RedeBossDowned.downedNebuleus; }
         }
-		*/
         // Possibly redundant with ModGlobalNPC
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
@@ -1318,16 +1326,13 @@ namespace AlchemistNPCLite.NPCs
                         nextSlot++;
                     }
                 }
-                // IMPLEMENT WHEN WEAKREFERENCES FIXED
-                /*
                 if (ModLoader.GetMod("ThoriumMod") != null)
-				{
-					if (DD2Event.DownedInvasionT1)
-					{
-						addModItemToShop(ThoriumMod, "DarkMageBag", 1000000, ref shop, ref nextSlot);
-					}
-				}
-				*/
+                {
+                    if (DD2Event.DownedInvasionT1)
+                    {
+                        addModItemToShop(ThoriumMod, "DarkMageBag", 1000000, ref shop, ref nextSlot);
+                    }
+                }
                 if (Main.hardMode && Main.expertMode)
                 {
                     shop.item[nextSlot].SetDefaults(ItemID.WallOfFleshBossBag);
@@ -1352,16 +1357,13 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].shopCustomPrice = 2000000;
                     nextSlot++;
                 }
-                // IMPLEMENT WHEN WEAKREFERENCES FIXED
-                /*
                 if (ModLoader.GetMod("ThoriumMod") != null)
-				{
-					if (DD2Event.DownedInvasionT2 && NPC.downedMechBossAny)
-					{
-						addModItemToShop(ThoriumMod, "OgreBag", 2500000, ref shop, ref nextSlot);
-					}
-				}
-				*/
+                {
+                    if (DD2Event.DownedInvasionT2 && NPC.downedMechBossAny)
+                    {
+                        addModItemToShop(ThoriumMod, "OgreBag", 2500000, ref shop, ref nextSlot);
+                    }
+                }
                 if (NPC.downedPlantBoss && Main.expertMode)
                 {
                     shop.item[nextSlot].SetDefaults(ItemID.PlanteraBossBag);
@@ -1513,58 +1515,56 @@ namespace AlchemistNPCLite.NPCs
                         }
                     }
                 }
-                // IMPLEMENT WHEN WEAKREFERENCES FIXED
-                /*
                 if (ModLoader.GetMod("ThoriumMod") != null)
                 {
                     if (NPC.downedBoss3)
                     {
-                        if (ThoriumModDownedGTBird)
+                        if ((bool)ThoriumMod.Call("GetDownedBoss", "TheGrandThunderBird"))
                         {
                             addModItemToShop(ThoriumMod, "ThunderBirdBag", 500000, ref shop, ref nextSlot);
                         }
-                        if (ThoriumModDownedQueenJelly)
+                        if ((bool)ThoriumMod.Call("GetDownedBoss", "QueenJellyfish"))
                         {
                             addModItemToShop(ThoriumMod, "JellyFishBag", 750000, ref shop, ref nextSlot);
                         }
-                        if (ThoriumModDownedViscount)
+                        if ((bool)ThoriumMod.Call("GetDownedBoss", "Viscount"))
                         {
                             addModItemToShop(ThoriumMod, "CountBag", 850000, ref shop, ref nextSlot);
                         }
-                        if (ThoriumModDownedStorm)
+                        if ((bool)ThoriumMod.Call("GetDownedBoss", "GraniteEnergyStorm"))
                         {
                             addModItemToShop(ThoriumMod, "GraniteBag", 1000000, ref shop, ref nextSlot);
                         }
-                        if (ThoriumModDownedChampion)
+                        if ((bool)ThoriumMod.Call("GetDownedBoss", "BuriedChampion"))
                         {
                             addModItemToShop(ThoriumMod, "HeroBag", 1000000, ref shop, ref nextSlot);
                         }
-                        if (ThoriumModDownedStarScout)
+                        if ((bool)ThoriumMod.Call("GetDownedBoss", "StarScouter"))
                         {
                             addModItemToShop(ThoriumMod, "ScouterBag", 1250000, ref shop, ref nextSlot);
                         }
                         if (Main.hardMode)
                         {
-                            if (ThoriumModDownedBoreanStrider)
+                            if ((bool)ThoriumMod.Call("GetDownedBoss", "BoreanStrider"))
                             {
                                 addModItemToShop(ThoriumMod, "BoreanBag", 1500000, ref shop, ref nextSlot);
                             }
-                            if (ThoriumModDownedFallenBeholder)
+                            if ((bool)ThoriumMod.Call("GetDownedBoss", "FallenBeholder"))
                             {
                                 addModItemToShop(ThoriumMod, "BeholderBag", 2000000, ref shop, ref nextSlot);
                             }
-                            if (ThoriumModDownedLich)
+                            if ((bool)ThoriumMod.Call("GetDownedBoss", "Lich"))
                             {
                                 addModItemToShop(ThoriumMod, "LichBag", 3000000, ref shop, ref nextSlot);
                             }
-                            if (ThoriumModDownedAbyssion)
+                            if ((bool)ThoriumMod.Call("GetDownedBoss", "ForgottenOne"))
                             {
                                 addModItemToShop(ThoriumMod, "AbyssionBag", 3500000, ref shop, ref nextSlot);
                             }
                         }
                         if (NPC.downedMoonlord)
                         {
-                            if (ThoriumModDownedRagnarok)
+                            if ((bool)ThoriumMod.Call("GetDownedBoss", "ThePrimordials"))
                             {
                                 addModItemToShop(ThoriumMod, "RagBag", 5000000, ref shop, ref nextSlot);
                             }
@@ -1572,6 +1572,8 @@ namespace AlchemistNPCLite.NPCs
                     }
                 }
 
+                // IMPLEMENT WHEN WEAKREFERENCES FIXED
+                /*
                 if (ModLoader.GetMod("SacredTools") != null)
                 {
                     if (NPC.downedBoss3)
@@ -1850,39 +1852,44 @@ namespace AlchemistNPCLite.NPCs
                             addModItemToShop(ElementsAwoken, "AncientsBag", 10000000, ref shop, ref nextSlot);
                         }
                     }
-                    if (ModLoader.GetMod("Redemption") != null)
+                    */
+                    if (ModLoader.TryGetMod("Redemption", out Mod Redemption))
                     {
-                        if (ReDownedChicken)
-                        {
-                            addModItemToShop(Redemption, "KingChickenBag", 150000, ref shop, ref nextSlot);
-                        }
+                        //if (ReDownedChicken)
+                        //{
+                        //    addModItemToShop(Redemption, "KingChickenBag", 150000, ref shop, ref nextSlot);
+                        //}
                         if (ReDownedThorn)
                         {
                             addModItemToShop(Redemption, "ThornBag", 250000, ref shop, ref nextSlot);
                         }
                         if (ReDownedKeeper)
                         {
-                            addModItemToShop(Redemption, "TheKeeperBag", 350000, ref shop, ref nextSlot);
+                            addModItemToShop(Redemption, "KeeperBag", 350000, ref shop, ref nextSlot);
                         }
-                        if (ReDownedCrystal)
+                        //if (ReDownedCrystal)
+                        //{
+                        //    addModItemToShop(Redemption, "XenomiteCrystalBag", 500000, ref shop, ref nextSlot);
+                        //}
+                        //if (ReDownedIEye)
+                        //{
+                        //    addModItemToShop(Redemption, "InfectedEyeBag", 1000000, ref shop, ref nextSlot);
+                        //}
+                        if (ReDownedSeedInfection)
                         {
-                            addModItemToShop(Redemption, "XenomiteCrystalBag", 500000, ref shop, ref nextSlot);
-                        }
-                        if (ReDownedIEye)
-                        {
-                            addModItemToShop(Redemption, "InfectedEyeBag", 1000000, ref shop, ref nextSlot);
+                            addModItemToShop(Redemption, "SoIBag", 1000000, ref shop, ref nextSlot);
                         }
                         if (ReDownedKingSlayer)
                         {
                             addModItemToShop(Redemption, "SlayerBag", 1500000, ref shop, ref nextSlot);
                         }
-                        if (ReDownedVCleaver)
+                        if (ReDownedOCleaver)
                         {
-                            addModItemToShop(Redemption, "VlitchCleaverBag", 2000000, ref shop, ref nextSlot);
+                            addModItemToShop(Redemption, "OmegaCleaverBag", 2000000, ref shop, ref nextSlot);
                         }
-                        if (ReDownedVGigipede)
+                        if (ReDownedOGigapora)
                         {
-                            addModItemToShop(Redemption, "VlitchGigipedeBag", 3000000, ref shop, ref nextSlot);
+                            addModItemToShop(Redemption, "OmegaGigaporaBag", 3000000, ref shop, ref nextSlot);
                         }
                         if (ReDownedObliterator)
                         {
@@ -1892,16 +1899,16 @@ namespace AlchemistNPCLite.NPCs
                         {
                             addModItemToShop(Redemption, "PZBag", 6000000, ref shop, ref nextSlot);
                         }
-                        if (ReDownedThornRe && ReDownedGolemRe)
+                        if (ReDownedDeityDuo)
                         {
-                            addModItemToShop(Redemption, "ThornPZBag", 7000000, ref shop, ref nextSlot);
+                            addModItemToShop(Redemption, "UkkoBag", 6000000, ref shop, ref nextSlot);
+                            addModItemToShop(Redemption, "AkkaBag", 6000000, ref shop, ref nextSlot);
                         }
                         if (ReDownedNebuleus)
                         {
                             addModItemToShop(Redemption, "NebBag", 10000000, ref shop, ref nextSlot);
                         }
                     }
-					*/
                 }
             }
         }
