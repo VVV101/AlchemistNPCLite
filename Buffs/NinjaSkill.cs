@@ -1,9 +1,7 @@
 using Terraria;
-using System.Linq;
-using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
-using Terraria.Localization;
 using Terraria.ID;
+using Terraria.Localization;
+using Terraria.ModLoader;
 
 namespace AlchemistNPCLite.Buffs
 {
@@ -36,10 +34,6 @@ namespace AlchemistNPCLite.Buffs
             {
                 ThoriumBoosts(player);
             }
-            if (ModLoader.GetMod("Redemption") != null)
-            {
-                RedemptionBoost(player);
-            }
 			*/
             ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
             if (Calamity != null)
@@ -50,20 +44,13 @@ namespace AlchemistNPCLite.Buffs
 
         private void CalamityBoost(Player player)
         {
-			// CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
+            // CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
             player.GetDamage(DamageClass.Throwing) += 5;
         }
         // private readonly ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
 
         // IMPLEMENT WHEN WEAKREFERENCES FIXED
         /*
-        private void RedemptionBoost(Player player)
-        {
-            Redemption.Items.DruidDamageClass.DruidDamagePlayer RedemptionPlayer = player.GetModPlayer<Redemption.Items.DruidDamageClass.DruidDamagePlayer>();
-            Redemptionplayer.GetDamage(DamageClass.druid) += 5;
-        }
-        private readonly Mod Redemption = ModLoader.GetMod("Redemption");
-
         private void ThoriumBoosts(Player player)
         {
             ThoriumMod.ThoriumPlayer ThoriumPlayer = player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
