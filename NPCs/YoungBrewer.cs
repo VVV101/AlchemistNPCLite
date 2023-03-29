@@ -1,13 +1,11 @@
 using System;
-using System.Linq;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
-using Terraria.Localization;
 using System.Collections.Generic;
+using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.Personalities;
+using Terraria.ID;
+using Terraria.Localization;
+using Terraria.ModLoader;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -121,7 +119,7 @@ namespace AlchemistNPCLite.NPCs
             text.SetDefault("Certain combinations can only be brewed if certain types of magic are present in the world.");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Некоторые комбинации могут быть изготовлены только если в мире присутсвуют особенные виды магии.");
             LocalizationLoader.AddTranslation(text);
-			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
+            NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             {
                 Velocity = -1f,
                 Direction = -1
@@ -134,10 +132,10 @@ namespace AlchemistNPCLite.NPCs
 
             NPC.Happiness.SetNPCAffection<Brewer>(AffectionLevel.Love);
             NPC.Happiness.SetNPCAffection<Alchemist>(AffectionLevel.Like);
-            NPC.Happiness.SetNPCAffection(NPCID.GoblinTinkerer,AffectionLevel.Dislike);
+            NPC.Happiness.SetNPCAffection(NPCID.GoblinTinkerer, AffectionLevel.Dislike);
         }
-		
-		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+
+        public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
@@ -188,14 +186,14 @@ namespace AlchemistNPCLite.NPCs
             string Atreus = Language.GetTextValue("Mods.AlchemistNPCLite.Atreus");
 
             return new List<string>() {
-				Harold,
-				Charles,
-				Monty,
-				Lucas,
+                Harold,
+                Charles,
+                Monty,
+                Lucas,
                 Porky,
                 Atreus,
                 Leeland
-			};
+            };
         }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)
@@ -332,7 +330,7 @@ namespace AlchemistNPCLite.NPCs
                     nextSlot++;
                 }
                 // IMPLEMENT WHEN WEAKREFERENCES FIXED
-				/*
+                /*
                 if (ModLoader.GetMod("ThoriumMod") != null)
                 {
                     if (NPC.downedMechBossAny)
@@ -353,7 +351,7 @@ namespace AlchemistNPCLite.NPCs
                     }
                 }
                 // IMPLEMENT WHEN WEAKREFERENCES FIXED
-				/*
+                /*
                 if (ModLoader.GetMod("MorePotions") != null)
                 {
                     if (Main.hardMode)
@@ -380,8 +378,8 @@ namespace AlchemistNPCLite.NPCs
                     nextSlot++;
                 }
 
-				// IMPLEMENT WHEN WEAKREFERENCES FIXED
-				/*
+                // IMPLEMENT WHEN WEAKREFERENCES FIXED
+                /*
                 if (ModLoader.GetMod("ThoriumMod") != null)
                 {
                     if (NPC.downedBoss3)
@@ -442,8 +440,8 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].shopCustomPrice = 30000;
                     nextSlot++;
                 }
-				// IMPLEMENT WHEN WEAKREFERENCES FIXED
-				/*
+                // IMPLEMENT WHEN WEAKREFERENCES FIXED
+                /*
                 if (ModLoader.GetMod("AAMod") != null)
                 {
                 	if (Main.hardMode)
@@ -462,19 +460,21 @@ namespace AlchemistNPCLite.NPCs
 				*/
                 if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
                 {
-                	if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
-                	{
-                		addModItemToShop(Calamity, "CalamitasBrew", 50000, ref shop, ref nextSlot);
-                	}
+                    if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
+                    {
+                        addModItemToShop(Calamity, "CalamitasBrew", 50000, ref shop, ref nextSlot);
+                    }
                 }
             }
         }
-        private void addModItemToShop(Mod mod, String itemName, int price, ref Chest shop, ref int nextSlot) {
-            if(mod.TryFind<ModItem>(itemName, out ModItem currItem)) {
+        private void addModItemToShop(Mod mod, String itemName, int price, ref Chest shop, ref int nextSlot)
+        {
+            if (mod.TryFind<ModItem>(itemName, out ModItem currItem))
+            {
                 shop.item[nextSlot].SetDefaults(currItem.Type);
                 shop.item[nextSlot].shopCustomPrice = price;
                 nextSlot++;
             }
-        }	
+        }
     }
 }

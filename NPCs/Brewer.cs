@@ -1,17 +1,12 @@
-using System.Linq;
-using System;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
-using Terraria.ID;
-using AlchemistNPCLite.NPCs;
-using AlchemistNPCLite;
 using AlchemistNPCLite.Interface;
-using Terraria.Localization;
+using System;
 using System.Collections.Generic;
+using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.Personalities;
+using Terraria.ID;
+using Terraria.Localization;
+using Terraria.ModLoader;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -204,7 +199,7 @@ namespace AlchemistNPCLite.NPCs
             text.SetDefault("I once traveled far away from Terraria to learn more about Alchemy. In my travels I met a ''scientist of magic'' called Azanor. He showed me the secrets of something called ''thaumaturgy''.");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Я однажды выбралась из мира Террарии чтобы узнать больше об Алхимии. В своих путешествиях я встретила ''учёного магии'' по имени Азанор. Он показал мне тайны чего-то, названного ''тауматургия''.");
             LocalizationLoader.AddTranslation(text);
-			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
+            NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             {
                 Velocity = -1f,
                 Direction = -1
@@ -217,10 +212,10 @@ namespace AlchemistNPCLite.NPCs
 
             NPC.Happiness.SetNPCAffection<YoungBrewer>(AffectionLevel.Love);
             NPC.Happiness.SetNPCAffection<Alchemist>(AffectionLevel.Like);
-            NPC.Happiness.SetNPCAffection(NPCID.WitchDoctor,AffectionLevel.Dislike);
+            NPC.Happiness.SetNPCAffection(NPCID.WitchDoctor, AffectionLevel.Dislike);
         }
-		
-		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+
+        public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
@@ -263,13 +258,13 @@ namespace AlchemistNPCLite.NPCs
             string Mary = Language.GetTextValue("Mods.AlchemistNPCLite.Mary");
 
             return new List<string>() {
-				Lillian,
-				Lucy,
-				Alice,
+                Lillian,
+                Lucy,
+                Alice,
                 Rocksahn,
-				Agness,
+                Agness,
                 Mary
-			};
+            };
         }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)
@@ -457,13 +452,13 @@ namespace AlchemistNPCLite.NPCs
                         }
                     }
                 }
-                if(!ShopChangeUI.visible) ShopChangeUI.timeStart = Main.GameUpdateCount;
+                if (!ShopChangeUI.visible) ShopChangeUI.timeStart = Main.GameUpdateCount;
                 ShopChangeUI.visible = true;
             }
         }
 
         // IMPLEMENT WHEN WEAKREFERENCES FIXED
-		/*
+        /*
         public bool SacredToolsDownedAbaddon
         {
         	get { return SacredTools.ModdedWorld.OblivionSpawns; }
@@ -481,8 +476,10 @@ namespace AlchemistNPCLite.NPCs
 		*/
         public bool CalamityModRevengeance
         {
-            get {
-                if(ModLoader.TryGetMod("CalamityMod", out Mod Calamity)) {
+            get
+            {
+                if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
+                {
                     return (bool)Calamity.Call("GetDifficultyActive", "revengeance");
                 }
                 return false;
@@ -657,9 +654,9 @@ namespace AlchemistNPCLite.NPCs
                         {
                             if (CalamityModRevengeance)
                             {
-                            shop.item[nextSlot].SetDefaults (ModContent.ItemType<Items.HeartAttackPotion>());
-                            shop.item[nextSlot].shopCustomPrice = 250000;
-                            nextSlot++;
+                                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.HeartAttackPotion>());
+                                shop.item[nextSlot].shopCustomPrice = 250000;
+                                nextSlot++;
                             }
                         }
                         if (NPC.downedMechBossAny && !NPC.downedMoonlord)
@@ -907,7 +904,7 @@ namespace AlchemistNPCLite.NPCs
             if (Shop5)
             {
                 // IMPLEMENT WHEN WEAKREFERENCES FIXED
-				/*
+                /*
                 if (ModLoader.GetMod("Wildlife") != null)
                 {
                     addModItemToShop(Wildlife, "BouncePotion", 10000, ref shop, ref nextSlot);
@@ -1045,8 +1042,10 @@ namespace AlchemistNPCLite.NPCs
 				*/
             }
         }
-        private void addModItemToShop(Mod mod, String itemName, int price, ref Chest shop, ref int nextSlot) {
-            if(mod.TryFind<ModItem>(itemName, out ModItem currItem)) {
+        private void addModItemToShop(Mod mod, String itemName, int price, ref Chest shop, ref int nextSlot)
+        {
+            if (mod.TryFind<ModItem>(itemName, out ModItem currItem))
+            {
                 shop.item[nextSlot].SetDefaults(currItem.Type);
                 shop.item[nextSlot].shopCustomPrice = price;
                 nextSlot++;

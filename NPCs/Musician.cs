@@ -1,16 +1,13 @@
-using System.Linq;
-using System;
-using Terraria;
-using Terraria.ID;
-using Terraria.GameContent.Events;
-using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
-using Terraria.Localization;
-using Terraria.WorldBuilding;
 using AlchemistNPCLite.Interface;
+using System;
 using System.Collections.Generic;
+using Terraria;
 using Terraria.GameContent.Bestiary;
+using Terraria.GameContent.Events;
 using Terraria.GameContent.Personalities;
+using Terraria.ID;
+using Terraria.Localization;
+using Terraria.ModLoader;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -175,7 +172,7 @@ namespace AlchemistNPCLite.NPCs
             text.SetDefault("You are hurting my ears! Turn it down!");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "У меня уже болят уши! Сделай потише!");
             LocalizationLoader.AddTranslation(text);
-			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
+            NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             {
                 Velocity = -1f,
                 Direction = -1
@@ -186,15 +183,15 @@ namespace AlchemistNPCLite.NPCs
             NPC.Happiness.SetBiomeAffection<HallowBiome>(AffectionLevel.Love);
             NPC.Happiness.SetBiomeAffection<SnowBiome>(AffectionLevel.Dislike);
 
-            NPC.Happiness.SetNPCAffection(NPCID.PartyGirl,AffectionLevel.Love);
-            NPC.Happiness.SetNPCAffection(NPCID.Wizard,AffectionLevel.Like);
-            NPC.Happiness.SetNPCAffection(NPCID.GoblinTinkerer,AffectionLevel.Dislike);
+            NPC.Happiness.SetNPCAffection(NPCID.PartyGirl, AffectionLevel.Love);
+            NPC.Happiness.SetNPCAffection(NPCID.Wizard, AffectionLevel.Like);
+            NPC.Happiness.SetNPCAffection(NPCID.GoblinTinkerer, AffectionLevel.Dislike);
         }
-		
-		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+
+        public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.TheHallow,
                 new FlavorTextBestiaryInfoElement("Mods.AlchemistNPCLite.Bestiary.Musician")
             });
         }
@@ -237,14 +234,14 @@ namespace AlchemistNPCLite.NPCs
             string Gamma = Language.GetTextValue("Mods.AlchemistNPCLite.Gamma");
 
             return new List<string>() {
-				Beethoven,
-				Bach,
-				Johan,
-				Edison,
+                Beethoven,
+                Bach,
+                Johan,
+                Edison,
                 Scott,
                 Lloyd,
                 Gamma
-			};
+            };
         }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)
@@ -366,10 +363,10 @@ namespace AlchemistNPCLite.NPCs
             */
             if (ModLoader.TryGetMod("CalamityModMusic", out Mod CalamityMusic))
             {
-            	if (Main.rand.Next(15) == 0)
-            	{
-            	    return EntryM17;
-            	}
+                if (Main.rand.Next(15) == 0)
+                {
+                    return EntryM17;
+                }
             }
             switch (Main.rand.Next(9))
             {
@@ -425,7 +422,7 @@ namespace AlchemistNPCLite.NPCs
             }
             else
             {
-                if(!ShopChangeUIM.visible) ShopChangeUIM.timeStart = Main.GameUpdateCount;
+                if (!ShopChangeUIM.visible) ShopChangeUIM.timeStart = Main.GameUpdateCount;
                 ShopChangeUIM.visible = true;
             }
         }
@@ -769,12 +766,14 @@ namespace AlchemistNPCLite.NPCs
 				*/
             }
         }
-        private void addModItemToShop(Mod mod, String itemName, int price, ref Chest shop, ref int nextSlot) {
-            if(mod.TryFind<ModItem>(itemName, out ModItem currItem)) {
+        private void addModItemToShop(Mod mod, String itemName, int price, ref Chest shop, ref int nextSlot)
+        {
+            if (mod.TryFind<ModItem>(itemName, out ModItem currItem))
+            {
                 shop.item[nextSlot].SetDefaults(currItem.Type);
                 shop.item[nextSlot].shopCustomPrice = price;
                 nextSlot++;
             }
-        }	
+        }
     }
 }

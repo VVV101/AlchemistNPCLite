@@ -1,13 +1,10 @@
-using System.Linq;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
-using Terraria.Utilities;
-using Terraria.Localization;
 using System.Collections.Generic;
+using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.Personalities;
+using Terraria.ID;
+using Terraria.Localization;
+using Terraria.ModLoader;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -207,7 +204,7 @@ namespace AlchemistNPCLite.NPCs
             text.SetDefault(" interest in occult Alchemy did nothing but grow.");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), " к оккультной алхимии только вырос.");
             LocalizationLoader.AddTranslation(text);
-			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
+            NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             {
                 Velocity = -1f,
                 Direction = -1
@@ -219,14 +216,14 @@ namespace AlchemistNPCLite.NPCs
             NPC.Happiness.SetBiomeAffection<SnowBiome>(AffectionLevel.Dislike);
 
             NPC.Happiness.SetNPCAffection<YoungBrewer>(AffectionLevel.Love);
-            NPC.Happiness.SetNPCAffection(NPCID.Mechanic,AffectionLevel.Like);
+            NPC.Happiness.SetNPCAffection(NPCID.Mechanic, AffectionLevel.Like);
             NPC.Happiness.SetNPCAffection<Brewer>(AffectionLevel.Dislike);
         }
-		
-		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+
+        public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Underground,
                 new FlavorTextBestiaryInfoElement("Mods.AlchemistNPCLite.Bestiary.Alchemist")
             });
         }
@@ -266,13 +263,13 @@ namespace AlchemistNPCLite.NPCs
             string Gregg = Language.GetTextValue("Mods.AlchemistNPCLite.Gregg");
 
             return new List<string>() {
-				Edward,
-				Severus,
-				Horace,
-				Tilyorn,
+                Edward,
+                Severus,
+                Horace,
+                Tilyorn,
                 Nicolas,
                 Gregg
-			};
+            };
         }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)
@@ -387,7 +384,7 @@ namespace AlchemistNPCLite.NPCs
                 return EntryA15 + Main.npc[Brewer].GivenName + EntryA16;
             }
             // IMPLEMENT WHEN WEAKREFERENCES FIXED
-			/*
+            /*
             if (ModLoader.GetMod("Tremor") != null)
             {
                 int Alch = NPC.FindFirstNPC(ModLoader.GetMod("Tremor").NPCType("Alchemist"));
@@ -505,19 +502,21 @@ namespace AlchemistNPCLite.NPCs
                     nextSlot++;
                 }
                 ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
-                if(Calamity != null)
+                if (Calamity != null)
                 {
                     if ((bool)Calamity.Call("Downed", "profaned guardians") && !(bool)Calamity.Call("Downed", "polterghast"))
                     {
-                        if(Calamity.TryFind<ModItem>("SupremeHealingPotion", out ModItem currItem)) {
+                        if (Calamity.TryFind<ModItem>("SupremeHealingPotion", out ModItem currItem))
+                        {
                             shop.item[nextSlot].SetDefaults(currItem.Type);
                             shop.item[nextSlot].shopCustomPrice = 500000;
                             nextSlot++;
                         }
                     }
-                    if((bool)Calamity.Call("Downed", "polterghast"))
+                    if ((bool)Calamity.Call("Downed", "polterghast"))
                     {
-                        if(Calamity.TryFind<ModItem>("OmegaHealingPotion", out ModItem currItem)) {
+                        if (Calamity.TryFind<ModItem>("OmegaHealingPotion", out ModItem currItem))
+                        {
                             shop.item[nextSlot].SetDefaults(currItem.Type);
                             shop.item[nextSlot].shopCustomPrice = 1000000;
                             nextSlot++;
@@ -572,8 +571,8 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].shopCustomPrice = 7500;
                     nextSlot++;
                 }
-				// IMPLEMENT WHEN WEAKREFERENCES FIXED
-				/*
+                // IMPLEMENT WHEN WEAKREFERENCES FIXED
+                /*
                 if (ModLoader.GetMod("imkSushisMod") != null)
                 {
                 	addModItemToShop(imkSushisMod, "BaseSummoningPotion", 2500, ref shop, ref nextSlot);
@@ -632,8 +631,8 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].shopCustomPrice = 1000;
                     nextSlot++;
                 }
-				// IMPLEMENT WHEN WEAKREFERENCES FIXED
-				/*
+                // IMPLEMENT WHEN WEAKREFERENCES FIXED
+                /*
                 if (ModLoader.GetMod("ThoriumMod") != null)
                 {
                 	if (NPC.downedBoss2)
@@ -703,8 +702,8 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].shopCustomPrice = 1000;
                     nextSlot++;
                 }
-				// IMPLEMENT WHEN WEAKREFERENCES FIXED
-				/*
+                // IMPLEMENT WHEN WEAKREFERENCES FIXED
+                /*
                 if (ModLoader.GetMod("Tremor") != null)
                 {
                 	if (NPC.downedBoss3)
