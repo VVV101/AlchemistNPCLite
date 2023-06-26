@@ -488,6 +488,10 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].SetDefaults(ItemID.HealingPotion);
                     shop.item[nextSlot].shopCustomPrice = 5000;
                     nextSlot++;
+                    if (ModLoader.TryGetMod("Redemption", out Mod Redemption))
+                    {
+                        addModItemToShop(Redemption, "RevivalPotion", 5000, ref shop, ref nextSlot);
+                    }
                 }
                 if (Main.hardMode)
                 {
@@ -571,16 +575,13 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].shopCustomPrice = 7500;
                     nextSlot++;
                 }
-                // IMPLEMENT WHEN WEAKREFERENCES FIXED
-                /*
-                if (ModLoader.GetMod("imkSushisMod") != null)
+                if (ModLoader.TryGetMod("imkSushisMod", out Mod imkSushisMod))
                 {
-                	addModItemToShop(imkSushisMod, "BaseSummoningPotion", 2500, ref shop, ref nextSlot);
-                	addModItemToShop(imkSushisMod, "AnglerAmnesiaPotion", 10000, ref shop, ref nextSlot);
-                	addModItemToShop(imkSushisMod, "MeteoritePotion", 50000, ref shop, ref nextSlot);
-                	addModItemToShop(imkSushisMod, "ResurrectionPotion", 25000, ref shop, ref nextSlot);
+                    addModItemToShop(imkSushisMod, "BaseSummoningPotion", 2500, ref shop, ref nextSlot);
+                    addModItemToShop(imkSushisMod, "AnglerAmnesiaPotion", 10000, ref shop, ref nextSlot);
+                    addModItemToShop(imkSushisMod, "MeteoritePotion", 50000, ref shop, ref nextSlot);
+                    addModItemToShop(imkSushisMod, "ResurrectionPotion", 25000, ref shop, ref nextSlot);
                 }
-				*/
                 if (NPC.downedBoss2)
                 {
                     shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.BeachTeleporterPotion>());
@@ -702,24 +703,36 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].shopCustomPrice = 1000;
                     nextSlot++;
                 }
+
+                if (ModLoader.TryGetMod("Redemption", out Mod Redemption))
+                {
+                    addModItemToShop(Redemption, "Nightshade", 1000, ref shop, ref nextSlot);
+                }
                 // IMPLEMENT WHEN WEAKREFERENCES FIXED
                 /*
                 if (ModLoader.GetMod("Tremor") != null)
                 {
-                	if (NPC.downedBoss3)
-                	{
-                		addModItemToShop(Tremor, "Gloomstone", 100, ref shop, ref nextSlot);
-                		addModItemToShop(Tremor, "UntreatedFlesh", 100, ref shop, ref nextSlot);
-                		addModItemToShop(Tremor, "LightBulb", 500, ref shop, ref nextSlot);
-                		addModItemToShop(Tremor, "AtisBlood", 2500, ref shop, ref nextSlot);
-                		addModItemToShop(Tremor, "TearsofDeath", 2500, ref shop, ref nextSlot);
-                		addModItemToShop(Tremor, "TornPapyrus", 5000, ref shop, ref nextSlot);
-                		addModItemToShop(Tremor, "PhantomSoul", 5000, ref shop, ref nextSlot);
-                		addModItemToShop(Tremor, "TheRib", 7500, ref shop, ref nextSlot);
-                	}	
+                    if (NPC.downedBoss3)
+                    {
+                        addModItemToShop(Tremor, "Gloomstone", 100, ref shop, ref nextSlot);
+                        addModItemToShop(Tremor, "UntreatedFlesh", 100, ref shop, ref nextSlot);
+                        addModItemToShop(Tremor, "LightBulb", 500, ref shop, ref nextSlot);
+                        addModItemToShop(Tremor, "AtisBlood", 2500, ref shop, ref nextSlot);
+                        addModItemToShop(Tremor, "TearsofDeath", 2500, ref shop, ref nextSlot);
+                        addModItemToShop(Tremor, "TornPapyrus", 5000, ref shop, ref nextSlot);
+                        addModItemToShop(Tremor, "PhantomSoul", 5000, ref shop, ref nextSlot);
+                        addModItemToShop(Tremor, "TheRib", 7500, ref shop, ref nextSlot);
+                    }	
                 }
-				*/
+                */
             }
+        }
+        private void addModItemToShop(Mod mod, string itemName, int price, ref Chest shop, ref int nextSlot)
+        {
+            if (mod.TryFind<ModItem>(itemName, out ModItem currItem))
+                shop.item[nextSlot].SetDefaults(currItem.Type);
+            shop.item[nextSlot].shopCustomPrice = price;
+            nextSlot++;
         }
     }
 }

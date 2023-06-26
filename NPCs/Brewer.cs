@@ -57,9 +57,9 @@ namespace AlchemistNPCLite.NPCs
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "第二商店 (模组/灾厄)");
             LocalizationLoader.AddTranslation(text);
             text = LocalizationLoader.CreateTranslation(Mod, "ShopB21");
-            text.SetDefault("3rd shop (Thorium/RG)");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "3-ий магазин (Thorium/RG)");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "第二商店 (瑟银/RG)");
+            text.SetDefault("3rd shop (Thorium/RG/MoR)");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "3-ий магазин (Thorium/RG/MoR)");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "第二商店 (瑟银/RG/MoR)");
             LocalizationLoader.AddTranslation(text);
             text = LocalizationLoader.CreateTranslation(Mod, "ShopB3");
             text.SetDefault("4th shop (MorePotions)              ");
@@ -777,6 +777,8 @@ namespace AlchemistNPCLite.NPCs
                     addModItemToShop(ThoriumMod, "AquaPotion", 10000, ref shop, ref nextSlot);
                     addModItemToShop(ThoriumMod, "FrenzyPotion", 20000, ref shop, ref nextSlot);
                 }
+                RedemptionPotions(ref shop, ref nextSlot);
+
                 /*
                 if (ModLoader.GetMod("ReducedGrinding") != null)
                 {
@@ -1044,6 +1046,20 @@ namespace AlchemistNPCLite.NPCs
 				*/
             }
         }
+
+        void RedemptionPotions(ref Chest shop, ref int nextSlot)
+        {
+            if (ModLoader.TryGetMod("Redemption", out Mod Redemption))
+            {
+                addModItemToShop(Redemption, "CharismaPotion", 5000, ref shop, ref nextSlot);
+                addModItemToShop(Redemption, "VendettaPotion", 6000, ref shop, ref nextSlot);
+                if (Operator.RedemptionDowned.Nebuleus)
+                {
+                    addModItemToShop(Redemption, "VigourousPotion", 250000, ref shop, ref nextSlot);
+                }
+            }
+        }
+
         private void addModItemToShop(Mod mod, String itemName, int price, ref Chest shop, ref int nextSlot)
         {
             if (mod.TryFind<ModItem>(itemName, out ModItem currItem))

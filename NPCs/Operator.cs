@@ -981,66 +981,68 @@ namespace AlchemistNPCLite.NPCs
         }
 		*/
 
-        //public bool ReDownedChicken
-        //{
-        //    get { return Redemption.Globals.RedeBossDowned.downedKingChicken; }
-        //}
-        public bool ReDownedThorn
+
+        [JITWhenModsEnabled("Redemption")]
+        public static class RedemptionDowned
         {
-            get { return Redemption.Globals.RedeBossDowned.downedThorn; }
+            public static bool Thorn
+            {
+                get { return Redemption.Globals.RedeBossDowned.downedThorn; }
+            }
+            public static bool Keeper
+            {
+                get { return Redemption.Globals.RedeBossDowned.downedKeeper; }
+            }
+            public static bool SkullDigger
+            {
+                get { return Redemption.Globals.RedeBossDowned.downedSkullDigger; }
+            }
+            public static bool SeedOfInfection
+            {
+                get { return Redemption.Globals.RedeBossDowned.downedSeed; }
+            }
+            //public static bool ReDownedIEye
+            //{
+            //    get { return Redemption.Globals.RedeBossDowned.downedInfectedEye; }
+            //}
+            public static bool KingSlayer
+            {
+                get { return Redemption.Globals.RedeBossDowned.downedSlayer; }
+            }
+            public static bool OmegaCleaver
+            {
+                get { return Redemption.Globals.RedeBossDowned.downedOmega1; }
+            }
+            public static bool OmegaGigapora
+            {
+                get { return Redemption.Globals.RedeBossDowned.downedOmega2; }
+            }
+            public static bool Obliterator
+            {
+                get { return Redemption.Globals.RedeBossDowned.downedOmega3; }
+            }
+            public static bool PatientZero
+            {
+                get { return Redemption.Globals.RedeBossDowned.downedPZ; }
+            }
+            public static bool ReDownedThornRe
+            {
+                get { return Redemption.Globals.RedeBossDowned.downedThorn; }
+            }
+            public static bool ReDownedGolemRe
+            {
+                get { return Redemption.Globals.RedeBossDowned.downedEaglecrestGolem; }
+            }
+            public static bool DeityDuo
+            {
+                get { return Redemption.Globals.RedeBossDowned.downedADD; }
+            }
+            public static bool Nebuleus
+            {
+                get { return Redemption.Globals.RedeBossDowned.downedNebuleus; }
+            }
         }
-        public bool ReDownedKeeper
-        {
-            get { return Redemption.Globals.RedeBossDowned.downedKeeper; }
-        }
-        public bool ReDownedSkullDigger
-        {
-            get { return Redemption.Globals.RedeBossDowned.downedSkullDigger; }
-        }
-        public bool ReDownedSeedInfection
-        {
-            get { return Redemption.Globals.RedeBossDowned.downedSeed; }
-        }
-        //public bool ReDownedIEye
-        //{
-        //    get { return Redemption.Globals.RedeBossDowned.downedInfectedEye; }
-        //}
-        public bool ReDownedKingSlayer
-        {
-            get { return Redemption.Globals.RedeBossDowned.downedSlayer; }
-        }
-        public bool ReDownedOCleaver
-        {
-            get { return Redemption.Globals.RedeBossDowned.downedOmega1; }
-        }
-        public bool ReDownedOGigapora
-        {
-            get { return Redemption.Globals.RedeBossDowned.downedOmega2; }
-        }
-        public bool ReDownedObliterator
-        {
-            get { return Redemption.Globals.RedeBossDowned.downedOmega3; }
-        }
-        public bool ReDownedPZero
-        {
-            get { return Redemption.Globals.RedeBossDowned.downedPZ; }
-        }
-        public bool ReDownedThornRe
-        {
-            get { return Redemption.Globals.RedeBossDowned.downedThorn; }
-        }
-        public bool ReDownedGolemRe
-        {
-            get { return Redemption.Globals.RedeBossDowned.downedEaglecrestGolem; }
-        }
-        public bool ReDownedDeityDuo
-        {
-            get { return Redemption.Globals.RedeBossDowned.downedADD; }
-        }
-        public bool ReDownedNebuleus
-        {
-            get { return Redemption.Globals.RedeBossDowned.downedNebuleus; }
-        }
+
         // Possibly redundant with ModGlobalNPC
         public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
@@ -1859,52 +1861,52 @@ namespace AlchemistNPCLite.NPCs
                         //{
                         //    addModItemToShop(Redemption, "KingChickenBag", 150000, ref shop, ref nextSlot);
                         //}
-                        if (ReDownedThorn)
+                        if (RedemptionDowned.Thorn)
                         {
                             addModItemToShop(Redemption, "ThornBag", 250000, ref shop, ref nextSlot);
                         }
-                        if (ReDownedKeeper)
+                        if (RedemptionDowned.Keeper)
                         {
                             addModItemToShop(Redemption, "KeeperBag", 350000, ref shop, ref nextSlot);
                         }
-                        //if (ReDownedCrystal)
+                        //if (RedemptionDowned.Crystal)
                         //{
                         //    addModItemToShop(Redemption, "XenomiteCrystalBag", 500000, ref shop, ref nextSlot);
                         //}
-                        //if (ReDownedIEye)
+                        //if (RedemptionDowned.IEye)
                         //{
                         //    addModItemToShop(Redemption, "InfectedEyeBag", 1000000, ref shop, ref nextSlot);
                         //}
-                        if (ReDownedSeedInfection)
+                        if (RedemptionDowned.SeedOfInfection)
                         {
                             addModItemToShop(Redemption, "SoIBag", 1000000, ref shop, ref nextSlot);
                         }
-                        if (ReDownedKingSlayer)
+                        if (RedemptionDowned.KingSlayer)
                         {
                             addModItemToShop(Redemption, "SlayerBag", 1500000, ref shop, ref nextSlot);
                         }
-                        if (ReDownedOCleaver)
+                        if (RedemptionDowned.OmegaCleaver)
                         {
                             addModItemToShop(Redemption, "OmegaCleaverBag", 2000000, ref shop, ref nextSlot);
                         }
-                        if (ReDownedOGigapora)
+                        if (RedemptionDowned.OmegaGigapora)
                         {
                             addModItemToShop(Redemption, "OmegaGigaporaBag", 3000000, ref shop, ref nextSlot);
                         }
-                        if (ReDownedObliterator)
+                        if (RedemptionDowned.Obliterator)
                         {
                             addModItemToShop(Redemption, "OmegaOblitBag", 5000000, ref shop, ref nextSlot);
                         }
-                        if (ReDownedPZero)
+                        if (RedemptionDowned.PatientZero)
                         {
                             addModItemToShop(Redemption, "PZBag", 6000000, ref shop, ref nextSlot);
                         }
-                        if (ReDownedDeityDuo)
+                        if (RedemptionDowned.DeityDuo)
                         {
                             addModItemToShop(Redemption, "UkkoBag", 6000000, ref shop, ref nextSlot);
                             addModItemToShop(Redemption, "AkkaBag", 6000000, ref shop, ref nextSlot);
                         }
-                        if (ReDownedNebuleus)
+                        if (RedemptionDowned.Nebuleus)
                         {
                             addModItemToShop(Redemption, "NebBag", 10000000, ref shop, ref nextSlot);
                         }
