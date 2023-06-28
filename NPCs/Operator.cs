@@ -1328,7 +1328,7 @@ namespace AlchemistNPCLite.NPCs
                         nextSlot++;
                     }
                 }
-                if (ModLoader.GetMod("ThoriumMod") != null)
+                if (ThoriumMod != null)
                 {
                     if (DD2Event.DownedInvasionT1)
                     {
@@ -1517,7 +1517,7 @@ namespace AlchemistNPCLite.NPCs
                         }
                     }
                 }
-                if (ModLoader.GetMod("ThoriumMod") != null)
+                if (ThoriumMod != null)
                 {
                     if (NPC.downedBoss3)
                     {
