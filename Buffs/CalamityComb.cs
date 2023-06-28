@@ -10,8 +10,7 @@ namespace AlchemistNPCLite.Buffs
     public class CalamityComb : ModBuff
     {
         private string[] BuffList = {
-                "CadancesGrace",
-                "YharimPower",
+                "PhotosynthesisBuff",
                 "TitanScale",
                 "FabsolVodkaBuff",
                 "Soaring",
@@ -28,11 +27,11 @@ namespace AlchemistNPCLite.Buffs
         {
             DisplayName.SetDefault("Calamity Combination");
             Description.SetDefault("Perfect sum of Calamity buffs"
-            + "\nYharim's Stimulants, Cadance, Fabsol's Vodka, Soaring, Bounding and Titan Scale");
+            + "\nPhotosynthesis, Cadance, Fabsol's Vodka, Soaring, Bounding and Titan Scale");
             Main.debuff[Type] = false;
             BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Комбинация Каламити");
-            Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Идеальное сочетание баффов Каламити мода\nДает эффект Стимулянтов Ярима, Каденции, Водки Фабсола, Титановой Чешуи и Всевидения");
+            Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Идеальное сочетание баффов Каламити мода\nДает эффект Фотосинтеза, Каденции, Водки Фабсола, Титановой Чешуи и Всевидения");
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "灾厄药剂包");
             Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "完美结合了以下灾厄药剂的Buff：\n魔君牌兴奋剂、尾音药剂、Fabsol伏特加、泰坦之鳞药剂以及全知药剂");
         }

@@ -1,16 +1,13 @@
-using System.Linq;
-using System;
-using Terraria;
-using Terraria.ID;
-using Terraria.GameContent.Events;
-using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
-using Terraria.Localization;
-using Terraria.WorldBuilding;
 using AlchemistNPCLite.Interface;
+using System;
 using System.Collections.Generic;
+using Terraria;
 using Terraria.GameContent.Bestiary;
+using Terraria.GameContent.Events;
 using Terraria.GameContent.Personalities;
+using Terraria.ID;
+using Terraria.Localization;
+using Terraria.ModLoader;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -175,7 +172,7 @@ namespace AlchemistNPCLite.NPCs
             text.SetDefault("You are hurting my ears! Turn it down!");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "У меня уже болят уши! Сделай потише!");
             LocalizationLoader.AddTranslation(text);
-			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
+            NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             {
                 Velocity = -1f,
                 Direction = -1
@@ -186,15 +183,15 @@ namespace AlchemistNPCLite.NPCs
             NPC.Happiness.SetBiomeAffection<HallowBiome>(AffectionLevel.Love);
             NPC.Happiness.SetBiomeAffection<SnowBiome>(AffectionLevel.Dislike);
 
-            NPC.Happiness.SetNPCAffection(NPCID.PartyGirl,AffectionLevel.Love);
-            NPC.Happiness.SetNPCAffection(NPCID.Wizard,AffectionLevel.Like);
-            NPC.Happiness.SetNPCAffection(NPCID.GoblinTinkerer,AffectionLevel.Dislike);
+            NPC.Happiness.SetNPCAffection(NPCID.PartyGirl, AffectionLevel.Love);
+            NPC.Happiness.SetNPCAffection(NPCID.Wizard, AffectionLevel.Like);
+            NPC.Happiness.SetNPCAffection(NPCID.GoblinTinkerer, AffectionLevel.Dislike);
         }
-		
-		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+
+        public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.TheHallow,
                 new FlavorTextBestiaryInfoElement("Mods.AlchemistNPCLite.Bestiary.Musician")
             });
         }
@@ -237,14 +234,14 @@ namespace AlchemistNPCLite.NPCs
             string Gamma = Language.GetTextValue("Mods.AlchemistNPCLite.Gamma");
 
             return new List<string>() {
-				Beethoven,
-				Bach,
-				Johan,
-				Edison,
+                Beethoven,
+                Bach,
+                Johan,
+                Edison,
                 Scott,
                 Lloyd,
                 Gamma
-			};
+            };
         }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)
@@ -342,15 +339,15 @@ namespace AlchemistNPCLite.NPCs
             {
                 return EntryM3;
             }
-            if (Mechanic >= 0 && Main.rand.Next(20) == 0)
+            if (Mechanic >= 0 && Main.rand.NextBool(20))
             {
                 return EntryM8 + Main.npc[Mechanic].GivenName + EntryM9;
             }
-            if (Wizard >= 0 && Main.rand.Next(20) == 0)
+            if (Wizard >= 0 && Main.rand.NextBool(20))
             {
                 return EntryM10 + Main.npc[Wizard].GivenName + EntryM11;
             }
-            if (Clothier >= 0 && Main.rand.Next(20) == 0)
+            if (Clothier >= 0 && Main.rand.NextBool(20))
             {
                 return EntryM12 + Main.npc[Clothier].GivenName + EntryM13;
             }
@@ -366,10 +363,10 @@ namespace AlchemistNPCLite.NPCs
             */
             if (ModLoader.TryGetMod("CalamityModMusic", out Mod CalamityMusic))
             {
-            	if (Main.rand.Next(15) == 0)
-            	{
-            	    return EntryM17;
-            	}
+                if (Main.rand.Next(15) == 0)
+                {
+                    return EntryM17;
+                }
             }
             switch (Main.rand.Next(9))
             {
@@ -425,7 +422,7 @@ namespace AlchemistNPCLite.NPCs
             }
             else
             {
-                if(!ShopChangeUIM.visible) ShopChangeUIM.timeStart = Main.GameUpdateCount;
+                if (!ShopChangeUIM.visible) ShopChangeUIM.timeStart = Main.GameUpdateCount;
                 ShopChangeUIM.visible = true;
             }
         }
@@ -738,43 +735,71 @@ namespace AlchemistNPCLite.NPCs
             }
             if (S3)
             {
-                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Misc.BoomBox>());
-                shop.item[nextSlot].shopCustomPrice = 250000;
-                nextSlot++;
-                // IMPLEMENT WHEN WEAKREFERENCES FIXED
-                /*
-                if (ModLoader.GetMod("ThoriumMod") != null)
+                if (ModLoader.TryGetMod("ThoriumMod", out Mod ThoriumMod))
                 {
-                    if (ThoriumModDownedGTBird)
+                    if ((bool)ThoriumMod.Call("GetDownedBoss", "TheGrandThunderBird"))
                     {
                         addModItemToShop(ThoriumMod, "ThunderBirdMusicBox", 150000, ref shop, ref nextSlot);
                     }
-                    if (ThoriumModDownedViscount)
+                    if ((bool)ThoriumMod.Call("GetDownedBoss", "QueenJellyfish"))
+                    {
+                        addModItemToShop(ThoriumMod, "QueenJellyfishMusicBox", 150000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)ThoriumMod.Call("GetDownedBoss", "Viscount"))
                     {
                         addModItemToShop(ThoriumMod, "ViscountMusicBox", 150000, ref shop, ref nextSlot);
                     }
-                    if (ThoriumModDownedBoreanStrider)
+                    if ((bool)ThoriumMod.Call("GetDownedBoss", "GraniteEnergyStorm"))
+                    {
+                        addModItemToShop(ThoriumMod, "EnergyStormMusicBox", 150000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)ThoriumMod.Call("GetDownedBoss", "BuriedChampion"))
+                    {
+                        addModItemToShop(ThoriumMod, "BuriedChampionMusicBox", 150000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)ThoriumMod.Call("GetDownedBoss", "StarScouter"))
+                    {
+                        addModItemToShop(ThoriumMod, "StarScouterMusicBox", 150000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)ThoriumMod.Call("GetDownedBoss", "BoreanStrider"))
                     {
                         addModItemToShop(ThoriumMod, "BoreanStriderMusicBox", 150000, ref shop, ref nextSlot);
                     }
-                    if (ThoriumModDownedFallenBeholder)
+                    if ((bool)ThoriumMod.Call("GetDownedBoss", "FallenBeholder"))
                     {
                         addModItemToShop(ThoriumMod, "FallenBeholderMusicBox", 150000, ref shop, ref nextSlot);
                     }
-                    if (ThoriumModDownedAbyssion)
+                    if ((bool)ThoriumMod.Call("GetDownedBoss", "Lich"))
+                    {
+                        addModItemToShop(ThoriumMod, "LichMusicBox", 150000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)ThoriumMod.Call("GetDownedBoss", "ForgottenOne"))
                     {
                         addModItemToShop(ThoriumMod, "DepthsMusicBox", 150000, ref shop, ref nextSlot);
+                        addModItemToShop(ThoriumMod, "AbyssMusicBox", 150000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)ThoriumMod.Call("GetDownedBoss", "ThePrimordials"))
+                    {
+                        addModItemToShop(ThoriumMod, "PrimordialsMusicBox", 150000, ref shop, ref nextSlot);
+                    }
+                    if ((bool)ThoriumMod.Call("GetDownedBoss", "PatchWerk") ||
+                        (bool)ThoriumMod.Call("GetDownedBoss", "CorpseBloom") ||
+                        (bool)ThoriumMod.Call("GetDownedBoss", "Illusionist"))
+                    {
+                        addModItemToShop(ThoriumMod, "MiniBossMusicBox", 150000, ref shop, ref nextSlot);
                     }
                 }
-				*/
             }
         }
-        private void addModItemToShop(Mod mod, String itemName, int price, ref Chest shop, ref int nextSlot) {
-            if(mod.TryFind<ModItem>(itemName, out ModItem currItem)) {
+
+        private void addModItemToShop(Mod mod, String itemName, int price, ref Chest shop, ref int nextSlot)
+        {
+            if (mod.TryFind<ModItem>(itemName, out ModItem currItem))
+            {
                 shop.item[nextSlot].SetDefaults(currItem.Type);
                 shop.item[nextSlot].shopCustomPrice = price;
                 nextSlot++;
             }
-        }	
+        }
     }
 }

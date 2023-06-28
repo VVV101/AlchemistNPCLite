@@ -1,13 +1,10 @@
-using System.Linq;
-using Terraria;
-using Terraria.ID;
-using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
-using Terraria.Utilities;
-using Terraria.Localization;
 using System.Collections.Generic;
+using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.Personalities;
+using Terraria.ID;
+using Terraria.Localization;
+using Terraria.ModLoader;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -207,7 +204,7 @@ namespace AlchemistNPCLite.NPCs
             text.SetDefault(" interest in occult Alchemy did nothing but grow.");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), " к оккультной алхимии только вырос.");
             LocalizationLoader.AddTranslation(text);
-			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
+            NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             {
                 Velocity = -1f,
                 Direction = -1
@@ -219,14 +216,14 @@ namespace AlchemistNPCLite.NPCs
             NPC.Happiness.SetBiomeAffection<SnowBiome>(AffectionLevel.Dislike);
 
             NPC.Happiness.SetNPCAffection<YoungBrewer>(AffectionLevel.Love);
-            NPC.Happiness.SetNPCAffection(NPCID.Mechanic,AffectionLevel.Like);
+            NPC.Happiness.SetNPCAffection(NPCID.Mechanic, AffectionLevel.Like);
             NPC.Happiness.SetNPCAffection<Brewer>(AffectionLevel.Dislike);
         }
-		
-		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+
+        public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Underground,
                 new FlavorTextBestiaryInfoElement("Mods.AlchemistNPCLite.Bestiary.Alchemist")
             });
         }
@@ -266,13 +263,13 @@ namespace AlchemistNPCLite.NPCs
             string Gregg = Language.GetTextValue("Mods.AlchemistNPCLite.Gregg");
 
             return new List<string>() {
-				Edward,
-				Severus,
-				Horace,
-				Tilyorn,
+                Edward,
+                Severus,
+                Horace,
+                Tilyorn,
                 Nicolas,
                 Gregg
-			};
+            };
         }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)
@@ -350,7 +347,7 @@ namespace AlchemistNPCLite.NPCs
             int Brewer = NPC.FindFirstNPC(ModContent.NPCType<Brewer>());
             int partyGirl = NPC.FindFirstNPC(NPCID.PartyGirl);
             int witchDoctor = NPC.FindFirstNPC(NPCID.WitchDoctor);
-            if (Main.bloodMoon && partyGirl >= 0 && Main.rand.Next(4) == 0)
+            if (Main.bloodMoon && partyGirl >= 0 && Main.rand.NextBool(4))
             {
                 return EntryA23 + Main.npc[partyGirl].GivenName + EntryA24;
             }
@@ -378,16 +375,16 @@ namespace AlchemistNPCLite.NPCs
             {
                 return EntryA19;
             }
-            if (witchDoctor >= 0 && Main.rand.Next(7) == 0)
+            if (witchDoctor >= 0 && Main.rand.NextBool(7))
             {
                 return EntryA25 + Main.npc[Brewer].GivenName + EntryA26 + Main.npc[Brewer].GivenName + EntryA27;
             }
-            if (Brewer >= 0 && Main.rand.Next(5) == 0)
+            if (Brewer >= 0 && Main.rand.NextBool(5))
             {
                 return EntryA15 + Main.npc[Brewer].GivenName + EntryA16;
             }
             // IMPLEMENT WHEN WEAKREFERENCES FIXED
-			/*
+            /*
             if (ModLoader.GetMod("Tremor") != null)
             {
                 int Alch = NPC.FindFirstNPC(ModLoader.GetMod("Tremor").NPCType("Alchemist"));
@@ -491,6 +488,10 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].SetDefaults(ItemID.HealingPotion);
                     shop.item[nextSlot].shopCustomPrice = 5000;
                     nextSlot++;
+                    if (ModLoader.TryGetMod("Redemption", out Mod Redemption))
+                    {
+                        addModItemToShop(Redemption, "RevivalPotion", 5000, ref shop, ref nextSlot);
+                    }
                 }
                 if (Main.hardMode)
                 {
@@ -505,19 +506,21 @@ namespace AlchemistNPCLite.NPCs
                     nextSlot++;
                 }
                 ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
-                if(Calamity != null)
+                if (Calamity != null)
                 {
                     if ((bool)Calamity.Call("Downed", "profaned guardians") && !(bool)Calamity.Call("Downed", "polterghast"))
                     {
-                        if(Calamity.TryFind<ModItem>("SupremeHealingPotion", out ModItem currItem)) {
+                        if (Calamity.TryFind<ModItem>("SupremeHealingPotion", out ModItem currItem))
+                        {
                             shop.item[nextSlot].SetDefaults(currItem.Type);
                             shop.item[nextSlot].shopCustomPrice = 500000;
                             nextSlot++;
                         }
                     }
-                    if((bool)Calamity.Call("Downed", "polterghast"))
+                    if ((bool)Calamity.Call("Downed", "polterghast"))
                     {
-                        if(Calamity.TryFind<ModItem>("OmegaHealingPotion", out ModItem currItem)) {
+                        if (Calamity.TryFind<ModItem>("OmegaHealingPotion", out ModItem currItem))
+                        {
                             shop.item[nextSlot].SetDefaults(currItem.Type);
                             shop.item[nextSlot].shopCustomPrice = 1000000;
                             nextSlot++;
@@ -572,16 +575,13 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].shopCustomPrice = 7500;
                     nextSlot++;
                 }
-				// IMPLEMENT WHEN WEAKREFERENCES FIXED
-				/*
-                if (ModLoader.GetMod("imkSushisMod") != null)
+                if (ModLoader.TryGetMod("imkSushisMod", out Mod imkSushisMod))
                 {
-                	addModItemToShop(imkSushisMod, "BaseSummoningPotion", 2500, ref shop, ref nextSlot);
-                	addModItemToShop(imkSushisMod, "AnglerAmnesiaPotion", 10000, ref shop, ref nextSlot);
-                	addModItemToShop(imkSushisMod, "MeteoritePotion", 50000, ref shop, ref nextSlot);
-                	addModItemToShop(imkSushisMod, "ResurrectionPotion", 25000, ref shop, ref nextSlot);
+                    addModItemToShop(imkSushisMod, "BaseSummoningPotion", 2500, ref shop, ref nextSlot);
+                    addModItemToShop(imkSushisMod, "AnglerAmnesiaPotion", 10000, ref shop, ref nextSlot);
+                    addModItemToShop(imkSushisMod, "MeteoritePotion", 50000, ref shop, ref nextSlot);
+                    addModItemToShop(imkSushisMod, "ResurrectionPotion", 25000, ref shop, ref nextSlot);
                 }
-				*/
                 if (NPC.downedBoss2)
                 {
                     shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.BeachTeleporterPotion>());
@@ -632,8 +632,8 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].shopCustomPrice = 1000;
                     nextSlot++;
                 }
-				// IMPLEMENT WHEN WEAKREFERENCES FIXED
-				/*
+                // IMPLEMENT WHEN WEAKREFERENCES FIXED
+                /*
                 if (ModLoader.GetMod("ThoriumMod") != null)
                 {
                 	if (NPC.downedBoss2)
@@ -703,24 +703,36 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].shopCustomPrice = 1000;
                     nextSlot++;
                 }
-				// IMPLEMENT WHEN WEAKREFERENCES FIXED
-				/*
+
+                if (ModLoader.TryGetMod("Redemption", out Mod Redemption))
+                {
+                    addModItemToShop(Redemption, "Nightshade", 1000, ref shop, ref nextSlot);
+                }
+                // IMPLEMENT WHEN WEAKREFERENCES FIXED
+                /*
                 if (ModLoader.GetMod("Tremor") != null)
                 {
-                	if (NPC.downedBoss3)
-                	{
-                		addModItemToShop(Tremor, "Gloomstone", 100, ref shop, ref nextSlot);
-                		addModItemToShop(Tremor, "UntreatedFlesh", 100, ref shop, ref nextSlot);
-                		addModItemToShop(Tremor, "LightBulb", 500, ref shop, ref nextSlot);
-                		addModItemToShop(Tremor, "AtisBlood", 2500, ref shop, ref nextSlot);
-                		addModItemToShop(Tremor, "TearsofDeath", 2500, ref shop, ref nextSlot);
-                		addModItemToShop(Tremor, "TornPapyrus", 5000, ref shop, ref nextSlot);
-                		addModItemToShop(Tremor, "PhantomSoul", 5000, ref shop, ref nextSlot);
-                		addModItemToShop(Tremor, "TheRib", 7500, ref shop, ref nextSlot);
-                	}	
+                    if (NPC.downedBoss3)
+                    {
+                        addModItemToShop(Tremor, "Gloomstone", 100, ref shop, ref nextSlot);
+                        addModItemToShop(Tremor, "UntreatedFlesh", 100, ref shop, ref nextSlot);
+                        addModItemToShop(Tremor, "LightBulb", 500, ref shop, ref nextSlot);
+                        addModItemToShop(Tremor, "AtisBlood", 2500, ref shop, ref nextSlot);
+                        addModItemToShop(Tremor, "TearsofDeath", 2500, ref shop, ref nextSlot);
+                        addModItemToShop(Tremor, "TornPapyrus", 5000, ref shop, ref nextSlot);
+                        addModItemToShop(Tremor, "PhantomSoul", 5000, ref shop, ref nextSlot);
+                        addModItemToShop(Tremor, "TheRib", 7500, ref shop, ref nextSlot);
+                    }	
                 }
-				*/
+                */
             }
+        }
+        private void addModItemToShop(Mod mod, string itemName, int price, ref Chest shop, ref int nextSlot)
+        {
+            if (mod.TryFind<ModItem>(itemName, out ModItem currItem))
+                shop.item[nextSlot].SetDefaults(currItem.Type);
+            shop.item[nextSlot].shopCustomPrice = price;
+            nextSlot++;
         }
     }
 }

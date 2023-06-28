@@ -1,17 +1,12 @@
-using System.Linq;
-using System;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
-using Terraria.ID;
-using AlchemistNPCLite.NPCs;
-using AlchemistNPCLite;
 using AlchemistNPCLite.Interface;
-using Terraria.Localization;
+using System;
 using System.Collections.Generic;
+using Terraria;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.Personalities;
+using Terraria.ID;
+using Terraria.Localization;
+using Terraria.ModLoader;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -62,9 +57,9 @@ namespace AlchemistNPCLite.NPCs
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "第二商店 (模组/灾厄)");
             LocalizationLoader.AddTranslation(text);
             text = LocalizationLoader.CreateTranslation(Mod, "ShopB21");
-            text.SetDefault("3rd shop (Thorium/RG)");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "3-ий магазин (Thorium/RG)");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "第二商店 (瑟银/RG)");
+            text.SetDefault("3rd shop (Thorium/RG/MoR)");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "3-ий магазин (Thorium/RG/MoR)");
+            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "第二商店 (瑟银/RG/MoR)");
             LocalizationLoader.AddTranslation(text);
             text = LocalizationLoader.CreateTranslation(Mod, "ShopB3");
             text.SetDefault("4th shop (MorePotions)              ");
@@ -204,7 +199,7 @@ namespace AlchemistNPCLite.NPCs
             text.SetDefault("I once traveled far away from Terraria to learn more about Alchemy. In my travels I met a ''scientist of magic'' called Azanor. He showed me the secrets of something called ''thaumaturgy''.");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Я однажды выбралась из мира Террарии чтобы узнать больше об Алхимии. В своих путешествиях я встретила ''учёного магии'' по имени Азанор. Он показал мне тайны чего-то, названного ''тауматургия''.");
             LocalizationLoader.AddTranslation(text);
-			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
+            NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             {
                 Velocity = -1f,
                 Direction = -1
@@ -217,10 +212,10 @@ namespace AlchemistNPCLite.NPCs
 
             NPC.Happiness.SetNPCAffection<YoungBrewer>(AffectionLevel.Love);
             NPC.Happiness.SetNPCAffection<Alchemist>(AffectionLevel.Like);
-            NPC.Happiness.SetNPCAffection(NPCID.WitchDoctor,AffectionLevel.Dislike);
+            NPC.Happiness.SetNPCAffection(NPCID.WitchDoctor, AffectionLevel.Dislike);
         }
-		
-		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+
+        public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
                 BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
@@ -263,13 +258,13 @@ namespace AlchemistNPCLite.NPCs
             string Mary = Language.GetTextValue("Mods.AlchemistNPCLite.Mary");
 
             return new List<string>() {
-				Lillian,
-				Lucy,
-				Alice,
+                Lillian,
+                Lucy,
+                Alice,
                 Rocksahn,
-				Agness,
+                Agness,
                 Mary
-			};
+            };
         }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)
@@ -457,13 +452,13 @@ namespace AlchemistNPCLite.NPCs
                         }
                     }
                 }
-                if(!ShopChangeUI.visible) ShopChangeUI.timeStart = Main.GameUpdateCount;
+                if (!ShopChangeUI.visible) ShopChangeUI.timeStart = Main.GameUpdateCount;
                 ShopChangeUI.visible = true;
             }
         }
 
         // IMPLEMENT WHEN WEAKREFERENCES FIXED
-		/*
+        /*
         public bool SacredToolsDownedAbaddon
         {
         	get { return SacredTools.ModdedWorld.OblivionSpawns; }
@@ -481,8 +476,10 @@ namespace AlchemistNPCLite.NPCs
 		*/
         public bool CalamityModRevengeance
         {
-            get {
-                if(ModLoader.TryGetMod("CalamityMod", out Mod Calamity)) {
+            get
+            {
+                if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
+                {
                     return (bool)Calamity.Call("GetDifficultyActive", "revengeance");
                 }
                 return false;
@@ -653,15 +650,15 @@ namespace AlchemistNPCLite.NPCs
                         shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.TitanSkinPotion>());
                         shop.item[nextSlot].shopCustomPrice = 50000;
                         nextSlot++;
-                        if (ModLoader.GetMod("CalamityMod") != null)
+                        /*if (ModLoader.GetMod("CalamityMod") != null)
                         {
                             if (CalamityModRevengeance)
                             {
-                            shop.item[nextSlot].SetDefaults (ModContent.ItemType<Items.HeartAttackPotion>());
-                            shop.item[nextSlot].shopCustomPrice = 250000;
-                            nextSlot++;
+                                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.HeartAttackPotion>());
+                                shop.item[nextSlot].shopCustomPrice = 250000;
+                                nextSlot++;
                             }
-                        }
+                        }*/
                         if (NPC.downedMechBossAny && !NPC.downedMoonlord)
                         {
                             shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.DiscordPotion>());
@@ -702,6 +699,7 @@ namespace AlchemistNPCLite.NPCs
                     addModItemToShop(Calamity, "TriumphPotion", 30000, ref shop, ref nextSlot);
                     addModItemToShop(Calamity, "TeslaPotion", 25000, ref shop, ref nextSlot);
                     addModItemToShop(Calamity, "SulphurskinPotion", 15000, ref shop, ref nextSlot);
+					addModItemToShop(Calamity, "ShadowPotion", 15000, ref shop, ref nextSlot);
                     if (NPC.downedBoss3)
                     {
                         addModItemToShop(Calamity, "PotionofOmniscience", 20000, ref shop, ref nextSlot);
@@ -710,14 +708,14 @@ namespace AlchemistNPCLite.NPCs
                             addModItemToShop(Calamity, "ZergPotion", 30000, ref shop, ref nextSlot);
                             addModItemToShop(Calamity, "ZenPotion", 30000, ref shop, ref nextSlot);
                         }
-                        addModItemToShop(Calamity, "YharimsStimulants", 100000, ref shop, ref nextSlot);
+                        //addModItemToShop(Calamity, "YharimsStimulants", 100000, ref shop, ref nextSlot);
                         if (Main.hardMode)
                         {
                             addModItemToShop(Calamity, "CrumblingPotion", 50000, ref shop, ref nextSlot);
                             addModItemToShop(Calamity, "PhotosynthesisPotion", 50000, ref shop, ref nextSlot);
                             addModItemToShop(Calamity, "SoaringPotion", 40000, ref shop, ref nextSlot);
-                            addModItemToShop(Calamity, "CadancePotion", 40000, ref shop, ref nextSlot);
-                            addModItemToShop(Calamity, "FabsolsVodka", 100000, ref shop, ref nextSlot);
+                            //addModItemToShop(Calamity, "CadancePotion", 40000, ref shop, ref nextSlot);
+                            //addModItemToShop(Calamity, "FabsolsVodka", 100000, ref shop, ref nextSlot);
                             addModItemToShop(Calamity, "RevivifyPotion", 50000, ref shop, ref nextSlot);
                             if ((bool)Calamity.Call("Downed", "astrum aureus"))
                             {
@@ -733,11 +731,11 @@ namespace AlchemistNPCLite.NPCs
                                 addModItemToShop(Calamity, "TitanScalePotion", 40000, ref shop, ref nextSlot);
                                 addModItemToShop(Calamity, "ShatteringPotion", 100000, ref shop, ref nextSlot);
                             }
-                            if (NPC.downedMoonlord)
+                            /*if (NPC.downedMoonlord)
                             {
                                 addModItemToShop(Calamity, "HolyWrathPotion", 100000, ref shop, ref nextSlot);
                                 addModItemToShop(Calamity, "ProfanedRagePotion", 100000, ref shop, ref nextSlot);
-                            }
+                            }*/
                             if ((bool)Calamity.Call("Downed", "polterghast"))
                             {
                                 addModItemToShop(Calamity, "CeaselessHungerPotion", 25000, ref shop, ref nextSlot);
@@ -752,33 +750,37 @@ namespace AlchemistNPCLite.NPCs
             }
             if (Shop21)
             {
-                // IMPLEMENT WHEN WEAKREFERENCES FIXED
-                /*
-                if (ModLoader.GetMod("ThoriumMod") != null)
+                if (ModLoader.TryGetMod("ThoriumMod", out Mod ThoriumMod))
                 {
-                	if (NPC.downedBoss3)
-                	{
-                		addModItemToShop(ThoriumMod, "CreativityPotion", 10000, ref shop, ref nextSlot);
-                		addModItemToShop(ThoriumMod, "EarwormPotion", 10000, ref shop, ref nextSlot);
-                		addModItemToShop(ThoriumMod, "AssassinPotion", 10000, ref shop, ref nextSlot);
-                	}
-                	if (Main.hardMode)
-                	{
-                		addModItemToShop(ThoriumMod, "InspirationReachPotion", 20000, ref shop, ref nextSlot);
-                	}
-                	addModItemToShop(ThoriumMod, "GlowingPotion", 20000, ref shop, ref nextSlot);
-                	if (Main.hardMode)
-                	{
-                		addModItemToShop(ThoriumMod, "HolyPotion", 20000, ref shop, ref nextSlot);
-                		addModItemToShop(ThoriumMod, "DashPotion", 20000, ref shop, ref nextSlot);
-                	}
-                	addModItemToShop(ThoriumMod, "HydrationPotion", 10000, ref shop, ref nextSlot);
-                	addModItemToShop(ThoriumMod, "BloodPotion", 10000, ref shop, ref nextSlot);
-                	addModItemToShop(ThoriumMod, "ConflagrationPotion", 10000, ref shop, ref nextSlot);
-                	addModItemToShop(ThoriumMod, "SilverTonguePotion", 20000, ref shop, ref nextSlot);
-                	addModItemToShop(ThoriumMod, "AquaPotion", 10000, ref shop, ref nextSlot);
-                	addModItemToShop(ThoriumMod, "FrenzyPotion", 20000, ref shop, ref nextSlot);
+                    if (NPC.downedBoss3)
+                    {
+                        addModItemToShop(ThoriumMod, "WarmongerPotion", 10000, ref shop, ref nextSlot);
+                        addModItemToShop(ThoriumMod, "ArtilleryPotion", 10000, ref shop, ref nextSlot);
+                        addModItemToShop(ThoriumMod, "BouncingFlamePotion", 10000, ref shop, ref nextSlot);
+                        addModItemToShop(ThoriumMod, "CreativityPotion", 10000, ref shop, ref nextSlot);
+                        addModItemToShop(ThoriumMod, "EarwormPotion", 10000, ref shop, ref nextSlot);
+                        addModItemToShop(ThoriumMod, "AssassinPotion", 10000, ref shop, ref nextSlot);
+                    }
+                    if (Main.hardMode)
+                    {
+                        addModItemToShop(ThoriumMod, "InspirationReachPotion", 20000, ref shop, ref nextSlot);
+                    }
+                    addModItemToShop(ThoriumMod, "GlowingPotion", 20000, ref shop, ref nextSlot);
+                    if (Main.hardMode)
+                    {
+                        addModItemToShop(ThoriumMod, "HolyPotion", 20000, ref shop, ref nextSlot);
+                        addModItemToShop(ThoriumMod, "ArcanePotion", 20000, ref shop, ref nextSlot);
+                        addModItemToShop(ThoriumMod, "KineticPotion", 20000, ref shop, ref nextSlot);
+                    }
+                    addModItemToShop(ThoriumMod, "HydrationPotion", 10000, ref shop, ref nextSlot);
+                    addModItemToShop(ThoriumMod, "BloodPotion", 10000, ref shop, ref nextSlot);
+                    addModItemToShop(ThoriumMod, "ConflagrationPotion", 10000, ref shop, ref nextSlot);
+                    addModItemToShop(ThoriumMod, "AquaPotion", 10000, ref shop, ref nextSlot);
+                    addModItemToShop(ThoriumMod, "FrenzyPotion", 20000, ref shop, ref nextSlot);
                 }
+                RedemptionPotions(ref shop, ref nextSlot);
+
+                /*
                 if (ModLoader.GetMod("ReducedGrinding") != null)
                 {
                 	addModItemToShop(ReducedGrinding, "War_Potion", 15000, ref shop, ref nextSlot);
@@ -907,7 +909,7 @@ namespace AlchemistNPCLite.NPCs
             if (Shop5)
             {
                 // IMPLEMENT WHEN WEAKREFERENCES FIXED
-				/*
+                /*
                 if (ModLoader.GetMod("Wildlife") != null)
                 {
                     addModItemToShop(Wildlife, "BouncePotion", 10000, ref shop, ref nextSlot);
@@ -1045,8 +1047,24 @@ namespace AlchemistNPCLite.NPCs
 				*/
             }
         }
-        private void addModItemToShop(Mod mod, String itemName, int price, ref Chest shop, ref int nextSlot) {
-            if(mod.TryFind<ModItem>(itemName, out ModItem currItem)) {
+
+        void RedemptionPotions(ref Chest shop, ref int nextSlot)
+        {
+            if (ModLoader.TryGetMod("Redemption", out Mod Redemption))
+            {
+                addModItemToShop(Redemption, "CharismaPotion", 5000, ref shop, ref nextSlot);
+                addModItemToShop(Redemption, "VendettaPotion", 6000, ref shop, ref nextSlot);
+                if (Operator.RedemptionDowned.Nebuleus)
+                {
+                    addModItemToShop(Redemption, "VigourousPotion", 250000, ref shop, ref nextSlot);
+                }
+            }
+        }
+
+        private void addModItemToShop(Mod mod, String itemName, int price, ref Chest shop, ref int nextSlot)
+        {
+            if (mod.TryFind<ModItem>(itemName, out ModItem currItem))
+            {
                 shop.item[nextSlot].SetDefaults(currItem.Type);
                 shop.item[nextSlot].shopCustomPrice = price;
                 nextSlot++;
