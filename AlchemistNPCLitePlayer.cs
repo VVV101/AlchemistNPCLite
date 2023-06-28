@@ -92,63 +92,31 @@ namespace AlchemistNPCLite
 		// public override void UpdateEquips(ref bool wallSpeedBuff, ref bool tileSpeedBuff, ref bool tileRangeBuff)
 		public override void UpdateEquips()
 		{
-			ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
-			if (Calamity != null)
+			if (AllDamage10) Player.GetDamage(DamageClass.Generic) += 0.1f;
+			if (AllCrit10)
 			{
-				Calamity.TryFind<ModBuff>("HolyWrathBuff", out ModBuff buff);
-				if (buff != null && !Player.HasBuff(buff.Type) && AllDamage10) Player.GetDamage(DamageClass.Generic) += 0.1f;
-				Calamity.TryFind<ModBuff>("ProfanedRageBuff", out buff);
-				if (buff != null && !Player.HasBuff(buff.Type) && AllCrit10)
+				Player.GetCritChance(DamageClass.Melee) += 10;
+				Player.GetCritChance(DamageClass.Ranged) += 10;
+				Player.GetCritChance(DamageClass.Magic) += 10;
+				Player.GetCritChance(DamageClass.Throwing) += 10;
+				if (ModLoader.TryGetMod("ThoriumMod", out Mod thoriumMod))
 				{
-					Player.GetCritChance(DamageClass.Melee) += 10;
-					Player.GetCritChance(DamageClass.Ranged) += 10;
-					Player.GetCritChance(DamageClass.Magic) += 10;
-					Player.GetCritChance(DamageClass.Throwing) += 10;
-					// IMPLEMENT WHEN WEAKREFERENCES FIXED
-					/*
-					if (ModLoader.GetMod("ThoriumMod") != null)
+					if (thoriumMod.TryFind("BardDamage", out DamageClass damageClass))
 					{
-						ThoriumBoosts(Player);
+						Player.GetCritChance(damageClass) += 10;
 					}
-					if (ModLoader.GetMod("Redemption") != null)
+					if (thoriumMod.TryFind("HealerDamage", out DamageClass damageClass1))
 					{
-						RedemptionBoost(Player);
+						Player.GetCritChance(damageClass1) += 10;
 					}
-                    */
-					Calamity.Call("AddRogueCrit", Player, 10);
 				}
-				Calamity.TryFind<ModBuff>("CadancesGrace", out buff);
-				if (!Player.HasBuff(ModContent.BuffType<Buffs.CalamityComb>()) && buff != null && !Player.HasBuff(buff.Type) && Regeneration) Player.lifeRegen += 4;
-				if (!Player.HasBuff(ModContent.BuffType<Buffs.CalamityComb>()) && buff != null && !Player.HasBuff(buff.Type) && Regeneration) Player.lifeRegen += 4;
-				if (!Player.HasBuff(ModContent.BuffType<Buffs.CalamityComb>()) && buff != null && !Player.HasBuff(buff.Type) && Lifeforce)
-				{
-					Player.lifeForce = true;
-					Player.statLifeMax2 += Player.statLifeMax / 5 / 20 * 20;
-				}
+					
 			}
-			if (Calamity == null)
+			if (Regeneration) Player.lifeRegen += 4;
+			if (Lifeforce)
 			{
-				if (AllDamage10) Player.GetDamage(DamageClass.Generic) += 0.1f;
-				if (AllCrit10)
-				{
-					Player.GetCritChance(DamageClass.Melee) += 10;
-					Player.GetCritChance(DamageClass.Ranged) += 10;
-					Player.GetCritChance(DamageClass.Magic) += 10;
-					Player.GetCritChance(DamageClass.Throwing) += 10;
-					// IMPLEMENT WHEN WEAKREFERENCES FIXED
-					/*
-                    if (ModLoader.GetMod("ThoriumMod") != null)
-                    {
-                        ThoriumBoosts(Player);
-                    }
-                    */
-				}
-				if (Regeneration) Player.lifeRegen += 4;
-				if (Lifeforce)
-				{
-					Player.lifeForce = true;
-					Player.statLifeMax2 += Player.statLifeMax / 5 / 20 * 20;
-				}
+				Player.lifeForce = true;
+				Player.statLifeMax2 += Player.statLifeMax / 5 / 20 * 20;
 			}
 
 			if (MS) Player.moveSpeed += 0.25f;
@@ -180,21 +148,6 @@ namespace AlchemistNPCLite
 				Main.SceneMetrics.HasCampfire = true;
 			}
 		}
-		private void CalamityBoost(Player player)
-		{
-			// CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = Player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-			// CalamityPlayer.throwingCrit += 10;
-			player.GetCritChance<ThrowingDamageClass>() += 10;
-		}
-		// IMPLEMENT WHEN WEAKREFERENCES FIXED
-		/*
-        private void ThoriumBoosts(Player player)
-        {
-            ThoriumMod.ThoriumPlayer ThoriumPlayer = Player.GetModPlayer<ThoriumMod.ThoriumPlayer>();
-            ThoriumPlayer.symphonicCrit += 10;
-            ThoriumPlayer.radiantCrit += 10;
-        }
-		*/
 
 		private bool QuickBuff_ShouldBotherUsingThisBuff(int attemptedType)
 		{

@@ -650,7 +650,7 @@ namespace AlchemistNPCLite.NPCs
                         shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.TitanSkinPotion>());
                         shop.item[nextSlot].shopCustomPrice = 50000;
                         nextSlot++;
-                        if (ModLoader.GetMod("CalamityMod") != null)
+                        /*if (ModLoader.GetMod("CalamityMod") != null)
                         {
                             if (CalamityModRevengeance)
                             {
@@ -658,7 +658,7 @@ namespace AlchemistNPCLite.NPCs
                                 shop.item[nextSlot].shopCustomPrice = 250000;
                                 nextSlot++;
                             }
-                        }
+                        }*/
                         if (NPC.downedMechBossAny && !NPC.downedMoonlord)
                         {
                             shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.DiscordPotion>());
@@ -699,6 +699,7 @@ namespace AlchemistNPCLite.NPCs
                     addModItemToShop(Calamity, "TriumphPotion", 30000, ref shop, ref nextSlot);
                     addModItemToShop(Calamity, "TeslaPotion", 25000, ref shop, ref nextSlot);
                     addModItemToShop(Calamity, "SulphurskinPotion", 15000, ref shop, ref nextSlot);
+					addModItemToShop(Calamity, "ShadowPotion", 15000, ref shop, ref nextSlot);
                     if (NPC.downedBoss3)
                     {
                         addModItemToShop(Calamity, "PotionofOmniscience", 20000, ref shop, ref nextSlot);
@@ -707,14 +708,14 @@ namespace AlchemistNPCLite.NPCs
                             addModItemToShop(Calamity, "ZergPotion", 30000, ref shop, ref nextSlot);
                             addModItemToShop(Calamity, "ZenPotion", 30000, ref shop, ref nextSlot);
                         }
-                        addModItemToShop(Calamity, "YharimsStimulants", 100000, ref shop, ref nextSlot);
+                        //addModItemToShop(Calamity, "YharimsStimulants", 100000, ref shop, ref nextSlot);
                         if (Main.hardMode)
                         {
                             addModItemToShop(Calamity, "CrumblingPotion", 50000, ref shop, ref nextSlot);
                             addModItemToShop(Calamity, "PhotosynthesisPotion", 50000, ref shop, ref nextSlot);
                             addModItemToShop(Calamity, "SoaringPotion", 40000, ref shop, ref nextSlot);
-                            addModItemToShop(Calamity, "CadancePotion", 40000, ref shop, ref nextSlot);
-                            addModItemToShop(Calamity, "FabsolsVodka", 100000, ref shop, ref nextSlot);
+                            //addModItemToShop(Calamity, "CadancePotion", 40000, ref shop, ref nextSlot);
+                            //addModItemToShop(Calamity, "FabsolsVodka", 100000, ref shop, ref nextSlot);
                             addModItemToShop(Calamity, "RevivifyPotion", 50000, ref shop, ref nextSlot);
                             if ((bool)Calamity.Call("Downed", "astrum aureus"))
                             {
@@ -730,11 +731,11 @@ namespace AlchemistNPCLite.NPCs
                                 addModItemToShop(Calamity, "TitanScalePotion", 40000, ref shop, ref nextSlot);
                                 addModItemToShop(Calamity, "ShatteringPotion", 100000, ref shop, ref nextSlot);
                             }
-                            if (NPC.downedMoonlord)
+                            /*if (NPC.downedMoonlord)
                             {
                                 addModItemToShop(Calamity, "HolyWrathPotion", 100000, ref shop, ref nextSlot);
                                 addModItemToShop(Calamity, "ProfanedRagePotion", 100000, ref shop, ref nextSlot);
-                            }
+                            }*/
                             if ((bool)Calamity.Call("Downed", "polterghast"))
                             {
                                 addModItemToShop(Calamity, "CeaselessHungerPotion", 25000, ref shop, ref nextSlot);

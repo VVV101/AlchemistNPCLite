@@ -343,7 +343,7 @@ namespace AlchemistNPCLite.NPCs
                     if (NPC.downedGolemBoss)
                     {
                         shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.CalamityCombination>());
-                        shop.item[nextSlot].shopCustomPrice = 350000;
+                        shop.item[nextSlot].shopCustomPrice = 200000;
                         nextSlot++;
                     }
                 }
@@ -455,13 +455,18 @@ namespace AlchemistNPCLite.NPCs
                 	}
                 }
 				*/
-                if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
+				ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
+                if (Calamity != null)
                 {
-                    if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
+					if ((bool)Calamity.Call("Downed", "calamitas doppelganger"))
                     {
-                        addModItemToShop(Calamity, "CalamitasBrew", 50000, ref shop, ref nextSlot);
-                    }
-                }
+						addModItemToShop(Calamity, "FlaskOfBrimstone", 40000, ref shop, ref nextSlot);
+					}
+					if (NPC.downedMoonlord)
+					{
+						addModItemToShop(Calamity, "FlaskOfHolyFlames", 50000, ref shop, ref nextSlot);
+					}
+				}
             }
         }
         private void addModItemToShop(Mod mod, String itemName, int price, ref Chest shop, ref int nextSlot)

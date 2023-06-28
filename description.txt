@@ -6,6 +6,13 @@ The spawn condition for the Operator is to beat EoW/BoC.
 The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 Mod's Discord: https://discord.gg/WGKyKun
+v1.8.17
+-Added Mod of Redemption support (thanks to Rockman Zeta).
+-Reimplemented Thorium mod support (thanks to b2mauler).
+-Removed "removed" potions from Calamity Combination.
+-Removed Boom Box as now Music Boxes can work even from vanity accessory slots.
+-Removed additional tooltips on Treasure Bags as now they are properly named.
+-Fixed some buffs and combinations which were not working (f.e. Lifeforce, modded crit bonuses, Ninja pot).
 v1.8.16
 -Fixed flasks breaking piggy bank potions using if placed before buff potions.
 -Fixed Explorer's combination recipe.

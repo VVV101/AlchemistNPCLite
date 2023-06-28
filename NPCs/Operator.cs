@@ -1246,7 +1246,7 @@ namespace AlchemistNPCLite.NPCs
                     }
                     if (NPC.downedPlantBoss)
                     {
-                        addModItemToShop(Calamity, "Tenebris", 30000, ref shop, ref nextSlot);
+                        //addModItemToShop(Calamity, "Tenebris", 30000, ref shop, ref nextSlot);
                         addModItemToShop(Calamity, "Lumenite", 50000, ref shop, ref nextSlot);
                         addModItemToShop(Calamity, "DepthCells", 30000, ref shop, ref nextSlot);
                     }

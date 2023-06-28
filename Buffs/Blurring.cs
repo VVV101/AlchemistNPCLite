@@ -24,20 +24,18 @@ namespace AlchemistNPCLite.Buffs
 			BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
 			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Размытие");
 			Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Враги едва могут видеть вас (Святое уклонение с 30-ти секундным откатом)");
-
             DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "模糊");
             Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "敌人并看不清你 (暗影躲避有30秒CD)");
         }
 		
 		public override void Update(Player player, ref int buffIndex)
 		{
-		player.onHitDodge = true;
-		if (player.onHitDodge && player.shadowDodgeTimer == 0 && Main.rand.Next(4) == 0)
-            {
-                if (!player.shadowDodge)
-                    player.shadowDodgeTimer = 1800;
-                player.AddBuff(59, 600, true);
-            }
+			player.onHitDodge = true;
+			if (player.onHitDodge && player.shadowDodgeTimer == 0 && Main.rand.Next(4) == 0)
+			{
+				if (!player.shadowDodge) player.shadowDodgeTimer = 1800;
+				player.AddBuff(59, 600, true);
+			}
 		}
 	}
 }
