@@ -8,6 +8,7 @@ The Musician will come if you defeat Skeletron.
 Mod's Discord: https://discord.gg/WGKyKun
 v1.8.19
 -Removed even more "removed" potions.
+-Returned some more stuff from Thorium to shops.
 -Fixed Thorium Combination breaking access to others.
 -Fixed Thorium mod references from breaking some stuff.
 -Now Life Crystals and Life Fruits can be bought from Jeweler while Skeletron/Golem is defeated (were available in MP only before).
