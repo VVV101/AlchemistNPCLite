@@ -711,7 +711,6 @@ namespace AlchemistNPCLite.NPCs
                         //addModItemToShop(Calamity, "YharimsStimulants", 100000, ref shop, ref nextSlot);
                         if (Main.hardMode)
                         {
-                            addModItemToShop(Calamity, "CrumblingPotion", 50000, ref shop, ref nextSlot);
                             addModItemToShop(Calamity, "PhotosynthesisPotion", 50000, ref shop, ref nextSlot);
                             addModItemToShop(Calamity, "SoaringPotion", 40000, ref shop, ref nextSlot);
                             //addModItemToShop(Calamity, "CadancePotion", 40000, ref shop, ref nextSlot);
@@ -726,12 +725,12 @@ namespace AlchemistNPCLite.NPCs
                             {
                                 addModItemToShop(Calamity, "PenumbraPotion", 100000, ref shop, ref nextSlot);
                             }
-                            if (NPC.downedGolemBoss)
+                            /*if (NPC.downedGolemBoss)
                             {
                                 addModItemToShop(Calamity, "TitanScalePotion", 40000, ref shop, ref nextSlot);
                                 addModItemToShop(Calamity, "ShatteringPotion", 100000, ref shop, ref nextSlot);
                             }
-                            /*if (NPC.downedMoonlord)
+                            if (NPC.downedMoonlord)
                             {
                                 addModItemToShop(Calamity, "HolyWrathPotion", 100000, ref shop, ref nextSlot);
                                 addModItemToShop(Calamity, "ProfanedRagePotion", 100000, ref shop, ref nextSlot);

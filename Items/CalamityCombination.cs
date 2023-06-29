@@ -23,7 +23,7 @@ namespace AlchemistNPCLite.Items
 		public override void SetStaticDefaults()
 		{
 			DisplayName.SetDefault("Calamity Combination");
-			Tooltip.SetDefault("Grants most buffs from Calamity Mod potions (Photosynthesis, Titan Scale, Soaring, Bounding and Fabsol's Vodka)");
+			Tooltip.SetDefault("Grants most buffs from Calamity Mod potions (Photosynthesis, Soaring, Bounding and Fabsol's Vodka)");
 			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Комбинация Calamity");
             Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Даёт большинство баффов от зелий мода Calamity (Фотосинтез, Титановой Чешуи, Полёта, Связующее и Водки Фабсола)");
 
@@ -56,7 +56,6 @@ namespace AlchemistNPCLite.Items
             string[][] modComponents = new string[][]{
                 new string[] {"CalamityMod", "PhotosynthesisPotion"},
 				new string[] {"CalamityMod", "FabsolsVodka"},
-                new string[] {"CalamityMod", "TitanScalePotion"},
                 new string[] {"CalamityMod", "SoaringPotion"},
                 new string[] {"CalamityMod", "BoundingPotion"}
             };

@@ -329,7 +329,7 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].shopCustomPrice = 100000;
                     nextSlot++;
                 }
-                if (ModLoader.GetMod("ThoriumMod") != null)
+                if (ModLoader.TryGetMod("ThoriumMod", out Mod Thorium))
                 {
                     if (NPC.downedMechBossAny)
                     {
@@ -340,10 +340,10 @@ namespace AlchemistNPCLite.NPCs
                 }
                 if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
                 {
-                    if (NPC.downedGolemBoss)
+                    if (Main.hardMode)
                     {
                         shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.CalamityCombination>());
-                        shop.item[nextSlot].shopCustomPrice = 200000;
+                        shop.item[nextSlot].shopCustomPrice = 150000;
                         nextSlot++;
                     }
                 }
@@ -458,6 +458,7 @@ namespace AlchemistNPCLite.NPCs
 				ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
                 if (Calamity != null)
                 {
+					if (Main.hardMode) addModItemToShop(Calamity, "CrumblingPotion", 30000, ref shop, ref nextSlot);
 					if ((bool)Calamity.Call("Downed", "calamitas doppelganger"))
                     {
 						addModItemToShop(Calamity, "FlaskOfBrimstone", 40000, ref shop, ref nextSlot);

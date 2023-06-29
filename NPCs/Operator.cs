@@ -1347,6 +1347,13 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].shopCustomPrice = 1500000;
                     nextSlot++;
                 }
+				if (ThoriumMod != null)
+                {
+					if (NPC.downedPirates)
+					{
+						addModItemToShop(ThoriumMod, "FlyingDutchmanBag", 1500000, ref shop, ref nextSlot);
+					}
+				}
                 if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3 && Main.expertMode)
                 {
                     shop.item[nextSlot].SetDefaults(ItemID.DestroyerBossBag);
@@ -1359,7 +1366,7 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].shopCustomPrice = 2000000;
                     nextSlot++;
                 }
-                if (ModLoader.GetMod("ThoriumMod") != null)
+                if (ThoriumMod != null)
                 {
                     if (DD2Event.DownedInvasionT2 && NPC.downedMechBossAny)
                     {
@@ -1396,6 +1403,17 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].shopCustomPrice = 3500000;
                     nextSlot++;
                 }
+				if (ThoriumMod != null)
+                {
+					if (NPC.downedAncientCultist)
+					{
+						addModItemToShop(ThoriumMod, "LunaticCultistTreasureBag", 3500000, ref shop, ref nextSlot);
+					}
+					if (NPC.downedMartians)
+					{
+						addModItemToShop(ThoriumMod, "MartianSaucerBag", 3500000, ref shop, ref nextSlot);
+					}
+				}
                 if (NPC.downedMoonlord && Main.expertMode)
                 {
                     shop.item[nextSlot].SetDefaults(ItemID.MoonLordBossBag);

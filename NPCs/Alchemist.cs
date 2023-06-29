@@ -632,9 +632,8 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].shopCustomPrice = 1000;
                     nextSlot++;
                 }
-                // IMPLEMENT WHEN WEAKREFERENCES FIXED
-                /*
-                if (ModLoader.GetMod("ThoriumMod") != null)
+             
+                if (ModLoader.TryGetMod("ThoriumMod", out Mod ThoriumMod))
                 {
                 	if (NPC.downedBoss2)
                 	{
@@ -645,7 +644,7 @@ namespace AlchemistNPCLite.NPCs
                 		addModItemToShop(ThoriumMod, "Jelly", 7500, ref shop, ref nextSlot);
                 	}
                 }
-				*/
+				
                 if (Main.hardMode)
                 {
                     shop.item[nextSlot].SetDefaults(ItemID.PixieDust);

@@ -332,21 +332,18 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].SetDefaults(ItemID.FossilOre);
                     shop.item[nextSlot].shopCustomPrice = 5000;
                     nextSlot++;
-                    // IMPLEMENT WHEN WEAKREFERENCES FIXED
-                    /*
-                    if (ModLoader.GetMod("ThoriumMod") != null)
-                    {
+                    if (ModLoader.TryGetMod("ThoriumMod", out Mod ThoriumMod))
+					{
                     	addModItemToShop(ThoriumMod, "Opal", 5000, ref shop, ref nextSlot);
                     	addModItemToShop(ThoriumMod, "Onyx", 5000, ref shop, ref nextSlot);	
                     }
-					*/
                     shop.item[nextSlot].SetDefaults(ItemID.BandofStarpower);
                     shop.item[nextSlot].shopCustomPrice = 30000;
                     nextSlot++;
                     shop.item[nextSlot].SetDefaults(ItemID.BandofRegeneration);
                     shop.item[nextSlot].shopCustomPrice = 50000;
                     nextSlot++;
-                    if (Main.netMode == 1 || Main.netMode == 2)
+                    if (NPC.downedBoss3)
                     {
                         shop.item[nextSlot].SetDefaults(ItemID.LifeCrystal);
                         shop.item[nextSlot].shopCustomPrice = 100000;
