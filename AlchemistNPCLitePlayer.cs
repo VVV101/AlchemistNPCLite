@@ -269,7 +269,6 @@ namespace AlchemistNPCLite
 					{
 						num3 = 3600;
 					}
-					Player.AddBuff(num2, num3);
 					if (Player.CountBuffs() == 22)
 					{
 						break;
@@ -280,6 +279,7 @@ namespace AlchemistNPCLite
 					{
 						if (AlchemistCharmTier4 == true)
 						{
+							num3 = (int)(num3 * 1.5);
 							ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
 							if (Calamity != null)
 							{
@@ -305,6 +305,7 @@ namespace AlchemistNPCLite
 
 						else if (AlchemistCharmTier3 == true)
 						{
+							num3 = (int)(num3 * 1.35);
 							if (Main.rand.Next(2) == 0)
 							{
 							}
@@ -316,6 +317,7 @@ namespace AlchemistNPCLite
 
 						else if (AlchemistCharmTier2 == true)
 						{
+							num3 = (int)(num3 * 1.25);
 							if (Main.rand.Next(4) == 0)
 							{
 							}
@@ -327,6 +329,7 @@ namespace AlchemistNPCLite
 
 						else if (AlchemistCharmTier1 == true)
 						{
+							num3 = (int)(num3 * 1.1);
 							if (Main.rand.Next(10) == 0)
 							{
 							}
@@ -342,6 +345,7 @@ namespace AlchemistNPCLite
 						if (bankitem.stack <= 0)
 							bankitem.TurnToAir();
 					}
+					Player.AddBuff(num2, num3);
 				}
 				//if (type1 == null)
 				//return;
