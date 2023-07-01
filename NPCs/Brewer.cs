@@ -622,71 +622,74 @@ namespace AlchemistNPCLite.NPCs
             }
             if (Shop2)
             {
-                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.SunshinePotion>());
-                shop.item[nextSlot].shopCustomPrice = 15000;
-                nextSlot++;
-                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Dopamine>());
-                shop.item[nextSlot].shopCustomPrice = 15000;
-                nextSlot++;
-                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.GreaterDangersensePotion>());
-                shop.item[nextSlot].shopCustomPrice = 25000;
-                nextSlot++;
-                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.NatureBlessingPotion>());
-                shop.item[nextSlot].shopCustomPrice = 25000;
-                nextSlot++;
-                if (NPC.downedBoss3)
+                if (AlchemistNPCLite.modConfiguration.CustomPotions)
                 {
-                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.BewitchingPotion>());
-                    shop.item[nextSlot].shopCustomPrice = 10000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.FortitudePotion>());
+                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.SunshinePotion>());
                     shop.item[nextSlot].shopCustomPrice = 15000;
                     nextSlot++;
-                    if (Main.hardMode)
+                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Dopamine>());
+                    shop.item[nextSlot].shopCustomPrice = 15000;
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.GreaterDangersensePotion>());
+                    shop.item[nextSlot].shopCustomPrice = 25000;
+                    nextSlot++;
+                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.NatureBlessingPotion>());
+                    shop.item[nextSlot].shopCustomPrice = 25000;
+                    nextSlot++;
+                    if (NPC.downedBoss3)
                     {
-                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.InvincibilityPotion>());
-                        shop.item[nextSlot].shopCustomPrice = 30000;
+                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.BewitchingPotion>());
+                        shop.item[nextSlot].shopCustomPrice = 10000;
                         nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.TitanSkinPotion>());
-                        shop.item[nextSlot].shopCustomPrice = 50000;
+                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.FortitudePotion>());
+                        shop.item[nextSlot].shopCustomPrice = 15000;
                         nextSlot++;
-                        /*if (ModLoader.GetMod("CalamityMod") != null)
+                        if (Main.hardMode)
                         {
-                            if (CalamityModRevengeance)
+                            shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.InvincibilityPotion>());
+                            shop.item[nextSlot].shopCustomPrice = 30000;
+                            nextSlot++;
+                            shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.TitanSkinPotion>());
+                            shop.item[nextSlot].shopCustomPrice = 50000;
+                            nextSlot++;
+                            /*if (ModLoader.GetMod("CalamityMod") != null)
                             {
-                                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.HeartAttackPotion>());
-                                shop.item[nextSlot].shopCustomPrice = 250000;
+                                if (CalamityModRevengeance)
+                                {
+                                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.HeartAttackPotion>());
+                                    shop.item[nextSlot].shopCustomPrice = 250000;
+                                    nextSlot++;
+                                }
+                            }*/
+                            if (NPC.downedMechBossAny && !NPC.downedMoonlord)
+                            {
+                                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.DiscordPotion>());
+                                shop.item[nextSlot].shopCustomPrice = 200000;
                                 nextSlot++;
                             }
-                        }*/
-                        if (NPC.downedMechBossAny && !NPC.downedMoonlord)
-                        {
-                            shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.DiscordPotion>());
-                            shop.item[nextSlot].shopCustomPrice = 200000;
-                            nextSlot++;
-                        }
-                        if (NPC.downedMoonlord)
-                        {
-                            shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.PerfectDiscordPotion>());
-                            shop.item[nextSlot].shopCustomPrice = 330000;
-                            nextSlot++;
-                        }
-                        if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
-                        {
-                            shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.BlurringPotion>());
-                            shop.item[nextSlot].shopCustomPrice = 150000;
-                            nextSlot++;
-                            if (NPC.downedPlantBoss)
+                            if (NPC.downedMoonlord)
                             {
-                                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.NinjaPotion>());
-                                shop.item[nextSlot].shopCustomPrice = 75000;
+                                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.PerfectDiscordPotion>());
+                                shop.item[nextSlot].shopCustomPrice = 330000;
                                 nextSlot++;
                             }
-                            if (NPC.downedGolemBoss)
+                            if (NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
                             {
-                                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.TrapsPotion>());
-                                shop.item[nextSlot].shopCustomPrice = 50000;
+                                shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.BlurringPotion>());
+                                shop.item[nextSlot].shopCustomPrice = 150000;
                                 nextSlot++;
+                                if (NPC.downedPlantBoss)
+                                {
+                                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.NinjaPotion>());
+                                    shop.item[nextSlot].shopCustomPrice = 75000;
+                                    nextSlot++;
+                                }
+                                if (NPC.downedGolemBoss)
+                                {
+                                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.TrapsPotion>());
+                                    shop.item[nextSlot].shopCustomPrice = 50000;
+                                    nextSlot++;
+                                }
                             }
                         }
                     }

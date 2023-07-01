@@ -6,6 +6,8 @@ The spawn condition for the Operator is to beat EoW/BoC.
 The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 Mod's Discord: https://discord.gg/WGKyKun
+v1.8.20
+-Added config options for removing non-vanilla potions and buff items from mod.
 v1.8.19
 -Removed even more "removed" potions.
 -Returned some more stuff from Thorium to shops.

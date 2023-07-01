@@ -495,9 +495,12 @@ namespace AlchemistNPCLite.NPCs
                         shop.item[nextSlot].SetDefaults(ItemID.CrystalBall);
                         shop.item[nextSlot].shopCustomPrice = 150000;
                         nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.UltimaCake>());
-                        shop.item[nextSlot].shopCustomPrice = 5000000;
-                        nextSlot++;
+                        if (AlchemistNPCLite.modConfiguration.CustomPotions)
+                        {
+                            shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.UltimaCake>());
+                            shop.item[nextSlot].shopCustomPrice = 5000000;
+                            nextSlot++;
+                        }
                     }
                     if (NPC.downedGolemBoss)
                     {

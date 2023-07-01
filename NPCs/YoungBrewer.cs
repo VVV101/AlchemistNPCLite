@@ -299,7 +299,7 @@ namespace AlchemistNPCLite.NPCs
                 shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.VanTankCombination>());
                 shop.item[nextSlot].shopCustomPrice = 90000;
                 nextSlot++;
-                if (Main.hardMode)
+                if (Main.hardMode && AlchemistNPCLite.modConfiguration.CustomPotions)
                 {
                     shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.TankCombination>());
                     shop.item[nextSlot].shopCustomPrice = 160000;
