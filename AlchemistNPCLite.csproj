@@ -10,4 +10,9 @@
   <ItemGroup>
     <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
   </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Redemption">
+      <HintPath>..\..\ModReader\Redemption\Redemption.dll</HintPath>
+    </Reference>
+  </ItemGroup>
 </Project>

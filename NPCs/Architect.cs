@@ -1,19 +1,14 @@
-using System.Linq;
-using System;
+using AlchemistNPCLite.Interface;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Terraria;
-using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
-using Terraria.ID;
-using Terraria.Localization;
-using Terraria.GameContent;
-using AlchemistNPCLite.NPCs;
-using AlchemistNPCLite.Interface;
-using ReLogic.Content;
 using System.Collections.Generic;
+using Terraria;
+using Terraria.GameContent;
 using Terraria.GameContent.Bestiary;
 using Terraria.GameContent.Personalities;
+using Terraria.ID;
+using Terraria.Localization;
+using Terraria.ModLoader;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -243,7 +238,7 @@ namespace AlchemistNPCLite.NPCs
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Смена магазина");
             text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "切换商店");
             LocalizationLoader.AddTranslation(text);
-			NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
+            NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             {
                 Velocity = -1f,
                 Direction = -1
@@ -254,15 +249,15 @@ namespace AlchemistNPCLite.NPCs
             NPC.Happiness.SetBiomeAffection<JungleBiome>(AffectionLevel.Love);
             NPC.Happiness.SetBiomeAffection<SnowBiome>(AffectionLevel.Dislike);
 
-            NPC.Happiness.SetNPCAffection(NPCID.Painter,AffectionLevel.Love);
-            NPC.Happiness.SetNPCAffection(NPCID.GoblinTinkerer,AffectionLevel.Like);
-            NPC.Happiness.SetNPCAffection(NPCID.TaxCollector,AffectionLevel.Dislike);
+            NPC.Happiness.SetNPCAffection(NPCID.Painter, AffectionLevel.Love);
+            NPC.Happiness.SetNPCAffection(NPCID.GoblinTinkerer, AffectionLevel.Like);
+            NPC.Happiness.SetNPCAffection(NPCID.TaxCollector, AffectionLevel.Dislike);
         }
-		
-		public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
+
+        public override void SetBestiary(BestiaryDatabase database, BestiaryEntry bestiaryEntry)
         {
             bestiaryEntry.Info.AddRange(new IBestiaryInfoElement[] {
-                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Surface,
+                BestiaryDatabaseNPCsPopulator.CommonTags.SpawnConditions.Biomes.Jungle,
                 new FlavorTextBestiaryInfoElement("Mods.AlchemistNPCLite.Bestiary.Architect")
             });
         }
@@ -303,13 +298,13 @@ namespace AlchemistNPCLite.NPCs
             string Li = Language.GetTextValue("Mods.AlchemistNPCLite.Li");
 
             return new List<string>() {
-				Joe,
-				Mark,
-				Walter,
-				Archer,
+                Joe,
+                Mark,
+                Walter,
+                Archer,
                 Frido,
                 Li
-			};
+            };
         }
 
         public override void TownNPCAttackStrength(ref int damage, ref float knockback)
@@ -492,7 +487,7 @@ namespace AlchemistNPCLite.NPCs
             }
             else
             {
-                if(!ShopChangeUIA.visible) ShopChangeUIA.timeStart = Main.GameUpdateCount;
+                if (!ShopChangeUIA.visible) ShopChangeUIA.timeStart = Main.GameUpdateCount;
                 ShopChangeUIA.visible = true;
             }
         }
@@ -558,7 +553,7 @@ namespace AlchemistNPCLite.NPCs
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ItemID.SiltBlock);
                 nextSlot++;
-				shop.item[nextSlot].SetDefaults(ItemID.SlushBlock);
+                shop.item[nextSlot].SetDefaults(ItemID.SlushBlock);
                 nextSlot++;
                 shop.item[nextSlot].SetDefaults(ItemID.SnowBlock);
                 shop.item[nextSlot].shopCustomPrice = 1;
@@ -612,7 +607,7 @@ namespace AlchemistNPCLite.NPCs
                 shop.item[nextSlot].shopCustomPrice = 15;
                 nextSlot++;
                 // IMPLEMENT WHEN WEAKREFERENCES FIXED
-				/*
+                /*
                 if (ModLoader.GetMod("ThoriumMod") != null)
                 {
                     if (NPC.downedGoblins)
@@ -834,8 +829,8 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].SetDefaults(ItemID.BoneWelder);
                     shop.item[nextSlot].shopCustomPrice = 20000;
                     nextSlot++;
-					// IMPLEMENT WHEN WEAKREFERENCES FIXED
-					/*
+                    // IMPLEMENT WHEN WEAKREFERENCES FIXED
+                    /*
                     if (chadsfurniture != null)
                     {
                     	shop.item[nextSlot].SetDefaults(chadsfurniture.ItemType("printer"));
@@ -874,8 +869,8 @@ namespace AlchemistNPCLite.NPCs
                 nextSlot++;
                 if (Main.hardMode)
                 {
-					// IMPLEMENT WHEN WEAKREFERENCES FIXED
-					/*
+                    // IMPLEMENT WHEN WEAKREFERENCES FIXED
+                    /*
                     if (chadsfurniture != null)
                     {
                         shop.item[nextSlot].SetDefaults(chadsfurniture.ItemType("RimpelstiltskinsLoom"));

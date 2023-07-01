@@ -1,18 +1,13 @@
-﻿using ReLogic.Graphics;
-using Microsoft.Xna.Framework.Input;
+﻿using AlchemistNPCLite.NPCs;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Terraria;
-using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
-using Terraria.GameContent.UI.Elements;
-using Terraria.UI;
-using Terraria.Audio;
-using System;
-using Terraria.ID;
-using System.Linq;
-using AlchemistNPCLite.NPCs;
 using ReLogic.Content;
+using Terraria;
+using Terraria.Audio;
+using Terraria.GameContent.UI.Elements;
+using Terraria.ID;
+using Terraria.ModLoader;
+using Terraria.UI;
 
 namespace AlchemistNPCLite.Interface
 {
@@ -49,7 +44,7 @@ namespace AlchemistNPCLite.Interface
             text2.Height.Set(22, 0f);
             BrewerShopsPanel.Append(text2);
 
-            UIText text21 = new UIText("Thorium/RG");
+            UIText text21 = new UIText("Thorium/RG/MoR");
             text21.Left.Set(35, 0f);
             text21.Top.Set(70, 0f);
             text21.Width.Set(100, 0f);
