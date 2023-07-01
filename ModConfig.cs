@@ -89,8 +89,8 @@ namespace AlchemistNPCLite
 		public bool CatchNPC;
 		
         [DefaultValue(true)]
-        [Label("Custom Potions toggle")]
-        [Tooltip("True to allow the Brewer to sell Alchemist NPC Lite's custom potions. True by default")]
+        [Label("Custom potions/items toggle")]
+        [Tooltip("True to allow NPC to sell Alchemist NPC Lite's custom potions and items. True by default")]
         public bool CustomPotions;
 
 		[Range(1, 1000)]

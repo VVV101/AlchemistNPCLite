@@ -14,6 +14,17 @@ Mods:
 			YoungBrewer: Provides a variety of potions combinations and flasks for selling. ''Lore-wise'' is son of Alchemist and Brewer.
 		}
 		
+		Common:
+		{
+			DayTimeSet: Time is set to morning.
+			NightTimeSet: Time is set to evening.
+			SandstormStarted: Sandstorm was started.
+			SandstormStopped: Sandstorm was stopped.
+			RainStarted: Rain is starting.
+			RainStopped: Rain is stopping.
+			
+		}
+		
 		#This is what displays during all of an NPC's happiness levels. Note that the localization key for these should always be "TownNPCMood.*NPCName*.*Mood*" or else it won't display properly.
 		TownNPCMood: 
 		{

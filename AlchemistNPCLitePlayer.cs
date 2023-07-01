@@ -37,6 +37,9 @@ namespace AlchemistNPCLite
 		public bool AmmoBox = false;
 		public bool SugarRush = false;
 		public bool Lamps = false;
+		
+		public bool GlobalTeleporter = false;
+		public bool GlobalTeleporterUp = false;
 
 		public override void ResetEffects()
 		{
@@ -51,6 +54,8 @@ namespace AlchemistNPCLite
 			AlchemistCharmTier3 = false;
 			AlchemistCharmTier4 = false;
 			Traps = false;
+			GlobalTeleporter = false;
+			GlobalTeleporterUp = false;
 
 			AllDamage10 = false;
 			AllCrit10 = false;
@@ -194,6 +199,87 @@ namespace AlchemistNPCLite
 
 		public override void ProcessTriggers(TriggersSet triggersSet)
 		{
+			if (GlobalTeleporter || GlobalTeleporterUp)
+			{
+				bool allow = true;
+				for (int v = 0; v < 200; ++v)
+				{
+					NPC npc = Main.npc[v];
+					if (npc.active && npc.boss)
+					{
+						allow = false;
+						break;
+					}
+				}
+				if (GlobalTeleporterUp && allow && Main.mapFullscreen == true && Main.mouseRight && Main.keyState.IsKeyUp(Microsoft.Xna.Framework.Input.Keys.LeftControl))
+				{
+					int mapWidth = Main.maxTilesX * 16;
+					int mapHeight = Main.maxTilesY * 16;
+					Vector2 cursorPosition = new Vector2(Main.mouseX, Main.mouseY);
+
+					cursorPosition.X -= Main.screenWidth / 2;
+					cursorPosition.Y -= Main.screenHeight / 2;
+
+					Vector2 mapPosition = Main.mapFullscreenPos;
+					Vector2 cursorWorldPosition = mapPosition;
+
+					cursorPosition /= 16;
+					cursorPosition *= 16 / Main.mapFullscreenScale;
+					cursorWorldPosition += cursorPosition;
+					cursorWorldPosition *= 16;
+
+					cursorWorldPosition.Y -= Player.height;
+					if (cursorWorldPosition.X < 0) cursorWorldPosition.X = 0;
+					else if (cursorWorldPosition.X + Player.width > mapWidth) cursorWorldPosition.X = mapWidth - Player.width;
+					if (cursorWorldPosition.Y < 0) cursorWorldPosition.Y = 0;
+					else if (cursorWorldPosition.Y + Player.height > mapHeight) cursorWorldPosition.Y = mapHeight - Player.height;
+
+					Player.Teleport(cursorWorldPosition, 0, 0);
+					NetMessage.SendData(65, -1, -1, (NetworkText)null, 0, (float)Player.whoAmI, (float)cursorWorldPosition.X, (float)cursorWorldPosition.Y, 1, 0, 0);
+					Main.mapFullscreen = false;
+
+					for (int index = 0; index < 120; ++index)
+						Main.dust[Dust.NewDust(Player.position, Player.width, Player.height, 15, Main.rand.NextFloat(-10f, 10f), Main.rand.NextFloat(-10f, 10f), 150, Color.Cyan, 1.2f)].velocity *= 0.75f;
+				}
+				if (GlobalTeleporter && allow && Main.mapFullscreen == true && Main.mouseRight && Main.keyState.IsKeyUp(Microsoft.Xna.Framework.Input.Keys.LeftControl))
+				{
+					int mapWidth = Main.maxTilesX * 16;
+					int mapHeight = Main.maxTilesY * 16;
+					Vector2 cursorPosition = new Vector2(Main.mouseX, Main.mouseY);
+
+					cursorPosition.X -= Main.screenWidth / 2;
+					cursorPosition.Y -= Main.screenHeight / 2;
+
+					Vector2 mapPosition = Main.mapFullscreenPos;
+					Vector2 cursorWorldPosition = mapPosition;
+
+					cursorPosition /= 16;
+					cursorPosition *= 16 / Main.mapFullscreenScale;
+					cursorWorldPosition += cursorPosition;
+					cursorWorldPosition *= 16;
+
+					cursorWorldPosition.Y -= Player.height;
+					if (cursorWorldPosition.X < 0) cursorWorldPosition.X = 0;
+					else if (cursorWorldPosition.X + Player.width > mapWidth) cursorWorldPosition.X = mapWidth - Player.width;
+					if (cursorWorldPosition.Y < 0) cursorWorldPosition.Y = 0;
+					else if (cursorWorldPosition.Y + Player.height > mapHeight) cursorWorldPosition.Y = mapHeight - Player.height;
+
+					Player.Teleport(cursorWorldPosition, 0, 0);
+					NetMessage.SendData(65, -1, -1, (NetworkText)null, 0, (float)Player.whoAmI, (float)cursorWorldPosition.X, (float)cursorWorldPosition.Y, 1, 0, 0);
+					Main.mapFullscreen = false;
+					Item[] inventory = Player.inventory;
+					for (int k = 0; k < inventory.Length; k++)
+					{
+						if (inventory[k].type == ModContent.ItemType<Items.Misc.GlobalTeleporter>())
+						{
+							inventory[k].stack--;
+							break;
+						}
+					}
+					for (int index = 0; index < 120; ++index)
+						Main.dust[Dust.NewDust(Player.position, Player.width, Player.height, 15, Main.rand.NextFloat(-10f, 10f), Main.rand.NextFloat(-10f, 10f), 150, Color.Cyan, 1.2f)].velocity *= 0.75f;
+				}
+			}
 			if (DistantPotionsUse && PlayerInput.Triggers.Current.QuickBuff)
 			{
 				SoundStyle type1 = SoundID.Item3;
@@ -399,11 +485,5 @@ namespace AlchemistNPCLite
 				}
 			}
 		}
-		// IMPLEMENT
-		// private void CalamityRage(Player player)
-		// {
-		//     CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = Player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
-		//     CalamityPlayer.rage = CalamityPlayer.rageMax;
-		// }
 	}
 }

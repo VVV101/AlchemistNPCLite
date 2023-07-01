@@ -1171,6 +1171,22 @@ namespace AlchemistNPCLite.NPCs
             }
             if (Shop2)
             {
+				if (AlchemistNPCLite.modConfiguration.CustomPotions)
+                {
+					if (Main.hardMode)
+					{
+						shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Misc.GlobalTeleporter>());
+						nextSlot++;
+						shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Misc.WorldControlUnit>());
+						shop.item[nextSlot].shopCustomPrice = 3000000;
+						nextSlot++;
+					}
+					if (NPC.downedMoonlord)
+					{
+						shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Misc.GlobalTeleporterUp>());
+						nextSlot++;
+					}
+				}
                 if (ThoriumMod != null)
                 {
                     addModItemToShop(ThoriumMod, "Petal", 10000, ref shop, ref nextSlot);

@@ -7,7 +7,9 @@ The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 Mod's Discord: https://discord.gg/WGKyKun
 v1.8.20
--Added config options for removing non-vanilla potions and buff items from mod (thanks to NoLongerLucky).
+-Added config options for removing non-vanilla potions and items from mod (thanks to NoLongerLucky).
+-Readded World Warper/Modified World Warper. Available in Operator's shop upon entering hardmode/after beating Moon Lord.
+-Readded Simulation Control Unit. Available in Operator's shop upon entering hardmode.
 -Fixed Alchemist Charms not giving bonus duration to potions in piggy bank (thanks to benl9).
 v1.8.19
 -Removed even more "removed" potions.
