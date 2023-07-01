@@ -1,5 +1,5 @@
 author = Gregg/VVV101, b2mauler, Rockman Zeta, somebody0214, RebooT, drh
-version = 1.8.19
+version = 1.8.20
 displayName = AlchemistNPC Lite
 homepage = https://forums.terraria.org/index.php?threads/alchemistnpc-v8-0.52798/
 hideCode = false
