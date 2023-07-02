@@ -662,7 +662,15 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].SetDefaults(ItemID.Ichor);
                     shop.item[nextSlot].shopCustomPrice = 7500;
                     nextSlot++;
+					if (Main.getGoodWorld)
+					{
+						shop.item[nextSlot].SetDefaults(678);
+						shop.item[nextSlot].shopCustomPrice = 150000;
+						nextSlot++;
+					}
                 }
+				
+				
             }
             if (plantShop)
             {
