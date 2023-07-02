@@ -662,7 +662,7 @@ namespace AlchemistNPCLite.NPCs
                     shop.item[nextSlot].SetDefaults(ItemID.Ichor);
                     shop.item[nextSlot].shopCustomPrice = 7500;
                     nextSlot++;
-					if (Main.getGoodWorld)
+					if (Main.getGoodWorld && NPC.downedMechBossAny)
 					{
 						shop.item[nextSlot].SetDefaults(678);
 						shop.item[nextSlot].shopCustomPrice = 150000;
