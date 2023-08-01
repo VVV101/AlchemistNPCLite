@@ -757,7 +757,7 @@ Mods: {
 					// Princess_LovesNPC: I like {NPCName}.
 				}
 
-				// Census.SpawnCondition: Conditions unknown
+				// Census.SpawnCondition: Defeat Eye of Cthulhu
 			}
 
 			Architect: {
@@ -780,7 +780,7 @@ Mods: {
 					// Princess_LovesNPC: I like {NPCName}.
 				}
 
-				// Census.SpawnCondition: Conditions unknown
+				// Census.SpawnCondition: Have at least 3 NPCs
 			}
 
 			Brewer: {
@@ -803,7 +803,7 @@ Mods: {
 					// Princess_LovesNPC: I like {NPCName}.
 				}
 
-				// Census.SpawnCondition: Conditions unknown
+				// Census.SpawnCondition: Defeat Eye of Cthulhu
 			}
 
 			Jeweler: {
@@ -826,7 +826,7 @@ Mods: {
 					// Princess_LovesNPC: I like {NPCName}.
 				}
 
-				// Census.SpawnCondition: Conditions unknown
+				// Census.SpawnCondition: Defeat Eye of Cthulhu
 			}
 
 			Musician: {
@@ -849,7 +849,7 @@ Mods: {
 					// Princess_LovesNPC: I like {NPCName}.
 				}
 
-				// Census.SpawnCondition: Conditions unknown
+				// Census.SpawnCondition: Defeat Skeletron
 			}
 
 			Operator: {
@@ -872,7 +872,7 @@ Mods: {
 					// Princess_LovesNPC: I like {NPCName}.
 				}
 
-				// Census.SpawnCondition: Conditions unknown
+				// Census.SpawnCondition: Defeat Eater of Worlds/Brain of Cthulhu
 			}
 
 			Tinkerer: {
@@ -895,7 +895,7 @@ Mods: {
 					// Princess_LovesNPC: I like {NPCName}.
 				}
 
-				// Census.SpawnCondition: Conditions unknown
+				// Census.SpawnCondition: Defeat Eye of Cthulhu
 			}
 
 			YoungBrewer: {
@@ -918,7 +918,7 @@ Mods: {
 					// Princess_LovesNPC: I like {NPCName}.
 				}
 
-				// Census.SpawnCondition: Conditions unknown
+				// Census.SpawnCondition: World is in hardmode state
 			}
 		}
 

@@ -360,23 +360,24 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.TitanPotion) { shopCustomPrice = 7500 })
                 .Add(new Item(ItemID.BattlePotion) { shopCustomPrice = 10000 })
                 .Add(new Item(ItemID.CalmingPotion) { shopCustomPrice = 10000 })
+				.Add(new Item(ItemID.BiomeSightPotion) { shopCustomPrice = 10000 })
                 .Add(new Item(ItemID.WrathPotion) { shopCustomPrice = 25000 },
-                    Condition.DownedSkeletron)
+                    Condition.DownedEowOrBoc)
                 .Add(new Item(ItemID.RagePotion) { shopCustomPrice = 25000 },
-                    Condition.DownedSkeletron)
+                    Condition.DownedEowOrBoc)
                 .Add(new Item(ItemID.LifeforcePotion) { shopCustomPrice = 25000 },
                     Condition.Hardmode)
                 .Add(new Item(ItemID.InfernoPotion) { shopCustomPrice = 15000 },
-                    Condition.Hardmode)
+                    Condition.DownedSkeletron)
                 .Add(new Item(ItemID.StinkPotion) { shopCustomPrice = 7500 })
                 .Add(new Item(ItemID.LovePotion) { shopCustomPrice = 7500 },
                     Condition.Hardmode)
                 .Add(new Item(ItemID.FishingPotion) { shopCustomPrice = 10000 },
-                    new Condition("", () => Main.player[Main.myPlayer].anglerQuestsFinished >= 5))
+                    new Condition("", () => Main.player[Main.myPlayer].anglerQuestsFinished >= 1))
                 .Add(new Item(ItemID.SonarPotion) { shopCustomPrice = 10000 },
-                    new Condition("", () => Main.player[Main.myPlayer].anglerQuestsFinished >= 5))
+                    new Condition("", () => Main.player[Main.myPlayer].anglerQuestsFinished >= 1))
                 .Add(new Item(ItemID.CratePotion) { shopCustomPrice = 10000 },
-                    new Condition("", () => Main.player[Main.myPlayer].anglerQuestsFinished >= 5))
+                    new Condition("", () => Main.player[Main.myPlayer].anglerQuestsFinished >= 1))
                 .Add(new Item(ItemID.GenderChangePotion) { shopCustomPrice = 100000 });
             shop.Register();
 

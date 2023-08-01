@@ -12,6 +12,7 @@ using System;
 using Terraria.ID;
 using System.Linq;
 using AlchemistNPCLite.NPCs;
+using AlchemistNPCLite.Utilities;
 using ReLogic.Content;
 
 namespace AlchemistNPCLite.Interface
@@ -21,6 +22,7 @@ namespace AlchemistNPCLite.Interface
         public UIPanel MusicianShopsPanel;
         public static bool visible = false;
         public static uint timeStart;
+		public static string Shop = Musician.Sh1;
 
         public override void OnInitialize()
         {
@@ -97,12 +99,7 @@ namespace AlchemistNPCLite.Interface
                 Musician.S1 = true;
                 Musician.S2 = false;
                 Musician.S3 = false;
-                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-                ShopChangeUIM.visible = false;
-                Main.playerInventory = true;
-                Main.npcChatText = "";
-                Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
-                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+                AlchemistHelper.OpenShop(ref Shop, Musician.Sh1, ref visible);
             }
         }
 
@@ -113,12 +110,7 @@ namespace AlchemistNPCLite.Interface
                 Musician.S1 = false;
                 Musician.S2 = true;
                 Musician.S3 = false;
-                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-                ShopChangeUIM.visible = false;
-                Main.playerInventory = true;
-                Main.npcChatText = "";
-                Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
-                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+                AlchemistHelper.OpenShop(ref Shop, Musician.Sh2, ref visible);
             }
         }
 
@@ -129,12 +121,7 @@ namespace AlchemistNPCLite.Interface
                 Musician.S1 = false;
                 Musician.S2 = false;
                 Musician.S3 = true;
-                NPC npc = Main.npc[Main.LocalPlayer.talkNPC];
-                ShopChangeUIM.visible = false;
-                Main.playerInventory = true;
-                Main.npcChatText = "";
-                Main.SetNPCShopIndex(Main.MaxShopIDs - 1);
-                Main.instance.shop[Main.npcShop].SetupShop(npc.type);
+                AlchemistHelper.OpenShop(ref Shop, Musician.Sh3, ref visible);
             }
         }
 

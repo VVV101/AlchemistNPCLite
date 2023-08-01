@@ -1,7 +1,9 @@
 ﻿using AlchemistNPCLite.Interface;
+using System;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent.Bestiary;
+using Terraria.GameContent.Events;
 using Terraria.GameContent.Personalities;
 using Terraria.ID;
 using Terraria.Localization;
@@ -15,6 +17,10 @@ namespace AlchemistNPCLite.NPCs
         public static bool S1 = true;
         public static bool S2 = false;
         public static bool S3 = false;
+		
+		public static string Sh1 = "Sh1";
+        public static string Sh2 = "Sh2";
+        public static string Sh3 = "Sh3";
         public override string Texture
         {
             get
@@ -317,6 +323,53 @@ namespace AlchemistNPCLite.NPCs
             get { return ThoriumMod.ThoriumWorld.downedDepthBoss; }
         }
         */
+		
+		public override void AddShops()
+        {
+			var shop = new NPCShop(Type, Sh1)
+				.Add(new Item(576), new Condition("", () => !NPC.downedMechBossAny))
+				.Add(new Item(562) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(563) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(564) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(565) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(566) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(568) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(569) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(570) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(571) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(573) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(1596) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(1597) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(1598) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(1600) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(1601) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(1602) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(1603) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(1604) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(1605) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(1608) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(1610) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(1964) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(2742) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(3237) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(3796) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(567) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedPlantBoss))
+				.Add(new Item(572) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedPlantBoss))
+				.Add(new Item(574) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedPlantBoss))
+				.Add(new Item(1599) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedQueenBee))
+				.Add(new Item(1607) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedGolemBoss))
+				.Add(new Item(1606) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedPlantBoss))
+				.Add(new Item(3044) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedMoonlord))
+				.Add(new Item(3371) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedGoblins))
+				.Add(new Item(3236) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedPirates))
+				.Add(new Item(3869) { shopCustomPrice = 100000 }, new Condition("", () => DD2Event.DownedInvasionT1))
+				.Add(new Item(1609) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedPlantBoss))
+				.Add(new Item(1963) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedHalloweenKing))
+				.Add(new Item(1965) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedChristmasIceQueen))
+				.Add(new Item(3235) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedMartians))
+				.Add(new Item(3370) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedMoonlord));
+			shop.Register();
+		}
 
         //public override void ModifyActiveShop(string shopName, Item[] items)
         //{
