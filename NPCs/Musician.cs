@@ -290,7 +290,7 @@ namespace AlchemistNPCLite.NPCs
         {
             if (firstButton)
             {
-                shopName = "Shop";
+                shopName = "Sh1";
                 ShopChangeUIM.visible = false;
             }
             else
