@@ -279,7 +279,8 @@ namespace AlchemistNPCLite.NPCs
             }
             */
                 .addModItemToShop(SpiritMod, "AcidVial", 30000, () => Main.hardMode)
-                .addModItemToShop(Calamity, "CalamitasBrew", 50000, () => NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3);
+				.addModItemToShop(Calamity, "FlaskOfBrimstone", 40000, () => (bool)Calamity.Call("Downed", "calamitas doppelganger"))
+				.addModItemToShop(Calamity, "FlaskOfHolyFlames", 50000, () => NPC.downedMoonlord);
             shop.Register();
         }
     }

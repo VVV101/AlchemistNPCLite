@@ -339,6 +339,7 @@ Mods: {
 			CalamityCombination: {
 				DisplayName: Calamity Combination
 				Description: Grants some of the Calamity mod buffs (Photosynthesis, Fabsol's Vodka, Soaring and Bounding)
+				Tooltip: ""
 			}
 
 			DiscordPotion: {
@@ -741,6 +742,11 @@ Mods: {
 			VanTankCombination: {
 				DisplayName: Tank Combination (Vanilla)
 				Tooltip: Grants buffs, which are necessary for Tanks (Endurance, Lifeforce, Ironskin, Obsidian Skin, Thorns, Regeneration)
+			}
+
+			MateriaTransmutatorMK2: {
+				DisplayName: Materia Transmutator M K2
+				Tooltip: ""
 			}
 		}
 

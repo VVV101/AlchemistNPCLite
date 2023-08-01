@@ -877,6 +877,9 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.FragmentStardust) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedMoonlord));
             shop.Register();
             shop = new NPCShop(Type, ModMaterialShop)
+				.Add(new Item(ModContent.ItemType<Items.Misc.GlobalTeleporter>()), new Condition("", () => Main.hardMode))
+				.Add(new Item(ModContent.ItemType<Items.Misc.WorldControlUnit>()) { shopCustomPrice = 3000000 }, new Condition("", () => Main.hardMode))
+				.Add(new Item(ModContent.ItemType<Items.Misc.GlobalTeleporter>()), new Condition("", () => NPC.downedMoonlord))
                 .addModItemToShop(ThoriumMod, "Petal", 10000)
                 .addModItemToShop(ThoriumMod, "BrokenHeroFragment", 250000, () => NPC.downedGolemBoss)
                 .addModItemToShop(ThoriumMod, "WhiteDwarfFragment", 100000, () => NPC.downedMoonlord)
@@ -965,8 +968,33 @@ namespace AlchemistNPCLite.NPCs
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedMoonlord));
             shop.Register();
 
-            //shop = new NPCShop(Type, Bags1Shop);
-            //shop.Register();
+            shop = new NPCShop(Type, Bags1Shop)
+				.addModItemToShop(Calamity, "DesertScourgeBag", 375000, () => (bool)Calamity.Call("Downed", "desert scourge"))
+				.addModItemToShop(Calamity, "CrabulonBag", 700000, () => (bool)Calamity.Call("Downed", "crabulon"))
+				.addModItemToShop(Calamity, "HiveMindBag", 1000000, () => (bool)Calamity.Call("Downed", "hive mind") || (bool)Calamity.Call("Downed", "perforators"))
+				.addModItemToShop(Calamity, "PerforatorBag", 1000000, () => (bool)Calamity.Call("Downed", "hive mind") || (bool)Calamity.Call("Downed", "perforators"))
+				.addModItemToShop(Calamity, "SlimeGodBag", 1000000, () => (bool)Calamity.Call("Downed", "slime god"))
+				.addModItemToShop(Calamity, "CryogenBag", 2000000, () => (bool)Calamity.Call("Downed", "cryogen"))
+				.addModItemToShop(Calamity, "AquaticScourgeBag", 2000000, () => (bool)Calamity.Call("Downed", "aquatic scourge"))
+				.addModItemToShop(Calamity, "BrimstoneWaifuBag", 5000000, () => (bool)Calamity.Call("Downed", "brimstone elemental"))
+				.addModItemToShop(Calamity, "CalamitasBag", 5000000, () => (bool)Calamity.Call("Downed", "calamitas doppelganger"))
+				.addModItemToShop(Calamity, "LeviathanBag", 4250000, () => (bool)Calamity.Call("Downed", "leviathan"))
+				.addModItemToShop(Calamity, "AstrageldonBag", 5000000, () => (bool)Calamity.Call("Downed", "astrum aureus"))
+				.addModItemToShop(Calamity, "PlaguebringerGoliathBag", 5750000, () => (bool)Calamity.Call("Downed", "plaguebringer goliath"))
+				.addModItemToShop(Calamity, "RavagerBag", 5500000, () => (bool)Calamity.Call("Downed", "ravager"))
+				.addModItemToShop(Calamity, "AstrumDeusBag", 6500000, () => (bool)Calamity.Call("Downed", "astrum deus"))
+				.addModItemToShop(Calamity, "BumblebirbBag", 8500000, () => (bool)Calamity.Call("Downed", "bumblebirb"))
+				.addModItemToShop(Calamity, "ProvidenceBag", 22000000, () => (bool)Calamity.Call("Downed", "providence"))
+				.addModItemToShop(Calamity, "StormWeaverBag", 12500000, () => (bool)Calamity.Call("Downed", "stormweaver"))
+				.addModItemToShop(Calamity, "CeaselessVoidBag", 12500000, () => (bool)Calamity.Call("Downed", "ceaselessvoid"))
+				.addModItemToShop(Calamity, "SignusBag", 12500000, () => (bool)Calamity.Call("Downed", "signus"))
+				.addModItemToShop(Calamity, "PolterghastBag", 22500000, () => (bool)Calamity.Call("Downed", "polterghast"))
+				.addModItemToShop(Calamity, "OldDukeBag", 25000000, () => (bool)Calamity.Call("Downed", "old duke"))
+				.addModItemToShop(Calamity, "DevourerofGodsBag", 25000000, () => (bool)Calamity.Call("Downed", "dog"))
+				.addModItemToShop(Calamity, "YharonBag", 75000000, () => (bool)Calamity.Call("Downed", "yharon"))
+				.addModItemToShop(Calamity, "DraedonTreasureBag", 115000000, () => (bool)Calamity.Call("Downed", "exomechs"))
+				.addModItemToShop(Calamity, "SCalBag", 200000000, () => (bool)Calamity.Call("Downed", "supremecalamitas"));
+            shop.Register();
 
             //shop = new NPCShop(Type, Bags2Shop);
             //shop.Register();
@@ -976,118 +1004,6 @@ namespace AlchemistNPCLite.NPCs
 
             //if (Shop4)
             //{
-            //    if (Calamity != null)
-            //    {
-            //        if (NPC.downedBoss3 && Main.expertMode)
-            //        {
-            //            if ((bool)Calamity.Call("Downed", "desert scourge"))
-            //            {
-            //                .addModItemToShop(Calamity, "DesertScourgeBag", 375000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)Calamity.Call("Downed", "crabulon"))
-            //            {
-            //                .addModItemToShop(Calamity, "CrabulonBag", 700000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)Calamity.Call("Downed", "hive mind") || (bool)Calamity.Call("Downed", "perforators"))
-            //            {
-            //                .addModItemToShop(Calamity, "HiveMindBag", 1000000, ref shop, ref nextSlot);
-            //                .addModItemToShop(Calamity, "PerforatorBag", 1000000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)Calamity.Call("Downed", "slime god"))
-            //            {
-            //                .addModItemToShop(Calamity, "SlimeGodBag", 1000000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)Calamity.Call("Downed", "cryogen"))
-            //            {
-            //                .addModItemToShop(Calamity, "CryogenBag", 2000000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)Calamity.Call("Downed", "brimstone elemental"))
-            //            {
-            //                if (!(bool)Calamity.Call("Downed", "providence"))
-            //                    .addModItemToShop(Calamity, "BrimstoneWaifuBag", 3000000, ref shop, ref nextSlot);
-            //                else
-            //                    .addModItemToShop(Calamity, "BrimstoneWaifuBag", 5000000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)Calamity.Call("Downed", "aquatic scourge"))
-            //            {
-            //                .addModItemToShop(Calamity, "AquaticScourgeBag", 2000000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)Calamity.Call("Downed", "calamitas doppelganger"))
-            //            {
-            //                if (!(bool)Calamity.Call("Downed", "providence"))
-            //                    .addModItemToShop(Calamity, "CalamitasBag", 4000000, ref shop, ref nextSlot);
-            //                else
-            //                    .addModItemToShop(Calamity, "CalamitasBag", 5000000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)Calamity.Call("Downed", "leviathan"))
-            //            {
-            //                .addModItemToShop(Calamity, "LeviathanBag", 4250000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)Calamity.Call("Downed", "astrum aureus"))
-            //            {
-            //                if (!(bool)Calamity.Call("Downed", "providence"))
-            //                    .addModItemToShop(Calamity, "AstrageldonBag", 4000000, ref shop, ref nextSlot);
-            //                else
-            //                    .addModItemToShop(Calamity, "AstrageldonBag", 5000000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)Calamity.Call("Downed", "astrum deus"))
-            //            {
-            //                .addModItemToShop(Calamity, "AstrumDeusBag", 6500000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)Calamity.Call("Downed", "plaguebringer goliath"))
-            //            {
-            //                .addModItemToShop(Calamity, "PlaguebringerGoliathBag", 5750000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)Calamity.Call("Downed", "ravager"))
-            //            {
-            //                .addModItemToShop(Calamity, "RavagerBag", 5500000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)Calamity.Call("Downed", "bumblebirb"))
-            //            {
-            //                .addModItemToShop(Calamity, "BumblebirbBag", 8500000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)Calamity.Call("Downed", "providence"))
-            //            {
-            //                .addModItemToShop(Calamity, "ProvidenceBag", 22000000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)Calamity.Call("Downed", "stormweaver"))
-            //            {
-            //                .addModItemToShop(Calamity, "StormWeaverBag", 12500000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)Calamity.Call("Downed", "ceaselessvoid"))
-            //            {
-            //                .addModItemToShop(Calamity, "CeaselessVoidBag", 12500000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)Calamity.Call("Downed", "signus"))
-            //            {
-            //                .addModItemToShop(Calamity, "SignusBag", 12500000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)Calamity.Call("Downed", "polterghast"))
-            //            {
-            //                .addModItemToShop(Calamity, "PolterghastBag", 22500000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)Calamity.Call("Downed", "old duke"))
-            //            {
-            //                .addModItemToShop(Calamity, "OldDukeBag", 25000000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)Calamity.Call("Downed", "dog"))
-            //            {
-            //                .addModItemToShop(Calamity, "DevourerofGodsBag", 25000000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)Calamity.Call("Downed", "yharon"))
-            //            {
-            //                .addModItemToShop(Calamity, "YharonBag", 75000000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)Calamity.Call("Downed", "exomechs"))
-            //            {
-            //                .addModItemToShop(Calamity, "DraedonTreasureBag", 115000000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)Calamity.Call("Downed", "supremecalamitas"))
-            //            {
-            //                .addModItemToShop(Calamity, "SCalBag", 200000000, ref shop, ref nextSlot);
-            //            }
-            //        }
-            //    }
             //    if (ThoriumMod != null)
             //    {
             //        if (NPC.downedBoss3)

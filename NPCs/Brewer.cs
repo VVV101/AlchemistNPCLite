@@ -393,7 +393,21 @@ namespace AlchemistNPCLite.NPCs
                 .addModItemToShop<PerfectDiscordPotion>(330000, () => NPC.downedMoonlord)
                 .addModItemToShop<BlurringPotion>(150000, () => NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
                 .addModItemToShop<NinjaPotion>(75000, () => NPC.downedPlantBoss)
-                .addModItemToShop<TrapsPotion>(50000, () => NPC.downedGolemBoss);
+                .addModItemToShop<TrapsPotion>(50000, () => NPC.downedGolemBoss)
+				.addModItemToShop(Calamity, "BoundingPotion", 20000)
+				.addModItemToShop(Calamity, "CalciumPotion", 35000)
+				.addModItemToShop(Calamity, "TriumphPotion", 30000)
+				.addModItemToShop(Calamity, "TeslaPotion", 25000)
+				.addModItemToShop(Calamity, "SulphurskinPotion", 15000)
+				.addModItemToShop(Calamity, "ShadowPotion", 15000)
+				.addModItemToShop(Calamity, "PotionofOmniscience", 20000, () => NPC.downedBoss3)
+				.addModItemToShop(Calamity, "ZergPotion", 30000, () => (bool)Calamity.Call("Downed", "slime god"))
+				.addModItemToShop(Calamity, "ZenPotion", 30000, () => (bool)Calamity.Call("Downed", "slime god"))
+				.addModItemToShop(Calamity, "PhotosynthesisPotion", 50000, () => Main.hardMode)
+				.addModItemToShop(Calamity, "SoaringPotion", 40000, () => Main.hardMode)
+				.addModItemToShop(Calamity, "AstralInjection", 10000, () => (bool)Calamity.Call("Downed", "astrum aureus"))
+				.addModItemToShop(Calamity, "GravityNormalizerPotion", 30000, () => (bool)Calamity.Call("Downed", "astrum aureus"))
+				.addModItemToShop(Calamity, "CeaselessHungerPotion", 50000, () => (bool)Calamity.Call("Downed", "ceaselessvoid"));
             shop.Register();
 
             #region Do later

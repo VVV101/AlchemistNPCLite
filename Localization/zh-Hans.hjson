@@ -343,6 +343,7 @@ Mods: {
 			CalamityCombination: {
 				// DisplayName: Calamity Combination
 				// Description: Grants some of the Calamity mod buffs (Photosynthesis, Fabsol's Vodka, Soaring and Bounding)
+				// Tooltip: ""
 			}
 
 			DiscordPotion: {
@@ -744,6 +745,11 @@ Mods: {
 			VanTankCombination: {
 				DisplayName: 坦克药剂包 (原版)
 				Tooltip: 获得一些坦克Buff (耐力, 生命力, 铁皮, 黑曜石皮肤, 荆棘, 恢复, 抵抗)
+			}
+
+			MateriaTransmutatorMK2: {
+				// DisplayName: Materia Transmutator M K2
+				// Tooltip: ""
 			}
 		}
 

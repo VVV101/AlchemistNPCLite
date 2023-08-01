@@ -382,7 +382,8 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.CursedFlame) { shopCustomPrice = 7500 },
                     Condition.Hardmode)
                 .Add(new Item(ItemID.Ichor) { shopCustomPrice = 7500 },
-                    Condition.Hardmode);
+                    Condition.Hardmode)
+				.Add(new Item(678) { shopCustomPrice = 150000 }, new Condition("", () => Main.getGoodWorld));
             shop.Register();
 
             shop = new NPCShop(Type, PlantShop)
