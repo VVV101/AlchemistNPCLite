@@ -42,7 +42,7 @@ namespace AlchemistNPCLite.Projectiles
 			return base.GetAlpha(projectile, lightColor);
         }
 
-		public override void OnHitNPC(Projectile projectile, NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(Projectile projectile, NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			Player player = Main.player[projectile.owner];
 			if ((projectile.type == 98) && ((AlchemistNPCLitePlayer)player.GetModPlayer<AlchemistNPCLitePlayer>()).Traps == true)

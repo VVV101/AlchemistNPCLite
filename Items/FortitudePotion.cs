@@ -1,31 +1,16 @@
-using System;
-using System.IO;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria;
-using Terraria.GameContent.Creative;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
-using Terraria.Localization;
- 
+
 namespace AlchemistNPCLite.Items
 {
-     public class FortitudePotion : ModItem
+    public class FortitudePotion : ModItem
     {
         public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("Fortitude Potion");
-			Tooltip.SetDefault("Grants immunity to knockback"
-			+"\nNON-CALAMITY BUFF POTION");
-			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Зелье Стойкости");
-			Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Даёт иммунитет к отбрасыванию");
-
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "刚毅药剂");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "极大地免疫击退\n非灾厄BUFF药剂");
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 20;
-        }    
-		public override void SetDefaults()
+        {
+            Item.ResearchUnlockCount = 20;
+        }
+        public override void SetDefaults()
         {
             Item.UseSound = SoundID.Item3;                 //this is the sound that plays when you use the item
             Item.useStyle = 2;                 //this is how the item is holded when used
@@ -42,25 +27,25 @@ namespace AlchemistNPCLite.Items
             Item.buffTime = 52000;    //this is the buff duration        10 = 10 Second
             return;
         }
-		
-		public override void AddRecipes()
-		{
-			Recipe recipeIron = Recipe.Create(Item.type);
-			recipeIron.AddIngredient(ItemID.Waterleaf, 1);
-			recipeIron.AddIngredient(ItemID.Moonglow, 1);
-			recipeIron.AddIngredient(ItemID.Deathweed, 1);
-			recipeIron.AddIngredient(ItemID.StoneBlock, 1);
-			recipeIron.AddIngredient(ItemID.BottledWater, 1);
-			recipeIron.AddTile(TileID.Bottles);
 
-			Recipe recipeLead = recipeIron.Clone();
+        public override void AddRecipes()
+        {
+            Recipe recipeIron = Recipe.Create(Item.type);
+            recipeIron.AddIngredient(ItemID.Waterleaf, 1);
+            recipeIron.AddIngredient(ItemID.Moonglow, 1);
+            recipeIron.AddIngredient(ItemID.Deathweed, 1);
+            recipeIron.AddIngredient(ItemID.StoneBlock, 1);
+            recipeIron.AddIngredient(ItemID.BottledWater, 1);
+            recipeIron.AddTile(TileID.Bottles);
 
-			recipeIron.AddIngredient(ItemID.IronOre, 1);
-			recipeLead.AddIngredient(ItemID.LeadOre, 1);
-			
-			recipeIron.Register();
-			recipeLead.Register();
+            Recipe recipeLead = recipeIron.Clone();
 
-		}
+            recipeIron.AddIngredient(ItemID.IronOre, 1);
+            recipeLead.AddIngredient(ItemID.LeadOre, 1);
+
+            recipeIron.Register();
+            recipeLead.Register();
+
+        }
     }
 }

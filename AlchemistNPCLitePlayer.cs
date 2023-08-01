@@ -37,10 +37,9 @@ namespace AlchemistNPCLite
 		public bool AmmoBox = false;
 		public bool SugarRush = false;
 		public bool Lamps = false;
-		
 		public bool GlobalTeleporter = false;
 		public bool GlobalTeleporterUp = false;
-
+		
 		public override void ResetEffects()
 		{
 			BoomBox = false;
@@ -56,7 +55,7 @@ namespace AlchemistNPCLite
 			Traps = false;
 			GlobalTeleporter = false;
 			GlobalTeleporterUp = false;
-
+			
 			AllDamage10 = false;
 			AllCrit10 = false;
 			Defense8 = false;
@@ -84,7 +83,7 @@ namespace AlchemistNPCLite
 		}
 
 
-		public override void clientClone(ModPlayer clientClone)
+		public override void CopyClientState(ModPlayer clientClone)/* tModPorter Suggestion: Replace Item.Clone usages with Item.CopyNetStateTo */
 		{
 			AlchemistNPCLitePlayer clone = clientClone as AlchemistNPCLitePlayer;
 		}
@@ -485,5 +484,11 @@ namespace AlchemistNPCLite
 				}
 			}
 		}
+		// IMPLEMENT
+		// private void CalamityRage(Player player)
+		// {
+		//     CalamityMod.CalPlayer.CalamityPlayer CalamityPlayer = Player.GetModPlayer<CalamityMod.CalPlayer.CalamityPlayer>();
+		//     CalamityPlayer.rage = CalamityPlayer.rageMax;
+		// }
 	}
 }

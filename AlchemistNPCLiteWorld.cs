@@ -108,7 +108,7 @@ namespace AlchemistNPCLite
             if (MouseTextIndex != -1)
             {
                 layers.Insert(MouseTextIndex, new LegacyGameInterfaceLayer(
-                    "AlchemistNPC: Shop Selector",
+                    "AlchemistNPCLite: Shop Selector",
                     delegate
                     {
                         if (ShopChangeUI.visible)
@@ -124,7 +124,7 @@ namespace AlchemistNPCLite
             if (MouseTextIndexA != -1)
             {
                 layers.Insert(MouseTextIndexA, new LegacyGameInterfaceLayer(
-                    "AlchemistNPC: Shop Selector A",
+                    "AlchemistNPCLite: Shop Selector A",
                     delegate
                     {
                         if (ShopChangeUIA.visible)
@@ -140,7 +140,7 @@ namespace AlchemistNPCLite
             if (MouseTextIndexO != -1)
             {
                 layers.Insert(MouseTextIndexO, new LegacyGameInterfaceLayer(
-                    "AlchemistNPC: Shop Selector O",
+                    "AlchemistNPCLite: Shop Selector O",
                     delegate
                     {
                         if (ShopChangeUIO.visible)
@@ -156,7 +156,7 @@ namespace AlchemistNPCLite
             if (MouseTextIndexM != -1)
             {
                 layers.Insert(MouseTextIndexM, new LegacyGameInterfaceLayer(
-                    "AlchemistNPC: Shop Selector M",
+                    "AlchemistNPCLite: Shop Selector M",
                     delegate
                     {
                         if (ShopChangeUIM.visible)
@@ -173,7 +173,7 @@ namespace AlchemistNPCLite
             if (LocatorArrowIndex != -1)
             {
                 layers.Insert(LocatorArrowIndex, new LegacyGameInterfaceLayer(
-                    "AlchemistNPC: Locator Arrow",
+                    "AlchemistNPCLite: Locator Arrow",
                     delegate
                     {
                         Player player = Main.LocalPlayer;

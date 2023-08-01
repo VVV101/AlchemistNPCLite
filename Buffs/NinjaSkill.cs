@@ -1,6 +1,5 @@
-using Terraria;
+﻿using Terraria;
 using Terraria.ID;
-using Terraria.Localization;
 using Terraria.ModLoader;
 
 namespace AlchemistNPCLite.Buffs
@@ -9,16 +8,10 @@ namespace AlchemistNPCLite.Buffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Ninja");
-            Description.SetDefault("You are a true ninja!");
             Main.debuff[Type] = false;
             BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ниндзя");
-            Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Вы - истинный ниндзя!");
-
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "忍者");
-            Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "现在你是个真正的忍者了!");
         }
+
         public override void Update(Player player, ref int buffIndex)
         {
             player.GetDamage(DamageClass.Generic) += 0.05f;
@@ -39,6 +32,7 @@ namespace AlchemistNPCLite.Buffs
 					player.GetCritChance(damageClass1) += 5;
 				}
 			}
+			
         }
     }
 }

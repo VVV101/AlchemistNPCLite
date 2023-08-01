@@ -1,15 +1,10 @@
+﻿using Microsoft.Xna.Framework;
 using System;
-using System.Linq;
-using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
-using Terraria.Enums;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
 using Terraria.ObjectData;
-using Terraria.DataStructures;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace AlchemistNPCLite.Tiles
 {
@@ -26,11 +21,8 @@ namespace AlchemistNPCLite.Tiles
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Materia Transmutator MK2");
-            name.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Преобразователь Материи MK2");
-            name.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "物质嬗变器MK2");
-            AddMapEntry(new Color(200, 200, 200), name);
+            AddMapEntry(new Color(200, 200, 200),
+                Language.GetText("Mods.AlchemistNPCLite.Tiles.MateriaTransmutatorMK2.MapEntry"));
             TileID.Sets.DisableSmartCursor[Type] = true;
             int[] tempTiles = new int[]
             {
@@ -73,7 +65,7 @@ namespace AlchemistNPCLite.Tiles
                 TileID.LunarCraftingStation
             };
             // IMPLEMENT WHEN WEAKREFERENCES FIXED
-			/*
+            /*
             if (ModLoader.GetMod("ThoriumMod") != null)
             {
                 Array.Resize(ref adjTiles, adjTiles.Length + 3);
@@ -87,7 +79,8 @@ namespace AlchemistNPCLite.Tiles
                 adjTiles[adjTiles.Length - 1] = ModLoader.GetMod("FargowiltasSouls").TileType("CrucibleCosmosSheet");
             }
 			*/
-            if(ModLoader.TryGetMod("CalamityMod", out Mod Calamity) && Calamity.TryFind<ModTile>("DraedonsForge", out ModTile currTile)) {
+            if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity) && Calamity.TryFind<ModTile>("DraedonsForge", out ModTile currTile))
+            {
                 Array.Resize(ref tempTiles, tempTiles.Length + 1);
                 tempTiles[tempTiles.Length - 1] = currTile.Type;
             }
@@ -116,11 +109,6 @@ namespace AlchemistNPCLite.Tiles
         {
             frame = Main.tileFrame[TileID.FireflyinaBottle];
             frameCounter = Main.tileFrameCounter[TileID.FireflyinaBottle];
-        }
-
-        public override void KillMultiTile(int i, int j, int TileFrameX, int TileFrameY)
-        {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, ModContent.ItemType<Items.Placeable.MateriaTransmutatorMK2>());
         }
 
         public override void NearbyEffects(int i, int j, bool closer)

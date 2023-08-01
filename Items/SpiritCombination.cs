@@ -1,37 +1,23 @@
-using System;
-using System.IO;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria;
-using Terraria.GameContent.Creative;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
-using Terraria.Localization;
- 
+
 namespace AlchemistNPCLite.Items
 {
     public class SpiritCombination : ModItem
     {
-		//Possibly removed
-		// public override bool Autoload(ref string name)
-		// {
-		// return ModLoader.GetMod("SpiritMod") != null;
-		// }
-		
-		public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("Spirit Combination");
-			Tooltip.SetDefault("Grants most buffs from Spirit Mod potions (Runescribe, Soulguard, Spirit, Starburn, Steadfast and Toxin)");
-			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Комбинация Spirit");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Даёт большинство баффов от зелий мода Spirit (Runescribe, Soulguard, Spirit, Starburn, Steadfast and Toxin)");
+        //Possibly removed
+        // public override bool Autoload(ref string name)
+        // {
+        // return ModLoader.GetMod("SpiritMod") != null;
+        // }
 
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "魂灵药剂包");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "获得大部分魂灵Buff (符文之力, 灵魂之护, 魂灵, 星之燃烧, 坚定和毒素)");
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 20;
-		}    
+        public override void SetStaticDefaults()
+        {
+            Item.ResearchUnlockCount = 20;
+        }
 
-		public override void SetDefaults()
+        public override void SetDefaults()
         {
             Item.UseSound = SoundID.Item3;                 //this is the sound that plays when you use the item
             Item.useStyle = 2;                 //this is how the item is holded when used
@@ -47,9 +33,9 @@ namespace AlchemistNPCLite.Items
             Item.buffType = ModContent.BuffType<Buffs.SpiritComb>();           //this is where you put your Buff
             Item.buffTime = 52000;    //this is the buff duration        10 = 10 Second
         }
-		
-		// IMPLEMENT WHEN WEAKREFERENCES FIXED
-		/*
+
+        // IMPLEMENT WHEN WEAKREFERENCES FIXED
+        /*
 		public override void AddRecipes()
 		{
 			Recipe recipe = Recipe.Create(Item.type);

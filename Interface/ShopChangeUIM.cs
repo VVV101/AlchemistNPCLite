@@ -32,8 +32,8 @@ namespace AlchemistNPCLite.Interface
             MusicianShopsPanel.Height.Set(105f, 0f);
             MusicianShopsPanel.BackgroundColor = new Color(73, 94, 171);
 
-            MusicianShopsPanel.OnMouseDown += new UIElement.MouseEvent(DragStart);
-            MusicianShopsPanel.OnMouseUp += new UIElement.MouseEvent(DragEnd);
+            MusicianShopsPanel.OnLeftMouseDown += new UIElement.MouseEvent(DragStart);
+            MusicianShopsPanel.OnLeftMouseUp += new UIElement.MouseEvent(DragEnd);
 
             UIText text = new UIText("Vanilla Music Boxes");
             text.Left.Set(35, 0f);
@@ -62,21 +62,21 @@ namespace AlchemistNPCLite.Interface
             playButton.Top.Set(10, 0f);
             playButton.Width.Set(22, 0f);
             playButton.Height.Set(22, 0f);
-            playButton.OnClick += new MouseEvent(PlayButtonClicked1);
+            playButton.OnLeftClick += new MouseEvent(PlayButtonClicked1);
             MusicianShopsPanel.Append(playButton);
             UIImageButton playButton2 = new UIImageButton(buttonPlayTexture);
             playButton2.Left.Set(10, 0f);
             playButton2.Top.Set(40, 0f);
             playButton2.Width.Set(22, 0f);
             playButton2.Height.Set(22, 0f);
-            playButton2.OnClick += new MouseEvent(PlayButtonClicked2);
+            playButton2.OnLeftClick += new MouseEvent(PlayButtonClicked2);
             MusicianShopsPanel.Append(playButton2);
             UIImageButton playButton3 = new UIImageButton(buttonPlayTexture);
             playButton3.Left.Set(10, 0f);
             playButton3.Top.Set(70, 0f);
             playButton3.Width.Set(22, 0f);
             playButton3.Height.Set(22, 0f);
-            playButton3.OnClick += new MouseEvent(PlayButtonClicked3);
+            playButton3.OnLeftClick += new MouseEvent(PlayButtonClicked3);
             MusicianShopsPanel.Append(playButton3);
 
             Asset<Texture2D> buttonDeleteTexture = ModContent.Request<Texture2D>("Terraria/Images/UI/ButtonDelete");
@@ -85,7 +85,7 @@ namespace AlchemistNPCLite.Interface
             closeButton.Top.Set(10, 0f);
             closeButton.Width.Set(22, 0f);
             closeButton.Height.Set(22, 0f);
-            closeButton.OnClick += new MouseEvent(CloseButtonClicked);
+            closeButton.OnLeftClick += new MouseEvent(CloseButtonClicked);
             MusicianShopsPanel.Append(closeButton);
             base.Append(MusicianShopsPanel);
         }

@@ -1,40 +1,10 @@
-using System.Linq;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using Microsoft.Xna.Framework.Input;
-using ReLogic.Utilities;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Security.Cryptography;
-using System.Text;
-using Terraria.Audio;
-using Terraria.DataStructures;
-using Terraria.Enums;
-using Terraria.GameContent;
-using Terraria.GameContent.Achievements;
-using Terraria.GameContent.Events;
-using Terraria.GameContent.Tile_Entities;
-using Terraria.GameContent.UI;
-using Terraria.GameInput;
-using Terraria.Graphics.Capture;
-using Terraria.Graphics.Effects;
-using Terraria.Graphics.Shaders;
-using Terraria.ID;
-using Terraria.IO;
-using Terraria.Localization;
-using Terraria.ObjectData;
-using Terraria.Social;
-using Terraria.UI;
-using Terraria.UI.Chat;
-using Terraria.UI.Gamepad;
-using Terraria.Utilities;
-using Terraria.WorldBuilding;
 using Terraria;
-using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
-using Terraria.ModLoader.IO;
+using Terraria.GameContent;
 using Terraria.GameContent.ItemDropRules;
+using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -49,54 +19,55 @@ namespace AlchemistNPCLite.NPCs
             }
         }
 
-        public override void SetupShop(int type, Chest shop, ref int nextSlot)
+        public override void ModifyActiveShop(NPC npc, string shopName, Item[] items)
         {
-            for (int k = 0; k < 255; k++)
+            return;
+            Player player = Main.LocalPlayer;
+            if (player.active && player == Main.player[Main.myPlayer])
             {
-                Player player = Main.player[k];
-                if (player.active && player == Main.player[Main.myPlayer])
+                if (npc.type == ModContent.NPCType<Tinkerer>())
                 {
-                    if (type == ModContent.NPCType<Tinkerer>())
+                    foreach (var item in items)
                     {
-                        for (nextSlot = 0; nextSlot < 40; ++nextSlot)
-                        {
-                            shop.item[nextSlot].shopCustomPrice *= 2;
-                        }
+                        item.shopCustomPrice *= 2;
                     }
-                    if (type == ModContent.NPCType<Brewer>() || type == ModContent.NPCType<Alchemist>() || type == ModContent.NPCType<YoungBrewer>())
+                }
+                if (npc.type == ModContent.NPCType<Brewer>() ||
+                    npc.type == ModContent.NPCType<Alchemist>() ||
+                    npc.type == ModContent.NPCType<YoungBrewer>())
+                {
+                    foreach (var item in items)
                     {
-                        for (nextSlot = 0; nextSlot < 40; ++nextSlot)
+                        item.shopCustomPrice *= AlchemistNPCLite.modConfiguration.PotsPriceMulti;
+                        item.shopCustomPrice *= AlchemistNPCLite.modConfiguration.PotsPriceMulti;
+                        if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
                         {
-                            shop.item[nextSlot].shopCustomPrice *= AlchemistNPCLite.modConfiguration.PotsPriceMulti;
-							if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
+                            if (AlchemistNPCLite.modConfiguration.RevPrices && CalamityModRevengeance)
                             {
-                                if (AlchemistNPCLite.modConfiguration.RevPrices && CalamityModRevengeance)
-                                {
-                                    shop.item[nextSlot].shopCustomPrice += shop.item[nextSlot].shopCustomPrice;
-                                }
+                                item.shopCustomPrice += item.shopCustomPrice;
                             }
-                            if ((player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier4)
-                            {
-                                shop.item[nextSlot].shopCustomPrice -= shop.item[nextSlot].shopCustomPrice / 2;
-                            }
-                            else if ((player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier3)
-                            {
-                                shop.item[nextSlot].shopCustomPrice -= ((shop.item[nextSlot].shopCustomPrice / 20) * 7);
-                            }
-                            else if ((player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier2)
-                            {
-                                shop.item[nextSlot].shopCustomPrice -= shop.item[nextSlot].shopCustomPrice / 4;
-                            }
-                            else if ((player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier1)
-                            {
-                                shop.item[nextSlot].shopCustomPrice -= shop.item[nextSlot].shopCustomPrice / 10;
-                            }
+                        }
+                        if ((player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier4)
+                        {
+                            item.shopCustomPrice -= item.shopCustomPrice / 2;
+                        }
+                        else if ((player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier3)
+                        {
+                            item.shopCustomPrice -= ((item.shopCustomPrice / 20) * 7);
+                        }
+                        else if ((player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier2)
+                        {
+                            item.shopCustomPrice -= item.shopCustomPrice / 4;
+                        }
+                        else if ((player.GetModPlayer<AlchemistNPCLitePlayer>()).AlchemistCharmTier1)
+                        {
+                            item.shopCustomPrice -= item.shopCustomPrice / 10;
                         }
                     }
                 }
             }
             // IMPLEMENT WHEN WEAKREFERENCES FIXED
-			/*
+            /*
             if (ModLoader.GetMod("Tremor") != null)
             {
                 if (type == ModLoader.GetMod("Tremor").NPCType("Lady Moon"))
@@ -278,13 +249,13 @@ namespace AlchemistNPCLite.NPCs
             }
         }
 
-        public override void DrawTownAttackGun(NPC npc, ref float scale, ref int item, ref int closeness)
+        public override void DrawTownAttackGun(NPC npc, ref Texture2D item, ref Rectangle itemFrame, ref float scale, ref int horizontalHoldoutOffset)/* tModPorter Note: closeness is now horizontalHoldoutOffset, use 'horizontalHoldoutOffset = Main.DrawPlayerItemPos(1f, itemtype) - originalClosenessValue' to adjust to the change. See docs for how to use hook with an item type. */
         {
             if (npc.type == NPCID.ArmsDealer)
             {
                 if (NPC.downedMoonlord)
                 {
-                    item = ItemID.Megashark;
+                    item = TextureAssets.Item[ItemID.Megashark].Value;
                 }
             }
             if (npc.type == NPCID.Steampunker)
@@ -292,8 +263,8 @@ namespace AlchemistNPCLite.NPCs
                 if (NPC.downedMoonlord)
                 {
                     scale = 1f;
-                    closeness = 4;
-                    item = ItemID.SDMG;
+                    horizontalHoldoutOffset = 4;
+                    item = TextureAssets.Item[ItemID.SDMG].Value;
                 }
             }
         }
@@ -371,13 +342,13 @@ namespace AlchemistNPCLite.NPCs
         {
             base.ModifyNPCLoot(npc, npcLoot);
 
-        	if (npc.type == NPCID.EyeofCthulhu)
-        	{
-        		if (!NPC.downedBoss1)
-        		{
-				    npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Items.Misc.AlchemistCharmTier1>(), 1));
-        		}
-        	}
+            if (npc.type == NPCID.EyeofCthulhu)
+            {
+                if (!NPC.downedBoss1)
+                {
+                    npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Items.Misc.AlchemistCharmTier1>(), 1));
+                }
+            }
             if (npc.type == NPCID.WallofFlesh)
             {
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Items.Misc.LuckCharm>(), 1));
@@ -388,16 +359,18 @@ namespace AlchemistNPCLite.NPCs
             }
         }
 
-		public bool CalamityModRevengeance
-		{            
-            get {
-                if(ModLoader.TryGetMod("CalamityMod", out Mod Calamity)) {
+        public bool CalamityModRevengeance
+        {
+            get
+            {
+                if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
+                {
                     return (bool)Calamity.Call("GetDifficultyActive", "revengeance");
                 }
                 return false;
             }
         }
-		
-		// private readonly ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
+
+        // private readonly ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
     }
 }

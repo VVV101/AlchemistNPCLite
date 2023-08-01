@@ -1,9 +1,7 @@
-using AlchemistNPCLite.Interface;
-using System;
+﻿using AlchemistNPCLite.Interface;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent.Bestiary;
-using Terraria.GameContent.Events;
 using Terraria.GameContent.Personalities;
 using Terraria.ID;
 using Terraria.Localization;
@@ -33,8 +31,6 @@ namespace AlchemistNPCLite.NPCs
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Musician");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Музыкант");
             Main.npcFrameCount[NPC.type] = 25;
             NPCID.Sets.AttackFrameCount[NPC.type] = 4;
             NPCID.Sets.DangerDetectRange[NPC.type] = 500;
@@ -43,135 +39,6 @@ namespace AlchemistNPCLite.NPCs
             NPCID.Sets.AttackAverageChance[NPC.type] = 30;
             NPCID.Sets.HatOffsetY[NPC.type] = -2;
 
-            ModTranslation text = LocalizationLoader.CreateTranslation(Mod, "Shop2");
-            text.SetDefault("2nd shop");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "2-ой магазин");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "Shop3");
-            text.SetDefault("3rd shop");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "3-ий магазин");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "ShopChanger");
-            text.SetDefault("Shop Changer");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сменить магазин");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "切换商店");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "Beethoven");
-            text.SetDefault("Beethoven");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Бетховен");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "Bach");
-            text.SetDefault("Bach");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Бах");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "Johan");
-            text.SetDefault("Johan");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Иоганн");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "Edison");
-            text.SetDefault("Edison");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Эдисон");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "Scott");
-            text.SetDefault("Scott");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Скотт");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "Lloyd");
-            text.SetDefault("Lloyd");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ллойд");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "Gamma");
-            text.SetDefault("Gamma");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Гамма");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryM1");
-            text.SetDefault("I would wear headphones, but I'm not sure if Terrarians even have ears...");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Я бы носил наушники, но я не уверен, что обитатели Террарии вообще имеют уши...");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryM2");
-            text.SetDefault("I have to wonder why Boss 1 and Boss 2 didn't get better names in the OST. Those names are soooo bland.");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Интересно, почему Босс 1 и Босс 2 не имеют имён получше в саундтреке. Эти имена слишком обычные.");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryM3");
-            text.SetDefault("Look, the Cyborg may have my name, but I've still got the better job here.");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Хотя у Киборга может быть моё имя, но у меня здесь всё равно работа получше.");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryM4");
-            text.SetDefault("Shhhhh! You'll ruin my recording!");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Шшш! Ты испортишь мою запись!");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryM5");
-            text.SetDefault("I swear, if one more person asks me to sell them a ''Megalovania'' music box....");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Не дай бог ещё кто-нибудь попросит меня продать ему музыкальную шкатулку с Мегалованией...");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryM6");
-            text.SetDefault("Look, your enthusiasm is awesome, but could you maybe record the next boss track yourself? I don't really want to risk my life for some tunes.");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Послушай, твой энтузиазм просто потрясающий, но может ты запишешь мелодию следующего босса сам? Мне не очень хочется рисковать жизнью из-за некоторых мелодий.");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryM7");
-            text.SetDefault("Ah, I see you were able to save the Explorer! Well done! Perhaps my next song is going to be about your triumph.");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Я вижу ты спас Исследовательницу! Отличная работа! Может быть моя следующая песня будет о твоём триумфе.");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryM8");
-            text.SetDefault("You know, ");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ты знаешь, ");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryM9");
-            text.SetDefault(" has been really helpful while I've been setting up this sound system. Wires are key!");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), " была очень полезна, когда я устанавливал здесь звуковую систему. Провода рулят!");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryM10");
-            text.SetDefault("If you run into ");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Если как-нибудь зайдёшь к ");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryM11");
-            text.SetDefault(", let him know he still owes me for those music boxes I sold him.");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), ", то передай ему, что он всё ещё должен мне за те музыкальные шкатулки, что я продал ему.");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryM12");
-            text.SetDefault("I'll be honest, I'm not sure if I trust ");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Буду честен, я не уверен, что я доверяю ");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryM13");
-            text.SetDefault(". He claims to not be possessed, and yet he still is using skulls to fight... I'm getting mixed messages here.");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), ". Он вроде бы больше не одержим, но все еще использует черепа для битвы... У меня смешанные чувства.");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryM14");
-            text.SetDefault("Man, my mixtape is so much better than this, but I can't sell you that due to copyright.");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Чувак, мои записи значительно лучше всего этого, но я не могу продать их тебе из-за авторских прав.");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryM15");
-            text.SetDefault("No, I don't have an ''All Star'' music box. Code it in yourself.");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Нет, я меня нет музыкальной шкатулки ''Со Всеми''. Закодируй её сам.");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryM16");
-            text.SetDefault("Wait, NPC? I thought I was the protagonist!");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Погоди-ка, НИП? Я думал, что я протагонист!");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryM17");
-            text.SetDefault("Never thought I'd be selling a music box with lyrics... DM DOKURO, you're a madman and I love it!");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Никогда не думал, что я буду продавать музыкальные шкатулки с песнями... DM DOKURO, ты безумец и мне это нравится!");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryM18");
-            text.SetDefault("A whole music based class? That sounds amazing! Too bad I don't have any gear for that, huh?");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Целый класс, основанный на музыке? Звучит потрясающе! Жаль, что у меня нет ничего подходящего для него...");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryM19");
-            text.SetDefault("This is your fault. GET. OUT.");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Это твоя вина. УБИРАЙСЯ. ОТСЮДА.");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryM20");
-            text.SetDefault("Ah, this takes me back! I remember when this song used to play in the dungeon and the underworld... good times!");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Эх, ностальгия! Я помню, когда эта мелодия играла в Подземелье и в Преисподней... хорошие времена!");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryM21");
-            text.SetDefault("Is there a name for the fear of being spied by a cake?");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Если ли имя у страха того, что за тобой шпионят с помощью торта?");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryM22");
-            text.SetDefault("You are hurting my ears! Turn it down!");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "У меня уже болят уши! Сделай потише!");
-            LocalizationLoader.AddTranslation(text);
             NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             {
                 Velocity = -1f,
@@ -212,7 +79,7 @@ namespace AlchemistNPCLite.NPCs
             AnimationType = NPCID.Merchant;
         }
 
-        public override bool CanTownNPCSpawn(int numTownNPCs, int money)
+        public override bool CanTownNPCSpawn(int numTownNPCs)/* tModPorter Suggestion: Copy the implementation of NPC.SpawnAllowed_Merchant in vanilla if you to count money, and be sure to set a flag when unlocked, so you don't count every tick. */
         {
             if (NPC.downedBoss3 && AlchemistNPCLite.modConfiguration.MusicianSpawn)
             {
@@ -413,11 +280,11 @@ namespace AlchemistNPCLite.NPCs
             button2 = ShopChanger;
         }
 
-        public override void OnChatButtonClicked(bool firstButton, ref bool shop)
+        public override void OnChatButtonClicked(bool firstButton, ref string shopName)
         {
             if (firstButton)
             {
-                shop = true;
+                shopName = "Shop";
                 ShopChangeUIM.visible = false;
             }
             else
@@ -451,355 +318,348 @@ namespace AlchemistNPCLite.NPCs
         }
         */
 
-        public override void SetupShop(Chest shop, ref int nextSlot)
-        {
-            if (S1)
-            {
-                if (!NPC.downedMechBossAny)
-                {
-                    shop.item[nextSlot].SetDefaults(576);
-                    nextSlot++;
-                }
-                if (NPC.downedMechBossAny)
-                {
-                    shop.item[nextSlot].SetDefaults(562);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(563);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(564);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(565);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(566);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(568);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(569);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(570);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(571);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(573);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(1596);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(1597);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(1598);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(1600);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(1601);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(1602);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(1603);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(1604);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(1605);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(1608);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(1610);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(1964);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(2742);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(3237);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(3796);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    if (NPC.downedPlantBoss)
-                    {
-                        shop.item[nextSlot].SetDefaults(567);
-                        shop.item[nextSlot].shopCustomPrice = 100000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(572);
-                        shop.item[nextSlot].shopCustomPrice = 100000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(574);
-                        shop.item[nextSlot].shopCustomPrice = 100000;
-                        nextSlot++;
-                        if (NPC.downedQueenBee)
-                        {
-                            shop.item[nextSlot].SetDefaults(1599);
-                            shop.item[nextSlot].shopCustomPrice = 100000;
-                            nextSlot++;
-                        }
-                        if (NPC.downedGolemBoss)
-                        {
-                            shop.item[nextSlot].SetDefaults(1607);
-                            shop.item[nextSlot].shopCustomPrice = 100000;
-                            nextSlot++;
-                        }
-                        shop.item[nextSlot].SetDefaults(1606);
-                        shop.item[nextSlot].shopCustomPrice = 100000;
-                        nextSlot++;
-                        if (NPC.downedMoonlord)
-                        {
-                            shop.item[nextSlot].SetDefaults(3044);
-                            shop.item[nextSlot].shopCustomPrice = 100000;
-                            nextSlot++;
-                        }
-                        if (NPC.downedGoblins)
-                        {
-                            shop.item[nextSlot].SetDefaults(3371);
-                            shop.item[nextSlot].shopCustomPrice = 100000;
-                            nextSlot++;
-                        }
-                        if (NPC.downedPirates)
-                        {
-                            shop.item[nextSlot].SetDefaults(3236);
-                            shop.item[nextSlot].shopCustomPrice = 100000;
-                            nextSlot++;
-                        }
-                        if (DD2Event.DownedInvasionT1)
-                        {
-                            shop.item[nextSlot].SetDefaults(3869);
-                            shop.item[nextSlot].shopCustomPrice = 100000;
-                            nextSlot++;
-                        }
-                        shop.item[nextSlot].SetDefaults(1609);
-                        shop.item[nextSlot].shopCustomPrice = 100000;
-                        nextSlot++;
-                        if (NPC.downedHalloweenKing)
-                        {
-                            shop.item[nextSlot].SetDefaults(1963);
-                            shop.item[nextSlot].shopCustomPrice = 100000;
-                            nextSlot++;
-                        }
-                        if (NPC.downedChristmasIceQueen)
-                        {
-                            shop.item[nextSlot].SetDefaults(1965);
-                            shop.item[nextSlot].shopCustomPrice = 100000;
-                            nextSlot++;
-                        }
-                        if (NPC.downedMartians)
-                        {
-                            shop.item[nextSlot].SetDefaults(3235);
-                            shop.item[nextSlot].shopCustomPrice = 100000;
-                            nextSlot++;
-                        }
-                        if (NPC.downedMoonlord)
-                        {
-                            shop.item[nextSlot].SetDefaults(3370);
-                            shop.item[nextSlot].shopCustomPrice = 100000;
-                            nextSlot++;
-                        }
-                    }
-                }
-            }
-            if (S2)
-            {
-                ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
-                ModLoader.TryGetMod("CalamityModMusic", out Mod CalamityMusic);
-                if (Calamity != null && CalamityMusic != null)
-                {
-                    if ((bool)Calamity.Call("Downed", "desert scourge"))
-                    {
-                        addModItemToShop(CalamityMusic, "DesertScourgeMusicbox", 150000, ref shop, ref nextSlot);
-                        addModItemToShop(CalamityMusic, "SunkenSeaMusicbox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)Calamity.Call("Downed", "crabulon"))
-                    {
-                        addModItemToShop(CalamityMusic, "CrabulonMusicbox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)Calamity.Call("Downed", "hive mind"))
-                    {
-                        addModItemToShop(CalamityMusic, "HiveMindMusicbox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)Calamity.Call("Downed", "perforators"))
-                    {
-                        addModItemToShop(CalamityMusic, "PerforatorMusicbox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)Calamity.Call("Downed", "slime god"))
-                    {
-                        addModItemToShop(CalamityMusic, "SlimeGodMusicbox", 150000, ref shop, ref nextSlot);
-                        addModItemToShop(CalamityMusic, "CragMusicbox", 150000, ref shop, ref nextSlot);
-                    }
-                    addModItemToShop(CalamityMusic, "SirenIdleMusicbox", 150000, ref shop, ref nextSlot);
-                    addModItemToShop(CalamityMusic, "SulphurousMusicbox", 150000, ref shop, ref nextSlot);
-                    addModItemToShop(CalamityMusic, "HigherAbyssMusicbox", 150000, ref shop, ref nextSlot);
-                    addModItemToShop(CalamityMusic, "AbyssLowerMusicbox", 150000, ref shop, ref nextSlot);
-                    addModItemToShop(CalamityMusic, "VoidMusicbox", 150000, ref shop, ref nextSlot);
-                    if ((bool)Calamity.Call("Downed", "cryogen"))
-                    {
-                        addModItemToShop(CalamityMusic, "CryogenMusicbox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)Calamity.Call("Downed", "aquatic scourge"))
-                    {
-                        addModItemToShop(CalamityMusic, "AquaticScourgeMusicbox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)Calamity.Call("Downed", "brimstone elemental"))
-                    {
-                        addModItemToShop(CalamityMusic, "BrimmyMusicbox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)Calamity.Call("Downed", "calamitas doppelganger"))
-                    {
-                        addModItemToShop(CalamityMusic, "CalamitasMusicbox", 150000, ref shop, ref nextSlot);
-                        addModItemToShop(CalamityMusic, "CalamityMusicbox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)Calamity.Call("Downed", "leviathan"))
-                    {
-                        addModItemToShop(CalamityMusic, "SirenMusicbox", 150000, ref shop, ref nextSlot);
-                        addModItemToShop(CalamityMusic, "LeviathanMusicbox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)Calamity.Call("Downed", "astrum aureus"))
-                    {
-                        addModItemToShop(CalamityMusic, "AstralMusicbox", 150000, ref shop, ref nextSlot);
-                        addModItemToShop(CalamityMusic, "AstrageldonMusicbox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)Calamity.Call("Downed", "astrum deus"))
-                    {
-                        addModItemToShop(CalamityMusic, "AstrumDeusMusicbox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)Calamity.Call("Downed", "plaguebringer goliath"))
-                    {
-                        addModItemToShop(CalamityMusic, "PlaguebringerMusicbox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)Calamity.Call("Downed", "ravager"))
-                    {
-                        addModItemToShop(CalamityMusic, "RavagerMusicbox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)Calamity.Call("Downed", "profaned guardians"))
-                    {
-                        addModItemToShop(CalamityMusic, "ProfanedGuardianMusicbox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)Calamity.Call("Downed", "providence"))
-                    {
-                        addModItemToShop(CalamityMusic, "ProvidenceMusicbox", 250000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)Calamity.Call("Downed", "stormweaver"))
-                    {
-                        addModItemToShop(CalamityMusic, "StormWeaverMusicbox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)Calamity.Call("Downed", "ceaselessvoid"))
-                    {
-                        addModItemToShop(CalamityMusic, "CeaselessVoidMusicbox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)Calamity.Call("Downed", "signus"))
-                    {
-                        addModItemToShop(CalamityMusic, "SignusMusicbox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)Calamity.Call("Downed", "polterghast"))
-                    {
-                        addModItemToShop(CalamityMusic, "PolterghastMusicbox", 300000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)Calamity.Call("Downed", "dog"))
-                    {
-                        addModItemToShop(CalamityMusic, "DoGMusicbox", 500000, ref shop, ref nextSlot);
-                        addModItemToShop(CalamityMusic, "DoGP2Musicbox", 500000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)Calamity.Call("Downed", "yharon"))
-                    {
-                        addModItemToShop(CalamityMusic, "Yharon1Musicbox", 500000, ref shop, ref nextSlot);
-                        addModItemToShop(CalamityMusic, "Yharon2Musicbox", 500000, ref shop, ref nextSlot);
-                        addModItemToShop(CalamityMusic, "Yharon3Musicbox", 500000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)Calamity.Call("Downed", "supreme calamitas"))
-                    {
-                        addModItemToShop(CalamityMusic, "SCalGMusicbox", 500000, ref shop, ref nextSlot);
-                        addModItemToShop(CalamityMusic, "SCalLMusicbox", 500000, ref shop, ref nextSlot);
-                        addModItemToShop(CalamityMusic, "SCalEMusicbox", 500000, ref shop, ref nextSlot);
-                        addModItemToShop(CalamityMusic, "SCalAMusicbox", 500000, ref shop, ref nextSlot);
-                    }
-                }
-            }
-            if (S3)
-            {
-                if (ModLoader.TryGetMod("ThoriumMod", out Mod ThoriumMod))
-                {
-                    if ((bool)ThoriumMod.Call("GetDownedBoss", "TheGrandThunderBird"))
-                    {
-                        addModItemToShop(ThoriumMod, "ThunderBirdMusicBox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)ThoriumMod.Call("GetDownedBoss", "QueenJellyfish"))
-                    {
-                        addModItemToShop(ThoriumMod, "QueenJellyfishMusicBox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)ThoriumMod.Call("GetDownedBoss", "Viscount"))
-                    {
-                        addModItemToShop(ThoriumMod, "ViscountMusicBox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)ThoriumMod.Call("GetDownedBoss", "GraniteEnergyStorm"))
-                    {
-                        addModItemToShop(ThoriumMod, "EnergyStormMusicBox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)ThoriumMod.Call("GetDownedBoss", "BuriedChampion"))
-                    {
-                        addModItemToShop(ThoriumMod, "BuriedChampionMusicBox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)ThoriumMod.Call("GetDownedBoss", "StarScouter"))
-                    {
-                        addModItemToShop(ThoriumMod, "StarScouterMusicBox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)ThoriumMod.Call("GetDownedBoss", "BoreanStrider"))
-                    {
-                        addModItemToShop(ThoriumMod, "BoreanStriderMusicBox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)ThoriumMod.Call("GetDownedBoss", "FallenBeholder"))
-                    {
-                        addModItemToShop(ThoriumMod, "FallenBeholderMusicBox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)ThoriumMod.Call("GetDownedBoss", "Lich"))
-                    {
-                        addModItemToShop(ThoriumMod, "LichMusicBox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)ThoriumMod.Call("GetDownedBoss", "ForgottenOne"))
-                    {
-                        addModItemToShop(ThoriumMod, "DepthsMusicBox", 150000, ref shop, ref nextSlot);
-                        addModItemToShop(ThoriumMod, "AbyssMusicBox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)ThoriumMod.Call("GetDownedBoss", "ThePrimordials"))
-                    {
-                        addModItemToShop(ThoriumMod, "PrimordialsMusicBox", 150000, ref shop, ref nextSlot);
-                    }
-                    if ((bool)ThoriumMod.Call("GetDownedBoss", "PatchWerk") ||
-                        (bool)ThoriumMod.Call("GetDownedBoss", "CorpseBloom") ||
-                        (bool)ThoriumMod.Call("GetDownedBoss", "Illusionist"))
-                    {
-                        addModItemToShop(ThoriumMod, "MiniBossMusicBox", 150000, ref shop, ref nextSlot);
-                    }
-                }
-            }
-        }
-
-        private void addModItemToShop(Mod mod, String itemName, int price, ref Chest shop, ref int nextSlot)
-        {
-            if (mod.TryFind<ModItem>(itemName, out ModItem currItem))
-            {
-                shop.item[nextSlot].SetDefaults(currItem.Type);
-                shop.item[nextSlot].shopCustomPrice = price;
-                nextSlot++;
-            }
-        }
+        //public override void ModifyActiveShop(string shopName, Item[] items)
+        //{
+        //    if (S1)
+        //    {
+        //        if (!NPC.downedMechBossAny)
+        //        {
+        //            shop.item[nextSlot].SetDefaults(576);
+        //            nextSlot++;
+        //        }
+        //        if (NPC.downedMechBossAny)
+        //        {
+        //            shop.item[nextSlot].SetDefaults(562);
+        //            shop.item[nextSlot].shopCustomPrice = 100000;
+        //            nextSlot++;
+        //            shop.item[nextSlot].SetDefaults(563);
+        //            shop.item[nextSlot].shopCustomPrice = 100000;
+        //            nextSlot++;
+        //            shop.item[nextSlot].SetDefaults(564);
+        //            shop.item[nextSlot].shopCustomPrice = 100000;
+        //            nextSlot++;
+        //            shop.item[nextSlot].SetDefaults(565);
+        //            shop.item[nextSlot].shopCustomPrice = 100000;
+        //            nextSlot++;
+        //            shop.item[nextSlot].SetDefaults(566);
+        //            shop.item[nextSlot].shopCustomPrice = 100000;
+        //            nextSlot++;
+        //            shop.item[nextSlot].SetDefaults(568);
+        //            shop.item[nextSlot].shopCustomPrice = 100000;
+        //            nextSlot++;
+        //            shop.item[nextSlot].SetDefaults(569);
+        //            shop.item[nextSlot].shopCustomPrice = 100000;
+        //            nextSlot++;
+        //            shop.item[nextSlot].SetDefaults(570);
+        //            shop.item[nextSlot].shopCustomPrice = 100000;
+        //            nextSlot++;
+        //            shop.item[nextSlot].SetDefaults(571);
+        //            shop.item[nextSlot].shopCustomPrice = 100000;
+        //            nextSlot++;
+        //            shop.item[nextSlot].SetDefaults(573);
+        //            shop.item[nextSlot].shopCustomPrice = 100000;
+        //            nextSlot++;
+        //            shop.item[nextSlot].SetDefaults(1596);
+        //            shop.item[nextSlot].shopCustomPrice = 100000;
+        //            nextSlot++;
+        //            shop.item[nextSlot].SetDefaults(1597);
+        //            shop.item[nextSlot].shopCustomPrice = 100000;
+        //            nextSlot++;
+        //            shop.item[nextSlot].SetDefaults(1598);
+        //            shop.item[nextSlot].shopCustomPrice = 100000;
+        //            nextSlot++;
+        //            shop.item[nextSlot].SetDefaults(1600);
+        //            shop.item[nextSlot].shopCustomPrice = 100000;
+        //            nextSlot++;
+        //            shop.item[nextSlot].SetDefaults(1601);
+        //            shop.item[nextSlot].shopCustomPrice = 100000;
+        //            nextSlot++;
+        //            shop.item[nextSlot].SetDefaults(1602);
+        //            shop.item[nextSlot].shopCustomPrice = 100000;
+        //            nextSlot++;
+        //            shop.item[nextSlot].SetDefaults(1603);
+        //            shop.item[nextSlot].shopCustomPrice = 100000;
+        //            nextSlot++;
+        //            shop.item[nextSlot].SetDefaults(1604);
+        //            shop.item[nextSlot].shopCustomPrice = 100000;
+        //            nextSlot++;
+        //            shop.item[nextSlot].SetDefaults(1605);
+        //            shop.item[nextSlot].shopCustomPrice = 100000;
+        //            nextSlot++;
+        //            shop.item[nextSlot].SetDefaults(1608);
+        //            shop.item[nextSlot].shopCustomPrice = 100000;
+        //            nextSlot++;
+        //            shop.item[nextSlot].SetDefaults(1610);
+        //            shop.item[nextSlot].shopCustomPrice = 100000;
+        //            nextSlot++;
+        //            shop.item[nextSlot].SetDefaults(1964);
+        //            shop.item[nextSlot].shopCustomPrice = 100000;
+        //            nextSlot++;
+        //            shop.item[nextSlot].SetDefaults(2742);
+        //            shop.item[nextSlot].shopCustomPrice = 100000;
+        //            nextSlot++;
+        //            shop.item[nextSlot].SetDefaults(3237);
+        //            shop.item[nextSlot].shopCustomPrice = 100000;
+        //            nextSlot++;
+        //            shop.item[nextSlot].SetDefaults(3796);
+        //            shop.item[nextSlot].shopCustomPrice = 100000;
+        //            nextSlot++;
+        //            if (NPC.downedPlantBoss)
+        //            {
+        //                shop.item[nextSlot].SetDefaults(567);
+        //                shop.item[nextSlot].shopCustomPrice = 100000;
+        //                nextSlot++;
+        //                shop.item[nextSlot].SetDefaults(572);
+        //                shop.item[nextSlot].shopCustomPrice = 100000;
+        //                nextSlot++;
+        //                shop.item[nextSlot].SetDefaults(574);
+        //                shop.item[nextSlot].shopCustomPrice = 100000;
+        //                nextSlot++;
+        //                if (NPC.downedQueenBee)
+        //                {
+        //                    shop.item[nextSlot].SetDefaults(1599);
+        //                    shop.item[nextSlot].shopCustomPrice = 100000;
+        //                    nextSlot++;
+        //                }
+        //                if (NPC.downedGolemBoss)
+        //                {
+        //                    shop.item[nextSlot].SetDefaults(1607);
+        //                    shop.item[nextSlot].shopCustomPrice = 100000;
+        //                    nextSlot++;
+        //                }
+        //                shop.item[nextSlot].SetDefaults(1606);
+        //                shop.item[nextSlot].shopCustomPrice = 100000;
+        //                nextSlot++;
+        //                if (NPC.downedMoonlord)
+        //                {
+        //                    shop.item[nextSlot].SetDefaults(3044);
+        //                    shop.item[nextSlot].shopCustomPrice = 100000;
+        //                    nextSlot++;
+        //                }
+        //                if (NPC.downedGoblins)
+        //                {
+        //                    shop.item[nextSlot].SetDefaults(3371);
+        //                    shop.item[nextSlot].shopCustomPrice = 100000;
+        //                    nextSlot++;
+        //                }
+        //                if (NPC.downedPirates)
+        //                {
+        //                    shop.item[nextSlot].SetDefaults(3236);
+        //                    shop.item[nextSlot].shopCustomPrice = 100000;
+        //                    nextSlot++;
+        //                }
+        //                if (DD2Event.DownedInvasionT1)
+        //                {
+        //                    shop.item[nextSlot].SetDefaults(3869);
+        //                    shop.item[nextSlot].shopCustomPrice = 100000;
+        //                    nextSlot++;
+        //                }
+        //                shop.item[nextSlot].SetDefaults(1609);
+        //                shop.item[nextSlot].shopCustomPrice = 100000;
+        //                nextSlot++;
+        //                if (NPC.downedHalloweenKing)
+        //                {
+        //                    shop.item[nextSlot].SetDefaults(1963);
+        //                    shop.item[nextSlot].shopCustomPrice = 100000;
+        //                    nextSlot++;
+        //                }
+        //                if (NPC.downedChristmasIceQueen)
+        //                {
+        //                    shop.item[nextSlot].SetDefaults(1965);
+        //                    shop.item[nextSlot].shopCustomPrice = 100000;
+        //                    nextSlot++;
+        //                }
+        //                if (NPC.downedMartians)
+        //                {
+        //                    shop.item[nextSlot].SetDefaults(3235);
+        //                    shop.item[nextSlot].shopCustomPrice = 100000;
+        //                    nextSlot++;
+        //                }
+        //                if (NPC.downedMoonlord)
+        //                {
+        //                    shop.item[nextSlot].SetDefaults(3370);
+        //                    shop.item[nextSlot].shopCustomPrice = 100000;
+        //                    nextSlot++;
+        //                }
+        //            }
+        //        }
+        //    }
+        //    if (S2)
+        //    {
+        //        ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
+        //        ModLoader.TryGetMod("CalamityModMusic", out Mod CalamityMusic);
+        //        if (Calamity != null && CalamityMusic != null)
+        //        {
+        //            if ((bool)Calamity.Call("Downed", "desert scourge"))
+        //            {
+        //                addModItemToShop(CalamityMusic, "DesertScourgeMusicbox", 150000, ref shop, ref nextSlot);
+        //                addModItemToShop(CalamityMusic, "SunkenSeaMusicbox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)Calamity.Call("Downed", "crabulon"))
+        //            {
+        //                addModItemToShop(CalamityMusic, "CrabulonMusicbox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)Calamity.Call("Downed", "hive mind"))
+        //            {
+        //                addModItemToShop(CalamityMusic, "HiveMindMusicbox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)Calamity.Call("Downed", "perforators"))
+        //            {
+        //                addModItemToShop(CalamityMusic, "PerforatorMusicbox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)Calamity.Call("Downed", "slime god"))
+        //            {
+        //                addModItemToShop(CalamityMusic, "SlimeGodMusicbox", 150000, ref shop, ref nextSlot);
+        //                addModItemToShop(CalamityMusic, "CragMusicbox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            addModItemToShop(CalamityMusic, "SirenIdleMusicbox", 150000, ref shop, ref nextSlot);
+        //            addModItemToShop(CalamityMusic, "SulphurousMusicbox", 150000, ref shop, ref nextSlot);
+        //            addModItemToShop(CalamityMusic, "HigherAbyssMusicbox", 150000, ref shop, ref nextSlot);
+        //            addModItemToShop(CalamityMusic, "AbyssLowerMusicbox", 150000, ref shop, ref nextSlot);
+        //            addModItemToShop(CalamityMusic, "VoidMusicbox", 150000, ref shop, ref nextSlot);
+        //            if ((bool)Calamity.Call("Downed", "cryogen"))
+        //            {
+        //                addModItemToShop(CalamityMusic, "CryogenMusicbox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)Calamity.Call("Downed", "aquatic scourge"))
+        //            {
+        //                addModItemToShop(CalamityMusic, "AquaticScourgeMusicbox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)Calamity.Call("Downed", "brimstone elemental"))
+        //            {
+        //                addModItemToShop(CalamityMusic, "BrimmyMusicbox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)Calamity.Call("Downed", "calamitas doppelganger"))
+        //            {
+        //                addModItemToShop(CalamityMusic, "CalamitasMusicbox", 150000, ref shop, ref nextSlot);
+        //                addModItemToShop(CalamityMusic, "CalamityMusicbox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)Calamity.Call("Downed", "leviathan"))
+        //            {
+        //                addModItemToShop(CalamityMusic, "SirenMusicbox", 150000, ref shop, ref nextSlot);
+        //                addModItemToShop(CalamityMusic, "LeviathanMusicbox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)Calamity.Call("Downed", "astrum aureus"))
+        //            {
+        //                addModItemToShop(CalamityMusic, "AstralMusicbox", 150000, ref shop, ref nextSlot);
+        //                addModItemToShop(CalamityMusic, "AstrageldonMusicbox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)Calamity.Call("Downed", "astrum deus"))
+        //            {
+        //                addModItemToShop(CalamityMusic, "AstrumDeusMusicbox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)Calamity.Call("Downed", "plaguebringer goliath"))
+        //            {
+        //                addModItemToShop(CalamityMusic, "PlaguebringerMusicbox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)Calamity.Call("Downed", "ravager"))
+        //            {
+        //                addModItemToShop(CalamityMusic, "RavagerMusicbox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)Calamity.Call("Downed", "profaned guardians"))
+        //            {
+        //                addModItemToShop(CalamityMusic, "ProfanedGuardianMusicbox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)Calamity.Call("Downed", "providence"))
+        //            {
+        //                addModItemToShop(CalamityMusic, "ProvidenceMusicbox", 250000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)Calamity.Call("Downed", "stormweaver"))
+        //            {
+        //                addModItemToShop(CalamityMusic, "StormWeaverMusicbox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)Calamity.Call("Downed", "ceaselessvoid"))
+        //            {
+        //                addModItemToShop(CalamityMusic, "CeaselessVoidMusicbox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)Calamity.Call("Downed", "signus"))
+        //            {
+        //                addModItemToShop(CalamityMusic, "SignusMusicbox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)Calamity.Call("Downed", "polterghast"))
+        //            {
+        //                addModItemToShop(CalamityMusic, "PolterghastMusicbox", 300000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)Calamity.Call("Downed", "dog"))
+        //            {
+        //                addModItemToShop(CalamityMusic, "DoGMusicbox", 500000, ref shop, ref nextSlot);
+        //                addModItemToShop(CalamityMusic, "DoGP2Musicbox", 500000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)Calamity.Call("Downed", "yharon"))
+        //            {
+        //                addModItemToShop(CalamityMusic, "Yharon1Musicbox", 500000, ref shop, ref nextSlot);
+        //                addModItemToShop(CalamityMusic, "Yharon2Musicbox", 500000, ref shop, ref nextSlot);
+        //                addModItemToShop(CalamityMusic, "Yharon3Musicbox", 500000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)Calamity.Call("Downed", "supreme calamitas"))
+        //            {
+        //                addModItemToShop(CalamityMusic, "SCalGMusicbox", 500000, ref shop, ref nextSlot);
+        //                addModItemToShop(CalamityMusic, "SCalLMusicbox", 500000, ref shop, ref nextSlot);
+        //                addModItemToShop(CalamityMusic, "SCalEMusicbox", 500000, ref shop, ref nextSlot);
+        //                addModItemToShop(CalamityMusic, "SCalAMusicbox", 500000, ref shop, ref nextSlot);
+        //            }
+        //        }
+        //    }
+        //    if (S3)
+        //    {
+        //        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Misc.BoomBox>());
+        //        shop.item[nextSlot].shopCustomPrice = 250000;
+        //        nextSlot++;
+        //        if (ModLoader.TryGetMod("ThoriumMod", out Mod ThoriumMod))
+        //        {
+        //            if ((bool)ThoriumMod.Call("GetDownedBoss", "TheGrandThunderBird"))
+        //            {
+        //                addModItemToShop(ThoriumMod, "ThunderBirdMusicBox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)ThoriumMod.Call("GetDownedBoss", "QueenJellyfish"))
+        //            {
+        //                addModItemToShop(ThoriumMod, "QueenJellyfishMusicBox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)ThoriumMod.Call("GetDownedBoss", "Viscount"))
+        //            {
+        //                addModItemToShop(ThoriumMod, "ViscountMusicBox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)ThoriumMod.Call("GetDownedBoss", "GraniteEnergyStorm"))
+        //            {
+        //                addModItemToShop(ThoriumMod, "EnergyStormMusicBox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)ThoriumMod.Call("GetDownedBoss", "BuriedChampion"))
+        //            {
+        //                addModItemToShop(ThoriumMod, "BuriedChampionMusicBox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)ThoriumMod.Call("GetDownedBoss", "StarScouter"))
+        //            {
+        //                addModItemToShop(ThoriumMod, "StarScouterMusicBox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)ThoriumMod.Call("GetDownedBoss", "BoreanStrider"))
+        //            {
+        //                addModItemToShop(ThoriumMod, "BoreanStriderMusicBox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)ThoriumMod.Call("GetDownedBoss", "FallenBeholder"))
+        //            {
+        //                addModItemToShop(ThoriumMod, "FallenBeholderMusicBox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)ThoriumMod.Call("GetDownedBoss", "Lich"))
+        //            {
+        //                addModItemToShop(ThoriumMod, "LichMusicBox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)ThoriumMod.Call("GetDownedBoss", "ForgottenOne"))
+        //            {
+        //                addModItemToShop(ThoriumMod, "DepthsMusicBox", 150000, ref shop, ref nextSlot);
+        //                addModItemToShop(ThoriumMod, "AbyssMusicBox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)ThoriumMod.Call("GetDownedBoss", "ThePrimordials"))
+        //            {
+        //                addModItemToShop(ThoriumMod, "PrimordialsMusicBox", 150000, ref shop, ref nextSlot);
+        //            }
+        //            if ((bool)ThoriumMod.Call("GetDownedBoss", "PatchWerk") ||
+        //                (bool)ThoriumMod.Call("GetDownedBoss", "CorpseBloom") ||
+        //                (bool)ThoriumMod.Call("GetDownedBoss", "Illusionist"))
+        //            {
+        //                addModItemToShop(ThoriumMod, "MiniBossMusicBox", 150000, ref shop, ref nextSlot);
+        //            }
+        //        }
+        //    }
+        //}
     }
 }

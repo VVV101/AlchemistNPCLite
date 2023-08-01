@@ -1,18 +1,11 @@
-using System.Collections.Generic;
 using Microsoft.Xna.Framework;
 using Terraria;
-using Terraria.GameContent.Creative;
-using Terraria.DataStructures;
-using Terraria.ID;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
-using Terraria.Localization;
 
 namespace AlchemistNPCLite.Items
 {
     public class TeleportClass : GlobalItem
     {
-
         public static void HandleTeleport(int teleportType = 0, bool forceHandle = false, int whoAmI = 0)
         {
             bool syncData = forceHandle || Main.netMode == 0;

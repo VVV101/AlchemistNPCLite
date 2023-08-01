@@ -1,0 +1,1431 @@
+Mods: {
+	AlchemistNPCLite: {
+		Bestiary: {
+			// Alchemist: Provides a variety of utility potions, plants, mushrooms and other different stuff for selling. ''Lore-wise'' is an old friend/love interest of Brewer. Currently, ''divorced''.
+			// Brewer: Provides a variety of buff potions for selling. ''Lore-wise'' is an old friend/love interest of Alchemist. Currently, ''divorced''.
+			// Jeweler: Provides an infinite amounts of different gems for selling. Also can help with goods for setting up an arena for both grinding or boss fights. ''Lore-wise'' should be considered as merchants twin brother.
+			// Musician: Provides different music boxes for selling as some progress is made. No real lore currently exists.
+			// Operator: Provides a variety of different crafting materials and treasure bags (if playing on Expert+). Is not a human.
+			// Architect: Provides a variety of different building blocks and crafting stations. Decoration expert.
+			// Tinkerer: Provides a variety of accessories getting unlocked through progression. ''Lore-wise'' is Steampunker's younger brother.
+			// YoungBrewer: Provides a variety of potions combinations and flasks for selling. ''Lore-wise'' is son of Alchemist and Brewer.
+		}
+
+		Common: {
+			// DayTimeSet: Time is set to morning.
+			// NightTimeSet: Time is set to evening.
+			// SandstormStarted: Sandstorm was started.
+			// SandstormStopped: Sandstorm was stopped.
+			// RainStarted: Rain is starting.
+			// RainStopped: Rain is stopping.
+		}
+
+		#This is what displays during all of an NPC's happiness levels. Note that the localization key for these should always be "TownNPCMood.*NPCName*.*Mood*" or else it won't display properly.
+		TownNPCMood: {
+			Alchemist: {
+				// Content: I'm feeling good!
+				// NoHome: Do you have any spare housing? It is really uncomfortable to make potions without roof above my head.
+				// LoveSpace: Peace and quiet means I get to live it up!
+				// FarFromHome: I think my house was that way... unless you're taking me somewhere?
+				// DislikeCrowded: The more the merrier and all, but I'm starting to feel a lil' overcrowded.
+				// HateCrowded: I can't kick my legs out and relax without hitting someone...
+				// LikeBiome: Warm and peaceful, what can be better for potionsmaking?
+				// LoveBiome: This place reminds me of the old days when I was training with my friend.
+				// DislikeBiome: It is way too cold here... My hands are freezing.
+				// HateBiome: I wanna live elsewhere! This is awful.
+				// LikeNPC: "{NPCName} understands the importance of hard work. It is good having her around."
+				// LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
+				// LoveNPC: "{NPCName} is here! Who's the dad's boy?"
+				// DislikeNPC: I don't think I could focus when {NPCName} is around. She can't stop making jokes of me.
+				// HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
+			}
+
+			Brewer: {
+				// Content: I'm feeling good!
+				// NoHome: Do you have any spare housing? It is really uncomfortable to make potions without roof above my head.
+				// LoveSpace: Peace and quiet means I get to live it up!
+				// FarFromHome: I think my house was that way... unless you're taking me somewhere?
+				// DislikeCrowded: The more the merrier and all, but I'm starting to feel a lil' overcrowded.
+				// HateCrowded: I can't kick my legs out and relax without hitting someone...
+				// LikeBiome: It is a bit too hot here, but the air is perfect.
+				// LoveBiome: Warm and peaceful, just as I wanted!
+				// DislikeBiome: It is way too cold here... My hands are freezing.
+				// HateBiome: I wanna live elsewhere! This is awful.
+				// LikeNPC: "{NPCName} is so easy to tease! I can't help it..."
+				// LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
+				// LoveNPC: "{NPCName} is here! Who's the momma's boy?"
+				// DislikeNPC: "{NPCName} is so annoying with his constant warnings. Can barely stand it."
+				// HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
+			}
+
+			Jeweler: {
+				// Content: I'm feeling good!
+				// NoHome: Do you have any spare housing? It is really uncomfortable to make jewelry without roof above my head.
+				// LoveSpace: Peace and quiet means I get to live it up!
+				// FarFromHome: I think my house was that way... unless you're taking me somewhere?
+				// DislikeCrowded: The more the merrier and all, but I'm starting to feel a lil' overcrowded.
+				// HateCrowded: I can't kick my legs out and relax without hitting someone...
+				// LikeBiome: It is a bit too hot here, but the air is perfect.
+				// LoveBiome: Warm and peaceful, just as I wanted!
+				// DislikeBiome: It is way too cold here... My hands are freezing.
+				// HateBiome: I wanna live elsewhere! This is awful.
+				// LikeNPC: "{NPCName} has a sence for money. A bit too greedy, but I can totally relate."
+				// LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
+				// LoveNPC: "{NPCName} is here! You can clearly tell that we are almost the same. I don't want to grow a beard, tho."
+				// DislikeNPC: I can't stand girls like {NPCName}, she totally distracts my focus.
+				// HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
+			}
+
+			Musician: {
+				// Content: I'm feeling good!
+				// NoHome: Do you have any spare housing? How can I do music if I don't have a roof above my head?
+				// LoveSpace: Peace and quiet means I get to live it up!
+				// FarFromHome: I think my house was that way... unless you're taking me somewhere?
+				// DislikeCrowded: The more the merrier and all, but I'm starting to feel a lil' overcrowded.
+				// HateCrowded: I can't kick my legs out and relax without hitting someone...
+				// LikeBiome: Silence and peace, what else do I need for making music? And acoustics here is amazing!
+				// LoveBiome: I like how shiny and bright this place is. Also perfect for parties.
+				// DislikeBiome: It is way too cold here... My hands are freezing.
+				// HateBiome: I wanna live elsewhere! This is awful.
+				// LikeNPC: "{NPCName} is useful when I am out of music boxes. You know how hard is to make them?"
+				// LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
+				// LoveNPC: "{NPCName} likes music just as I do! I can hang out with her all day."
+				// DislikeNPC: This cheapskate {NPCName} is so annoying. Can you get him somewhere out here?
+				// HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
+			}
+
+			Operator: {
+				// Content: I'm feeling good!
+				// NoHome: I need a shelter. I don't like being without a roof above my head.
+				// LoveSpace: Peace and quiet means I get to live it up!
+				// FarFromHome: I think my house was that way... unless you're taking me somewhere?
+				// DislikeCrowded: The more the merrier and all, but I'm starting to feel a lil' overcrowded.
+				// HateCrowded: I can't kick my legs out and relax without hitting someone...
+				// LikeBiome: Ocean. It is the thing I wanted to see. Thanks.
+				// LoveBiome: My circuits are working perfectly here. Surprisingly. I like snow.
+				// DislikeBiome: I hate underground. You know it, right?
+				// HateBiome: I wanna live elsewhere! This is awful.
+				// LikeNPC: "{NPCName} is one of the many persons I could talk about the technology."
+				// LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
+				// LoveNPC: "{NPCName} probably is the only person who can understand me. Being a cyborg."
+				// DislikeNPC: "{NPCName} seems to be afraid of me. I wonder why, but his fear somewhat annoys me."
+				// HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
+			}
+
+			Architect: {
+				// Content: I'm feeling good!
+				// NoHome: Being an Architect, I especially don't like NOT having any house.
+				// LoveSpace: Peace and quiet means I get to live it up!
+				// FarFromHome: I think my house was that way... unless you're taking me somewhere?
+				// DislikeCrowded: The more the merrier and all, but I'm starting to feel a lil' overcrowded.
+				// HateCrowded: I can't kick my legs out and relax without hitting someone...
+				// LikeBiome: Pretty calming place to be. I like it.
+				// LoveBiome: So many colors, so many building materials. Perfect.
+				// DislikeBiome: I hate feeling chill. I need a warmer place.
+				// HateBiome: I wanna live elsewhere! This is awful.
+				// LikeNPC: "{NPCName} may just be an annoying goblin but he understands, how to build. I respect that."
+				// LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
+				// LoveNPC: "{NPCName} knows how to make every color. Which is great."
+				// DislikeNPC: "{NPCName} is so grumpy and hates colors. Would be fun making him living in Hallow, I guess."
+				// HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
+			}
+
+			Tinkerer: {
+				// Content: I'm feeling good!
+				// NoHome: Making accessories requires patience. And I wouldn't be able to do it without any house.
+				// LoveSpace: Peace and quiet means I get to live it up!
+				// FarFromHome: I think my house was that way... unless you're taking me somewhere?
+				// DislikeCrowded: The more the merrier and all, but I'm starting to feel a lil' overcrowded.
+				// HateCrowded: I can't kick my legs out and relax without hitting someone...
+				// LikeBiome: A bit dark, but I can totally live here.
+				// LoveBiome: Me and my sister are used to live in cold places so I am totally ok with that.
+				// DislikeBiome: I hate hot weather and sand so no, I wouldn't live here.
+				// HateBiome: I wanna live elsewhere! This is awful.
+				// LikeNPC: "{NPCName} is so nice and smart. I respect that."
+				// LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
+				// LoveNPC: "{NPCName} is finally here? I have a lot to tell, big sis!"
+				// DislikeNPC: Don't let {NPCName} anywhere around me. Sand from his clothes always clogs my mechanisms.
+				// HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
+			}
+
+			YoungBrewer: {
+				// Content: I'm feeling good!
+				// NoHome: I don't like being outside for a long time. I need a room for myself.
+				// LoveSpace: Peace and quiet means I get to live it up!
+				// FarFromHome: I think my house was that way... unless you're taking me somewhere?
+				// DislikeCrowded: The more the merrier and all, but I'm starting to feel a lil' overcrowded.
+				// HateCrowded: I can't kick my legs out and relax without hitting someone...
+				// LikeBiome: I can live when it is some warm around, so I am ok with that.
+				// LoveBiome: I like forest! Fresh air and greens around. What else may the person need?
+				// DislikeBiome: I don't like this. I want a warmer place to live.
+				// HateBiome: I wanna live elsewhere! This is awful.
+				// LikeNPC: Dad is here too? He can be silly sometimes, but mom respects him for his teleporter potions. She wasn't able to recreate them no matter how she tried.
+				// LikeNPC_Princess: I gotta visit {NPCName}. She really likes to play with me. And so do I.
+				// LoveNPC: Mom is here? Great! I like my dad, yes, but mom... Her potions can do almost everything and are most useful!
+				// DislikeNPC: "{NPCName} is so grumpy. I asked him about making a toy a few times but he ALWAYS don't have any time for that."
+				// HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
+			}
+		}
+
+		Buffs: {
+			BattleComb: {
+				DisplayName: 战斗药剂包
+				Description: 包含以下Buff：耐力, 生命力, 铁皮, 恢复, 暴怒, 怒气
+			}
+
+			Blurring: {
+				DisplayName: 模糊
+				Description: 敌人并看不清你 (暗影躲避有30秒CD)
+			}
+
+			BuilderComb: {
+				DisplayName: 建筑师药剂包
+				Description: 包含以下Buff：镇静, 建筑工, 挖矿
+			}
+
+			CalamityComb: {
+				// DisplayName: Calamity Combination
+				// Description: Combination of Photosynthesis, Fabsol's Vodka, Soaring and Bounding's buffs
+			}
+
+			Corrosion: {
+				DisplayName: 腐蚀
+				Description: 你的肉体正在融化!
+			}
+
+			DiscordBuff: {
+				DisplayName: 混乱传送
+				Description:
+					'''
+					你可以使用快捷键传送到鼠标位置
+					传送后扭曲玩家1秒
+					拥有混乱Buff时使用会受到极大的伤害
+					混乱状态持续时间延长至10秒
+					'''
+			}
+
+			ExplorerComb: {
+				DisplayName: 探索者药剂包
+				Description:
+					'''
+					包含以下Buff：危险感知, 狩猎, 洞穴探险, 夜猫子, 光芒, 挖矿
+					同时给予鱼鳃、脚蹼和水上行走药剂效果
+					'''
+			}
+
+			FishingComb: {
+				DisplayName: 钓鱼药剂包
+				Description: 包含以下Buff：声呐, 钓鱼, 恢复, 镇静, 荆棘, 铁皮, 狱火, 宝匣
+			}
+
+			Fortitude: {
+				DisplayName: 刚毅
+				Description: 你无法被击退
+			}
+
+			GreaterDangersense: {
+				// DisplayName: Greater Dangersense
+				// Description: Lights up enemy projectiles
+			}
+
+			LongInvincible: {
+				DisplayName: 延长无敌
+				Description: 增加你的无敌时间
+			}
+
+			MageComb: {
+				DisplayName: 魔法药剂包
+				Description: 包含以下Buff：魔能, 魔力再生, 智慧, 暴怒, 怒气
+			}
+
+			NinjaSkill: {
+				DisplayName: 忍者
+				Description: 现在你是个真正的忍者了!
+			}
+
+			RangerComb: {
+				DisplayName: 射手药剂包
+				Description: 包含以下Buff：箭术, 弹药储备, 暴怒, 怒气
+			}
+
+			StationUltimaBuff: {
+				// DisplayName: Station Ultima
+				// Description: Grants effects of all stations simultaneously
+			}
+
+			SummonerComb: {
+				DisplayName: 召唤师药剂包
+				Description: 包含以下Buff：召唤, 迷人, 怒气
+			}
+
+			Sunshine: {
+				DisplayName: 阳光普照
+				Description: 你正像一颗小太阳一样发出光芒
+			}
+
+			TankComb: {
+				DisplayName: 坦克药剂包 (模组)
+				Description: 包含以下Buff：耐力, 生命力, 铁皮, 黑曜石皮肤, 荆棘, 恢复, 泰坦皮肤, 无敌
+			}
+
+			TitanSkin: {
+				DisplayName: 泰坦皮肤
+				Description: 你免疫一些Debuff
+			}
+
+			TrapsBuff: {
+				// DisplayName: Traps Buff
+				// Description: Traps are empowered
+			}
+
+			TrueDiscordBuff: {
+				DisplayName: 真·混乱传送
+				Description:
+					'''
+					你可以使用快捷键传送至鼠标位置
+					相当于混乱法杖
+					'''
+			}
+
+			UniversalComb: {
+				DisplayName: 万能药剂包
+				Description:
+					'''
+					完美结合了以下药剂包的Buff：
+					坦克药剂包、魔法药剂包、射手药剂包以及召唤师药剂包
+					'''
+			}
+
+			VanTankComb: {
+				DisplayName: 坦克药剂包 (原版)
+				Description: 包含以下Buff：耐力, 生命力, 铁皮, 黑曜石皮肤, 荆棘, 恢复
+			}
+		}
+
+		Items: {
+			BattleCombination: {
+				DisplayName: 战斗药剂包
+				Tooltip: 获得你在战斗时需要的Buff(耐力, 生命力, 铁皮, 恢复, 暴怒, 怒气)
+			}
+
+			BeachTeleporterPotion: {
+				DisplayName: 信标传送药剂
+				Tooltip:
+					'''
+					将你传送至信标处
+					没有放置信标无法工作
+					'''
+			}
+
+			BewitchingPotion: {
+				DisplayName: 迷人药剂
+				Tooltip:
+					'''
+					增加召唤物能力 (增加一个召唤物上限)
+					非灾厄BUFF药剂
+					'''
+			}
+
+			BlurringPotion: {
+				DisplayName: 模糊药水
+				Tooltip:
+					'''
+					获得模糊Buff (30秒冷却结束10秒后激活暗影躲避)
+					非灾厄BUFF药剂
+					'''
+			}
+
+			BuilderCombination: {
+				DisplayName: 建筑师药剂包
+				Tooltip: 获得你在建筑时需要的Buff(镇静, 建筑工, 挖矿)
+			}
+
+			CalamityCombination: {
+				// DisplayName: Calamity Combination
+				// Description: Grants some of the Calamity mod buffs (Photosynthesis, Fabsol's Vodka, Soaring and Bounding)
+			}
+
+			DiscordPotion: {
+				DisplayName: 混乱药剂
+				Tooltip:
+					'''
+					允许使用快捷键传送到鼠标位置
+					传送后扭曲玩家一秒钟
+					混乱状态时使用会受到巨大的伤害
+					混乱状态延长至10秒
+					非灾厄Buff药剂
+					'''
+			}
+
+			Dopamine: {
+				// DisplayName: Dopamine
+				// Tooltip: Makes you Happy
+			}
+
+			DungeonTeleportationPotion: {
+				DisplayName: 地牢传送药剂
+				Tooltip: 将你传送至地牢入口
+			}
+
+			ExplorerCombination: {
+				DisplayName: 探索者药剂包
+				Tooltip: 获得你在探索时所需的Buff(危险感知, 狩猎, 洞穴探险, 夜猫子, 光芒, 挖矿, 鱼鳃, 脚蹼, 水上行走)
+			}
+
+			FishingCombination: {
+				DisplayName: 钓鱼药剂包
+				Tooltip: 获得你在钓鱼时所需的Buff (声呐, 钓鱼, 恢复, 镇静, 荆棘, 铁皮, 狱火, 宝匣)
+			}
+
+			FortitudePotion: {
+				DisplayName: 刚毅药剂
+				Tooltip:
+					'''
+					极大地免疫击退
+					非灾厄BUFF药剂
+					'''
+			}
+
+			GreaterDangersensePotion: {
+				// DisplayName: Greater Dangersense Potion
+				/* Tooltip:
+					'''
+					Grants Greater Dangersense buff (light up enemy projectiles)
+					This effect is global for all players
+					''' */
+			}
+
+			InvincibilityPotion: {
+				DisplayName: 无敌药剂
+				Tooltip:
+					'''
+					延长受伤后的无敌时间
+					非灾厄BUFF药剂
+					'''
+			}
+
+			JungleTeleporterPotion: {
+				// DisplayName: Jungle Teleporter Potion
+				/* Tooltip:
+					'''
+					Teleports you to the Jungle
+					Left click teleports to jungle plant
+					Right click teleports to living mahogany leaves
+					''' */
+			}
+
+			MageCombination: {
+				DisplayName: 魔法药剂包
+				Tooltip: 获得一些魔法buff(魔能, 法力再生, 暴怒, 怒气)
+			}
+
+			AlchemistCharmTier1: {
+				// DisplayName: Alchemist Charm Tier 1
+				/* Tooltip:
+					'''
+					While this is in your inventory, you have a low chance not to consume potion
+					Alchemist, Brewer and Young Brewer are providing 10% discount
+					Buffs duration is 10% longer
+					''' */
+			}
+
+			AlchemistCharmTier2: {
+				// DisplayName: Alchemist Charm Tier 2
+				/* Tooltip:
+					'''
+					While this is in your inventory, you have a moderate chance not to consume potion
+					Allows to use potions from Piggy Bank by Quick Buff
+					Alchemist, Brewer and Young Brewer are providing 25% discount
+					Buffs duration is 25% longer
+					''' */
+			}
+
+			AlchemistCharmTier3: {
+				// DisplayName: Alchemist Charm Tier 3
+				/* Tooltip:
+					'''
+					While this is in your inventory, you have a high chance not to consume potion
+					Allows to use potions from Piggy Bank by Quick Buff
+					Alchemist, Brewer and Young Brewer are providing 35% discount
+					Buffs duration is 35% longer
+					''' */
+			}
+
+			AlchemistCharmTier4: {
+				// DisplayName: Alchemist Charm Tier 4
+				/* Tooltip:
+					'''
+					While this is in your inventory, you have a very high chance not to consume potion
+					Allows to use potions from Piggy Bank by Quick Buff
+					Alchemist, Brewer and Young Brewer are providing 50% discount
+					Makes potions non-consumable if Supreme Calamitas is defeated
+					Buffs duration is 50% longer
+					''' */
+			}
+
+			GlobalTeleporter: {
+				DisplayName: 世界传送装置
+				Tooltip:
+					'''
+					将你传送到地图的任意位置
+					在全屏地图界面点击右键传送
+					Boss存活时无法使用
+					使用后破坏
+					"噢, 蔚蓝的正义, 深红的爱,
+					为了被命运吞没的人而战
+					我向光明宣誓
+					邪恶的坏蛋不能阻挡我们
+					爱之力量守护我们!"
+					'''
+			}
+
+			GlobalTeleporterUp: {
+				DisplayName: 改良世界传送装置
+				Tooltip:
+					'''
+					将你传送到地图的任意位置
+					在全屏地图界面点击右键传送
+					Boss存活时无法使用
+					使用后不会破坏
+					"噢, 蔚蓝的正义, 深红的爱,
+					为了被命运吞没的人而战
+					我向光明宣誓
+					邪恶的坏蛋不能阻挡我们
+					爱之力量守护我们!"
+					'''
+			}
+
+			WorldControlUnit: {
+				DisplayName: 模拟控制单元
+				Tooltip:
+					'''
+					独家产品，安吉拉设计
+					左键昼夜交换
+					右键控制下雨（沙漠中控制沙尘暴）
+					'''
+			}
+
+			LuckCharm: {
+				// DisplayName: Charm of Luck
+				/* Tooltip:
+					'''
+					While this is in your inventory, you have better chance of getting better reforges
+					Does not affect accessories
+					''' */
+			}
+
+			LuckCharmT2: {
+				// DisplayName: Charm of Absolute Luck
+				/* Tooltip:
+					'''
+					While this is in your inventory, you have better chance of getting better reforges
+					Also affects accessories (Menacing->Lucky->Warding)
+					''' */
+			}
+
+			MorePotionsCombination: {
+				// DisplayName: More Potions Combination
+				/* Tooltip:
+					'''
+					Grants most buffs from More Potions *potions
+					Droughts, Enchanced Regeneration, Courage, Soulbinding, Diamond Skin, Dusk, Dawn, Swift Hands, Speed
+					''' */
+			}
+
+			NatureBlessingPotion: {
+				// DisplayName: Nature Blessing Potion
+				// Tooltip: Grants Dryad's Blessing buff
+			}
+
+			NinjaPotion: {
+				DisplayName: 忍者药剂
+				Tooltip: 增加5%的伤害和暴击几率, 并获得忍者大师的能力
+			}
+
+			InformatingNote: {
+				// DisplayName: Informating Note
+				/* Tooltip:
+					'''
+					No Treasure Bags available yet.
+					Beat Skeletron to unlock the first wave.
+					''' */
+			}
+
+			OceanTeleporterPotion: {
+				DisplayName: 海洋传送药剂
+				Tooltip:
+					'''
+					将你传送到海里 (最左边或最右边的珊瑚)
+					方向取决于鼠标按键
+					如果没有珊瑚存在将无法工作
+					'''
+			}
+
+			PerfectDiscordPotion: {
+				DisplayName: 真·混乱药剂
+				Tooltip:
+					'''
+					[c/00FF00:特调探险者药剂]
+					允许使用快捷键传送到鼠标位置
+					效果等同于混乱法杖
+					非灾厄Buff药剂
+					'''
+			}
+
+			HMCraftPound: {
+				DisplayName: 豪华手工英镑
+				Tooltip:
+					'''
+					现在你可以做出最棒的东西了
+					可代替工作台
+					'''
+			}
+
+			MateriaTransmutator: {
+				DisplayName: 物质嬗变器
+				Tooltip:
+					'''
+					非常多制造环境的集合
+					包含了所有的原版制作环境 :)
+					同样可作为水/蜂蜜/岩浆环境
+					'''
+			}
+
+			PreHMPenny: {
+				DisplayName: 简易手工便士
+				Tooltip:
+					'''
+					这让你看起来像是个制造大湿
+					可代替工作台
+					'''
+			}
+
+			SpecCraftPoint: {
+				DisplayName: 特殊手工位点
+				Tooltip:
+					'''
+					你已经证明了你可以用任何材料做出任何东西
+					可代替工作台
+					'''
+			}
+
+			RangerCombination: {
+				DisplayName: 射手药剂包
+				Tooltip: 获得一些远程Buff (箭术, 弹药储备, 暴怒, 怒气)
+			}
+
+			SpiritCombination: {
+				DisplayName: 魂灵药剂包
+				Tooltip: 获得大部分魂灵Buff (符文之力, 灵魂之护, 魂灵, 星之燃烧, 坚定和毒素)
+			}
+
+			SummonerCombination: {
+				DisplayName: 召唤师药剂包
+				Tooltip: 获得一些召唤Buff (召唤, 战斗, 迷人, 怒气)
+			}
+
+			AlchemistHorcrux: {
+				DisplayName: 炼金师魂器
+				Tooltip: 里面有炼金师的一片灵魂
+			}
+
+			APMC: {
+				DisplayName: AI程序与记忆芯片
+				Tooltip: 这是Angela的备份.
+			}
+
+			ArchitectHorcrux: {
+				DisplayName: 建筑师魂器
+				Tooltip: 里面有建筑师的一片灵魂
+			}
+
+			BrewerHorcrux: {
+				DisplayName: 药剂师魂器
+				Tooltip: 里面有药剂师的一片灵魂
+			}
+
+			HorrifyingSkull: {
+				// DisplayName: Horrifying Skull
+				/* Tooltip:
+					'''
+					Summons the mightiest enemy
+					Use with the extreme care
+					''' */
+			}
+
+			JewelerHorcrux: {
+				DisplayName: 珠宝师魂器
+				Tooltip: 里面有珠宝师的一片灵魂
+			}
+
+			MusicianHorcrux: {
+				// DisplayName: Musician Horcrux
+				// Tooltip: The piece of Musician's soul is inside it.
+			}
+
+			TinkererHorcrux: {
+				DisplayName: 音乐家魂器
+				Tooltip: 里面有音乐家的一片灵魂.
+			}
+
+			SunshinePotion: {
+				DisplayName: 阳光药剂
+				Tooltip:
+					'''
+					极大的增强光照半径
+					非灾厄BUFF药剂
+					'''
+			}
+
+			TankCombination: {
+				DisplayName: 坦克药剂包 (模组)
+				Tooltip: 获得一些坦克Buff (耐力, 生命力, 铁皮, 黑曜石皮肤, 荆棘, 恢复, 抵抗, 泰坦皮肤, 无敌)
+			}
+
+			TempleTeleportationPotion: {
+				DisplayName: 神庙传送药剂
+				Tooltip: 将你传送至神庙
+			}
+
+			ThoriumCombination: {
+				DisplayName: 瑟银捆绑包
+				Tooltip:
+					'''
+					获得瑟银的大部分药水Buff
+					嗜血, 精准, 对决, 狂怒, 创造力, 耳虫, 灵感爆发, 光辉, 圣洁
+					'''
+			}
+
+			TitanSkinPotion: {
+				DisplayName: 泰坦皮肤药剂
+				Tooltip:
+					'''
+					使你免疫部分Debuff (点燃, 霜燃, 诅咒火焰, 寒冷, 冰冻, 腐蚀)
+					对诅咒火焰和腐蚀的免疫能力只有在击败双子魔眼后才会生效
+					非灾厄BUFF药剂
+					'''
+			}
+
+			TrapsPotion: {
+				// DisplayName: Trapper Potion
+				// Tooltip: Empoweres all traps
+			}
+
+			UltimaCake: {
+				// DisplayName: Ultima Cake
+				/* Tooltip:
+					'''
+					Grants special effects of almost all stations simultaniosly
+					This includes Campfires, Lamps, Bast's Statue, Sharpening Station, Ammo Box, Crystal Ball, Slice of Cake and Bewitching Table.
+					By some unimageneable magic, it will never be consumed
+					NON-CALAMITY BUFF ITEM
+					''' */
+			}
+
+			UnderworldTeleportationPotion: {
+				DisplayName: 地狱传送药剂
+				Tooltip:
+					'''
+					将你传送至最靠近地狱两端的黑曜石塔楼
+					方向取决于鼠标按键
+					我建议你这么做之前先来一瓶82年的黑曜石皮肤药剂 XD
+					'''
+			}
+
+			UniversalCombination: {
+				DisplayName: 万能药剂包
+				Tooltip:
+					'''
+					完美结合了以下药剂包的buff：
+					坦克药剂包、魔法药剂包、射手药剂包以及召唤师药剂包.
+					'''
+			}
+
+			VanTankCombination: {
+				DisplayName: 坦克药剂包 (原版)
+				Tooltip: 获得一些坦克Buff (耐力, 生命力, 铁皮, 黑曜石皮肤, 荆棘, 恢复, 抵抗)
+			}
+		}
+
+		NPCs: {
+			Alchemist: {
+				DisplayName: 炼金师
+
+				TownNPCMood: {
+					// Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.Content}"
+					// NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.NoHome}"
+					// FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.FarFromHome}"
+					// LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LoveSpace}"
+					// DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.DislikeCrowded}"
+					// HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.HateCrowded}"
+					// LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LoveBiome}"
+					// LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LikeBiome}"
+					// DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.DislikeBiome}"
+					// LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LoveNPC}"
+					// LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LikeNPC}"
+					// DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.DislikeNPC}"
+					// LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LikeNPC_Princess}"
+					// Princess_LovesNPC: I like {NPCName}.
+				}
+
+				// Census.SpawnCondition: Conditions unknown
+			}
+
+			Architect: {
+				DisplayName: 建筑师
+
+				TownNPCMood: {
+					// Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.Content}"
+					// NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.NoHome}"
+					// FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.FarFromHome}"
+					// LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LoveSpace}"
+					// DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.DislikeCrowded}"
+					// HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.HateCrowded}"
+					// LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LoveBiome}"
+					// LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LikeBiome}"
+					// DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.DislikeBiome}"
+					// LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LoveNPC}"
+					// LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LikeNPC}"
+					// DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.DislikeNPC}"
+					// LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LikeNPC_Princess}"
+					// Princess_LovesNPC: I like {NPCName}.
+				}
+
+				// Census.SpawnCondition: Conditions unknown
+			}
+
+			Brewer: {
+				DisplayName: 药剂师
+
+				TownNPCMood: {
+					// Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.Content}"
+					// NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.NoHome}"
+					// FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.FarFromHome}"
+					// LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LoveSpace}"
+					// DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.DislikeCrowded}"
+					// HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.HateCrowded}"
+					// LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LoveBiome}"
+					// LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LikeBiome}"
+					// DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.DislikeBiome}"
+					// LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LoveNPC}"
+					// LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LikeNPC}"
+					// DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.DislikeNPC}"
+					// LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LikeNPC_Princess}"
+					// Princess_LovesNPC: I like {NPCName}.
+				}
+
+				// Census.SpawnCondition: Conditions unknown
+			}
+
+			Jeweler: {
+				DisplayName: 珠宝师
+
+				TownNPCMood: {
+					// Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.Content}"
+					// NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.NoHome}"
+					// FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.FarFromHome}"
+					// LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LoveSpace}"
+					// DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.DislikeCrowded}"
+					// HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.HateCrowded}"
+					// LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LoveBiome}"
+					// LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LikeBiome}"
+					// DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.DislikeBiome}"
+					// LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LoveNPC}"
+					// LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LikeNPC}"
+					// DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.DislikeNPC}"
+					// LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LikeNPC_Princess}"
+					// Princess_LovesNPC: I like {NPCName}.
+				}
+
+				// Census.SpawnCondition: Conditions unknown
+			}
+
+			Musician: {
+				// DisplayName: Musician
+
+				TownNPCMood: {
+					// Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.Content}"
+					// NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.NoHome}"
+					// FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.FarFromHome}"
+					// LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LoveSpace}"
+					// DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.DislikeCrowded}"
+					// HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.HateCrowded}"
+					// LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LoveBiome}"
+					// LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LikeBiome}"
+					// DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.DislikeBiome}"
+					// LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LoveNPC}"
+					// LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LikeNPC}"
+					// DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.DislikeNPC}"
+					// LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LikeNPC_Princess}"
+					// Princess_LovesNPC: I like {NPCName}.
+				}
+
+				// Census.SpawnCondition: Conditions unknown
+			}
+
+			Operator: {
+				DisplayName: 操作员
+
+				TownNPCMood: {
+					// Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.Content}"
+					// NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.NoHome}"
+					// FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.FarFromHome}"
+					// LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LoveSpace}"
+					// DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.DislikeCrowded}"
+					// HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.HateCrowded}"
+					// LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LoveBiome}"
+					// LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LikeBiome}"
+					// DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.DislikeBiome}"
+					// LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LoveNPC}"
+					// LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LikeNPC}"
+					// DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.DislikeNPC}"
+					// LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LikeNPC_Princess}"
+					// Princess_LovesNPC: I like {NPCName}.
+				}
+
+				// Census.SpawnCondition: Conditions unknown
+			}
+
+			Tinkerer: {
+				DisplayName: 工匠
+
+				TownNPCMood: {
+					// Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.Content}"
+					// NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.NoHome}"
+					// FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.FarFromHome}"
+					// LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LoveSpace}"
+					// DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.DislikeCrowded}"
+					// HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.HateCrowded}"
+					// LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LoveBiome}"
+					// LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LikeBiome}"
+					// DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.DislikeBiome}"
+					// LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LoveNPC}"
+					// LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LikeNPC}"
+					// DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.DislikeNPC}"
+					// LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LikeNPC_Princess}"
+					// Princess_LovesNPC: I like {NPCName}.
+				}
+
+				// Census.SpawnCondition: Conditions unknown
+			}
+
+			YoungBrewer: {
+				DisplayName: 年轻药剂师
+
+				TownNPCMood: {
+					// Content: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.Content}"
+					// NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.NoHome}"
+					// FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.FarFromHome}"
+					// LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LoveSpace}"
+					// DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.DislikeCrowded}"
+					// HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.HateCrowded}"
+					// LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LoveBiome}"
+					// LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LikeBiome}"
+					// DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.DislikeBiome}"
+					// LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LoveNPC}"
+					// LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LikeNPC}"
+					// DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.DislikeNPC}"
+					// LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LikeNPC_Princess}"
+					// Princess_LovesNPC: I like {NPCName}.
+				}
+
+				// Census.SpawnCondition: Conditions unknown
+			}
+		}
+
+		Projectiles: {
+			// CorrosiveFlask.DisplayName: Corrosive Flask
+			// CorrosiveFlaskCloud.DisplayName: Corrosive Flask Cloud
+			// Gemstone.DisplayName: Gemstone
+			// LocatorProjectile.DisplayName: Locator Projectile
+		}
+
+		DiscordBuffTeleportation: 混乱药剂传送
+		evilBossMask: 腐化/血腥Boss面具
+		cultist: 邪教徒面具/兜帽
+		tier3HardmodeBar: 三级肉后锭(精金/钛金)
+		// hardmodeComponent: Hardmode component
+		evilBar: 魔金/血腥锭
+		evilMushroom: 邪恶蘑菇
+		evilComponent: 邪恶材料(暗影鳞片/组织样本)
+		evilDrop: 邪恶掉落物(腐肉/椎骨)
+		tier2anvil: 二级砧(秘银/山铜砧)
+		tier2forge: 二级熔炉(精金/钛金熔炉)
+		tier1anvil: 一级砧(铁/铅砧)
+		CelestialWings: 四柱翅膀
+		// LunarHamaxe: Lunar Hamaxe
+		tier3Watch: 三级表(金表/铂金表)
+		KingSlime: 史莱姆之王宝藏袋
+		EyeofCthulhu: 克苏鲁之眼宝藏袋
+		EaterOfWorlds: 世界吞噬者宝藏袋
+		BrainOfCthulhu: 克苏鲁之脑宝藏袋
+		QueenBee: 蜂后宝藏袋
+		Skeletron: 骷髅王宝藏袋
+		// Deerclops: Deerclops Treasure Bag
+		WallOfFlesh: 血肉之墙宝藏袋
+		// QueenSlime: Queen Slime Treasure Bag
+		Destroyer: 机械蠕虫宝藏袋
+		Twins: 双子魔眼宝藏袋
+		SkeletronPrime: 机械骷髅王宝藏袋
+		Plantera: 世纪之花宝藏袋
+		// EmpressOfLight: Empress of Light Treasure Bag
+		Golem: 石巨人宝藏袋
+		// Betsy: Betsy Treasure Bag
+		DukeFishron: 猪鲨公爵宝藏袋
+		MoonLord: 月亮领主宝藏袋
+		DesertScourge: 荒漠灾虫宝藏袋
+		Crabulon: 蘑菇螃蟹宝藏袋
+		HiveMind: 腐巢意志宝藏袋
+		Perforator: 血肉宿主宝藏袋
+		SlimeGod: 史莱姆之神宝藏袋
+		Cryogen: 极地之灵宝藏袋
+		BrimstoneElemental: 硫磺火元素宝藏袋
+		AquaticScourge: 渊海灾虫宝藏袋
+		Calamitas: 灾厄之眼宝藏袋
+		AstrageldonSlime: 大彗星史莱姆宝藏袋
+		AstrumDeus: 星神吞噬者宝藏袋
+		Leviathan: 利维坦宝藏袋
+		PlaguebringerGoliath: 瘟疫使者歌莉娅宝藏袋
+		Ravager: 毁灭魔像宝藏袋
+		Providence: 亵渎天神宝藏袋
+		// StormWeaver: Storm Weaver Treasure Bag
+		// CeaselessVoid: Ceaseless Void Treasure Bag
+		// Signus: Signus, Envoy of the Devourer Treasure Bag
+		Polterghast: 噬魂幽花宝藏袋
+		// OldDuke: The Old Duke Treasure Bag
+		DevourerofGods: 神明吞噬者宝藏袋
+		Bumblebirb: 癫痫鸟宝藏袋
+		Yharon: 犽戎宝藏袋
+		// ExoMechs: Exo Mechs Treasure Bag
+		// SupremeCalamitas: Supreme Calamitas Treasure Bag
+		// DarkMage: Dark Mage Treasure Bag
+		// Ogre: Ogre Treasure Bag
+		ThunderBird: 惊雷王鹰宝藏袋
+		QueenJellyfish: 水母皇后宝藏袋
+		CountEcho: 水母皇后宝藏袋
+		GraniteEnergyStorm: 花岗岩流能风暴宝藏袋
+		TheBuriedChampion: 英灵遗骸宝藏袋
+		TheStarScouter: 星际监察者宝藏袋
+		BoreanStrider: 极地遁蛛宝藏袋
+		CoznixTheFallenBeholder: 堕落注视者·克兹尼格斯宝藏袋
+		TheLich: 巫妖宝藏袋
+		AbyssionTheForgottenOne: 被遗忘者-深渊之主宝藏袋
+		TheRagnarok: 灾难之灵宝藏袋
+		// KingChicken: The Mighty King Chicken Treasure Bag
+		// ThornBane: Thorn, Bane of the Forest Treasure Bag
+		// TheKeeper: The Keeper Treasure Bag
+		// XenoCrystal: Xenomite Crystal Treasure Bag
+		// IEye: Infected Eye Treasure Bag
+		// KingSlayer: King Slayer III Treasure Bag
+		// V1: Vlitch Cleaver Treasure Bag
+		// V2: Vlitch Gigipede Treasure Bag
+		// V3: Omega Obliterator Treasure Bag
+		// PZ: Patient Zero Treasure Bag
+		// ThornRematch: Thorn, Bane of the Forest Rematch Treasure Bag
+		// Nebuleus: Nebuleus, Angel of the Cosmos Treasure Bag
+		// Wasteland: Wasteland Treasure Bag
+		// Infernace: Infernace Treasure Bag
+		// ScourgeFighter: Scourge Fighter Treasure Bag
+		// Regaroth: Regaroth Treasure Bag
+		// TheCelestials: The Celestials Treasure Bag
+		// Permafrost: Permafrost Treasure Bag
+		// Obsidious: Obsidious Treasure Bag
+		// Aqueous: Aqueous Treasure Bag
+		// TempleKeepers: The Temple Keepers Treasure Bag
+		// Guardian: The Guardian Treasure Bag
+		// Volcanox: Volcanox Treasure Bag
+		// VoidLevi: Void Leviathan Treasure Bag
+		// Azana: Azana Treasure Bag
+		// Ancients: The Ancients Treasure Bag
+		Decree: 焚炎南瓜宝藏袋
+		// FlamingPumpkin: The Flaming Pumpkin Treasure Bag
+		Jensen: 巨型鸟妖詹森宝藏袋
+		// Araneas: Araneas Treasure Bag
+		Raynare: 鸟妖女王雷纳宝藏袋
+		// Primordia: Primordia Treasure Bag
+		Abaddon: 梦魇使者亚巴顿宝藏袋
+		Araghur: 熔火巨蟒宝藏袋
+		Lunarians: 月军宝藏袋
+		Challenger: 堕落帝者宝藏袋
+		// Spookboi: Nihilus Treasure Bag
+		// Scarabeus: Scarabeus Treasure Bag
+		// Bane: Vinewrath Bane Treasure Bag
+		// Flier: Ancient Flier Treasure Bag
+		// Raider: Starplate Raider Treasure Bag
+		// Infernon: Infernon Treasure Bag
+		// Dusking: Dusking Treasure Bag
+		// EtherialUmbra: Etherial Umbra Treasure Bag
+		// IlluminantMaster: Illuminant Master Treasure Bag
+		// Atlas: Atlas Treasure Bag
+		// Overseer: Overseer Treasure Bag
+		// Sharkron: Dune Sharkron Treasure Bag
+		// Hypothema: Hypothema Treasure Bag
+		// Ragnar: Ragnar Treasure Bag
+		// AnDio: Andesia & Dioritus Treasure Bag
+		// Annihilator: The Annihilator Treasure Bag
+		// Slybertron: Slybertron Treasure Bag
+		// SteamTrain: Steam Train Treasure Bag
+		// SunlightTrader: Sunlight Trader Treasure Bag
+		// THOFC: The Heart of the Cavern Treasure Bag
+		// MythrilSlime: Mythril Slime Treasure Bag
+		// Valdaris: Valdaris Treasure Bag
+		// Gatekeeper: The Gatekeeper Treasure Bag
+		// Monarch: Mushroom Monarch Treasure Bag
+		// Grips: Grips of Chaos Treasure Bag
+		// Broodmother: Broodmother Treasure Bag
+		// Hydra: Hydra Treasure Bag
+		// Serpent: Subzero Serpent Treasure Bag
+		// Djinn: Desert Djinn Treasure Bag
+		// Retriever: Retriever Treasure Bag
+		// RaiderU: Raider Ultima Treasure Bag
+		// Orthrus: Orthrus X Treasure Bag
+		// EFish: Emperor Fishron Treasure Bag
+		// Nightcrawler: Nightcrawler Treasure Bag
+		// Daybringer: Daybringer Treasure Bag
+		// Yamata: Yamata Treasure Bag
+		// Akuma: Akuma Treasure Bag
+		// Zero: Zero Treasure Bag
+		// Shen: Shen Doragon Treasure Cache
+		// ShenGrips: Shen Doragon Grips Treasure Bag
+		// PlantsShop: Plants shop
+		// GetCharm: Get Charm
+		// Edward: Edward
+		// Severus: Severus
+		// Horace: Horace
+		// Tilyorn: Tilyorn
+		// Nicolas: Nicolas
+		// Gregg: Gregg
+		EntryA1: 我的生命药水可以治疗你的伤口.
+		EntryA2: 我的魔法药水可以回复你的魔力.
+		EntryA3: 再生药剂...不知道它们是好是坏...
+		EntryA4: 有一个传说中的溜溜球被称为Sasscade.
+		EntryA5: 来自骷髅商人的奇异啤酒气味真的很糟糕,但法力恢复效果非常棒!
+		EntryA6: 嗨, *咳咳*.. 那绝对不是柠檬茶.
+		EntryA7: 你有在周围看到一个机械骷髅王吗?
+		EntryA8: 你有听说过极限蘑菇吗？如果你找到了一个，我相信我能研究出一种可以帮助你的材料.
+		EntryA9: "我向 "
+		EntryA10: " 购买高效萃取配方，因为他说不，然后我就说‘即使是傻子也能研究出那个配方’."
+		EntryA11: 想想看, 她正在得到那些药水而我没有...但我对此却又无法反驳.
+		EntryA12: "他叫什么来着? "
+		EntryA13: ? 所以... 老师在这儿? 我最好加快脚步!
+		EntryA14: 感谢上帝，我从骷髅王那里拿到了这些碎片，想要看看吗？
+		EntryA15: "你能不能拜托 "
+		EntryA16: " 别再嘲笑我?我知道我的药剂不能让你变强,但是至少他们喝起来不危险."
+		EntryA17: 这些哥布林是如此的愤怒...幸好，他们在这里的时间不会很久.
+		EntryA18: 你最好以最快的速度解决这些海盗先，我忍不住想和船长说几句话，好些年没见到过他咯!
+		EntryA19: 我觉得你不会让他们进我的屋子的，是吧?
+		EntryA20: 也许在这个时候你有比和我说话更重要的事情要做? 有个血红色的月亮挂在天上哎!
+		EntryA21: ...我的朋友，在这个时刻最好的事情就是别来打扰我!
+		EntryA22: 我有一个爆炸烧瓶，你不会想知道它尝起来是什么味道的.
+		EntryA23: "所以 "
+		EntryA24: " 是怎么在这种时候保持冷静的? 我现在就想知道, 现在!"
+		// EntryA25: "Don't let the dark one that came from the Jungle fool you with charming wisdom. Me and "
+		// EntryA26: " were once his apprentices. I quit when his lessons turned too dark but "
+		// EntryA27: " interest in occult Alchemy did nothing but grow."
+		// Joe: Joe
+		// Mark: Mark
+		// Walter: Walter
+		// Archer: Archer
+		// Frido: Frido
+		// Li: Li
+		A1: "如果这个卑鄙的 "
+		A2: " 再不住口的话, 我会让 "
+		A3: " 咬她."
+		A4: 杀掉那个僵尸! 杀掉那个兔子! 那个名字是血- 哦, 抱歉, 我没注意到你在这里.
+		A5: 哦嗨你好我正在为一个湖收集一些装满血的水桶我很开心所以别问我更多问题了再见.
+		A6: 当有一大堆僵尸在我的门后面时我很喜欢它，但是当它们打破我的门时我恨它!
+		A7: 啊哈, 这种不安全的感觉, 偏执狂热爱这种血月在空中的感觉.
+		A8: 你对我的信仰感兴趣吗? 它涉及对血月的牺牲.
+		A9: 你知道为毛我恨这些哥布林嘛? 他们太鸡儿吵了.
+		A10: 海盗万岁! 他们给我供应金家具!
+		A11: 啊哈! 最后进行一些适当的电镀来完成我的屋顶!
+		A12: "请不要乱炸OK? "
+		A13: " 已经够烦了."
+		A14: 建筑药水对所有人免费, 除了你.
+		A15: 什么玩意儿? 我去哪里搞到我的建筑师学位? 有建筑师学位吗?
+		A16: 你知道木头怎么才不会烧着吗? 经过一系列操作之后的确不会. 真的怪...
+		A17: 不, 我不是家伙(guy). 我是老兄(dude).
+		A18: 嗯, 你最近做的一件事情几乎让人印象深刻. (不存在的)
+		A19: 所以, 你说箱子也是家具. 我表示: 去你丫的.
+		A20: 我看了你的建筑, 但是我仍然觉得不怎么样.
+		// A21: Have you heard 'bout that FuryForged guy? I taught him all he knows!
+		// A22: I was once hired by a certain company to build a supermassive hi-tech, hi-security installation. Lemme tell ya its my magnum opus in terms of security and containment.
+		AS1: 第一商店 (填充方块)
+		AS2: 第二商店 (建筑方块)
+		AS3: 第三商店 (基础家具)
+		AS4: 第四商店 (高级家具)
+		AS5: 第五商店 (火把)
+		AS6: 第六商店 (蜡烛)
+		AS7: 第七商店 (台灯)
+		AS8: 第八商店 (灯笼)
+		AS9: 第九商店 (吊灯)
+		AS10: 第十商店 (烛台)
+		ShopsChanger: 切换商店
+		ShopB1: "第一商店 (原版)              "
+		ShopB2: 第二商店 (模组/灾厄)
+		ShopB3: 第二商店 (瑟银/RG)
+		ShopB4: "第三商店 (更多药剂)         "
+		ShopB5: 第四商店 (震颤/钓杆/钓具箱)
+		ShopB6: 第五商店 (Wildlife/圣域/魂灵/水晶之地/ExpSentr)
+		// Lillian: Lillian
+		// Lucy: Lucy
+		// Alice: Alice
+		// Rocksahn: Rocksahn
+		// Agness: Agness
+		// Mary: Mary
+		EntryB1: 要试试这药水吗?它应该会强化翅膀.
+		EntryB2: 我不认为那是洞穴探险药水.
+		EntryB3: 我得到了来自谜语大学的学位
+		EntryB4: 有一个传说中的溜溜球被称为Sasscadee.
+		EntryB5: 哇哦，面包屑和海狸唾液!
+		EntryB6: 嗨, *咳咳* 那不是地狱降临药剂!
+		EntryB7: 你在周围看到双子魔眼了吗?
+		EntryB8: "那个愚蠢的 "
+		EntryB9: " 过于害怕在炼金术中使用神秘力量，所以他的药水只是一种没用的水."
+		EntryB10: *啊嚏* 噫... 那些哥布林在附近时我总是打喷嚏.
+		EntryB11: 别让他们进入我的房子...我这儿有那么多的物资和设备.
+		EntryB12: 这是一场外星入侵吗？他们会奴役我们所有人吗？亦或者毁灭我们？没人知道答案...
+		EntryB13: 天上的那个是血月吗？我喜欢！它看起来好漂亮！
+		EntryB14: 我出生的时候正好是血月，每当它升起时我都会变得很兴奋！
+		EntryB15: 是的，我能理解为什么女孩们会生气，但这并不能阻止我的快乐!
+		EntryB16: 和我一样开心, 我也不会给你打折的 - 我又不傻.
+		EntryB17: "通常我会很困惑为什么 "
+		EntryB18: " 和我一样从容冷静, 但是后来我想到了 "
+		// EntryB19: I once traveled far away from Terraria to learn more about Alchemy. In my travels I met a ''scientist of magic'' called Azanor. He showed me the secrets of something called ''thaumaturgy''.
+		ArenaShop: 阿瑞娜商店
+		// Carl: Carl
+		// John: John
+		// JanMare: JanMare
+		// LuiFransua: LuiFransua
+		// Daniel: Daniel
+		// Charley: Charley
+		EntryJ1: 我找到一些珠宝, 你想看看吗?
+		EntryJ2: 魔法戒指并不像传说中的那样强大,但它仍然能给你对抗强大生物的力量
+		EntryJ3: 呦... 你想要什么,我的朋友?
+		EntryJ4: 我可以为你做钻石戒指.
+		EntryJ5: 不,不要认为我和骷髅商人有关系.
+		EntryJ6: 如果你找到了所有的魔法戒指,你可以制造欧姆尼戒指.
+		EntryJ7: 你在周围看到机械生物了吗?
+		EntryJ8: "你有没有注意到到我和 "
+		EntryJ9: " 长得几乎一毛一样?这是因为我们是兄弟."
+		// EntryJ10: Should you find enought of those torn notes, bring the to me and ill decipher them for you. Dont ask me why, just know that they hold a value for me.
+		// Shop2: 2nd shop
+		// Shop3: 3rd shop
+		ShopChanger: 切换商店
+		// Beethoven: Beethoven
+		// Bach: Bach
+		// Johan: Johan
+		// Edison: Edison
+		// Scott: Scott
+		// Lloyd: Lloyd
+		// Gamma: Gamma
+		// EntryM1: I would wear headphones, but I'm not sure if Terrarians even have ears...
+		// EntryM2: I have to wonder why Boss 1 and Boss 2 didn't get better names in the OST. Those names are soooo bland.
+		// EntryM3: Look, the Cyborg may have my name, but I've still got the better job here.
+		// EntryM4: Shhhhh! You'll ruin my recording!
+		// EntryM5: I swear, if one more person asks me to sell them a ''Megalovania'' music box....
+		// EntryM6: Look, your enthusiasm is awesome, but could you maybe record the next boss track yourself? I don't really want to risk my life for some tunes.
+		// EntryM7: Ah, I see you were able to save the Explorer! Well done! Perhaps my next song is going to be about your triumph.
+		// EntryM8: "You know, "
+		// EntryM9: " has been really helpful while I've been setting up this sound system. Wires are key!"
+		// EntryM10: "If you run into "
+		// EntryM11: ", let him know he still owes me for those music boxes I sold him."
+		// EntryM12: "I'll be honest, I'm not sure if I trust "
+		// EntryM13: . He claims to not be possessed, and yet he still is using skulls to fight... I'm getting mixed messages here.
+		// EntryM14: Man, my mixtape is so much better than this, but I can't sell you that due to copyright.
+		// EntryM15: No, I don't have an ''All Star'' music box. Code it in yourself.
+		// EntryM16: Wait, NPC? I thought I was the protagonist!
+		// EntryM17: Never thought I'd be selling a music box with lyrics... DM DOKURO, you're a madman and I love it!
+		// EntryM18: A whole music based class? That sounds amazing! Too bad I don't have any gear for that, huh?
+		// EntryM19: This is your fault. GET. OUT.
+		// EntryM20: Ah, this takes me back! I remember when this song used to play in the dungeon and the underworld... good times!
+		// EntryM21: Is there a name for the fear of being spied by a cake?
+		// EntryM22: You are hurting my ears! Turn it down!
+		BossDropsShop: Boss掉落物&材料商店
+		BossDropsModsShop: Boss掉落物&材料商店
+		VanillaTreasureBagsShop: "原版宝藏袋商店    "
+		ModdedTreasureBagsShop: "模组宝藏袋商店    "
+		ModdedTreasureBagsShop2: "模组宝藏袋商店#2    "
+		ModdedTreasureBagsShop3: "模组宝藏袋商店#3    "
+		// Angela: Angela
+		// Carmen: Carmen
+		EntryO1: 您好吗, 主管, 我能为您做什么?
+		EntryO2: 那个'大雷鸟'看起来并不怎么危险. 我只希望它不是天启鸟的一部分...
+		EntryO3: 您好, 主管! 今天真安静, 不是么?
+		EntryO4: 您想要什么特别的东西吗, 主管?
+		EntryO5: 世界吞噬者为异常, 危险等级: TETH. 现在它已经被写入了. 您需要些来自它的物品吗?
+		EntryO6: 如果您成功阻止诸神黄昏, 那么您可以做您想做的一切.
+		EntryO7: 克苏鲁之眼是个特别奇怪的生物. 它看起来像是个十分危险的东西的一部分. 如果它没有逃跑对我们来说更好.
+		EntryO8: 克苏鲁之脑也许看起来很吓人, 但是失去了它的爪牙它几乎什么都做不了.
+		EntryO9: 这个世界出现了某种变动, 主管. 邪恶正在扩张, 但是与此同时, 我的传感系统发现了一个新生物群落诞生了, 叫做神圣之地.
+		EntryO10: 所有的这些机械Boss... 他们肯定有创伤来源. 他们会得到什么分类号码? 我觉得可以从 T-05- 开始...
+		EntryO11: 哥布林... 如此可怜的生物. 他们唯一有用的东西就是尖刺球和鱼叉链枪.
+		EntryO12: 挺奇怪的异常事件... 他们都看起来像是活着的生物, 但是他们的 '飞翔荷兰人号' 的危险等级绝对有 HE.
+		EntryO13: 火星人又来了. 上次他们来的时候, 几个大城镇被毁灭了. 但是, 恕我直言, 我们可以说我们现在还没有准备好.
+		EntryO14: 血月? 这不应该每666年才发生一次吗?
+		EntryO15: 所有的这些奇怪生物一直冲过来, 冲向这个'信标'... 真希望我们能在黎明前活下来.
+		EntryO16: 无论怎样, 都有一些乐观的理由. 血月带来了一些生物, 平时我们都见不到的生物.
+		EntryO17: 我阅读了一些关于一个生物的手稿, 叫做史莱姆之神. 他们说这是世界上第一个生物之一.
+		EntryO18: Yharim... 我很确定我曾经听过这个名字. 但是我的记忆数据已损坏. 试着去问问大山猪关于它的事情吧...
+		EntryO19: 这种肉食植物真的很危险...危险等级至少为 HE , 总之很高兴再次见到你平安归来
+		EntryO20: 这古老的机器拥有着巨大的天界之力. 随着它的死亡, 世界也发生了永远的改变...
+		EntryO21: 一个蜂后那么大的昆虫是不符合现在的分类标准的. 我建议为他建立一个新的分类 MI-XX. 很奇怪还没有人为了自己的意愿驱使它们, 那么让我们成为第一个吧.
+		EntryO22: 看来我对蜂后的看法是错的. 它们的记忆中储存着一个被野心蒙蔽了双眼的科学家的漫谈, 他残酷地把瘟疫带给它们. 让我们把它们归类为MP-0X.
+		EntryO23: 根据我的记录, 你所说的那个克兹尼格斯是一个较弱的虚空巡查者, 被归类为OB-V-01. 在现实的面纱后面有着更大的威胁在等待着.
+		EntryO24: 这个飞行侦察者.....好奇. 从储存在残骸中的数据库来看, 这似乎是一艘为火星人而设的侦察船, 用来确定地球人的居住环境. 我担心飞行员最后看到的已经被上传到中央火星指挥中心.
+		EntryO25: 把一个法师的力量转移到自己身上并且用它困住他并非易事, 但是观察如此残酷的行为...永冻之土, 前冰堡之王, 愿你看到和平.
+		EntryO26: 星盘袭击者是个天才星尘蜈蚣, 或是G-S-C3, 作为终身伴侣和合作伙伴在火星精英中很受欢迎. 从我恢复出的巡航机的存储芯片来看, 他一定在离家很远的地方探索着
+		EntryO27: 我花了时间对这个不可思议的生物的遗体进行了分析, 每次它攻击的时候, 整个星球似乎都在它的意愿中产生共鸣, 我除了担心它的死亡的后果之外, 什么都做不了, 至少你又一次从末日中拯救了Terraria...又一次
+		EntryO28: 这样一个古老的存在是值得记录的--它外表的材料可以承受与地球太阳核心的温度相等的温度!如果我们能使材料具有一半的耐热性, 这将彻底改变对 ARS-0N 囚犯的控制装置!
+		EntryO29: 那些制造毁灭魔像的人就应该被关进 HI-MAX 监狱中去. 这些可怜的灵魂受尽了折磨......好吧, 至少你将他们从痛苦之渊中解放出来
+		EntryO30: 有意思...那些癫痫鸟实际上是丛林龙犽戎的克隆体. 我很高兴看到那些实验都失败了!
+		EntryO31: 你很幸运, 那东西膨胀了, 没有直接在你头上开个直通太阳的传送门. 他所展示出的力量和智慧, 意味着我要对蠕虫的类别做一个全新的分类
+		EntryO32: 对于这生物的起源我有些基本的猜测, 而不是单纯害怕他的灵魂(如果他有灵魂的话)...反辐射能量, 研究表明, 这种'湮灭能量'在黑暗中发出光芒, 在光明中辐射黑暗. 我不知道它是怎么来的, 但是我知道我们必须付出一切代价封印它.
+		EntryO33: 至尊灾厄眼被击败了, 但是他说还有一个比他更为强大的存在, 我们必须祈祷他还没有注意到我们.
+		// EntryO34: I’m honestly not sure why giant spinning skulls are the key to everything, but somehow they seem to contain the power of celestial beings within them...
+		// EntryO35: Yeah, I know that we are the ones capturing and farming horrifying eldritch entities. But who the hell thought It was a good idea to put loot bags inside a giant monster?!?!
+		// EntryO36: Кemember Manager, Treasure Bags are valuable but not everything comes inside them. That mutant man can help you get a boss's most elusive drops.
+		// Alexander: Alexander
+		// Peter: Peter
+		TinkererButton1: 出售
+		TinkererButton2: 商店
+		EntryT1: 需要一些特别的东西? 尽管说...
+		EntryT2: 你看见过我的姐姐吗? 比起工匠, 她更像个蒸汽朋克女孩...
+		EntryT3: 如果你在什么地方见过纸管, 把它带给我, 我会为你解锁一些东西.
+		EntryT4: 随着进度的推进, 你可能会发现更有价值的东西. 攒些蓝图来制作更稀有的饰品.
+		EntryT5: 你永远不会知道在哪里可以得到真正珍贵的东西. 所以耐心探索每一个可能的角落吧.
+		// Harold: Harold
+		// Charles: Charles
+		// Monty: Monty
+		// Lucas: Lucas
+		// Porky: Porky
+		// Leeland: Leeland
+		// Atreus: Atreus
+		Entry1: 我出售我父母做的药剂.
+		Entry2: 我有一些药水可以卖给你
+		Entry3: 战斗药剂包是我的主意.
+		Entry4: 有一个传说中的溜溜球被称为Sasscadee.
+		Entry5: 来自骷髅商人的奇异啤酒气味真的很糟糕，但法力恢复效果是可怕的.
+		Entry6: 嗨, *咳咳*.. 那绝对不是柠檬茶.
+		Entry7: 你有在附近见到钢铁破坏者吗?
+		Entry8: "我妈妈, "
+		Entry9: " , 是最酷的药剂师, 不是吗? 她可以轻松酿造出难做的药剂."
+		// Entry10: Certain combinations can only be brewed if certain types of magic are present in the world.
+
+		Tiles: {
+			HMCraftPound.MapEntry: 豪华手工英镑
+			MateriaTransmutator.MapEntry: 物质嬗变器
+			MateriaTransmutatorMK2.MapEntry: 物质嬗变器MK2
+			PreHMPenny.MapEntry: 简易手工便士
+			SpecCraftPoint.MapEntry: 特殊手工位点
+		}
+
+		// "Keybinds.Discord Buff Teleportation.DisplayName": Discord  Buff  Teleportation
+
+		Configs: {
+			ModConfiguration: {
+				ShopChangeDelay: {
+					// Tooltip: Delay before shop can be changed after opening interface. 10 frames by default
+					// Label: Shop Change Delay
+				}
+
+				DesertFossilPrice: {
+					// Tooltip: 1000 is 10 silver price by default
+					// Label: Desert Fossil Price
+				}
+
+				SiltSlushPrice: {
+					// Tooltip: 700 is 7 silver price by default
+					// Label: Silt/Slush blocks Price
+				}
+
+				WormholePrice: {
+					// Tooltip: 1000 is 10 silver price by default
+					// Label: Wormhole Potion Price
+				}
+
+				RecallPrice: {
+					// Tooltip: 1000 is 10 silver price by default
+					// Label: Recall Potion Price
+				}
+
+				StarPrice: {
+					// Tooltip: 1000 is 10 silver price by default
+					// Label: Fallen Stars Price
+				}
+
+				PotsPriceMulti: {
+					// Tooltip: Multiplies potions price by X. 1 by default
+					// Label: Potions price multiplier
+				}
+
+				CatchNPC: {
+					// Tooltip: True to make mod's town NPCs catcheable. True by default
+					// Label: Catcheable mod's NPCs toggle
+				}
+
+				RevPrices: {
+					// Tooltip: True to make potions prices bigger. True by default
+					// Label: Revengeance mode prices scaling
+				}
+
+				DisabledLocatorNpcs: {
+					// Tooltip: Arrows won't point to these NPCs
+					// Label: Disabled NPCs for Lifeform Analyzer Locator
+				}
+
+				LocatorRange: {
+					// Tooltip: Max distance the pointer will track. 4000 by default
+					// Label: Lifeform Analyzer Pointing Range
+				}
+
+				LifeformAnalyzer: {
+					// Tooltip: Enable or disable laser pointing of Lifeform Analyzer (ticks each second). True by default
+					// Label: Lifeform Analyzer laser pointing
+				}
+
+				TinkererSpawn: {
+					// Tooltip: True to enable Tinkerer NPC spawn, false to disable. True by default
+					// Label: Tinkerer Spawn toggle
+				}
+
+				MusicianSpawn: {
+					// Tooltip: True to enable Musician NPC spawn, false to disable. True by default
+					// Label: Musician Spawn toggle
+				}
+
+				OperatorSpawn: {
+					// Tooltip: True to enable Operator NPC spawn, false to disable. True by default
+					// Label: Operator Spawn toggle
+				}
+
+				ArchitectSpawn: {
+					// Tooltip: True to enable Architect NPC spawn, false to disable. True by default
+					// Label: Architect Spawn toggle
+				}
+
+				YoungBrewerSpawn: {
+					// Tooltip: True to enable Young Brewer NPC spawn, false to disable. True by default
+					// Label: Young Brewer Spawn toggle
+				}
+
+				JewelerSpawn: {
+					// Tooltip: True to enable Jeweler NPC spawn, false to disable. True by default
+					// Label: Jeweler Spawn toggle
+				}
+
+				BrewerSpawn: {
+					// Tooltip: True to enable Brewer NPC spawn, false to disable. True by default
+					// Label: Brewer Spawn toggle
+				}
+
+				AlchemistSpawn: {
+					// Tooltip: True to enable Alchemist NPC spawn, false to disable. True by default
+					// Label: Alchemist Spawn toggle
+				}
+
+				// DisplayName: Mod Configuration
+			}
+		}
+	}
+}

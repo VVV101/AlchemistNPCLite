@@ -1,4 +1,4 @@
-using System;
+﻿using AlchemistNPCLite.Utilities;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent.Bestiary;
@@ -26,25 +26,11 @@ namespace AlchemistNPCLite.NPCs
         public static bool TN7 = false;
         public static bool TN8 = false;
         public static bool TN9 = false;
-        public override string Texture
-        {
-            get
-            {
-                return "AlchemistNPCLite/NPCs/Jeweler";
-            }
-        }
-        // Probably Removed
-        // public override bool Autoload(ref string name)
-        // {
-        // 	name = "Jeweler";
-        // 	return true;
-        // }
+        public static string Other = "Other";
+        public static string Arena = "Arena";
 
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Jeweler");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ювелир");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "珠宝师");
             Main.npcFrameCount[NPC.type] = 25;
             NPCID.Sets.AttackFrameCount[NPC.type] = 4;
             NPCID.Sets.DangerDetectRange[NPC.type] = 500;
@@ -52,85 +38,6 @@ namespace AlchemistNPCLite.NPCs
             NPCID.Sets.AttackTime[NPC.type] = 45;
             NPCID.Sets.AttackAverageChance[NPC.type] = 30;
             NPCID.Sets.HatOffsetY[NPC.type] = -2;
-
-            ModTranslation text = LocalizationLoader.CreateTranslation(Mod, "ArenaShop");
-            text.SetDefault("Arena Shop");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Магазин Арены");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "阿瑞娜商店");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "Carl");
-            text.SetDefault("Carl");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Карл");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "John");
-            text.SetDefault("John");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Джон");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "JanMare");
-            text.SetDefault("JanMare");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Жан-Маре");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "LuiFransua");
-            text.SetDefault("LuiFransua");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Луи-Франсуа");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "Daniel");
-            text.SetDefault("Daniel");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Дэниел");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "Charley");
-            text.SetDefault("Charley");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Чарли");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryJ1");
-            text.SetDefault("I found some gems for selling. Would you check them?");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Я собрал немного драгоценных камней на продажу. Посмотришь?");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "我找到一些珠宝, 你想看看吗?");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryJ2");
-            text.SetDefault("Magic rings are not as powerful as Legendary Emblems, but still can give you some advantage against powerful creatures.");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Волшебные кольца не так могущественны, как Легендарные Эмблемы, но всё ещё могут дать преимущество против могущественных созданий.");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "魔法戒指并不像传说中的那样强大,但它仍然能给你对抗强大生物的力量");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryJ3");
-            text.SetDefault("Ouch... what do you want, my friend?");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ай... Чего желаешь, мой друг?");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "呦... 你想要什么,我的朋友?");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryJ4");
-            text.SetDefault("I can make a Diamond Ring for you.");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Я могу сделать для тебя Бриллиантовое Кольцо.");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "我可以为你做钻石戒指.");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryJ5");
-            text.SetDefault("No, don't think that I somehow related to Skeleton Merchant.");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Нет, я не думаю что хоть как-то связан со Скелетом-торговцем.");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "不,不要认为我和骷髅商人有关系.");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryJ6");
-            text.SetDefault("If you somehow find all Magic Rings,then you could make the Omniring.");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Если ты каким-то образом соберёшь все Магические кольца, то ты сможешь сделать Единое Кольцо.");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "如果你找到了所有的魔法戒指,你可以制造欧姆尼戒指.");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryJ7");
-            text.SetDefault("Have you seen Mechanical Creatures?");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ты видел где-нибудь Механических Созданий?");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "你在周围看到机械生物了吗?");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryJ8");
-            text.SetDefault("Did you notice that ");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Ты замечал, что ");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "你有没有注意到到我和 ");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryJ9");
-            text.SetDefault(" and I looks almost the same? It's because we're twin brothers.");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), " и я очень похожи? Это потому что мы близнецы.");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), " 长得几乎一毛一样?这是因为我们是兄弟.");
-            LocalizationLoader.AddTranslation(text);
-            text = LocalizationLoader.CreateTranslation(Mod, "EntryJ10");
-            text.SetDefault("Should you find enought of those torn notes, bring the to me and ill decipher them for you. Dont ask me why, just know that they hold a value for me.");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Как только найдёшь достаточно изорванных записок, неси их мне и я расшифрую их для тебя. Не спрашивай зачем, просто знай, что они имеют значение для меня.");
-            LocalizationLoader.AddTranslation(text);
 
             NPCID.Sets.NPCBestiaryDrawModifiers drawModifiers = new NPCID.Sets.NPCBestiaryDrawModifiers(0)
             {
@@ -172,7 +79,7 @@ namespace AlchemistNPCLite.NPCs
             AnimationType = NPCID.Merchant;
         }
 
-        public override bool CanTownNPCSpawn(int numTownNPCs, int money)
+        public override bool CanTownNPCSpawn(int numTownNPCs)/* tModPorter Suggestion: Copy the implementation of NPC.SpawnAllowed_Merchant in vanilla if you to count money, and be sure to set a flag when unlocked, so you don't count every tick. */
         {
             if (NPC.downedBoss1 && AlchemistNPCLite.modConfiguration.JewelerSpawn)
             {
@@ -180,8 +87,6 @@ namespace AlchemistNPCLite.NPCs
             }
             return false;
         }
-
-
 
         public override List<string> SetNPCNameList()
         {                                       //NPC names
@@ -255,19 +160,16 @@ namespace AlchemistNPCLite.NPCs
             {
                 return EntryJ8 + Main.npc[Merchant].GivenName + EntryJ9;
             }
-            // IMPLEMENT WHEN WEAKREFERENCES FIXED
-            /*
-            if (ModLoader.GetMod("ThoriumMod") != null)
+            if (ModLoader.TryGetMod("ThoriumMod", out Mod _))
             {
-            	switch (Main.rand.Next(2))
-            	{
-					case 0:
-					return EntryJ2;
-					case 1:
-					return EntryJ6;
-            	}
-            } 
-			*/
+                switch (Main.rand.Next(2))
+                {
+                    case 0:
+                        return EntryJ2;
+                    case 1:
+                        return EntryJ6;
+                }
+            }
             switch (Main.rand.Next(6))
             {
                 case 0:
@@ -292,245 +194,90 @@ namespace AlchemistNPCLite.NPCs
             button2 = ArenaShop;
         }
 
-        public override void OnChatButtonClicked(bool firstButton, ref bool shop)
+        public override void OnChatButtonClicked(bool firstButton, ref string shopName)
         {
             if (firstButton)
             {
                 OH = true;
                 AS = false;
-                shop = true;
+                shopName = Other;
             }
             else
             {
                 OH = false;
                 AS = true;
-                shop = true;
+                shopName = Arena;
             }
         }
 
-        public override void SetupShop(Chest shop, ref int nextSlot)
+        public override void AddShops()
         {
-            if (OH)
-            {
-                shop.item[nextSlot].SetDefaults(ItemID.Amethyst);
-                shop.item[nextSlot].shopCustomPrice = 1000;
-                nextSlot++;
-                shop.item[nextSlot].SetDefaults(ItemID.Topaz);
-                shop.item[nextSlot].shopCustomPrice = 1000;
-                nextSlot++;
-                if (NPC.downedBoss2)
-                {
-                    shop.item[nextSlot].SetDefaults(ItemID.Sapphire);
-                    shop.item[nextSlot].shopCustomPrice = 3000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ItemID.Emerald);
-                    shop.item[nextSlot].shopCustomPrice = 3000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ItemID.Amber);
-                    shop.item[nextSlot].shopCustomPrice = 5000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ItemID.FossilOre);
-                    shop.item[nextSlot].shopCustomPrice = 5000;
-                    nextSlot++;
-                    if (ModLoader.TryGetMod("ThoriumMod", out Mod ThoriumMod))
-					{
-                    	addModItemToShop(ThoriumMod, "Opal", 5000, ref shop, ref nextSlot);
-                    	addModItemToShop(ThoriumMod, "Onyx", 5000, ref shop, ref nextSlot);	
-                    }
-                    shop.item[nextSlot].SetDefaults(ItemID.BandofStarpower);
-                    shop.item[nextSlot].shopCustomPrice = 30000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ItemID.BandofRegeneration);
-                    shop.item[nextSlot].shopCustomPrice = 50000;
-                    nextSlot++;
-                    if (NPC.downedBoss3)
-                    {
-                        shop.item[nextSlot].SetDefaults(ItemID.LifeCrystal);
-                        shop.item[nextSlot].shopCustomPrice = 100000;
-                        nextSlot++;
-                        if (NPC.downedGolemBoss)
-                        {
-                            shop.item[nextSlot].SetDefaults(ItemID.LifeFruit);
-                            shop.item[nextSlot].shopCustomPrice = 200000;
-                            nextSlot++;
-                        }
-                    }
-                }
-                if (NPC.downedBoss3)
-                {
-                    shop.item[nextSlot].SetDefaults(ItemID.Ruby);
-                    shop.item[nextSlot].shopCustomPrice = 7500;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ItemID.Diamond);
-                    shop.item[nextSlot].shopCustomPrice = 7500;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ItemID.DiamondRing);
-                    shop.item[nextSlot].shopCustomPrice = 2000000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Summoning.HorrifyingSkull>());
-                    shop.item[nextSlot].shopCustomPrice = 250000;
-                    nextSlot++;
-                    // IMPLEMENT WHEN WEAKREFERENCES FIXED
-                    /*
-                    if (ModLoader.GetMod("Tremor") != null)
-                    {
-                        addModItemToShop(Tremor, "Rupicide", 5000, ref shop, ref nextSlot);
-                        addModItemToShop(Tremor, "Opal", 30000, ref shop, ref nextSlot);
-                        if (Main.hardMode)
-                        {
-                            addModItemToShop(Tremor, "MagiumShard", 7500, ref shop, ref nextSlot);
-                            addModItemToShop(Tremor, "RuneBar", 7500, ref shop, ref nextSlot);
-                        }
-                        if (NPC.downedMoonlord)
-                        {
-                            addModItemToShop(Tremor, "LapisLazuli", 150000, ref shop, ref nextSlot);
-                        }
-                    }
-                    if (ModLoader.GetMod("ThoriumMod") != null)
-                    {
-                        addModItemToShop(ThoriumMod, "GraniteEnergyCore", 10000, ref shop, ref nextSlot);
-                        addModItemToShop(ThoriumMod, "BronzeFragments", 10000, ref shop, ref nextSlot);
-                    }
-                    if (ModLoader.GetMod("SpiritMod") != null)
-                    {
-                        addModItemToShop(SpiritMod, "GraniteChunk", 10000, ref shop, ref nextSlot);
-                        addModItemToShop(SpiritMod, "MarbleChunk", 10000, ref shop, ref nextSlot);
-                    }
-                    */
-                    if (Main.hardMode)
-                    {
-                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Summoning.AlchemistHorcrux>());
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Summoning.BrewerHorcrux>());
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Summoning.JewelerHorcrux>());
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Summoning.ArchitectHorcrux>());
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Summoning.TinkererHorcrux>());
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Summoning.MusicianHorcrux>());
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
-                    }
-                }
-            }
-            if (AS)
-            {
-                shop.item[nextSlot].SetDefaults(ItemID.Campfire);
-                shop.item[nextSlot].shopCustomPrice = 5000;
-                nextSlot++;
-                if (NPC.downedBoss2)
-                {
-                    // IMPLEMENT WHEN WEAKREFERENCES FIXED
-                    /*
-                    if (ModLoader.GetMod("ThoriumMod") != null)
-                    {
-                        addModItemToShop(ThoriumMod, "Mistletoe", 50000, ref shop, ref nextSlot);
-                    }
-					*/
-                    shop.item[nextSlot].SetDefaults(ItemID.SliceOfCake);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                }
-                if (NPC.downedBoss3)
-                {
-                    shop.item[nextSlot].SetDefaults(ItemID.WaterBucket);
-                    shop.item[nextSlot].shopCustomPrice = 15000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ItemID.HoneyBucket);
-                    shop.item[nextSlot].shopCustomPrice = 30000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ItemID.LavaBucket);
-                    shop.item[nextSlot].shopCustomPrice = 50000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ItemID.HeartLantern);
-                    shop.item[nextSlot].shopCustomPrice = 30000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ItemID.StarinaBottle);
-                    shop.item[nextSlot].shopCustomPrice = 10000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ItemID.WaterCandle);
-                    shop.item[nextSlot].shopCustomPrice = 30000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ItemID.PeaceCandle);
-                    shop.item[nextSlot].shopCustomPrice = 50000;
-                    nextSlot++;
-                    if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
-                    {
-                        if (NPC.downedPlantBoss)
-                        {
-                            addModItemToShop(Calamity, "TranquilityCandle", 100000, ref shop, ref nextSlot);
-                            addModItemToShop(Calamity, "ChaosCandle", 150000, ref shop, ref nextSlot);
-                        }
-                    }
-                    shop.item[nextSlot].SetDefaults(ItemID.Spike);
-                    shop.item[nextSlot].shopCustomPrice = 10000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ItemID.DartTrap);
-                    shop.item[nextSlot].shopCustomPrice = 30000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ItemID.GeyserTrap);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ItemID.CatBast);
-                    shop.item[nextSlot].shopCustomPrice = 100000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ItemID.SharpeningStation);
-                    shop.item[nextSlot].shopCustomPrice = 150000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ItemID.BewitchingTable);
-                    shop.item[nextSlot].shopCustomPrice = 150000;
-                    nextSlot++;
-                    shop.item[nextSlot].SetDefaults(ItemID.AmmoBox);
-                    shop.item[nextSlot].shopCustomPrice = 250000;
-                    nextSlot++;
-                    if (Main.hardMode)
-                    {
-                        shop.item[nextSlot].SetDefaults(ItemID.CrystalBall);
-                        shop.item[nextSlot].shopCustomPrice = 150000;
-                        nextSlot++;
-                        if (AlchemistNPCLite.modConfiguration.CustomPotions)
-                        {
-                            shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.UltimaCake>());
-                            shop.item[nextSlot].shopCustomPrice = 5000000;
-                            nextSlot++;
-                        }
-                    }
-                    if (NPC.downedGolemBoss)
-                    {
-                        shop.item[nextSlot].SetDefaults(ItemID.WoodenSpike);
-                        shop.item[nextSlot].shopCustomPrice = 20000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.SpearTrap);
-                        shop.item[nextSlot].shopCustomPrice = 50000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.SpikyBallTrap);
-                        shop.item[nextSlot].shopCustomPrice = 50000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.SuperDartTrap);
-                        shop.item[nextSlot].shopCustomPrice = 750000;
-                        nextSlot++;
-                        shop.item[nextSlot].SetDefaults(ItemID.FlameTrap);
-                        shop.item[nextSlot].shopCustomPrice = 100000;
-                        nextSlot++;
-                    }
-                }
-            }
-        }
-        private void addModItemToShop(Mod mod, String itemName, int price, ref Chest shop, ref int nextSlot)
-        {
-            if (mod.TryFind<ModItem>(itemName, out ModItem currItem))
-            {
-                shop.item[nextSlot].SetDefaults(currItem.Type);
-                shop.item[nextSlot].shopCustomPrice = price;
-                nextSlot++;
-            }
+            ModLoader.TryGetMod("ThoriumMod", out Mod ThoriumMod);
+            ModLoader.TryGetMod("Tremor", out Mod Tremor);
+            ModLoader.TryGetMod("SpiritMod", out Mod SpiritMod);
+            ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
+
+            var shop = new NPCShop(Type, Other)
+                .Add(new Item(ItemID.Amethyst) { shopCustomPrice = 1000 })
+                .Add(new Item(ItemID.Topaz) { shopCustomPrice = 1000 })
+                .Add(new Item(ItemID.Sapphire) { shopCustomPrice = 3000 }, Condition.DownedEowOrBoc)
+                .Add(new Item(ItemID.Emerald) { shopCustomPrice = 3000 }, Condition.DownedEowOrBoc)
+                .Add(new Item(ItemID.Amber) { shopCustomPrice = 5000 }, Condition.DownedEowOrBoc)
+                .Add(new Item(ItemID.FossilOre) { shopCustomPrice = 5000 }, Condition.DownedEowOrBoc)
+                .addModItemToShop(ThoriumMod, "Opal", 5000, Condition.DownedEowOrBoc)
+                .addModItemToShop(ThoriumMod, "Aquamarine", 5000, Condition.DownedEowOrBoc)
+                .Add(new Item(ItemID.BandofStarpower) { shopCustomPrice = 30000 }, Condition.DownedEowOrBoc)
+                .Add(new Item(ItemID.BandofRegeneration) { shopCustomPrice = 50000 }, Condition.DownedEowOrBoc)
+                .Add(new Item(ItemID.LifeCrystal) { shopCustomPrice = 100000 }, Condition.DownedEowOrBoc, new Condition("", () => Main.netMode == NetmodeID.MultiplayerClient || Main.netMode == NetmodeID.Server))
+                .Add(new Item(ItemID.LifeFruit) { shopCustomPrice = 100000 }, Condition.DownedEowOrBoc, new Condition("", () => Main.netMode == NetmodeID.MultiplayerClient || Main.netMode == NetmodeID.Server), Condition.DownedPlantera)
+                .Add(new Item(ItemID.Ruby) { shopCustomPrice = 7500 }, Condition.DownedSkeletron)
+                .Add(new Item(ItemID.Diamond) { shopCustomPrice = 7500 }, Condition.DownedSkeletron)
+                .Add(new Item(ItemID.DiamondRing) { shopCustomPrice = 2000000 }, Condition.DownedSkeletron)
+                .addModItemToShop<Items.Summoning.HorrifyingSkull>(250000, Condition.DownedSkeletron)
+                .addModItemToShop(Tremor, "Rupicide", 5000, Condition.DownedSkeletron)
+                .addModItemToShop(Tremor, "Opal", 30000, Condition.DownedSkeletron)
+                .addModItemToShop(Tremor, "MagiumShard", 7500, Condition.DownedSkeletron, Condition.Hardmode)
+                .addModItemToShop(Tremor, "RuneBar", 7500, Condition.DownedSkeletron, Condition.Hardmode)
+                .addModItemToShop(Tremor, "LapisLazuli", 150000, Condition.DownedSkeletron, Condition.DownedMoonLord)
+                .addModItemToShop(ThoriumMod, "GraniteEnergyCore", 10000, Condition.DownedSkeletron)
+                .addModItemToShop(ThoriumMod, "BronzeFragments", 10000, Condition.DownedSkeletron)
+                .addModItemToShop(SpiritMod, "GraniteChunk", 10000, Condition.DownedSkeletron)
+                .addModItemToShop(SpiritMod, "MarbleChunk", 10000, Condition.DownedSkeletron)
+                .addModItemToShop<Items.Summoning.AlchemistHorcrux>(150000, Condition.Hardmode)
+                .addModItemToShop<Items.Summoning.BrewerHorcrux>(150000, Condition.Hardmode)
+                .addModItemToShop<Items.Summoning.JewelerHorcrux>(150000, Condition.Hardmode)
+                .addModItemToShop<Items.Summoning.ArchitectHorcrux>(150000, Condition.Hardmode)
+                .addModItemToShop<Items.Summoning.TinkererHorcrux>(150000, Condition.Hardmode)
+                .addModItemToShop<Items.Summoning.MusicianHorcrux>(150000, Condition.Hardmode);
+            shop.Register();
+            shop = new NPCShop(Type, Arena)
+                .Add(new Item(ItemID.Campfire) { shopCustomPrice = 5000 })
+                .addModItemToShop(ThoriumMod, "Mistletoe", 50000, Condition.DownedEowOrBoc)
+                .Add(new Item(ItemID.SliceOfCake) { shopCustomPrice = 100000 }, Condition.DownedEowOrBoc)
+                .Add(new Item(ItemID.WaterBucket) { shopCustomPrice = 15000 }, Condition.DownedSkeletron)
+                .Add(new Item(ItemID.HoneyBucket) { shopCustomPrice = 30000 }, Condition.DownedSkeletron)
+                .Add(new Item(ItemID.LavaBucket) { shopCustomPrice = 50000 }, Condition.DownedSkeletron)
+                .Add(new Item(ItemID.HeartLantern) { shopCustomPrice = 30000 }, Condition.DownedSkeletron)
+                .Add(new Item(ItemID.StarinaBottle) { shopCustomPrice = 10000 }, Condition.DownedSkeletron)
+                .Add(new Item(ItemID.WaterCandle) { shopCustomPrice = 30000 }, Condition.DownedSkeletron)
+                .Add(new Item(ItemID.PeaceCandle) { shopCustomPrice = 30000 }, Condition.DownedSkeletron)
+                .addModItemToShop(Calamity, "TranquilityCandle", 100000, Condition.DownedSkeletron, Condition.DownedPlantera)
+                .addModItemToShop(Calamity, "ChaosCandle", 150000, Condition.DownedSkeletron, Condition.DownedPlantera)
+                .Add(new Item(ItemID.Spike) { shopCustomPrice = 10000 }, Condition.DownedSkeletron)
+                .Add(new Item(ItemID.DartTrap) { shopCustomPrice = 30000 }, Condition.DownedSkeletron)
+                .Add(new Item(ItemID.GeyserTrap) { shopCustomPrice = 100000 }, Condition.DownedSkeletron)
+                .Add(new Item(ItemID.CatBast) { shopCustomPrice = 100000 }, Condition.DownedSkeletron)
+                .Add(new Item(ItemID.SharpeningStation) { shopCustomPrice = 150000 }, Condition.DownedSkeletron)
+                .Add(new Item(ItemID.BewitchingTable) { shopCustomPrice = 150000 }, Condition.DownedSkeletron)
+                .Add(new Item(ItemID.AmmoBox) { shopCustomPrice = 250000 }, Condition.DownedSkeletron)
+                .Add(new Item(ItemID.CrystalBall) { shopCustomPrice = 150000 }, Condition.Hardmode)
+                .addModItemToShop<Items.UltimaCake>(5000000, Condition.Hardmode)
+                .Add(new Item(ItemID.WoodenSpike) { shopCustomPrice = 20000 }, Condition.DownedGolem)
+                .Add(new Item(ItemID.SpearTrap) { shopCustomPrice = 50000 }, Condition.DownedGolem)
+                .Add(new Item(ItemID.SpikyBallTrap) { shopCustomPrice = 50000 }, Condition.DownedGolem)
+                .Add(new Item(ItemID.SuperDartTrap) { shopCustomPrice = 750000 }, Condition.DownedGolem)
+                .Add(new Item(ItemID.FlameTrap) { shopCustomPrice = 100000 }, Condition.DownedGolem);
+            shop.Register();
         }
     }
 }

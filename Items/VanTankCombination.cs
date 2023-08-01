@@ -1,30 +1,16 @@
-using System;
-using System.IO;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria;
-using Terraria.GameContent.Creative;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
-using Terraria.Localization;
- 
+
 namespace AlchemistNPCLite.Items
 {
-     public class VanTankCombination : ModItem
+    public class VanTankCombination : ModItem
     {
         public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("Tank Combination (Vanilla)");
-			Tooltip.SetDefault("Grants buffs, which are necessary for Tanks (Endurance, Lifeforce, Ironskin, Obsidian Skin, Thorns, Regeneration)");
-			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Комбинация Танка (без Модовых)");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Сочетание баффов Выносливости, Жизненных Сил, Железной Кожи, Обсидиановой Кожи, Шипов и Регенерации");
-
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "坦克药剂包 (原版)");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "获得一些坦克Buff (耐力, 生命力, 铁皮, 黑曜石皮肤, 荆棘, 恢复, 抵抗)");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 20;
-        }    
-		public override void SetDefaults()
+        {
+            Item.ResearchUnlockCount = 20;
+        }
+        public override void SetDefaults()
         {
             Item.UseSound = SoundID.Item3;                 //this is the sound that plays when you use the item
             Item.useStyle = 2;                 //this is how the item is holded when used
@@ -41,9 +27,9 @@ namespace AlchemistNPCLite.Items
             Item.buffTime = 52000;    //this is the buff duration        10 = 10 Second
             return;
         }
-		
-		public override void AddRecipes()
-		{
+
+        public override void AddRecipes()
+        {
             Recipe recipe = Recipe.Create(Item.type);
             recipe.AddIngredient(ItemID.EndurancePotion, 1);
             recipe.AddIngredient(ItemID.LifeforcePotion, 1);
@@ -53,6 +39,6 @@ namespace AlchemistNPCLite.Items
             recipe.AddIngredient(ItemID.ThornsPotion, 1);
             recipe.AddTile(TileID.AlchemyTable);
             recipe.Register();
-		}
+        }
     }
 }

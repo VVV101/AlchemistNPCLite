@@ -1,36 +1,23 @@
-using System;
-using System.IO;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria;
-using Terraria.GameContent.Creative;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
-using Terraria.Localization;
- 
+
 namespace AlchemistNPCLite.Items
 {
     public class MorePotionsCombination : ModItem
     {
-		//Probably removed
-		// public override bool Autoload(ref string name)
-		// {
-		// return ModLoader.GetMod("MorePotions") != null;
-		// }
-		
-		public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("More Potions Combination");
-			Tooltip.SetDefault("Grants most buffs from More Potions *potions"
-			+"\nDroughts, Enchanced Regeneration, Courage, Soulbinding, Diamond Skin, Dusk, Dawn, Swift Hands, Speed");
-			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Комбинация More Potioins");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Даёт большинство баффов от зелий мода More Potions"
-			+"\nDroughts, Enchanced Regeneration, Courage, Soulbinding, Diamond Skin, Dusk, Dawn, Swift Hands, Speed");
-			CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 20;
-		}    
+        //Probably removed
+        // public override bool Autoload(ref string name)
+        // {
+        // return ModLoader.GetMod("MorePotions") != null;
+        // }
 
-		public override void SetDefaults()
+        public override void SetStaticDefaults()
+        {
+            Item.ResearchUnlockCount = 20;
+        }
+
+        public override void SetDefaults()
         {
             Item.UseSound = SoundID.Item3;                 //this is the sound that plays when you use the item
             Item.useStyle = 2;                 //this is how the item is holded when used
@@ -46,9 +33,9 @@ namespace AlchemistNPCLite.Items
             Item.buffType = ModContent.BuffType<Buffs.MorePotionsComb>();           //this is where you put your Buff
             Item.buffTime = 52000;    //this is the buff duration        10 = 10 Second
         }
-		
-		// IMPLEMENT WHEN WEAKREFERENCES FIXED
-		/*
+
+        // IMPLEMENT WHEN WEAKREFERENCES FIXED
+        /*
 		public override void AddRecipes()
 		{
 			Recipe recipe = Recipe.Create(Item.type);

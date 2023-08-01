@@ -1,15 +1,9 @@
-using System;
-using System.Linq;
-using Microsoft.Xna.Framework;
+﻿using Microsoft.Xna.Framework;
 using Terraria;
 using Terraria.ID;
-using Terraria.Enums;
 using Terraria.Localization;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
 using Terraria.ObjectData;
-using Terraria.DataStructures;
-using Microsoft.Xna.Framework.Graphics;
 
 namespace AlchemistNPCLite.Tiles
 {
@@ -26,11 +20,8 @@ namespace AlchemistNPCLite.Tiles
             TileObjectData.newTile.StyleHorizontal = true;
             TileObjectData.newAlternate.CopyFrom(TileObjectData.newTile);
             TileObjectData.addTile(Type);
-            ModTranslation name = CreateMapEntryName();
-            name.SetDefault("Materia Transmutator");
-            name.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Преобразователь Материи");
-            name.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "物质嬗变器");
-            AddMapEntry(new Color(200, 200, 200), name);
+            AddMapEntry(new Color(200, 200, 200),
+                Language.GetText("Mods.AlchemistNPCLite.Tiles.MateriaTransmutator.MapEntry"));
             TileID.Sets.DisableSmartCursor[Type] = true;
             AdjTiles = new int[]
             {
@@ -110,11 +101,6 @@ namespace AlchemistNPCLite.Tiles
         {
             frame = Main.tileFrame[TileID.FireflyinaBottle];
             frameCounter = Main.tileFrameCounter[TileID.FireflyinaBottle];
-        }
-
-        public override void KillMultiTile(int i, int j, int TileFrameX, int TileFrameY)
-        {
-            Item.NewItem(new EntitySource_TileBreak(i, j), i * 16, j * 16, 16, 32, ModContent.ItemType<Items.Placeable.MateriaTransmutator>());
         }
 
         public override void NearbyEffects(int i, int j, bool closer)

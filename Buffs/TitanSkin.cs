@@ -1,8 +1,6 @@
-using Terraria;
-using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
-using Terraria.Localization;
+﻿using Terraria;
 using Terraria.ID;
+using Terraria.ModLoader;
 
 namespace AlchemistNPCLite.Buffs
 {
@@ -10,15 +8,10 @@ namespace AlchemistNPCLite.Buffs
     {
         public override void SetStaticDefaults()
         {
-            DisplayName.SetDefault("Titan Skin");
-            Description.SetDefault("You have some heavy debuff immunity");
             Main.debuff[Type] = false;
             BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Кожа Титана");
-            Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Вы имеете иммунитет к некоторым серьёзным дебаффам");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "泰坦皮肤");
-            Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "你免疫一些Debuff");
         }
+
         public override void Update(Player player, ref int buffIndex)
         {
             if (NPC.downedMechBoss2)

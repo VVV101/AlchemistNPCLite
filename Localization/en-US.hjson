@@ -1,9 +1,6 @@
-Mods: 
-{
-	AlchemistNPCLite: 
-	{
-		Bestiary: 
-		{
+Mods: {
+	AlchemistNPCLite: {
+		Bestiary: {
 			Alchemist: Provides a variety of utility potions, plants, mushrooms and other different stuff for selling. ''Lore-wise'' is an old friend/love interest of Brewer. Currently, ''divorced''.
 			Brewer: Provides a variety of buff potions for selling. ''Lore-wise'' is an old friend/love interest of Alchemist. Currently, ''divorced''.
 			Jeweler: Provides an infinite amounts of different gems for selling. Also can help with goods for setting up an arena for both grinding or boss fights. ''Lore-wise'' should be considered as merchants twin brother.
@@ -13,23 +10,19 @@ Mods:
 			Tinkerer: Provides a variety of accessories getting unlocked through progression. ''Lore-wise'' is Steampunker's younger brother.
 			YoungBrewer: Provides a variety of potions combinations and flasks for selling. ''Lore-wise'' is son of Alchemist and Brewer.
 		}
-		
-		Common:
-		{
+
+		Common: {
 			DayTimeSet: Time is set to morning.
 			NightTimeSet: Time is set to evening.
 			SandstormStarted: Sandstorm was started.
 			SandstormStopped: Sandstorm was stopped.
 			RainStarted: Rain is starting.
 			RainStopped: Rain is stopping.
-			
 		}
-		
+
 		#This is what displays during all of an NPC's happiness levels. Note that the localization key for these should always be "TownNPCMood.*NPCName*.*Mood*" or else it won't display properly.
-		TownNPCMood: 
-		{
-			Alchemist: 
-			{
+		TownNPCMood: {
+			Alchemist: {
 				Content: I'm feeling good!
 				NoHome: Do you have any spare housing? It is really uncomfortable to make potions without roof above my head.
 				LoveSpace: Peace and quiet means I get to live it up!
@@ -40,14 +33,14 @@ Mods:
 				LoveBiome: This place reminds me of the old days when I was training with my friend.
 				DislikeBiome: It is way too cold here... My hands are freezing.
 				HateBiome: I wanna live elsewhere! This is awful.
-				LikeNPC: "{NPCName} understands the importance of hard work. It is good having her around." 
+				LikeNPC: "{NPCName} understands the importance of hard work. It is good having her around."
 				LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
 				LoveNPC: "{NPCName} is here! Who's the dad's boy?"
 				DislikeNPC: I don't think I could focus when {NPCName} is around. She can't stop making jokes of me.
 				HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
 			}
-			Brewer: 
-			{
+
+			Brewer: {
 				Content: I'm feeling good!
 				NoHome: Do you have any spare housing? It is really uncomfortable to make potions without roof above my head.
 				LoveSpace: Peace and quiet means I get to live it up!
@@ -58,14 +51,14 @@ Mods:
 				LoveBiome: Warm and peaceful, just as I wanted!
 				DislikeBiome: It is way too cold here... My hands are freezing.
 				HateBiome: I wanna live elsewhere! This is awful.
-				LikeNPC: "{NPCName} is so easy to tease! I can't help it..." 
+				LikeNPC: "{NPCName} is so easy to tease! I can't help it..."
 				LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
 				LoveNPC: "{NPCName} is here! Who's the momma's boy?"
 				DislikeNPC: "{NPCName} is so annoying with his constant warnings. Can barely stand it."
 				HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
 			}
-			Jeweler: 
-			{
+
+			Jeweler: {
 				Content: I'm feeling good!
 				NoHome: Do you have any spare housing? It is really uncomfortable to make jewelry without roof above my head.
 				LoveSpace: Peace and quiet means I get to live it up!
@@ -76,14 +69,14 @@ Mods:
 				LoveBiome: Warm and peaceful, just as I wanted!
 				DislikeBiome: It is way too cold here... My hands are freezing.
 				HateBiome: I wanna live elsewhere! This is awful.
-				LikeNPC: "{NPCName} has a sence for money. A bit too greedy, but I can totally relate." 
+				LikeNPC: "{NPCName} has a sence for money. A bit too greedy, but I can totally relate."
 				LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
 				LoveNPC: "{NPCName} is here! You can clearly tell that we are almost the same. I don't want to grow a beard, tho."
 				DislikeNPC: I can't stand girls like {NPCName}, she totally distracts my focus.
 				HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
 			}
-			Musician: 
-			{
+
+			Musician: {
 				Content: I'm feeling good!
 				NoHome: Do you have any spare housing? How can I do music if I don't have a roof above my head?
 				LoveSpace: Peace and quiet means I get to live it up!
@@ -94,14 +87,14 @@ Mods:
 				LoveBiome: I like how shiny and bright this place is. Also perfect for parties.
 				DislikeBiome: It is way too cold here... My hands are freezing.
 				HateBiome: I wanna live elsewhere! This is awful.
-				LikeNPC: "{NPCName} is useful when I am out of music boxes. You know how hard is to make them?" 
+				LikeNPC: "{NPCName} is useful when I am out of music boxes. You know how hard is to make them?"
 				LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
 				LoveNPC: "{NPCName} likes music just as I do! I can hang out with her all day."
 				DislikeNPC: This cheapskate {NPCName} is so annoying. Can you get him somewhere out here?
 				HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
 			}
-			Operator: 
-			{
+
+			Operator: {
 				Content: I'm feeling good!
 				NoHome: I need a shelter. I don't like being without a roof above my head.
 				LoveSpace: Peace and quiet means I get to live it up!
@@ -112,14 +105,14 @@ Mods:
 				LoveBiome: My circuits are working perfectly here. Surprisingly. I like snow.
 				DislikeBiome: I hate underground. You know it, right?
 				HateBiome: I wanna live elsewhere! This is awful.
-				LikeNPC: "{NPCName} is one of the many persons I could talk about the technology." 
+				LikeNPC: "{NPCName} is one of the many persons I could talk about the technology."
 				LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
 				LoveNPC: "{NPCName} probably is the only person who can understand me. Being a cyborg."
 				DislikeNPC: "{NPCName} seems to be afraid of me. I wonder why, but his fear somewhat annoys me."
 				HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
 			}
-			Architect: 
-			{
+
+			Architect: {
 				Content: I'm feeling good!
 				NoHome: Being an Architect, I especially don't like NOT having any house.
 				LoveSpace: Peace and quiet means I get to live it up!
@@ -130,14 +123,14 @@ Mods:
 				LoveBiome: So many colors, so many building materials. Perfect.
 				DislikeBiome: I hate feeling chill. I need a warmer place.
 				HateBiome: I wanna live elsewhere! This is awful.
-				LikeNPC: "{NPCName} may just be an annoying goblin but he understands, how to build. I respect that." 
+				LikeNPC: "{NPCName} may just be an annoying goblin but he understands, how to build. I respect that."
 				LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
 				LoveNPC: "{NPCName} knows how to make every color. Which is great."
 				DislikeNPC: "{NPCName} is so grumpy and hates colors. Would be fun making him living in Hallow, I guess."
 				HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
 			}
-			Tinkerer: 
-			{
+
+			Tinkerer: {
 				Content: I'm feeling good!
 				NoHome: Making accessories requires patience. And I wouldn't be able to do it without any house.
 				LoveSpace: Peace and quiet means I get to live it up!
@@ -148,14 +141,14 @@ Mods:
 				LoveBiome: Me and my sister are used to live in cold places so I am totally ok with that.
 				DislikeBiome: I hate hot weather and sand so no, I wouldn't live here.
 				HateBiome: I wanna live elsewhere! This is awful.
-				LikeNPC: "{NPCName} is so nice and smart. I respect that." 
+				LikeNPC: "{NPCName} is so nice and smart. I respect that."
 				LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
 				LoveNPC: "{NPCName} is finally here? I have a lot to tell, big sis!"
 				DislikeNPC: Don't let {NPCName} anywhere around me. Sand from his clothes always clogs my mechanisms.
 				HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
 			}
-			YoungBrewer: 
-			{
+
+			YoungBrewer: {
 				Content: I'm feeling good!
 				NoHome: I don't like being outside for a long time. I need a room for myself.
 				LoveSpace: Peace and quiet means I get to live it up!
@@ -171,6 +164,1264 @@ Mods:
 				LoveNPC: Mom is here? Great! I like my dad, yes, but mom... Her potions can do almost everything and are most useful!
 				DislikeNPC: "{NPCName} is so grumpy. I asked him about making a toy a few times but he ALWAYS don't have any time for that."
 				HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
+			}
+		}
+
+		Buffs: {
+			BattleComb: {
+				DisplayName: Battle Combination
+				Description: Combination of Endurance, Lifeforce, Ironskin, Regeneration, Rage & Wrath buffs
+			}
+
+			Blurring: {
+				DisplayName: Blurring
+				Description: Enemies cannot clearly see you (Holy Protection for 10 sec with 30 sec CD)
+			}
+
+			BuilderComb: {
+				DisplayName: Builder Combination
+				Description: Combination of Building, Mining and Calming buffs
+			}
+
+			CalamityComb: {
+				DisplayName: Calamity Combination
+				Description: Combination of Photosynthesis, Fabsol's Vodka, Soaring and Bounding's buffs
+			}
+
+			Corrosion: {
+				DisplayName: Corrosion
+				Description: Your flesh is melting!
+			}
+
+			DiscordBuff: {
+				DisplayName: Discord
+				Description:
+					'''
+					You may teleport to cursor position by using hotkey
+					Distorts player for 1 second after teleport
+					Inflicts heavy damage while you have Chaos State
+					Chaos State time is increased to 10 seconds
+					'''
+			}
+
+			ExplorerComb: {
+				DisplayName: Explorer Combination
+				Description:
+					'''
+					Combination of Dangersense, Hunter, Spelunker, Night Owl, Shine & Mining buffs
+					Also gives effects of Gills, Flippers and Water Walking Potions
+					'''
+			}
+
+			FishingComb: {
+				DisplayName: Fishing Combination
+				Description: Combination of Crate, Sonar, Fishing, Regeneration, Thorns, Iron Skin, Calming & Inferno buffs
+			}
+
+			Fortitude: {
+				DisplayName: Fortitude
+				Description: You cannot be knockbacked
+			}
+
+			GreaterDangersense: {
+				DisplayName: Greater Dangersense
+				Description: Lights up enemy projectiles
+			}
+
+			LongInvincible: {
+				DisplayName: Longer Invincibility
+				Description: Your invincibility time is increased
+			}
+
+			MageComb: {
+				DisplayName: Mage Combination
+				Description: Combination of Magic Power, Mana Regeneration, Clairvoyance, Wrath & Rage buffs
+			}
+
+			NinjaSkill: {
+				DisplayName: Ninja
+				Description: You are a true ninja!
+			}
+
+			RangerComb: {
+				DisplayName: Ranger Combination
+				Description: Combination of Archery, Ammo Reservation, Wrath, Rage buffs
+			}
+
+			StationUltimaBuff: {
+				DisplayName: Station Ultima
+				Description: Grants effects of all stations simultaneously
+			}
+
+			SummonerComb: {
+				DisplayName: Summoner Combination
+				Description: Combination of Summoning, Bewitched and Wrath buffs
+			}
+
+			Sunshine: {
+				DisplayName: Sunshine
+				Description: You are producing light like miniature Sun
+			}
+
+			TankComb: {
+				DisplayName: Tank Combination (w/Modded)
+				Description: Combination of Swiftness, Endurance, Lifeforce, Ironskin, Obsidian Skin, Thorns, Regeneration, Titan Skin, Invincibility buffs
+			}
+
+			TitanSkin: {
+				DisplayName: Titan Skin
+				Description: You have some heavy debuff immunity
+			}
+
+			TrapsBuff: {
+				DisplayName: Traps Buff
+				Description: Traps are empowered
+			}
+
+			TrueDiscordBuff: {
+				DisplayName: True Discord
+				Description:
+					'''
+					You may teleport to cursor position by using hotkey
+					Behaves exactly like Rod of Discord
+					'''
+			}
+
+			UniversalComb: {
+				DisplayName: Universal Combination
+				Description: Perfect sum of Tank, Mage, Ranger and Summoner combinations
+			}
+
+			VanTankComb: {
+				DisplayName: Tank Combination (Vanilla)
+				Description: Combination of Swiftness, Endurance, Lifeforce, Ironskin, Obsidian Skin, Thorns and Regeneration buffs
+			}
+		}
+
+		Items: {
+			BattleCombination: {
+				DisplayName: Battle Combination
+				Tooltip: Grants buffs, which are necessary for battle (Endurance, Lifeforce, Ironskin, Regeneration, Rage & Wrath)
+			}
+
+			BeachTeleporterPotion: {
+				DisplayName: Beach Teleporter Potion
+				Tooltip:
+					'''
+					Teleports you to the Beach
+					Side depends on used mouse button
+					'''
+			}
+
+			BewitchingPotion: {
+				DisplayName: Bewitching Potion
+				Tooltip:
+					'''
+					Grants Bewitched buff (increases max number of minions)
+					NON-CALAMITY BUFF POTION
+					'''
+			}
+
+			BlurringPotion: {
+				DisplayName: Blurring Potion
+				Tooltip:
+					'''
+					Grants Blurring buff (activates Shadow Dodge for 10 sec after 30 sec CD)
+					NON-CALAMITY BUFF POTION
+					'''
+			}
+
+			BuilderCombination: {
+				DisplayName: Builder Combination
+				Tooltip: Grants buffs, which are necessary for building (Calm, Builder, Mining)
+			}
+
+			CalamityCombination: {
+				DisplayName: Calamity Combination
+				Description: Grants some of the Calamity mod buffs (Photosynthesis, Fabsol's Vodka, Soaring and Bounding)
+			}
+
+			DiscordPotion: {
+				DisplayName: Discord Potion
+				Tooltip:
+					'''
+					Allows to teleport on cursor position by hotkey
+					Distorts player for 1 second after teleport
+					Inflicts heavy damage while you have Chaos State
+					Chaos State time is increased to 10 seconds
+					NON-CALAMITY BUFF POTION
+					'''
+			}
+
+			Dopamine: {
+				DisplayName: Dopamine
+				Tooltip: Makes you Happy
+			}
+
+			DungeonTeleportationPotion: {
+				DisplayName: Dungeon Teleportation Potion
+				Tooltip: Teleports you to Dungeon entrance
+			}
+
+			ExplorerCombination: {
+				DisplayName: Explorer Combination
+				Tooltip: Grants buffs, which are necessary for exploring (Dangersense, Hunter, Spelunker, Night Owl, Shine, Mining, Gills, Flippers, Water Walking)
+			}
+
+			FishingCombination: {
+				DisplayName: Fishing Combination
+				Tooltip: Grants Crate, Sonar, Fishing, Regeneration, Thorns, Iron Skin, Calming & Inferno buffs
+			}
+
+			FortitudePotion: {
+				DisplayName: Fortitude Potion
+				Tooltip:
+					'''
+					Grants immunity to knockback
+					NON-CALAMITY BUFF POTION
+					'''
+			}
+
+			GreaterDangersensePotion: {
+				DisplayName: Greater Dangersense Potion
+				Tooltip:
+					'''
+					Grants Greater Dangersense buff (light up enemy projectiles)
+					This effect is global for all players
+					'''
+			}
+
+			InvincibilityPotion: {
+				DisplayName: Invincibility Potion
+				Tooltip:
+					'''
+					Increases length of invincibility after taking damage
+					NON-CALAMITY BUFF POTION
+					'''
+			}
+
+			JungleTeleporterPotion: {
+				DisplayName: Jungle Teleporter Potion
+				Tooltip:
+					'''
+					Teleports you to the Jungle
+					Left click teleports to jungle plant
+					Right click teleports to living mahogany leaves
+					'''
+			}
+
+			MageCombination: {
+				DisplayName: Mage Combination
+				Tooltip: Grants buffs, which are necesary for Mages (Magic Power, Mana Regeneration, Сlairvoyance Wrath, Rage)
+			}
+
+			AlchemistCharmTier1: {
+				DisplayName: Alchemist Charm Tier 1
+				Tooltip:
+					'''
+					While this is in your inventory, you have a low chance not to consume potion
+					Alchemist, Brewer and Young Brewer are providing 10% discount
+					Buffs duration is 10% longer
+					'''
+			}
+
+			AlchemistCharmTier2: {
+				DisplayName: Alchemist Charm Tier 2
+				Tooltip:
+					'''
+					While this is in your inventory, you have a moderate chance not to consume potion
+					Allows to use potions from Piggy Bank by Quick Buff
+					Alchemist, Brewer and Young Brewer are providing 25% discount
+					Buffs duration is 25% longer
+					'''
+			}
+
+			AlchemistCharmTier3: {
+				DisplayName: Alchemist Charm Tier 3
+				Tooltip:
+					'''
+					While this is in your inventory, you have a high chance not to consume potion
+					Allows to use potions from Piggy Bank by Quick Buff
+					Alchemist, Brewer and Young Brewer are providing 35% discount
+					Buffs duration is 35% longer
+					'''
+			}
+
+			AlchemistCharmTier4: {
+				DisplayName: Alchemist Charm Tier 4
+				Tooltip:
+					'''
+					While this is in your inventory, you have a very high chance not to consume potion
+					Allows to use potions from Piggy Bank by Quick Buff
+					Alchemist, Brewer and Young Brewer are providing 50% discount
+					Makes potions non-consumable if Supreme Calamitas is defeated
+					Buffs duration is 50% longer
+					'''
+			}
+
+			GlobalTeleporter: {
+				DisplayName: World Warper
+				Tooltip:
+					'''
+					Teleports you to any point of the map
+					Use right-click on full screen map to teleport
+					Will not work if any boss is alive
+					Breaks after use
+					"O, the azure justice, the crimson love,
+					In the name of the one buried in destiny,
+					I shall make an oath to the light,
+					that we will show those who
+					stand in front of us - the power of love!"
+					'''
+			}
+
+			GlobalTeleporterUp: {
+				DisplayName: World Warper
+				Tooltip:
+					'''
+					Teleports you to any point of the map
+					Use right-click on full screen map to teleport
+					Will not work if any boss is alive
+					Not breaks after use
+					"O, the azure justice, the crimson love,
+					In the name of the one buried in destiny,
+					I shall make an oath to the light,
+					that we will show those who
+					stand in front of us - the power of love!"
+					'''
+			}
+
+			WorldControlUnit: {
+				DisplayName: Simulation Control Unit
+				Tooltip:
+					'''
+					Exclusive product, designed by Angela
+					Left click to change between day and night time
+					Right click to enable or disable rain (sandstorm in desert)
+					'''
+			}
+
+			LuckCharm: {
+				DisplayName: Charm of Luck
+				Tooltip:
+					'''
+					While this is in your inventory, you have better chance of getting better reforges
+					Does not affect accessories
+					'''
+			}
+
+			LuckCharmT2: {
+				DisplayName: Charm of Absolute Luck
+				Tooltip:
+					'''
+					While this is in your inventory, you have better chance of getting better reforges
+					Also affects accessories (Menacing->Lucky->Warding)
+					'''
+			}
+
+			MorePotionsCombination: {
+				DisplayName: More Potions Combination
+				Tooltip:
+					'''
+					Grants most buffs from More Potions *potions
+					Droughts, Enchanced Regeneration, Courage, Soulbinding, Diamond Skin, Dusk, Dawn, Swift Hands, Speed
+					'''
+			}
+
+			NatureBlessingPotion: {
+				DisplayName: Nature Blessing Potion
+				Tooltip: Grants Dryad's Blessing buff
+			}
+
+			NinjaPotion: {
+				DisplayName: Ninja Potion
+				Tooltip:
+					'''
+					Increases damage and critical chance by 5%
+					Gives a chance to dodge attacks and allows the ability to climb walls
+					NON-CALAMITY BUFF POTION
+					'''
+			}
+
+			InformatingNote: {
+				DisplayName: Informating Note
+				Tooltip:
+					'''
+					No Treasure Bags available yet.
+					Beat Skeletron to unlock the first wave.
+					'''
+			}
+
+			OceanTeleporterPotion: {
+				DisplayName: Ocean Teleporter Potion
+				Tooltip:
+					'''
+					Teleports you to the Ocean (near leftest or rightest сoral)
+					Side depends on used mouse button
+					Will not teleport you anywhere if no сorals exist
+					'''
+			}
+
+			PerfectDiscordPotion: {
+				DisplayName: Perfect Discord Potion
+				Tooltip:
+					'''
+					[c/00FF00:Unique Explorer's potion]
+					Allows to teleport on cursor position by hotkey
+					Behaves exactly like Rod of Discord
+					NON-CALAMITY BUFF POTION
+					'''
+			}
+
+			HMCraftPound: {
+				DisplayName: Superb Crafting Pound
+				Tooltip:
+					'''
+					Now you can do best stuff
+					Can be placed as crafting station
+					'''
+			}
+
+			MateriaTransmutator: {
+				DisplayName: Materia Transmutator
+				Tooltip:
+					'''
+					Same functionality as most of crafting stations in one
+					All crafting stations included :)
+					Also works as Water/Honey/Lava source
+					'''
+			}
+
+			PreHMPenny: {
+				DisplayName: Simple Crafting Penny
+				Tooltip:
+					'''
+					Makes you look like a master of carpentry
+					Can be placed as crafting station
+					'''
+			}
+
+			SpecCraftPoint: {
+				DisplayName: Special Crafting Point
+				Tooltip:
+					'''
+					You've proven that you can do anything with any material
+					Can be placed as crafting station
+					'''
+			}
+
+			RangerCombination: {
+				DisplayName: Ranger Combination
+				Tooltip: Grants buffs, which are necesary for Rangers (Archery, Ammo Reservation, Wrath, Rage)
+			}
+
+			SpiritCombination: {
+				DisplayName: Spirit Combination
+				Tooltip: Grants most buffs from Spirit Mod potions (Runescribe, Soulguard, Spirit, Starburn, Steadfast and Toxin)
+			}
+
+			SummonerCombination: {
+				DisplayName: Summoner Combination
+				Tooltip: Grants buffs, which are necessary for Summoners (Summoning, Bewitched, Wrath)
+			}
+
+			AlchemistHorcrux: {
+				DisplayName: Alchemist Horcrux
+				Tooltip: The piece of Alchemist's soul is inside it.
+			}
+
+			APMC: {
+				DisplayName: AI Programming and Memory Chip
+				Tooltip: It is Angela's backup.
+			}
+
+			ArchitectHorcrux: {
+				DisplayName: Architect Horcrux
+				Tooltip: The piece of Architect's soul is inside it.
+			}
+
+			BrewerHorcrux: {
+				DisplayName: Brewer Horcrux
+				Tooltip: The piece of Brewer's soul is inside it.
+			}
+
+			HorrifyingSkull: {
+				DisplayName: Horrifying Skull
+				Tooltip:
+					'''
+					Summons the mightiest enemy
+					Use with the extreme care
+					'''
+			}
+
+			JewelerHorcrux: {
+				DisplayName: Jeweler Horcrux
+				Tooltip: The piece of Jeweler's soul is inside it.
+			}
+
+			MusicianHorcrux: {
+				DisplayName: Musician Horcrux
+				Tooltip: The piece of Musician's soul is inside it.
+			}
+
+			TinkererHorcrux: {
+				DisplayName: Tinkerer Horcrux
+				Tooltip: The piece of Tinkerer's soul is inside it.
+			}
+
+			SunshinePotion: {
+				DisplayName: Sunshine Potion
+				Tooltip:
+					'''
+					Increases light radius greatly
+					NON-CALAMITY BUFF POTION
+					'''
+			}
+
+			TankCombination: {
+				DisplayName: Tank Combination (w/Modded)
+				Tooltip: Grants buffs, which are necessary for Tanks (Endurance, Lifeforce, Ironskin, Obsidian Skin, Thorns, Regeneration, Titan Skin, Invincibility)
+			}
+
+			TempleTeleportationPotion: {
+				DisplayName: Temple Teleportation Potion
+				Tooltip: Teleports you to Temple
+			}
+
+			ThoriumCombination: {
+				DisplayName: Thorium Combination
+				Tooltip:
+					'''
+					Grants most buffs from Thorium Mod potions
+					Assassin, Blood, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy, Hydration
+					'''
+			}
+
+			TitanSkinPotion: {
+				DisplayName: Titan Skin Potion
+				Tooltip:
+					'''
+					Grants immunity to some debuffs (On Fire!, Frostburn, Cursed Flame, Chilled, Frozen, Ichor)
+					Immunity to Cursed Flame and Ichor would work only after beating Twins
+					NON-CALAMITY BUFF POTION
+					'''
+			}
+
+			TrapsPotion: {
+				DisplayName: Trapper Potion
+				Tooltip: Empoweres all traps
+			}
+
+			UltimaCake: {
+				DisplayName: Ultima Cake
+				Tooltip:
+					'''
+					Grants special effects of almost all stations simultaniosly
+					This includes Campfires, Lamps, Bast's Statue, Sharpening Station, Ammo Box, Crystal Ball, Slice of Cake and Bewitching Table.
+					By some unimageneable magic, it will never be consumed
+					NON-CALAMITY BUFF ITEM
+					'''
+			}
+
+			UnderworldTeleportationPotion: {
+				DisplayName: Underworld Teleporter Potion
+				Tooltip:
+					'''
+					Teleports you to Underworld to leftest or rightest Obsidian Tower
+					Side depends of used mouse button
+					Would be useful to drink Obsidian Skin potion before drinking that
+					'''
+			}
+
+			UniversalCombination: {
+				DisplayName: Universal Combination
+				Tooltip: Gives combined effects of Tank, Ranger, Mage and Summoner Combinations in a single buff.
+			}
+
+			VanTankCombination: {
+				DisplayName: Tank Combination (Vanilla)
+				Tooltip: Grants buffs, which are necessary for Tanks (Endurance, Lifeforce, Ironskin, Obsidian Skin, Thorns, Regeneration)
+			}
+		}
+
+		NPCs: {
+			Alchemist: {
+				DisplayName: Alchemist
+
+				TownNPCMood: {
+					Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.Content}"
+					NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.NoHome}"
+					FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.FarFromHome}"
+					LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LoveSpace}"
+					DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.DislikeCrowded}"
+					HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.HateCrowded}"
+					LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LoveBiome}"
+					LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LikeBiome}"
+					DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.DislikeBiome}"
+					LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LoveNPC}"
+					LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LikeNPC}"
+					DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.DislikeNPC}"
+					LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LikeNPC_Princess}"
+					Princess_LovesNPC: I like {NPCName}.
+				}
+
+				Census.SpawnCondition: Conditions unknown
+			}
+
+			Architect: {
+				DisplayName: Architect
+
+				TownNPCMood: {
+					Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.Content}"
+					NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.NoHome}"
+					FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.FarFromHome}"
+					LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LoveSpace}"
+					DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.DislikeCrowded}"
+					HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.HateCrowded}"
+					LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LoveBiome}"
+					LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LikeBiome}"
+					DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.DislikeBiome}"
+					LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LoveNPC}"
+					LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LikeNPC}"
+					DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.DislikeNPC}"
+					LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LikeNPC_Princess}"
+					Princess_LovesNPC: I like {NPCName}.
+				}
+
+				Census.SpawnCondition: Conditions unknown
+			}
+
+			Brewer: {
+				DisplayName: Brewer
+
+				TownNPCMood: {
+					Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.Content}"
+					NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.NoHome}"
+					FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.FarFromHome}"
+					LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LoveSpace}"
+					DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.DislikeCrowded}"
+					HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.HateCrowded}"
+					LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LoveBiome}"
+					LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LikeBiome}"
+					DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.DislikeBiome}"
+					LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LoveNPC}"
+					LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LikeNPC}"
+					DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.DislikeNPC}"
+					LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LikeNPC_Princess}"
+					Princess_LovesNPC: I like {NPCName}.
+				}
+
+				Census.SpawnCondition: Conditions unknown
+			}
+
+			Jeweler: {
+				DisplayName: Jeweler
+
+				TownNPCMood: {
+					Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.Content}"
+					NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.NoHome}"
+					FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.FarFromHome}"
+					LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LoveSpace}"
+					DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.DislikeCrowded}"
+					HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.HateCrowded}"
+					LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LoveBiome}"
+					LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LikeBiome}"
+					DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.DislikeBiome}"
+					LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LoveNPC}"
+					LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LikeNPC}"
+					DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.DislikeNPC}"
+					LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LikeNPC_Princess}"
+					Princess_LovesNPC: I like {NPCName}.
+				}
+
+				Census.SpawnCondition: Conditions unknown
+			}
+
+			Musician: {
+				DisplayName: Musician
+
+				TownNPCMood: {
+					Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.Content}"
+					NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.NoHome}"
+					FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.FarFromHome}"
+					LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LoveSpace}"
+					DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.DislikeCrowded}"
+					HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.HateCrowded}"
+					LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LoveBiome}"
+					LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LikeBiome}"
+					DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.DislikeBiome}"
+					LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LoveNPC}"
+					LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LikeNPC}"
+					DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.DislikeNPC}"
+					LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LikeNPC_Princess}"
+					Princess_LovesNPC: I like {NPCName}.
+				}
+
+				Census.SpawnCondition: Conditions unknown
+			}
+
+			Operator: {
+				DisplayName: Operator
+
+				TownNPCMood: {
+					Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.Content}"
+					NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.NoHome}"
+					FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.FarFromHome}"
+					LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LoveSpace}"
+					DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.DislikeCrowded}"
+					HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.HateCrowded}"
+					LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LoveBiome}"
+					LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LikeBiome}"
+					DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.DislikeBiome}"
+					LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LoveNPC}"
+					LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LikeNPC}"
+					DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.DislikeNPC}"
+					LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LikeNPC_Princess}"
+					Princess_LovesNPC: I like {NPCName}.
+				}
+
+				Census.SpawnCondition: Conditions unknown
+			}
+
+			Tinkerer: {
+				DisplayName: Tinkerer
+
+				TownNPCMood: {
+					Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.Content}"
+					NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.NoHome}"
+					FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.FarFromHome}"
+					LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LoveSpace}"
+					DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.DislikeCrowded}"
+					HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.HateCrowded}"
+					LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LoveBiome}"
+					LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LikeBiome}"
+					DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.DislikeBiome}"
+					LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LoveNPC}"
+					LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LikeNPC}"
+					DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.DislikeNPC}"
+					LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LikeNPC_Princess}"
+					Princess_LovesNPC: I like {NPCName}.
+				}
+
+				Census.SpawnCondition: Conditions unknown
+			}
+
+			YoungBrewer: {
+				DisplayName: Young Brewer
+
+				TownNPCMood: {
+					Content: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.Content}"
+					NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.NoHome}"
+					FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.FarFromHome}"
+					LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LoveSpace}"
+					DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.DislikeCrowded}"
+					HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.HateCrowded}"
+					LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LoveBiome}"
+					LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LikeBiome}"
+					DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.DislikeBiome}"
+					LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LoveNPC}"
+					LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LikeNPC}"
+					DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.DislikeNPC}"
+					LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LikeNPC_Princess}"
+					Princess_LovesNPC: I like {NPCName}.
+				}
+
+				Census.SpawnCondition: Conditions unknown
+			}
+		}
+
+		Projectiles: {
+			CorrosiveFlask.DisplayName: Corrosive Flask
+			CorrosiveFlaskCloud.DisplayName: Corrosive Flask Cloud
+			Gemstone.DisplayName: Gemstone
+			LocatorProjectile.DisplayName: Locator Projectile
+		}
+
+		DiscordBuffTeleportation: Discord Buff Teleportation
+		evilBossMask: Corruption/Crimson boss mask
+		cultist: Cultist mask/hood
+		tier3HardmodeBar: tier 3 Hardmode Bar
+		hardmodeComponent: Hardmode component
+		evilBar: Crimson/Corruption bar
+		evilMushroom: evil mushroom
+		evilComponent: evil component
+		evilDrop: evil drop
+		tier2anvil: tier 2 anvil
+		tier2forge: tier 2 forge
+		tier1anvil: tier 1 anvil
+		CelestialWings: Celestial Wings
+		LunarHamaxe: Lunar Hamaxe
+		tier3Watch: tier 3 Watch
+		KingSlime: King Slime Treasure Bag
+		EyeofCthulhu: Eye of Cthulhu Treasure Bag
+		EaterOfWorlds: Eater Of Worlds Treasure Bag
+		BrainOfCthulhu: Brain Of Cthulhu Treasure Bag
+		QueenBee: Queen Bee Treasure Bag
+		Skeletron: Skeletron Treasure Bag
+		Deerclops: Deerclops Treasure Bag
+		WallOfFlesh: Wall Of Flesh Treasure Bag
+		QueenSlime: Queen Slime Treasure Bag
+		Destroyer: Destroyer Treasure Bag
+		Twins: Twins Treasure Bag
+		SkeletronPrime: Skeletron Prime Treasure Bag
+		Plantera: Plantera Treasure Bag
+		EmpressOfLight: Empress of Light Treasure Bag
+		Golem: Golem Treasure Bag
+		Betsy: Betsy Treasure Bag
+		DukeFishron: Duke Fishron Treasure Bag
+		MoonLord: Moon Lord Treasure Bag
+		DesertScourge: Desert Scourge Treasure Bag
+		Crabulon: Crabulon Treasure Bag
+		HiveMind: The Hive Mind Treasure Bag
+		Perforator: The Perforators Treasure Bag
+		SlimeGod: The Slime God Treasure Bag
+		Cryogen: Cryogen Treasure Bag
+		BrimstoneElemental: Brimstone Elemental Treasure Bag
+		AquaticScourge: Aquatic Scourge Treasure Bag
+		Calamitas: Calamitas Doppelganger Treasure Bag
+		AstrageldonSlime: Astrum Aureus Treasure Bag
+		AstrumDeus: Astrum Deus Treasure Bag
+		Leviathan: The Leviathan Treasure Bag
+		PlaguebringerGoliath: The Plaguebringer Goliath Treasure Bag
+		Ravager: Ravager Treasure Bag
+		Providence: Providence, the Profaned Goddess Treasure Bag
+		StormWeaver: Storm Weaver Treasure Bag
+		CeaselessVoid: Ceaseless Void Treasure Bag
+		Signus: Signus, Envoy of the Devourer Treasure Bag
+		Polterghast: Polterghast Treasure Bag
+		OldDuke: The Old Duke Treasure Bag
+		DevourerofGods: The Devourer of Gods Treasure Bag
+		Bumblebirb: The Dragonfolly Treasure Bag
+		Yharon: Jungle Dragon, Yharon Treasure Bag
+		ExoMechs: Exo Mechs Treasure Bag
+		SupremeCalamitas: Supreme Calamitas Treasure Bag
+		DarkMage: Dark Mage Treasure Bag
+		Ogre: Ogre Treasure Bag
+		ThunderBird: The Great Thunder Bird Treasure Bag
+		QueenJellyfish: The Queen Jellyfish Treasure Bag
+		CountEcho: Count Echo Treasure Bag
+		GraniteEnergyStorm: Granite Energy Storm Treasure Bag
+		TheBuriedChampion: The Buried Champion Treasure Bag
+		TheStarScouter: The Star Scouter Treasure Bag
+		BoreanStrider: Borean Strider Treasure Bag
+		CoznixTheFallenBeholder: Coznix, The Fallen Beholder Treasure Bag
+		TheLich: The Lich Treasure Bag
+		AbyssionTheForgottenOne: Abyssion, The Forgotten One Treasure Bag
+		TheRagnarok: The Ragnarok Treasure Bag
+		KingChicken: The Mighty King Chicken Treasure Bag
+		ThornBane: Thorn, Bane of the Forest Treasure Bag
+		TheKeeper: The Keeper Treasure Bag
+		XenoCrystal: Xenomite Crystal Treasure Bag
+		IEye: Infected Eye Treasure Bag
+		KingSlayer: King Slayer III Treasure Bag
+		V1: Vlitch Cleaver Treasure Bag
+		V2: Vlitch Gigipede Treasure Bag
+		V3: Omega Obliterator Treasure Bag
+		PZ: Patient Zero Treasure Bag
+		ThornRematch: Thorn, Bane of the Forest Rematch Treasure Bag
+		Nebuleus: Nebuleus, Angel of the Cosmos Treasure Bag
+		Wasteland: Wasteland Treasure Bag
+		Infernace: Infernace Treasure Bag
+		ScourgeFighter: Scourge Fighter Treasure Bag
+		Regaroth: Regaroth Treasure Bag
+		TheCelestials: The Celestials Treasure Bag
+		Permafrost: Permafrost Treasure Bag
+		Obsidious: Obsidious Treasure Bag
+		Aqueous: Aqueous Treasure Bag
+		TempleKeepers: The Temple Keepers Treasure Bag
+		Guardian: The Guardian Treasure Bag
+		Volcanox: Volcanox Treasure Bag
+		VoidLevi: Void Leviathan Treasure Bag
+		Azana: Azana Treasure Bag
+		Ancients: The Ancients Treasure Bag
+		Decree: The Decree Treasure Bag
+		FlamingPumpkin: The Flaming Pumpkin Treasure Bag
+		Jensen: Jensen, the Grand Harpy Treasure Bag
+		Araneas: Araneas Treasure Bag
+		Raynare: Harpy Queen, Raynare Treasure Bag
+		Primordia: Primordia Treasure Bag
+		Abaddon: Abaddon, the Emissary of Nightmares Treasure Bag
+		Araghur: Araghur, the Flare Serpent Treasure Bag
+		Lunarians: The Lunarians Treasure Bag
+		Challenger: Erazor Treasure Bag
+		Spookboi: Nihilus Treasure Bag
+		Scarabeus: Scarabeus Treasure Bag
+		Bane: Vinewrath Bane Treasure Bag
+		Flier: Ancient Flier Treasure Bag
+		Raider: Starplate Raider Treasure Bag
+		Infernon: Infernon Treasure Bag
+		Dusking: Dusking Treasure Bag
+		EtherialUmbra: Etherial Umbra Treasure Bag
+		IlluminantMaster: Illuminant Master Treasure Bag
+		Atlas: Atlas Treasure Bag
+		Overseer: Overseer Treasure Bag
+		Sharkron: Dune Sharkron Treasure Bag
+		Hypothema: Hypothema Treasure Bag
+		Ragnar: Ragnar Treasure Bag
+		AnDio: Andesia & Dioritus Treasure Bag
+		Annihilator: The Annihilator Treasure Bag
+		Slybertron: Slybertron Treasure Bag
+		SteamTrain: Steam Train Treasure Bag
+		SunlightTrader: Sunlight Trader Treasure Bag
+		THOFC: The Heart of the Cavern Treasure Bag
+		MythrilSlime: Mythril Slime Treasure Bag
+		Valdaris: Valdaris Treasure Bag
+		Gatekeeper: The Gatekeeper Treasure Bag
+		Monarch: Mushroom Monarch Treasure Bag
+		Grips: Grips of Chaos Treasure Bag
+		Broodmother: Broodmother Treasure Bag
+		Hydra: Hydra Treasure Bag
+		Serpent: Subzero Serpent Treasure Bag
+		Djinn: Desert Djinn Treasure Bag
+		Retriever: Retriever Treasure Bag
+		RaiderU: Raider Ultima Treasure Bag
+		Orthrus: Orthrus X Treasure Bag
+		EFish: Emperor Fishron Treasure Bag
+		Nightcrawler: Nightcrawler Treasure Bag
+		Daybringer: Daybringer Treasure Bag
+		Yamata: Yamata Treasure Bag
+		Akuma: Akuma Treasure Bag
+		Zero: Zero Treasure Bag
+		Shen: Shen Doragon Treasure Cache
+		ShenGrips: Shen Doragon Grips Treasure Bag
+		PlantsShop: Plants shop
+		GetCharm: Get Charm
+		Edward: Edward
+		Severus: Severus
+		Horace: Horace
+		Tilyorn: Tilyorn
+		Nicolas: Nicolas
+		Gregg: Gregg
+		EntryA1: My Healing potions will cure your deepest wounds.
+		EntryA2: My Mana potions will restore your magic power.
+		EntryA3: Restoration potions... I'm not sure if I trust them...
+		EntryA4: There's a legendary yoyo known as the Sasscade.
+		EntryA5: The Strange Brew I bought from the Skeleton Merchant smells awful, but its Mana Restoration effect is awesome!
+		EntryA6: Hi, *cough*... That definitely wasn't a Teleporation potion.
+		EntryA7: Have you seen any Mechanical Skulls around?
+		EntryA8: Have you ever heard of Ultra Mushroom? If you find one, I do believe I got some stuff to aid you in boosting that thing.
+		EntryA9: "I asked "
+		EntryA10: " if I could buy the recipe for the Potent Extract. He said no because, and I quote, ''Even an idiot would figure it out.''"
+		EntryA11: And to think, she's getting the potions and not me... but I can't argue there.
+		EntryA12: "What is his name? "
+		EntryA13: ? So... Teacher's here? Better step up my game!
+		EntryA14: Thank goodness I got those pieces from Skeletron. Want to check it out?
+		EntryA15: "Can you please ask "
+		EntryA16: " to stop mocking me? I know my potions can't make you stronger, but at least they aren't as dangerous to drink."
+		EntryA17: These goblins are so annoying... Thankfully, they cannot stay here for too long.
+		EntryA18: You better deal with Pirates as fast, as you can. I can't wait to talk with Captain! Haven't seen him for years!
+		EntryA19: I hope that you will not let them into my house, will you?
+		EntryA20: Perhaps there are better things for you to do, rather than talking to me, at the moment. I don't know... maybe defend us?!
+		EntryA21: ...My friend, the best thing to do in this case is not bother me during this time.
+		EntryA22: I have an explosive flask. You do NOT want to know what it tastes like.
+		EntryA23: "How can "
+		EntryA24: " stay calm in a time like this? I want to know, NOW."
+		EntryA25: "Don't let the dark one that came from the Jungle fool you with charming wisdom. Me and "
+		EntryA26: " were once his apprentices. I quit when his lessons turned too dark but "
+		EntryA27: " interest in occult Alchemy did nothing but grow."
+		Joe: Joe
+		Mark: Mark
+		Walter: Walter
+		Archer: Archer
+		Frido: Frido
+		Li: Li
+		A1: "If this dastardly "
+		A2: " isn't going to shut up, I'm letting "
+		A3: " bite her."
+		A4: KILL THE ZOMBIES! KILL THE BUNNIES! IN THE NAME OF THE BLOO- oh sorry I didn't notice you here.
+		A5: Why hello there I'm just getting some blood buckets for a lake I'm making pleasedontaskanymorequestions
+		A6: I like it when there is a gigantic horde of zombies behind our doors. But I HATE WHEN THEY BREAK MY DOORS!
+		A7: Ah, the feeling that I'm not safe, the paranoia is embraced the moment the bloodmoon rises up in the sky.
+		A8: Are you interested in my religion? It invloves sacrifices to the bloody moon.
+		A9: Do you know why I hate these goblins? They are mildly annoying.
+		A10: Hooray to pirates! They supply me with my golden furniture!
+		A11: Ah! Finally some proper plating to have my roof done!
+		A12: "No explosives please, "
+		A13: " is already annoying me enough."
+		A14: BUILDER POTIONS FREE FOR EVERYONE but you.
+		A15: What? Where I got my architect degree? There's an architect degree?
+		A16: Did'ja know that wood somehow doesn't burn? Though under certain circumstances it does. Weird...
+		A17: No, I am not the guy. I'm the dude.
+		A18: Well, the one you recently made was ALMOST impressive. (not really)
+		A19: So, you say that chests are furniture too. I reply: Screw you.
+		A20: I saw your buildings but I am still not impressed
+		A21: Have you heard 'bout that FuryForged guy? I taught him all he knows!
+		A22: I was once hired by a certain company to build a supermassive hi-tech, hi-security installation. Lemme tell ya its my magnum opus in terms of security and containment.
+		AS1: "1st shop (Filler Blocks)       "
+		AS2: "2nd shop (Building Blocks)     "
+		AS3: "3rd shop (Basic Furniture)     "
+		AS4: "4th shop (Advanced Furniture)  "
+		AS5: "5th shop (Torches)             "
+		AS6: "6th shop (Candles)             "
+		AS7: "7th shop (Lamps)               "
+		AS8: "8th shop (Lanterns)            "
+		AS9: "9th shop (Chandeliers)         "
+		AS10: "10th shop (Candelabras)        "
+		ShopsChanger: Shops Changer
+		ShopB1: 1st shop (Vanilla)
+		ShopB2: 2nd shop (Mod/Calamity)
+		ShopB3: 3rd shop (Thorium/RG)
+		ShopB4: "4th shop (MorePotions)              "
+		ShopB5: "5th shop (UnuBattleRods/Tacklebox/Tremor) "
+		ShopB6: 6th shop (Wildlife/Sacred/Spirit/Cristilium/ExpSentr)
+		Lillian: Lillian
+		Lucy: Lucy
+		Alice: Alice
+		Rocksahn: Rocksahn
+		Agness: Agness
+		Mary: Mary
+		EntryB1: Care to try this potion? It's supposed to grant wings.
+		EntryB2: I don't think that was a Spelunker potion...
+		EntryB3: I got my degrees in Riddle University.
+		EntryB4: There's a legendary yoyo known as the Sasscade.
+		EntryB5: Aww, bread crumbs and beaver spit!
+		EntryB6: Hi, *cough* that wasn't an Inferno potion!
+		EntryB7: Have you seen two mechanical eyes around?
+		EntryB8: "That silly goose "
+		EntryB9: " is too afraid of using occult powers in Alchemy. And so his potions are just some useless water."
+		EntryB10: *sneezes* Eww... I always sneeze while these Goblins are around!
+		EntryB11: Just don't let them in my house... There are so many needed supplies and instruments.
+		EntryB12: Is this a Martians Invasion? Are they going to enslave us all? Or they want to destroy us all? No one knows the answer...
+		EntryB13: Is it Blood Moon in the sky? I love it! It is so beautiful!
+		EntryB14: I was born under the light of Blood Moon. I am always so excited when IT appears!
+		EntryB15: Yeah, I can understand why the other girls are annoyed, but that's not stopping me!
+		EntryB16: As happy as I am, I'm not giving discounts - I'm not dumb.
+		EntryB17: "Normally I'm confused with how "
+		EntryB18: " is just as calm as I am, but then I remember "
+		EntryB19: I once traveled far away from Terraria to learn more about Alchemy. In my travels I met a ''scientist of magic'' called Azanor. He showed me the secrets of something called ''thaumaturgy''.
+		ArenaShop: Arena Shop
+		Carl: Carl
+		John: John
+		JanMare: JanMare
+		LuiFransua: LuiFransua
+		Daniel: Daniel
+		Charley: Charley
+		EntryJ1: I found some gems for selling. Would you check them?
+		EntryJ2: Magic rings are not as powerful as Legendary Emblems, but still can give you some advantage against powerful creatures.
+		EntryJ3: Ouch... what do you want, my friend?
+		EntryJ4: I can make a Diamond Ring for you.
+		EntryJ5: No, don't think that I somehow related to Skeleton Merchant.
+		EntryJ6: If you somehow find all Magic Rings,then you could make the Omniring.
+		EntryJ7: Have you seen Mechanical Creatures?
+		EntryJ8: "Did you notice that "
+		EntryJ9: " and I looks almost the same? It's because we're twin brothers."
+		EntryJ10: Should you find enought of those torn notes, bring the to me and ill decipher them for you. Dont ask me why, just know that they hold a value for me.
+		Shop2: 2nd shop
+		Shop3: 3rd shop
+		ShopChanger: Shop Changer
+		Beethoven: Beethoven
+		Bach: Bach
+		Johan: Johan
+		Edison: Edison
+		Scott: Scott
+		Lloyd: Lloyd
+		Gamma: Gamma
+		EntryM1: I would wear headphones, but I'm not sure if Terrarians even have ears...
+		EntryM2: I have to wonder why Boss 1 and Boss 2 didn't get better names in the OST. Those names are soooo bland.
+		EntryM3: Look, the Cyborg may have my name, but I've still got the better job here.
+		EntryM4: Shhhhh! You'll ruin my recording!
+		EntryM5: I swear, if one more person asks me to sell them a ''Megalovania'' music box....
+		EntryM6: Look, your enthusiasm is awesome, but could you maybe record the next boss track yourself? I don't really want to risk my life for some tunes.
+		EntryM7: Ah, I see you were able to save the Explorer! Well done! Perhaps my next song is going to be about your triumph.
+		EntryM8: "You know, "
+		EntryM9: " has been really helpful while I've been setting up this sound system. Wires are key!"
+		EntryM10: "If you run into "
+		EntryM11: ", let him know he still owes me for those music boxes I sold him."
+		EntryM12: "I'll be honest, I'm not sure if I trust "
+		EntryM13: . He claims to not be possessed, and yet he still is using skulls to fight... I'm getting mixed messages here.
+		EntryM14: Man, my mixtape is so much better than this, but I can't sell you that due to copyright.
+		EntryM15: No, I don't have an ''All Star'' music box. Code it in yourself.
+		EntryM16: Wait, NPC? I thought I was the protagonist!
+		EntryM17: Never thought I'd be selling a music box with lyrics... DM DOKURO, you're a madman and I love it!
+		EntryM18: A whole music based class? That sounds amazing! Too bad I don't have any gear for that, huh?
+		EntryM19: This is your fault. GET. OUT.
+		EntryM20: Ah, this takes me back! I remember when this song used to play in the dungeon and the underworld... good times!
+		EntryM21: Is there a name for the fear of being spied by a cake?
+		EntryM22: You are hurting my ears! Turn it down!
+		BossDropsShop: Boss Drops & Materials Shop
+		BossDropsModsShop: Modded Boss Drops & Materials Shop
+		VanillaTreasureBagsShop: Vanilla Treasure Bags Shop
+		ModdedTreasureBagsShop: Modded Treasure Bags Shop
+		ModdedTreasureBagsShop2: Modded Treasure Bags Shop #2
+		ModdedTreasureBagsShop3: Modded Treasure Bags Shop #3
+		Angela: Angela
+		Carmen: Carmen
+		EntryO1: How is your day, Manager? Can I help you?
+		EntryO2: That 'The Great Thunder Bird' doesn't seems so dangerous. I am only hoping that it isn't a part of Apocalypse Bird...
+		EntryO3: Hello, Manager! Isn't this day silent, is it?
+		EntryO4: Do you want anything special, Manager?
+		EntryO5: Eater of Worlds is an Abnormality with risk class TETH. And now it is contained. Do you need something from it?
+		EntryO6: If you manage to supress Ragnarok, then you could do everything imaginable.
+		EntryO7: Eye of Cthulhu is a pretty strange creature. It seems like it is just a small part of something really dangerous. It would be better for us if it never escapes.
+		EntryO8: Brain of Cthulhu may look horrifying, but without its minions it can't do anything.
+		EntryO9: Something changed in this world, Manager. Evil is spreading even wider, but at the same time, my sensor system caught the birth of new biome, called Hallow.
+		EntryO10: All these Mechanical Bosses... They definitely could have Trauma origin. What classification numbers will they get? I think they would be started as T-05-...
+		EntryO11: Goblins... Such a pathetic creatures. And the only useful things from them are just Spiky Balls and Harpoons.
+		EntryO12: Pretty strange Abnormal event... They all look as living creatures, but their 'Flying Dutchman' is definetly a ghost with HE risk class.
+		EntryO13: Martians came again. Last time they were here, several big towns were destroyed. But we could say as an excuse that we weren't as ready, as we were now.
+		EntryO14: Blood Moon? Shouldn't it happen once in 666 years?
+		EntryO15: All these strange cratures just keep coming and coming to this 'Beacon'... Hope we all will survive until Dawn.
+		EntryO16: Anyway, there are some reasons for optimism. Blood Moon attracts some creatures, which cannot be seen in normal conditions.
+		EntryO17: I read a few manuscripts about creature, named Slime God. They say that he is one of the first creatures in this world.
+		EntryO18: Yharim... I am pretty sure I heard that name before. But my memory data is corrupted. Try asking Calamitas about him...
+		EntryO19: This carnivorous plant was really dangerous... Looks like it was at least HE Risk Class. Glad to see you again in one piece after all.
+		EntryO20: This ancient machine was holding celestial powers inside. With its death, world can change forever...
+		EntryO21: An insect the size of the Queen Bee defies current methods of classification. I propose insects of this size be given a new classification MI-XX. It is a wonder that nobody has used them for their own means, let us be the first.
+		EntryO22: It appears I was wrong about the queen bees. Their memory storage contains the ramblings of a scientist who was blinded by ambition and cruelly introduced the plague to them. Let us classify them as MP-0X.
+		EntryO23: According to my notes, this Coznix you speak of was a lesser Void Observer, classified as OB-V-01. There are greater threats waiting beyond the veil of reality.
+		EntryO24: This flying scouter..... curious. From the memory banks stored in the wreckage, this looks to have been a scouting ship for the Martians, to determine how hospitable Terraria is. I fear the pilot's last moments have been transmitted to the main Martian command centre.
+		EntryO25: Turning a mages' power in on himself and trapping him within it is no easy task, but to observe cruelty of such magnitude..... Permafrost, former lord of the Ice Castle, may you see peace.
+		EntryO26: The Starplate raider is a Genius Stardust Centipede, or a G-S-C3, popular with the Martian elite as lifelong companions and raiding partners. It must have wandered far from home, judging from the transmitter memory banks I recovered.
+		EntryO27: I took the time to analyze the remains of this incredible creature. Every time it attacked, the entire planet seemed to resonate against its will. I can do nothing but to worry about the consequences of its death. At least, you saved Terraria of certain doom..........again.
+		EntryO28: Such an ancient presence is worth documenting - the material of its plates can withstand temperatures equal to the core of the Terrarian Sun! This will revolutionize containment procedures for ARS-0N prisoners if we can make materials half as resistant to heat!
+		EntryO29: Whoever made the Ravager deserves to be put in HI-MAX containment. All those tortured souls....... Well, at least you put them out of their misery.
+		EntryO30: Interesting... those Bumblebirbs were actually meant to be clones of Yharon. I’m glad that experiment was a failure!
+		EntryO31: You were lucky that thing got complacent and didn't open a portal to the Sun on our heads. The sheer strength and intelligence it exhibited means I need to make a whole new category for the classification of Worms.
+		EntryO32: I have my theories about the origin of this being, frightening more than his soul (if he even has one)... Irradiates negative energy, experimentation shown how in darkness this ''oblivion energy'', irradiated light but in light places irradiated shadow. I don't know where he came from but I know that whatever it is, it must be contained at any cost!
+		EntryO33: Supreme Calamitas has been defeated but she speaks of a being even stronger than herself. We must hope that he hasn't taken notice of us yet.
+		EntryO34: I’m honestly not sure why giant spinning skulls are the key to everything, but somehow they seem to contain the power of celestial beings within them...
+		EntryO35: Yeah, I know that we are the ones capturing and farming horrifying eldritch entities. But who the hell thought It was a good idea to put loot bags inside a giant monster?!?!
+		EntryO36: Кemember Manager, Treasure Bags are valuable but not everything comes inside them. That mutant man can help you get a boss's most elusive drops.
+		Alexander: Alexander
+		Peter: Peter
+		TinkererButton1: Movement/Misc
+		TinkererButton2: Combat
+		EntryT1: Do you need something special? Just say if so...
+		EntryT2: Have you seen my elder sister yet? She is more Steampunker than Tinkerer...
+		EntryT3: If you seen Paper Tube somewhere, bring it to me and I will unlock it for you.
+		EntryT4: As you will progress through the world, you may found more valueable things. Counting blueprints for creating rarer accessories.
+		EntryT5: You never know where you may get really rare or valueable things. So explore every possible corner with patience.
+		Harold: Harold
+		Charles: Charles
+		Monty: Monty
+		Lucas: Lucas
+		Porky: Porky
+		Leeland: Leeland
+		Atreus: Atreus
+		Entry1: I'm trading potions which were made by my parents.
+		Entry2: I have some potions I can sell to you.
+		Entry3: Although, the Battle Combination was my idea.
+		Entry4: There's a legendary yoyo known as the Sasscade.
+		Entry5: Strange Brew from Skeleton Merchant smells really terrible, but Mana Restoration effect is awesome.
+		Entry6: Hi, *cough*.. That definetly wasn't a lemonade.
+		Entry7: Have you seen a Mechanical Worm around?
+		Entry8: "My mom, "
+		Entry9: ", is the coolest brewer ever, isn't she? She can brew the hardest potions with ease."
+		Entry10: Certain combinations can only be brewed if certain types of magic are present in the world.
+
+		Tiles: {
+			HMCraftPound.MapEntry: Superb Crafting Pound
+			MateriaTransmutator.MapEntry: Materia Transmutator
+			MateriaTransmutatorMK2.MapEntry: Materia Transmutator MK2
+			PreHMPenny.MapEntry: Simple Crafting Penny
+			SpecCraftPoint.MapEntry: Special Crafting Point
+		}
+
+		"Keybinds.Discord Buff Teleportation.DisplayName": Discord  Buff  Teleportation
+
+		Configs: {
+			ModConfiguration: {
+				ShopChangeDelay: {
+					Tooltip: Delay before shop can be changed after opening interface. 10 frames by default
+					Label: Shop Change Delay
+				}
+
+				DesertFossilPrice: {
+					Tooltip: 1000 is 10 silver price by default
+					Label: Desert Fossil Price
+				}
+
+				SiltSlushPrice: {
+					Tooltip: 700 is 7 silver price by default
+					Label: Silt/Slush blocks Price
+				}
+
+				WormholePrice: {
+					Tooltip: 1000 is 10 silver price by default
+					Label: Wormhole Potion Price
+				}
+
+				RecallPrice: {
+					Tooltip: 1000 is 10 silver price by default
+					Label: Recall Potion Price
+				}
+
+				StarPrice: {
+					Tooltip: 1000 is 10 silver price by default
+					Label: Fallen Stars Price
+				}
+
+				PotsPriceMulti: {
+					Tooltip: Multiplies potions price by X. 1 by default
+					Label: Potions price multiplier
+				}
+
+				CatchNPC: {
+					Tooltip: True to make mod's town NPCs catcheable. True by default
+					Label: Catcheable mod's NPCs toggle
+				}
+
+				RevPrices: {
+					Tooltip: True to make potions prices bigger. True by default
+					Label: Revengeance mode prices scaling
+				}
+
+				DisabledLocatorNpcs: {
+					Tooltip: Arrows won't point to these NPCs
+					Label: Disabled NPCs for Lifeform Analyzer Locator
+				}
+
+				LocatorRange: {
+					Tooltip: Max distance the pointer will track. 4000 by default
+					Label: Lifeform Analyzer Pointing Range
+				}
+
+				LifeformAnalyzer: {
+					Tooltip: Enable or disable laser pointing of Lifeform Analyzer (ticks each second). True by default
+					Label: Lifeform Analyzer laser pointing
+				}
+
+				TinkererSpawn: {
+					Tooltip: True to enable Tinkerer NPC spawn, false to disable. True by default
+					Label: Tinkerer Spawn toggle
+				}
+
+				MusicianSpawn: {
+					Tooltip: True to enable Musician NPC spawn, false to disable. True by default
+					Label: Musician Spawn toggle
+				}
+
+				OperatorSpawn: {
+					Tooltip: True to enable Operator NPC spawn, false to disable. True by default
+					Label: Operator Spawn toggle
+				}
+
+				ArchitectSpawn: {
+					Tooltip: True to enable Architect NPC spawn, false to disable. True by default
+					Label: Architect Spawn toggle
+				}
+
+				YoungBrewerSpawn: {
+					Tooltip: True to enable Young Brewer NPC spawn, false to disable. True by default
+					Label: Young Brewer Spawn toggle
+				}
+
+				JewelerSpawn: {
+					Tooltip: True to enable Jeweler NPC spawn, false to disable. True by default
+					Label: Jeweler Spawn toggle
+				}
+
+				BrewerSpawn: {
+					Tooltip: True to enable Brewer NPC spawn, false to disable. True by default
+					Label: Brewer Spawn toggle
+				}
+
+				AlchemistSpawn: {
+					Tooltip: True to enable Alchemist NPC spawn, false to disable. True by default
+					Label: Alchemist Spawn toggle
+				}
+
+				DisplayName: Mod Configuration
 			}
 		}
 	}

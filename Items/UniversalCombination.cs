@@ -1,30 +1,16 @@
-using System;
-using System.IO;
-using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Terraria;
-using Terraria.GameContent.Creative;
+﻿using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
-using Terraria.Localization;
- 
+
 namespace AlchemistNPCLite.Items
 {
-     public class UniversalCombination : ModItem
+    public class UniversalCombination : ModItem
     {
         public override void SetStaticDefaults()
-		{
-			DisplayName.SetDefault("Universal Combination");
-			Tooltip.SetDefault("Gives combined effects of Tank, Ranger, Mage and Summoner Combinations in a single buff.");
-			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Комбинация Универсала");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Идеальное сочетание Комбинаций Танка, Мага, Стрелка и Призывателя в одном баффе");
-
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "万能药剂包");
-            Tooltip.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "完美结合了以下药剂包的buff：\n坦克药剂包、魔法药剂包、射手药剂包以及召唤师药剂包.");
-            CreativeItemSacrificesCatalog.Instance.SacrificeCountNeededByItemId[Type] = 20;
-        }    
-		public override void SetDefaults()
+        {
+            Item.ResearchUnlockCount = 20;
+        }
+        public override void SetDefaults()
         {
             Item.UseSound = SoundID.Item3;                 //this is the sound that plays when you use the item
             Item.useStyle = 2;                 //this is how the item is holded when used

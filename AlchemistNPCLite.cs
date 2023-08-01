@@ -12,11 +12,6 @@ namespace AlchemistNPCLite
 {
     public class AlchemistNPCLite : Mod
     {
-        public AlchemistNPCLite()
-        {
-            ;
-        }
-
         public static Mod Instance;
         internal static AlchemistNPCLite instance;
         internal static ModConfiguration modConfiguration;
@@ -48,7 +43,6 @@ namespace AlchemistNPCLite
             Instance = this;
             string DiscordBuffTeleportation = Language.GetTextValue("Discord Buff Teleportation");
             DiscordBuff = KeybindLoader.RegisterKeybind(this, DiscordBuffTeleportation, "Q");
-            SetTranslation();
             instance = this;
             if (!Main.dedServ)
             {
@@ -98,7 +92,7 @@ namespace AlchemistNPCLite
             modConfiguration = null;
         }
 
-        public override void AddRecipeGroups()
+        public override void AddRecipeGroups()/* tModPorter Note: Removed. Use ModSystem.AddRecipeGroups */
         {
             //SBMW:Add translation to RecipeGroups, also requires to reload mod
             string evilBossMask = Language.GetTextValue("Mods.AlchemistNPCLite.evilBossMask");
@@ -208,7 +202,7 @@ namespace AlchemistNPCLite
             TeleportPlayer
         }
 
-        public override void AddRecipes()
+        public override void AddRecipes()/* tModPorter Note: Removed. Use ModSystem.AddRecipes */
         {
             Recipe.Create(ItemID.Sundial)
                 .AddIngredient(ItemID.CelestialStone)
@@ -218,20 +212,20 @@ namespace AlchemistNPCLite
 
             Recipe.Create(ItemID.Obsidian, 5)
                 .AddIngredient(ItemID.StoneBlock, 10)
-                .AddCondition(Recipe.Condition.NearWater)
-                .AddCondition(Recipe.Condition.NearLava)
+                .AddCondition(Condition.NearWater)
+                .AddCondition(Condition.NearLava)
                 .Register();
 
             Recipe.Create(ItemID.HoneyBlock, 5)
                 .AddIngredient(ItemID.BottledHoney, 10)
-                .AddCondition(Recipe.Condition.NearWater)
-                .AddCondition(Recipe.Condition.NearHoney)
+                .AddCondition(Condition.NearWater)
+                .AddCondition(Condition.NearHoney)
                 .Register();
 
             Recipe.Create(ItemID.CrispyHoneyBlock, 5)
                 .AddIngredient(ItemID.BottledHoney, 10)
-                .AddCondition(Recipe.Condition.NearLava)
-                .AddCondition(Recipe.Condition.NearHoney)
+                .AddCondition(Condition.NearLava)
+                .AddCondition(Condition.NearHoney)
                 .Register();
 
             Recipe.Create(ItemID.Stopwatch)
@@ -283,84 +277,5 @@ namespace AlchemistNPCLite
                 .AddTile(TileID.Bottles)
                 .Register();
         }
-
-        //SBMW:Transtation method
-        public void SetTranslation()
-        {
-            ModTranslation text = LocalizationLoader.CreateTranslation(this, "DiscordBuffTeleportation");
-            text.SetDefault("Discord Buff Teleportation");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "混乱药剂传送");
-            LocalizationLoader.AddTranslation(text);
-
-            //SBMW:RecipeGroups
-            text = LocalizationLoader.CreateTranslation(this, "evilBossMask");
-            text.SetDefault("Corruption/Crimson boss mask");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "腐化/血腥Boss面具");
-            LocalizationLoader.AddTranslation(text);
-
-            text = LocalizationLoader.CreateTranslation(this, "cultist");
-            text.SetDefault("Cultist mask/hood");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "邪教徒面具/兜帽");
-            LocalizationLoader.AddTranslation(text);
-
-            text = LocalizationLoader.CreateTranslation(this, "tier3HardmodeBar");
-            text.SetDefault("tier 3 Hardmode Bar");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "三级肉后锭(精金/钛金)");
-            LocalizationLoader.AddTranslation(text);
-
-            text = LocalizationLoader.CreateTranslation(this, "hardmodeComponent");
-            text.SetDefault("Hardmode component");
-            LocalizationLoader.AddTranslation(text);
-
-            text = LocalizationLoader.CreateTranslation(this, "evilBar");
-            text.SetDefault("Crimson/Corruption bar");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "魔金/血腥锭");
-            LocalizationLoader.AddTranslation(text);
-
-            text = LocalizationLoader.CreateTranslation(this, "evilMushroom");
-            text.SetDefault("evil mushroom");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "邪恶蘑菇");
-            LocalizationLoader.AddTranslation(text);
-
-            text = LocalizationLoader.CreateTranslation(this, "evilComponent");
-            text.SetDefault("evil component");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "邪恶材料(暗影鳞片/组织样本)");
-            LocalizationLoader.AddTranslation(text);
-
-            text = LocalizationLoader.CreateTranslation(this, "evilDrop");
-            text.SetDefault("evil drop");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "邪恶掉落物(腐肉/椎骨)");
-            LocalizationLoader.AddTranslation(text);
-
-            text = LocalizationLoader.CreateTranslation(this, "tier2anvil");
-            text.SetDefault("tier 2 anvil");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "二级砧(秘银/山铜砧)");
-            LocalizationLoader.AddTranslation(text);
-
-            text = LocalizationLoader.CreateTranslation(this, "tier2forge");
-            text.SetDefault("tier 2 forge");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "二级熔炉(精金/钛金熔炉)");
-            LocalizationLoader.AddTranslation(text);
-
-            text = LocalizationLoader.CreateTranslation(this, "tier1anvil");
-            text.SetDefault("tier 1 anvil");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "一级砧(铁/铅砧)");
-            LocalizationLoader.AddTranslation(text);
-
-            text = LocalizationLoader.CreateTranslation(this, "CelestialWings");
-            text.SetDefault("Celestial Wings");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "四柱翅膀");
-            LocalizationLoader.AddTranslation(text);
-
-            text = LocalizationLoader.CreateTranslation(this, "LunarHamaxe");
-            text.SetDefault("Lunar Hamaxe");
-            LocalizationLoader.AddTranslation(text);
-
-            text = LocalizationLoader.CreateTranslation(this, "tier3Watch");
-            text.SetDefault("tier 3 Watch");
-            text.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "三级表(金表/铂金表)");
-            LocalizationLoader.AddTranslation(text);
-        }
     }
 }
-

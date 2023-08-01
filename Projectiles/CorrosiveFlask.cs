@@ -11,7 +11,7 @@ namespace AlchemistNPCLite.Projectiles
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Corrosive Flask");
+			// DisplayName.SetDefault("Corrosive Flask");
 		}
 		
 		public override void SetDefaults()
@@ -46,7 +46,7 @@ namespace AlchemistNPCLite.Projectiles
 			}
 		}
 		
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 			{
 				target.AddBuff(ModContent.BuffType<Buffs.Corrosion>(), 300);
 				target.immune[Projectile.owner] = 1;

@@ -11,7 +11,7 @@ namespace AlchemistNPCLite.Projectiles
 	{
 		public override void SetStaticDefaults()
 		{
-			DisplayName.SetDefault("Gemstone");
+			// DisplayName.SetDefault("Gemstone");
 		}
 		
 		public override void SetDefaults()
@@ -63,7 +63,7 @@ namespace AlchemistNPCLite.Projectiles
 			SoundEngine.PlaySound(SoundID.Item25, Projectile.position);
 		}
 
-		public override void OnHitNPC(NPC target, int damage, float knockback, bool crit)
+		public override void OnHitNPC(NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			Projectile.ai[0] += 0.3f;
 			Projectile.velocity *= 0.8f;

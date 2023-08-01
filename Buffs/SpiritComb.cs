@@ -1,36 +1,25 @@
-using System.Linq;
-using System;
-using Microsoft.Xna.Framework;
-using Terraria;
-using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
+﻿using Terraria;
 using Terraria.ID;
-using Terraria.Localization;
+using Terraria.ModLoader;
 
 namespace AlchemistNPCLite.Buffs
 {
-	public class SpiritComb : ModBuff
-	{
-		public override bool IsLoadingEnabled(Mod mod)
-		{
-			ModLoader.TryGetMod("SpiritMod", out Mod Spirit);
-			return Spirit != null;
-		}
-		
-		public override void SetStaticDefaults()
-		{
-			Main.debuff[Type] = false;
-			BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
-			DisplayName.SetDefault("Spirit Combination");
-			Description.SetDefault("Grants most buffs from Spirit Mod potions (Runescribe, Soulguard, Spirit, Starburn, Steadfast and Toxin)");
-			DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Комбинация Spirit");
-            Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Russian), "Даёт большинство баффов от зелий мода Spirit (Runescribe, Soulguard, Spirit, Starburn, Steadfast and Toxin)");
-            DisplayName.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "魂灵药剂包");
-            Description.AddTranslation(GameCulture.FromCultureName(GameCulture.CultureName.Chinese), "获得大部分魂灵Buff (符文之力, 灵魂之护, 魂灵, 星之燃烧, 坚定和毒素)");
+    public class SpiritComb : ModBuff
+    {
+        public override bool IsLoadingEnabled(Mod mod)
+        {
+            ModLoader.TryGetMod("SpiritMod", out Mod Spirit);
+            return Spirit != null;
         }
-		
-		// IMPLEMENT WHEN WEAKREFERENCES FIXED
-		/*
+
+        public override void SetStaticDefaults()
+        {
+            Main.debuff[Type] = false;
+            BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
+        }
+
+        // IMPLEMENT WHEN WEAKREFERENCES FIXED
+        /*
 		public override void Update(Player player, ref int buffIndex)
 		{
 			player.buffImmune[ModLoader.GetMod("SpiritMod").BuffType("SpiritBuff")] = true;
@@ -56,6 +45,6 @@ namespace AlchemistNPCLite.Buffs
 			Spirit.GetBuff("BismitePotionBuff").Update(player, ref buffIndex);
         }
 		*/
-		private Mod Spirit;
-	}
+        private Mod Spirit;
+    }
 }
