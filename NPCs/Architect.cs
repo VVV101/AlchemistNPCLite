@@ -367,7 +367,7 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.BorealWood) { shopCustomPrice = 10 })
                 .Add(new Item(ItemID.PalmWood) { shopCustomPrice = 15 })
                 .Add(new Item(ItemID.RichMahogany) { shopCustomPrice = 15 })
-                .addModItemToShop(ThoriumMod, "YewWood", 500, Condition.DownedGoblinArmy)
+                .AddModItemToShop(ThoriumMod, "YewWood", 500, Condition.DownedGoblinArmy)
                 .Add(new Item(ItemID.DynastyWood) { shopCustomPrice = 100 })
                 .Add(new Item(ItemID.RedDynastyShingles) { shopCustomPrice = 100 })
                 .Add(new Item(ItemID.BlueDynastyShingles) { shopCustomPrice = 100 })
@@ -438,9 +438,9 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.BoneWelder) { shopCustomPrice = 20000 }, Condition.DownedSkeletron);
             if (ModLoader.TryGetMod("chadsfurni", out Mod chadsfurniture))
             {
-                shop.addModItemToShop(chadsfurniture, "printer", 20000, Condition.DownedSkeletron);
-                shop.addModItemToShop(chadsfurniture, "printer3", 20000, Condition.DownedSkeletron);
-                shop.addModItemToShop(chadsfurniture, "wallomatic", 20000, Condition.DownedSkeletron);
+                shop.AddModItemToShop(chadsfurniture, "printer", 20000, Condition.DownedSkeletron);
+                shop.AddModItemToShop(chadsfurniture, "printer3", 20000, Condition.DownedSkeletron);
+                shop.AddModItemToShop(chadsfurniture, "wallomatic", 20000, Condition.DownedSkeletron);
             }
             shop.Add(new Item(ItemID.GlassKiln) { shopCustomPrice = 20000 })
                 .Add(new Item(ItemID.SkyMill) { shopCustomPrice = 20000 })
@@ -450,7 +450,7 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.Loom) { shopCustomPrice = 2000 });
             if (chadsfurniture != null)
             {
-                shop.addModItemToShop(chadsfurniture, "RimpelstiltskinsLoom", 200000, Condition.Hardmode);
+                shop.AddModItemToShop(chadsfurniture, "RimpelstiltskinsLoom", 200000, Condition.Hardmode);
             }
             shop.Add(new Item(ItemID.MeatGrinder) { shopCustomPrice = 15000 }, Condition.Hardmode)
                 .Add(new Item(ItemID.FleshCloningVaat) { shopCustomPrice = 20000 }, Condition.DownedMechBossAny)

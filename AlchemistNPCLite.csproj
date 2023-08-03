@@ -14,5 +14,8 @@
     <Reference Include="Redemption">
       <HintPath>..\..\ModReader\Redemption\Redemption.dll</HintPath>
     </Reference>
+    <Reference Include="ShardsOfAtheria">
+      <HintPath>..\ModAssemblies\ShardsOfAtheria_v1.0.dll</HintPath>
+    </Reference>
   </ItemGroup>
 </Project>

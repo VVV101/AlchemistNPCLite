@@ -1153,22 +1153,22 @@ Mods: {
 		A20: I saw your buildings but I am still not impressed
 		A21: Have you heard 'bout that FuryForged guy? I taught him all he knows!
 		A22: I was once hired by a certain company to build a supermassive hi-tech, hi-security installation. Lemme tell ya its my magnum opus in terms of security and containment.
-		AS1: "1st shop (Filler Blocks)       "
-		AS2: "2nd shop (Building Blocks)     "
-		AS3: "3rd shop (Basic Furniture)     "
-		AS4: "4th shop (Advanced Furniture)  "
-		AS5: "5th shop (Torches)             "
-		AS6: "6th shop (Candles)             "
-		AS7: "7th shop (Lamps)               "
-		AS8: "8th shop (Lanterns)            "
-		AS9: "9th shop (Chandeliers)         "
-		AS10: "10th shop (Candelabras)        "
+		AS1: "1st shop (Filler Blocks)"
+		AS2: "2nd shop (Building Blocks)"
+		AS3: "3rd shop (Basic Furniture)"
+		AS4: "4th shop (Advanced Furniture)"
+		AS5: "5th shop (Torches)"
+		AS6: "6th shop (Candles)"
+		AS7: "7th shop (Lamps)"
+		AS8: "8th shop (Lanterns)"
+		AS9: "9th shop (Chandeliers)"
+		AS10: "10th shop (Candelabras)"
 		ShopsChanger: Shops Changer
 		ShopB1: 1st shop (Vanilla)
 		ShopB2: 2nd shop (Mod/Calamity)
 		ShopB3: 3rd shop (Thorium/RG)
-		ShopB4: "4th shop (MorePotions)              "
-		ShopB5: "5th shop (UnuBattleRods/Tacklebox/Tremor) "
+		ShopB4: "4th shop (MorePotions/Atheria)"
+		ShopB5: "5th shop (UnuBattleRods/Tacklebox/Tremor)"
 		ShopB6: 6th shop (Wildlife/Sacred/Spirit/Cristilium/ExpSentr)
 		Lillian: Lillian
 		Lucy: Lucy

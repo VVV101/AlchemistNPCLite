@@ -149,7 +149,6 @@ namespace AlchemistNPCLite.NPCs
             randomOffset = 2f;
         }
 
-
         public override string GetChat()
         {                                           //npc chat
             string EntryA1 = Language.GetTextValue("Mods.AlchemistNPCLite.EntryA1");
@@ -319,8 +318,8 @@ namespace AlchemistNPCLite.NPCs
                     Condition.Hardmode)
                 .Add(new Item(ItemID.SuperHealingPotion) { shopCustomPrice = 25000 },
                     Condition.DownedMoonLord)
-                .addModItemToShop(Calamity, "SupremeHealingPotion", 500000, () => (bool)Calamity.Call("Downed", "profaned guardians") && !(bool)Calamity.Call("Downed", "polterghast"))
-                .addModItemToShop(Calamity, "OmegaHealingPotion", 1000000, () => (bool)Calamity.Call("Downed", "polterghast"))
+                .AddModItemToShop(Calamity, "SupremeHealingPotion", 500000, () => (bool)Calamity.Call("Downed", "profaned guardians") && !(bool)Calamity.Call("Downed", "polterghast"))
+                .AddModItemToShop(Calamity, "OmegaHealingPotion", 1000000, () => (bool)Calamity.Call("Downed", "polterghast"))
                 .Add(new Item(ItemID.LesserManaPotion) { shopCustomPrice = 500 })
                 .Add(new Item(ItemID.ManaPotion) { shopCustomPrice = 1000 },
                     Condition.DownedEowOrBoc)
@@ -347,12 +346,12 @@ namespace AlchemistNPCLite.NPCs
                 addModItemToShop(imkSushisMod, "ResurrectionPotion", 25000, ref shop, ref nextSlot);
             }
             */
-                .addModItemToShop<BeachTeleporterPotion>(20000, () => NPC.downedBoss2)
-                .addModItemToShop<JungleTeleporterPotion>(50000, () => NPC.downedBoss2)
-                .addModItemToShop<OceanTeleporterPotion>(20000, () => NPC.downedBoss3)
-                .addModItemToShop<DungeonTeleportationPotion>(25000, () => NPC.downedBoss3)
-                .addModItemToShop<UnderworldTeleportationPotion>(50000, () => Main.hardMode)
-                .addModItemToShop<TempleTeleportationPotion>(100000, () => NPC.downedPlantBoss)
+                .AddModItemToShop<BeachTeleporterPotion>(20000, () => NPC.downedBoss2)
+                .AddModItemToShop<JungleTeleporterPotion>(50000, () => NPC.downedBoss2)
+                .AddModItemToShop<OceanTeleporterPotion>(20000, () => NPC.downedBoss3)
+                .AddModItemToShop<DungeonTeleportationPotion>(25000, () => NPC.downedBoss3)
+                .AddModItemToShop<UnderworldTeleportationPotion>(50000, () => Main.hardMode)
+                .AddModItemToShop<TempleTeleportationPotion>(100000, () => NPC.downedPlantBoss)
                 .Add(new Item(ItemID.Bottle) { shopCustomPrice = 100 })
                 .Add(new Item(ItemID.BottledWater) { shopCustomPrice = 500 })
                 .Add(ItemID.FallenStar, Condition.DownedEowOrBoc)
@@ -383,7 +382,7 @@ namespace AlchemistNPCLite.NPCs
                     Condition.Hardmode)
                 .Add(new Item(ItemID.Ichor) { shopCustomPrice = 7500 },
                     Condition.Hardmode)
-				.Add(new Item(678) { shopCustomPrice = 150000 }, new Condition("", () => Main.getGoodWorld));
+                .Add(new Item(678) { shopCustomPrice = 150000 }, Condition.ForTheWorthyWorld);
             shop.Register();
 
             shop = new NPCShop(Type, PlantShop)
@@ -400,7 +399,7 @@ namespace AlchemistNPCLite.NPCs
                     Condition.DownedEowOrBoc)
                 .Add(new Item(ItemID.ViciousMushroom) { shopCustomPrice = 1000 },
                     Condition.DownedEowOrBoc)
-                .addModItemToShop(Redemption, "Nightshade", 1000, () => NPC.downedBoss3);
+                .AddModItemToShop(Redemption, "Nightshade", 1000, () => NPC.downedBoss3);
             /*
             if (ModLoader.GetMod("Tremor") != null)
             {
