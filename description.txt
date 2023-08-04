@@ -6,6 +6,10 @@ The spawn condition for the Operator is to beat EoW/BoC.
 The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 Mod's Discord: https://discord.gg/WGKyKun
+v1.9.1
+-Added more Thorium, Mod of Redemption support to shops, added support for Shards of Atheria mod.
+-Now Greater Dangersense potion ignores Moon Lord's projectiles. 
+Still could be wise not to use it against bosses with clearly visible projectiles.
 v1.9
 -Ported to 1.4.4 tModLoader.
 -Currently, supports Calamity mod.

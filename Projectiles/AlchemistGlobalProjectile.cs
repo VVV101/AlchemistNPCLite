@@ -31,7 +31,7 @@ namespace AlchemistNPCLite.Projectiles
 				{
 					if (player.HasBuff(ModContent.BuffType<Buffs.GreaterDangersense>()))
 					{
-						if (projectile.hostile && !projectile.friendly)
+						if (projectile.hostile && !projectile.friendly && (projectile.type < 452 && projectile.type > 462))
 						{
 							Lighting.AddLight(projectile.Center, 1f, 1f, 0f);
 							return Color.Yellow;
