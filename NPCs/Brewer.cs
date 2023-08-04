@@ -1,6 +1,8 @@
 ﻿using AlchemistNPCLite.Interface;
 using AlchemistNPCLite.Items;
 using AlchemistNPCLite.Utilities;
+using ShardsOfAtheria.Items.Potions;
+using ShardsOfAtheria.ShardsConditions;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent.Bestiary;
@@ -23,8 +25,8 @@ namespace AlchemistNPCLite.NPCs
 
         public const string SHOP_1 = "VanillaPotions";
         public const string SHOP_2 = "Mod/Calamity";
-        public const string SHOP_3 = "Thorium/RG";
-        public const string SHOP_4 = "MorePotions";
+        public const string SHOP_3 = "Thorium/RG/Redemption";
+        public const string SHOP_4 = "MorePotions/Atheria";
         public const string SHOP_5 = "UnuBattleRods/Tacklebox/Tremor";
         public const string SHOP_6 = "Wildlife/Sacred/Spirit/Cristilium/ExpSentr";
 
@@ -329,6 +331,7 @@ namespace AlchemistNPCLite.NPCs
         {
             ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
             ModLoader.TryGetMod("ThoriumMod", out Mod ThoriumMod);
+            ModLoader.TryGetMod("Redemption", out Mod Redemption);
 
             var shop = new NPCShop(Type, SHOP_1)
                 .Add(new Item(ItemID.SwiftnessPotion) { shopCustomPrice = 5000 })
@@ -360,7 +363,7 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.TitanPotion) { shopCustomPrice = 7500 })
                 .Add(new Item(ItemID.BattlePotion) { shopCustomPrice = 10000 })
                 .Add(new Item(ItemID.CalmingPotion) { shopCustomPrice = 10000 })
-				.Add(new Item(ItemID.BiomeSightPotion) { shopCustomPrice = 10000 })
+                .Add(new Item(ItemID.BiomeSightPotion) { shopCustomPrice = 10000 })
                 .Add(new Item(ItemID.WrathPotion) { shopCustomPrice = 25000 },
                     Condition.DownedEowOrBoc)
                 .Add(new Item(ItemID.RagePotion) { shopCustomPrice = 25000 },
@@ -382,45 +385,73 @@ namespace AlchemistNPCLite.NPCs
             shop.Register();
 
             shop = new NPCShop(Type, SHOP_2)
-                .addModItemToShop<SunshinePotion>(15000)
-                .addModItemToShop<Dopamine>(15000)
-                .addModItemToShop<GreaterDangersensePotion>(25000)
-                .addModItemToShop<NatureBlessingPotion>(25000)
-                .addModItemToShop<BewitchingPotion>(10000, () => NPC.downedBoss3)
-                .addModItemToShop<FortitudePotion>(15000, () => NPC.downedBoss3)
-                .addModItemToShop<InvincibilityPotion>(15000, () => Main.hardMode)
-                .addModItemToShop<TitanSkinPotion>(15000, () => Main.hardMode)
-				.addModItemToShop<DiscordPotion>(200000, () => NPC.downedMechBossAny && !NPC.downedMoonlord)
-                .addModItemToShop<PerfectDiscordPotion>(330000, () => NPC.downedMoonlord)
-                .addModItemToShop<BlurringPotion>(150000, () => NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
-                .addModItemToShop<NinjaPotion>(75000, () => NPC.downedPlantBoss)
-                .addModItemToShop<TrapsPotion>(50000, () => NPC.downedGolemBoss)
-				.addModItemToShop(Calamity, "BoundingPotion", 20000)
-				.addModItemToShop(Calamity, "CalciumPotion", 35000)
-				.addModItemToShop(Calamity, "TriumphPotion", 30000)
-				.addModItemToShop(Calamity, "TeslaPotion", 25000)
-				.addModItemToShop(Calamity, "SulphurskinPotion", 15000)
-				.addModItemToShop(Calamity, "ShadowPotion", 15000)
-				.addModItemToShop(Calamity, "PotionofOmniscience", 20000, () => NPC.downedBoss3)
-				.addModItemToShop(Calamity, "ZergPotion", 30000, () => (bool)Calamity.Call("Downed", "slime god"))
-				.addModItemToShop(Calamity, "ZenPotion", 30000, () => (bool)Calamity.Call("Downed", "slime god"))
-				.addModItemToShop(Calamity, "PhotosynthesisPotion", 50000, () => Main.hardMode)
-				.addModItemToShop(Calamity, "SoaringPotion", 40000, () => Main.hardMode)
-				.addModItemToShop(Calamity, "AstralInjection", 10000, () => (bool)Calamity.Call("Downed", "astrum aureus"))
-				.addModItemToShop(Calamity, "GravityNormalizerPotion", 30000, () => (bool)Calamity.Call("Downed", "astrum aureus"))
-				.addModItemToShop(Calamity, "CeaselessHungerPotion", 50000, () => (bool)Calamity.Call("Downed", "ceaselessvoid"));
+                .AddModItemToShop<SunshinePotion>(15000)
+                .AddModItemToShop<Dopamine>(15000)
+                .AddModItemToShop<GreaterDangersensePotion>(25000)
+                .AddModItemToShop<NatureBlessingPotion>(25000)
+                .AddModItemToShop<BewitchingPotion>(10000, () => NPC.downedBoss3)
+                .AddModItemToShop<FortitudePotion>(15000, () => NPC.downedBoss3)
+                .AddModItemToShop<InvincibilityPotion>(15000, () => Main.hardMode)
+                .AddModItemToShop<TitanSkinPotion>(15000, () => Main.hardMode)
+                .AddModItemToShop<DiscordPotion>(200000, () => NPC.downedMechBossAny && !NPC.downedMoonlord)
+                .AddModItemToShop<PerfectDiscordPotion>(330000, () => NPC.downedMoonlord)
+                .AddModItemToShop<BlurringPotion>(150000, () => NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
+                .AddModItemToShop<NinjaPotion>(75000, () => NPC.downedPlantBoss)
+                .AddModItemToShop<TrapsPotion>(50000, () => NPC.downedGolemBoss)
+                .AddModItemToShop(Calamity, "BoundingPotion", 20000)
+                .AddModItemToShop(Calamity, "CalciumPotion", 35000)
+                .AddModItemToShop(Calamity, "TriumphPotion", 30000)
+                .AddModItemToShop(Calamity, "TeslaPotion", 25000)
+                .AddModItemToShop(Calamity, "SulphurskinPotion", 15000)
+                .AddModItemToShop(Calamity, "ShadowPotion", 15000)
+                .AddModItemToShop(Calamity, "PotionofOmniscience", 20000, () => NPC.downedBoss3)
+                .AddModItemToShop(Calamity, "ZergPotion", 30000, () => (bool)Calamity.Call("Downed", "slime god"))
+                .AddModItemToShop(Calamity, "ZenPotion", 30000, () => (bool)Calamity.Call("Downed", "slime god"))
+                .AddModItemToShop(Calamity, "PhotosynthesisPotion", 50000, () => Main.hardMode)
+                .AddModItemToShop(Calamity, "SoaringPotion", 40000, () => Main.hardMode)
+                .AddModItemToShop(Calamity, "AstralInjection", 10000, () => (bool)Calamity.Call("Downed", "astrum aureus"))
+                .AddModItemToShop(Calamity, "GravityNormalizerPotion", 30000, () => (bool)Calamity.Call("Downed", "astrum aureus"))
+                .AddModItemToShop(Calamity, "CeaselessHungerPotion", 50000, () => (bool)Calamity.Call("Downed", "ceaselessvoid"));
             shop.Register();
 
-            #region Do later
-            shop = new NPCShop(Type, SHOP_3);
+            shop = new NPCShop(Type, SHOP_3)
+                .AddModItemToShop(ThoriumMod, "WarmongerPotion", 10000, Condition.DownedSkeletron)
+                .AddModItemToShop(ThoriumMod, "ArtilleryPotion", 10000, Condition.DownedSkeletron)
+                .AddModItemToShop(ThoriumMod, "BouncingFlamePotion", 10000, Condition.DownedSkeletron)
+                .AddModItemToShop(ThoriumMod, "CreativityPotion", 10000, Condition.DownedSkeletron)
+                .AddModItemToShop(ThoriumMod, "EarwormPotion", 10000, Condition.DownedSkeletron)
+                .AddModItemToShop(ThoriumMod, "AssassinPotion", 10000, Condition.DownedSkeletron)
+                .AddModItemToShop(ThoriumMod, "InspirationReachPotion", 20000, Condition.Hardmode)
+                .AddModItemToShop(ThoriumMod, "GlowingPotion", 20000)
+                .AddModItemToShop(ThoriumMod, "HolyPotion", 20000, Condition.Hardmode)
+                .AddModItemToShop(ThoriumMod, "ArcanePotion", 20000, Condition.Hardmode)
+                .AddModItemToShop(ThoriumMod, "KineticPotion", 20000, Condition.Hardmode)
+                .AddModItemToShop(ThoriumMod, "HydrationPotion", 10000)
+                .AddModItemToShop(ThoriumMod, "BloodPotion", 10000)
+                .AddModItemToShop(ThoriumMod, "ConflagrationPotion", 10000)
+                .AddModItemToShop(ThoriumMod, "AquaPotion", 10000)
+                .AddModItemToShop(ThoriumMod, "FrenzyPotion", 10000)
+                .AddModItemToShop(Redemption, "CharismaPotion", 5000)
+                .AddModItemToShop(Redemption, "VendettaPotion", 6000)
+                .AddModItemToShop(Redemption, "VigourousPotion", 250000, () => Operator.RedemptionDowned.Nebuleus);
             shop.Register();
 
             shop = new NPCShop(Type, SHOP_4);
+            AtheriaPotions(shop);
             shop.Register();
 
             shop = new NPCShop(Type, SHOP_5);
             shop.Register();
-            #endregion
+        }
+
+        [JITWhenModsEnabled("ShardsOfAtheria")]
+        private static NPCShop AtheriaPotions(NPCShop shop)
+        {
+            shop.AddModItemToShop<SoulInjection>(7500)
+                .AddModItemToShop<BoneMarrowInjection>(7500, Condition.DownedSkeletron)
+                .AddModItemToShop<ConductivityPotion>(7500, Condition.DownedEowOrBoc)
+                .AddModItemToShop<ChargedFlightPotion>(7500, SoAConditions.DownedNova);
+            return shop;
         }
     }
 }

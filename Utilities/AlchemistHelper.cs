@@ -6,7 +6,7 @@ namespace AlchemistNPCLite.Utilities
 {
     public static class AlchemistHelper
     {
-        public static NPCShop addModItemToShop(this NPCShop shop, Mod mod, string itemName, int price)
+        public static NPCShop AddModItemToShop(this NPCShop shop, Mod mod, string itemName, int price)
         {
             if (mod != null)
             {
@@ -17,7 +17,7 @@ namespace AlchemistNPCLite.Utilities
             }
             return shop;
         }
-        public static NPCShop addModItemToShop(this NPCShop shop, Mod mod, string itemName, int price, params Condition[] condition)
+        public static NPCShop AddModItemToShop(this NPCShop shop, Mod mod, string itemName, int price, params Condition[] condition)
         {
             if (mod != null)
             {
@@ -28,7 +28,7 @@ namespace AlchemistNPCLite.Utilities
             }
             return shop;
         }
-        public static NPCShop addModItemToShop(this NPCShop shop, Mod mod, string itemName, int price, Func<bool> predicate)
+        public static NPCShop AddModItemToShop(this NPCShop shop, Mod mod, string itemName, int price, Func<bool> predicate)
         {
             if (mod != null)
             {
@@ -39,17 +39,17 @@ namespace AlchemistNPCLite.Utilities
             }
             return shop;
         }
-        public static NPCShop addModItemToShop<T>(this NPCShop shop, int price) where T : ModItem
+        public static NPCShop AddModItemToShop<T>(this NPCShop shop, int price) where T : ModItem
         {
             shop.Add(new Item(ModContent.ItemType<T>()) { shopCustomPrice = price });
             return shop;
         }
-        public static NPCShop addModItemToShop<T>(this NPCShop shop, int price, params Condition[] condition) where T : ModItem
+        public static NPCShop AddModItemToShop<T>(this NPCShop shop, int price, params Condition[] condition) where T : ModItem
         {
             shop.Add(new Item(ModContent.ItemType<T>()) { shopCustomPrice = price }, condition);
             return shop;
         }
-        public static NPCShop addModItemToShop<T>(this NPCShop shop, int price, Func<bool> predicate) where T : ModItem
+        public static NPCShop AddModItemToShop<T>(this NPCShop shop, int price, Func<bool> predicate) where T : ModItem
         {
             shop.Add(new Item(ModContent.ItemType<T>()) { shopCustomPrice = price }, new Condition("", predicate));
             return shop;
