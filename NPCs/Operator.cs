@@ -884,7 +884,7 @@ namespace AlchemistNPCLite.NPCs
             shop = new NPCShop(Type, ModMaterialShop)
                 .Add(new Item(ModContent.ItemType<Items.Misc.GlobalTeleporter>()), new Condition("", () => Main.hardMode))
                 .Add(new Item(ModContent.ItemType<Items.Misc.WorldControlUnit>()) { shopCustomPrice = 3000000 }, new Condition("", () => Main.hardMode))
-                .Add(new Item(ModContent.ItemType<Items.Misc.GlobalTeleporter>()), new Condition("", () => NPC.downedMoonlord))
+                .Add(new Item(ModContent.ItemType<Items.Misc.GlobalTeleporterUp>()), new Condition("", () => NPC.downedMoonlord))
                 .AddModItemToShop(ThoriumMod, "Petal", 10000)
                 .AddModItemToShop(ThoriumMod, "BrokenHeroFragment", 250000, () => NPC.downedGolemBoss)
                 .AddModItemToShop(ThoriumMod, "WhiteDwarfFragment", 100000, () => NPC.downedMoonlord)
