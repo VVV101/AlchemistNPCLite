@@ -927,7 +927,10 @@ namespace AlchemistNPCLite.NPCs
             //    .addModItemToShop(LithosArmory, "BrokenHeroSpear", 500000, NPC.downedGolemBoss);
             //    .addModItemToShop(LithosArmory, "BrokenHeroWand", 500000, NPC.downedGolemBoss);
             //}
-            AtheriaItems(shop);
+            if (Atheria != null)
+            {
+                AtheriaItems(shop);
+            }
             shop.Register();
 
             shop = new NPCShop(Type, VanillaBagsShop)
@@ -1017,7 +1020,10 @@ namespace AlchemistNPCLite.NPCs
             shop.Register();
 
             shop = new NPCShop(Type, Bags2Shop);
-            AtheriaItems(shop);
+            if (Atheria != null)
+            {
+                AtheriaItems(shop);
+            }
             shop.Register();
 
             shop = new NPCShop(Type, Bags3Shop)
@@ -1036,7 +1042,7 @@ namespace AlchemistNPCLite.NPCs
                 .AddModItemToShop(Redemption, "NebBag", 10000000, () => RedemptionDowned.Nebuleus)
                 ;
             shop.Register();
-
+            /*
             //if (Shop4)
             //{
             //    if (ThoriumMod != null)
@@ -1144,7 +1150,6 @@ namespace AlchemistNPCLite.NPCs
             //            }
             //        }
             //    }
-            //    */
             //}
             //if (Shop5)
             //{
@@ -1307,7 +1312,6 @@ namespace AlchemistNPCLite.NPCs
             //                shop5.addModItemToShop(pinkymod, "GatekeeperTreasureBag", 2500000, ref shop, ref nextSlot);
             //            }
             //        }
-            //        */
             //    }
             //}
             //if (Shop6)
@@ -1376,65 +1380,9 @@ namespace AlchemistNPCLite.NPCs
             //                shop6.addModItemToShop(ElementsAwoken, "AncientsBag", 10000000, ref shop, ref nextSlot);
             //            }
             //        }
-            //        */
-            //        if (ModLoader.TryGetMod("Redemption", out Mod Redemption))
-            //        {
-            //            //if (RedemptionDowned.ReDownedChicken)
-            //            //{
-            //            //    shop6.addModItemToShop(Redemption, "KingChickenBag", 150000, ref shop, ref nextSlot);
-            //            //}
-            //            if (RedemptionDowned.Thorn)
-            //            {
-            //                shop6.addModItemToShop(Redemption, "ThornBag", 250000, ref shop, ref nextSlot);
-            //            }
-            //            if (RedemptionDowned.Keeper)
-            //            {
-            //                shop6.addModItemToShop(Redemption, "KeeperBag", 350000, ref shop, ref nextSlot);
-            //            }
-            //            //if (RedemptionDowned.ReDownedCrystal)
-            //            //{
-            //            //    shop6.addModItemToShop(Redemption, "XenomiteCrystalBag", 500000, ref shop, ref nextSlot);
-            //            //}
-            //            //if (RedemptionDowned.ReDownedIEye)
-            //            //{
-            //            //    shop6.addModItemToShop(Redemption, "InfectedEyeBag", 1000000, ref shop, ref nextSlot);
-            //            //}
-            //            if (RedemptionDowned.SeedOfInfection)
-            //            {
-            //                shop6.addModItemToShop(Redemption, "SoIBag", 1000000, ref shop, ref nextSlot);
-            //            }
-            //            if (RedemptionDowned.KingSlayer)
-            //            {
-            //                shop6.addModItemToShop(Redemption, "SlayerBag", 1500000, ref shop, ref nextSlot);
-            //            }
-            //            if (RedemptionDowned.OmegaCleaver)
-            //            {
-            //                shop6.addModItemToShop(Redemption, "OmegaCleaverBag", 2000000, ref shop, ref nextSlot);
-            //            }
-            //            if (RedemptionDowned.OmegaGigapora)
-            //            {
-            //                shop6.addModItemToShop(Redemption, "OmegaGigaporaBag", 3000000, ref shop, ref nextSlot);
-            //            }
-            //            if (RedemptionDowned.Obliterator)
-            //            {
-            //                shop6.addModItemToShop(Redemption, "OmegaOblitBag", 5000000, ref shop, ref nextSlot);
-            //            }
-            //            if (RedemptionDowned.PatientZero)
-            //            {
-            //                shop6.addModItemToShop(Redemption, "PZBag", 6000000, ref shop, ref nextSlot);
-            //            }
-            //            if (RedemptionDowned.DeityDuo)
-            //            {
-            //                shop6.addModItemToShop(Redemption, "UkkoBag", 6000000, ref shop, ref nextSlot);
-            //                shop6.addModItemToShop(Redemption, "AkkaBag", 6000000, ref shop, ref nextSlot);
-            //            }
-            //            if (RedemptionDowned.Nebuleus)
-            //            {
-            //                shop6.addModItemToShop(Redemption, "NebBag", 10000000, ref shop, ref nextSlot);
-            //            }
-            //        }
             //    }
             //}
+            //*/
         }
 
         [JITWhenModsEnabled("ShardsOfAtheria")]
@@ -1447,16 +1395,25 @@ namespace AlchemistNPCLite.NPCs
                     .AddModItemToShop<SoulOfTwilight>(1000)
                     .AddModItemToShop<SoulOfSpite>(1000)
                     .AddModItemToShop<AreusShard>(10000, Condition.DownedEowOrBoc)
-                    .AddModItemToShop<HardlightPrism>(15000, SoAConditions.DownedNova)
+                    .AddModItemToShop<HardlightPrism>(15000, ShardsConditions.DownedNova)
                     .AddModItemToShop<BrokenHeroGun>(45000, Condition.DownedGolem)
                     .AddModItemToShop<FragmentEntropy>(180000, Condition.DownedMoonLord)
                     .AddModItemToShop<MemoryFragment>(10000, Condition.DownedMoonLord);
             }
             if (shop.Name == Bags2Shop)
             {
-                shop.AddModItemToShop<NovaBossBag>(-1, SoAConditions.DownedNova);
+                shop.AddModItemToShop<NovaBossBag>(-1, ShardsConditions.DownedNova);
             }
             return shop;
+        }
+
+        [JITWhenModsEnabled("ShardsOfAtheria")]
+        public static class ShardsConditions
+        {
+            public static Condition DownedNova
+            {
+                get { return SoAConditions.DownedNova; }
+            }
         }
     }
 }
