@@ -2,7 +2,6 @@
 using AlchemistNPCLite.Items;
 using AlchemistNPCLite.Utilities;
 using ShardsOfAtheria.Items.Potions;
-using ShardsOfAtheria.ShardsConditions;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent.Bestiary;
@@ -437,7 +436,10 @@ namespace AlchemistNPCLite.NPCs
             shop.Register();
 
             shop = new NPCShop(Type, SHOP_4);
-            AtheriaPotions(shop);
+            if (ModLoader.TryGetMod("ShardsOfAtheria", out var _))
+            {
+                AtheriaPotions(shop);
+            }
             shop.Register();
 
             shop = new NPCShop(Type, SHOP_5);
@@ -450,7 +452,7 @@ namespace AlchemistNPCLite.NPCs
             shop.AddModItemToShop<SoulInjection>(7500)
                 .AddModItemToShop<BoneMarrowInjection>(7500, Condition.DownedSkeletron)
                 .AddModItemToShop<ConductivityPotion>(7500, Condition.DownedEowOrBoc)
-                .AddModItemToShop<ChargedFlightPotion>(7500, SoAConditions.DownedNova);
+                .AddModItemToShop<ChargedFlightPotion>(7500, Operator.ShardsConditions.DownedNova);
             return shop;
         }
     }
