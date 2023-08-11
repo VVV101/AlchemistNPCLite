@@ -224,7 +224,7 @@ namespace AlchemistNPCLite.NPCs
                 .AddModItemToShop<BuilderCombination>(35000)
                 .AddModItemToShop<ExplorerCombination>(80000)
                 .AddModItemToShop<SummonerCombination>(30000)
-                .AddModItemToShop<FishingCombination>(100000, () => Main.player[Main.myPlayer].anglerQuestsFinished >= 5)
+                .AddModItemToShop<FishingCombination>(100000, () => Main.player[Main.myPlayer].anglerQuestsFinished >= 1)
                 .AddModItemToShop<ThoriumCombination>(250000, () => NPC.downedMechBossAny && ThoriumMod != null)
                 .AddModItemToShop<CalamityCombination>(200000, () => NPC.downedGolemBoss && Calamity != null)
             // IMPLEMENT WHEN WEAKREFERENCES FIXED

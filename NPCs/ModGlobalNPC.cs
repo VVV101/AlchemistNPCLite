@@ -21,14 +21,14 @@ namespace AlchemistNPCLite.NPCs
 
         public override void ModifyActiveShop(NPC npc, string shopName, Item[] items)
         {
-            return;
             Player player = Main.LocalPlayer;
             if (player.active && player == Main.player[Main.myPlayer])
             {
                 if (npc.type == ModContent.NPCType<Tinkerer>())
                 {
-                    foreach (var item in items)
-                    {
+                    foreach (Item item in items) 
+					{
+						if (item == null || item.type == ItemID.None) continue;
                         item.shopCustomPrice *= 2;
                     }
                 }
@@ -36,9 +36,9 @@ namespace AlchemistNPCLite.NPCs
                     npc.type == ModContent.NPCType<Alchemist>() ||
                     npc.type == ModContent.NPCType<YoungBrewer>())
                 {
-                    foreach (var item in items)
+                    foreach (Item item in items)
                     {
-                        item.shopCustomPrice *= AlchemistNPCLite.modConfiguration.PotsPriceMulti;
+						if (item == null || item.type == ItemID.None) continue;
                         item.shopCustomPrice *= AlchemistNPCLite.modConfiguration.PotsPriceMulti;
                         if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
                         {
@@ -283,18 +283,17 @@ namespace AlchemistNPCLite.NPCs
 
         public override void DrawEffects(NPC npc, ref Color drawColor)
         {
-            for (int k = 0; k < 255; k++)
-            {
-                Player player = Main.player[k];
-                if (player.active && player.HasBuff(ModContent.BuffType<Buffs.GreaterDangersense>()))
-                {
-                    if (npc.type == 112)
+            foreach (var player in Main.player)
+			{
+				if (player.active && player.HasBuff(ModContent.BuffType<Buffs.GreaterDangersense>())) 
+				{
+					if (npc.type == 112 || npc.type == 666)
                     {
                         npc.color = new Color(255, 255, 0, 100);
                         Lighting.AddLight(npc.position, 1f, 1f, 0f);
                     }
-                }
-            }
+				}
+			}
         }
         public override void OnKill(NPC npc)
         {

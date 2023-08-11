@@ -10,6 +10,8 @@ v1.9.1
 -Added more Thorium, Mod of Redemption support to shops, added support for Shards of Atheria mod.
 -Now Greater Dangersense potion ignores Moon Lord's projectiles. 
 Still could be wise not to use it against bosses with clearly visible projectiles.
+-Fixed GlobalNPC code related to shops (discounts and price modifiers/config conditions should work correctly now).
+-Various code optimizations.
 v1.9
 -Ported to 1.4.4 tModLoader.
 -Currently, supports Calamity mod.

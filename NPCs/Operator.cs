@@ -2,9 +2,6 @@
 using AlchemistNPCLite.Utilities;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
-using ShardsOfAtheria.Items.GrabBags;
-using ShardsOfAtheria.Items.Materials;
-using ShardsOfAtheria.ShardsConditions;
 using System.Collections.Generic;
 using Terraria;
 using Terraria.GameContent;
@@ -835,6 +832,15 @@ namespace AlchemistNPCLite.NPCs
                 get { return Redemption.Globals.RedeBossDowned.downedNebuleus; }
             }
         }
+		
+		[JITWhenModsEnabled("ShardsOfAtheria")]
+        public static class ShardsConditions
+        {
+			public static bool DownedNova
+            {
+                get { return ShardsOfAtheria.Systems.ShardsDownedSystem.downedValkyrie; }
+            }
+        }
 
         // Possibly redundant with ModGlobalNPC
         public override void ModifyNPCLoot(NPCLoot npcLoot)
@@ -912,7 +918,7 @@ namespace AlchemistNPCLite.NPCs
                 .AddModItemToShop(Calamity, "Phantoplasm", 100000, () => (bool)Calamity.Call("Downed", "polterghast"))
                 .AddModItemToShop(Calamity, "NightmareFuel", 120000, () => (bool)Calamity.Call("Downed", "dog") && AlchemistNPCLiteWorld.downedDOGPumpking)
                 .AddModItemToShop(Calamity, "EndothermicEnergy", 120000, () => (bool)Calamity.Call("Downed", "dog") && AlchemistNPCLiteWorld.downedDOGIceQueen)
-                .AddModItemToShop(Calamity, "DarksunFragment", 150000, () => (bool)Calamity.Call("Downed", "buffed mothron"));
+                .AddModItemToShop(Calamity, "DarksunFragment", 150000, () => (bool)Calamity.Call("Downed", "buffed mothron"))
             //if (ModLoader.GetMod("SpiritMod") != null)
             //{
             //    .addModItemToShop(SpiritMod, "BrokenParts", 500000, NPC.downedGolemBoss);
@@ -927,10 +933,15 @@ namespace AlchemistNPCLite.NPCs
             //    .addModItemToShop(LithosArmory, "BrokenHeroSpear", 500000, NPC.downedGolemBoss);
             //    .addModItemToShop(LithosArmory, "BrokenHeroWand", 500000, NPC.downedGolemBoss);
             //}
-            if (Atheria != null)
-            {
-                AtheriaItems(shop);
-            }
+				.AddModItemToShop(Atheria, "EmptyNeedle", 500)
+				.AddModItemToShop(Atheria, "SoulOfDaylight", 1000)
+				.AddModItemToShop(Atheria, "SoulOfTwilight", 1000)
+				.AddModItemToShop(Atheria, "SoulOfSpite", 1000)
+				.AddModItemToShop(Atheria, "AreusShard", 10000, Condition.DownedEowOrBoc)
+				.AddModItemToShop(Atheria, "HardlightPrism", 15000, () => ShardsConditions.DownedNova)
+				.AddModItemToShop(Atheria, "BrokenHeroGun", 45000, Condition.DownedGolem)
+				.AddModItemToShop(Atheria, "FragmentEntropy", 180000, Condition.DownedMoonLord)
+				.AddModItemToShop(Atheria, "MemoryFragment", 10000, Condition.DownedMoonLord);
             shop.Register();
 
             shop = new NPCShop(Type, VanillaBagsShop)
@@ -940,8 +951,6 @@ namespace AlchemistNPCLite.NPCs
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode))
                 .Add(new Item(ItemID.EyeOfCthulhuBossBag) { shopCustomPrice = 350000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode))
-                .Add(new Item(ItemID.EyeOfCthulhuBossBag) { shopCustomPrice = 500000 },
-                    new Condition("", () => NPC.downedBoss3 && Main.expertMode))
                 .Add(new Item(ItemID.EaterOfWorldsBossBag) { shopCustomPrice = 500000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode))
                 .Add(new Item(ItemID.BrainOfCthulhuBossBag) { shopCustomPrice = 500000 },
@@ -950,9 +959,9 @@ namespace AlchemistNPCLite.NPCs
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode))
                 .Add(new Item(ItemID.SkeletronBossBag) { shopCustomPrice = 1000000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode))
-                .Add(new Item(ItemID.DeerclopsBossBag) { shopCustomPrice = 2500000 },
+                .Add(new Item(ItemID.DeerclopsBossBag) { shopCustomPrice = 1500000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedDeerclops)).AddModItemToShop(ThoriumMod, "DarkMageBag", 1000000, () => NPC.downedBoss3 && Main.expertMode && DD2Event.DownedInvasionT1)
-                .Add(new Item(ItemID.WallOfFleshBossBag) { shopCustomPrice = 1500000 },
+                .Add(new Item(ItemID.WallOfFleshBossBag) { shopCustomPrice = 1750000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode && Main.hardMode))
                 .Add(new Item(ItemID.QueenSlimeBossBag) { shopCustomPrice = 1500000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedQueenSlime))
@@ -1014,16 +1023,12 @@ namespace AlchemistNPCLite.NPCs
                 .AddModItemToShop(ThoriumMod, "BeholderBag", 2000000, () => (bool)ThoriumMod.Call("GetDownedBoss", "FallenBeholder"))
                 .AddModItemToShop(ThoriumMod, "LichBag", 3000000, () => (bool)ThoriumMod.Call("GetDownedBoss", "Lich"))
                 .AddModItemToShop(ThoriumMod, "AbyssionBag", 3500000, () => (bool)ThoriumMod.Call("GetDownedBoss", "ForgottenOne"))
-                .AddModItemToShop(ThoriumMod, "AbyssionBag", 3500000, () => (bool)ThoriumMod.Call("GetDownedBoss", "ForgottenOne"))
                 .AddModItemToShop(ThoriumMod, "RagBag", 5000000, () => (bool)ThoriumMod.Call("GetDownedBoss", "ThePrimordials"))
                 ;
             shop.Register();
 
-            shop = new NPCShop(Type, Bags2Shop);
-            if (Atheria != null)
-            {
-                AtheriaItems(shop);
-            }
+            shop = new NPCShop(Type, Bags2Shop)
+				.AddModItemToShop(Atheria, "NovaBossBag", 1500000, () => ShardsConditions.DownedNova);
             shop.Register();
 
             shop = new NPCShop(Type, Bags3Shop)
@@ -1383,37 +1388,6 @@ namespace AlchemistNPCLite.NPCs
             //    }
             //}
             //*/
-        }
-
-        [JITWhenModsEnabled("ShardsOfAtheria")]
-        private static NPCShop AtheriaItems(NPCShop shop)
-        {
-            if (shop.Name == ModMaterialShop)
-            {
-                shop.AddModItemToShop<EmptyNeedle>(500)
-                    .AddModItemToShop<SoulOfDaylight>(1000)
-                    .AddModItemToShop<SoulOfTwilight>(1000)
-                    .AddModItemToShop<SoulOfSpite>(1000)
-                    .AddModItemToShop<AreusShard>(10000, Condition.DownedEowOrBoc)
-                    .AddModItemToShop<HardlightPrism>(15000, ShardsConditions.DownedNova)
-                    .AddModItemToShop<BrokenHeroGun>(45000, Condition.DownedGolem)
-                    .AddModItemToShop<FragmentEntropy>(180000, Condition.DownedMoonLord)
-                    .AddModItemToShop<MemoryFragment>(10000, Condition.DownedMoonLord);
-            }
-            if (shop.Name == Bags2Shop)
-            {
-                shop.AddModItemToShop<NovaBossBag>(-1, ShardsConditions.DownedNova);
-            }
-            return shop;
-        }
-
-        [JITWhenModsEnabled("ShardsOfAtheria")]
-        public static class ShardsConditions
-        {
-            public static Condition DownedNova
-            {
-                get { return SoAConditions.DownedNova; }
-            }
         }
     }
 }

@@ -24,18 +24,14 @@ namespace AlchemistNPCLite.Projectiles
 		
 		public override Color? GetAlpha(Projectile projectile, Color lightColor)
         {
-			for (int k = 0; k < 255; k++)
+			foreach (var player in Main.player) 
 			{
-				Player player = Main.player[k];
-				if (player.active)
+				if (player.active && player.HasBuff(ModContent.BuffType<Buffs.GreaterDangersense>()))
 				{
-					if (player.HasBuff(ModContent.BuffType<Buffs.GreaterDangersense>()))
+					if (projectile.hostile && !projectile.friendly && (projectile.type < 452 || projectile.type > 462))
 					{
-						if (projectile.hostile && !projectile.friendly && (projectile.type < 452 && projectile.type > 462))
-						{
-							Lighting.AddLight(projectile.Center, 1f, 1f, 0f);
-							return Color.Yellow;
-						}
+						Lighting.AddLight(projectile.Center, 1f, 1f, 0f);
+						return Color.Yellow;
 					}
 				}
 			}
@@ -45,89 +41,92 @@ namespace AlchemistNPCLite.Projectiles
 		public override void OnHitNPC(Projectile projectile, NPC target, NPC.HitInfo hit, int damageDone)
 		{
 			Player player = Main.player[projectile.owner];
-			if ((projectile.type == 98) && ((AlchemistNPCLitePlayer)player.GetModPlayer<AlchemistNPCLitePlayer>()).Traps == true)
+			if (((AlchemistNPCLitePlayer)player.GetModPlayer<AlchemistNPCLitePlayer>()).Traps == true)
 			{
-				if (Main.expertMode)
+				if (projectile.type == 98)
 				{
-					projectile.damage += 40;
+					if (Main.expertMode)
+					{
+						projectile.damage += 40;
+					}
+					else
+					{
+						projectile.damage += 20;
+					}
+					target.immune[projectile.owner] = 1;
 				}
-				else
+				else if (projectile.type == 184)
 				{
-					projectile.damage += 20;
+					if (Main.expertMode)
+					{
+						projectile.damage += 40;
+					}
+					else
+					{
+						projectile.damage += 20;
+					}
+					target.immune[projectile.owner] = 1;
 				}
-				target.immune[projectile.owner] = 1;
-			}
-			if ((projectile.type == 184) && ((AlchemistNPCLitePlayer)player.GetModPlayer<AlchemistNPCLitePlayer>()).Traps == true)
-			{
-				if (Main.expertMode)
+				else if (projectile.type == 185)
 				{
-					projectile.damage += 40;
+					if (Main.expertMode)
+					{
+						projectile.damage += 40;
+					}
+					else
+					{
+						projectile.damage += 20;
+					}
+					target.immune[projectile.owner] = 3;
 				}
-				else
+				else if (projectile.type == 186)
 				{
-					projectile.damage += 20;
+					if (Main.expertMode)
+					{
+						projectile.damage += 20;
+					}
+					else
+					{
+						projectile.damage += 10;
+					}
+					target.immune[projectile.owner] = 1;
 				}
-				target.immune[projectile.owner] = 1;
-			}
-			if ((projectile.type == 185) && ((AlchemistNPCLitePlayer)player.GetModPlayer<AlchemistNPCLitePlayer>()).Traps == true)
-			{
-				if (Main.expertMode)
+				else if (projectile.type == 187)
 				{
-					projectile.damage += 40;
+					if (Main.expertMode)
+					{
+						projectile.damage += 40;
+					}
+					else
+					{
+						projectile.damage += 20;
+					}
+					target.immune[projectile.owner] = 2;
 				}
-				else
+				else if (projectile.type == 188)
 				{
-					projectile.damage += 20;
+					if (Main.expertMode)
+					{
+						projectile.damage += 40;
+					}
+					else
+					{
+						projectile.damage += 20;
+					}
+					target.immune[projectile.owner] = 2;
 				}
-				target.immune[projectile.owner] = 3;
-			}
-			if ((projectile.type == 186) && ((AlchemistNPCLitePlayer)player.GetModPlayer<AlchemistNPCLitePlayer>()).Traps == true)
-			{
-				if (Main.expertMode)
+				else if (projectile.type == 654)
 				{
-					projectile.damage += 20;
+					if (Main.expertMode)
+					{
+						projectile.damage += 40;
+					}
+					else
+					{
+						projectile.damage += 20;
+					}
+					target.immune[projectile.owner] = 2;
 				}
-				else
-				{
-					projectile.damage += 10;
-				}
-				target.immune[projectile.owner] = 1;
-			}
-			if ((projectile.type == 187) && ((AlchemistNPCLitePlayer)player.GetModPlayer<AlchemistNPCLitePlayer>()).Traps == true)
-			{
-				if (Main.expertMode)
-				{
-					projectile.damage += 40;
-				}
-				else
-				{
-					projectile.damage += 20;
-				}
-				target.immune[projectile.owner] = 2;
-			}
-			if ((projectile.type == 188) && ((AlchemistNPCLitePlayer)player.GetModPlayer<AlchemistNPCLitePlayer>()).Traps == true)
-			{
-				if (Main.expertMode)
-				{
-					projectile.damage += 40;
-				}
-				else
-				{
-					projectile.damage += 20;
-				}
-				target.immune[projectile.owner] = 2;
-			}
-			if ((projectile.type == 654) && ((AlchemistNPCLitePlayer)player.GetModPlayer<AlchemistNPCLitePlayer>()).Traps == true)
-			{
-				if (Main.expertMode)
-				{
-					projectile.damage += 40;
-				}
-				else
-				{
-					projectile.damage += 20;
-				}
-				target.immune[projectile.owner] = 2;
 			}
 		}
 	}
