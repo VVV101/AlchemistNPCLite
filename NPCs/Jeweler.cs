@@ -213,10 +213,10 @@ namespace AlchemistNPCLite.NPCs
         public override void AddShops()
         {
             ModLoader.TryGetMod("ThoriumMod", out Mod ThoriumMod);
-            ModLoader.TryGetMod("Tremor", out Mod Tremor);
+            //ModLoader.TryGetMod("Tremor", out Mod Tremor);
             ModLoader.TryGetMod("SpiritMod", out Mod SpiritMod);
             ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
-            ModLoader.TryGetMod("ShardsOfAtheria", out Mod Atheria);
+            //ModLoader.TryGetMod("ShardsOfAtheria", out Mod Atheria);
 
             var shop = new NPCShop(Type, Other)
                 .Add(new Item(ItemID.Amethyst) { shopCustomPrice = 1000 })
@@ -227,7 +227,7 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.FossilOre) { shopCustomPrice = 5000 }, Condition.DownedEowOrBoc)
                 .AddModItemToShop(ThoriumMod, "Opal", 5000, Condition.DownedEowOrBoc)
                 .AddModItemToShop(ThoriumMod, "Aquamarine", 5000, Condition.DownedEowOrBoc)
-                .AddModItemToShop(Atheria, "Jade", 4500, Condition.DownedEowOrBoc)
+                //.AddModItemToShop(Atheria, "Jade", 4500, Condition.DownedEowOrBoc)
                 .Add(new Item(ItemID.BandofStarpower) { shopCustomPrice = 30000 }, Condition.DownedEowOrBoc)
                 .Add(new Item(ItemID.BandofRegeneration) { shopCustomPrice = 50000 }, Condition.DownedEowOrBoc)
                 .Add(new Item(ItemID.LifeCrystal) { shopCustomPrice = 100000 }, Condition.DownedEowOrBoc, new Condition("", () => Main.netMode == NetmodeID.MultiplayerClient || Main.netMode == NetmodeID.Server))
@@ -236,11 +236,11 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.Diamond) { shopCustomPrice = 7500 }, Condition.DownedSkeletron)
                 .Add(new Item(ItemID.DiamondRing) { shopCustomPrice = 2000000 }, Condition.DownedSkeletron)
                 .AddModItemToShop<Items.Summoning.HorrifyingSkull>(250000, Condition.DownedSkeletron)
-                .AddModItemToShop(Tremor, "Rupicide", 5000, Condition.DownedSkeletron)
-                .AddModItemToShop(Tremor, "Opal", 30000, Condition.DownedSkeletron)
-                .AddModItemToShop(Tremor, "MagiumShard", 7500, Condition.DownedSkeletron, Condition.Hardmode)
-                .AddModItemToShop(Tremor, "RuneBar", 7500, Condition.DownedSkeletron, Condition.Hardmode)
-                .AddModItemToShop(Tremor, "LapisLazuli", 150000, Condition.DownedSkeletron, Condition.DownedMoonLord)
+                //.AddModItemToShop(Tremor, "Rupicide", 5000, Condition.DownedSkeletron)
+                //.AddModItemToShop(Tremor, "Opal", 30000, Condition.DownedSkeletron)
+                //.AddModItemToShop(Tremor, "MagiumShard", 7500, Condition.DownedSkeletron, Condition.Hardmode)
+                //.AddModItemToShop(Tremor, "RuneBar", 7500, Condition.DownedSkeletron, Condition.Hardmode)
+                //.AddModItemToShop(Tremor, "LapisLazuli", 150000, Condition.DownedSkeletron, Condition.DownedMoonLord)
                 .AddModItemToShop(ThoriumMod, "GraniteEnergyCore", 10000, Condition.DownedSkeletron)
                 .AddModItemToShop(ThoriumMod, "BronzeFragments", 10000, Condition.DownedSkeletron)
                 .AddModItemToShop(SpiritMod, "GraniteChunk", 10000, Condition.DownedSkeletron)

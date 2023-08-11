@@ -7,9 +7,11 @@ The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 Mod's Discord: https://discord.gg/WGKyKun
 v1.9.1
--Added more Thorium, Mod of Redemption support to shops, added support for Shards of Atheria mod.
+-Added more Thorium, Mod of Redemption support to shops.
+-Added support for Shards of Atheria mod in code, currently commented due to incompatibility.
 -Now Greater Dangersense potion ignores Moon Lord's projectiles. 
 Still could be wise not to use it against bosses with clearly visible projectiles.
+-Fixed a few typos related to selling Souls of Fright and Might, Modified World Warper, dupes of some treasure bags.
 -Fixed GlobalNPC code related to shops (discounts and price modifiers/config conditions should work correctly now).
 -Various code optimizations.
 v1.9
