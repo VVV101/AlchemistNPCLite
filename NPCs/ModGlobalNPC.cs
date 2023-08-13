@@ -356,6 +356,10 @@ namespace AlchemistNPCLite.NPCs
             {
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Items.Summoning.APMC>(), 1));
             }
+            if (npc.type == NPCID.UndeadMiner)
+            {	
+                npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Items.ExcavationPotion>(), 1));
+            }
         }
 
         public bool CalamityModRevengeance

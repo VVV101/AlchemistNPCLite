@@ -109,6 +109,7 @@ namespace AlchemistNPCLite
             string celestialWings = Language.GetTextValue("Mods.AlchemistNPCLite.CelestialWings");
             string LunarHamaxe = Language.GetTextValue("Mods.AlchemistNPCLite.LunarHamaxe");
             string tier3Watch = Language.GetTextValue("Mods.AlchemistNPCLite.tier3Watch");
+            string tier3PreHmOre = Language.GetTextValue("Mods.AlchemistNPCLite.tier3PreHmOre");
 
             RecipeGroup group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + evilBossMask, new int[]
          {
@@ -180,6 +181,11 @@ namespace AlchemistNPCLite
                  ItemID.GoldWatch, ItemID.PlatinumWatch
              });
             RecipeGroup.RegisterGroup("AlchemistNPCLite:AnyWatch", group);
+            group = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + tier3PreHmOre, new int[]
+             {
+            	 ItemID.SilverOre, ItemID.TungstenOre
+             });
+            RecipeGroup.RegisterGroup("AlchemistNPCLite:AnyTier3PreHmOre", group);
 
         }
 

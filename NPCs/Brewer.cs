@@ -388,6 +388,7 @@ namespace AlchemistNPCLite.NPCs
                 .AddModItemToShop<Dopamine>(15000)
                 .AddModItemToShop<GreaterDangersensePotion>(25000)
                 .AddModItemToShop<NatureBlessingPotion>(25000)
+                .AddModItemToShop<ExcavationPotion>(50000, Condition.DownedEowOrBoc)
                 .AddModItemToShop<BewitchingPotion>(10000, () => NPC.downedBoss3)
                 .AddModItemToShop<FortitudePotion>(15000, () => NPC.downedBoss3)
                 .AddModItemToShop<InvincibilityPotion>(15000, () => Main.hardMode)

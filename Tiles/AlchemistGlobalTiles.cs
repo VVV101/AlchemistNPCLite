@@ -43,24 +43,5 @@ namespace AlchemistNPCLite.Tiles
 			}
 			return base.AdjTiles(type);
 		}
-		
-		/*public override void KillTile(int i, int j, int type, ref bool fail, ref bool effectOnly, ref bool noItem)
-		{
-			foreach (var player in Main.player) 
-			{
-				if (player.active && player.HasBuff(ModContent.BuffType<Buffs.Whatever>()))
-				{
-					player.PickTile(i-1, j-1, 35);
-					player.PickTile(i-1, j, 35);
-					player.PickTile(i, j-1, 35);
-					player.PickTile(i+1, j+1, 35);
-					player.PickTile(i+1, j, 35);
-					player.PickTile(i, j+1, 35);
-					player.PickTile(i+1, j-1, 35);
-					player.PickTile(i-1, j+1, 35);
-					player.PickTile(i, j, 35);
-				}
-			}
-		}*/
 	}
 }

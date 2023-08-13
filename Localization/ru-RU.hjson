@@ -204,6 +204,11 @@ Mods: {
 					'''
 			}
 
+			Excavation: {
+				DisplayName: Раскопка
+				Description: Способности к добыче блоков значительно усилены
+			}
+
 			ExplorerComb: {
 				DisplayName: Комбинация Исследователя
 				Description:
@@ -354,6 +359,15 @@ Mods: {
 			DungeonTeleportationPotion: {
 				DisplayName: Зелье телепортации в Данж
 				Tooltip: Телепортирует вас ко входу в Данж
+			}
+
+			ExcavationPotion: {
+				DisplayName: Зелье раскопки
+				Tooltip:
+					'''
+					Расширяет зону добычи блоков до 3х3
+					Зелье не из Каламити мода
+					'''
 			}
 
 			ExplorerCombination: {
@@ -944,6 +958,7 @@ Mods: {
 		// CelestialWings: Celestial Wings
 		// LunarHamaxe: Lunar Hamaxe
 		// tier3Watch: tier 3 Watch
+		// tier3PreHmOre: tier 3 Pre-hardmode ore
 		// KingSlime: King Slime Treasure Bag
 		// EyeofCthulhu: Eye of Cthulhu Treasure Bag
 		// EaterOfWorlds: Eater Of Worlds Treasure Bag

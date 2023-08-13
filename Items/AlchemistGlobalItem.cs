@@ -127,6 +127,23 @@ namespace AlchemistNPCLite.Items
             }
             return true;
         }
+		
+		public override void UseAnimation(Item item, Player player)
+		{
+			if (item.pick > 0 && player.HasBuff(ModContent.BuffType<Buffs.Excavation>()))
+			{
+				int i = Terraria.Player.tileTargetX;
+				int j = Terraria.Player.tileTargetY;
+				player.PickTile(i-1, j-1, item.pick);
+				player.PickTile(i-1, j, item.pick);
+				player.PickTile(i, j-1, item.pick);
+				player.PickTile(i+1, j+1, item.pick);
+				player.PickTile(i+1, j, item.pick);
+				player.PickTile(i, j+1, item.pick);
+				player.PickTile(i+1, j-1, item.pick);
+				player.PickTile(i-1, j+1, item.pick);
+			}
+		}
 
         public override bool? UseItem(Item item, Player player)
         {

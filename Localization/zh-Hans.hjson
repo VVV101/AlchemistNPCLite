@@ -204,6 +204,11 @@ Mods: {
 					'''
 			}
 
+			Excavation: {
+				DisplayName: Excavation
+				Description: Mining capabilites heavily increased
+			}
+
 			ExplorerComb: {
 				DisplayName: 探索者药剂包
 				Description:
@@ -366,6 +371,15 @@ Mods: {
 			DungeonTeleportationPotion: {
 				DisplayName: 地牢传送药剂
 				Tooltip: 将你传送至地牢入口
+			}
+
+			ExcavationPotion: {
+				DisplayName: Excavation Potion
+				Tooltip:
+					'''
+					Expands your mining area from a single block to 3x3
+					NON-CALAMITY BUFF POTION
+					'''
 			}
 
 			ExplorerCombination: {
@@ -961,6 +975,7 @@ Mods: {
 		CelestialWings: 四柱翅膀
 		// LunarHamaxe: Lunar Hamaxe
 		tier3Watch: 三级表(金表/铂金表)
+		// tier3PreHmOre: tier 3 Pre-hardmode ore
 		KingSlime: 史莱姆之王宝藏袋
 		EyeofCthulhu: 克苏鲁之眼宝藏袋
 		EaterOfWorlds: 世界吞噬者宝藏袋

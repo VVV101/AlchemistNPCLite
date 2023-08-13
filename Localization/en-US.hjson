@@ -204,6 +204,11 @@ Mods: {
 					'''
 			}
 
+			Excavation: {
+				DisplayName: Excavation
+				Description: Mining capabilites heavily increased
+			}
+
 			ExplorerComb: {
 				DisplayName: Explorer Combination
 				Description:
@@ -362,6 +367,15 @@ Mods: {
 			DungeonTeleportationPotion: {
 				DisplayName: Dungeon Teleportation Potion
 				Tooltip: Teleports you to Dungeon entrance
+			}
+
+			ExcavationPotion: {
+				DisplayName: Excavation Potion
+				Tooltip:
+					'''
+					Expands your mining area from a single block to 3x3
+					NON-CALAMITY BUFF POTION
+					'''
 			}
 
 			ExplorerCombination: {
@@ -958,6 +972,7 @@ Mods: {
 		CelestialWings: Celestial Wings
 		LunarHamaxe: Lunar Hamaxe
 		tier3Watch: tier 3 Watch
+		tier3PreHmOre: tier 3 Pre-hardmode ore
 		KingSlime: King Slime Treasure Bag
 		EyeofCthulhu: Eye of Cthulhu Treasure Bag
 		EaterOfWorlds: Eater Of Worlds Treasure Bag
