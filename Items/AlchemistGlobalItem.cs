@@ -132,16 +132,20 @@ namespace AlchemistNPCLite.Items
 		{
 			if (item.pick > 0 && player.HasBuff(ModContent.BuffType<Buffs.Excavation>()))
 			{
-				int i = Terraria.Player.tileTargetX;
-				int j = Terraria.Player.tileTargetY;
-				player.PickTile(i-1, j-1, item.pick);
-				player.PickTile(i-1, j, item.pick);
-				player.PickTile(i, j-1, item.pick);
-				player.PickTile(i+1, j+1, item.pick);
-				player.PickTile(i+1, j, item.pick);
-				player.PickTile(i, j+1, item.pick);
-				player.PickTile(i+1, j-1, item.pick);
-				player.PickTile(i-1, j+1, item.pick);
+				AlchemistNPCLitePlayer modPlayer = player.GetModPlayer<AlchemistNPCLitePlayer>();
+				if (modPlayer.ExcavationPower == 3)
+				{
+					int i = Terraria.Player.tileTargetX;
+					int j = Terraria.Player.tileTargetY;
+					player.PickTile(i-1, j-1, item.pick);
+					player.PickTile(i-1, j, item.pick);
+					player.PickTile(i, j-1, item.pick);
+					player.PickTile(i+1, j+1, item.pick);
+					player.PickTile(i+1, j, item.pick);
+					player.PickTile(i, j+1, item.pick);
+					player.PickTile(i+1, j-1, item.pick);
+					player.PickTile(i-1, j+1, item.pick);
+				}
 			}
 		}
 

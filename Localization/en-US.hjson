@@ -373,7 +373,8 @@ Mods: {
 				DisplayName: Excavation Potion
 				Tooltip:
 					'''
-					Expands your mining area from a single block to 3x3
+					Expands your mining area from a single block to 3x3.
+					Right clicking on buff changes mining area between 1x1 and 3x3.
 					NON-CALAMITY BUFF POTION
 					'''
 			}

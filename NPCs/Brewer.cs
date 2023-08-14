@@ -313,7 +313,7 @@ namespace AlchemistNPCLite.NPCs
         //      	get { return SacredTools.ModdedWorld.downedLunarians; }
         //      }
         //*/
-        public bool CalamityModRevengeance
+        /*public bool CalamityModRevengeance
         {
             get
             {
@@ -323,7 +323,7 @@ namespace AlchemistNPCLite.NPCs
                 }
                 return false;
             }
-        }
+        }*/
 
         public override void AddShops()
         {
