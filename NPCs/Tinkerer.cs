@@ -186,6 +186,7 @@ namespace AlchemistNPCLite.NPCs
                     Condition.DownedSkeletron)
                 .Add(new Item(ItemID.Tabi) { shopCustomPrice = 250000 },
                     Condition.DownedGolem)
+				.Add(new Item(ItemID.BlackBelt) { shopCustomPrice = 250000 }, Condition.DownedGolem)
                 .Add(new Item(ItemID.FrogLeg) { shopCustomPrice = 50000 },
                     Condition.DownedSkeletron)
                 .Add(new Item(ItemID.JellyfishNecklace) { shopCustomPrice = 30000 },
@@ -224,7 +225,9 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.LuckyCoin) { shopCustomPrice = 330000 },
                     Condition.DownedMechBossAny)
                 .Add(new Item(ItemID.DiscountCard) { shopCustomPrice = 330000 },
-                    Condition.DownedMechBossAny);
+                    Condition.DownedMechBossAny)
+				.Add(new Item(ItemID.Shackle) { shopCustomPrice = 30000 })
+				.Add(new Item(ItemID.ObsidianRose) { shopCustomPrice = 150000 }, Condition.DownedSkeletron);
             shop.Register();
 
             shop = new NPCShop(Type, Shop2)
@@ -249,13 +252,11 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.TitanGlove) { shopCustomPrice = 250000 }, Condition.Hardmode)
                 .Add(new Item(ItemID.MagmaStone) { shopCustomPrice = 150000 }, Condition.Hardmode)
                 .Add(new Item(ItemID.SharkToothNecklace) { shopCustomPrice = 100000 }, Condition.DownedEowOrBoc)
-                .Add(new Item(ItemID.BlackBelt) { shopCustomPrice = 250000 }, Condition.DownedGolem)
                 .Add(new Item(ItemID.MoonCharm) { shopCustomPrice = 300000 }, Condition.DownedMechBossAny)
                 .Add(new Item(ItemID.SunStone) { shopCustomPrice = 350000 }, Condition.DownedGolem)
                 .Add(new Item(ItemID.MoonStone) { shopCustomPrice = 350000 }, Condition.DownedGolem)
                 .Add(new Item(ItemID.RifleScope) { shopCustomPrice = 250000 }, Condition.DownedGolem)
                 .Add(new Item(ItemID.CobaltShield) { shopCustomPrice = 100000 }, Condition.Hardmode)
-                .Add(new Item(ItemID.PaladinsShield) { shopCustomPrice = 150000 }, Condition.DownedGolem)
                 .Add(new Item(ItemID.PaladinsShield) { shopCustomPrice = 150000 }, Condition.DownedGolem)
                 .Add(new Item(ItemID.FrozenTurtleShell) { shopCustomPrice = 350000 }, Condition.DownedMechBossAny)
                 .Add(new Item(ItemID.PutridScent) { shopCustomPrice = 250000 }, Condition.DownedMechBossAny)
@@ -264,8 +265,6 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.PanicNecklace) { shopCustomPrice = 50000 }, Condition.DownedEowOrBoc)
                 .Add(new Item(ItemID.CrossNecklace) { shopCustomPrice = 100000 }, Condition.DownedMechBossAny)
                 .Add(new Item(ItemID.StarCloak) { shopCustomPrice = 150000 }, Condition.DownedMechBossAny)
-                .Add(new Item(ItemID.ObsidianRose) { shopCustomPrice = 150000 }, Condition.DownedSkeletron)
-                .Add(new Item(ItemID.Shackle) { shopCustomPrice = 30000 })
                 .Add(new Item(ItemID.HerculesBeetle) { shopCustomPrice = 330000 }, Condition.DownedGolem)
                 .Add(new Item(ItemID.PygmyNecklace) { shopCustomPrice = 330000 }, Condition.DownedGolem)
                 .Add(new Item(ItemID.NecromanticScroll) { shopCustomPrice = 330000 }, Condition.DownedGolem);

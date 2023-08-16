@@ -194,7 +194,10 @@ namespace AlchemistNPCLite
                                         float rotation = vector.ToRotation() + (float)(Math.PI / 2);
                                         var drawPosition = playerCenter - Main.screenPosition + offset;
                                         float fade = Math.Min(1f, (distance - 20) / 70);
-                                        Main.spriteBatch.Draw(ModContent.Request<Texture2D>("AlchemistNPCLite/Projectiles/LocatorProjectile").Value, drawPosition,
+										if (!AlchemistNPCLite.modConfiguration.LifeformAnalyzerAlt)
+											Main.spriteBatch.Draw(ModContent.Request<Texture2D>("AlchemistNPCLite/Projectiles/LocatorProjectile").Value, drawPosition,
+                                                                null, Color.White * fade, rotation, TextureAssets.Cursors[1].Size() / 2, Vector2.One, SpriteEffects.None, 0);
+                                        else Main.spriteBatch.Draw(ModContent.Request<Texture2D>("AlchemistNPCLite/Projectiles/LocatorProjectileAlt").Value, drawPosition,
                                                                 null, Color.White * fade, rotation, TextureAssets.Cursors[1].Size() / 2, Vector2.One, SpriteEffects.None, 0);
                                     }
                                 }

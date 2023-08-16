@@ -63,9 +63,14 @@ namespace AlchemistNPCLite
 		public bool TinkererSpawn;
 		
 		[DefaultValue(true)]
-		[Label("Lifeform Analyzer laser pointing")]
-		[Tooltip("Enable or disable laser pointing of Lifeform Analyzer (ticks each second). True by default")]
+		[Label("Lifeform Analyzer rare creature pointing")]
+		[Tooltip("Enable or disable rare creature pointing of Lifeform Analyzer. True by default")]
 		public bool LifeformAnalyzer;
+		
+		[DefaultValue(false)]
+		[Label("Lifeform Analyzer locator alt texture")]
+		[Tooltip("Use alternative texture for Lifeform Analyzer locator. False by default")]
+		public bool LifeformAnalyzerAlt;
 
 		[Range(40, 4000)]
 		[DefaultValue(4000)]

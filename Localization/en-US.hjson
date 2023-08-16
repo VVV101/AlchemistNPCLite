@@ -343,8 +343,7 @@ Mods: {
 
 			CalamityCombination: {
 				DisplayName: Calamity Combination
-				Description: Grants some of the Calamity mod buffs (Photosynthesis, Fabsol's Vodka, Soaring and Bounding)
-				Tooltip: ""
+				Tooltip: Grants some of the Calamity mod buffs (Photosynthesis, Fabsol's Vodka, Soaring and Bounding)
 			}
 
 			DiscordPotion: {
@@ -1444,6 +1443,11 @@ Mods: {
 				}
 
 				DisplayName: Mod Configuration
+
+				LifeformAnalyzerAlt: {
+					Label: Lifeform Analyzer locator alt texture
+					Tooltip: Use alternative texture for Lifeform Analyzer locator. False by default
+				}
 			}
 		}
 	}
