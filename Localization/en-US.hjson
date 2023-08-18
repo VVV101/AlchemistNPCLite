@@ -491,7 +491,7 @@ Mods: {
 			}
 
 			GlobalTeleporterUp: {
-				DisplayName: World Warper
+				DisplayName: Modified World Warper
 				Tooltip:
 					'''
 					Teleports you to any point of the map

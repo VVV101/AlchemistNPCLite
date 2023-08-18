@@ -16,6 +16,7 @@ namespace AlchemistNPCLite.Items.Misc
 		public override void SetStaticDefaults()
 		{
 			Item.ResearchUnlockCount = 30;
+			ItemID.Sets.WorksInVoidBag[Type] = false;
         }
 
 		public override void SetDefaults()

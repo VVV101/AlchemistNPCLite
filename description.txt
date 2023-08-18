@@ -15,6 +15,7 @@ Drops from Undead Miners, can be crafted, available in Brewer's 2nd shop after b
 Still could be wise not to use it against bosses with clearly visible projectiles.
 -Fixed a few typos related to selling Souls of Fright and Might, Modified World Warper, dupes of some treasure bags, other problems with shops.
 -Fixed GlobalNPC code related to shops (discounts and price modifiers/config conditions should work correctly now).
+-Fixed normal World Warper working from Void Bag.
 -Various code optimizations.
 -Resprites for Jungle, Temple Teleporter potions, Discord potion, Calamity and Thorium combinations, Lifeform Analyzer locator (configurable).
 Made by thyreo and GoldYosh.
