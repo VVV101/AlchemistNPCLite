@@ -137,6 +137,8 @@ namespace AlchemistNPCLite.Items
 				{
 					int i = Terraria.Player.tileTargetX;
 					int j = Terraria.Player.tileTargetY;
+					Vector2 target = new Vector2(i * 16,j * 16); 
+					if (Vector2.Distance(player.Center, target) > 85f) return;
 					player.PickTile(i-1, j-1, item.pick);
 					player.PickTile(i-1, j, item.pick);
 					player.PickTile(i, j-1, item.pick);
