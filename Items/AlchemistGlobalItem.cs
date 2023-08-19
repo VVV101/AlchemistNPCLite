@@ -5,7 +5,9 @@ using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
 using Terraria.Utilities;
+using Terraria.GameContent.Prefixes;
 using static Terraria.ModLoader.ModContent;
+
 
 namespace AlchemistNPCLite.Items
 {
@@ -34,43 +36,46 @@ namespace AlchemistNPCLite.Items
             {
                 if (item.CountsAsClass(DamageClass.Melee))
                 {
+					if (Main.rand.Next(20) == 0)
+					{
+						if (!PrefixLegacy.ItemSets.BoomerangsChakrams[item.type] && !PrefixLegacy.ItemSets.SpearsMacesChainsawsDrillsPunchCannon[item.type]) 
+							return 81;
+						else return 59;
+					}
                     if (Main.rand.Next(10) == 0)
                         return 59;
-
-                    if (Main.rand.Next(20) == 0)
-                        return 81;
                 }
                 if (item.CountsAsClass(DamageClass.Ranged) && !item.consumable)
                 {
+					if (Main.rand.Next(20) == 0)
+                        return 82;
+					
                     if (Main.rand.Next(10) == 0)
                         return 20;
-
-                    if (Main.rand.Next(20) == 0)
-                        return 82;
                 }
                 if (item.CountsAsClass(DamageClass.Magic))
                 {
+					if (Main.rand.Next(20) == 0)
+                        return 83;
+					
                     if (Main.rand.Next(10) == 0)
                         return 28;
-
-                    if (Main.rand.Next(20) == 0)
-                        return 83;
                 }
                 if (item.CountsAsClass(DamageClass.Summon))
                 {
+					if (Main.rand.Next(20) == 0)
+                        return 83;
+					
                     if (Main.rand.Next(10) == 0)
                         return 57;
-
-                    if (Main.rand.Next(20) == 0)
-                        return 83;
                 }
                 if (item.CountsAsClass(DamageClass.Throwing) && !item.consumable)
                 {
+					if (Main.rand.Next(20) == 0)
+                        return 82;
+					
                     if (Main.rand.Next(10) == 0)
                         return 20;
-
-                    if (Main.rand.Next(20) == 0)
-                        return 82;
                 }
             }
             if (Luck2 == true)
