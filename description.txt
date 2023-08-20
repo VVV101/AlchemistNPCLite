@@ -11,6 +11,7 @@ v1.9.1
 -Added support for Shards of Atheria mod in code, currently commented due to incompatibility.
 -Added Excavation potion. Gives better mining capabilities.
 Drops from Undead Miners, can be crafted, available in Brewer's 2nd shop after beating EoC/BoC.
+-Completed Musician's shops. Supports Calamity and Thorium mods.
 -Now Greater Dangersense potion ignores Moon Lord's projectiles. 
 Still could be wise not to use it against bosses with clearly visible projectiles.
 -Fixed a few typos related to selling Souls of Fright and Might, Modified World Warper, dupes of some treasure bags, other problems with shops.

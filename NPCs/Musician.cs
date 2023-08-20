@@ -17,10 +17,14 @@ namespace AlchemistNPCLite.NPCs
         public static bool S1 = true;
         public static bool S2 = false;
         public static bool S3 = false;
+		public static bool S4 = false;
+		public static bool S5 = false;
 		
 		public static string Sh1 = "Sh1";
         public static string Sh2 = "Sh2";
         public static string Sh3 = "Sh3";
+		public static string Sh4 = "Sh4";
+		public static string Sh5 = "Sh5";
         public override string Texture
         {
             get
@@ -270,6 +274,8 @@ namespace AlchemistNPCLite.NPCs
         {
             string Shop2 = Language.GetTextValue("Mods.AlchemistNPCLite.Shop2");
             string Shop3 = Language.GetTextValue("Mods.AlchemistNPCLite.Shop3");
+			string Shop4 = Language.GetTextValue("Mods.AlchemistNPCLite.Shop4");
+			string Shop5 = Language.GetTextValue("Mods.AlchemistNPCLite.Shop5");
             string ShopChanger = Language.GetTextValue("Mods.AlchemistNPCLite.ShopChanger");
             if (S1)
             {
@@ -282,6 +288,14 @@ namespace AlchemistNPCLite.NPCs
             if (S3)
             {
                 button = Shop3;
+            }
+			if (S4)
+            {
+                button = Shop4;
+            }
+			if (S5)
+            {
+                button = Shop5;
             }
             button2 = ShopChanger;
         }
@@ -329,45 +343,113 @@ namespace AlchemistNPCLite.NPCs
 			var shop = new NPCShop(Type, Sh1)
 				.Add(new Item(576), new Condition("", () => !NPC.downedMechBossAny))
 				.Add(new Item(562) { shopCustomPrice = 100000 }, Condition.Hardmode)
-				.Add(new Item(563) { shopCustomPrice = 100000 }, Condition.Hardmode)
-				.Add(new Item(564) { shopCustomPrice = 100000 }, Condition.Hardmode)
-				.Add(new Item(565) { shopCustomPrice = 100000 }, Condition.Hardmode)
-				.Add(new Item(566) { shopCustomPrice = 100000 }, Condition.Hardmode)
-				.Add(new Item(568) { shopCustomPrice = 100000 }, Condition.Hardmode)
-				.Add(new Item(569) { shopCustomPrice = 100000 }, Condition.Hardmode)
-				.Add(new Item(570) { shopCustomPrice = 100000 }, Condition.Hardmode)
-				.Add(new Item(571) { shopCustomPrice = 100000 }, Condition.Hardmode)
-				.Add(new Item(573) { shopCustomPrice = 100000 }, Condition.Hardmode)
-				.Add(new Item(1596) { shopCustomPrice = 100000 }, Condition.Hardmode)
-				.Add(new Item(1597) { shopCustomPrice = 100000 }, Condition.Hardmode)
-				.Add(new Item(1598) { shopCustomPrice = 100000 }, Condition.Hardmode)
 				.Add(new Item(1600) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(564) { shopCustomPrice = 100000 }, Condition.Hardmode)
 				.Add(new Item(1601) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(1596) { shopCustomPrice = 100000 }, Condition.Hardmode)
 				.Add(new Item(1602) { shopCustomPrice = 100000 }, Condition.Hardmode)
 				.Add(new Item(1603) { shopCustomPrice = 100000 }, Condition.Hardmode)
 				.Add(new Item(1604) { shopCustomPrice = 100000 }, Condition.Hardmode)
-				.Add(new Item(1605) { shopCustomPrice = 100000 }, Condition.Hardmode)
-				.Add(new Item(1608) { shopCustomPrice = 100000 }, Condition.Hardmode)
-				.Add(new Item(1610) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(4077) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(4079) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(1597) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(566) { shopCustomPrice = 100000 }, Condition.Hardmode)
 				.Add(new Item(1964) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(1610) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(568) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(569) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(570) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(1598) { shopCustomPrice = 100000 }, Condition.Hardmode)
 				.Add(new Item(2742) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(571) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(573) { shopCustomPrice = 100000 }, Condition.Hardmode)
 				.Add(new Item(3237) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(1605) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(1608) { shopCustomPrice = 100000 }, Condition.DownedPlantera)
+				.Add(new Item(567) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(572) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(574) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(1599) { shopCustomPrice = 100000 }, Condition.DownedGolem)
+				.Add(new Item(1607) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5112) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(4979) { shopCustomPrice = 100000 }, Condition.DownedQueenSlime)
+				.Add(new Item(1606) { shopCustomPrice = 100000 }, Condition.DownedPlantera)
+				.Add(new Item(4985) { shopCustomPrice = 100000 }, Condition.DownedEmpressOfLight)
+				.Add(new Item(4990) { shopCustomPrice = 100000 }, Condition.DownedDukeFishron)
+				.Add(new Item(563) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(1609) { shopCustomPrice = 100000 }, Condition.DownedMechBossAny);
+			shop.Register();
+			shop = new NPCShop(Type, Sh2)
+				.Add(new Item(3371) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(3236) { shopCustomPrice = 100000 }, Condition.DownedPirates)
+				.Add(new Item(1963) { shopCustomPrice = 100000 }, Condition.DownedPumpking)
+				.Add(new Item(1965) { shopCustomPrice = 100000 }, Condition.DownedIceQueen)
+				.Add(new Item(3235) { shopCustomPrice = 100000 }, Condition.DownedMartians)
+				.Add(new Item(3370) { shopCustomPrice = 100000 }, Condition.DownedCultist)
+				.Add(new Item(3044) { shopCustomPrice = 100000 }, Condition.DownedMoonLord)
 				.Add(new Item(3796) { shopCustomPrice = 100000 }, Condition.Hardmode)
-				.Add(new Item(567) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedPlantBoss))
-				.Add(new Item(572) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedPlantBoss))
-				.Add(new Item(574) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedPlantBoss))
-				.Add(new Item(1599) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedQueenBee))
-				.Add(new Item(1607) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedGolemBoss))
-				.Add(new Item(1606) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedPlantBoss))
-				.Add(new Item(3044) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedMoonlord))
-				.Add(new Item(3371) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedGoblins))
-				.Add(new Item(3236) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedPirates))
-				.Add(new Item(3869) { shopCustomPrice = 100000 }, new Condition("", () => DD2Event.DownedInvasionT1))
-				.Add(new Item(1609) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedPlantBoss))
-				.Add(new Item(1963) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedHalloweenKing))
-				.Add(new Item(1965) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedChristmasIceQueen))
-				.Add(new Item(3235) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedMartians))
-				.Add(new Item(3370) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedMoonlord));
+				.Add(new Item(3869) { shopCustomPrice = 100000 }, Condition.DownedOldOnesArmyT1)
+				.Add(new Item(4078) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(4080) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(4081) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(4082) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(4237) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(4356) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(4357) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(4358) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(4421) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(4606) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(4991) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(565) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(4992) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5006) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5362) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5044) { shopCustomPrice = 100000 }, Condition.DownedPlantera);
+			shop.Register();
+			shop = new NPCShop(Type, Sh3)
+				.Add(new Item(5015) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5016) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5014) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5017) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5018) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5019) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5020) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5021) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5016) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5017) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5018) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5019) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5020) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5021) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5022) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5023) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5024) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5025) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5026) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5027) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5028) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5038) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5040) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5029) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5030) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5031) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5033) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5032) { shopCustomPrice = 100000 }, Condition.DownedMechBossAny)
+				.Add(new Item(5034) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5039) { shopCustomPrice = 100000 }, Condition.Hardmode)
+				.Add(new Item(5037) { shopCustomPrice = 100000 }, Condition.DownedPlantera)
+				.Add(new Item(5035) { shopCustomPrice = 100000 }, Condition.DownedCultist)
+				.Add(new Item(5036) { shopCustomPrice = 100000 }, Condition.DownedMoonLord)
+				.Add(new Item(5037) { shopCustomPrice = 100000 }, Condition.Hardmode);
+			shop.Register();
+			
+			ModLoader.TryGetMod("CalamityMod", out Mod CalamityMod);
+            ModLoader.TryGetMod("ThoriumMod", out Mod ThoriumMod);
+			
+			shop = new NPCShop(Type, Sh4);
+			shop.Register();
+			
+			shop = new NPCShop(Type, Sh5);
 			shop.Register();
 		}
 

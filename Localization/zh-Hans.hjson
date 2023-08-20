@@ -1229,17 +1229,19 @@ Mods: {
 		EntryJ7: 你在周围看到机械生物了吗?
 		EntryJ8: "你有没有注意到到我和 "
 		EntryJ9: " 长得几乎一毛一样?这是因为我们是兄弟."
-		// EntryJ10: Should you find enought of those torn notes, bring the to me and ill decipher them for you. Dont ask me why, just know that they hold a value for me.
-		// Shop2: 2nd shop
-		// Shop3: 3rd shop
+		EntryJ10: Should you find enought of those torn notes, bring the to me and ill decipher them for you. Dont ask me why, just know that they hold a value for me.
+		Shop2: 2nd shop
+		Shop3: 3rd shop
+		Shop4: 4th shop
+		Shop5: 5th shop
 		ShopChanger: 切换商店
-		// Beethoven: Beethoven
-		// Bach: Bach
-		// Johan: Johan
-		// Edison: Edison
-		// Scott: Scott
-		// Lloyd: Lloyd
-		// Gamma: Gamma
+		Beethoven: Beethoven
+		Bach: Bach
+		Johan: Johan
+		Edison: Edison
+		Scott: Scott
+		Lloyd: Lloyd
+		Gamma: Gamma
 		// EntryM1: I would wear headphones, but I'm not sure if Terrarians even have ears...
 		// EntryM2: I have to wonder why Boss 1 and Boss 2 didn't get better names in the OST. Those names are soooo bland.
 		// EntryM3: Look, the Cyborg may have my name, but I've still got the better job here.
