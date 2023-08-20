@@ -34,6 +34,7 @@ namespace AlchemistNPCLite
         internal ShopChangeUIO alchemistUIO;
         private UserInterface alchemistUserInterfaceM;
         internal ShopChangeUIM alchemistUIM;
+		public static RecipeGroup AlchemistNPCLiteRecipes;
 
         public override void OnWorldLoad()
         {
@@ -229,6 +230,178 @@ namespace AlchemistNPCLite
             {
                 alchemistUserInterfaceM.Update(gameTime);
             }
+        }
+		
+		public override void AddRecipeGroups()
+        {
+            //SBMW:Add translation to RecipeGroups, also requires to reload mod
+            string evilBossMask = Language.GetTextValue("Mods.AlchemistNPCLite.evilBossMask");
+            string cultist = Language.GetTextValue("Mods.AlchemistNPCLite.cultist");
+            string tier3HardmodeBar = Language.GetTextValue("Mods.AlchemistNPCLite.tier3HardmodeBar");
+            string hardmodeComponent = Language.GetTextValue("Mods.AlchemistNPCLite.hardmodeComponent");
+            string evilBar = Language.GetTextValue("Mods.AlchemistNPCLite.evilBar");
+            string evilMushroom = Language.GetTextValue("Mods.AlchemistNPCLite.evilMushroom");
+            string evilComponent = Language.GetTextValue("Mods.AlchemistNPCLite.evilComponent");
+            string evilDrop = Language.GetTextValue("Mods.AlchemistNPCLite.evilDrop");
+            string tier2anvil = Language.GetTextValue("Mods.AlchemistNPCLite.tier2anvil");
+            string tier2forge = Language.GetTextValue("Mods.AlchemistNPCLite.tier2forge");
+            string tier1anvil = Language.GetTextValue("Mods.AlchemistNPCLite.tier1anvil");
+            string celestialWings = Language.GetTextValue("Mods.AlchemistNPCLite.CelestialWings");
+            string LunarHamaxe = Language.GetTextValue("Mods.AlchemistNPCLite.LunarHamaxe");
+            string tier3Watch = Language.GetTextValue("Mods.AlchemistNPCLite.tier3Watch");
+            string tier3PreHmOre = Language.GetTextValue("Mods.AlchemistNPCLite.tier3PreHmOre");
+
+            AlchemistNPCLiteRecipes = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + evilBossMask, new int[]
+         {
+                 ItemID.EaterMask, ItemID.BrainMask
+         });
+            RecipeGroup.RegisterGroup("AlchemistNPCLite:EvilMask", AlchemistNPCLiteRecipes);
+            AlchemistNPCLiteRecipes = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + cultist, new int[]
+         {
+                 ItemID.BossMaskCultist, ItemID.WhiteLunaticHood, ItemID.BlueLunaticHood
+         });
+            RecipeGroup.RegisterGroup("AlchemistNPCLite:CultistMask", AlchemistNPCLiteRecipes);
+            AlchemistNPCLiteRecipes = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + tier3HardmodeBar, new int[]
+         {
+                 ItemID.AdamantiteBar, ItemID.TitaniumBar
+         });
+            RecipeGroup.RegisterGroup("AlchemistNPCLite:Tier3Bar", AlchemistNPCLiteRecipes);
+            AlchemistNPCLiteRecipes = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + hardmodeComponent, new int[]
+         {
+                 ItemID.CursedFlame, ItemID.Ichor
+         });
+            RecipeGroup.RegisterGroup("AlchemistNPCLite:HardmodeComponent", AlchemistNPCLiteRecipes);
+            AlchemistNPCLiteRecipes = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + evilBar, new int[]
+         {
+                 ItemID.DemoniteBar, ItemID.CrimtaneBar
+         });
+            RecipeGroup.RegisterGroup("AlchemistNPCLite:EvilBar", AlchemistNPCLiteRecipes);
+            AlchemistNPCLiteRecipes = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + evilMushroom, new int[]
+             {
+                 ItemID.VileMushroom, ItemID.ViciousMushroom
+             });
+            RecipeGroup.RegisterGroup("AlchemistNPCLite:EvilMush", AlchemistNPCLiteRecipes);
+            AlchemistNPCLiteRecipes = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + evilComponent, new int[]
+             {
+                 ItemID.ShadowScale, ItemID.TissueSample
+             });
+            RecipeGroup.RegisterGroup("AlchemistNPCLite:EvilComponent", AlchemistNPCLiteRecipes);
+            AlchemistNPCLiteRecipes = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + evilDrop, new int[]
+             {
+                 ItemID.RottenChunk, ItemID.Vertebrae
+             });
+            RecipeGroup.RegisterGroup("AlchemistNPCLite:EvilDrop", AlchemistNPCLiteRecipes);
+            AlchemistNPCLiteRecipes = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + tier2anvil, new int[]
+             {
+                 ItemID.MythrilAnvil, ItemID.OrichalcumAnvil
+             });
+            RecipeGroup.RegisterGroup("AlchemistNPCLite:AnyAnvil", AlchemistNPCLiteRecipes);
+            AlchemistNPCLiteRecipes = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + tier2forge, new int[]
+             {
+                 ItemID.AdamantiteForge, ItemID.TitaniumForge
+             });
+            RecipeGroup.RegisterGroup("AlchemistNPCLite:AnyForge", AlchemistNPCLiteRecipes);
+            AlchemistNPCLiteRecipes = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + tier1anvil, new int[]
+             {
+                 ItemID.IronAnvil, ItemID.LeadAnvil
+             });
+            RecipeGroup.RegisterGroup("AlchemistNPCLite:AnyPreHMAnvil", AlchemistNPCLiteRecipes);
+            AlchemistNPCLiteRecipes = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + celestialWings, new int[]
+             {
+                 ItemID.WingsSolar, ItemID.WingsNebula, ItemID.WingsStardust, ItemID.WingsVortex
+             });
+            RecipeGroup.RegisterGroup("AlchemistNPCLite:AnyCelestialWings", AlchemistNPCLiteRecipes);
+            AlchemistNPCLiteRecipes = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + LunarHamaxe, new int[]
+             {
+                 ItemID.LunarHamaxeSolar, ItemID.LunarHamaxeNebula, ItemID.LunarHamaxeStardust, ItemID.LunarHamaxeVortex
+             });
+            RecipeGroup.RegisterGroup("AlchemistNPCLite:AnyLunarHamaxe", AlchemistNPCLiteRecipes);
+            AlchemistNPCLiteRecipes = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + tier3Watch, new int[]
+             {
+                 ItemID.GoldWatch, ItemID.PlatinumWatch
+             });
+            RecipeGroup.RegisterGroup("AlchemistNPCLite:AnyWatch", AlchemistNPCLiteRecipes);
+            AlchemistNPCLiteRecipes = new RecipeGroup(() => Language.GetTextValue("LegacyMisc.37") + " " + tier3PreHmOre, new int[]
+             {
+            	 ItemID.SilverOre, ItemID.TungstenOre
+             });
+            RecipeGroup.RegisterGroup("AlchemistNPCLite:AnyTier3PreHmOre", AlchemistNPCLiteRecipes);
+        }
+		
+		public override void AddRecipes()
+        {
+            Recipe.Create(ItemID.Sundial)
+                .AddIngredient(ItemID.CelestialStone)
+                .AddIngredient(ItemID.GoldBar, 10)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+
+            Recipe.Create(ItemID.Obsidian, 5)
+                .AddIngredient(ItemID.StoneBlock, 10)
+                .AddCondition(Condition.NearWater)
+                .AddCondition(Condition.NearLava)
+                .Register();
+
+            Recipe.Create(ItemID.HoneyBlock, 5)
+                .AddIngredient(ItemID.BottledHoney, 10)
+                .AddCondition(Condition.NearWater)
+                .AddCondition(Condition.NearHoney)
+                .Register();
+
+            Recipe.Create(ItemID.CrispyHoneyBlock, 5)
+                .AddIngredient(ItemID.BottledHoney, 10)
+                .AddCondition(Condition.NearLava)
+                .AddCondition(Condition.NearHoney)
+                .Register();
+
+            Recipe.Create(ItemID.Stopwatch)
+                .AddRecipeGroup("AlchemistNPCLite:AnyWatch")
+                .AddIngredient(ItemID.HermesBoots)
+                .AddIngredient(ItemID.Wire, 15)
+                .AddIngredient(ItemID.Wood, 5)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+
+            Recipe.Create(ItemID.DPSMeter)
+                .AddRecipeGroup("AlchemistNPCLite:EvilBar", 10)
+                .AddRecipeGroup("AlchemistNPCLite:AnyWatch")
+                .AddIngredient(ItemID.Wire, 25)
+                .AddIngredient(ItemID.Chain)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+
+            Recipe.Create(ItemID.LifeformAnalyzer)
+                .AddIngredient(ItemID.TallyCounter)
+                .AddIngredient(ItemID.BlackLens)
+                .AddIngredient(ItemID.AntlionMandible)
+                .AddRecipeGroup("AlchemistNPCLite:EvilDrop")
+                .AddRecipeGroup("AlchemistNPCLite:EvilComponent")
+                .AddIngredient(ItemID.Feather)
+                .AddIngredient(ItemID.TatteredCloth)
+                .AddIngredient(ItemID.Bone)
+                .AddIngredient(ItemID.Wire, 25)
+                .AddTile(TileID.TinkerersWorkbench)
+                .Register();
+
+            Recipe.Create(ItemID.PurificationPowder, 5)
+                .AddIngredient(ItemID.Mushroom)
+                .AddIngredient(ItemID.Daybloom)
+                .AddTile(TileID.Bottles)
+                .Register();
+
+            Recipe.Create(ItemID.HallowedSeeds)
+                .AddIngredient(ItemID.CorruptSeeds)
+                .AddIngredient(ItemID.PurificationPowder)
+                .AddIngredient(ItemID.PixieDust)
+                .AddTile(TileID.Bottles)
+                .Register();
+
+            Recipe.Create(ItemID.HallowedSeeds)
+                .AddIngredient(ItemID.CrimsonSeeds)
+                .AddIngredient(ItemID.PurificationPowder)
+                .AddIngredient(ItemID.PixieDust)
+                .AddTile(TileID.Bottles)
+                .Register();
         }
     }
 }

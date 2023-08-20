@@ -750,8 +750,8 @@ Mods: {
 			}
 
 			MateriaTransmutatorMK2: {
-				// DisplayName: Materia Transmutator M K2
-				// Tooltip: ""
+				// DisplayName: Materia Transmutator MK 2
+				// Tooltip: Works like almost any crafting station. Now also includes Draedon's Forge
 			}
 		}
 
