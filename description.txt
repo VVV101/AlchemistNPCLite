@@ -136,34 +136,5 @@ Available after beating Skeletron.
 -Added Forbidden Fragments to Operator's shop.
 Available after beating Sand Elemental.
 -Added config option to disable catcheability of mod's town NPCs.
-v1.7
--Added Tinkerer NPC. But unlike in AlchemistNPC, his accessories would be unlocked during progression.
--Added Recall/Wormhole Potion price config options.
--Added more materials to Operator's materials shops.
--Now Lifeform Analizer also creates laser pointer to rare creature (ticks each second).
-Can be toggled by Mod Configuration.
--Added Assassin and Hydration potions to Thorium Combination.
--Added fragments from Thorium mod to Operator.
--Alchemist's Tremor shop is now replaced with Plants shop.
--Removed dash ability from Ninja potion.
--Fixed Simple Crafting Penny and both Materia Transmutators were not giving chance to save ingredients during craft (Alchemy Table feature).
--Fixed Thorium Combination crafting bug.
--Fixed NetSend error in world file.
--New awesome mod's icon by Alemeow#7389.
-v1.6.6
--Fixed possible Operator's shop change menu mouse stucking.
-v1.6.5
--Added Materia Transmutators and their components.
--Alchemist Charms now also add some duration to buff potions depending on tier.
--Potion of Darkness can no longer be used if any boss is alive. Removed Heart Ache debuff.
--Added Swiftness potion to both Tank Combinations and Universal Combination.
--Beach Teleporter potion now always teleport you to actual left or right side beach.
-It is independant from palms now.
--Rebalanced some of the Operator's prices.
--All Calamity references to crit were redone as mod calls.
--Now Operator has separated shops for vanilla boss drops & materials shop and modded boss drops & materials shop.
--Now defeating buffed Pumpking/Ice Queen is required to unlock Nightmare Fuel/Endothermic Energy in Operator's shop.
--Fixed Thorium combination.
--Cleaned up a lot of buffs code.
 
 Earlier changes can be found in mod's discord.
