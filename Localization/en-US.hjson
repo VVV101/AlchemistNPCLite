@@ -301,6 +301,11 @@ Mods: {
 				DisplayName: Tank Combination (Vanilla)
 				Description: Combination of Swiftness, Endurance, Lifeforce, Ironskin, Obsidian Skin, Thorns and Regeneration buffs
 			}
+
+			ThoriumComb: {
+				DisplayName: Thorium Comb
+				Description: Combination of Assassin, Blood, Frenzy, Glowing, Holy, Creativity, Earworm, Inspiration Reach and Hydrataion potions
+			}
 		}
 
 		Items: {

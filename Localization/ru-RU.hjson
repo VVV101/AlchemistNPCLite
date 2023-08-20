@@ -301,6 +301,11 @@ Mods: {
 				DisplayName: Комбинация Танка (без Модовых)
 				Description: Сочетание баффов Быстроты, Выносливости, Жизненных Сил, Железной Кожи, Обсидиановой Кожи, Шипов и Регенерации
 			}
+
+			ThoriumComb: {
+				// DisplayName: Thorium Comb
+				// Description: Combination of Assassin, Blood, Frenzy, Glowing, Holy, Creativity, Earworm, Inspiration Reach and Hydrataion potions
+			}
 		}
 
 		Items: {

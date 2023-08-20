@@ -30,7 +30,7 @@ namespace AlchemistNPCLite.Interface
             MusicianShopsPanel.SetPadding(0);
             MusicianShopsPanel.Left.Set(575f, 0f);
             MusicianShopsPanel.Top.Set(275f, 0f);
-            MusicianShopsPanel.Width.Set(260f, 0f);
+            MusicianShopsPanel.Width.Set(300f, 0f);
             MusicianShopsPanel.Height.Set(165f, 0f);
             MusicianShopsPanel.BackgroundColor = new Color(73, 94, 171);
 

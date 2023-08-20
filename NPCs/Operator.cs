@@ -1001,7 +1001,7 @@ namespace AlchemistNPCLite.NPCs
                 .AddModItemToShop(Calamity, "PlaguebringerGoliathBag", 5750000, () => (bool)Calamity.Call("Downed", "plaguebringer goliath"))
                 .AddModItemToShop(Calamity, "RavagerBag", 5500000, () => (bool)Calamity.Call("Downed", "ravager"))
                 .AddModItemToShop(Calamity, "AstrumDeusBag", 6500000, () => (bool)Calamity.Call("Downed", "astrum deus"))
-                .AddModItemToShop(Calamity, "BumblebirbBag", 8500000, () => (bool)Calamity.Call("Downed", "bumblebirb"))
+                .AddModItemToShop(Calamity, "BumblebirbBag", 8500000, () => (bool)Calamity.Call("Downed", "dragonfolly"))
                 .AddModItemToShop(Calamity, "ProvidenceBag", 22000000, () => (bool)Calamity.Call("Downed", "providence"))
                 .AddModItemToShop(Calamity, "StormWeaverBag", 12500000, () => (bool)Calamity.Call("Downed", "stormweaver"))
                 .AddModItemToShop(Calamity, "CeaselessVoidBag", 12500000, () => (bool)Calamity.Call("Downed", "ceaselessvoid"))
