@@ -6,6 +6,10 @@ The spawn condition for the Operator is to beat EoW/BoC.
 The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 Mod's Discord: https://discord.gg/WGKyKun
+v1.9.2
+-Added War Table to Jeweler's arena shop. Available after beating T1 of Old One's Army.
+-Added resprites for Horrying Skull, Dopamine, Dungeon Teleporter, Greater Dangersense, Sunshine, Titan Skin, Invincibility, Traps, Underworld Teleporter, Fortitude Excavation potions by GoldYosh and thyreo. 
+-Spooky Wood/light sources are now available in Architect's shops only after beating Pumpking.
 v1.9.1
 -Added more Thorium, Mod of Redemption support to shops (thanks to Rockman Zeta).
 -Added support for Shards of Atheria mod in code, currently commented due to incompatibility.

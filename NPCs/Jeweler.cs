@@ -269,6 +269,7 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.DartTrap) { shopCustomPrice = 30000 }, Condition.DownedSkeletron)
                 .Add(new Item(ItemID.GeyserTrap) { shopCustomPrice = 100000 }, Condition.DownedSkeletron)
                 .Add(new Item(ItemID.CatBast) { shopCustomPrice = 100000 }, Condition.DownedSkeletron)
+                .Add(new Item(ItemID.WarTable) { shopCustomPrice = 150000 }, Condition.DownedOldOnesArmyAny)
                 .Add(new Item(ItemID.SharpeningStation) { shopCustomPrice = 150000 }, Condition.DownedSkeletron)
                 .Add(new Item(ItemID.BewitchingTable) { shopCustomPrice = 150000 }, Condition.DownedSkeletron)
                 .Add(new Item(ItemID.AmmoBox) { shopCustomPrice = 250000 }, Condition.DownedSkeletron)
