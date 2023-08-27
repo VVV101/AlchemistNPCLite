@@ -8,8 +8,9 @@ The Musician will come if you defeat Skeletron.
 Mod's Discord: https://discord.gg/WGKyKun
 v1.9.2
 -Added War Table to Jeweler's arena shop. Available after beating T1 of Old One's Army.
--Added resprites for Horrying Skull, Dopamine, Dungeon Teleporter, Greater Dangersense, Sunshine, Titan Skin, Invincibility, Traps, Underworld Teleporter, Fortitude Excavation potions by GoldYosh and thyreo. 
+-Added resprites for Horrying Skull, Dopamine, Beach, Temple, Jungle, Dungeon Teleporter, Greater Dangersense, Sunshine, Titan Skin, Invincibility, Traps, Underworld Teleporter, Fortitude and Excavation potions by GoldYosh and thyreo. 
 -Spooky Wood/light sources are now available in Architect's shops only after beating Pumpking.
+-With Calamity mod, combinations with Ironskin potion now giving bonus defense according to progression.
 v1.9.1
 -Added more Thorium, Mod of Redemption support to shops (thanks to Rockman Zeta).
 -Added support for Shards of Atheria mod in code, currently commented due to incompatibility.

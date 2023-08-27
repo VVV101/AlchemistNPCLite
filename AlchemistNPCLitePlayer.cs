@@ -123,9 +123,17 @@ namespace AlchemistNPCLite
 				Player.lifeForce = true;
 				Player.statLifeMax2 += Player.statLifeMax / 5 / 20 * 20;
 			}
-
 			if (MS) Player.moveSpeed += 0.25f;
-			if (Defense8) Player.statDefense += 8;
+			if (Defense8) 
+			{
+				Player.statDefense += 8;
+				if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
+				{
+					if (Main.hardMode) Player.statDefense += 4;
+					else if (NPC.downedMoonlord) Player.statDefense += 8;
+					else if ((bool)Calamity.Call("Downed", "dog")) Player.statDefense += 12;
+				}
+			}
 			if (DR10) Player.endurance += 0.1f;
 			if (Bewitched) ++Player.maxMinions;
 			if (Sharpen)
