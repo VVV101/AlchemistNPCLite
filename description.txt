@@ -11,6 +11,8 @@ v1.9.2
 -Added resprites for Horrying Skull, Dopamine, Beach, Temple, Jungle, Dungeon Teleporter, Greater Dangersense, Sunshine, Titan Skin, Invincibility, Traps, Underworld Teleporter, Fortitude and Excavation potions by GoldYosh and thyreo. 
 -Spooky Wood/light sources are now available in Architect's shops only after beating Pumpking.
 -With Calamity mod, combinations with Ironskin potion now giving bonus defense according to progression.
+-Fixed an issue with overusing buff potions from piggy bank using Alchemist Charm t2+ upon reaching over 22 buffs.
+-Fixed Fishing Combination recipe.
 v1.9.1
 -Added more Thorium, Mod of Redemption support to shops (thanks to Rockman Zeta).
 -Added support for Shards of Atheria mod in code, currently commented due to incompatibility.

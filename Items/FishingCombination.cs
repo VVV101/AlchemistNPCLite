@@ -34,7 +34,7 @@ namespace AlchemistNPCLite.Items
             recipe.AddIngredient(ItemID.FishingPotion, 1);
             recipe.AddIngredient(ItemID.SonarPotion, 1);
             recipe.AddIngredient(ItemID.CratePotion, 1);
-            recipe.AddIngredient(ItemID.RestorationPotion, 1);
+            recipe.AddIngredient(ItemID.RegenerationPotion, 1);
             recipe.AddIngredient(ItemID.IronskinPotion, 1);
             recipe.AddIngredient(ItemID.ThornsPotion, 1);
             recipe.AddIngredient(ItemID.InfernoPotion, 1);

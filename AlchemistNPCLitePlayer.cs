@@ -165,7 +165,7 @@ namespace AlchemistNPCLite
 		private bool QuickBuff_ShouldBotherUsingThisBuff(int attemptedType)
 		{
 			bool result = true;
-			for (int i = 0; i < 22; i++)
+			for (int i = 0; i < 44; i++)
 			{
 				if (attemptedType == 27 && (Player.buffType[i] == 27 || Player.buffType[i] == 101 || Player.buffType[i] == 102))
 				{
@@ -190,7 +190,7 @@ namespace AlchemistNPCLite
 			}
 			if (Main.lightPet[attemptedType] || Main.vanityPet[attemptedType])
 			{
-				for (int j = 0; j < 22; j++)
+				for (int j = 0; j < 44; j++)
 				{
 					if (Main.lightPet[Player.buffType[j]] && Main.lightPet[attemptedType])
 					{
@@ -296,7 +296,7 @@ namespace AlchemistNPCLite
 				for (int index1 = 0; index1 < 40; ++index1)
 				{
 					flag = true;
-					if (Player.CountBuffs() == 22) return;
+					if (Player.CountBuffs() == 44) return;
 					Item bankitem = Player.bank.item[index1];
 					if (bankitem.stack <= 0 || bankitem.type <= 0 || bankitem.buffType <= 0 || bankitem.CountsAsClass(DamageClass.Summon))
 					{
@@ -363,7 +363,7 @@ namespace AlchemistNPCLite
 					{
 						num3 = 3600;
 					}
-					if (Player.CountBuffs() == 22)
+					if (Player.CountBuffs() == 44)
 					{
 						break;
 					}
