@@ -239,7 +239,7 @@ namespace AlchemistNPCLite.NPCs
                 }
             }
             */
-                .AddModItemToShop<SpiritCombination>(250000, () => NPC.downedMechBossAny)
+                .AddModItemToShop<SpiritCombination>(250000, () => NPC.downedMechBossAny && SpiritMod != null)
                 .AddModItemToShop<UniversalCombination>(500000, () => NPC.downedMoonlord)
                 .AddModItemToShop(ThoriumMod, "FrostCoatingItem", 5000, () => NPC.downedBoss3)
                 .AddModItemToShop(ThoriumMod, "ToxicCoatingItem", 2500, () => NPC.downedBoss3)
