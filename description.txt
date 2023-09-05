@@ -130,25 +130,5 @@ v1.7.4
 -Fixed Chandeliers prices.
 -Some code polishing.
 -Changed price of Marble and Granite blocks.
-v1.7.2
--Added support to Elements Awoken mod for Operator. Fixed some other mod's errors.
--Added support for Mod of Redemption for Operator.
--Added all Broken Hero stuff from Vanilla/Thorium/Spirit/Litho's Armory mods.
-Available after beating Golem.
--Added Solar Veil to Operator's shop.
-Available after beating Plantera.
--Added Boom Box to Musician's 3rd shop.
-Allows to passively play music boxes placed in the last inventory slot.
--Added recipes for Obsidian, Honey and Crispy Honey blocks.
--Added Calamity mod's Tesla Potion to Brewer's 2nd shop.
--Fixed mod's NPC summoning items not working.
--Fixed Materia Transmutators not working as Thorium Anvil and Arcane Armor Fabricator.
-v1.7.1
--Added Tinkerer's Horcrux to Jeweler's shop.
--Added Feathers to Operator's shop.
-Available after beating Skeletron.
--Added Forbidden Fragments to Operator's shop.
-Available after beating Sand Elemental.
--Added config option to disable catcheability of mod's town NPCs.
 
 Earlier changes can be found in mod's discord.
