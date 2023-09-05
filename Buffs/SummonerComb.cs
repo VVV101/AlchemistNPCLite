@@ -17,10 +17,12 @@ namespace AlchemistNPCLite.Buffs
             AlchemistNPCLitePlayer modPlayer = player.GetModPlayer<AlchemistNPCLitePlayer>();
             modPlayer.AllDamage10 = true;
             modPlayer.Bewitched = true;
+            modPlayer.WarTable = true;
             ++player.maxMinions;
             player.buffImmune[110] = true;
             player.buffImmune[115] = true;
             player.buffImmune[150] = true;
+            player.buffImmune[348] = true;
             // IMPLEMENT WHEN WEAKREFERENCES FIXED
             /*
 			if (ModLoader.GetMod("MorePotions") != null)

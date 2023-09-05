@@ -6,6 +6,12 @@ The spawn condition for the Operator is to beat EoW/BoC.
 The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 Mod's Discord: https://discord.gg/WGKyKun
+v1.9.3
+-Summoner, Universal combinations and Ultima Cake now contains War Table buff for sentries count (non-cumulative).
+-Calamity combination is now available at the start of hardmode.
+-Heart and Star statues are now available in Jeweler's arena shop at the start of hardmode.
+-World Warpers no longer have buggy interaction with pylons.
+-World Warper code optimization.
 v1.9.2
 -Added War Table to Jeweler's arena shop. Available after beating T1 of Old One's Army.
 -Added resprites for Horrying Skull, Dopamine, Beach, Temple, Jungle, Dungeon Teleporter, Greater Dangersense, Sunshine, Titan Skin, Invincibility, Traps, Underworld Teleporter, Fortitude and Excavation potions by GoldYosh and thyreo. 

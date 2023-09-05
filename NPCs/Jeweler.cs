@@ -275,6 +275,8 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.AmmoBox) { shopCustomPrice = 250000 }, Condition.DownedSkeletron)
                 .Add(new Item(ItemID.CrystalBall) { shopCustomPrice = 150000 }, Condition.Hardmode)
                 .AddModItemToShop<Items.UltimaCake>(5000000, Condition.Hardmode)
+                .Add(new Item(ItemID.HeartStatue) { shopCustomPrice = 500000 }, Condition.Hardmode)
+                .Add(new Item(ItemID.StarStatue) { shopCustomPrice = 100000 }, Condition.Hardmode)
                 .Add(new Item(ItemID.WoodenSpike) { shopCustomPrice = 20000 }, Condition.DownedGolem)
                 .Add(new Item(ItemID.SpearTrap) { shopCustomPrice = 50000 }, Condition.DownedGolem)
                 .Add(new Item(ItemID.SpikyBallTrap) { shopCustomPrice = 50000 }, Condition.DownedGolem)

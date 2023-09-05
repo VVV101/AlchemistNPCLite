@@ -24,6 +24,7 @@ namespace AlchemistNPCLite.Buffs
             modPlayer.MS = true;
             modPlayer.Bewitched = true;
             modPlayer.Clairvoyance = true;
+            modPlayer.WarTable = true;
             player.GetDamage(DamageClass.Magic) += 0.2f;
             player.manaRegenBuff = true;
             player.archery = true;
@@ -44,6 +45,7 @@ namespace AlchemistNPCLite.Buffs
             player.buffImmune[115] = true;
             player.buffImmune[117] = true;
             player.buffImmune[150] = true;
+            player.buffImmune[348] = true;
             player.buffImmune[ModContent.BuffType<Buffs.BattleComb>()] = true;
             player.buffImmune[ModContent.BuffType<Buffs.TankComb>()] = true;
             player.buffImmune[ModContent.BuffType<Buffs.VanTankComb>()] = true;

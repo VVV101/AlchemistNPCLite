@@ -21,6 +21,7 @@ namespace AlchemistNPCLite.Buffs
             modPlayer.AmmoBox = true;
             modPlayer.SugarRush = true;
             modPlayer.Lamps = true;
+            modPlayer.WarTable = true;
             player.statDefense += 5;
             player.buffImmune[159] = true;
             player.buffImmune[29] = true;
@@ -31,6 +32,7 @@ namespace AlchemistNPCLite.Buffs
             player.buffImmune[87] = true;
             player.buffImmune[158] = true;
             player.buffImmune[215] = true;
+            player.buffImmune[348] = true;
         }
     }
 }
