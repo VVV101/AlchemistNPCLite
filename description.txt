@@ -6,6 +6,9 @@ The spawn condition for the Operator is to beat EoW/BoC.
 The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 Mod's Discord: https://discord.gg/WGKyKun
+v1.9.4
+-Changed selling conditions for Life Crystals and Life Fruits,
+-Fixed Calamity mod interaction with combinations defense bonuses.
 v1.9.3
 -Summoner, Universal combinations and Ultima Cake now contains War Table buff for sentries count (non-cumulative).
 -Calamity combination is now available at the start of hardmode.
