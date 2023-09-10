@@ -140,9 +140,9 @@ namespace AlchemistNPCLite
                 Player.statDefense += 8;
                 if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
                 {
-                    if (Main.hardMode) Player.statDefense += 4;
-                    else if (NPC.downedMoonlord) Player.statDefense += 8;
-                    else if ((bool)Calamity.Call("Downed", "dog")) Player.statDefense += 12;
+                    if ((bool)Calamity.Call("Downed", "dog")) Player.statDefense += 12;
+					else if (NPC.downedMoonlord) Player.statDefense += 8;
+					else if (Main.hardMode) Player.statDefense += 4;
                 }
             }
             if (DR10) Player.endurance += 0.1f;
