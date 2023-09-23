@@ -1,4 +1,4 @@
-﻿using AlchemistNPCLite.Interface;
+using AlchemistNPCLite.Interface;
 using AlchemistNPCLite.Utilities;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
@@ -409,7 +409,7 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.ChainLantern) { shopCustomPrice = 200 })
                 .Add(new Item(ItemID.Mannequin) { shopCustomPrice = 100 })
                 .Add(new Item(ItemID.Womannquin) { shopCustomPrice = 100 })
-                .Add(new Item(ItemID.Cobweb) { shopCustomPrice = 20 })
+                .Add(new Item(ItemID.Cobweb) { shopCustomPrice = 30 })
                 .Add(new Item(ItemID.WorkBench) { shopCustomPrice = 2000 })
                 .Add(new Item(ItemID.WoodenTable) { shopCustomPrice = 2000 })
                 .Add(new Item(ItemID.WoodenChair) { shopCustomPrice = 2000 })
@@ -476,7 +476,15 @@ namespace AlchemistNPCLite.NPCs
 				.Add(new Item(2274) { shopCustomPrice = 300 })
 				.Add(new Item(3004) { shopCustomPrice = 300 })
 				.Add(new Item(3045) { shopCustomPrice = 300 })
-				.Add(new Item(3114) { shopCustomPrice = 300 });
+				.Add(new Item(3114) { shopCustomPrice = 300 })
+                .Add(new Item(4383) { shopCustomPrice = 300 })
+                .Add(new Item(4384) { shopCustomPrice = 300 })
+                .Add(new Item(4385) { shopCustomPrice = 300 })
+                .Add(new Item(4386) { shopCustomPrice = 300 })
+                .Add(new Item(4387) { shopCustomPrice = 300 })
+                .Add(new Item(4388) { shopCustomPrice = 300 })
+                .Add(new Item(5293) { shopCustomPrice = 300 })
+                .Add(new Item(5353) { shopCustomPrice = 300 });
 			shop.Register();
 			
 			shop = new NPCShop(Type, Candle)
