@@ -7,8 +7,10 @@ The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 Mod's Discord: https://discord.gg/WGKyKun
 v1.9.4
+-Wood is now sold in filler shop of Architect, added Bamboo and Ash Wood.
 -Changed selling conditions for Life Crystals and Life Fruits,
 -Fixed Calamity mod interaction with combinations defense bonuses.
+-Updated chinese localization by mochen5530
 v1.9.3
 -Summoner, Universal combinations and Ultima Cake now contains War Table buff for sentries count (non-cumulative).
 -Calamity combination is now available at the start of hardmode.
