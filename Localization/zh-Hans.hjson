@@ -205,13 +205,8 @@ Mods: {
 			}
 
 			Excavation: {
-<<<<<<< Updated upstream
-				DisplayName: Excavation
-				Description: Mining capabilites heavily increased
-=======
 				DisplayName: 挖掘
 				Description: 挖掘能力大幅提高
->>>>>>> Stashed changes
 			}
 
 			ExplorerComb: {
@@ -312,13 +307,8 @@ Mods: {
 			}
 
 			ThoriumComb: {
-<<<<<<< Updated upstream
-				// DisplayName: Thorium Comb
-				// Description: Combination of Assassin, Blood, Frenzy, Glowing, Holy, Creativity, Earworm, Inspiration Reach and Hydrataion potions
-=======
 				DisplayName: 瑟银组合
 				Description: 刺客组合,嗜血, 疯狂, 光辉, 圣洁, 创造力, 耳虫, 灵感爆发，水合
->>>>>>> Stashed changes
 			}
 		}
 
@@ -361,13 +351,8 @@ Mods: {
 			}
 
 			CalamityCombination: {
-<<<<<<< Updated upstream
-				// DisplayName: Calamity Combination
-				// Tooltip: Grants some of the Calamity mod buffs (Photosynthesis, Fabsol's Vodka, Soaring and Bounding)
-=======
 				DisplayName: 灾厄组合
 				Tooltip: 获得一些灾厄模组buff (光合作用, Fabsol伏特加, 翱翔，跳跃)
->>>>>>> Stashed changes
 			}
 
 			DiscordPotion: {
@@ -393,21 +378,12 @@ Mods: {
 			}
 
 			ExcavationPotion: {
-<<<<<<< Updated upstream
-				DisplayName: Excavation Potion
-				Tooltip:
-					'''
-					Expands your mining area from a single block to 3x3
-					Right clicking on buff changes mining area between 1x1 and 3x3.
-					NON-CALAMITY BUFF POTION
-=======
 				DisplayName: 挖掘药剂
 				Tooltip:
 					'''
 					将您的挖掘面积从单个区块扩展到3x3
 					右键单击buff会在1x1和3x3之间更改挖掘区域
 					非灾厄buff药剂
->>>>>>> Stashed changes
 					'''
 			}
 
@@ -791,13 +767,8 @@ Mods: {
 			}
 
 			MateriaTransmutatorMK2: {
-<<<<<<< Updated upstream
-				// DisplayName: Materia Transmutator MK 2
-				// Tooltip: Works like almost any crafting station. Now also includes Draedon's Forge
-=======
 				DisplayName: 物质嬗变器mk2
 				Tooltip: 几乎像任何制作站一样工作.现在还包括Draedons的锻造厂
->>>>>>> Stashed changes
 			}
 		}
 
@@ -1009,11 +980,7 @@ Mods: {
 		CelestialWings: 四柱翅膀
 		LunarHamaxe: 月斧
 		tier3Watch: 三级表(金表/铂金表)
-<<<<<<< Updated upstream
-		// tier3PreHmOre: tier 3 Pre-hardmode ore
-=======
 		tier3PreHmOre: 三级困难模式矿石
->>>>>>> Stashed changes
 		KingSlime: 史莱姆之王宝藏袋
 		EyeofCthulhu: 克苏鲁之眼宝藏袋
 		EaterOfWorlds: 世界吞噬者宝藏袋
@@ -1266,13 +1233,8 @@ Mods: {
 		EntryJ6: 如果你找到了所有的魔法戒指,你可以制造欧姆尼戒指
 		EntryJ7: 你在周围看到机械生物了吗?
 		EntryJ8: "你有没有注意到到我和 "
-<<<<<<< Updated upstream
-		EntryJ9: " 长得几乎一毛一样?这是因为我们是兄弟."
-		EntryJ10: Should you find enought of those torn notes, bring the to me and ill decipher them for you. Dont ask me why, just know that they hold a value for me.
-=======
 		EntryJ9: " 长得几乎一毛一样?这是因为我们是兄弟"
 		EntryJ10: 如果你发现这些撕碎的笔记太多了，把它带给我，我会帮你破译的.不要问我为什么，只要知道这些对我有价值
->>>>>>> Stashed changes
 		Shop2: 2nd shop
 		Shop3: 3rd shop
 		Shop4: 4th shop
@@ -1285,30 +1247,6 @@ Mods: {
 		Scott: Scott
 		Lloyd: Lloyd
 		Gamma: Gamma
-<<<<<<< Updated upstream
-		// EntryM1: I would wear headphones, but I'm not sure if Terrarians even have ears...
-		// EntryM2: I have to wonder why Boss 1 and Boss 2 didn't get better names in the OST. Those names are soooo bland.
-		// EntryM3: Look, the Cyborg may have my name, but I've still got the better job here.
-		// EntryM4: Shhhhh! You'll ruin my recording!
-		// EntryM5: I swear, if one more person asks me to sell them a ''Megalovania'' music box....
-		// EntryM6: Look, your enthusiasm is awesome, but could you maybe record the next boss track yourself? I don't really want to risk my life for some tunes.
-		// EntryM7: Ah, I see you were able to save the Explorer! Well done! Perhaps my next song is going to be about your triumph.
-		// EntryM8: "You know, "
-		// EntryM9: " has been really helpful while I've been setting up this sound system. Wires are key!"
-		// EntryM10: "If you run into "
-		// EntryM11: ", let him know he still owes me for those music boxes I sold him."
-		// EntryM12: "I'll be honest, I'm not sure if I trust "
-		// EntryM13: . He claims to not be possessed, and yet he still is using skulls to fight... I'm getting mixed messages here.
-		// EntryM14: Man, my mixtape is so much better than this, but I can't sell you that due to copyright.
-		// EntryM15: No, I don't have an ''All Star'' music box. Code it in yourself.
-		// EntryM16: Wait, NPC? I thought I was the protagonist!
-		// EntryM17: Never thought I'd be selling a music box with lyrics... DM DOKURO, you're a madman and I love it!
-		// EntryM18: A whole music based class? That sounds amazing! Too bad I don't have any gear for that, huh?
-		// EntryM19: This is your fault. GET. OUT.
-		// EntryM20: Ah, this takes me back! I remember when this song used to play in the dungeon and the underworld... good times!
-		// EntryM21: Is there a name for the fear of being spied by a cake?
-		// EntryM22: You are hurting my ears! Turn it down!
-=======
 		EntryM1: 我会戴上耳机，但我不确定泰拉人是否有耳朵...
 		EntryM2: 我想知道为什么BOSS1和BOSS2在OST中没有得到更好的名字.那些名字太平淡无奇了
 		EntryM3: 听着, 半机械人可能有我的名字，但我在这里还有更好的工作
@@ -1331,7 +1269,6 @@ Mods: {
 		EntryM20: 啊，这让我想起了过去！我记得这首歌曾经在地牢和地下世界播放过...美好时光!
 		EntryM21: 有没有一个名字来形容害怕被蛋糕监视的感觉？
 		EntryM22: 你弄疼我的耳朵了！关小声点！
->>>>>>> Stashed changes
 		BossDropsShop: Boss掉落物&材料商店
 		BossDropsModsShop: Boss掉落物&材料商店
 		VanillaTreasureBagsShop: "原版宝藏袋商店    "
@@ -1515,19 +1452,11 @@ Mods: {
 					Label: 炼金师生成切换
 				}
 
-<<<<<<< Updated upstream
-				// DisplayName: Mod Configuration
-
-				LifeformAnalyzerAlt: {
-					// Label: Lifeform Analyzer locator alt texture
-					// Tooltip: Use alternative texture for Lifeform Analyzer locator. False by default
-=======
 				DisplayName: 模组配置
 
 				LifeformAnalyzerAlt: {
 					Label: 生命体分析机替代纹理
 					Tooltip: 对生命体分析机使用替代纹理.默认为关
->>>>>>> Stashed changes
 				}
 			}
 		}
