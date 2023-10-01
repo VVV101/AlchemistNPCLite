@@ -11,6 +11,7 @@ v1.9.4
 -Changed selling conditions for Life Crystals and Life Fruits,
 -Fixed Calamity mod interaction with combinations defense bonuses.
 -Updated chinese localization by mochen5530
+-Resprites for Bewitching, Blurring, Ninja, Perfect Discord, Summoner and Fishing combinations by GoldYosh
 v1.9.3
 -Summoner, Universal combinations and Ultima Cake now contains War Table buff for sentries count (non-cumulative).
 -Calamity combination is now available at the start of hardmode.
