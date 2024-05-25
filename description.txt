@@ -6,6 +6,8 @@ The spawn condition for the Operator is to beat EoW/BoC.
 The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
 Mod's Discord: https://discord.gg/WGKyKun
+v1.9.5
+-Added Brazilian Portuguese by BrenoS93.
 v1.9.4
 -Wood is now sold in filler shop of Architect, added Bamboo and Ash Wood.
 -Changed selling conditions for Life Crystals and Life Fruits,

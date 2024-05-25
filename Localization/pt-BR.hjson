@@ -1344,8 +1344,6 @@ Mods: {
 		Entry8: "Minha mãe, "
 		Entry9: ", é a melhor criadora de bebidas de todos os tempos, ela não é? Ela sabe preparar as poções mais dificeis com muita facilidade."
 		Entry10: Certas combinações só podem ser produzidas se certos tipos de magia estiverem presentes no mundo.
-		Combinations: Comprar Combinações
-		Flasks: Comprar Frascos
 
 		Tiles: {
 			HMCraftPound.MapEntry: Estação de Criação Expandida
