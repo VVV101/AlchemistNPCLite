@@ -1,13 +1,26 @@
 This mod adds 7 NPCs (Alchemist, Brewer, Jeweler, Young Brewer, Operator, Architect and Musician), who sell potions, materials and some other stuff. 
 New combinations of potions are sold by the Young Brewer.
+
 The spawn condition for the Alchemist, the Jeweler & the Brewer is to kill the Eye of Ctulhu. 
 The Young Brewer spawns while both the Alchemist & the Brewer are in the world in Hardmode.
 The spawn condition for the Operator is to beat EoW/BoC.
 The Architect will come if you have at least 3 NPC.
 The Musician will come if you defeat Skeletron.
+
+Mod has support for Thorium, Calamity, Mod of Redemption, Census and imkSushi's mod.
+
 Mod's Discord: https://discord.gg/WGKyKun
 v1.9.5
 -Added Brazilian Portuguese by BrenoS93.
+-Added back imkSushi's potions support (base summoning, angler amnesia, meteorite and resurrection).
+-Increased Moon Lord Bag price to 9 platinum and 50 gold by default.
+-Fishing potions are now available by default.
+-Temporarely fixed Luck potions money exploit by setting their default prices in shop.
+Calamity changes:
+-Depth materials (lumenyl and depth cells) to be available after beating Leviathan.
+-Living Shards are now available after beating Plantera.
+-Blood Orbs are now available for after beating Skeletron.
+-Lowered prices for Yharon, EXO mechs and Supreme Calamitas treasure bags.
 v1.9.4
 -Wood is now sold in filler shop of Architect, added Bamboo and Ash Wood.
 -Changed selling conditions for Life Crystals and Life Fruits,
@@ -105,38 +118,5 @@ v1.8.10
 -(1.4) Add Bast Statue to Jeweler's Arena shop
 -(1.4) Temporarily add Luck Potions to Alchemist (will be relocated eventually)
 -(1.4) Add hocruxes back to Jeweler
-v1.8.9
--Fix with shops and multiplayer
-v1.8.8
--Backport updates (For 1.3 Version)
--Add Calamity 1.5 treasure bags and music boxes
-v1.8.7
--Update to tModLoader v0.12 ec7a4927
-v1.8.6
--Improve locator arrow code
-v1.8.5
--Updated locator to 1.4
--Added configurable delay before shop changing is allowed
-v1.8.4
--Make items researchable in Journey Mode
-v1.8.3
--Fixed Duke Fishron bag in Operator shop condition
-v1.8.2
--Fixed multiplayer client freeze bug.
--Fixed Alchemist Charm tier 4 missing a tooltip.
-v1.8.1
--Fixed SaveWorldData issue.
-v1.8.0
-Big thanks to b2mauler for porting Lite version to alpha 1.4.
--Updated to tModloader 0.12.
--Added Queen Slime and Empress of Light's bags in Operator's vanilla bags shop.
--Fixed issue with excessive prices scaling of Tinkerer and potions sellers in multiplayer.
-v1.7.4
--Added Old Duke's bag in Operator's modded bags shop.
--Added Sulphurskin Potion to Brewer's shop.
--Fixed Calamity mod's Rage and Adrenaline related mechanics.
--Fixed Chandeliers prices.
--Some code polishing.
--Changed price of Marble and Granite blocks.
 
 Earlier changes can be found in mod's discord.

@@ -310,6 +310,7 @@ namespace AlchemistNPCLite.NPCs
         {
             ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
             ModLoader.TryGetMod("Redemption", out Mod Redemption);
+            ModLoader.TryGetMod("imkSushisMod", out Mod imkSushisMod);
             var shop = new NPCShop(Type, BaseShop)
                 .Add(new Item(ItemID.LesserHealingPotion) { shopCustomPrice = 1000 })
                 .Add(new Item(ItemID.HealingPotion) { shopCustomPrice = 5000 },
@@ -331,21 +332,15 @@ namespace AlchemistNPCLite.NPCs
                     Condition.DownedEowOrBoc)
                 .Add(ItemID.RecallPotion)
                 .Add(ItemID.WormholePotion)
-                .Add(new Item(ItemID.LuckPotionLesser) { shopCustomPrice = 20000 })
-                .Add(new Item(ItemID.LuckPotion) { shopCustomPrice = 100000 })
-                .Add(new Item(ItemID.LuckPotionGreater) { shopCustomPrice = 500000 })
+                .Add(ItemID.LuckPotionLesser)
+                .Add(ItemID.LuckPotion)
+                .Add(ItemID.LuckPotionGreater)
                 .Add(new Item(ItemID.TeleportationPotion) { shopCustomPrice = 7500 },
                     Condition.Hardmode)
-            // IMPLEMENT WHEN WEAKREFERENCES FIXED
-            /*
-            if (ModLoader.GetMod("imkSushisMod") != null)
-            {
-                addModItemToShop(imkSushisMod, "BaseSummoningPotion", 2500, ref shop, ref nextSlot);
-                addModItemToShop(imkSushisMod, "AnglerAmnesiaPotion", 10000, ref shop, ref nextSlot);
-                addModItemToShop(imkSushisMod, "MeteoritePotion", 50000, ref shop, ref nextSlot);
-                addModItemToShop(imkSushisMod, "ResurrectionPotion", 25000, ref shop, ref nextSlot);
-            }
-            */
+                .AddModItemToShop(imkSushisMod, "BaseSummoningPotion", 2500)
+                .AddModItemToShop(imkSushisMod, "AnglerAmnesiaPotion", 25000)
+                .AddModItemToShop(imkSushisMod, "ResurrectionPotion", 25000)
+                .AddModItemToShop(imkSushisMod, "MeteoritePotion", 250000, () => NPC.downedBoss2)
                 .AddModItemToShop<BeachTeleporterPotion>(20000, () => NPC.downedBoss2)
                 .AddModItemToShop<JungleTeleporterPotion>(50000, () => NPC.downedBoss2)
                 .AddModItemToShop<OceanTeleporterPotion>(20000, () => NPC.downedBoss3)

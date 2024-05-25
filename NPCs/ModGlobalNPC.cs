@@ -323,6 +323,18 @@ namespace AlchemistNPCLite.NPCs
                         }
                     }
                 }
+				
+                if ((bool)Calamity.Call("Downed", "dog") && npc.type == 477)
+                {
+                    if (!AlchemistNPCLiteWorld.downedDOGMothron)
+                    {
+                        AlchemistNPCLiteWorld.downedDOGMothron = true;
+                        if (Main.netMode == NetmodeID.Server)
+                        {
+                            NetMessage.SendData(MessageID.WorldData); // Immediately inform clients of new world state.
+                        }
+                    }
+                }
             }
 
             if (npc.type == NPCID.SandElemental)

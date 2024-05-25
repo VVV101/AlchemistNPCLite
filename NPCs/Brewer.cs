@@ -374,12 +374,9 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.StinkPotion) { shopCustomPrice = 7500 })
                 .Add(new Item(ItemID.LovePotion) { shopCustomPrice = 7500 },
                     Condition.Hardmode)
-                .Add(new Item(ItemID.FishingPotion) { shopCustomPrice = 10000 },
-                    new Condition("", () => Main.player[Main.myPlayer].anglerQuestsFinished >= 1))
-                .Add(new Item(ItemID.SonarPotion) { shopCustomPrice = 10000 },
-                    new Condition("", () => Main.player[Main.myPlayer].anglerQuestsFinished >= 1))
-                .Add(new Item(ItemID.CratePotion) { shopCustomPrice = 10000 },
-                    new Condition("", () => Main.player[Main.myPlayer].anglerQuestsFinished >= 1))
+                .Add(new Item(ItemID.FishingPotion) { shopCustomPrice = 10000 })
+                .Add(new Item(ItemID.SonarPotion) { shopCustomPrice = 10000 })
+                .Add(new Item(ItemID.CratePotion) { shopCustomPrice = 10000 })
                 .Add(new Item(ItemID.GenderChangePotion) { shopCustomPrice = 100000 });
             shop.Register();
 

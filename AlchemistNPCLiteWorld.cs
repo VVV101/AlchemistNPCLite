@@ -25,6 +25,7 @@ namespace AlchemistNPCLite
         private const int saveVersion = 0;
         public static bool downedDOGPumpking;
         public static bool downedDOGIceQueen;
+        public static bool downedDOGMothron;
         public static bool downedSandElemental;
         private UserInterface alchemistUserInterface;
         internal ShopChangeUI alchemistUI;
@@ -40,6 +41,7 @@ namespace AlchemistNPCLite
         {
             downedDOGIceQueen = false;
             downedDOGPumpking = false;
+            downedDOGMothron = false;
             downedSandElemental = false;
             if (!Main.dedServ)
             {
@@ -70,6 +72,7 @@ namespace AlchemistNPCLite
             var downed = new List<string>();
             if (downedDOGPumpking) downed.Add("DOGPumpking");
             if (downedDOGIceQueen) downed.Add("DOGIceQueen");
+            if (downedDOGMothron) downed.Add("DOGMothron");
             if (downedSandElemental) downed.Add("SandElemental");
 
             tag["downed"] = downed;
@@ -80,7 +83,8 @@ namespace AlchemistNPCLite
             BitsByte flags = new BitsByte();
             flags[0] = downedDOGPumpking;
             flags[1] = downedDOGIceQueen;
-            flags[2] = downedSandElemental;
+            flags[2] = downedDOGMothron;
+            flags[3] = downedSandElemental;
             writer.Write(flags);
         }
 
@@ -89,7 +93,8 @@ namespace AlchemistNPCLite
             BitsByte flags = reader.ReadByte();
             downedDOGPumpking = flags[0];
             downedDOGIceQueen = flags[1];
-            downedSandElemental = flags[2];
+            downedDOGMothron = flags[2];
+            downedSandElemental = flags[3];
             // As mentioned in NetSend, BitBytes can contain 8 values. If you have more, be sure to read the additional data:
             // BitsByte flags2 = reader.ReadByte();
             // downed9thBoss = flags[0];
@@ -100,6 +105,7 @@ namespace AlchemistNPCLite
             var downed = tag.GetList<string>("downed");
             downedDOGPumpking = downed.Contains("DOGPumpking");
             downedDOGIceQueen = downed.Contains("DOGIceQueen");
+            downedDOGMothron = downed.Contains("DOGMothron");
             downedSandElemental = downed.Contains("SandElemental");
         }
 

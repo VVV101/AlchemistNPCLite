@@ -896,6 +896,7 @@ namespace AlchemistNPCLite.NPCs
                 .AddModItemToShop(ThoriumMod, "WhiteDwarfFragment", 100000, () => NPC.downedMoonlord)
                 .AddModItemToShop(ThoriumMod, "CometFragment", 100000, () => NPC.downedMoonlord)
                 .AddModItemToShop(ThoriumMod, "CelestialFragment", 100000, () => NPC.downedMoonlord)
+                .AddModItemToShop(Calamity, "BloodOrb", 2500, () => NPC.downedBoss3)
                 .AddModItemToShop(Calamity, "TrueShadowScale", 20000, () => (bool)Calamity.Call("Downed", "hive mind"))
                 .AddModItemToShop(Calamity, "BloodSample", 20000, () => (bool)Calamity.Call("Downed", "perforators"))
                 .AddModItemToShop(Calamity, "EbonianGel", 25000, () => (bool)Calamity.Call("Downed", "slime god"))
@@ -904,21 +905,19 @@ namespace AlchemistNPCLite.NPCs
                 .AddModItemToShop(Calamity, "EssenceofEleum", 25000, () => NPC.downedPlantBoss || (bool)Calamity.Call("Downed", "cryogen"))
                 .AddModItemToShop(Calamity, "EssenceofCinder", 25000, () => NPC.downedPlantBoss || (bool)Calamity.Call("Downed", "aquatic scourge"))
                 .AddModItemToShop(Calamity, "EssenceofChaos", 25000, () => NPC.downedPlantBoss || (bool)Calamity.Call("Downed", "brimstone elemental"))
-                //.addModItemToShop(Calamity, "Tenebris", 30000, () => NPC.downedPlantBoss)
-                .AddModItemToShop(Calamity, "Lumenite", 50000, () => NPC.downedPlantBoss)
-                .AddModItemToShop(Calamity, "DepthCells", 30000, () => NPC.downedPlantBoss)
+                .AddModItemToShop(Calamity, "LivingShard", 30000, () => NPC.downedPlantBoss)
+                .AddModItemToShop(Calamity, "Lumenite", 50000, () => (bool)Calamity.Call("Downed", "leviathan"))
+                .AddModItemToShop(Calamity, "DepthCells", 30000, () => (bool)Calamity.Call("Downed", "leviathan"))
                 .AddModItemToShop(Calamity, "AstralJelly", 50000, () => (bool)Calamity.Call("Downed", "astrum aureus"))
                 .AddModItemToShop(Calamity, "Stardust", 10000, () => (bool)Calamity.Call("Downed", "astrum aureus"))
-                .AddModItemToShop(Calamity, "LivingShard", 30000, () => (bool)Calamity.Call("Downed", "leviathan"))
                 .AddModItemToShop(Calamity, "SolarVeil", 50000, () => NPC.downedPlantBoss)
                 .AddModItemToShop(Calamity, "BarofLife", 100000, () => (bool)Calamity.Call("Downed", "ravager"))
                 .AddModItemToShop(Calamity, "MeldBlob", 10000, () => (bool)Calamity.Call("Downed", "astrum deus"))
                 .AddModItemToShop(Calamity, "UnholyEssence", 50000, () => (bool)Calamity.Call("Downed", "profaned guardians"))
-                .AddModItemToShop(Calamity, "BloodOrb", 50000, () => (bool)Calamity.Call("Downed", "polterghast"))
                 .AddModItemToShop(Calamity, "Phantoplasm", 100000, () => (bool)Calamity.Call("Downed", "polterghast"))
                 .AddModItemToShop(Calamity, "NightmareFuel", 120000, () => (bool)Calamity.Call("Downed", "dog") && AlchemistNPCLiteWorld.downedDOGPumpking)
                 .AddModItemToShop(Calamity, "EndothermicEnergy", 120000, () => (bool)Calamity.Call("Downed", "dog") && AlchemistNPCLiteWorld.downedDOGIceQueen)
-                .AddModItemToShop(Calamity, "DarksunFragment", 150000, () => (bool)Calamity.Call("Downed", "buffed mothron"));
+                .AddModItemToShop(Calamity, "DarksunFragment", 150000, () => (bool)Calamity.Call("Downed", "dog") && AlchemistNPCLiteWorld.downedDOGMothron);
             //if (ModLoader.GetMod("SpiritMod") != null)
             //{
             //    .addModItemToShop(SpiritMod, "BrokenParts", 500000, NPC.downedGolemBoss);
@@ -982,7 +981,7 @@ namespace AlchemistNPCLite.NPCs
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode && DD2Event.DownedInvasionT3 && NPC.downedGolemBoss))
                 .Add(new Item(ItemID.FishronBossBag) { shopCustomPrice = 3500000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedFishron))
-                .Add(new Item(ItemID.MoonLordBossBag) { shopCustomPrice = 4000000 },
+                .Add(new Item(ItemID.MoonLordBossBag) { shopCustomPrice = 9500000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedMoonlord));
             shop.Register();
 
@@ -1009,9 +1008,9 @@ namespace AlchemistNPCLite.NPCs
                 .AddModItemToShop(Calamity, "PolterghastBag", 22500000, () => (bool)Calamity.Call("Downed", "polterghast"))
                 .AddModItemToShop(Calamity, "OldDukeBag", 25000000, () => (bool)Calamity.Call("Downed", "old duke"))
                 .AddModItemToShop(Calamity, "DevourerofGodsBag", 25000000, () => (bool)Calamity.Call("Downed", "dog"))
-                .AddModItemToShop(Calamity, "YharonBag", 75000000, () => (bool)Calamity.Call("Downed", "yharon"))
-                .AddModItemToShop(Calamity, "DraedonTreasureBag", 115000000, () => (bool)Calamity.Call("Downed", "exomechs"))
-                .AddModItemToShop(Calamity, "SCalBag", 200000000, () => (bool)Calamity.Call("Downed", "supremecalamitas"))
+                .AddModItemToShop(Calamity, "YharonBag", 60000000, () => (bool)Calamity.Call("Downed", "yharon"))
+                .AddModItemToShop(Calamity, "DraedonTreasureBag", 75000000, () => (bool)Calamity.Call("Downed", "exomechs"))
+                .AddModItemToShop(Calamity, "SCalBag", 100000000, () => (bool)Calamity.Call("Downed", "supremecalamitas"))
 
                 .AddModItemToShop(ThoriumMod, "ThunderBirdBag", 500000, () => (bool)ThoriumMod.Call("GetDownedBoss", "TheGrandThunderBird"))
                 .AddModItemToShop(ThoriumMod, "JellyFishBag", 750000, () => (bool)ThoriumMod.Call("GetDownedBoss", "QueenJellyfish"))
