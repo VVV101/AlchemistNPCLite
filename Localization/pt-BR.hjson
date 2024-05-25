@@ -1,0 +1,1469 @@
+Mods: {
+	AlchemistNPCLite: {
+		Bestiary: {
+			Alchemist: Fornece uma variedade de poções úteis, plantas, cogumelos e outras coisas diferentes para vender. Ele é um velho amigo e interesse romântico da Cervejeira. Atualmente, "Divorciado".
+			Brewer: Foernece uma variedade de poções para vender. Ela é uma velha amiga e interesse romântico do Alquimista. Atualmente, "Divorciado".
+			Jeweler: Fornece uma quantidade de gemas infinitas para vender. Também pode ajudar com boas configurações para melhorar suas areas de batalha e melhorar o seu progresso com as lutas dos chefes. Ele pode ser considerado o irmão gêmeo do comerciante.
+			Musician: Fornece caixas de musica conforme o seu progresso avança dentro do jogo. Nenhuma história real atualmente existe.
+			Operator: Fornece vários materiais de criação e bolsas do tesouro se você estiver jogando no modo perito. Não é um humano!
+			Architect: Forcene uma grande variedade com diferentes blocos de construção e estações de criação. Especialista em decoração.
+			Tinkerer: Fornece vários acessórios da progressão do jogo e alguns equipáveis usados em batalhas. Ele é o irmão mais novo de Steampunker.
+			YoungBrewer: Fornece uma variedade de combinações de poções e frascos para vender. É filho do alquimista e da cervejeira.
+		}
+
+		Common: {
+			DayTimeSet: O horário está definido para manhã.
+			NightTimeSet: A hora está definida para a noite.
+			SandstormStarted: A tempestade de areia comecou!
+			SandstormStopped: A tempestade de areia parou!
+			RainStarted: A chuva está começando!
+			RainStopped: A chuva está parando!
+		}
+
+		#This is what displays during all of an NPC's happiness levels. Note that the localization key for these should always be "TownNPCMood.*NPCName*.*Mood*" or else it won't display properly.
+		TownNPCMood: {
+			Alchemist: {
+				Content: Eu estou me sentindo bem aqui!
+				NoHome: Você não tem nenhuma casa disponível? É muito chato ter que trabalhar sem um teto sobre a minha cabeça!
+				LoveSpace: Paz e tranquilidade finalmente posso viver sossegado aqui!
+				FarFromHome: Eu acho que minha casa era assim... a menos que você esteja me levando para algum lugar?
+				DislikeCrowded: Quanto mais melhor e tudo mais, mas estou começando a me sentir um pouco superlotado.
+				HateCrowded: Não consigo botar minhas pernas pra fora e relaxar um pouco, ta muito lotado...
+				LikeBiome: Ótimo! Aconchegante e pacífico, qual lugar poderia ser melhor para fazer minhas poções?
+				LoveBiome: Este lugar me lembra dos velhos tempos, quando eu treinava com meu amigo.
+				DislikeBiome: Não gostei! Está muito frio aqui, minhas mãos estão congelando!
+				HateBiome: Eu quero morar em outro lugar, este lugar aqui é horrível!
+				LikeNPC: "{NPCName} Sabe da importância do trabalho duro. É bom tê-la por perto."
+				LikeNPC_Princess: Eu tenho que visitar {NPCName} novamente em algum momento, é uma garota que me conhece!
+				LoveNPC: "{NPCName} esta aqui! quem é o filhinho do papai?"
+				DislikeNPC: Eu não consigo me concentrar com a {NPCName} perto de mim. Ela não para de fazer piadas sobre mim.
+				HateNPC: Só entre nós aqui. Você já pensou em mandar {NPCName} de volta pro buraco de onde essa peste veio?
+			}
+
+			Brewer: {
+				Content: Eu estou me sentindo bem aqui!
+				NoHome: Você não tem nenhuma casa disponível? É muito chato ter que fazer minhas poções sem um teto sobre a minha cabeça!
+				LoveSpace: Paz e tranquilidade finalmente posso viver sossegada aqui!
+				FarFromHome: Eu acho que minha casa era assim... a menos que você esteja me levando para algum lugar?
+				DislikeCrowded: Quanto mais melhor e tudo mais, mas estou começando a me sentir um pouco superlotada.
+				HateCrowded: Não consigo botar minhas pernas pra fora e relaxar um pouco, ta muito lotado...
+				LikeBiome: Está um pouco quente aqui, mas o ar é perfeito.
+				LoveBiome: Aconchegante e pacífico, assim como eu queria!
+				DislikeBiome: Não gostei! Está muito frio aqui, minhas mãos estão congelando!
+				HateBiome: Eu quero morar em outro lugar, este lugar aqui é horrível!
+				LikeNPC: "{NPCName} É tão fácil provocar! Eu não posso ajudar.."
+				LikeNPC_Princess: Eu tenho que visitar {NPCName} novamente algum dia, tem uma garota querendo me encontrar!
+				LoveNPC: "{NPCName} esta aqui! Quem é o garoto da mamãe?"
+				DislikeNPC: "{NPCName} é tão irritante com seus avisos constantes. Não conssigo suportá-lo."
+				HateNPC: Só entre nós aqui. Você já pensou em mandar {NPCName} de volta pro buraco de onde essa peste veio?
+			}
+
+			Jeweler: {
+				Content: Eu estou me sentindo bem aqui!
+				NoHome: Você não tem nenhuma casa disponível? É muito chato ter que trabalhar com minhas joias sem um teto sobre a minha cabeça!
+				LoveSpace: Paz e tranquilidade finalmente posso viver sossegado aqui!
+				FarFromHome: Eu acho que minha casa era assim... a menos que você esteja me levando para algum lugar?
+				DislikeCrowded: Quanto mais melhor e tudo mais, mas estou começando a me sentir um pouco superlotado.
+				HateCrowded: Não consigo botar minhas pernas pra fora e relaxar um pouco, ta muito lotado...
+				LikeBiome: Está um pouco quente aqui, mas o ar é perfeito.
+				LoveBiome: Aconchegante e pacífico, assim como eu queria!
+				DislikeBiome: Não gostei! Está muito frio aqui, minhas mãos estão congelando!
+				HateBiome: Eu quero morar em outro lugar, este lugar aqui é horrível!
+				LikeNPC: "{NPCName} Só pensa em dinheiro. Um pouco ganancioso, mas, mesmo assim, eu ainda posso me relacionar totalmente bem."
+				LikeNPC_Princess: Eu tenho que visitar {NPCName} novamente algum dia, tem uma garota querendo me encontrar!
+				LoveNPC: "{NPCName} esta aqui! Você pode dizer claramente que nós somos quase iguais. Eu não quero deixar a barba crescer."
+				DislikeNPC: Eu não suporto garotas como a {NPCName}, Ela tira totalmente o meu foco.
+				HateNPC: Só entre nós aqui. Você já pensou em mandar {NPCName} de volta pro buraco de onde essa peste veio?
+			}
+
+			Musician: {
+				Content: Eu estou me sentindo bem aqui!
+				NoHome: Você não tem nenhuma casa disponível? Como eu vou poder fazer minhas músicas sem um teto sobre a minha cabeça?
+				LoveSpace: Paz e tranquilidade finalmente posso viver sossegado aqui!
+				FarFromHome: Eu acho que minha casa era assim... a menos que você esteja me levando para algum lugar?
+				DislikeCrowded: Quanto mais melhor e tudo mais, mas estou começando a me sentir um pouco superlotado.
+				HateCrowded: Não consigo botar minhas pernas pra fora e relaxar um pouco, ta muito lotado...
+				LikeBiome: Paz e silêncio, do que mais eu preciso para fazer minhas músicas? E a acústica aqui é incrível!
+				LoveBiome: Eu gosto de ver o quão brilhante e iluminado é este lugar, perfeito para dar festas.
+				DislikeBiome: Não gostei! Está muito frio aqui, minhas mãos estão congelando!
+				HateBiome: Eu quero morar em outro lugar, este lugar aqui é horrível!
+				LikeNPC: "{NPCName} é útil quando eu estou sem as caixas de música. Você sabe o quão difícil é fazer elas?"
+				LikeNPC_Princess: Eu preciso visitar {NPCName} novamente algum dia, tem uma garota querendo me encontrar!
+				LoveNPC: "{NPCName} Gosta de música como eu! Eu posso sair com ela o dia todo."
+				DislikeNPC: Esse pão duro do {NPCName} é muito irritante. Você pode pegar ele em algum lugar fora daqui?
+				HateNPC: Só entre nós aqui. Você já pensou em mandar {NPCName} de volta pro buraco de onde essa peste veio?
+			}
+
+			Operator: {
+				Content: Eu estou me sentindo bem aqui!
+				NoHome: Não tenho onde morar preciso de um abrigo, não gosto de ficar sem um teto sobre a minha cabeça!
+				LoveSpace: Paz e tranquilidade finalmente posso viver sossegada aqui!
+				FarFromHome: Eu acho que minha casa era assim... a menos que você esteja me levando para algum lugar?
+				DislikeCrowded: Quanto mais melhor e tudo mais, mas estou começando a me sentir um pouco superlotada.
+				HateCrowded: Não consigo botar minhas pernas pra fora e relaxar um pouco, ta muito lotado...
+				LikeBiome: Oceano. É a coisa que eu queria ver. Obrigado.
+				LoveBiome: Meus circuitos estão funcionando perfeitamente aqui! Surpreendentemente, eu gosto da neve.
+				DislikeBiome: Não! Eu odeio o subterrâneo, você já sabia disso, certo?
+				HateBiome: Eu quero morar em outro lugar, este lugar aqui é horrível!
+				LikeNPC: "{NPCName} é uma das muitas pessoas com quem eu poderia falar sobre tecnologia."
+				LikeNPC_Princess: Eu preciso visitar {NPCName} novamente algum dia, tem uma garota querendo me encontrar!
+				LoveNPC: "{NPCName} Provavelmente é a única pessoa que pode me entender. Sendo um ciborgue."
+				DislikeNPC: "{NPCName} parece ter medo de mim. Eu me pergunto por que, mas seu medo me irrita um pouco."
+				HateNPC: Só entre nós aqui. Você já pensou em mandar {NPCName} de volta pro buraco de onde essa peste veio?
+			}
+
+			Architect: {
+				Content: Eu estou me sentindo bem aqui!
+				NoHome: Sendo um arquiteto eu especialmente não curto a ideia de viver por ai sem ter onde morar...
+				LoveSpace: Paz e tranquilidade finalmente posso viver sossegado aqui!
+				FarFromHome: Eu acho que minha casa era assim... a menos que você esteja me levando para algum lugar?
+				DislikeCrowded: Quanto mais melhor e tudo mais, mas estou começando a me sentir um pouco superlotado.
+				HateCrowded: Não consigo botar minhas pernas pra fora e relaxar um pouco, ta muito lotado...
+				LikeBiome: Um belo e calmo lugar para ficar, eu gosto disso.
+				LoveBiome: Tantas cores, tantos materiais de construção. Perfeito.
+				DislikeBiome: Não gostei! Odeio sentir frio, preciso de um lugar mais quente para morar.
+				HateBiome: Eu quero morar em outro lugar, este lugar aqui é horrível!
+				LikeNPC: "{NPCName} Pode ser apenas um Golbin irritante, mas ele entende como construir as coisas, eu respeito isso."
+				LikeNPC_Princess: Eu preciso visitar {NPCName} novamente algum dia, tem uma garota querendo me encontrar!
+				LoveNPC: "{NPCName} sabe como fazer todas as cores. Que é ótimo."
+				DislikeNPC: "{NPCName} é tão resmungão e não gosta de cores. Seria divertido fazer ele viver no Hallow, talvez."
+				HateNPC: Só entre nós aqui! Você já pensou em mandar {NPCName} de volta pro buraco de onde essa peste veio?
+			}
+
+			Tinkerer: {
+				Content: Eu estou me sentindo bem aqui!
+				NoHome: Fazer acessórios requer paciência, eu não serei capaz de fazer sem ter onde morar...
+				LoveSpace: Paz e tranquilidade finalmente posso viver sossegado aqui!
+				FarFromHome: Eu acho que minha casa era assim... a menos que você esteja me levando para algum lugar?
+				DislikeCrowded: Quanto mais melhor e tudo mais, mas estou começando a me sentir um pouco superlotado.
+				HateCrowded: Não consigo botar minhas pernas pra fora e relaxar um pouco, ta muito lotado...
+				LikeBiome: Gostei! Esta um pouco escuro, mas eu posso morar normalmente aqui.
+				LoveBiome: Amei! Eu e minha irmã somos acostumados a viver em lugares frios, então lidamos totalmente bem com isso.
+				DislikeBiome: Não! Eu odeio esse clima quente e esse lugar cheio de areia, então não, eu não ficaria aqui!
+				HateBiome: Eu quero morar em outro lugar, este lugar aqui é horrível!
+				LikeNPC: "{NPCName} é tão agradável e inteligente. Eu respeito isso."
+				LikeNPC_Princess: Eu preciso visitar {NPCName} novamente algum dia, tem uma garota querendo me encontrar!
+				LoveNPC: "{NPCName} está finalmente aqui? Eu tenho muito a dizer, grande irmã!"
+				DislikeNPC: Não deixe o {NPCName} em qualquer lugar ao meu redor. A areia de suas roupas sempre entopem meus mecanismos.
+				HateNPC: Só entre nós aqui! Você já pensou em mandar {NPCName} de volta pro buraco de onde essa peste veio?
+			}
+
+			YoungBrewer: {
+				Content: Eu estou me sentindo bem aqui!
+				NoHome: Eu não gosto de ficar na rua por muito tempo, preciso de quarto para mim agora.
+				LoveSpace: Paz e tranquilidade finalmente posso viver sossegado aqui!
+				FarFromHome: Eu acho que minha casa era assim... a menos que você esteja me levando para algum lugar?
+				DislikeCrowded: Quanto mais melhor e tudo mais, mas estou começando a me sentir um pouco superlotado.
+				HateCrowded: Não consigo botar minhas pernas pra fora e relaxar um pouco, ta muito lotado...
+				LikeBiome: Gostei! Eu posso viver bem aqui mesmo com todo esse calor ao meu redor, então ok eu lido bem com isso.
+				LoveBiome: Amei! Eu gosto da floresta, ar fresco e vegetação ao redor. Do que mais uma pessoa poderia precisar?
+				DislikeBiome: Não! Eu não gostei desse lugar. Eu quero um lugar mais quente para morar, me tire daqui!
+				HateBiome: Eu quero morar em outro lugar, este lugar aqui é horrível!
+				LikeNPC: Pai está aqui também? Ele parece ser um tolo às vezes, mas a mãe o respeita por suas poções de teleporte. Ela não foi capaz de recriá-las não importa como ela tentasse.
+				LikeNPC_Princess: Eu preciso visitar {NPCName}. Ela realmente gosta de brincar comigo e eu também.
+				LoveNPC: Mãe está aqui? Ótimo! Eu gosto do meu pai, sim, mas mãe... Suas poções podem fazer quase tudo e são mais úteis!
+				DislikeNPC: "{NPCName} é muito mal-humorado. Eu perguntei a ele sobre como fazer um brinquedo algumas vezes, mas ele sempre não tem tempo para falar sobre isso."
+				HateNPC: Só entre nós aqui. Você já pensou em mandar {NPCName} de volta pro buraco de onde essa peste veio?
+			}
+		}
+
+		Buffs: {
+			BattleComb: {
+				DisplayName: Combinação de Batalha
+				Description: Combina as poções de resistência, foça da vital, pele de ferro, regeneração, raiva e ira
+			}
+
+			Blurring: {
+				DisplayName: Embaçado
+				Description: Os inimigos não conseguem enchergar você com claresa, proteção divina por 10 segundos de duração depois de 30 segundos
+			}
+
+			BuilderComb: {
+				DisplayName: Combinações de Construção
+				Description: Poção do Construtor, Poção da Mineração e Poção Calmante
+			}
+
+			CalamityComb: {
+				DisplayName: Combinações de Poções do Mod Calamity
+				Description: Poção da Fotossíntese, Vodka do Fabsol, Poção da Decolagem e Poção do Pulo
+			}
+
+			Corrosion: {
+				DisplayName: Corrosão
+				Description: Sua carne está derretendo!
+			}
+
+			DiscordBuff: {
+				DisplayName: Discórdia
+				Description: Fornece o mesmo comportamento do Cajado da Discória.
+			}
+
+			Excavation: {
+				DisplayName: Excavação
+				Description: Capacidade de mineração fortemente aumentada
+			}
+
+			ExplorerComb: {
+				DisplayName: Combinação de poções com o foco em exploração
+				Description:
+					'''
+					Poção do Estinto Perigo, Poção do Caçador, Poção do Espeleólogo, Poção Coruja da Noite, Poção Brilhante
+					Poção da Mineração, Poção das Guelras, Poção das Nadadeiras e Andar Sobre a Água
+					'''
+			}
+
+			FishingComb: {
+				DisplayName: Combinações de Pescaria
+				Description: Poção do Caixote, Sonar, Pescaria, Regeneração, Espinhos, Pele de Ferro, Calmante e Infernal
+			}
+
+			Fortitude: {
+				DisplayName: Fortificado
+				Description: Você não pode ser empurrado!
+			}
+
+			GreaterDangersense: {
+				DisplayName: Estinto Perigo aprimorado
+				Description: Os ataques a distância serão iluminados
+			}
+
+			LongInvincible: {
+				DisplayName: Invencibilidade extendida
+				Description: Seu tempo de invencibilidade aumentou
+			}
+
+			MageComb: {
+				DisplayName: Combinações de poções mágicas
+				Description: Poção do Pó Mágico, Regeneração de Mana, Clarividência buff da Bola de Cristal, Poção da Ira e Poção da Raiva
+			}
+
+			NinjaSkill: {
+				// DisplayName: Ninja
+				Description: Você é um verdadeiro ninja!
+			}
+
+			RangerComb: {
+				DisplayName: Combinações para ataque a distância
+				Description: Poção do Arqueiro, Poção da Reserva de Munição, Poção da Ira e da Raiva
+			}
+
+			StationUltimaBuff: {
+				DisplayName: Estação Definitiva
+				Description: Garante efeitos de todas as estações simultaneamente
+			}
+
+			SummonerComb: {
+				DisplayName: Combinações de Invocação
+				Description: Combinação para Invocador, Poção da Ira e Enfeitiçado buff da Mesa de Fetiçaria
+			}
+
+			Sunshine: {
+				DisplayName: Luz do Sol
+				Description: Você esta produzindo luz solar como se fosse uma miniatura do sol
+			}
+
+			TankComb: {
+				DisplayName: Combinação do Tanker (Modificada)
+				Description: Velocidade, Resistência, Força Vital, Pele de Ferro, Pele de Obsidiana, Espinhos, Regeneração, Pele de Titã e Invencibilidade
+			}
+
+			TitanSkin: {
+				DisplayName: Pele do Titã
+				Description: Você tem algumas imunidades muito pesadas contra debuffs
+			}
+
+			TrapsBuff: {
+				DisplayName: Armadilha Bufada
+				Description: As armadilhas foram melhoradas
+			}
+
+			TrueDiscordBuff: {
+				DisplayName: Discórdia Verdadeira
+				Description: Essa poção fornece o mesmo comportamento do Cajado da Discórdia.
+			}
+
+			UniversalComb: {
+				DisplayName: Combinação Universal
+				Description: Combinações para tanker, mago, lançador e invocador
+			}
+
+			VanTankComb: {
+				DisplayName: Combinação do Tanker (Normal)
+				Description: Velocidade, Resistência, Força Vital, Pele de Ferro, Pele de Obsidiana, Espinhos e Regeneração
+			}
+
+			ThoriumComb: {
+				DisplayName: Combinações do Mod Thorium
+				Description: Assassino, Sangue, Frenesi, Brilhante, Sagrada, Criatividade, Verme do Ouvido, Alcance Inspirador e Idratação
+			}
+		}
+
+		Items: {
+			BattleCombination: {
+				DisplayName: Combinação da Batalha
+				Tooltip: Garante os buffs que são necessários para a batalha (Resistência, Força Vital, Pele de Ferro, Regeneração, Raiva e Ira)
+			}
+
+			BeachTeleporterPotion: {
+				DisplayName: Poção do Teleporte para o Oceano
+				Tooltip:
+					'''
+					Teleporta você para o Oceano
+					Use botão do mouse Esquerda ou Direita com a poção selecionada na sua hotbar
+					para escolher para qual lado da praia você será teleportado
+					'''
+			}
+
+			BewitchingPotion: {
+				DisplayName: Poção Encantadora
+				Tooltip: Garante o buff do encantamento, aumenta o número máximo de lacaios
+			}
+
+			BlurringPotion: {
+				DisplayName: Poção do Embaçamento
+				Tooltip:
+					'''
+					Essa poção fornece a habilidade da armadura consagrada que permite que
+					você fique imune depois de atacar um inimigo permitindo que você desvie do próximo
+					ataque com o buff da proteção divina
+					'''
+			}
+
+			BuilderCombination: {
+				DisplayName: Combinação do Construtor
+				Tooltip: Garante o buff das poções que são necessárias para construção (Calmente, Construtor e Mineração)
+			}
+
+			CalamityCombination: {
+				DisplayName: Combinações do Mod Calamity Calamity Combination
+				Tooltip: Combina algumas poções do mod calamity (Fotossíntese, Vodka do Fabsol, Decolagem e Pulo)
+			}
+
+			DiscordPotion: {
+				DisplayName: Poção da Discódia
+				Tooltip:
+					'''
+					Fornece o comportamento do Cajado da Discórdia.
+					Você pode se teleportar para a posição do cursor usando uma tecla de atalho
+					Distorce o jogador por 1 segundo depois do teleporte.
+					Ao usar essa poção você recebe um debuff de 10 segundos chamado
+					Estado de Caos, ele ira reduzir a sua vida quando você usar o teleporte novamente.
+					'''
+			}
+
+			Dopamine: {
+				DisplayName: Dopamina
+				Tooltip: Deixa você feliz, forneçe o buff do girasol
+			}
+
+			DungeonTeleportationPotion: {
+				DisplayName: Poção do Calabouço
+				Tooltip: Teleporta você para a entrada do calabouço
+			}
+
+			ExcavationPotion: {
+				DisplayName: Poção da Escavação
+				Tooltip:
+					'''
+					Expande sua área de mineração de um bloco para 3x3
+					Clique com o botão direito no buff para mudar a área de mineração entre 1x1 e 3x3
+					'''
+			}
+
+			ExplorerCombination: {
+				DisplayName: Combinação do Explorador
+				Tooltip:
+					'''
+					Garante o buff das poções que são necessárias para exploração
+					Estinto Perigo, Caçador, Espeleólogo, Coruja da Noite, Brilhante, Guelras, Nadadeiras, Andar sobre a Água
+					'''
+			}
+
+			FishingCombination: {
+				DisplayName: Combinação do Pescador
+				Tooltip: Poção do Caixote, Sonar, Pescaria, Regeneração, Espinhos, Pele de Ferro, Calmante e Infernal
+			}
+
+			FortitudePotion: {
+				DisplayName: Poção da Fortificação
+				Tooltip: Garante imunidade a empurrões
+			}
+
+			GreaterDangersensePotion: {
+				DisplayName: Grande Poção do Estinto Perigo
+				Tooltip: Essa poção ilumina os ataques a distância dos inimigos quando você esta no escuro
+			}
+
+			InvincibilityPotion: {
+				DisplayName: Poção da Invencibilidade
+				Tooltip: Aumenta a duração do frame de invencibilidade após sofrer danos
+			}
+
+			JungleTeleporterPotion: {
+				DisplayName: Poção do Bioma da Selva
+				Tooltip:
+					'''
+					Teleporta você para a selva, com o botão esquerdo do mouse teleporta
+					você até um canto da selva, com o botão direito teleporta você até o
+					topo das folhas de uma árvore viva de mogno
+					'''
+			}
+
+			MageCombination: {
+				DisplayName: Combinação Mágica
+				Tooltip:
+					'''
+					Garante o buff das poções que são necessárias para os magos
+					Poção do Pó Mágico, Regeneração de Mana, Clarividência buff da Bola de Cristal, Ira e Raiva
+					'''
+			}
+
+			AlchemistCharmTier1: {
+				DisplayName: Encanto do Alquimista Nível 1
+				Tooltip:
+					'''
+					Enquanto isto estiver no seu inventário, você tem uma pequena chance de não consumir suas poções
+					O alquimista a garota da cerveja e o jovem cervejeiro irão dar 10% de desconto em suas lojas
+					A duração dos buffs ficam 10% maiores
+					'''
+			}
+
+			AlchemistCharmTier2: {
+				DisplayName: Encanto do Alquimista Nível 2
+				Tooltip:
+					'''
+					Enquanto isto estiver no seu inventário, você tem uma pequena chance de não consumir suas poções
+					Permite que você use poções no cofrinho do porco como buff rápido
+					O alquimista a garota da cerveja e o jovem cervejeiro irão dar 20% de desconto em suas lojas
+					A duração dos buffs ficam 25% maiores
+					'''
+			}
+
+			AlchemistCharmTier3: {
+				DisplayName: Encanto do Alquimista Nível 3
+				Tooltip:
+					'''
+					Enquanto isto estiver no seu inventário, você tem uma grande chance de não consumir suas poções
+					Permite que você use poções no cofrinho do porco como buff rápido
+					O alquimista a garota da cerveja e o jovem cervejeiro irão dar 35% de desconto em suas lojas
+					A duração dos buffs ficam 35% maiores
+					'''
+			}
+
+			AlchemistCharmTier4: {
+				DisplayName: Encanto do Alquimista Nível 4
+				Tooltip:
+					'''
+					Enquanto isto estiver no seu inventário, você tem uma grande chance de não consumir suas poções
+					Permite que você use poções no cofrinho do porco como buff rápido
+					O alquimista a garota da cerveja e o jovem cervejeiro irão dar 50% de desconto em suas lojas
+					Permite fazer poções não consumíveis se a Calamitas Suprema for derrotada
+					A duração dos buffs ficam 50% maiores
+					'''
+			}
+
+			GlobalTeleporter: {
+				DisplayName: Mundo Contorcido
+				Tooltip:
+					'''
+					Teleporta você para qualquer ponto do mapa
+					Abra o mapa e clique com o botão direito em algum ponto dele
+					Não ira funcionar se um chefe estiver vivo
+					Só pode usar uma vez, quebra durante o uso
+					"A justiça do azure, o coração do carmim,
+					Em nome de um destino enterrado,
+					Eu farei um juramento para a luz,
+					que nós vamos mostrar aqueles que
+					ficam a nossa frente - o poder do amor"
+					'''
+			}
+
+			GlobalTeleporterUp: {
+				DisplayName: Mundo Contorcido Modificado
+				Tooltip:
+					'''
+					Teleporta você para qualquer ponto do mapa
+					Abra o mapa e clique com o botão direito em algum ponto dele
+					Não ira funcionar se um chefe estiver vivo
+					Não quebra depois de usar
+					"A justiça do azure, o coração do carmim,
+					Em nome de um destino enterrado,
+					Eu farei um juramento para a luz,
+					que nós vamos mostrar aqueles que
+					ficam a nossa frente - o poder do amor"
+					'''
+			}
+
+			WorldControlUnit: {
+				DisplayName: Unidade de Simulação de Controle
+				Tooltip:
+					'''
+					Produto exclusivo desenvolvido pela Angela
+					<left> para mudar o tempo entre o dia e noite
+					<right> para desativar a chuva e a tempestade de areia
+					'''
+			}
+
+			LuckCharm: {
+				DisplayName: Amuleto da Sorte
+				Tooltip:
+					'''
+					Enquanto isso estiver em seu inventário, você tem mais chances
+					de obter as melhores reforjas com o Inventor Goblin
+					Não afeta os acessórios
+					'''
+			}
+
+			LuckCharmT2: {
+				DisplayName: Amuleto da Sorte Absoluto
+				Tooltip:
+					'''
+					Enquanto isso estiver em seu inventário, você tem mais chances
+					de obter as melhores reforjas com o Inventor Goblin
+					Também afeta acessórios (Ameaçador - Sortudo - Vigia)
+					'''
+			}
+
+			MorePotionsCombination: {
+				DisplayName: Combinações do Mod MorePotions
+				Tooltip:
+					'''
+					Essa poção combina as poções do mod more potions
+					Seca, Regeneração Aprimorada, Coragem, Ligação da Alma, Pele de Diamante, Anoitecer, Amanheçer, Mãos Rápidas, Velocidade
+					'''
+			}
+
+			NatureBlessingPotion: {
+				DisplayName: Poção da Bênção da Natureza
+				Tooltip: Fornece a proteção da Dríade
+			}
+
+			NinjaPotion: {
+				DisplayName: Poção do Ninja
+				Tooltip:
+					'''
+					Aumenta o dano e a chance de acerto crítico em 5%
+					Da uma chance de desviar de ataques e permite a habilidade de escalar as paredes
+					'''
+			}
+
+			InformatingNote: {
+				DisplayName: Nota Informativa
+				Tooltip:
+					'''
+					As bolsas do tersouro ainda não estão disponíveis.
+					Vença o Esqueletron para destravar a primeira onda.
+					'''
+			}
+
+			OceanTeleporterPotion: {
+				DisplayName: Poção das Profundezas do Oceano
+				Tooltip:
+					'''
+					Se você estiver usando o mod calamity essa poção ira levar você para dentro do abismo
+					adicione corais na parte rasa do abismo para não ser enviado até o centro dele ou use a outra poção
+					de teleporte para o oceano, essa poção possui o mesmo efeito, você escolhe o lado do oceano com o clique
+					do mouse para esquerda ou direta, mas deve saber antes de usar em qual lado do mapa o abismo foi criado,
+					selecione ela na sua hotbar e clique com botão esquerdo ou direito para ser teleportado
+					'''
+			}
+
+			PerfectDiscordPotion: {
+				DisplayName: Poção da Discódia Perfeita
+				Tooltip:
+					'''
+					[c/00FF00:Poção única do explorador]
+					Fornece o mesmo comportamento do Cajado da Discódia.
+					Configure uma tecla de atalho para usar esse teleporte.
+					Aponte para onde você quiser com o ponteiro do mouse e aperte a tecla.
+					Ao usar essa poção você recebe um debuff de 5 segundos chamado
+					Estado de Caos, ele reduz a sua vida quando você usa o teleporte novamente.
+					'''
+			}
+
+			HMCraftPound: {
+				DisplayName: Estação de Criação Expandida
+				Tooltip:
+					'''
+					Agora você pode fazer vários itens em um só lugar
+					Pode ser posicionado como uma estação de criação de item
+					Estações Combinadas - Estante de Livros, Bigorna e Forja T2,
+					Estação de Impregnação, Bola de Cristal
+					Martelo Automático, Misturador Automático, Moedor de Carne,
+					Fornalha do Templo da Selva e Manipulador Antigo
+					'''
+			}
+
+			MateriaTransmutator: {
+				DisplayName: Transmutador de Matéria
+				Tooltip:
+					'''
+					Permite a criação de tudo
+					Mesma funcionalidade que a maioria das estações de criação
+					Também funciona como fonte de água, mel e lava
+					'''
+			}
+
+			PreHMPenny: {
+				DisplayName: Simples Criador de Moeda
+				Tooltip: Combina as estações de criação do começo do jogo
+			}
+
+			SpecCraftPoint: {
+				DisplayName: Ponto Especial de Criação
+				Tooltip:
+					'''
+					Combina várias estações de criação
+					Distribuidor de Mel, Caldeira Steampunk, Máquina de Clonagem de Carne,
+					Moinho Celeste, Solidificador, Barrica, Máquina de Gelo, Fornalha de Vidro,
+					Sala de Estar, Soldador de Osso, balde de água, mel e lava
+					'''
+			}
+
+			RangerCombination: {
+				DisplayName: Combinação de Poções para Lançador
+				Tooltip: Garante os buffs que são necessárias para os lançadores (Arqueiro, Reserva de Munição, Ira e Raiva)
+			}
+
+			SpiritCombination: {
+				DisplayName: Combinação de Poções do Mod SpiritMod
+				Tooltip: Grante muitos buffs das poções do mod spirit mod (Escrita Rúnica, Alma do Guardião, Espirito, Estrela Queimada, Firmeza e Toxina)
+			}
+
+			SummonerCombination: {
+				DisplayName: Combinação do Invocador
+				Tooltip:
+					'''
+					Garante o buff de poções que são necessárias para invocadores
+					Poção da Invocação, buff do enfeitiçado fornecido pela Mesa de Alquimina e a Poção da ira
+					'''
+			}
+
+			AlchemistHorcrux: {
+				DisplayName: A Cruz do Alquimista
+				Tooltip: Esse item gera o npc rapidamente quando ele é morto
+			}
+
+			APMC: {
+				DisplayName: Programação de IA e Chip de Memória
+				Tooltip:
+					'''
+					Esse é o backup da Angela
+					Gera a Operadora rapidamente quando ela morrer
+					'''
+			}
+
+			ArchitectHorcrux: {
+				DisplayName: A Cruz do Arquiteto
+				Tooltip: Esse item gera o npc rapidamente quando ele é morto
+			}
+
+			BrewerHorcrux: {
+				DisplayName: A Cruz da Garota da Cerveja
+				Tooltip: Esse item gera o npc rapidamente quando ele é morto
+			}
+
+			HorrifyingSkull: {
+				DisplayName: Caveira Horripilante
+				Tooltip:
+					'''
+					Invoca o Guardião do Calabouço
+					Use com o extremo cuidado
+					'''
+			}
+
+			JewelerHorcrux: {
+				DisplayName: A Cruz do Vendedor de Joias
+				Tooltip: Esse item gera o npc rapidamente quando ele é morto
+			}
+
+			MusicianHorcrux: {
+				DisplayName: A Cruz do Musico
+				Tooltip: Esse item gera o npc rapidamente quando ele é morto
+			}
+
+			TinkererHorcrux: {
+				DisplayName: A Cruz do Inventor
+				Tooltip: Esse item gera o npc rapidamente quando ele é morto
+			}
+
+			SunshinePotion: {
+				DisplayName: Poção da Luz do Sol
+				Tooltip: Grande aumento no raio de luz ao seu redor
+			}
+
+			TankCombination: {
+				DisplayName: Combinação do Tanker (Modificado)
+				Tooltip:
+					'''
+					Uma combinação de buffs feita para lançadores, ataque a distância e físico.
+					Resistência, Força Vital, Pele de Ferro, Pele de Obsidiana, Espinhos, Regeneração, Pele de Titã, e Invencibilidade
+					'''
+			}
+
+			TempleTeleportationPotion: {
+				DisplayName: Poção do Teleporte do Templo
+				Tooltip: Teleporta você para o templo da selva
+			}
+
+			ThoriumCombination: {
+				DisplayName: Combinação do Mod Thorium
+				Tooltip:
+					'''
+					Essa poção combina várias poções do Mod Thorium					
+					Assassino, Sangue, Frenesi, Brilhante, Sagrada, Criatividade, Verme do Ouvido, Alcance Inspirador e Idratação
+					'''
+			}
+
+			TitanSkinPotion: {
+				DisplayName: Poção da Pele do Titã
+				Tooltip:
+					'''
+					Garante imunidade contra alguns debuffs
+					Em chamas, Queimadura de Gelo, Inferno amaldiçoado, Resfriado, Congelado e Ichor
+					A imunidade contra o Ichor e o Inferno amaldiçoado só irão funcionar
+					depois que os gêmeos forem derrotados
+					'''
+			}
+
+			TrapsPotion: {
+				DisplayName: Poção da Armadilha
+				Tooltip: Melhora todas as suas armadilhas
+			}
+
+			UltimaCake: {
+				DisplayName: Último Bolo
+				Tooltip:
+					'''
+					Garante os efeitos especiais de quase todas as estações de criação simultaneamente
+					Por alguma mágica inimaginável, nunca será um item consumível
+					Isto inclue a Fogueira, Lanterna do Coração, Estatua de Bastet, Estação de Afiar,
+					Caixa de Munição, Bola de Cristal, Fatia de Bolo e a Mesa de Feitiçaria.
+					'''
+			}
+
+			UnderworldTeleportationPotion: {
+				DisplayName: Poção do Teleporte para o Submundo
+				Tooltip:
+					'''
+					Teleporta você para uma torre de obisidiana no submundo
+					Selecione a poção na sua hotbar e clique com o botão esquerdo ou
+					direito do mouse para escolher a posição do mapa
+					'''
+			}
+
+			UniversalCombination: {
+				DisplayName: Cominação Universal
+				Tooltip: Tanker, Lançador, Mago e Invocador tudo combinado como apenas um buff.
+			}
+
+			VanTankCombination: {
+				DisplayName: Combinação do Tanker (Normal)
+				Tooltip:
+					'''
+					Uma combinação de buffs feita para lançadores, ataque a distância e físico.
+					Resistência, Força Vital, Pele de Ferro, Pele de Obsidiana, Espinhos, Regeneração
+					'''
+			}
+
+			MateriaTransmutatorMK2: {
+				DisplayName: Transmutador de Matéria MK 2
+				Tooltip:
+					'''
+					Funciona como quase qualquer estação de criação. Agora também inclue a Forja do Draedon
+					A bigorna cósmica não foi adicionada na lista de estações
+					corriga essa informação com o autor caso esteja desatualizada
+					'''
+			}
+		}
+
+		NPCs: {
+			Alchemist: {
+				DisplayName: Alquimista
+
+				TownNPCMood: {
+					// Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.Content}"
+					// NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.NoHome}"
+					// FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.FarFromHome}"
+					// LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LoveSpace}"
+					// DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.DislikeCrowded}"
+					// HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.HateCrowded}"
+					// LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LoveBiome}"
+					// LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LikeBiome}"
+					// DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.DislikeBiome}"
+					// LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LoveNPC}"
+					// LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LikeNPC}"
+					// DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.DislikeNPC}"
+					// LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LikeNPC_Princess}"
+					// Princess_LovesNPC: I like {NPCName}.
+				}
+
+				Census.SpawnCondition: Derrotar o Olho de Cthulhu
+			}
+
+			Architect: {
+				DisplayName: Arquiteto
+
+				TownNPCMood: {
+					// Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.Content}"
+					// NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.NoHome}"
+					// FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.FarFromHome}"
+					// LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LoveSpace}"
+					// DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.DislikeCrowded}"
+					// HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.HateCrowded}"
+					// LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LoveBiome}"
+					// LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LikeBiome}"
+					// DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.DislikeBiome}"
+					// LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LoveNPC}"
+					// LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LikeNPC}"
+					// DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.DislikeNPC}"
+					// LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LikeNPC_Princess}"
+					// Princess_LovesNPC: I like {NPCName}.
+				}
+
+				Census.SpawnCondition: Ter pelo menos 3 NPCs
+			}
+
+			Brewer: {
+				DisplayName: Garota da Cerveja
+
+				TownNPCMood: {
+					// Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.Content}"
+					// NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.NoHome}"
+					// FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.FarFromHome}"
+					// LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LoveSpace}"
+					// DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.DislikeCrowded}"
+					// HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.HateCrowded}"
+					// LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LoveBiome}"
+					// LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LikeBiome}"
+					// DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.DislikeBiome}"
+					// LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LoveNPC}"
+					// LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LikeNPC}"
+					// DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.DislikeNPC}"
+					// LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LikeNPC_Princess}"
+					// Princess_LovesNPC: I like {NPCName}.
+				}
+
+				Census.SpawnCondition: Derrotar o Olho de Cthulhu
+			}
+
+			Jeweler: {
+				DisplayName: Vendedor de Joias
+
+				TownNPCMood: {
+					// Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.Content}"
+					// NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.NoHome}"
+					// FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.FarFromHome}"
+					// LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LoveSpace}"
+					// DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.DislikeCrowded}"
+					// HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.HateCrowded}"
+					// LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LoveBiome}"
+					// LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LikeBiome}"
+					// DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.DislikeBiome}"
+					// LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LoveNPC}"
+					// LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LikeNPC}"
+					// DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.DislikeNPC}"
+					// LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LikeNPC_Princess}"
+					// Princess_LovesNPC: I like {NPCName}.
+				}
+
+				Census.SpawnCondition: Derrotar o Olho de Cthulhu
+			}
+
+			Musician: {
+				DisplayName: Musico
+
+				TownNPCMood: {
+					// Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.Content}"
+					// NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.NoHome}"
+					// FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.FarFromHome}"
+					// LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LoveSpace}"
+					// DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.DislikeCrowded}"
+					// HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.HateCrowded}"
+					// LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LoveBiome}"
+					// LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LikeBiome}"
+					// DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.DislikeBiome}"
+					// LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LoveNPC}"
+					// LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LikeNPC}"
+					// DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.DislikeNPC}"
+					// LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LikeNPC_Princess}"
+					// Princess_LovesNPC: I like {NPCName}.
+				}
+
+				Census.SpawnCondition: Derrotar o Esqueletron
+			}
+
+			Operator: {
+				DisplayName: Operadora
+
+				TownNPCMood: {
+					// Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.Content}"
+					// NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.NoHome}"
+					// FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.FarFromHome}"
+					// LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LoveSpace}"
+					// DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.DislikeCrowded}"
+					// HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.HateCrowded}"
+					// LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LoveBiome}"
+					// LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LikeBiome}"
+					// DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.DislikeBiome}"
+					// LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LoveNPC}"
+					// LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LikeNPC}"
+					// DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.DislikeNPC}"
+					// LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LikeNPC_Princess}"
+					// Princess_LovesNPC: I like {NPCName}.
+				}
+
+				Census.SpawnCondition: Derrotar o devorador de mundos ou o cérebro de cthulhu
+			}
+
+			Tinkerer: {
+				DisplayName: Inventor
+
+				TownNPCMood: {
+					// Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.Content}"
+					// NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.NoHome}"
+					// FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.FarFromHome}"
+					// LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LoveSpace}"
+					// DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.DislikeCrowded}"
+					// HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.HateCrowded}"
+					// LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LoveBiome}"
+					// LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LikeBiome}"
+					// DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.DislikeBiome}"
+					// LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LoveNPC}"
+					// LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LikeNPC}"
+					// DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.DislikeNPC}"
+					// LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LikeNPC_Princess}"
+					// Princess_LovesNPC: I like {NPCName}.
+				}
+
+				Census.SpawnCondition: Derrotar o Olho de Cthulhu
+			}
+
+			YoungBrewer: {
+				DisplayName: Jovem Cervejeiro
+
+				TownNPCMood: {
+					// Content: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.Content}"
+					// NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.NoHome}"
+					// FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.FarFromHome}"
+					// LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LoveSpace}"
+					// DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.DislikeCrowded}"
+					// HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.HateCrowded}"
+					// LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LoveBiome}"
+					// LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LikeBiome}"
+					// DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.DislikeBiome}"
+					// LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LoveNPC}"
+					// LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LikeNPC}"
+					// DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.DislikeNPC}"
+					// LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LikeNPC_Princess}"
+					// Princess_LovesNPC: I like {NPCName}.
+				}
+
+				Census.SpawnCondition: Entrar no modo difícil
+			}
+		}
+
+		Projectiles: {
+			CorrosiveFlask.DisplayName: Frasco Corrosivo
+			CorrosiveFlaskCloud.DisplayName: Frasco de Nuvem Corrosiva
+			Gemstone.DisplayName: Pedras Preciosas
+			LocatorProjectile.DisplayName: Projétil Localizado
+		}
+
+		DiscordBuffTeleportation: Buff da Discórdia Teletransporte
+		evilBossMask: Mascara do chefe da Corrupição/Carmim
+		cultist: Cultista mascara/capuz
+		tier3HardmodeBar: Barra Nível 11
+		hardmodeComponent: Componente material do carmim ou corrupção
+		evilBar: Barras do Carmim/Corrupição
+		evilMushroom: Cogumelo Maligno
+		evilComponent: Componente material do carmim ou corrupção
+		evilDrop: Drop Maligno
+		tier2anvil: Bigorna Nível 2
+		tier2forge: Forja Nível 2
+		tier1anvil: Bigorna Nível 1
+		CelestialWings: Azas Celestiais
+		LunarHamaxe: Martelo Machado Lunar
+		tier3Watch: Relógio Nível 3
+		tier3PreHmOre: Minério pré-modo difícil nível 3
+		KingSlime: Bolsa do Tesouro (Geleia Rei)
+		EyeofCthulhu: Bolsa do Tesouro (Olho do Cthulhu)
+		EaterOfWorlds: Bolsa do Tesouro (Devorador de Mundos)
+		BrainOfCthulhu: Bolsa do Tesouro (Cérebro de Cthulhu)
+		QueenBee: Bolsa do Tesouro (Abelha Rainha)
+		Skeletron: Bolsa do Tesouro (Esqueletron)
+		Deerclops: Bolsa do Tesouro (Cervoclope)
+		WallOfFlesh: Bolsa do Tesouro (Pare de Carne)
+		QueenSlime: Bolsa do Tesouro (Geleia Rainha)
+		Destroyer: Bolsa do Tesouro (O Destruidor)
+		Twins: Bolsa do Tesouro (Os Gêmeos)
+		SkeletronPrime: Bolsa do Tesouro (Esqueletron Alfa)
+		Plantera: Bolsa do Tesouro (Plantera)
+		EmpressOfLight: Bolsa do Tesouro (Emperatriz da Luz)
+		Golem: Bolsa do Tesouro (Golem)
+		Betsy: Bolsa do Tesouro (Betsy)
+		DukeFishron: Bolsa do Tesouro (Duque Peixe-dragão)
+		MoonLord: Bolsa do Tesouro (Senhor da Lua)
+		DesertScourge: Bolsa do Tesouro (Flagelo do Deserto)
+		Crabulon: Bolsa do Tesouro (Crabulon)
+		HiveMind: Bolsa do Tesouro (A Mente da Colméia)
+		Perforator: Bolsa do Tesouro (O Perfurador)
+		SlimeGod: Bolsa do Tesouro (O Deus Slime)
+		Cryogen: Bolsa do Tesouro (Criogênio)
+		BrimstoneElemental: Bolsa do Tesouro (Elemental de Enxofre)
+		AquaticScourge: Bolsa do Tesouro (Flagelo da Água)
+		Calamitas: Bolsa do Tesouro (Calamitas Clone)
+		AstrageldonSlime: Bolsa do Tesouro (Astrum Aureus)
+		AstrumDeus: Bolsa do Tesouro (Astrum Deus)
+		Leviathan: Bolsa do Tesouro (O Leviathan)
+		PlaguebringerGoliath: Bolsa do Tesouro (Golias o Portador da Praga)
+		Ravager: Bolsa do Tesouro (O Saqueador)
+		Providence: Bolsa do Tesouro (Providência, a Deusa Profanada)
+		StormWeaver: Bolsa do Tesouro (Tecelador da Tempestade)
+		CeaselessVoid: Bolsa do Tesouro (O Vazio Incessante)
+		Signus: Bolsa do Tesouro (Signus, O Emissário do Devorador)
+		Polterghast: Bolsa do Tesouro (Polterghast)
+		OldDuke: Bolsa do Tesouro (O Velho Duke)
+		DevourerofGods: Bolsa do Tesouro (O Devorador de Deuses)
+		Bumblebirb: Bolsa do Tesouro (O Dragão da Loucura)
+		Yharon: Bolsa do Tesouro (Yharon)
+		ExoMechs: Bolsa do Tesouro (Exo Mecânicos)
+		SupremeCalamitas: Bolsa do Tesouro (Calamitas Suprema)
+		DarkMage: Bolsa do Tesouro (Dark Mage)
+		Ogre: Bolsa do Tesouro (Ogre)
+		ThunderBird: Bolsa do Tesouro (The Great Thunder Bird)
+		QueenJellyfish: Bolsa do Tesouro (The Queen Jellyfish)
+		CountEcho: Bolsa do Tesouro (Count Echo)
+		GraniteEnergyStorm: Bolsa do Tesouro (Granite Energy Storm)
+		TheBuriedChampion: Bolsa do Tesouro (The Buried Champion)
+		TheStarScouter: Bolsa do Tesouro (The Star Scouter)
+		BoreanStrider: Bolsa do Tesouro (Borean Strider)
+		CoznixTheFallenBeholder: Bolsa do Tesouro (Coznix, The Fallen Beholder)
+		TheLich: Bolsa do Tesouro (The Lich)
+		AbyssionTheForgottenOne: Bolsa do Tesouro (Abyssion, The Forgotten One)
+		TheRagnarok: Bolsa do Tesouro (The Ragnarok)
+		KingChicken: Bolsa do Tesouro (The Mighty King Chicken)
+		ThornBane: Bolsa do Tesouro (Thorn, Bane of the Forest)
+		TheKeeper: Bolsa do Tesouro (The Keeper)
+		XenoCrystal: Bolsa do Tesouro (Xenomite Crystal)
+		IEye: Bolsa do Tesouro (Infected Eye)
+		KingSlayer: Bolsa do Tesouro (King Slayer III)
+		V1: Bolsa do Tesouro (Vlitch Cleaver)
+		V2: Bolsa do Tesouro (Vlitch Gigipede)
+		V3: Bolsa do Tesouro (Omega Obliterator)
+		PZ: Bolsa do Tesouro (Patient Zero)
+		ThornRematch: Bolsa do Tesouro (Thorn, Bane of the Forest Rematch)
+		Nebuleus: Bolsa do Tesouro (Nebuleus, Angel of the Cosmos)
+		Wasteland: Bolsa do Tesouro (Wasteland)
+		Infernace: Bolsa do Tesouro (Infernace)
+		ScourgeFighter: Bolsa do Tesouro (Scourge Fighter)
+		Regaroth: Bolsa do Tesouro (Regaroth)
+		TheCelestials: Bolsa do Tesouro (The Celestials)
+		Permafrost: Bolsa do Tesouro (Permafrost)
+		Obsidious: Bolsa do Tesouro (Obsidious)
+		Aqueous: Bolsa do Tesouro (Aqueous)
+		TempleKeepers: Bolsa do Tesouro (The Temple Keepers)
+		Guardian: Bolsa do Tesouro (The Guardian)
+		Volcanox: Bolsa do Tesouro (Volcanox)
+		VoidLevi: Bolsa do Tesouro (Void Leviathan)
+		Azana: Bolsa do Tesouro (Azana)
+		Ancients: Bolsa do Tesouro (The Ancients)
+		Decree: Bolsa do Tesouro (The Decree)
+		FlamingPumpkin: Bolsa do Tesouro (The Flaming Pumpkin)
+		Jensen: Bolsa do Tesouro (Jensen, the Grand Harpy)
+		Araneas: Bolsa do Tesouro (Araneas)
+		Raynare: Bolsa do Tesouro (Harpy Queen, Raynare)
+		Primordia: Bolsa do Tesouro (Primordia)
+		Abaddon: Bolsa do Tesouro (Abaddon, the Emissary of Nightmares)
+		Araghur: Bolsa do Tesouro (Araghur, the Flare Serpent)
+		Lunarians: Bolsa do Tesouro (The Lunarians)
+		Challenger: Bolsa do Tesouro (Erazor)
+		Spookboi: Bolsa do Tesouro (Nihilus)
+		Scarabeus: Bolsa do Tesouro (Scarabeus)
+		Bane: Bolsa do Tesouro (Vinewrath Bane)
+		Flier: Bolsa do Tesouro (Ancient Flier)
+		Raider: Bolsa do Tesouro (Starplate Raider)
+		Infernon: Bolsa do Tesouro (Infernon)
+		Dusking: Bolsa do Tesouro (Dusking)
+		EtherialUmbra: Bolsa do Tesouro (Etherial Umbra)
+		IlluminantMaster: Bolsa do Tesouro (Illuminant Master)
+		Atlas: Bolsa do Tesouro (Atlas)
+		Overseer: Bolsa do Tesouro (Overseer)
+		Sharkron: Bolsa do Tesouro (Dune Sharkron)
+		Hypothema: Bolsa do Tesouro (Hypothema)
+		Ragnar: Bolsa do Tesouro (Ragnar)
+		AnDio: Bolsa do Tesouro (Andesia & Dioritus)
+		Annihilator: Bolsa do Tesouro (The Annihilator)
+		Slybertron: Bolsa do Tesouro (Slybertron)
+		SteamTrain: Bolsa do Tesouro (Steam Train)
+		SunlightTrader: Bolsa do Tesouro (Sunlight Trader)
+		THOFC: Bolsa do Tesouro (The Heart of the Cavern)
+		MythrilSlime: Bolsa do Tesouro (Mythril Slime)
+		Valdaris: Bolsa do Tesouro (Valdaris)
+		Gatekeeper: Bolsa do Tesouro (The Gatekeeper)
+		Monarch: Bolsa do Tesouro (Mushroom Monarch)
+		Grips: Bolsa do Tesouro (Grips of Chaos)
+		Broodmother: Bolsa do Tesouro (Broodmother)
+		Hydra: Bolsa do Tesouro (Hydra)
+		Serpent: Bolsa do Tesouro (Subzero Serpent)
+		Djinn: Bolsa do Tesouro (Desert Djinn)
+		Retriever: Bolsa do Tesouro (Retriever)
+		RaiderU: Bolsa do Tesouro (Raider Ultima)
+		Orthrus: Bolsa do Tesouro (Orthrus X)
+		EFish: Bolsa do Tesouro (Emperor Fishron)
+		Nightcrawler: Bolsa do Tesouro (Nightcrawler)
+		Daybringer: Bolsa do Tesouro (Daybringer)
+		Yamata: Bolsa do Tesouro (Yamata)
+		Akuma: Bolsa do Tesouro (Akuma)
+		Zero: Bolsa do Tesouro (Zero)
+		Shen: Bolsa do Tesouro (Shen Doragon)
+		ShenGrips: Bolsa do Tesouro (Shen Doragon Grips)
+		PlantsShop: Loja de Plantas
+		GetCharm: Obter Amuleto
+		Edward: Eduardo
+		Severus: Severino
+		Horace: Horacio
+		Tilyorn: Tel
+		// Nicolas: Nicolas
+		Gregg: Gregório
+		EntryA1: Minhas poções de cura vão curar suas feridas mais profundas.
+		EntryA2: Minhas poções de mana vão restaurar seus poderes magicos.
+		EntryA3: Poções de Restauração... Eu não tenho certeza se confio nelas...
+		EntryA4: Existe um yoyo lendário conhecido como o sasscade.
+		EntryA5: A bebida estrenha que eu comprei do Comerciente Esqueleto tem um cheiro horrível, mas seu efeito de restauração de mana é incrível.
+		EntryA6: Ei, *tosse*... Que definitivamente não é uma poção de teleporte.
+		EntryA7: Você já viu alguma caveira mecânica ao redor?
+		EntryA8: Você já ouviu falar em um ultra cogumelo? Se você encontrar um, eu acho que eu tenho algumas coisas que possam te ajudar a melhorar algumas coisas.
+		EntryA9: Eu perguntei
+		EntryA10: " Se eu pudesse comprar a receita para o extrato potente. Ele disse não porque, e eu cito, Até mesmo um idiota descobriria isso."
+		EntryA11: e para considerar, ela esta recebendo as poções e eu não... mas eu não posso reclamar.
+		EntryA12: "Qual é o nome dele? "
+		EntryA13: ? Então... o professor está aqui? Acho melhor eu melhorar o meu jogo!
+		EntryA14: Graças a Deus eu peguei essas peças do Esqueletron. Você quer conferir?
+		EntryA15: "Por favor você pode falar com "
+		EntryA16: " para parar de me zoar? Eu sei, minhas poções não deixam você mais forte, mas pelo menos elas não são bebidas tão perigosas."
+		EntryA17: Esses goblins são tão irritantes... Felizmente, eles não podem ficar aqui por muito tempo.
+		EntryA18: É melhor você lidar com os piratas o mais rápido possível. Preciso falar com o capitão, não o vejo a anos.
+		EntryA19: Espero que você não vá deixar eles entrar na minha casa, você vai?
+		EntryA20: Talvez haja coisas melhores para você fazer, em vez de falar comigo, no momento eu não sei ou talvez nos defender? Não sei.
+		EntryA21: ... Meu amigo, a melhor coisa a se fazer neste caso é você não me incomodar durante este tempo.
+		EntryA22: Eu tenho um frasco explosivo. Você não quer saber que gosto ele tem?
+		EntryA23: "Como pode "
+		EntryA24: " ficar calmo em um tempo como esse? Eu quero saber, AGORA."
+		EntryA25: "Não deixe a escuridão que veio da selva enganar você com a sabedoria encantada. Meu e "
+		EntryA26: " Eram os seus aprendizes. Eu parei quando suas lições ficaram muito sombrias, mas..."
+		EntryA27: " O interesse das pessoas em alquimina oculta não deu em nada, mas teve um grande crescimento."
+		Joe: Josoe
+		Mark: Marcos
+		Walter: Valter
+		Archer: Arnaldo
+		Frido: Frigueredo
+		Li: Luan
+		A1: "Se este covarde "
+		A2: " não vai calar a boca, eu deixo "
+		A3: " morda ela."
+		A4: MATE TODOS OS ZUMBIS! MATE TODOS OS ZUMBIS! EM NOME DO SANGUE... ah desculpe, eu nem notei você aqui.
+		A5: Ola! estou alí apenas pegando alguns baldes de sangue para fazer um lago porfavornãofaçamaisperguntas
+		A6: Eu gosto quando há uma gigantesca horda de zumbis atrás de suas portas. MAS EU ODEIO QUANDO ELES QUEBRAM MINHAS PORTAS!
+		A7: Essa sensação de que eu não tenho segurança! Minha paranóia começa no momento em que a Lua de Sangue emana do céu.
+		A8: Você está interessado em minha religião? Isso envolve sacrifícios para a Lua de Sangue.
+		A9: Você sabe por que eu odeio esses goblins? Eles são um pouco irritantes.
+		A10: Viva aos Piratas! Eles forncem seus lindos itens e moveis dourados.
+		A11: Bom! Finalmente, alguns revestimentos adequados para eu terminar o meu telhado!
+		A12: "Sem explosivos por favor, "
+		A13: " já está me irritando o suficiente."
+		A14: CONSTRUIR POÇÕES GRATIS PARA TODOS, mas pra você...
+		A15: O que? Onde eu tirei meu diploma de arquiteto? E existe algum diploma de arquiteto?
+		A16: Sabia que a madeira não queima de alguma forma? Embora isso acontece em em certas circunstâncias. Estranho...
+		A17: Não, eu não sou a pessoa. Eu sou o cara.
+		A18: Bem, o que você fez recentemente foi QUASE impressionante. Na verdade não.
+		A19: Então, você disse que os baús também são móveis. Eu respondo, que se dane.
+		A20: Eu vi suas construções, mas ainda não estou impressionado.
+		A21: Você já ouviu falar sobre o cara da forja da fúria de combate? Eu ensinei a ele tudo o que ele sabe!
+		A22: Uma vez fui contratado por uma compania para construir uma instalação de segurança máxima supermassiva de alta tecnologia, esta é minha obra prima em termos de segurança e contenção.
+		AS1: Loja 1 (Comprar Blocos)
+		AS2: Loja 2 (Construção de Blocos)
+		AS3: Loja 3 (Mobílias Básicas)
+		AS4: Loja 4 (Mobílias Avançadas)
+		AS5: Loja 5 (Torchas)
+		AS6: Loja 6 (Velas)
+		AS7: Loja 7 (Lampadas)
+		AS8: Loja 8 (Lanternas)
+		AS9: Loja 9 (Lustres)
+		AS10: Loja 10 (Candelabros)
+		ShopsChanger: Mudar Loja
+		ShopB1: Loja 1 (Loja normal do jogo)
+		ShopB2: Loja 2 (Loja do mod Calamity)
+		ShopB3: Loja 3 (Loja do mod Thorium ou RG)
+		ShopB4: Loja 4 (Loja do mod MorePotions ou Atheria)
+		ShopB5: Loja 5 (Loja do mod UnuBattleRods, Tacklebox ou Tremor)
+		ShopB6: Loja 6 (Loja do mod Wildlife, Sacred, Spirit, Cristilium ou ExpSentr)
+		Lillian: Lilia Santos
+		Lucy: Lucia
+		Alice: Alice Monteiro
+		Rocksahn: Robson
+		Agness: Augusto
+		Mary: Maria
+		EntryB1: Gostaria de provar esta poção? Isto supostamente pode conceder asas a você.
+		EntryB2: Eu não acho que foi uma poção de espeólogo...
+		EntryB3: Eu tenho meus diplomas na Universidade Riddle.
+		EntryB4: Existe um lendário Yoyo conhecido como o Sasscade.
+		EntryB5: Aww, migalhas de pão e cuspi de castor!
+		EntryB6: Ola, *tosse* não era uma poção infernal!
+		EntryB7: Você já viu dois olhos mecânicos ao redor?
+		EntryB8: "Que ganso estúpido "
+		EntryB9: " Tem tando medo de usar poderes ocultos na alquimia, que suas poções se tornam apenas uma água imprestável."
+		EntryB10: espirro Eww... Eu sempre espirro quando esses Golbins estão por perto!
+		EntryB11: Só não os deixe em minha casa... temos muitos suprimentos e instrumentos necessários.
+		EntryB12: Isso é uma invasão Marciana? Eles vão escravizar todo mundo? Ou eles querem destruir todo mundo? Ninguém sabe a resposta...
+		EntryB13: Isso é uma Lua de Sangue no céu? Eu amo isso! É tão bonito!
+		EntryB14: Eu nasci sobre a Lua de Sangue. Eu sempre fico muito animado quando o IT aparece.
+		EntryB15: Claro, eu posso entender por que as outras garotas estão irritadas, mas isso não vai me parar!
+		EntryB16: Por mais feliz que eu esteja eu não estou dando descontos, eu não sou tão besta assim...
+		EntryB17: "Normalmente eu fico confuso sobre como "
+		EntryB18: " Está tão calmo como eu mas então eu acabo me lembrando de alguma coisa "
+		EntryB19: Certa vez viajei para longe de Terraria para aprender mais sobre a Alquimia. Nas minhas viagens eu conheci o cientista da magia chamado Azanor. Ele me mostrou os segredos de algo chamado taumaturgia.
+		ArenaShop: Loja de Arena
+		Carl: Carlos
+		John: João
+		JanMare: Jean
+		LuiFransua: Luiz
+		Daniel: Daniel Rocha
+		Charley: Charle Muniz
+		EntryJ1: Eu encontrei algumas gemas para vender. Você pode verificá-las pra mim?
+		EntryJ2: Os anéis mágicos não são tão poderosos quanto os emblemas lendários, mas ainda podem lhe dar alguma vantagem contra criaturas poderosas.
+		EntryJ3: Ou... o que você quer, meu amigo?
+		EntryJ4: Eu posso fazer um anel de diamante para você.
+		EntryJ5: Não, não pense que eu de alguma forma tenho alguma relação com o Comerciante Esqueleto.
+		EntryJ6: Se de alguma forma você encontrar todos os anéis mágicos, então você poderá fazer o anel de Omni e se tornar o 'Senhor dos Aneis'.
+		EntryJ7: Você tem visto as criaturas mecânicas?
+		EntryJ8: "Você notou que "
+		EntryJ9: " e eu pareço quase o mesmo? é porque somos irmãos gêmeos."
+		EntryJ10: Se você encontrar o bastante dessas anotações rasgadas, traga para mim que eu vou decifrá-las para você. Não me pergunte o por que, apenas saiba que elas têm um valor seguro para mim.
+		Shop2: Loja 2
+		Shop3: Loja 3
+		Shop4: Loja 4
+		Shop5: Loja 5
+		ShopChanger: Mudar Loja
+		Beethoven: Beto
+		Bach: Binho
+		Johan: Jonatan
+		Edison: Edimilson
+		Scott: Sandro
+		Lloyd: Lucio
+		Gamma: Gomes
+		EntryM1: Eu usaria fones de ouvido, mas não tenho certeza se os terrários têm ouvidos...
+		EntryM2: Eu me pergunto porque o Chefe 1 e 2 não ganharam nomes melhores no OST. Esses nomes são muuuuito sem graça.
+		EntryM3: Veja, o Ciborgue pode ter meu nome, mas eu ainda tenho o melhor emprego aqui.
+		EntryM4: Shhhhh! Você vai estragar minha gravação!
+		EntryM5: Eu juro, se mais uma pessoa me pedir para vender uma caixa de música Megalovania
+		EntryM6: Olha, seu entusiasmo é incrível, mas você poderia talvez gravar a próxima faixa para o Chefe você mesmo? Eu realmente não quero arriscar minha vida para compor algumas músicas.
+		EntryM7: Ah, vejo que você foi capaz de salvar o explorador! Bom trabalho! Talvez minha próxima música seja sobre o seu triunfo.
+		EntryM8: "Você sabe que, "
+		EntryM9: " realmente tem se tornado muito útil pra mim quando estou configurando meu sistema de som. Os cabos são a chave!"
+		EntryM10: "Se você econtrar com "
+		EntryM11: ", diga a ele que ele ainda me deve aquelas caixas de musica que eu vendi a ele."
+		EntryM12: "Serei honesto, não tenho certeza se confio em "
+		EntryM13: . ele disse que não ta com o cão no couro, mas ainda assim usa a macumba das caveiras para lutar por ai... o pai de santo mandou umas menssagens mistas aqui.
+		EntryM14: Minhas mixagens são muito melhores do que isso, mas não posso vender nada por causa dos direitos autorais...
+		EntryM15: Não, eu não tenho uma caixa de musica "Todas as Estrelas" codifique uma você mesmo.
+		EntryM16: Espere, Um NPC? Eu pensei que era o protagonista!
+		EntryM17: Eu nunca pensei que venderia uma caixa de musica com minhas letras... DM Dokuro você é maluco e eu amo isso em você!
+		EntryM18: Uma aula inteira baseada em música? Que som incrível! Pena que não tenho um instrumento bom para tocar, né?
+		EntryM19: Isso é culpa sua! CAIA. FORA.
+		EntryM20: Ah, isso me traz boas lembranças! Eu me lembro quando essa música costumava tocar no calabouço e no submundo... bons tempos!
+		EntryM21: Será que existe um nome para o medo de ser espionando por um bolo?
+		EntryM22: Você está machucando meus ouvidos! Abaixe o volume!
+		BossDropsShop: Loja de materiais e drops dos chefes
+		BossDropsModsShop: Loja de materiais e drops dos chefes fornecido pelos mods
+		VanillaTreasureBagsShop: Loja das bolsas do tesouro normais
+		ModdedTreasureBagsShop: Loja das bolsas do tesouro fornecidas pelos mods
+		ModdedTreasureBagsShop2: Loja das bolsas do tesouro fornecidas pelos mods #2
+		ModdedTreasureBagsShop3: Loja das bolsas do tesouro fornecidas pelos mods #3
+		Angela: Angelica
+		Carmen: Carminha
+		EntryO1: Como foi o seu dia, Gerente? Eu posso te ajudar?
+		EntryO2: Que 'O Grande Pássaro do Trovão' não parecia tão perigoso. Eu só espero que ele não seja parte do pássaro do apocalipse...
+		EntryO3: Ola, Gerente! Que dia calmo, não é mesmo?
+		EntryO4: Você quer alguma coisa especial, Gerente?
+		EntryO5: O Devorador de Mundos é uma anormalidade com classe de risco TETH. E agora esta contido! Você precisa de alguma coisa para isso?
+		EntryO6: Se você conseguir suprimir o Ragnarok, poderá fazer tudo o que se possa imaginar.
+		EntryO7: O Olho de Cthulhu é uma criatura bastante estranha. Parece que é apenas uma pequena parte de algo muito perigoso. Seria melhor para nós se isto nunca escapar.
+		EntryO8: O Cérebro de Cthulhu pode parecer horrível, mas sem seus lacaios ele não pode fazer nada.
+		EntryO9: Algo mudou neste mundo Gerente. O mal está se espalhando ainda mais, mas ao mesmo tempo o meu sistema de sensores captaram o nascimento de um novo bioma chamado Hallow.
+		EntryO10: Todos esses chefes mecânicos... Eles definitivamente poderiam ter uma origem de traumática. Qual classificação numérica eles poderiam receber? Eu acho que eles serão iniciados como T-05-
+		EntryO11: Os Goblins... São criaturas tão patéticas. E as únicas coisas úteis deles são apenas suas bolas com espinhos e os arpões.
+		EntryO12: Um evento anormal e bastante estranho... Todos eles se parecem como criaturas vivas, mas o seu 'Holandês Voador' é definitivamente um fantasma com uma classe de risco HE.
+		EntryO13: Os marcianos voltaram. Da última vez em que eles chegaram aqui, várias grandes cidades foram destruídas! Mas poderíamos dizer como desculpa que não estávamos tão prontos, como estamos agora.
+		EntryO14: Lua de Sangue? Não deveria acontecer uma vez em 666 anos?
+		EntryO15: Todas essas criaturas estranhas continuam chegando e vindo para esse 'farol' Espero que todos sobrevivamos até o amanhecer.
+		EntryO16: De qualquer forma, existem algumas razões para o otimismo. A Lua Sangue atrai algumas criaturas, que não podem ser vistas em condições normais.
+		EntryO17: Eu li alguns manuscritos sobre uma criatura chamada Deus Slime. Eles dizem que ela é uma das primeiras criaturas deste mundo.
+		EntryO18: Yharim... Tenho certeza de que ouvi esse nome antes. Mas meus dados de memória estão corrompidos. Tente perguntar a Calamitas sobre ele...
+		EntryO19: Essas plantas carnívoras eram realmente perigosas... Parace que a sua classe de risco pelo menos eram a HE. É bom ver você novamente em uma peça depois de tudo.
+		EntryO20: Dentro desta maquina antiga poderes celestiais estavam sendo guardados. Coma a sua morte, o mundo pode mudar para sempre.
+		EntryO21: Um inseto do tamanho de uma abelha rainha desafiam os métodos atuais de classificação. Eu proponho que os insetos desse tamanho recebam uma nova classificação MI-XX. É bom que ninguém tenha usado eles por seus próprios meios, seremos os primeiros.
+		EntryO22: Parece que eu estava errado sobre as abelhas rainhas. Seu armazenamento de memória contém as divagações de um cientista que estava cego por ambição e cruelmente introduziu a praga para eles. Nós vamos classificar como MP-0X.
+		EntryO23: De acordo com minhas anotações, este tal de 'Coznix' que você tanto fala era uma entidade inferior que costumava Observar o Vazio, classificado como OB-V-01. Há maiores ameaças te esperando além do véu da realidade.
+		EntryO24: Esse scouter voador..... curioso. Pelos bancos de memória armazenados aqui nos destroços, essa parece ter sido uma nave de reconhecimento dos marcianos, para determinar o quão acolhedor os habitantes de Terraria podem ser. Receio que os últimos momentos dos pilotos tenham sido transmitidos ao centro de comando principal dos marcianos.
+		EntryO25: Transferir o poder de um mago para si mesmo e prendê-lo dentro dele não é uma tarefa fácil, mas observar uma crueldade de tal magnitude..... Permafrost, antigo senhor do Castelo de Gelo, que você veja a paz.
+		EntryO26: O invasor da placa estelar é uma centopéia de poeira estelar genial, ou uma G-S-C3 popular entre a elite dos marcianos como companheiros de muito tempo e parceiros em invasões. Eles devem ter se afastado de suas casas, a julgar pelos bancos de memória do transmissor que eu recuperei aqui.
+		EntryO27: Aproveitei meu tempo livre para analisar os restos mortais desta criatura incrível. Toda vez que ela atacava, o planeta inteiro parecia ressoar contra a sua vontade. Eu não posso fazer nada além de me preocupar com as consequências da sua morte. Pelo menos, você salvou Terraria da destruição certa..........mais um vez.
+		EntryO28: Tal como uma presença antiga é importante de documentar - o material dessas placas que podem suportar temperaturas iguais as do núcleo solar do Terrarian! Isso vai revolucionar os procedimentos de contenção para os prisioneiros ARS-0N se pudermos fazer materiais com a metade da resistência ao calor!
+		EntryO29: Quem criou o Saqueador deveria ser colocado em uma contenção HI-MAX, e todas aquelas almas torturadas....... bem, pelo menos você os tirou da sua miséria.
+		EntryO30: Interessante... aqueles Bumblebirbs foram destinados a serem clones do Yharon. Estou feliz que a experiência tenha sido um fracasso!
+		EntryO31: Você teve sorte que aquela coisa ficou complacente e não abriu um portal para o Sol em nossas cabeças. A grande força e inteligência que ele exibiu significa que eu preciso criar uma categoria totalmente nova para a classificação dos vermes.
+		EntryO32: Eu tenho minhas teorias sobre a origem desse ser, mais assustador que a sua alma (se ele ainda tiver uma)... Irradia energia negativa, a experimentação mostrou como na escuridão essa 'energia do esquecimento' irradiava sua luz, mas na luz colocava a sua sombra irradiante.
+		EntryO33: A Calamitas Suprema foi derrotada, mas ela falou sobre um ser ainda mais forte do que ela. Vamos torcer para que esse ser não tenha notado a nossa presença.
+		EntryO34: Sinceramente, eu não sei por que crânios giratórios gigantes são a chave de tudo, mas de alguma forma eles parecem conter o poder dos seres celestiais dentro deles...
+		EntryO35: Sim, eu sei que nós somos os que capturaram e cultivaram entidades sobrenaturais horríveis. Mas quem diabos pensou que seria uma boa ideia colocar bolsas coletáveis dentro de um monstro gigante?!?!
+		EntryO36: Lembre-se gerenciador, as Bolsas do Tesouro são valiosas, mas nem tudo vem dentro delas. Esse homem mutante pode ajudar você a obter muitos drops elusivos desse chefe.
+		Alexander: Alexandro
+		Peter: Peterson
+		TinkererButton1: Movemento e Diversos
+		TinkererButton2: Combate
+		EntryT1: Você precisa de algo especial? Apenas diga se sim...
+		EntryT2: Você já viu minha irmã mais velha? Ela é mais a Steampunker do que o Inventor Globin...
+		EntryT3: Se você ver o tubo de papel em algum lugar, traga-o para mim que eu irei desbloquear para você.
+		EntryT4: Como você vai progredir pelo mundo você pode encontrar coisas mais valiosas. Contando com blueprints para encontrar acessórios raros.
+		EntryT5: Você nunca sabe onde possa realmente encontrar coisas raras ou de muito valor. Portanto explore em todos os cantos possíveis com muita paciência.
+		Harold: Arnolde
+		Charles: Charles
+		Monty: Messi
+		Lucas: Lucas
+		Porky: Porquievi
+		Leeland: Leonardo
+		Atreus: Andrade
+		Entry1: Estou trocando poções que foram feitas pelos meus parentes.
+		Entry2: Eu tenho algumas poções eu posso vender para você.
+		Entry3: Embora, a combinação da batalha foi minha ideia.
+		Entry4: Existe um yoyo lendário conhecido como Sasscade.
+		Entry5: A bebida estranha do Comerciante Esqueleto tem um péssimo sabor, mas seu efeito de restauração de mana é incrível.
+		Entry6: Oi, *tosse*... que definitivamente não era uma limonada.
+		Entry7: Você viu algum verme mecânico por ai?
+		Entry8: "Minha mãe, "
+		Entry9: ", é a melhor criadora de bebidas de todos os tempos, ela não é? Ela sabe preparar as poções mais dificeis com muita facilidade."
+		Entry10: Certas combinações só podem ser produzidas se certos tipos de magia estiverem presentes no mundo.
+
+		Tiles: {
+			HMCraftPound.MapEntry: Estação de Criação Expandida
+			MateriaTransmutator.MapEntry: Transmutator de Matéria
+			MateriaTransmutatorMK2.MapEntry: Transmutator de Matéria MK2
+			PreHMPenny.MapEntry: Simples Criador de Moeda
+			SpecCraftPoint.MapEntry: Ponto Especial de Criação
+		}
+
+		"Keybinds.Discord Buff Teleportation.DisplayName": Teleporte do Buff da Discórdia
+
+		Configs: {
+			ModConfiguration: {
+				ShopChangeDelay: {
+					Tooltip: Tempo de espera antes que a loja possa ser alterada depois de abrir a interface, 10 quadros é o padrão.
+					Label: Atraso na mudança da loja
+				}
+
+				DesertFossilPrice: {
+					Tooltip: 1000 é o preço de 10 pratas por padrão
+					Label: Preço do Fóssil Deserto
+				}
+
+				SiltSlushPrice: {
+					Tooltip: 700 é o preço de 7 pratas por padrão
+					Label: Preço dos blocos de limo e lama
+				}
+
+				WormholePrice: {
+					Tooltip: 1000 é o preço de 10 pratas por padrão
+					Label: Preço da Poção do Buraco de Minhoca
+				}
+
+				RecallPrice: {
+					Tooltip: 1000 é o preço de 10 pratas por padrão
+					Label: Preço da Poção da Lembrança
+				}
+
+				StarPrice: {
+					Tooltip: 1000 é o preço de 10 pratas por padrão
+					Label: Preço das Estrelas Caidas
+				}
+
+				PotsPriceMulti: {
+					Tooltip: Multiplica o preço das poções por X. 1 é o padrão
+					Label: Multiplicador do preço das poções
+				}
+
+				CatchNPC: {
+					Tooltip: Verdadeiro para tornar npcs de mods na cidade capturáveis. Verdadeiro é o padrão
+					Label: Alternar o mod de NPCs capturáveis
+				}
+
+				RevPrices: {
+					Tooltip: Verdadeiro para aumentar o preço das poções. Verdadeiro é o padrão
+					Label: Escala de preço no modo vingança do Calamity Mod
+				}
+
+				DisabledLocatorNpcs: {
+					Tooltip: Setas não apontam para onde estão os NPCs
+					Label: Desativa o Analisador de Forma de Vida para os NPCs
+				}
+
+				LocatorRange: {
+					Tooltip: Distância máxima do ponto de rastreio 4000 é o padrão
+					Label: Alcance do Analisador de Forma de Vida
+				}
+
+				LifeformAnalyzer: {
+					Tooltip: Ativa ou desativa o apontador do laser do Analisador de Forma de Vida (marcações a cada segundo). Verdadeiro é o padrão
+					Label: Ponteiro do laser do Analisador de Forma de Vida
+				}
+
+				TinkererSpawn: {
+					Tooltip: Verdadeiro para habilitar a desova do NPC Inventor, falso para desabilitar. Verdadeiro é o padrão
+					Label: Alternar a desova do Inventor
+				}
+
+				MusicianSpawn: {
+					Tooltip: Verdadeiro para habilitar a desova do NPC Musico, falso para desabilitar. Verdadeiro é o padrão
+					Label: Alternar a desova do Musico
+				}
+
+				OperatorSpawn: {
+					Tooltip: Verdadeiro para habilitar a desova do NPC Operadora, falso para desabilitar. Verdadeiro é o padrão
+					Label: Alternar a desova da Operadora
+				}
+
+				ArchitectSpawn: {
+					Tooltip: Verdadeiro para habilitar a desova do NPC Arquiteto, falso para desabilitar. Verdadeiro é o padrão
+					Label: Alternar a desova do Arquiteto
+				}
+
+				YoungBrewerSpawn: {
+					Tooltip: Verdadeiro para habilitar a desova do NPC Jovem Cervejeiro, falso para desabilitar. Verdadeiro é o padrão
+					Label: Alternar a desova do Jovem Cervejeiro
+				}
+
+				JewelerSpawn: {
+					Tooltip: Verdadeiro para habilitar a desova do NPC Joalheiro, falso para desabilitar. Verdadeiro é o padrão
+					Label: Alternar a desova do Joalheiro
+				}
+
+				BrewerSpawn: {
+					Tooltip: Verdadeiro para habilitar a desova do NPC Garota da Cerveja, falso para desabilitar. Verdadeiro é o padrão
+					Label: Alternar a desova da Cervejeira
+				}
+
+				AlchemistSpawn: {
+					Tooltip: Verdadeiro para habilitar a desova do NPC Alquimista, falso para desabilitar. Verdadeiro é o padrão
+					Label: Alternar a desova do Alquimista
+				}
+
+				DisplayName: Configurações do Mod
+
+				LifeformAnalyzerAlt: {
+					Label: Alterne a textura do locaizador do Analisador de Forma de Vida
+					Tooltip: Use uma textura alternativa para o localizador do Analisador de Forma de Vida. Falso é o padrão
+				}
+			}
+		}
+	}
+}
