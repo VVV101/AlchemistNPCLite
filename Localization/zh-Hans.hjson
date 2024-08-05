@@ -1393,7 +1393,7 @@ Mods: {
 				}
 
 				ModItems: {
-					// Tooltip: True to allow mod's custom items and potion to exist. True by default
+					// Tooltip: True to allow mod's custom items and potions to exist (Blurring potion, World Warper, etc.). True by default. Requires mods reload to update information.
 					// Label: Mod's custom items toggle
 				}
 

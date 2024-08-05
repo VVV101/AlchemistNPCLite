@@ -6,6 +6,10 @@ namespace AlchemistNPCLite.Items
 {
     public class ExcavationPotion : ModItem
     {
+		public override bool IsLoadingEnabled(Mod mod) {
+			return ModContent.GetInstance<ModConfiguration>().ModItems;
+		}
+		
         public override void SetStaticDefaults()
         {
             Item.ResearchUnlockCount = 20;

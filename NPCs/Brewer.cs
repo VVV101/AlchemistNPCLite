@@ -381,21 +381,23 @@ namespace AlchemistNPCLite.NPCs
             shop.Register();
 
             shop = new NPCShop(Type, SHOP_2)
-                .AddModItemToShop<SunshinePotion>(15000)
-                .AddModItemToShop<Dopamine>(15000)
-                .AddModItemToShop<GreaterDangersensePotion>(25000)
-                .AddModItemToShop<NatureBlessingPotion>(25000)
-                .AddModItemToShop<ExcavationPotion>(50000, Condition.DownedEowOrBoc)
-                .AddModItemToShop<BewitchingPotion>(10000, () => NPC.downedBoss3)
-                .AddModItemToShop<FortitudePotion>(15000, () => NPC.downedBoss3)
-                .AddModItemToShop<InvincibilityPotion>(15000, () => Main.hardMode)
-                .AddModItemToShop<TitanSkinPotion>(15000, () => Main.hardMode)
-                .AddModItemToShop<DiscordPotion>(200000, () => NPC.downedMechBossAny && !NPC.downedMoonlord)
-                .AddModItemToShop<PerfectDiscordPotion>(330000, () => NPC.downedMoonlord)
-                .AddModItemToShop<BlurringPotion>(150000, () => NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
-                .AddModItemToShop<NinjaPotion>(75000, () => NPC.downedPlantBoss)
-                .AddModItemToShop<TrapsPotion>(50000, () => NPC.downedGolemBoss)
-                .AddModItemToShop(Calamity, "BoundingPotion", 20000)
+                .AddModItemToShop<BewitchingPotion>(10000, () => NPC.downedBoss3);
+                if (ModContent.GetInstance<ModConfiguration>().ModItems){
+                    shop.AddModItemToShop<SunshinePotion>(15000);
+                    shop.AddModItemToShop<Dopamine>(15000);
+                    shop.AddModItemToShop<GreaterDangersensePotion>(25000);
+                    shop.AddModItemToShop<NatureBlessingPotion>(25000);
+                    shop.AddModItemToShop<ExcavationPotion>(50000, Condition.DownedEowOrBoc);
+                    shop.AddModItemToShop<FortitudePotion>(15000, () => NPC.downedBoss3);
+                    shop.AddModItemToShop<InvincibilityPotion>(15000, () => Main.hardMode);
+                    shop.AddModItemToShop<TitanSkinPotion>(15000, () => Main.hardMode);
+                    shop.AddModItemToShop<DiscordPotion>(200000, () => NPC.downedMechBossAny && !NPC.downedMoonlord);
+                    shop.AddModItemToShop<PerfectDiscordPotion>(330000, () => NPC.downedMoonlord);
+                    shop.AddModItemToShop<BlurringPotion>(150000, () => NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3);
+                    shop.AddModItemToShop<NinjaPotion>(75000, () => NPC.downedPlantBoss);
+                    shop.AddModItemToShop<TrapsPotion>(50000, () => NPC.downedGolemBoss);
+                }
+                shop.AddModItemToShop(Calamity, "BoundingPotion", 20000)
                 .AddModItemToShop(Calamity, "CalciumPotion", 35000)
                 .AddModItemToShop(Calamity, "TriumphPotion", 30000)
                 .AddModItemToShop(Calamity, "TeslaPotion", 25000)
