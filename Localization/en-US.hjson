@@ -1388,7 +1388,7 @@ Mods: {
 					Tooltip: True to make mod's town NPCs catcheable. True by default
 					Label: Catcheable mod's NPCs toggle
 				}
-				
+
 				ModItems: {
 					Tooltip: True to allow mod's custom items and potion to exist. True by default
 					Label: Mod's custom items toggle
