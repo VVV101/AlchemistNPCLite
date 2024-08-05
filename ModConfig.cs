@@ -64,6 +64,9 @@ namespace AlchemistNPCLite
 		[DefaultValue(true)]
 		public bool CatchNPC;
 		
+		[DefaultValue(true)]
+		public bool ModItems;
+		
 		[Range(1, 1000)]
 		[DefaultValue(1)]
 		public int PotsPriceMulti;
@@ -102,16 +105,11 @@ namespace AlchemistNPCLite
 		}
 
 		public override bool AcceptClientChanges(ModConfig pendingConfig, int whoAmI, ref string message) {
-			if (whoAmI == 0) {
-				message = "Changes accepted!";
-				return true;
-			}
-			if (whoAmI != 0)
-			{
-				message = "You have no rights to change AlchemistNPCLite.modConfiguration.";
+			if (!NetMessage.DoesPlayerSlotCountAsAHost(whoAmI)) {
+				message = NetworkText.FromKey("tModLoader.ModConfigRejectChangesNotHost"); // "Only the host can change this config"
 				return false;
 			}
-			return false;
+			return true;
 		}
 	}
 }
