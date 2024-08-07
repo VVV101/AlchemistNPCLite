@@ -99,6 +99,7 @@ namespace AlchemistNPCLite
 				message = NetworkText.FromKey("tModLoader.ModConfigRejectChangesNotHost"); // "Only the host can change this config"
 				return false;
 			}
+			message = NetworkText.FromKey("ModConfigAccepted");
 			return true;
 		}
 	}
