@@ -205,7 +205,7 @@ Mods: {
 			}
 
 			Excavation: {
-				DisplayName: Раскопка
+				DisplayName: Копание
 				Description: Значительно усиливает вашу способность копать блоки
 			}
 
