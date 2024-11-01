@@ -1,485 +1,492 @@
 Mods: {
 	AlchemistNPCLite: {
 		Bestiary: {
-			// Alchemist: Provides a variety of utility potions, plants, mushrooms and other different stuff for selling. ''Lore-wise'' is an old friend/love interest of Brewer. Currently, ''divorced''.
-			// Brewer: Provides a variety of buff potions for selling. ''Lore-wise'' is an old friend/love interest of Alchemist. Currently, ''divorced''.
-			// Jeweler: Provides an infinite amounts of different gems for selling. Also can help with goods for setting up an arena for both grinding or boss fights. ''Lore-wise'' should be considered as merchants twin brother.
-			// Musician: Provides different music boxes for selling as some progress is made. No real lore currently exists.
-			// Operator: Provides a variety of different crafting materials and treasure bags (if playing on Expert+). Is not a human.
-			// Architect: Provides a variety of different building blocks and crafting stations. Decoration expert.
-			// Tinkerer: Provides a variety of accessories getting unlocked through progression. ''Lore-wise'' is Steampunker's younger brother.
-			// YoungBrewer: Provides a variety of potions combinations and flasks for selling. ''Lore-wise'' is son of Alchemist and Brewer.
+			Alchemist: Трудолюбивый алхимик всегда готов продать вам парочку-другую необычных зелий, снадобий, грибов и прочих реагентов. Разведён, ранее был то ли старым другом, то ли бывшим варщицы — всё сложно, уже и не разберёшься.
+			Brewer: Варщица — женщина задорная: она с радостью отдаст вам свои усиляющие зелья «почти задаром». Разведена, тему их запутанных отношений с алхимиком в разговоре лучше лишний раз не поднимать.
+			Jeweler: Бесконечные запасы драгоценных камней ювелира всегда в наличии на продажу. Он также не откажется протянуть вам руку помощи в постройке арен как для фарма простых монстров, так и для битвы с теми, что представляют реальную угрозу. Поговаривают, что ювелир — двоюродный брат торговца.
+			Musician: Талантливый музыкант любит записывать на музыкальные шкатулки свои шедевры, вдохновлённые вашими приключениями: о местах, в которых вы бывали, о злобных боссах, которых вы победили и так далее. За скромную плату он поделится с вами частью своей коллекции. Однако кто он и откуда — одному лишь богу известно.
+			Operator: Карманы оператора всегда забиты всевозможными материалами и мешками с сокровищами. По её манере речи сразу становится ясно, что человеком она не является...
+			Architect: Архитектор — эксперт в области декораций и строительства. У него всегда можно приобрести столько мебели и блоков для строительства, сколько нужно.
+			Tinkerer: Золотые руки изобретателя быстро смастерят на заказ любой аксессуар из доступных на текущем этапе ваших приключений. Младший брат стимпанкера, поддерживает с ней хорошие отношения до сих пор.
+			YoungBrewer: Юный химик — гордость своих родителей, варщицы и алхимика. Будучи совсем ребёнком, он уже успел изготовить несколько уникальных смесей из зелий и флаконов, вы прямо-таки обязаны их попробовать!
 		}
 
 		Common: {
-			// DayTimeSet: Time is set to morning.
-			// NightTimeSet: Time is set to evening.
-			// SandstormStarted: Sandstorm was started.
-			// SandstormStopped: Sandstorm was stopped.
-			// RainStarted: Rain is starting.
-			// RainStopped: Rain is stopping.
+			DayTimeSet: Установлено утреннее время суток.
+			NightTimeSet: Установлено вечернее время суток.
+			SandstormStarted: Начата песчаная буря.
+			SandstormStopped: Песчаная буря прекратилась.
+			RainStarted: Начался дождь.
+			RainStopped: Дождь прекратился.
 		}
 
 		#This is what displays during all of an NPC's happiness levels. Note that the localization key for these should always be "TownNPCMood.*NPCName*.*Mood*" or else it won't display properly.
 		TownNPCMood: {
 			Alchemist: {
-				// Content: I'm feeling good!
-				// NoHome: Do you have any spare housing? It is really uncomfortable to make potions without roof above my head.
-				// LoveSpace: Peace and quiet means I get to live it up!
-				// FarFromHome: I think my house was that way... unless you're taking me somewhere?
-				// DislikeCrowded: The more the merrier and all, but I'm starting to feel a lil' overcrowded.
-				// HateCrowded: I can't kick my legs out and relax without hitting someone...
-				// LikeBiome: Warm and peaceful, what can be better for potionsmaking?
-				// LoveBiome: This place reminds me of the old days when I was training with my friend.
-				// DislikeBiome: It is way too cold here... My hands are freezing.
-				// HateBiome: I wanna live elsewhere! This is awful.
-				// LikeNPC: "{NPCName} understands the importance of hard work. It is good having her around."
-				// LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
-				// LoveNPC: "{NPCName} is here! Who's the dad's boy?"
-				// DislikeNPC: I don't think I could focus when {NPCName} is around. She can't stop making jokes of me.
-				// HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
+				Content: Чувствую себя замечательно!
+				NoHome: Надеюсь, у тебя есть свободная каморка. Без крыши над головой, знаешь ли, зелья варить будет проблематично.
+				LoveSpace: Тишина и умиротворение — то что нужно для работы!
+				FarFromHome: Мне пора бы идти, мой дом в другой стороне... Или ты меня ведёшь куда-то?
+				DislikeCrowded: Говорят, что вместе веселее и всё такое, но мне что-то уже тошно от такой толпы.
+				HateCrowded: Я не могу расправить свои ноги, не пнув при этом кого-нибудь. Раздражает.
+				LikeBiome: Тепло и уютно, для зельеварения лучше атмосферы просто не придумать!
+				LoveBiome: Это место навевает старые воспоминания. Помню как днями напролёт тренировался в такой же сырой пещере со своим другом, когда был помоложе.
+				DislikeBiome: Зябко... Очень... У меня уже руки трясутся от холода.
+				HateBiome: Терпеть не могу это место! Пересели меня куда-нибудь, СЕЙЧАС ЖЕ!
+				LikeNPC: "{NPCName} понимает, что работа никогда не ждёт. С ней просто-напросто приятно находиться рядом."
+				LikeNPC_Princess: Нужно будет проведать {NPCName} как-нибудь, она меня понимает.
+				LoveNPC: "{NPCName} дома! Кто тут у нас хороший мальчик?"
+				DislikeNPC: Мне трудно сосредоточиться на работе, когда рядом {NPCName}. Она вечно язвит и издевается надо мной!
+				HateNPC: Скажи честно, не приходило ли тебе в голову вышвырнуть {NPCName} туда, откуда это чудовище и пришло?
 			}
 
 			Brewer: {
-				// Content: I'm feeling good!
-				// NoHome: Do you have any spare housing? It is really uncomfortable to make potions without roof above my head.
-				// LoveSpace: Peace and quiet means I get to live it up!
-				// FarFromHome: I think my house was that way... unless you're taking me somewhere?
-				// DislikeCrowded: The more the merrier and all, but I'm starting to feel a lil' overcrowded.
-				// HateCrowded: I can't kick my legs out and relax without hitting someone...
-				// LikeBiome: It is a bit too hot here, but the air is perfect.
-				// LoveBiome: Warm and peaceful, just as I wanted!
-				// DislikeBiome: It is way too cold here... My hands are freezing.
-				// HateBiome: I wanna live elsewhere! This is awful.
-				// LikeNPC: "{NPCName} is so easy to tease! I can't help it..."
-				// LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
-				// LoveNPC: "{NPCName} is here! Who's the momma's boy?"
-				// DislikeNPC: "{NPCName} is so annoying with his constant warnings. Can barely stand it."
-				// HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
+				Content: Жизнь прекрасна!
+				NoHome: Слушай, а у тебя, случаем, не найдётся лишнего домика? Не очень я люблю варить зелья на открытом воздухе.
+				LoveSpace: Здесь тихо и спокойно, обожаю такую обстановку!
+				FarFromHome: Э-э-э, мой дом в той стороне... А, поняла, ты мне хочешь что-то показать, да?
+				DislikeCrowded: Хорошую компанию я, конечно, люблю, но здесь людей слишком уж много.
+				HateCrowded: Я так не могу, повсюду суматоха! Мне не то что химичить тяжело, мне даже присесть негде!
+				LikeBiome: Жарковато немного, но воздух в этом месте отличный!
+				LoveBiome: Тепло и уютно — то, что доктор прописал!
+				DislikeBiome: Брр... у меня на бровях уже иней. Слишком холодно!
+				HateBiome: Терпеть не могу это место! Хочу переехать, причём КАК МОЖНО БЫСТРЕЕ! 
+				LikeNPC: "{NPCName} так просто вывести из себя, ха-ха, не могу перестать над ним прикалываться..."
+				LikeNPC_Princess: Нужно будет проведать {NPCName} как-нибудь, мы с ней подружимся!
+				LoveNPC: "{NPCName} дома! Кто тут у нас хороший мальчик?"
+				DislikeNPC: "Бесконечные порицания от {NPCName} выводят меня из себя. Я его еле переношу."
+				HateNPC: Скажи честно, не приходило ли тебе в голову вышвырнуть {NPCName} туда, откуда это чудовище и пришло?
 			}
 
 			Jeweler: {
-				// Content: I'm feeling good!
-				// NoHome: Do you have any spare housing? It is really uncomfortable to make jewelry without roof above my head.
-				// LoveSpace: Peace and quiet means I get to live it up!
-				// FarFromHome: I think my house was that way... unless you're taking me somewhere?
-				// DislikeCrowded: The more the merrier and all, but I'm starting to feel a lil' overcrowded.
-				// HateCrowded: I can't kick my legs out and relax without hitting someone...
-				// LikeBiome: It is a bit too hot here, but the air is perfect.
-				// LoveBiome: Warm and peaceful, just as I wanted!
-				// DislikeBiome: It is way too cold here... My hands are freezing.
-				// HateBiome: I wanna live elsewhere! This is awful.
-				// LikeNPC: "{NPCName} has a sence for money. A bit too greedy, but I can totally relate."
-				// LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
-				// LoveNPC: "{NPCName} is here! You can clearly tell that we are almost the same. I don't want to grow a beard, tho."
-				// DislikeNPC: I can't stand girls like {NPCName}, she totally distracts my focus.
-				// HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
+				Content: Я в норме!
+				NoHome: Пожалуйста, скажи мне, что у тебя есть хотя бы один свободный домик. Мне очень тяжело сфокусироваться на своей работе: я не привык обрабатывать самоцветы на улице.
+				LoveSpace: В такой тишине я готов работать хоть за милую душу.
+				FarFromHome: Это свидание? Мой дом вообще-то там, куда это мы идём?
+				DislikeCrowded: Чем меньше народу, тем больше кислороду, слышал такое? Вот и я так думаю...
+				HateCrowded: Я так больше не могу, каким образом я должен сосредоточиться, когда каждую минуту мимо меня кто-нибудь проходит!?
+				LikeBiome: Здесь довольно приятно. От жары я вечно потею, но... мне не привыкать, не так ли?
+				LoveBiome: Эх, люблю я это местечко!
+				DislikeBiome: От холода у меня трясутся руки, в моей работе такое недопустимо!
+				HateBiome: Нет, нет и нет, я буду жить где угодно, но точно не здесь. Можешь меня переселить?
+				LikeNPC: "{NPCName} видит смысл жизни в деньгах. Звучит слишком скупо и жадно, согласен, но кого я обманываю, я с такой позицией более чем согласен!"
+				LikeNPC_Princess: Давненько я не навещал {NPCName}, хорошая всё-таки девчонка!
+				LoveNPC: "Наверняка все это уже давно заметили, но мы с {NPCName} как два сапога — пара. Ну, разве что бороду я пока отращивать не хочу."
+				DislikeNPC: Не люблю шумных. Такие легкомысленные люди, как {NPCName}, постоянно нарушают мой покой.
+				HateNPC: Скажи честно, не приходило ли тебе в голову вышвырнуть {NPCName} туда, откуда это чудовище и пришло?
 			}
 
 			Musician: {
-				// Content: I'm feeling good!
-				// NoHome: Do you have any spare housing? How can I do music if I don't have a roof above my head?
-				// LoveSpace: Peace and quiet means I get to live it up!
-				// FarFromHome: I think my house was that way... unless you're taking me somewhere?
-				// DislikeCrowded: The more the merrier and all, but I'm starting to feel a lil' overcrowded.
-				// HateCrowded: I can't kick my legs out and relax without hitting someone...
-				// LikeBiome: Silence and peace, what else do I need for making music? And acoustics here is amazing!
-				// LoveBiome: I like how shiny and bright this place is. Also perfect for parties.
-				// DislikeBiome: It is way too cold here... My hands are freezing.
-				// HateBiome: I wanna live elsewhere! This is awful.
-				// LikeNPC: "{NPCName} is useful when I am out of music boxes. You know how hard is to make them?"
-				// LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
-				// LoveNPC: "{NPCName} likes music just as I do! I can hang out with her all day."
-				// DislikeNPC: This cheapskate {NPCName} is so annoying. Can you get him somewhere out here?
-				// HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
+				Content: Мой цвет настроения — оранжевый!
+				NoHome: Струнки-гитарки, мне до ужаса нужен новый дом! Ты ведь сам знаешь, каково записывать музыку с извечными фоновыми шумами!
+				LoveSpace: Ах! Гармония и тишина! Я слышу, как поют травинки и камешки, озёра и ветра!
+				FarFromHome: Что ж это делается то, куда ты меня ведёшь? В место, наполненное вдохновением, надеюсь?
+				DislikeCrowded: Всем этим людишкам вокруг почему-то не нравится моя музыка. В таком окружении жить я не хочу, выселяй их!
+				HateCrowded: Этот сброд... Ох уж эта толпа... Их суета — не симфония оркестра, а самая что ни на есть какофония!
+				LikeBiome: Повсюду жизнь и воодушевление, так ещё и акустика здесь шикарная! Я и не против остаться здесь!
+				LoveBiome: Я в восторге: здесь так светло, так ярко, так свободно! Точно, нужно устроить здесь вечеринку!
+				DislikeBiome: На улице стужа, меня такое не устраивает!
+				HateBiome: Вздор! Куда это, спрашивается, ты меня заселил!? В таком скверном месте людям жить не полагается!
+				LikeNPC: "{NPCName} всегда выручает меня, когда мастерить шкатулки не получается. Думаешь, делать их так просто? Вовсе нет!"
+				LikeNPC_Princess: "{NPCName} — просто душка! Хорошо, когда есть человек с поистине изысканным музыкальным вкусом!"
+				LoveNPC: "Жить с {NPCName} — одно удовольствие. Какую музыку не включи, она всегда танцует! Ну даёт!"
+				DislikeNPC: Этот мелкий скряга {NPCName} выводит меня из себя. Будь добр, возьми его на руки и отнеси куда подальше.
+				HateNPC: Скажи честно, не приходило ли тебе в голову вышвырнуть {NPCName} туда, откуда это чудовище и пришло?
 			}
 
 			Operator: {
-				// Content: I'm feeling good!
-				// NoHome: I need a shelter. I don't like being without a roof above my head.
-				// LoveSpace: Peace and quiet means I get to live it up!
-				// FarFromHome: I think my house was that way... unless you're taking me somewhere?
-				// DislikeCrowded: The more the merrier and all, but I'm starting to feel a lil' overcrowded.
-				// HateCrowded: I can't kick my legs out and relax without hitting someone...
-				// LikeBiome: Ocean. It is the thing I wanted to see. Thanks.
-				// LoveBiome: My circuits are working perfectly here. Surprisingly. I like snow.
-				// DislikeBiome: I hate underground. You know it, right?
-				// HateBiome: I wanna live elsewhere! This is awful.
-				// LikeNPC: "{NPCName} is one of the many persons I could talk about the technology."
-				// LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
-				// LoveNPC: "{NPCName} probably is the only person who can understand me. Being a cyborg."
-				// DislikeNPC: "{NPCName} seems to be afraid of me. I wonder why, but his fear somewhat annoys me."
-				// HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
+				Content: Я чувствую себя положительно.
+				NoHome: Мне необходимо убежище. Мне не нравится находиться вне помещений.
+				LoveSpace: Тихо, просторно, спокойно. Оптимальная обстановка.
+				FarFromHome: Я в замешательстве, куда мы направляемся? Мне нужно домой.
+				DislikeCrowded: Все эти люди препятствуют моему отдыху. Нежелательная обстановка.
+				HateCrowded: Не хватает свободного пространства. Пожалуйста, решите организационную проблему, жилые помещения используются нерационально.
+				LikeBiome: Океан. Люди любят океан. Я тоже люблю океан.
+				LoveBiome: Мои системы работают в штатном режиме в том числе и в этом окружении. Подозреваю, что мне нравится снег.
+				DislikeBiome: Мне не нравится находиться под землёй. Отсутствие солнечного света сбивает мои хронометры.
+				HateBiome: Испытываю ненависть к этому месту. Причина этому не установлена.
+				LikeNPC: "{NPCName} может поддержать разговор о новых достижениях в технологии. Это хорошо."
+				LikeNPC_Princess: Люди любят {NPCName}, меня тоже тянет к ней.
+				LoveNPC: "{NPCName} — единственный, кто меня понимает. Он тоже киборг."
+				DislikeNPC: "{NPCName} испытывает страх по отношению ко мне. Необьяснимым образом, меня это раздражает. Вероятно, что-то сломалось в моём нейропроцессоре."
+				HateNPC: Незамедлительно избавьтесь от {NPCName}. Следующая оскорбительная фраза или жест в мою сторону может повлечь за собой неприятные последствия.
 			}
 
 			Architect: {
-				// Content: I'm feeling good!
-				// NoHome: Being an Architect, I especially don't like NOT having any house.
-				// LoveSpace: Peace and quiet means I get to live it up!
-				// FarFromHome: I think my house was that way... unless you're taking me somewhere?
-				// DislikeCrowded: The more the merrier and all, but I'm starting to feel a lil' overcrowded.
-				// HateCrowded: I can't kick my legs out and relax without hitting someone...
-				// LikeBiome: Pretty calming place to be. I like it.
-				// LoveBiome: So many colors, so many building materials. Perfect.
-				// DislikeBiome: I hate feeling chill. I need a warmer place.
-				// HateBiome: I wanna live elsewhere! This is awful.
-				// LikeNPC: "{NPCName} may just be an annoying goblin but he understands, how to build. I respect that."
-				// LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
-				// LoveNPC: "{NPCName} knows how to make every color. Which is great."
-				// DislikeNPC: "{NPCName} is so grumpy and hates colors. Would be fun making him living in Hallow, I guess."
-				// HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
+				Content: Дела идут хорошо, а у тебя как?
+				NoHome: Бездомный строитель... Ей богу, начало анекдота, не находишь? Засели меня уже куда-нибудь.
+				LoveSpace: Сам понимаешь, чертежи чертить легче, когда никто не мешает.
+				FarFromHome: Вообще-то, мой дом в другой стороне... Погоди, ты что, хочешь новый построить? Так бы и сказал, что моя помощь нужна...
+				DislikeCrowded: Не хотелось бы мне жить в таком плотно заселённом местечке на постоянной основе.
+				HateCrowded: Как говорится, в ногах правды нет. Так то оно так, но присесть мне здесь негде: повсюду люди. Ну не могу я так, смекаешь?
+				LikeBiome: Это место меня успокаивает, так что всё здорово.
+				LoveBiome: Куда не взгляни, повсюду материалы для строительства. Разумеется мне здесь нравится!
+				DislikeBiome: Предпочитаю климат потеплее, у тебя есть ещё свободные дома где-нибудь?
+				HateBiome: Будь у меня возможность, я бы прямо сейчас собрал все свои вещи и ушёл строить свой дом как можно подальше от этого места.
+				LikeNPC: "{NPCName} не самый приятный в общении, но в строительстве он кое-чего знает, такое я уважаю."
+				LikeNPC_Princess: Хоромы у {NPCName} просто что надо! Снова хочу к ней в гости.
+				LoveNPC: "{NPCName} знает свое дело в краске и цветах. Он много чему уже успел меня научить, передай, что я благодарен ему."
+				DislikeNPC: "{NPCName} всё ворчит и ворчит. Иногда кажется, что у него пар из ушей идёт, когда речь заходит о ярких цветах. Согласись, было бы забавно переселить его в святой биом."
+				HateNPC: Скажи честно, не приходило ли тебе в голову вышвырнуть {NPCName} туда, откуда это чудовище и пришло?
 			}
 
 			Tinkerer: {
-				// Content: I'm feeling good!
-				// NoHome: Making accessories requires patience. And I wouldn't be able to do it without any house.
-				// LoveSpace: Peace and quiet means I get to live it up!
-				// FarFromHome: I think my house was that way... unless you're taking me somewhere?
-				// DislikeCrowded: The more the merrier and all, but I'm starting to feel a lil' overcrowded.
-				// HateCrowded: I can't kick my legs out and relax without hitting someone...
-				// LikeBiome: A bit dark, but I can totally live here.
-				// LoveBiome: Me and my sister are used to live in cold places so I am totally ok with that.
-				// DislikeBiome: I hate hot weather and sand so no, I wouldn't live here.
-				// HateBiome: I wanna live elsewhere! This is awful.
-				// LikeNPC: "{NPCName} is so nice and smart. I respect that."
-				// LikeNPC_Princess: I gotta visit {NPCName} again sometime, there's a girl who gets me!
-				// LoveNPC: "{NPCName} is finally here? I have a lot to tell, big sis!"
-				// DislikeNPC: Don't let {NPCName} anywhere around me. Sand from his clothes always clogs my mechanisms.
-				// HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
+				Content: Меня пока что всё устраивает, не жалуюсь.
+				NoHome: Для изобретения аксессуаров нужно терпение, для терпения — нормальный дом, а для нормального дома... ну тут уже дело за тобой.
+				LoveSpace: Покой — то, чего я всегда желал, теперь я могу жить полной жизнью.
+				FarFromHome: Кажется, мой дом немного в другой стороне, мне пора идти...
+				DislikeCrowded: Большие компании людей — не моё, хотелось бы, чтоб их было чуть меньше.
+				HateCrowded: Здесь такая суета: каждый подойдет, попросит помощи, потребует совета, обидно пошутит. Рассели ты нас немного равномернее, такого бы не было.
+				LikeBiome: Темновато немного, но в остальном же — место хорошее.
+				LoveBiome: Я почти всю свою жизнь прожил с сестрой в местах холоднее этого. Мороз здесь меня даже радует.
+				DislikeBiome: Не переношу жару, я бы не хотел здесь жить.
+				HateBiome: Нет, нет и нет, я буду жить где угодно, но точно не здесь. Можешь меня переселить?
+				LikeNPC: "{NPCName} такая умная и вежливая, люблю таких людей."
+				LikeNPC_Princess: Я соскучился по {NPCName}, хотелось бы её навестить.
+				LoveNPC: "У меня столько всяких историй, которыми мне нужно поделиться с {NPCName}! Уверен, она тоже по мне соскучилась!"
+				DislikeNPC: Не подпускай {NPCName} ко мне, пожалуйста. С его одежды без остановки сыпется песок, он мне столько механизмов уже этим засорил!
+				HateNPC: Скажи честно, не приходило ли тебе в голову вышвырнуть {NPCName} туда, откуда это чудовище и пришло?
 			}
 
 			YoungBrewer: {
-				// Content: I'm feeling good!
-				// NoHome: I don't like being outside for a long time. I need a room for myself.
-				// LoveSpace: Peace and quiet means I get to live it up!
-				// FarFromHome: I think my house was that way... unless you're taking me somewhere?
-				// DislikeCrowded: The more the merrier and all, but I'm starting to feel a lil' overcrowded.
-				// HateCrowded: I can't kick my legs out and relax without hitting someone...
-				// LikeBiome: I can live when it is some warm around, so I am ok with that.
-				// LoveBiome: I like forest! Fresh air and greens around. What else may the person need?
-				// DislikeBiome: I don't like this. I want a warmer place to live.
-				// HateBiome: I wanna live elsewhere! This is awful.
-				// LikeNPC: Dad is here too? He can be silly sometimes, but mom respects him for his teleporter potions. She wasn't able to recreate them no matter how she tried.
-				// LikeNPC_Princess: I gotta visit {NPCName}. She really likes to play with me. And so do I.
-				// LoveNPC: Mom is here? Great! I like my dad, yes, but mom... Her potions can do almost everything and are most useful!
-				// DislikeNPC: "{NPCName} is so grumpy. I asked him about making a toy a few times but he ALWAYS don't have any time for that."
-				// HateNPC: Just between us. Have you ever considered throwing {NPCName} back where you found him?
+				Content: Всё круто!
+				NoHome: Не люблю гулять так долго, мне нужна своя комната!
+				LoveSpace: Тишина — это здорово, мне нужно личное пространство.
+				FarFromHome: Куда мы идём? Скажи сразу, если там не будет весело, я лучше пойду домой!
+				DislikeCrowded: Ты гостей позвал? У нас вечеринка? Почему здесь так много людей? Скажи им, чтоб уходили!
+				HateCrowded: Как сказал бы папа, я не могу расправить свои ноги, не пнув при этом кого-нибудь.
+				LikeBiome: Мне нравится, когда на улице тепло и светит солнце. Клёвое место!
+				LoveBiome: Я люблю гулять по лесу. Свежий воздух и зелень — то что мне нужно!
+				DislikeBiome: Отстойное место, тут прохладно, а значит надо носить куртку. Не люблю куртки!
+				HateBiome: Худшее место во вселенной! Ты ведь переселишь меня, да?
+				LikeNPC: Папа здесь? Иногда он ведёт себя как полный дурак, но он изобрёл зелья телепортации! Даже мама не смогла их сварить, как бы она не старалась.
+				LikeNPC_Princess: Я хочу поиграть с {NPCName} ещё! Ну хотя бы десять минут!
+				LoveNPC: Мама здесь? Круто! Я люблю папу, но у мамы зелья в сто тысяч миллионов раз полезнее!
+				DislikeNPC: "{NPCName} ворчит как старый дед. Я пару раз просил его сделать мне игрушку, но у него НИКОГДА нет на это времени."
+				HateNPC: Скажи честно, не приходило ли тебе в голову вышвырнуть {NPCName} туда, откуда это чудовище и пришло?
 			}
 		}
 
 		Buffs: {
 			BattleComb: {
-				DisplayName: Боевая комбинация
-				Description: Сочетание баффов Выносливости, Жизненных Сил, Железной Кожи, Регенерации, Ярости и Гнева
+				DisplayName: Смесь воителя
+				Description: Сочетание эффектов зелий выносливости, жизненной силы, железной кожи, регенерации, ярости и гнева
 			}
 
 			Blurring: {
 				DisplayName: Размытие
-				Description: Враги едва могут видеть вас (Святое уклонение с 30-ти секундным откатом)
+				Description: Враги едва могут видеть вас; каждые 30 секунд, даёт эффект святой защиты на 10 секунд
 			}
 
 			BuilderComb: {
-				DisplayName: Комбинация Строителя
-				Description: Сочетание баффов Добычи, Строителя и Покоя
+				DisplayName: Смесь строителя
+				Description: Сочетание эффектов зелий добычи, строителя и спокойствия
 			}
 
 			CalamityComb: {
-				// DisplayName: Calamity Combination
-				// Description: Combination of Photosynthesis, Fabsol's Vodka, Soaring and Bounding's buffs
+				DisplayName: Смесь бедствия
+				Description: Сочетание эффектов водки Фабсола, и зелий фотосинтеза, парения и прыгучести
 			}
 
 			Corrosion: {
 				DisplayName: Коррозия
-				Description: Ваша плоть плавится!
+				Description: Вашу плоть разъедает!
 			}
 
 			DiscordBuff: {
 				DisplayName: Раздор
 				Description:
 					'''
-					Позволяет телепортироваться на курсор при нажатии горячей клавиши
-					Нарушает гравитацию игрока на 1 секунду после использования
-					Наносит значительные повреждения, если вы в Хаотическом состоянии
-					Длительность дебаффа увеличена до 10 секунд
+					Нажмите горячую клавишу, чтобы телепортироваться в место расположения курсора
+					Накладывает дебафф «Искажённый» на 1 секунду после использования
+					Накладывает на вас дебафф «Хаотичное состояние» на 10 секунд после телепортации
+					Телепортации будут наносить вам значительный урон, пока на вас наложен этот дебафф
 					'''
 			}
 
 			Excavation: {
 				DisplayName: Раскопка
-				Description: Способности к добыче блоков значительно усилены
+				Description: Значительно усиливает вашу способность копать блоки
 			}
 
 			ExplorerComb: {
-				DisplayName: Комбинация Исследователя
-				Description:
-					'''
-					Сочетания баффов Предчувствия, Охотника, Шахтёра, Ночного Зрения, Сияния и Добычи
-					Также даёт эффекты Подводного Дыхания, Ласт и Хождения по воде
-					'''
+				DisplayName: Смесь исследователя
+				Description: Сочетание эффектов зелий предчувствия, охотника, шахтёра, ночного зрения, сияния, добычи, жабр, пловца и хождения по воде
 			}
 
 			FishingComb: {
-				DisplayName: Комбинация Рыбака
-				Description: Сочетание баффов Ящиков, Сонара, Рыбалки, Регенерации, Шипов, Железной Кожи, Покоя и Инферно
+				DisplayName: Смесь рыбака
+				Description: Сочетание эффектов зелий ящиков, сонара, рыбалки, регенерации, шипов, железной кожи, спокойствия и инферно
 			}
 
 			Fortitude: {
 				DisplayName: Стойкость
-				Description: Вам нельзя отбросить при атаке
+				Description: Даёт неуязвимость к отбрасыванию
 			}
 
 			GreaterDangersense: {
-				DisplayName: Зелье Великого Чувства Опасности
-				Description: Подсвечивает снаряды противника
+				DisplayName: Высшее предчувствие
+				Description: Подсвечивает враждебные снаряды
 			}
 
 			LongInvincible: {
-				DisplayName: Продлённая неуязвимость
-				Description: Ваш период неуязвимости увеличен
+				DisplayName: Неуловимость
+				Description: Увеличивает количество кадров неуязвимости после получения урона
 			}
 
 			MageComb: {
-				DisplayName: Комбинация Мага
-				Description: Сочетание баффов Магической Силы, Регенерации Маны, Ясновидения, Гнева и Ярости
+				DisplayName: Смесь мага
+				Description: Сочетание эффектов хрустального шара, и зелий магической силы, регенерации маны, ярости и гнева
 			}
 
 			NinjaSkill: {
 				DisplayName: Ниндзя
-				Description: Вы - истинный ниндзя!
+				Description: Вы — настоящий ниндзя!
 			}
 
 			RangerComb: {
-				DisplayName: Комбинация Стрелка
-				Description: Сочетание баффов Лучника, Экономии Боеприпасов, Гнева и Ярости
+				DisplayName: Смесь стрелка
+				Description: Сочетание эффектов зелий лучника, экономии боеприпасов, ярости и гнева
 			}
 
 			StationUltimaBuff: {
-				DisplayName: Станция Ультима
-				Description: Даёт эффекты всех станций одновременно
+				DisplayName: Станция «Ультима»
+				Description: Сочетание эффектов всех бафф-станций
 			}
 
 			SummonerComb: {
-				DisplayName: Комбинация Призывателя
-				Description: Сочетание баффов Призыва, Колдовства и Гнева
+				DisplayName: Смесь призывателя
+				Description: Сочетание эффектов колдовского стола, и зелий призыва и гнева
 			}
 
 			Sunshine: {
-				DisplayName: Солнечное Сияние
-				Description: Вы сияете как миниатюрное Солнце
+				DisplayName: Солнечное сияние
+				Description: Вы излучаете невероятное количество света словно миниатюрное Солнце
 			}
 
 			TankComb: {
-				DisplayName: Комбинация Танка (с Модами)
-				Description: Сочетание баффов Быстроты, Выносливости, Жизненных Сил, Железной Кожи, Обсидиановой Кожи, Шипов, Регенерации, Кожи Титана и Неуязвимости
+				DisplayName: Смесь танка (с модовыми)
+				Description: Сочетание эффектов зелий скорости, выносливости, жизненной силы, железной кожи, обсидиановой кожи, шипов, регенерации, титановой кожи и неуязвимости
 			}
 
 			TitanSkin: {
-				DisplayName: Кожа Титана
-				Description: Вы имеете иммунитет к некоторым серьёзным дебаффам
+				DisplayName: Титановая кожа
+				Description: Даёт иммунитет к некоторым опасным дебаффам
 			}
 
 			TrapsBuff: {
-				DisplayName: Усилитель ловушек
-				Description: Ловушки значительно усилены
+				DisplayName: Усиленные ловушки
+				Description: Значительно усиливает урон ловушек по врагам
 			}
 
 			TrueDiscordBuff: {
-				DisplayName: Истинный Раздор
+				DisplayName: Истинный раздор
 				Description:
 					'''
-					Вы можете телепортироваться к курсору, используя горячую клавишу
-					При применении ведёт себя аналогично Жезлу Раздора
+					Нажмите горячую клавишу, чтобы телепортироваться в место расположения курсора
+					Накладывает на вас дебафф «Хаотичное состояние» на 5 секунд после телепортации
+					Телепортации будут наносить вам значительный урон, пока на вас наложен этот дебафф
 					'''
 			}
 
 			UniversalComb: {
-				DisplayName: Универсальная комбинация
-				Description: Идеальное сочетание Комбинаций Танка, Мага, Стрелка и Призывателя
+				DisplayName: Универсальная смесь
+				Description: Идеальное сочетание эффектов от смесей танка, мага, стрелка и призывателя
 			}
 
 			VanTankComb: {
-				DisplayName: Комбинация Танка (без Модовых)
-				Description: Сочетание баффов Быстроты, Выносливости, Жизненных Сил, Железной Кожи, Обсидиановой Кожи, Шипов и Регенерации
+				DisplayName: Смесь танка (ванилла)
+				Description: Сочетание эффектов зелий скорости, выносливости, жизненной силы, железной кожи, обсидиановой кожи, шипов и регенерации
 			}
 
 			ThoriumComb: {
-				// DisplayName: Thorium Comb
-				// Description: Combination of Assassin, Blood, Frenzy, Glowing, Holy, Creativity, Earworm, Inspiration Reach and Hydrataion potions
+				DisplayName: Смесь тория
+				Description: Сочетание эффектов зелий ассасина, крови, неистовства, креативности, заводного мотива, притяжения вдохновения, блистательной энергии, святой силы и свежести
 			}
 		}
 
 		Items: {
 			BattleCombination: {
-				DisplayName: Боевая Комбинация
-				Tooltip: Даёт баффы, важные для битв (Выносливость, Жизненные Силы, Железная Кожа, Регенерация, Ярость и Гнев)
+				DisplayName: Смесь воителя
+				Tooltip:
+					'''
+					Даёт эффекты от некоторых баффов, помогающих в бою 
+					(выносливости, жизненной силы, железной кожи, регенерации, ярости и гнева)
+					'''
 			}
 
 			BeachTeleporterPotion: {
-				DisplayName: Телепортёр к Пляжу
+				DisplayName: Зелье телепортации к пляжу
 				Tooltip:
 					'''
-					Телепортирует вас на пляж
-					Сторона зависит от нажатой кнопки мыши
+					Телепортирует вас к одному из пляжей
+					Нажмите ЛКМ, чтобы переместиться к левому пляжу, ПКМ — к правому
 					'''
 			}
 
 			BewitchingPotion: {
-				DisplayName: Зелье Колдовства
-				Tooltip: Даёт бафф Колдовства (увеличивает максимальное число прислужников)
+				DisplayName: Зелье колдовства
+				Tooltip: Даёт бафф от колдовского стола, увеличивает максимальное число призываемых миньонов
 			}
 
 			BlurringPotion: {
-				DisplayName: Зелье Размытия
-				Tooltip: Даёт бафф Размытие (включает Теневое Уклонение с 30-ти секундным откатом)
+				DisplayName: Зелье размытия
+				Tooltip: Каждые 30 секунд, даёт эффект святой защиты на 10 секунд
 			}
 
 			BuilderCombination: {
-				DisplayName: Комбинация Строителя
-				Tooltip: Даёт баффы, важные для строительства (Добыча, Строитель и Покой)
+				DisplayName: Смесь строителя
+				Tooltip: Даёт эффекты от некотрых баффов, помогающих в строительстве (добычи, строителя и покоя)
 			}
 
 			CalamityCombination: {
-				// DisplayName: Calamity Combination
-				// Tooltip: Grants some of the Calamity mod buffs (Photosynthesis, Fabsol's Vodka, Soaring and Bounding)
+				DisplayName: Смесь бедствия
+				Tooltip: Даёт эффекты от некоторых баффов из мода Calamity (фотосинтеза, парения, прыгучести и водки Фабсола)
 			}
 
 			DiscordPotion: {
-				DisplayName: Зелье Раздора
+				DisplayName: Зелье раздора
 				Tooltip:
 					'''
-					Позволяет телепортироваться на курсор при нажатии горячей клавиши
-					Нарушает гравитацию игрока на 1 секунду после использования
-					Наносит значительные повреждения, если вы в Хаотическом состоянии
+					Позволяет телепортироваться к курсору при нажатии горячей клавиши
+					Накладывает дебафф «Искажённый» на 1 секунду после использования
+					Телепортации будут наносить вам значительный урон, пока на вас наложен дебафф «Хаотичное состояние»
 					Длительность дебаффа увеличена до 10 секунд
-					Зелье не из Каламити мода
 					'''
 			}
 
 			Dopamine: {
-				DisplayName: Допамин
+				DisplayName: Дофамин
 				Tooltip: Делает вас счастливым
 			}
 
 			DungeonTeleportationPotion: {
-				DisplayName: Зелье телепортации в Данж
-				Tooltip: Телепортирует вас ко входу в Данж
+				DisplayName: Зелье телепортации к темнице
+				Tooltip: Телепортирует вас ко входу в темницу
 			}
 
 			ExcavationPotion: {
-				DisplayName: Зелье раскопки
+				DisplayName: Зелье копания
 				Tooltip:
 					'''
 					Расширяет зону добычи блоков до 3х3
-					Правый клик по баффу меняет зону блоков добычи между 1x1 и 3x3
-					Зелье не из Каламити мода
+					Нажмите ПКМ по баффу, чтобы изменить зону блоков добычи между 1x1 и 3x3
 					'''
 			}
 
 			ExplorerCombination: {
-				DisplayName: Комбинация Исследователя
+				DisplayName: Смесь исследователя
 				Tooltip:
 					'''
-					Даёт баффы, важные для Исследователя
-					Предчувствие, Охотник, Шахтёр, Ночное Зрение, Сияние, Добыча, Жабры, Ласты, Хождение по воде
+					Даёт эффекты от некоторых баффов, помогающих при исследовании мира
+					(предчувствия, охотника, шахтёра, ночного зрения, света, добычи, жабр, ласт и хождения по воде)
 					'''
 			}
 
 			FishingCombination: {
-				DisplayName: Комбинация Рыбака
-				Tooltip: Даёт баффы Ящиков, Сонара, Рыбалки, Регенерации, Шипов, Железной Кожи, Покоя и Инферно
+				DisplayName: Смесь рыбака
+				Tooltip: 
+					'''
+					Даёт эффекты от некоторых баффов, помогающих при рыбалке
+					(ящиков, сонара, рыбалки, регенерации, шипов, железной кожи, покоя и инферно)
+					'''
 			}
 
 			FortitudePotion: {
-				DisplayName: Зелье Стойкости
-				Tooltip: Даёт иммунитет к отбрасыванию
+				DisplayName: Зелье стойкости
+				Tooltip: Даёт невосприимчиваость к отбрасыванию
 			}
 
 			GreaterDangersensePotion: {
-				DisplayName: Зелье Великого Чувства Опасности
+				DisplayName: Зелье превосходного чувства опасности
 				Tooltip:
 					'''
-					Даёт бафф Великого Чувства Опасности (подсвечивает вражеские снаряды)
+					Даёт бафф «Превосходного чувства опасности»
+					В отличии от обычной версии, подсвечивает все враждебные снаряды
 					Эффект действует для всех игроков
 					'''
 			}
 
 			InvincibilityPotion: {
-				DisplayName: Зелье Неуязвимости
-				Tooltip: Увеличивает период неуязвимости после получения урона
+				DisplayName: Зелье неуязвимости
+				Tooltip: Увеличивает время неуязвимости после получения урона
 			}
 
 			JungleTeleporterPotion: {
-				DisplayName: Телепортёр к Джунглям
+				DisplayName: Зелье телепортации к джунглям
 				Tooltip:
 					'''
-					Телепортирует вас в джунгли
-					Левая кнопка телепортирует к джунглевому растению
-					Правая кнопка телепортирует к листьям живой махогани
+					Телепортирует вас к джунглям
+					Нажмите ЛКМ, чтобы переместиться к ближайшему большому растению джунглей
+					Нажмите ПКМ, чтобы переместиться к листьям гиганского красного дерева
 					'''
 			}
 
 			MageCombination: {
-				DisplayName: Комбинация Мага
-				Tooltip: Даёт баффы, важные для Магов (Магическая Сила, Регенерация Маны, Ясновидение, Гнев, Ярость)
+				DisplayName: Смесь мага
+				Tooltip:
+					'''
+					Даёт эффекты от некоторых бафов, усиливающих магические способности
+					(магической силы, регенерации маны, гнева, ярости и хрустального шара)
+					'''
 			}
 
 			AlchemistCharmTier1: {
-				DisplayName: Талисман Алхимика Первого Уровня
+				DisplayName: Амулет алхимика 1-го уровня
 				Tooltip:
 					'''
-					Если находится в инвентаре, вы имеет малый шанс не потратить зелье
-					Алхимик, Зельеварщица и Юный Зельевар предоставляют скидку в 10%
-					Длительность баффов увеличена на 10%
+					Когда находится в инвентаре, даёт низкий шанс не потратить зелье при использовании
+					Алхимик, варщица и юный химик будут предоставлять 10%-ю скидку
+					Увеличивает длительность всех баффов на 10%
 					'''
 			}
 
 			AlchemistCharmTier2: {
-				DisplayName: Талисман Алхимика Второго Уровня
+				DisplayName: Амулет алхимика 2-го уровня
 				Tooltip:
 					'''
-					Если находится в инвентаре, вы имеет средний шанс не потратить зелье
-					Позволяет использовать зелья из Свиньи-Копилки с помощью клавиши Быстрого Баффа
-					Алхимик, Зельеварщица и Юный Зельевар предоставляют скидку в 25%
-					Длительность баффов увеличена на 25%
+					Когда находится в инвентаре, даёт средний шанс не потратить зелье при использовании
+					Позволяет использовать зелья из свиньи-копилки при помощи кнопки быстрого использования
+					Алхимик, варщица и юный химик будут предоставлять 25%-ю скидку
+					Увеличивает длительность всех баффов на 25%
 					'''
 			}
 
 			AlchemistCharmTier3: {
-				DisplayName: Талисман Алхимика Третьего Уровня
+				DisplayName: Амулет алхимика 3-го уровня
 				Tooltip:
 					'''
-					Если находится в инвентаре, вы имеет большой шанс не потратить зелье
-					Позволяет использовать зелья из Свиньи-Копилки с помощью клавиши Быстрого Баффа
-					Алхимик, Зельеварщица и Юный Зельевар предоставляют скидку в 35%
-					Длительность баффов увеличена на 35%
+					Если находится в инвентаре, даёт высокий шанс не потратить зелье при использовании
+					Позволяет использовать зелья из свиньи-копилки при помощи кнопки быстрого использования
+					Алхимик, варщица и юный химик будут предоставлять 35%-ю скидку
+					Увеличивает длительность всех баффов на 35%
 					'''
 			}
 
 			AlchemistCharmTier4: {
-				DisplayName: Талисман Алхимика Четвертого Уровня
+				DisplayName: Амулет алхимика 4-го уровня
 				Tooltip:
 					'''
-					Если находится в инвентаре, вы имеет очень большой шанс не потратить зелье
-					Позволяет использовать зелья из Свиньи-Копилки с помощью клавиши Быстрого Баффа
-					Алхимик, Зельеварщица и Юный Зельевар предоставляют скидку в 50%
-					Зелья не будут тратиться, если побеждена Supreme Calamitas
-					Длительность баффов увеличена на 50%
+					Если находится в инвентаре, даёт высокий шанс не потратить зелье при использовании
+					Зелья не будут расходоваться после победы над Высшой ведьмой, Каламитас
+					Позволяет использовать зелья из свиньи-копилки при помощи кнопки быстрого использования
+					Алхимик, варщица и юный химик будут предоставлять 50%-ю скидку
+					Увеличивает длительность всех баффов на 50%
 					'''
 			}
 
 			GlobalTeleporter: {
-				DisplayName: Мировой Телепортер
+				DisplayName: Мировой телепортер
 				Tooltip:
 					'''
-					Телепортирует вас в любую точку мира
-					Нажмите правую кнопку мыши на полноэкранной карте для телепорта
-					Не сработает, если любой босс жив
+					Позволяет телепортироваться в любую точку на карте
+					Нажмите ПКМ по месту на карте для телепортации
+					Не работает, если какой-либо босс жив
 					Ломается после использования
-					"O, the azure justice, the crimson love,
-					In the name of the one buried in destiny,
-					I shall make an oath to the light,
-					that we will show those who
-					stand in front of us - the power of love!"
+					«О, лазурная справедливость, багряная любовь,
+					Во имя того, кто был погрубён в судьбе, я дам клявтву свету:
+					Мы покажем тем, кто предстоит перед нами
+					Нашу силу, силу любви!»
 					'''
 			}
 
@@ -487,271 +494,273 @@ Mods: {
 				DisplayName: Модифицированный мировой телепортер
 				Tooltip:
 					'''
-					Телепортирует вас в любую точку мира
-					Нажмите правую кнопку мыши на полноэкранной карте для телепорта
-					Не сработает, если любой босс жив
+					Позволяет телепортироваться в любую точку на карте
+					Нажмите ПКМ по месту на карте для телепортации
+					Не работает, если какой-либо босс жив
 					Не ломается после использования
-					"O, the azure justice, the crimson love,
-					In the name of the one buried in destiny,
-					I shall make an oath to the light,
-					that we will show those who
-					stand in front of us - the power of love!"
+					«О, лазурная справедливость, багряная любовь,
+					Во имя того, кто был погрубён в судьбе, я дам клявтву свету:
+					Мы покажем тем, кто предстоит перед нами
+					Нашу силу, силу любви!»
 					'''
 			}
 
 			WorldControlUnit: {
-				DisplayName: Simulation Control Unit
+				DisplayName: Блок управления симуляцией
 				Tooltip:
 					'''
-					Эксклюзивное творение Анджелы
-					Левый клик для смены времени суток
-					Правый клик для включения или выключения дождя (песчаной бури в пустыне)
+					Эксклюзивный продукт, разработанный Анжелой
+					Нажмите ЛКМ, чтобы переключить время суток
+					Нажмите ПКМ, чтобы включить или выключить дождь
+					(или песчаную бурю при нахождении в пустыне)
 					'''
 			}
 
 			LuckCharm: {
-				DisplayName: Талисман Удачи
+				DisplayName: Амулет удачи
 				Tooltip:
 					'''
-					Если находится в инвентаре, вы имеете более высокий шанс получить лучшую перековку
+					Если находится в инветаре, увеличивает шанс получить лучший модификатор при перековке
 					Не работает с аксессуарами
 					'''
 			}
 
 			LuckCharmT2: {
-				DisplayName: Талисман Абсолютной Удачи
+				DisplayName: Амулет абсолютной удачи
 				Tooltip:
 					'''
-					Если находится в инвентаре, вы имеете более высокий шанс получить лучшую перековку
-					Работает и с аксессуарами (Грозный->Удачливый->Оберегающий)
+					Если находится в инветаре, увеличивает шанс получить лучший модификатор при перековке
+					В случае с аксессуарами, имеет приоритет «Грозный» → «Счастливый» → «Оберегающий»
 					'''
 			}
 
 			MorePotionsCombination: {
-				DisplayName: Комбинация More Potioins
+				DisplayName: Смесь More Potions
 				Tooltip:
 					'''
-					Даёт большинство баффов от зелий мода More Potions
-					Droughts, Enchanced Regeneration, Courage, Soulbinding, Diamond Skin, Dusk, Dawn, Swift Hands, Speed
+					Даёт эффекты от большинства баффов из мода More Potions
+					(Droughts, Enchanced Regeneration, Courage, Soulbinding, Diamond Skin, Dusk, Dawn, Swift Hands, Speed)
 					'''
 			}
 
 			NatureBlessingPotion: {
-				DisplayName: Зелье Благословления Природы
-				Tooltip: Даёт бафф Благословления Дриады
+				DisplayName: Зелье благословления природы
+				Tooltip: Даёт бафф «Благославение дриады»
 			}
 
 			NinjaPotion: {
-				DisplayName: Зелье Ниндзя
+				DisplayName: Зелье ниндзя
 				Tooltip:
 					'''
-					Увеличивает урон и шанс критического удара любым типом на 5%
-					Даёт шанс увернуться от атаки и позволяет цепляться за стены
+					Увеличивает урон и шанс критического удара на 5%
+					Даёт шанс увернуться от атаки и позволяет карабкаться по стенам
 					'''
 			}
 
 			InformatingNote: {
-				DisplayName: Информирующая Записка
+				DisplayName: Информирующая записка
 				Tooltip:
 					'''
-					Нет доступных Сумок Боссов.
-					Победите Скелетрона, чтобы разблокировать первую волну.
+					Мешки с сокровищами пока недоступны
+					Победите Скелетрона, чтобы разблокировать первый набор
 					'''
 			}
 
 			OceanTeleporterPotion: {
-				DisplayName: Телепортёр в Океан
+				DisplayName: Зелье телепортации к океану
 				Tooltip:
 					'''
-					Телепортирует вас крайнему Кораллу
-					Сторона зависит от нажатой кнопки мыши
-					Не телепортирует никуда, если кораллов не существует в мире
+					Телепортирует к ближайшему кораллу
+					Нажмите ЛКМ, чтобы переместиться к кораллу в левой части мира, ПКМ — в правой
+					Никуда не телепортирует, если в мире нет кораллов
 					'''
 			}
 
 			PerfectDiscordPotion: {
-				DisplayName: Превосходное Зелье Раздора
+				DisplayName: Идеальное зелье раздора
 				Tooltip:
 					'''
-					[c/00FF00:Уникальное Зелье Исследовательницы]
-					Позволяет телепортироваться на курсор при нажатии горячей клавиши
-					При применении ведёт себя аналогично Жезлу Раздора
-					Зелье не из Каламити мода
+					[c/00FF00:Уникальное зелье исследователя]
+					Позволяет телепортироваться к курсору при нажатии горячей клавиши
+					Полностью индентично жезлу раздора в применении
 					'''
 			}
 
 			HMCraftPound: {
-				DisplayName: Сложный Крафтовый Фунт
+				DisplayName: Превосходный фунт создания
 				Tooltip:
 					'''
-					Вы можете делать крутые штуки
-					Может быть размещён как станция крафта
+					Позволяет создавать всё самое крутое
+					Можно поставить для использования в качестве станции для создания предметов
 					'''
 			}
 
 			MateriaTransmutator: {
-				DisplayName: Преобразователь Материи
+				DisplayName: Преобразователь материи
 				Tooltip:
 					'''
-					Выполняет функции большей части станций крафта в одной
-					Все станции крафта включены :)
-					Работает в качестве источника Воды/Мёда/Лавы
+					Совмещает функционал большинства станций для создания предметов
+					Также работает в качестве источника воды, мёда и лавы
 					'''
 			}
 
 			PreHMPenny: {
-				DisplayName: Простой Крафтовый Пенни
+				DisplayName: Простой пенни создания
 				Tooltip:
 					'''
-					Вы теперь мастер-слесарь
-					Может быть размещён как станция крафта
+					Теперь вы выглядите как мастер-слесарь
+					Можно поставить для использования в качестве станции для создания предметов
 					'''
 			}
 
 			SpecCraftPoint: {
-				DisplayName: СпецКрафтовый Поинт
+				DisplayName: Специальная точка создания
 				Tooltip:
 					'''
-					Вы доказали, что можете сделать что угодно с любым материалом
-					Может быть размещён как станция крафта
+					Вы доказали, что можете сделать что угодно из любого материала
+					Можно поставить для использования в качестве станции для создания предметов
 					'''
 			}
 
 			RangerCombination: {
-				DisplayName: Комбинация Стрелка
-				Tooltip: Даёт баффы, необходимые стрелку (Лучник, Экономия Боеприпасов, Гнев, Ярость)
+				DisplayName: Смесь стрелка
+				Tooltip: Даёт эффекты от некоторых баффов, усиливающих стрелковые способности (лучника, экономии боеприпасов, гнева и ярости)
 			}
 
 			SpiritCombination: {
-				DisplayName: Комбинация Spirit
-				Tooltip: Даёт большинство баффов от зелий мода Spirit (Runescribe, Soulguard, Spirit, Starburn, Steadfast and Toxin)
+				DisplayName: Смесь духа
+				Tooltip: Даёт эффекты от некоторых баффов из мода Spirit (Runescribe, Soulguard, Spirit, Starburn, Steadfast и Toxin)
 			}
 
 			SummonerCombination: {
-				DisplayName: Комбинация Призывателя
-				Tooltip: аёт баффы, необходимые для Призывателя(Призыв, Колдовство, Гнев)
+				DisplayName: Смесь призывателя
+				Tooltip: Даёт эффекты от некоторых баффов, усиливающих призывательские способности (призыва, гнева и колдовского стола)
 			}
 
 			AlchemistHorcrux: {
-				DisplayName: Крестраж Алхимика
-				Tooltip: Часть души Алхимика находится внутри
+				DisplayName: Крестраж алхимика
+				Tooltip: Содержит в себе часть души алхимика
 			}
 
 			APMC: {
-				DisplayName: Модуль данных ИИ
-				Tooltip: Это резервная копия Анджелы.
+				DisplayName: Исходный код ИИ и модуль памяти
+				Tooltip: Резервная копия оператора
 			}
 
 			ArchitectHorcrux: {
-				DisplayName: Крестраж Архитектора
-				Tooltip: Часть души Архитектора находится внутри
+				DisplayName: Крестраж архитектора
+				Tooltip: Содержит в себе часть души архитектора
 			}
 
 			BrewerHorcrux: {
-				DisplayName: Крестраж Варщицы Зелий
-				Tooltip: Часть души Варщицы Зелий находится внутри
+				DisplayName: Крестраж варщицы
+				Tooltip: Содержит в себе часть души варщицы
 			}
 
 			HorrifyingSkull: {
-				DisplayName: Пугающий Череп
+				DisplayName: Ужасающий череп
 				Tooltip:
 					'''
-					Призывает могущественного противника
-					Использовать с крайней осторожностью
+					Призывает самого могущественного противника
+					Используйте с особой осторожностью
 					'''
 			}
 
 			JewelerHorcrux: {
-				DisplayName: Крестраж Ювелира
-				Tooltip: Часть души Ювелира находится внутри
+				DisplayName: Крестраж ювелира
+				Tooltip: Содержит в себе часть души ювелира
 			}
 
 			MusicianHorcrux: {
-				DisplayName: Крестраж Музыканта
-				Tooltip: Часть души Музыканта находится внутри
+				DisplayName: Крестраж музыканта
+				Tooltip: Содержит в себе часть души музыканта
 			}
 
 			TinkererHorcrux: {
-				DisplayName: Крестраж Инженера
-				Tooltip: Часть души Инженера находится внутри
+				DisplayName: Крестраж изобретателя
+				Tooltip: Содержит в себе часть души изобретателя
 			}
 
 			SunshinePotion: {
-				DisplayName: Зелье Солнечного Сияния
-				Tooltip: Значительно увеличивает радиус освещения вокруг персонажа
+				DisplayName: Зелье солнечного сияния
+				Tooltip: Излучает яркую ауру света
 			}
 
 			TankCombination: {
-				DisplayName: Комбинация Танка (с модовыми)
+				DisplayName: Смесь танка (с модовыми)
 				Tooltip:
 					'''
-					Включает в себя следующие баффы: Выносливость, Жизненные Силы, Железную Кожу
-					Обсидиановую Кожу, Шипы, Регенерацию, Кожу Титана и Неуязвимость
+					Даёт эффекты от некоторых баффов, повышающих выживаемость
+					(выносливости, жизненной силы, железной, титановой и обсидианновой кожи, шипов, регенерации и неуязвимости
 					'''
 			}
 
 			TempleTeleportationPotion: {
-				DisplayName: Зелье телепортации в Храм Джунглей
-				Tooltip: Телепортирует вас в Храм Джунглей
+				DisplayName: Зелье телепортации в храм джунглей
+				Tooltip: Телепортирует вас главную комнату храма джунглей
 			}
 
 			ThoriumCombination: {
-				DisplayName: Комбинация Thorium
+				DisplayName: Смесь тория
 				Tooltip:
 					'''
-					Даёт большинство баффов от зелий мода Thorium
-					Assassin, Blood, Combat, Frenzy, Creativity, Earworm, Inspirational Reach, Glowing, Holy, Hydration
+					Даёт эффекты от большинства баффов из мода Thorium
+					(ассасина, крови, неистовства, креативности, заводного мотива, притяжения вдохновения, блистательной энергии, святой силы и свежести)
 					'''
 			}
 
 			TitanSkinPotion: {
-				DisplayName: Зелье Титановой Кожи
+				DisplayName: Зелье титановой кожи
 				Tooltip:
 					'''
-					Даёт иммунитет к некоторым серьёзным дебаффам (Горение, Морозный ожог, Проклятое Пламя, Замедление, Заморозка, Ихор)
-					Иммунитет к Проклятому Пламени или Ихору активируется только после победы над Близнецами
+					Даёт иммунитет к некоторым опасным дебаффам
+					(«В огне!», «Обжигающих холод», «Охлаждение» и «Замёрзший»)
+					Также даёт иммунитет к дебаффам «Проклятое пламя» и «Ихор» после победы над Близнецами
 					'''
 			}
 
 			TrapsPotion: {
 				DisplayName: Зелье мастера ловушек
-				Tooltip: Усиливает все ловушки
+				Tooltip: Увеличивает получаемый врагами урон от ловушек
 			}
 
 			UltimaCake: {
-				DisplayName: Кусок ультима торта
+				DisplayName: Кусок торта «Ультима»
 				Tooltip:
 					'''
-					Даёт эффекты практически всех станций одновременно
-					Это включает костры, различные лампы, статую Баст и различные используемые станции
-					Благодаря неведомой магии, он никогда не закончится
-					Бафф не из Каламити мода
+					Даёт эффекты от практически всех бафф-станций одновременно
+					Это включает костры, различные лампы, статую Бастет и различные активируемые станции
+					Некие магические силы делают эффекты неограниченными
 					'''
 			}
 
 			UnderworldTeleportationPotion: {
-				DisplayName: Телепортёр в Ад
+				DisplayName: Зелье телепортации в преисподнюю
 				Tooltip:
 					'''
-					Телепортирует вас в Ад к крайней Обсидиановой башне
-					Сторона зависит от нажатой клавиши мыши
-					Будет полезно выпить зелье Обсидиановой кожи до того, как пить это
+					Телепортирует вас к самому крайнему разрушенному дому преисподней
+					Нажмите ЛКМ, чтобы переместиться к левому дому, ПКМ — к правому
+					Возможно, стоит выпить зелье обсидиановой кожи перед использованием
 					'''
 			}
 
 			UniversalCombination: {
-				DisplayName: Комбинация Универсала
-				Tooltip: Идеальное сочетание Комбинаций Танка, Мага, Стрелка и Призывателя в одном баффе
+				DisplayName: Универсальная смесь
+				Tooltip: Даёт эффекты от смесей танка, мага, стрелка и призывателя в одном баффе
 			}
 
 			VanTankCombination: {
-				DisplayName: Комбинация Танка (без Модовых)
-				Tooltip: Сочетание баффов Выносливости, Жизненных Сил, Железной Кожи, Обсидиановой Кожи, Шипов и Регенерации
+				DisplayName: Смесь танка (ванилла)
+				Tooltip:
+					'''
+					Даёт эффекты от некоторых баффов, повышающих выживаемость
+					(скорости, выносливости, жизненной силы, железной кожи, обсидиановой кожи, шипов и регенерации)
+					'''
 			}
 
 			MateriaTransmutatorMK2: {
-				// DisplayName: Materia Transmutator MK 2
-				// Tooltip: Works like almost any crafting station. Now also includes Draedon's Forge
+				DisplayName: Преобразователь материи 2.0
+				Tooltip: Совмещает функционал большинства станций для создания предметов, в том числе кузни Дрэйдона
 			}
 		}
 
@@ -760,210 +769,210 @@ Mods: {
 				DisplayName: Алхимик
 
 				TownNPCMood: {
-					// Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.Content}"
-					// NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.NoHome}"
-					// FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.FarFromHome}"
-					// LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LoveSpace}"
-					// DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.DislikeCrowded}"
-					// HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.HateCrowded}"
-					// LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LoveBiome}"
-					// LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LikeBiome}"
-					// DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.DislikeBiome}"
-					// LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LoveNPC}"
-					// LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LikeNPC}"
-					// DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.DislikeNPC}"
-					// LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LikeNPC_Princess}"
-					// Princess_LovesNPC: I like {NPCName}.
+					Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.Content}"
+					NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.NoHome}"
+					FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.FarFromHome}"
+					LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LoveSpace}"
+					DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.DislikeCrowded}"
+					HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.HateCrowded}"
+					LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LoveBiome}"
+					LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LikeBiome}"
+					DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.DislikeBiome}"
+					LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LoveNPC}"
+					LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LikeNPC}"
+					DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.DislikeNPC}"
+					LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LikeNPC_Princess}"
+					Princess_LovesNPC: Мне очень нравится {NPCName}.
 				}
 
-				// Census.SpawnCondition: Defeat Eye of Cthulhu
+				Census.SpawnCondition: Необходимо победить Глаз Ктулху
 			}
 
 			Architect: {
-				// DisplayName: Architect
+				DisplayName: Архитектор
 
 				TownNPCMood: {
-					// Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.Content}"
-					// NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.NoHome}"
-					// FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.FarFromHome}"
-					// LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LoveSpace}"
-					// DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.DislikeCrowded}"
-					// HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.HateCrowded}"
-					// LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LoveBiome}"
-					// LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LikeBiome}"
-					// DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.DislikeBiome}"
-					// LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LoveNPC}"
-					// LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LikeNPC}"
-					// DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.DislikeNPC}"
-					// LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LikeNPC_Princess}"
-					// Princess_LovesNPC: I like {NPCName}.
+					Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.Content}"
+					NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.NoHome}"
+					FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.FarFromHome}"
+					LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LoveSpace}"
+					DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.DislikeCrowded}"
+					HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.HateCrowded}"
+					LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LoveBiome}"
+					LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LikeBiome}"
+					DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.DislikeBiome}"
+					LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LoveNPC}"
+					LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LikeNPC}"
+					DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.DislikeNPC}"
+					LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LikeNPC_Princess}"
+					Princess_LovesNPC: Мне очень нравится {NPCName}.
 				}
 
-				// Census.SpawnCondition: Have at least 3 NPCs
+				Census.SpawnCondition: Необходимо наличие минимум 3 заселившихся в мире НИПов
 			}
 
 			Brewer: {
-				DisplayName: Варщица Зелий
+				DisplayName: Варщица
 
 				TownNPCMood: {
-					// Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.Content}"
-					// NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.NoHome}"
-					// FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.FarFromHome}"
-					// LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LoveSpace}"
-					// DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.DislikeCrowded}"
-					// HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.HateCrowded}"
-					// LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LoveBiome}"
-					// LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LikeBiome}"
-					// DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.DislikeBiome}"
-					// LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LoveNPC}"
-					// LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LikeNPC}"
-					// DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.DislikeNPC}"
-					// LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LikeNPC_Princess}"
-					// Princess_LovesNPC: I like {NPCName}.
+					Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.Content}"
+					NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.NoHome}"
+					FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.FarFromHome}"
+					LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LoveSpace}"
+					DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.DislikeCrowded}"
+					HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.HateCrowded}"
+					LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LoveBiome}"
+					LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LikeBiome}"
+					DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.DislikeBiome}"
+					LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LoveNPC}"
+					LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LikeNPC}"
+					DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.DislikeNPC}"
+					LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LikeNPC_Princess}"
+					Princess_LovesNPC: Мне очень нравится {NPCName}.
 				}
 
-				// Census.SpawnCondition: Defeat Eye of Cthulhu
+				Census.SpawnCondition: Необходимо победить Глаз Ктулху
 			}
 
 			Jeweler: {
 				DisplayName: Ювелир
 
 				TownNPCMood: {
-					// Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.Content}"
-					// NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.NoHome}"
-					// FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.FarFromHome}"
-					// LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LoveSpace}"
-					// DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.DislikeCrowded}"
-					// HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.HateCrowded}"
-					// LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LoveBiome}"
-					// LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LikeBiome}"
-					// DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.DislikeBiome}"
-					// LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LoveNPC}"
-					// LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LikeNPC}"
-					// DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.DislikeNPC}"
-					// LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LikeNPC_Princess}"
-					// Princess_LovesNPC: I like {NPCName}.
+					Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.Content}"
+					NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.NoHome}"
+					FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.FarFromHome}"
+					LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LoveSpace}"
+					DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.DislikeCrowded}"
+					HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.HateCrowded}"
+					LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LoveBiome}"
+					LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LikeBiome}"
+					DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.DislikeBiome}"
+					LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LoveNPC}"
+					LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LikeNPC}"
+					DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.DislikeNPC}"
+					LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LikeNPC_Princess}"
+					Princess_LovesNPC: Мне очень нравится {NPCName}.
 				}
 
-				// Census.SpawnCondition: Defeat Eye of Cthulhu
+				Census.SpawnCondition: Необходимо победить Глаз Ктулху
 			}
 
 			Musician: {
 				DisplayName: Музыкант
 
 				TownNPCMood: {
-					// Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.Content}"
-					// NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.NoHome}"
-					// FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.FarFromHome}"
-					// LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LoveSpace}"
-					// DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.DislikeCrowded}"
-					// HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.HateCrowded}"
-					// LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LoveBiome}"
-					// LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LikeBiome}"
-					// DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.DislikeBiome}"
-					// LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LoveNPC}"
-					// LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LikeNPC}"
-					// DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.DislikeNPC}"
-					// LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LikeNPC_Princess}"
-					// Princess_LovesNPC: I like {NPCName}.
+					Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.Content}"
+					NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.NoHome}"
+					FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.FarFromHome}"
+					LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LoveSpace}"
+					DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.DislikeCrowded}"
+					HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.HateCrowded}"
+					LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LoveBiome}"
+					LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LikeBiome}"
+					DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.DislikeBiome}"
+					LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LoveNPC}"
+					LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LikeNPC}"
+					DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.DislikeNPC}"
+					LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LikeNPC_Princess}"
+					Princess_LovesNPC: Мне очень нравится {NPCName}.
 				}
 
-				// Census.SpawnCondition: Defeat Skeletron
+				Census.SpawnCondition: Необходимо победить Скелетрона
 			}
 
 			Operator: {
 				DisplayName: Оператор
 
 				TownNPCMood: {
-					// Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.Content}"
-					// NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.NoHome}"
-					// FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.FarFromHome}"
-					// LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LoveSpace}"
-					// DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.DislikeCrowded}"
-					// HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.HateCrowded}"
-					// LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LoveBiome}"
-					// LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LikeBiome}"
-					// DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.DislikeBiome}"
-					// LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LoveNPC}"
-					// LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LikeNPC}"
-					// DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.DislikeNPC}"
-					// LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LikeNPC_Princess}"
-					// Princess_LovesNPC: I like {NPCName}.
+					Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.Content}"
+					NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.NoHome}"
+					FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.FarFromHome}"
+					LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LoveSpace}"
+					DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.DislikeCrowded}"
+					HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.HateCrowded}"
+					LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LoveBiome}"
+					LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LikeBiome}"
+					DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.DislikeBiome}"
+					LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LoveNPC}"
+					LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LikeNPC}"
+					DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.DislikeNPC}"
+					LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LikeNPC_Princess}"
+					Princess_LovesNPC: Моё отношение {NPCName} строго положительное.
 				}
 
-				// Census.SpawnCondition: Defeat Eater of Worlds/Brain of Cthulhu
+				Census.SpawnCondition: Необходимо победить Пожирателя Миров или Мозга Ктулху
 			}
 
 			Tinkerer: {
-				DisplayName: Инженер
+				DisplayName: Изобретатель
 
 				TownNPCMood: {
-					// Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.Content}"
-					// NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.NoHome}"
-					// FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.FarFromHome}"
-					// LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LoveSpace}"
-					// DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.DislikeCrowded}"
-					// HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.HateCrowded}"
-					// LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LoveBiome}"
-					// LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LikeBiome}"
-					// DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.DislikeBiome}"
-					// LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LoveNPC}"
-					// LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LikeNPC}"
-					// DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.DislikeNPC}"
-					// LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LikeNPC_Princess}"
-					// Princess_LovesNPC: I like {NPCName}.
+					Content: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.Content}"
+					NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.NoHome}"
+					FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.FarFromHome}"
+					LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LoveSpace}"
+					DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.DislikeCrowded}"
+					HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.HateCrowded}"
+					LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LoveBiome}"
+					LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LikeBiome}"
+					DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.DislikeBiome}"
+					LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LoveNPC}"
+					LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LikeNPC}"
+					DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.DislikeNPC}"
+					LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LikeNPC_Princess}"
+					Princess_LovesNPC: Мне очень нравится {NPCName}.
 				}
 
-				// Census.SpawnCondition: Defeat Eye of Cthulhu
+				Census.SpawnCondition: Необходимо победить Глаз Ктулху
 			}
 
 			YoungBrewer: {
-				DisplayName: Юный зельевар
+				DisplayName: Юный химик
 
 				TownNPCMood: {
-					// Content: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.Content}"
-					// NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.NoHome}"
-					// FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.FarFromHome}"
-					// LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LoveSpace}"
-					// DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.DislikeCrowded}"
-					// HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.HateCrowded}"
-					// LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LoveBiome}"
-					// LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LikeBiome}"
-					// DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.DislikeBiome}"
-					// LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LoveNPC}"
-					// LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LikeNPC}"
-					// DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.DislikeNPC}"
-					// LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LikeNPC_Princess}"
-					// Princess_LovesNPC: I like {NPCName}.
+					Content: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.Content}"
+					NoHome: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.NoHome}"
+					FarFromHome: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.FarFromHome}"
+					LoveSpace: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LoveSpace}"
+					DislikeCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.DislikeCrowded}"
+					HateCrowded: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.HateCrowded}"
+					LoveBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LoveBiome}"
+					LikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LikeBiome}"
+					DislikeBiome: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.DislikeBiome}"
+					LoveNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LoveNPC}"
+					LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LikeNPC}"
+					DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.DislikeNPC}"
+					LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LikeNPC_Princess}"
+					Princess_LovesNPC: Мне очень нравится {NPCName}.
 				}
 
-				// Census.SpawnCondition: World is in hardmode state
+				Census.SpawnCondition: Необходимо победить Стену плоти
 			}
 		}
 
 		Projectiles: {
-			// CorrosiveFlask.DisplayName: Corrosive Flask
-			// CorrosiveFlaskCloud.DisplayName: Corrosive Flask Cloud
-			// Gemstone.DisplayName: Gemstone
-			// LocatorProjectile.DisplayName: Locator Projectile
+			CorrosiveFlask.DisplayName: Коррозийная колба
+			CorrosiveFlaskCloud.DisplayName: Облако коррозийной колбы
+			Gemstone.DisplayName: Драгоценный камень
+			LocatorProjectile.DisplayName: Стрелка-указатель
 		}
 
-		// DiscordBuffTeleportation: Discord Buff Teleportation
-		// evilBossMask: Corruption/Crimson boss mask
-		// cultist: Cultist mask/hood
-		// tier3HardmodeBar: tier 3 Hardmode Bar
-		// hardmodeComponent: Hardmode component
-		// evilBar: Crimson/Corruption bar
-		// evilMushroom: evil mushroom
-		// evilComponent: evil component
-		// evilDrop: evil drop
-		// tier2anvil: tier 2 anvil
-		// tier2forge: tier 2 forge
-		// tier1anvil: tier 1 anvil
-		// CelestialWings: Celestial Wings
-		// LunarHamaxe: Lunar Hamaxe
-		// tier3Watch: tier 3 Watch
-		// tier3PreHmOre: tier 3 Pre-hardmode ore
+		DiscordBuffTeleportation: Телепортация зелья раздора
+		evilBossMask: маска босса мирового зла
+		cultist: маска культиста
+		tier3HardmodeBar: адамантитовый слиток
+		hardmodeComponent: хармодный материал мирового зла
+		evilBar: слиток мирового зла
+		evilMushroom: гриб мирового зла
+		evilComponent: материал с босса мирового зла
+		evilDrop: материал мирового зла
+		tier2anvil: хардмодная наковальня
+		tier2forge: хардмодная кузня
+		tier1anvil: пре-хардмодная наковальня
+		CelestialWings: крылья из люминита
+		LunarHamaxe: молотопор из люминита
+		tier3Watch: золотые карманные часы
+		tier3PreHmOre: серебряная руда
 		// KingSlime: King Slime Treasure Bag
 		// EyeofCthulhu: Eye of Cthulhu Treasure Bag
 		// EaterOfWorlds: Eater Of Worlds Treasure Bag
@@ -991,7 +1000,7 @@ Mods: {
 		// BrimstoneElemental: Brimstone Elemental Treasure Bag
 		// AquaticScourge: Aquatic Scourge Treasure Bag
 		// Calamitas: Calamitas Doppelganger Treasure Bag
-		AstrageldonSlime: Сумка Звёздного Заразителя
+		// AstrageldonSlime: Astrum Aureus Treasure Bag
 		// AstrumDeus: Astrum Deus Treasure Bag
 		// Leviathan: The Leviathan Treasure Bag
 		// PlaguebringerGoliath: The Plaguebringer Goliath Treasure Bag
@@ -1001,7 +1010,7 @@ Mods: {
 		// CeaselessVoid: Ceaseless Void Treasure Bag
 		// Signus: Signus, Envoy of the Devourer Treasure Bag
 		// Polterghast: Polterghast Treasure Bag
-		OldDuke: Сумка Старого Герцога
+		// OldDuke: The Old Duke Treasure Bag
 		// DevourerofGods: The Devourer of Gods Treasure Bag
 		// Bumblebirb: The Dragonfolly Treasure Bag
 		// Yharon: Jungle Dragon, Yharon Treasure Bag
@@ -1046,17 +1055,17 @@ Mods: {
 		// VoidLevi: Void Leviathan Treasure Bag
 		// Azana: Azana Treasure Bag
 		// Ancients: The Ancients Treasure Bag
-		Decree: Сумка Декри
-		FlamingPumpkin: Сумка Горящей Тыквы
-		Jensen: Сумка Дженсен, Великой Гарпии
-		Araneas: Сумка Аранеи
-		Raynare: Сумка Рейнейр, Королевы Гарпий
-		Primordia: Сумка Примордии
-		Abaddon: Сумка Абаддона, Эмиссара Кошмаров
-		Araghur: Сумка Арагура, Огненного Змия
-		Lunarians: Сумка Лунарианов
-		Challenger: Сумка Ирэйзора
-		Spookboi: Сумка Нигилюса
+		// Decree: The Decree Treasure Bag
+		// FlamingPumpkin: The Flaming Pumpkin Treasure Bag
+		// Jensen: Jensen, the Grand Harpy Treasure Bag
+		// Araneas: Araneas Treasure Bag
+		// Raynare: Harpy Queen, Raynare Treasure Bag
+		// Primordia: Primordia Treasure Bag
+		// Abaddon: Abaddon, the Emissary of Nightmares Treasure Bag
+		// Araghur: Araghur, the Flare Serpent Treasure Bag
+		// Lunarians: The Lunarians Treasure Bag
+		// Challenger: Erazor Treasure Bag
+		// Spookboi: Nihilus Treasure Bag
 		// Scarabeus: Scarabeus Treasure Bag
 		// Bane: Vinewrath Bane Treasure Bag
 		// Flier: Ancient Flier Treasure Bag
@@ -1101,128 +1110,128 @@ Mods: {
 		Edward: Эдвард
 		Severus: Северус
 		Horace: Гораций
-		Tilyorn: Тильорн
+		Tilyorn: Тильёрн
 		Nicolas: Николас
 		Gregg: Грег
-		EntryA1: Мои лечебные зелья излечат твои глубочайшие раны.
-		EntryA2: Мои зелья маны восстановят твою магическую силу.
-		EntryA3: Зелья Восстановления... Не уверен, могу ли я доверять им...
-		EntryA4: Существует Легендарное Йо-йо, известное как Сасскад.
-		EntryA5: Странное Варево, что я купил у Скелета-торговца пахнет просто ужасно, но его эффект восстановления маны потрясает.
-		EntryA6: Привет, *кашель*... Это определённо было не зелье Телепортации.
-		EntryA7: Ты не видел Механических Черепов поблизости?
-		EntryA8: Ты слышал об Ультра Грибах? Если ты найдёшь такой, я уверен что я смогу помочь тебе его усилить.
+		EntryA1: Мои лечебные зелья излечат даже твои самые глубокие раны.
+		EntryA2: Мои зелья маны сполна восстановят твою магическую силу.
+		EntryA3: Зелья восстановления... Я бы на них не полагался...
+		EntryA4: Легенды гласят о неком йо-йо, имя которого — Сасскад. Что бы это могло значить?
+		EntryA5: Странное варево, что я приобрёл у скелета-торговца, пахнет просто ужасно, но на ноги ставит за пару секунд.
+		EntryA6: Привет, *кхе-кхе*... Похоже, я выпил не зелье телепортации...
+		EntryA7: Ты, случаем, не находил поблизости парочку механических черепов?
+		EntryA8: Ты слышал про ультрагрибы? Если найдёшь один такой — неси ко мне, я смогу помочь его усилить.
 		EntryA9: "Я попросил у "
-		EntryA10: " рецепт Кактусового Экстракта. Он ответил нет, поскольку, я процитирую ''Даже идиот догадается.''"
-		EntryA11: И только подумать... Она выбрала зелья, а не меня. Хотя тут и не поспоришь.
+		EntryA10: " рецепт экстракта из кактусов, а он нагрубил мне, сказав, цитирую, «Даже идиот догадается»."
+		EntryA11: И только подумать... Она выбрала зелья, а не меня. Хотя, я бы сделал тот же выбор.
 		EntryA12: "Как его зовут? "
-		EntryA13: ? Так... Учитель здесь? Лучше отойди с дороги!
-		EntryA14: Слава богу, что я добыл эти кусочки из Скелетрона? Не желаешь посмотреть?
+		EntryA13: ? Стой... учитель здесь? Ну наконец-то, пора научиться уму-разуму!
+		EntryA14: Слава богу я собрал останки Скелетрона. Хочешь их покажу?
 		EntryA15: "Можешь попросить "
-		EntryA16: " перестать дразнить меня? Я знаю, что мои зелья не сделают тебя сильнее, но их хотя бы не столь опасно пить."
-		EntryA17: Эти гоблины такие раздражающие... Хорошо, что они не останутся здесь надолго.
-		EntryA18: Постарайся справиться с Пиратами как можно быстрее. Не могу дождаться возвращения Капитана! Я не видел его уже много лет!
-		EntryA19: Я надеюсь, ты не пустишь их в мой дом, правда?
-		EntryA20: Может у тебя найдётся занятие получше, чем говорить со мной сейчас? Ну например... Охранять нас?!
-		EntryA21: ...Мой друг, лучшее, что ты можешь сделать - это не беспокоить меня сейчас.
-		EntryA22: У меня есть взрывная колба. Ты точно НЕ хочешь узнать, какова она на вкус.
+		EntryA16: " перестать меня дразнить? Да, знаю, мои зелья не делают никого сильнее, но у них хотя бы нет этих ужасных побочек!"
+		EntryA17: Эти гоблины меня так раздражают... Хорошо, что они здесь ненадолго.
+		EntryA18: Постарайся расправиться с пиратами как можно быстрее. Я столько лет не видел капитана, ты не представляешь, как я соскучился!
+		EntryA19: Я надеюсь, ты не дашь этим тварям вломиться в мой дом, правда ведь?
+		EntryA20: Может делом займешься, а не языком болтать будешь? Может, не знаю, защитишь нас всех?!
+		EntryA21: ...Дружище, лучшее, что ты можешь сейчас сделать — не беспокоить меня.
+		EntryA22: У меня есть взрывная колба. Ты точно НЕ хочешь знать, какова она на вкус, поверь мне.
 		EntryA23: "Как "
-		EntryA24: может оставаться спокойной в такое время? Я ХОЧУ это узнать.
-		EntryA25: "Не позволяй тёмному, пришедшему из Джунглей, одурачить тебя чарующей мудростью. Я и "
-		EntryA26: " однажды были его ассистентами. Я ушёл, когда его уроки стали слишком тёмными, но интерес "
-		EntryA27: " к оккультной алхимии только вырос."
+		EntryA24: умудряется оставаться такой спокойной в такое время? Мне НУЖНО узнать в чём её секрет.
+		EntryA25: "Не позволяй загадочному страннику из джунглей одурачить тебя своей оккультной мудростью. Я и "
+		EntryA26: " однажды были его учениками. Я ушёл, когда он начал нас учить совсем уж жутким вещам, хотя моё любопытство "
+		EntryA27: " в области алхимии с тех пор только и делало, что продолжало расти..."
 		Joe: Джо
 		Mark: Марк
-		Walter: Вальтер
+		Walter: Уолтер
 		Archer: Арчер
 		Frido: Фридо
 		Li: Ли
-		A1: "Если эта трусливая "
+		A1: "Если эта подлая скотина "
 		A2: " не замолчит, я позволю "
 		A3: " укусить её."
-		A4: УБИВАЙ ЗОМБИ! УБИВАЙ КРОЛИКОВ! ВО ИМЯ КРОВ-- Ой прости, я не заметил, что ты здесь.
-		A5: Привет. Я просто собираю несколько вёдер крови для озера. Пожалуйста, большеничегонеспрашивай.
-		A6: Я люблю, когда за нашими дверями огромная орда зомби. Но Я НЕНАВИЖУ КОГДА ОНИ ИХ ЛОМАЮТ!
-		A7: Ах, это чувство отсутствия безопасности, паранойя, которая подчёркивается моментом, когда кровавая луна восходит на небосводе.
-		A8: Ты заинтересован в моей религии? У нас есть жертвы Кровавой Луне.
-		A9: Знаешь, почему я ненавижу этих гоблинов? Они ужасно раздражающие.
-		A10: Ура пиратам! Они привозят мне золотую мебель!
-		A11: Ах! Наконец-то хорошое покрытие для моей крыши готово!
+		A4: УБИВАЙ ЗОМБИ! УБИВАЙ КРОЛИКОВ! ВО ИМЯ КРОВ- Ой, прости, не заметил, как ты вошёл.
+		A5: Привет. Я тут просто собираю несколько вёдер крови для озера. Не задавай лишних вопросов, прошу, забудь о том, что я сказал.
+		A6: Мне нравится, когда за нашими дверями верещит целая орда зомби. Но я НЕНАВИЖУ, КОГДА ОНИ ЭТИ ДВЕРИ ВДРУГ ЛОМАЮТ!
+		A7: Ах, это восхитительное чувство отсутствия какой-либо безопасности, прекрасное чувство паранои. Каждую кровавую луну со мной так, обожаю.
+		A8: Хочешь вступить в мою религию? Мы поклоняемся кровавой луне и приносим ей всякие жертвы, обещаю, будет весело.
+		A9: Знаешь, почему я ненавижу этих гоблинов? Я тоже не знаю, но раздражают они меня конкретно.
+		A10: Троекратное ура пиратам! Они ставят мне в дом золотую мебель!
+		A11: Ах! Наконец-то у меня есть нормальная крыша над головой!
 		A12: "Никакой взрывчатки, пожалуйста, "
-		A13: " и так достаточно раздражает меня."
-		A14: БЕСПЛАТНЫЕ ЗЕЛЬЯ СТРОИТЕЛЯ ДЛЯ ВСЕХ кроме тебя.
-		A15: Что? Где я получил диплом архитектора? Такие вообще существуют?
-		A16: Ты знаешь, что дерево каким-то образом не горит? Хотя при некоторых условиях оно может. Странно...
+		A13: " и без тебя мне уже столько всего подорвал."
+		A14: БЕСПЛАТНЫЕ ЗЕЛЬЯ СТРОИТЕЛЯ ДЛЯ ВСЕХ... кроме тебя.
+		A15: Что говоришь? Какой архитектурный вуз я закончил? А такие вообще существуют?
+		A16: Ты знал, что деревья не горят? Точнее, они горят, но только в определенных условиях. Странно это всё...
 		A17: Нет, я не парень. Я чувак.
-		A18: Ну, то, что ты недавно построил было почти впечатляющим. (на самом деле НЕТ)
-		A19: Так ты утверждаешь, что сундуки - это тоже мебель. Я тебе отвечу: Пошёл ты.
+		A18: Последнее, что ты строил, почти смогло меня впечатлить (нет).
+		A19: Сундуки это мебель, говоришь? Да пошёл ты, вот что я тебе отвечу.
 		A20: Я видел твои постройки, но я всё ещё не впечатлён.
-		A21: Ты слышал об этом FuryForged? Я научил его всему, что он знает!
-		A22: Как-то раз я был нанят одной компанией, чтобы построить огромный высокотехнологичный комплекс с высочайщей степенью безопасности. Это была моя самая лучшая работа в плане сдерживания и безопасности.
-		AS1: 1-ый магазин (Заполняющие Блоки)
-		AS2: 2-ой магазин (Строительные Блоки)
-		AS3: 3-ий магазин (Базовая мебель)
-		AS4: 4-ый магазин (Продвинутая мебель)
-		AS5: 5-ый магазин (Факелы)
-		AS6: 6-ый магазин (Свечи)
-		AS7: 7-ой магазин (Лампы)
-		AS8: 8-ой магазин (Фонари)
-		AS9: 9-ый магазин (Люстры)
-		AS10: 10-ый магазин (Канделябры)
-		ShopsChanger: Смена магазина
-		ShopB1: 1-ый магазин (без модовых)
-		ShopB2: 2-ой магазин (Mod/Calamity)
-		ShopB3: 3-ий магазин (Thorium/RG)
-		ShopB4: 4-ый магазин (MorePotions)
-		ShopB5: 5-ый магазин (UnuBattleRods/Tacklebox/Tremor)
-		ShopB6: 6-ой магазин (Wildlife/Sacred/Spirit/Cristilium/ExpSentr)
+		A21: Ты слышал о чуваке по имени FuryForged? Не многие знают, но именно я научил его всему, что он знает.
+		A22: Как-то раз, меня наняла одна строительная компания и заказала построить огроменный высокотехнологичный комплекс с самой оснащённой системой безопасности, что я когда-либо видел. Эту постройку в плане практичности до сих пор никому переплюнуть не удалось, горжусь собой.
+		AS1: Естественные блоки
+		AS2: Строительные блоки
+		AS3: Обычная мебель
+		AS4: Особая мебель
+		AS5: Факелы
+		AS6: Свечи
+		AS7: Лампы
+		AS8: Фонари
+		AS9: Люстры
+		AS10: Канделябры
+		ShopsChanger: Сменить
+		ShopB1: Ванильные зелья
+		ShopB2: Зелья из Calamity
+		ShopB3: Зелья из Thorium/RG
+		ShopB4: Зелья из More Potions
+		ShopB5: Зелья из UnuBattleRods/Tacklebox
+		ShopB6: Зелья из Spirit
 		Lillian: Лилиан
 		Lucy: Люси
 		Alice: Алиса
 		Rocksahn: Роксанна
 		Agness: Агнесс
 		Mary: Мария
-		EntryB1: Хочешь попробовать это зелье? Оно должно дать тебе крылья.
-		EntryB2: Не думаю, что это было зелье Шахтера...
-		EntryB3: Я получила своё образование в Университете Загадок.
-		EntryB4: Существует Легендарное Йо-йо, известное как Сасскад.
+		EntryB1: Хочешь попробовать моё новое зелье? Оно прямо таки окрыляет.
+		EntryB2: Не думаю, что это было зелье шахтера...
+		EntryB3: Своё образование я получила в университете на факультете чародейства и волшебства.
+		EntryB4: Легенды гласят о неком йо-йо, имя которого — Сасскад. Что бы это могло значить?
 		EntryB5: Ох, хлебные крошки и слюни бобра!
-		EntryB6: Привет, *кашель* это точно не было зельем Инферно!
-		EntryB7: Ты не видел пару Механических Глаз поблизости?
-		EntryB8: "Этот трусливый гусь "
-		EntryB9: " слишком сильно боится использовать оккультизм в алхимии. И поэтому его зелья лишь бесполезная водичка."
-		EntryB10: *чихает* Фуу... Я всегда чихаю, когда эти Гоблины поблизости!
-		EntryB11: Просто не пускай их в мой дом. Там очень много нужных материалов и инструментов.
-		EntryB12: Это вторжение Марсиан? Она пришли чтобы поработить нас всех? Или они хотят нас уничтожить? Никто не знает ответа...
-		EntryB13: Это Кровавая Луна в небесах? Восхитительно! Она так красива!
-		EntryB14: Я была рождена под светом Кровавой Луны. Я всегда так взволнована когда ОНА восходит на небе!
-		EntryB15: Да, я понимаю, почему другие девушки раздражены, но это меня не остановит!
-		EntryB16: Насколько бы счастлива я не была, я не даю скидок - я ведь не глупая.
-		EntryB17: Обычно я бываю озадачена тем, как.
-		EntryB18: " может быть так же спокойна, как я, но потом я вспоминаю "
-		EntryB19: Я однажды выбралась из мира Террарии чтобы узнать больше об Алхимии. В своих путешествиях я встретила ''учёного магии'' по имени Азанор. Он показал мне тайны чего-то, названного ''тауматургия''.
-		ArenaShop: Магазин Арены
+		EntryB6: Привет, *кхе-кхе*... Это явно было не зелье инферно!
+		EntryB7: Ты не находил парочку механических глаз поблизости?
+		EntryB8: "Этот дурашка "
+		EntryB9: " слишком сильно боится оккультизма в алхимии. Собственно поэтому его зелья — лишь сладкая водичка, не более."
+		EntryB10: *Апчхи*... Я всегда чихаю, когда рядом гоблины!
+		EntryB11: Просто не пускай их в мой дом. Я так долго обустраивала свою лабораторию, они же мне всё тут перевернут вверх дном!
+		EntryB12: Это вторжение марсиан? Они пришли чтобы поработить нас всех или всё же стереть с лица земли? Вот какими вопросами нужно задаваться, а не вот это вот всё...
+		EntryB13: Кровавая луна взошла? Восхитительно! Она прекрасна!
+		EntryB14: Я была рождена под светом кровавой луны. Я с ней словно связана с самого рождения!
+		EntryB15: Да, понимаю, другие девчонки на нервах, но на меня кровавая луна так не влияет, веришь или нет.
+		EntryB16: Как бы счастлива я не была, я скидок не даю, я ведь не тупая.
+		EntryB17: "Меня часто вводит в ступор то, как "
+		EntryB18: " остаётся такой же спокойной, как и я, но потом я вспоминаю про "
+		EntryB19: Однажды я решила отправиться в путешествие далеко за границы самой Террарии, чтобы разузнать побольше об алхимии. На своём пути я как-то повстречала «учёного мага» по имени Азанор. Он обучил меня чему-то, что он называл «тавматургией».
+		ArenaShop: Магазин для арены
 		Carl: Карл
 		John: Джон
 		JanMare: Жан-Маре
 		LuiFransua: Луи-Франсуа
 		Daniel: Дэниел
 		Charley: Чарли
-		EntryJ1: Я собрал немного драгоценных камней на продажу. Посмотришь?
-		EntryJ2: Волшебные кольца не так могущественны, как Легендарные Эмблемы, но всё ещё могут дать преимущество против могущественных созданий.
-		EntryJ3: Ай... Чего желаешь, мой друг?
-		EntryJ4: Я могу сделать для тебя Бриллиантовое Кольцо.
-		EntryJ5: Нет, я не думаю что хоть как-то связан со Скелетом-торговцем.
-		EntryJ6: Если ты каким-то образом соберёшь все Магические кольца, то ты сможешь сделать Единое Кольцо.
-		EntryJ7: Ты видел где-нибудь Механических Созданий?
-		EntryJ8: "Ты замечал, что "
-		EntryJ9: " и я очень похожи? Это потому что мы близнецы."
-		EntryJ10: Как только найдёшь достаточно изорванных записок, неси их мне и я расшифрую их для тебя. Не спрашивай зачем, просто знай, что они имеют значение для меня.
+		EntryJ1: Я тут принёс новую горсточку драгоценных камней. Посмотреть хочешь?
+		EntryJ2: Волшебные кольца, конечно, слабее легендарных эмблем, но какое-никакое преимущество в бою против монстров всё же дают.
+		EntryJ3: Ай... Чего желаешь, друг мой?
+		EntryJ4: Да, я с радостью сделаю для тебя бриллиантовое кольцо, только деньги вперёд.
+		EntryJ5: Нет, не думаю, что я хоть как-то связан со скелетом-торговцем.
+		EntryJ6: Если вдруг ты каким-то удивительным образом сможешь собрать всё драгоценные кольца, то сможешь соединить их всех воедино.
+		EntryJ7: Слышал про механических боссов? Жуть, правда?
+		EntryJ8: "Замечал когда-нибудь, что "
+		EntryJ9: " как две капли похожи? Всё не случайно, мы с ним — братья-близнецы."
+		EntryJ10: Как только найдёшь достаточно изорванных записок, неси их мне — я их расшифрую. Не спрашивай зачем, просто знай, эти записки мне очень дороги.
 		Shop2: 2-ой магазин
 		Shop3: 3-ий магазин
 		Shop4: 4-ый магазин
 		Shop5: 5-ый магазин
-		ShopChanger: Сменить магазин
+		ShopChanger: Сменить
 		Beethoven: Бетховен
 		Bach: Бах
 		Johan: Иоганн
@@ -1230,216 +1239,216 @@ Mods: {
 		Scott: Скотт
 		Lloyd: Ллойд
 		Gamma: Гамма
-		EntryM1: Я бы носил наушники, но я не уверен, что обитатели Террарии вообще имеют уши...
-		EntryM2: Интересно, почему Босс 1 и Босс 2 не имеют имён получше в саундтреке. Эти имена слишком обычные.
-		EntryM3: Хотя у Киборга может быть моё имя, но у меня здесь всё равно работа получше.
-		EntryM4: Шшш! Ты испортишь мою запись!
-		EntryM5: Не дай бог ещё кто-нибудь попросит меня продать ему музыкальную шкатулку с Мегалованией...
-		EntryM6: Послушай, твой энтузиазм просто потрясающий, но может ты запишешь мелодию следующего босса сам? Мне не очень хочется рисковать жизнью из-за некоторых мелодий.
-		EntryM7: Я вижу ты спас Исследовательницу! Отличная работа! Может быть моя следующая песня будет о твоём триумфе.
+		EntryM1: Я бы носил наушники, если бы у меня были уши. Серьёзно, ты видел хоть одного террарийца с ушами?
+		EntryM2: Я спать не могу по ночам, когда вспоминаю, как какой-то псих назвал свои шедевральные саундтреки «Босс 1» и «Босс 2».
+		EntryM3: Киборг не заслуживает носить моё имя, у меня здесь как ни крути работа поважнее.
+		EntryM4: Шшш! Я музыку записываю, не шуми!
+		EntryM5: Ей богу, если меня ещё хоть кто-нибудь попросит продать музыкальную шкатулку с Мегалованией, то я сорвусь...
+		EntryM6: Послушай, твой энтузиазм меня, конечно, поражает, но может ты сам тогда запишешь музыку следующего босса? Мне как-то совсем не хочется рисковать жизнью в очередной раз.
+		EntryM7: Как погляжу, ты спас исследовательницу. Герой! Быть может, моя следующая песня будет о твоём триумфе.
 		EntryM8: "Ты знаешь, "
-		EntryM9: " была очень полезна, когда я устанавливал здесь звуковую систему. Провода рулят!"
-		EntryM10: "Если как-нибудь зайдёшь к "
-		EntryM11: ", то передай ему, что он всё ещё должен мне за те музыкальные шкатулки, что я продал ему."
-		EntryM12: "Буду честен, я не уверен, что я доверяю "
-		EntryM13: . Он вроде бы больше не одержим, но все еще использует черепа для битвы... У меня смешанные чувства.
-		EntryM14: Чувак, мои записи значительно лучше всего этого, но я не могу продать их тебе из-за авторских прав.
-		EntryM15: Нет, я меня нет музыкальной шкатулки ''Со Всеми''. Закодируй её сам.
-		EntryM16: Погоди-ка, НИП? Я думал, что я протагонист!
-		EntryM17: Никогда не думал, что я буду продавать музыкальные шкатулки с песнями... DM DOKURO, ты безумец и мне это нравится!
-		EntryM18: Целый класс, основанный на музыке? Звучит потрясающе! Жаль, что у меня нет ничего подходящего для него...
-		EntryM19: Это твоя вина. УБИРАЙСЯ. ОТСЮДА.
-		EntryM20: Эх, ностальгия! Я помню, когда эта мелодия играла в Подземелье и в Преисподней... хорошие времена!
-		EntryM21: Если ли имя у страха того, что за тобой шпионят с помощью торта?
-		EntryM22: У меня уже болят уши! Сделай потише!
-		BossDropsShop: Магазин лута Боссов и материалов
-		BossDropsModsShop: Магазин модового лута Боссов и материалов
-		VanillaTreasureBagsShop: Магазин сумок стандарных Боссов
-		ModdedTreasureBagsShop: Магазин сумок модовых Боссов
-		ModdedTreasureBagsShop2: Магазин сумок модовых Боссов #2
-		ModdedTreasureBagsShop3: Магазин сумок модовых Боссов #3
+		EntryM9: " мне реально очень помогла с установкой звуковой системы. Провода рулят, так ей и передай!"
+		EntryM10: "Если как-нибудь будешь навещать "
+		EntryM11: ", то передай ему, что он всё ещё должен мне за те музыкальные шкатулки, что он «взял в аренду»."
+		EntryM12: "Откроюсь тебе, я, честно говоря, не могу доверять "
+		EntryM13: . С одной стороны, он больше не одержим, с другой же, он всё ещё использует жуткие заклинания с черепами, когда в опасности... У меня смешанные чувства.
+		EntryM14: Чувак, поверь мне, моя личная коллекция записей будет значительно лучше всего этого барахла в шкатулках, но я не могу продать её тебе из-за авторских прав.
+		EntryM15: Сколько раз повторять можно, у меня нет музыкальной шкатулки песни «All Star». Сделай мод на неё сам, если так хочешь, договорились?
+		EntryM16: Погоди-ка, как ты меня сейчас назвал? НИП? Я то думал, что я здесь главный герой!
+		EntryM17: Никогда не думал, что буду продавать песни с реальным вокалом... DM DOKURO, ты безумец, я тебя реально люблю!
+		EntryM18: Целый класс, посвящённый музыке, говоришь? Звучит потрясно! Уж извини, что у меня никакой экипировки для такого не найдётся...
+		EntryM19: Ты всё испортил. Это твоя вина. УБИРАЙСЯ!
+		EntryM20: Эх, ностальгия! Помню, как эта мелодия играла и в темнице, и в преисподней... хорошие времена были!
+		EntryM21: Как называется фобия, когда ты боишься того, что за тобой следит кусочек торта?
+		EntryM22: У меня уже кровь из ушей течёт! Сделай потише!
+		BossDropsShop: Материалы
+		BossDropsModsShop: Модовые материалы
+		VanillaTreasureBagsShop: Мешки ванильных боссов
+		ModdedTreasureBagsShop: Мешки модовых боссов
+		ModdedTreasureBagsShop2: Мешки модовых боссов 2
+		ModdedTreasureBagsShop3: Мешки модовых боссов 3
 		Angela: Анжела
 		Carmen: Кармен
-		EntryO1: Как ваш день, Управляющий? Могу ли я вам помочь?
-		EntryO2: Эта 'Великая Птица-Гром' не кажется такой уж опасной. Я только надеюсь, что она не является частью Птицы Апокалипсиса.
-		EntryO3: Приветствую, Управляющий! Тихий сегодня денёк, не правда ли?
+		EntryO1: Как проходит ваш день, Управляющий? Чем я могу вам помочь?
+		EntryO2: Согласно моим вычислениям, великая громовая птица не опаснее зелёного слизня. Однако стоит учесть вероятность того, что она может быть частью Птицы Апокалипсиса.
+		EntryO3: Приветствую, Управляющий. Тихий сегодня денёк, не правда ли?
 		EntryO4: Вам нужно что-нибудь особенное, Управляющий?
-		EntryO5: Пожиратель Миров - это аномалия с уровнем угрозы TETH. Теперь он захвачен. Нужно ли вам что-нибудь от него?
-		EntryO6: Если тебе удастся подавить Рагнарёк, то тогда ты способен на всё, что угодно.
-		EntryO7: Глаз Ктулху - довольно странное создание. Похоже, что он является малой частью чего-то по настоящему опасного. Будет лучше если он никогда не сможет сбежать.
-		EntryO8: Мозг Ктулху может выглядеть пугающе, но без своих прислужников он не способен ни на что.
-		EntryO9: Что-то изменилось в этом мире, Управляющий. Зло разрастается ещё шире, но в то же время мои сенсоры зафиксировали рождение нового биома, называющегося Святым.
-		EntryO10: Все эти Механические Боссы... Они определённо могут иметь происхождение от Траумы. Какие классификационные номера им дать? Я полагаю, они будут начинаться с T-05-...
-		EntryO11: Гоблины... Какие же жалкие создания. Единственные полезные вещи с них - это шипастые шары и Гарпуны.
-		EntryO12: Довольно странное событие... Они все выглядят как живые существа, но вот их 'Летучий Голландец' - определённо призрак класса опасности HE.
-		EntryO13: Марсиане прибыли вновь. Последний раз когда они прибыли, было разрушено несколько крупных городов. Но, в наше оправдание можно сказать, что мы не были так готовы, как сейчас.
-		EntryO14: Кровавая Луна? Разве она не должна случаться один раз в 666 лет?
-		EntryO15: Все эти странные существа продолжают прибывать и прибывать на этот 'Маяк'... Надеюсь, мы все доживём до рассвета.
-		EntryO16: Управляющий, не вешайте нос, все не так плохо! Кровавая Луна привлекает некоторых существ, которые обычно не появляются.
-		EntryO17: Я прочитала несколько манускриптов о существе, именуемом Бог Слизней. В них говорится, что он является одним из первых созданий этого мира
-		EntryO18: Ярим... Я уверена, что слышала это имя раньше. Но моя память повреждена. Попробуй узнать у Каламитас что-нибудь о нём...
-		EntryO19: Этот плотоядный цветок был действительно опасен... Рада видеть, что ты не пострадал.
-		EntryO20: Эта древняя машина хранила в себе Небесные Силы. Её смерть может изменить мир навсегда.
-		EntryO21: Размеры насекомого с Королеву Пчёл бросают вызов текущим методам класификации. Я предлагаю дать насекомому таких размеров новую классификацию MI-XX. Удивительно, что ещё никто не использовал их для себя.
-		EntryO22: Похоже, что я была неправа по поводу Королев Пчёл. Их память хранит бредовые мысли учёного, ослеплённого своими амбициями, того, кто жестоко заразил их чумой. Давайте классифицируем их как МР-0Х.
-		EntryO23: Согласно моим записям, этот Козникс, о котором ты говорил, является малым Созерцателем Пустоты, классифицированном как OB-V-01. Похоже, что существуют ещё большие опасности за Границей Реальности.
-		EntryO24: Эта летающая тарелка... интересно. Согласно носителям данных с места крушения, это корабль-разведчик Марсиан, целью которого является проверка того, насколько мир Террарии подходит для жизни. Боюсь, что последним, что успел сделать пилот этого корабля, была отправка сообщения в Главный Командный Центр Марсиан.
-		EntryO25: Обращение силы мага против него самого и заключение его же в ней непростая задача, но видя такую жестокость... Вечный Хлад, бывший властелин Ледяного Замка, может ты теперь обретёшь покой.
-		EntryO26: Звёздный Рейндер это Гениальная Сороконожка Звёздной Пыли или G-S-C3, известная среди Марсианской Элиты как долгоживущий компаньон и партнёр для рейдерских экспедиций. Похоже, она ушла очень далеко от дома, судя по блокам данных, что я смогла восстановить.
-		EntryO27: Я проанализировала останки этого невероятного существа. Каждый раз, когда оно атаковало, вся планета резонировала против его воли. Я не могу сделать ничего, кроме как волноваться о последствиях его смерти. Во всяком случае, ты спас Террарию от незавидной судьбы...... вновь.
-		EntryO28: Столь древняя сущность заслуживает документирования. Материалы её пластин могут выдержать температуру, равную ядру Солнца Террарии! Это революционизирует методы сдерживания для ARS-0N узников если мы сможем создать материалы, которые будут иметь хотя бы половину подобной стойкости.
-		EntryO29: Тот, кто создал Опустошителя, заслуживает быть заключённым в Камере Максимального Содержания. Все эти измученные души.... Ну, по крайней мере ты освободил их от бренного существования.
-		EntryO30: Интересно... Эти Птицешмели должны были быть клонами Ярона. Как я рада, что этот эксперимент провалился.
-		EntryO31: Какое счастье, что ты не открыл портал на Солнце над нашими головами. Эта абсолютная сила и интеллект, что он продемонстрировал, означают, что мне потребуется создать совершенно новую категорию для классификации Червей.
-		EntryO32: У меня есть теории о происхождении этого существа, которые пугают меня даже больше, чем его душа (если она у него вообще есть)... Излучает негативную энергию, поглощает свет и создаёт тени. Не знаю, откуда он пришёл, но знаю, что кто бы он ни был, его нужно сдержать любой ценой!
-		EntryO33: Совершенная Каламитас была побеждена, но она говорила о существе, ещё более сильном, чем она сама. Мы можем лишь надеяться, что он ещё не обратил на нас внимания.
-		EntryO34: Я на самом деле не уверена, почему гигантские вращающиеся черепа - ключ ко всему, но каким-то образом они хранят в себе мощь божественных созданий...
-		EntryO35: Да, я знаю, что мы те, кто захватывает и добывает материалы из сверхъестественных существ. Но кто чёрт возьми подумал, что будет хорошей идеей поместить сумку с ценностями внутрь гигантского чудовища?!?!
-		EntryO36: Помни, Управляющий, хотя Сумки с Сокровищами ценны, но не всё может найтись внутри. Мутант может помочь тебе добыть редчайший лут с боссов.
+		EntryO5: Пожиратель миров — аномалия уровня угрозы TETH. Теперь же он пойман. Вам что-нибудь нужно от него?
+		EntryO6: Если вы способны пережить Рагнарёк, вы способны на всё, что угодно.
+		EntryO7: Глаз Ктулху — неортодоксальное создание. Предположительно, он является малой частью чего-то большого и опасного. Настоятельно рекомендуется ужесточить меры безопасности, чтобы он не избежал своего заточения.
+		EntryO8: Хоть Мозг Ктулху и внушает ужас простым смертным, без своих прислужников он лишается почти всей своей разрушительной силы.
+		EntryO9: Что-то только что изменилось в этом мире, Управляющий. Мировое зло всё разрастается и разрастаётся. К тому же, мои сенсоры зафиксировали зарождение нового биома. 
+		EntryO10: Механические боссы... Вероятнее всего, они произошли на свет благодаря Трауме. Какие классификационные номера им дать? Полагаю, они будут начинаться с «T-05-»...
+		EntryO11: Гоблины... До чего же жалкие создания. Единственные польза от них — гарпуны и колючие шары.
+		EntryO12: Удивительное событие... Люди — определённо живые существа, но вот их «Летучий Голландец» — определённо призрак класса HE.
+		EntryO13: Марсиане прибыли вновь. Напоминаю, что в прошлый раз им удалось разрушить несколько крупных городов. На текущий момент же, мы готовы дать им достойный отпор.
+		EntryO14: Кровавая луна? Невозможно, разве она не случается лишь раз в 666 лет?
+		EntryO15: Все эти монстры нескончаемыми ордами идут к «Маяку»... Надеюсь, мы все доживём «до рассвета»...
+		EntryO16: Управляющий, не стоит унывать, будьте более оптимистичны! Кровавая луна — уникальная возможность лицезреть особых существ, которые выходят в свет лишь в это время.
+		EntryO17: Я проанализировала несколько манускриптов о существе, именуемом Богом слизней. Самое примечательное в них то, что он — первородная форма жизни, если вообще не самое первое существо на этой планете.
+		EntryO18: Ярим... Мои карты памяти повреждены, но, кажется, я слышала это имя ранее. Попробуйте расспросить Каламитас что-нибудь о нём.
+		EntryO19: Этот плотоядный цветок был поистине опасен... Рада видеть вас в целости и сохранности.
+		EntryO20: Эта древнее устройство запечатывало в себе силы неба. Его смерть, предположительно, может изменить мир необратимым образом.
+		EntryO21: Нашу классификацию трудно применить к такому огромному насекомому, как Королева пчёл. Я предлагаю ввести новое обозначение «MI-XX».
+		EntryO22: Я ошиблась в своих утверждениях по поводу Королевы пчёл. В памяти этих созданий хранятся мысли некого учёного в состоянии бреда, ослеплённого своими амбициями, того, кто антиморальным образом заразил их чумой. Давайте классифицируем таких насикомых как «МР-0Х».
+		EntryO23: Согласно моим записям, этот Козникс, о котором вы говорили, является малым Созерцателем пустоты, классифицированном как «OB-V-01». Похоже, что за границей самой реальности существуют существа в геометрической прогрессии опаснее тех, что мы встречали до этого.
+		EntryO24: Эта летающая тарелка... любопытный экземпляр. Согласно анализам места крушения, это разведовательный корабль марсиан, целью которого является эмпирическое изучение пригодности Террарии для жизни. Боюсь, перед своей смертью, пилот корабля успел отправить сообщение в главный командный центр марсиан.
+		EntryO25: Заключение Пермафроста в укрытии из его же магии — задача не из простых. Учитывая крайний дефицит магов в округе, уж тем более тех, что контактировали с Пермафростом, можно смело предположить, что заточила его никто иная как сама Каламитас.
+		EntryO26: Звёздный Рейдер — Гениальная Сороконожка Звёздной Пыли или G-S-C3, известная в узком кругу лиц Марсианской элиты как долгоживущий компаньон для рейдерских экспедиций. Похоже, она ушла очень далеко от дома, судя по банку данных, что мне удалось восстановить.
+		EntryO27: Я проанализировала останки этого сверхъестественного существа. Каждый раз, когда оно атаковало, вся планета словно противлась его воле и резонировала с особой силой. Я опасаюсь о том, какие последствия его смерть может навлечь на мир. В любом случае, вы спасли Террарию от незавидной судьбы... в очередной раз.
+		EntryO28: Столь древнее существо определённо следует задокументировать. Материалы её пластин способны выдерживать температуру ядра Солнца Террарии! Если бы только мы смогли создать материалы, которые были хотя бы на половину так же эффективны, мы бы совершили невероятный прорыв в методах сдерживания заключённых в ARS-0N.
+		EntryO29: Тот, кто создал Разрушителя, заслуживает заключения в камере строжайшего содержания. Вы можете вообразить себе все пытки, что прошли эти души? Ну, по крайней мере теперь вы освободили их от бренного существования.
+		EntryO30: Интересно... Согласно моим ДНК тестам, Псевдодраконы в самом деле являются дальними родственниками Ауритовых драконов, хоть и общего в их крови мало, не говоря уж про наличие Ауритовой души.
+		EntryO31: К счастью, эта тварь не открыла случайно портал на Солнце прямо над нашими головами. Абсолютная сила и интеллект, что он продемонстрировал, означают, что мне потребуется внести внеочередные правки в категории для классификации червей.
+		EntryO32: Я ещё в процессе выработки теории о происхождении этого существа, которая пугают меня саму даже больше, чем его душа (если она у него вообще есть)... Излучает негативную энергию, поглощает свет и создаёт тени... Неизвестно, откуда он пришёл, но его определённо нужно сдержать любой ценой, если он появится ещё раз!
+		EntryO33: Сама Каламитас зарекалась о ком-то ещё более могущественном, чем она сама. Кто бы он ни был, нет сомнения, что за нашими приключениями он следит уже давно.
+		EntryO34: На самом деле, я не уверена, почему гигантские вращающиеся черепа — ключ ко всему в этом мире и каким образом они хранят в себе мощь божественных созданий...
+		EntryO35: Действительно, если посмотреть со стороны, то мы — те, кто захватывает и добывает материалы из сверхъестественных первозданных существ, на что не способен почти никто другой кроме вас. Однако мы же не виноваты, что внутри таких существ находятся такие ценные мешки с сокровищами.
+		EntryO36: Помните, Управляющий, мешки с сокровищами ценны, но абсолютно всё с них получить не удастся. На помощь в таком случае придёт Мутант, добывать редкую добычу с боссов он более чем умеет.
 		Alexander: Александр
 		Peter: Пётр
-		// TinkererButton1: Movement/Misc
-		// TinkererButton2: Combat
-		EntryT1: Нужно что-то особенное? Если так, то только скажи...
-		EntryT2: Ты ещё не встречал мою старшую сестру? Она больше Паромеханик чем Инженер...
-		EntryT3: Если найдёшь где-нибудь тубус, неси его мне и я вскрою его для тебя.
-		EntryT4: По мере твоего продвижения по миру, ты можешь найти всё более ценные вещи. В том числе и чертежи для создания более редких аксессуаров.
-		EntryT5: Никогда не знаешь, где ты можешь заполучить что-то действительно редкое или ценное. Поэтому исследуй каждый доступный угол со всем возможным терпением.
+		TinkererButton1: Для мобильности и пр.
+		TinkererButton2: Для боя
+		EntryT1: Нужно что-то особенное? Если так, то ты только намекни, я мигом...
+		EntryT2: Ты ещё не встречал мою старшую сестру? Она скорее паромеханик, чем инженер...
+		EntryT3: Если найдёшь где-нибудь тубус — неси его мне и я раскрою его для тебя.
+		EntryT4: Чем дальше зайдёшь в своих исследованиях, тем ценнее добычу найдёшь. В том числе и чертежи для создания более редких аксессуаров.
+		EntryT5: Никогда не знаешь, где в очередной раз неожиданно для себя найдёшь всякие ценности. Будешь тщательно и терпеливо обыскивать каждый уголок этого мира — будет тебе счастье, усёк?
 		Harold: Гарольд
 		Charles: Чарльз
 		Monty: Монти
 		Lucas: Лукас
 		Porky: Порки
-		Leeland: Леланд
+		Leeland: Лиланд
 		Atreus: Атреус
-		Entry1: Я продаю зелья, сделанные моими родителями.
-		Entry2: У есть несколько зелий, которые я могу продать тебе.
-		Entry3: Так или иначе, это я придумал Боевую Комбинацию.
-		Entry4: Существует Легендарное Йо-йо, известное как Сасскад.
-		Entry5: Странное варево от Торговца-Скелета пахнет просто ужасно, но оно потрясающе восстанавливает ману.
-		Entry6: Привет, *кашель*.. Это определённо был не лимонад.
-		Entry7: Ты не видел Механического Червя поблизости?
-		Entry8: "Разве моя мама, "
-		Entry9: ", не самая лучшая Зельеварщица на свете? Она может сварить любые сложнейшие зелья с лёгкостью!"
-		Entry10: Некоторые комбинации могут быть изготовлены только если в мире присутсвуют особенные виды магии.
+		Entry1: Я продаю зелья, которые сварили мои папа и мама.
+		Entry2: У есть несколько зелий, которые я бы тебе мог продать.
+		Entry3: Хочешь верь, хочешь нет, но смесь воителя придумал я, это правда.
+		Entry4: Легенды гласят о неком йо-йо, имя которого — Сасскад. Что бы это могло значить?
+		Entry5: Люди говорят, что у меня талант, но я даже не знаю из чего скелет-торговец делает своё странное варево!
+		Entry6: Привет, *кхм-кхм*... Кажется, лимонад у меня не получился...
+		Entry7: Слушай, у тебя случайно нет механических червей? Мне интересно, какие у них алхимические свойства.
+		Entry8: "Ну разве моя мама, "
+		Entry9: ", не самая лучшая зельеварщица на свете? Она в своей лаборатории без устали варит такую вкуснотищу!"
+		Entry10: Для некоторых смесей может понадобиться особая магия, которой у тебя может и не быть. Так, предупреждаю.
 
 		Tiles: {
-			HMCraftPound.MapEntry: Сложный Крафтовый Фунт
-			MateriaTransmutator.MapEntry: Преобразователь Материи
-			MateriaTransmutatorMK2.MapEntry: Преобразователь Материи MK2
-			PreHMPenny.MapEntry: Простой Крафтовый Пенни
-			SpecCraftPoint.MapEntry: СпецКрафтовый Поинт
+			HMCraftPound.MapEntry: Превосходный фунт создания
+			MateriaTransmutator.MapEntry: Преобразователь материи
+			MateriaTransmutatorMK2.MapEntry: Преобразователь матери 2.0
+			PreHMPenny.MapEntry: Простой пенни создания
+			SpecCraftPoint.MapEntry: Специальная точка создания
 		}
 
-		// "Keybinds.Discord Buff Teleportation.DisplayName": Discord  Buff  Teleportation
+		"Keybinds.Discord Buff Teleportation.DisplayName": Телепортация зелья раздора
 
 		Configs: {
 			ModConfiguration: {
 				ShopChangeDelay: {
-					// Tooltip: Delay before shop can be changed after opening interface. 10 frames by default
-					// Label: Shop Change Delay
+					Tooltip: Количество кадров, которое должно пройти после открытия диалогового окна, перед тем как игрок сможет сменить ассортимент магазина
+					Label: Задержка перед сменой магазина
 				}
 
 				DesertFossilPrice: {
-					// Tooltip: 1000 is 10 silver price by default
-					// Label: Desert Fossil Price
+					Tooltip: Цена указана в медных монетах. Значение по умолчанию — 1000 (10 серебряных монет).
+					Label: Цена пустынных окаменелостей
 				}
 
 				SiltSlushPrice: {
-					// Tooltip: 700 is 7 silver price by default
-					// Label: Silt/Slush blocks Price
+					Tooltip: Цена указана в медных монетах. Значение по умолчанию — 700 (7 серебряных монет).
+					Label: Цена ила и слякоти
 				}
 
 				WormholePrice: {
-					// Tooltip: 1000 is 10 silver price by default
-					// Label: Wormhole Potion Price
+					Tooltip: Цена указана в медных монетах. Значение по умолчанию — 1000 (10 серебряных монет).
+					Label: Цена зелий червоточины
 				}
 
 				RecallPrice: {
-					// Tooltip: 1000 is 10 silver price by default
-					// Label: Recall Potion Price
+					Tooltip:Цена указана в медных монетах. Значение по умолчанию — 1000 (10 серебряных монет).
+					Label: Цена зелий возврата
 				}
 
 				StarPrice: {
-					// Tooltip: 1000 is 10 silver price by default
-					// Label: Fallen Stars Price
+					Tooltip: Цена указана в медных монетах. Значение по умолчанию — 1000 (10 серебряных монет).
+					Label: Цена упавших звёзд
 				}
 
 				PotsPriceMulti: {
-					// Tooltip: Multiplies potions price by X. 1 by default
-					// Label: Potions price multiplier
+					Tooltip: Цены всех зелий будут умножаться на это значение
+					Label: Множитель цен на зелья
 				}
 
 				CatchNPC: {
-					// Tooltip: True to make mod's town NPCs catcheable. True by default
-					// Label: Catcheable mod's NPCs toggle
+					Tooltip: Включите эту настройку, чтобы НИПов из этого мода можно было поймать при помощи сачка
+					Label: Возможность ловить НИПов сачком
 				}
 
 				RevPrices: {
-					// Tooltip: True to make potions prices bigger. True by default
-					// Label: Revengeance mode prices scaling
+					Tooltip: Увеличивает цены на зелья
+					Label: Увеличение цен на зелья в режиме Месть
 				}
 
 				DisabledLocatorNpcs: {
-					// Tooltip: Arrows won't point to these NPCs
-					// Label: Disabled NPCs for Lifeform Analyzer Locator
+					Tooltip: Стрелка от анализатора форм жизни не будет указывать на существ из этого списка
+					Label: Чёрный список анализатора форм жизни
 				}
 
 				LocatorRange: {
-					// Tooltip: Max distance the pointer will track. 4000 by default
-					// Label: Lifeform Analyzer Pointing Range
+					Tooltip: Максимальная дистанция до существа, на которой стрелка от анализатора форм жизни всё ещё будет на него указывать
+					Label: Дальность действия анализатора форм жизни
 				}
 
 				LifeformAnalyzer: {
-					// Tooltip: Enable or disable laser pointing of Lifeform Analyzer (ticks each second). True by default
-					// Label: Lifeform Analyzer laser pointing
+					Tooltip: Если у игрока в инвентаре есть анализатор форм жизни, рядом с ним появится стрелка, указывающая, в каком направлении находится обнаруженное редкое существ
+					Label: Функция стрелки-указателя для анализатора форм жизни
 				}
 
 				TinkererSpawn: {
-					// Tooltip: True to enable Tinkerer NPC spawn, false to disable. True by default
-					// Label: Tinkerer Spawn toggle
+					Tooltip: Включает появление изобретателя, продающего различные аксессуары
+					Label: Изобретатель
 				}
 
 				MusicianSpawn: {
-					// Tooltip: True to enable Musician NPC spawn, false to disable. True by default
-					// Label: Musician Spawn toggle
+					Tooltip: Включает появление музыканта, продающего музыкальные шкатулки
+					Label: Музыкант
 				}
 
 				OperatorSpawn: {
-					// Tooltip: True to enable Operator NPC spawn, false to disable. True by default
-					// Label: Operator Spawn toggle
+					Tooltip: Включает появление оператора, продающей мешки с сокровищами боссов и различные материалы
+					Label: Оператор
 				}
 
 				ArchitectSpawn: {
-					// Tooltip: True to enable Architect NPC spawn, false to disable. True by default
-					// Label: Architect Spawn toggle
+					Tooltip: Включает появление архитектора, продающего различные блоки и мебель
+					Label: Архитектор
 				}
 
 				YoungBrewerSpawn: {
-					// Tooltip: True to enable Young Brewer NPC spawn, false to disable. True by default
-					// Label: Young Brewer Spawn toggle
+					Tooltip: Включает появление юного химика, продающего смеси зелий
+					Label: Юный химик
 				}
 
 				JewelerSpawn: {
-					// Tooltip: True to enable Jeweler NPC spawn, false to disable. True by default
-					// Label: Jeweler Spawn toggle
+					Tooltip: Включает появление ювелира, продающего драгоценные камни и полезные предметы для постройки арен
+					Label: Ювелир
 				}
 
 				BrewerSpawn: {
-					// Tooltip: True to enable Brewer NPC spawn, false to disable. True by default
-					// Label: Brewer Spawn toggle
+					Tooltip: Включает появление варщицы, продающей зелья баффов
+					Label: Варщица
 				}
 
 				AlchemistSpawn: {
-					// Tooltip: True to enable Alchemist NPC spawn, false to disable. True by default
-					// Label: Alchemist Spawn toggle
+					Tooltip: Включает появление алхимика, продающего различные небоевые зелья и материалы для создания зелий
+					Label: Алхимик
 				}
 
-				// DisplayName: Mod Configuration
+				DisplayName: Конфигурация
 
 				LifeformAnalyzerAlt: {
-					// Label: Lifeform Analyzer locator alt texture
-					// Tooltip: Use alternative texture for Lifeform Analyzer locator. False by default
+					Label: Старый спрайт стрелки от анализатора форм жизни
+					Tooltip: Стрелка-указатель от анализатора форм жизни будет использовать старый спрайт, который может приглянуться некоторым больше, чем нынешний спрайт
 				}
 			}
 		}
