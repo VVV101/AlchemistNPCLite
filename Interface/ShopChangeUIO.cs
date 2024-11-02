@@ -9,6 +9,7 @@ using Terraria.GameContent.UI.Elements;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.UI;
+using Terraria.Localization;
 
 namespace AlchemistNPCLite.Interface
 {
@@ -32,42 +33,42 @@ namespace AlchemistNPCLite.Interface
             OperatorShopsPanel.OnLeftMouseDown += new MouseEvent(DragStart);
             OperatorShopsPanel.OnLeftMouseUp += new MouseEvent(DragEnd);
 
-            UIText text = new("Vanilla Materials/Boss Drops");
+            UIText text = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.BossDropsShop"));
             text.Left.Set(35, 0f);
             text.Top.Set(10, 0f);
             text.Width.Set(90, 0f);
             text.Height.Set(22, 0f);
             OperatorShopsPanel.Append(text);
 
-            UIText text1 = new("Modded Materials/Boss Drops");
+            UIText text1 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.BossDropsModsShop"));
             text1.Left.Set(35, 0f);
             text1.Top.Set(40, 0f);
             text1.Width.Set(90, 0f);
             text1.Height.Set(22, 0f);
             OperatorShopsPanel.Append(text1);
 
-            UIText text2 = new("Vanilla Treasure Bags");
+            UIText text2 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.VanillaTreasureBagsShop"));
             text2.Left.Set(35, 0f);
             text2.Top.Set(70, 0f);
             text2.Width.Set(70, 0f);
             text2.Height.Set(22, 0f);
             OperatorShopsPanel.Append(text2);
 
-            UIText text3 = new("Modded Treasure Bags #1");
+            UIText text3 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ModdedTreasureBagsShop"));
             text3.Left.Set(35, 0f);
             text3.Top.Set(100, 0f);
             text3.Width.Set(120, 0f);
             text3.Height.Set(22, 0f);
             OperatorShopsPanel.Append(text3);
 
-            UIText text4 = new("Modded Treasure Bags #2");
+            UIText text4 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ModdedTreasureBagsShop2"));
             text4.Left.Set(35, 0f);
             text4.Top.Set(130, 0f);
             text4.Width.Set(120, 0f);
             text4.Height.Set(22, 0f);
             OperatorShopsPanel.Append(text4);
 
-            UIText text5 = new("Modded Treasure Bags #3");
+            UIText text5 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ModdedTreasureBagsShop3"));
             text5.Left.Set(35, 0f);
             text5.Top.Set(160, 0f);
             text5.Width.Set(120, 0f);

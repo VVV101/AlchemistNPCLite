@@ -9,6 +9,7 @@ using Terraria.GameContent.UI.Elements;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.UI;
+using Terraria.Localization;
 
 namespace AlchemistNPCLite.Interface
 {
@@ -32,45 +33,45 @@ namespace AlchemistNPCLite.Interface
             BrewerShopsPanel.OnLeftMouseDown += new(DragStart);
             BrewerShopsPanel.OnLeftMouseUp += new(DragEnd);
 
-            UIText text = new("Vanilla");
+            UIText text = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ShopB1"));
             text.Left.Set(35, 0f);
             text.Top.Set(10, 0f);
             text.Width.Set(60, 0f);
             text.Height.Set(22, 0f);
             BrewerShopsPanel.Append(text);
 
-            UIText text2 = new("Mod/Calamity");
+            UIText text2 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ShopB2"));
             text2.Left.Set(35, 0f);
             text2.Top.Set(40, 0f);
             text2.Width.Set(120, 0f);
             text2.Height.Set(22, 0f);
             BrewerShopsPanel.Append(text2);
 
-            UIText text21 = new("Thorium/RG/MoR");
+            UIText text21 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ShopB3"));
             text21.Left.Set(35, 0f);
             text21.Top.Set(70, 0f);
             text21.Width.Set(100, 0f);
             text21.Height.Set(22, 0f);
             BrewerShopsPanel.Append(text21);
 
-            UIText text3 = new("MorePotions");
+            UIText text3 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ShopB4"));
             text3.Left.Set(35, 0f);
             text3.Top.Set(100, 0f);
             text3.Width.Set(70, 0f);
             text3.Height.Set(22, 0f);
             BrewerShopsPanel.Append(text3);
 
-            UIText text4 = new("UnuBattleRods/Tacklebox/Tremor");
+            UIText text4 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ShopB5"));
             text4.Left.Set(35, 0f);
             text4.Top.Set(130, 0f);
             text4.Width.Set(150, 0f);
             text4.Height.Set(22, 0f);
             BrewerShopsPanel.Append(text4);
 
-            UIText text5 = new("Wildlife/Sacred/Spirit/Cristilium/ExpSentr");
+            UIText text5 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ShopB6"));
             text5.Left.Set(35, 0f);
             text5.Top.Set(160, 0f);
-            text5.Width.Set(200, 0f);
+            text5.Width.Set(72, 0f);
             text5.Height.Set(22, 0f);
             BrewerShopsPanel.Append(text5);
 

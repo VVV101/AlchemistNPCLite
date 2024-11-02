@@ -14,6 +14,7 @@ using System.Linq;
 using AlchemistNPCLite.NPCs;
 using AlchemistNPCLite.Utilities;
 using ReLogic.Content;
+using Terraria.Localization;
 
 namespace AlchemistNPCLite.Interface
 {
@@ -37,35 +38,35 @@ namespace AlchemistNPCLite.Interface
             MusicianShopsPanel.OnLeftMouseDown += new UIElement.MouseEvent(DragStart);
             MusicianShopsPanel.OnLeftMouseUp += new UIElement.MouseEvent(DragEnd);
 
-            UIText text = new UIText("Vanilla Music Boxes");
+            UIText text = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.Shop1"));
             text.Left.Set(35, 0f);
             text.Top.Set(10, 0f);
             text.Width.Set(90, 0f);
             text.Height.Set(22, 0f);
             MusicianShopsPanel.Append(text);
 
-            UIText text2 = new UIText("Vanilla Music Boxes #2");
+            UIText text2 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.Shop2"));
             text2.Left.Set(35, 0f);
             text2.Top.Set(40, 0f);
             text2.Width.Set(90, 0f);
             text2.Height.Set(22, 0f);
             MusicianShopsPanel.Append(text2);
 
-            UIText text3 = new UIText("Otherworld Music Boxes");
+            UIText text3 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.Shop3"));
             text3.Left.Set(35, 0f);
             text3.Top.Set(70, 0f);
             text3.Width.Set(90, 0f);
             text3.Height.Set(22, 0f);
             MusicianShopsPanel.Append(text3);
 			
-			UIText text4 = new UIText("Modded MB (Calamity)");
+			UIText text4 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.Shop4"));
             text4.Left.Set(35, 0f);
             text4.Top.Set(100, 0f);
             text4.Width.Set(90, 0f);
             text4.Height.Set(22, 0f);
             MusicianShopsPanel.Append(text4);
 			
-			UIText text5 = new UIText("Modded MB (Calamity/Thorium)");
+			UIText text5 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.Shop5"));
             text5.Left.Set(35, 0f);
             text5.Top.Set(130, 0f);
             text5.Width.Set(90, 0f);
@@ -111,7 +112,7 @@ namespace AlchemistNPCLite.Interface
 
             Asset<Texture2D> buttonDeleteTexture = ModContent.Request<Texture2D>("Terraria/Images/UI/ButtonDelete");
             UIImageButton closeButton = new UIImageButton(buttonDeleteTexture);
-            closeButton.Left.Set(230, 0f);
+            closeButton.Left.Set(270, 0f);
             closeButton.Top.Set(10, 0f);
             closeButton.Width.Set(22, 0f);
             closeButton.Height.Set(22, 0f);

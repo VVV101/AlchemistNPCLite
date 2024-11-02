@@ -9,6 +9,7 @@ using Terraria.GameContent.UI.Elements;
 using Terraria.ID;
 using Terraria.ModLoader;
 using Terraria.UI;
+using Terraria.Localization;
 
 namespace AlchemistNPCLite.Interface
 {
@@ -25,77 +26,77 @@ namespace AlchemistNPCLite.Interface
             ArchitectShopsPanel.SetPadding(0);
             ArchitectShopsPanel.Left.Set(575f, 0f);
             ArchitectShopsPanel.Top.Set(275f, 0f);
-            ArchitectShopsPanel.Width.Set(230f, 0f);
+            ArchitectShopsPanel.Width.Set(250f, 0f);
             ArchitectShopsPanel.Height.Set(310f, 0f);
             ArchitectShopsPanel.BackgroundColor = new Color(73, 94, 171);
 
             ArchitectShopsPanel.OnLeftMouseDown += new(DragStart);
             ArchitectShopsPanel.OnLeftMouseUp += new(DragEnd);
 
-            UIText text = new("Filler Blocks");
+            UIText text = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS1"));
             text.Left.Set(35, 0f);
             text.Top.Set(10, 0f);
             text.Width.Set(70, 0f);
             text.Height.Set(22, 0f);
             ArchitectShopsPanel.Append(text);
 
-            UIText text2 = new("Building Blocks");
+            UIText text2 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS2"));
             text2.Left.Set(35, 0f);
             text2.Top.Set(40, 0f);
             text2.Width.Set(70, 0f);
             text2.Height.Set(22, 0f);
             ArchitectShopsPanel.Append(text2);
 
-            UIText text3 = new("Basic Furniture");
+            UIText text3 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS3"));
             text3.Left.Set(35, 0f);
             text3.Top.Set(70, 0f);
             text3.Width.Set(70, 0f);
             text3.Height.Set(22, 0f);
             ArchitectShopsPanel.Append(text3);
 
-            UIText text4 = new("Advanced Furniture");
+            UIText text4 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS4"));
             text4.Left.Set(35, 0f);
             text4.Top.Set(100, 0f);
             text4.Width.Set(70, 0f);
             text4.Height.Set(22, 0f);
             ArchitectShopsPanel.Append(text4);
 
-            UIText text5 = new("Torches");
+            UIText text5 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS5"));
             text5.Left.Set(35, 0f);
             text5.Top.Set(130, 0f);
             text5.Width.Set(50, 0f);
             text5.Height.Set(22, 0f);
             ArchitectShopsPanel.Append(text5);
 
-            UIText text6 = new("Candles");
+            UIText text6 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS6"));
             text6.Left.Set(35, 0f);
             text6.Top.Set(160, 0f);
             text6.Width.Set(50, 0f);
             text6.Height.Set(22, 0f);
             ArchitectShopsPanel.Append(text6);
 
-            UIText text7 = new("Lamps");
+            UIText text7 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS7"));
             text7.Left.Set(35, 0f);
             text7.Top.Set(190, 0f);
             text7.Width.Set(50, 0f);
             text7.Height.Set(22, 0f);
             ArchitectShopsPanel.Append(text7);
 
-            UIText text8 = new("Lanterns");
+            UIText text8 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS8"));
             text8.Left.Set(35, 0f);
             text8.Top.Set(220, 0f);
             text8.Width.Set(60, 0f);
             text8.Height.Set(22, 0f);
             ArchitectShopsPanel.Append(text8);
 
-            UIText text9 = new("Chandeliers");
+            UIText text9 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS9"));
             text9.Left.Set(35, 0f);
             text9.Top.Set(250, 0f);
             text9.Width.Set(70, 0f);
             text9.Height.Set(22, 0f);
             ArchitectShopsPanel.Append(text9);
 
-            UIText text10 = new("Candelabras");
+            UIText text10 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS10"));
             text10.Left.Set(35, 0f);
             text10.Top.Set(280, 0f);
             text10.Width.Set(70, 0f);
@@ -176,7 +177,7 @@ namespace AlchemistNPCLite.Interface
 
             Asset<Texture2D> buttonDeleteTexture = ModContent.Request<Texture2D>("Terraria/Images/UI/ButtonDelete");
             UIImageButton closeButton = new(buttonDeleteTexture);
-            closeButton.Left.Set(200, 0f);
+            closeButton.Left.Set(220, 0f);
             closeButton.Top.Set(10, 0f);
             closeButton.Width.Set(22, 0f);
             closeButton.Height.Set(22, 0f);
