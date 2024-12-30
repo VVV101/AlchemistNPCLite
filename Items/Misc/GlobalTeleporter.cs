@@ -13,6 +13,10 @@ namespace AlchemistNPCLite.Items.Misc
 {
 	public class GlobalTeleporter : ModItem
 	{
+		public override bool IsLoadingEnabled(Mod mod) {
+			return ModContent.GetInstance<ModConfiguration>().ModItems;
+		}
+		
 		public override void SetStaticDefaults()
 		{
 			Item.ResearchUnlockCount = 30;

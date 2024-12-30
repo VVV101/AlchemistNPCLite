@@ -1,20 +1,10 @@
-﻿using Microsoft.Xna.Framework;
-using Microsoft.Xna.Framework.Graphics;
-using Newtonsoft.Json;
-using Newtonsoft.Json.Converters;
-using Newtonsoft.Json.Linq;
-using System;
-using System.Collections;
+﻿using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
-using System.Runtime.Serialization;
 using Terraria;
+using Terraria.Localization;
 using Terraria.ModLoader;
-using static Terraria.ModLoader.ModContent;
 using Terraria.ModLoader.Config;
-using Terraria.ModLoader.Config.UI;
-using Terraria.UI;
 
 namespace AlchemistNPCLite
 {
@@ -64,6 +54,9 @@ namespace AlchemistNPCLite
 		[DefaultValue(true)]
 		public bool CatchNPC;
 		
+		[DefaultValue(true)]
+		public bool ModItems;
+		
 		[Range(1, 1000)]
 		[DefaultValue(1)]
 		public int PotsPriceMulti;
@@ -101,17 +94,13 @@ namespace AlchemistNPCLite
 			AlchemistNPCLite.modConfiguration = this;
 		}
 
-		public override bool AcceptClientChanges(ModConfig pendingConfig, int whoAmI, ref string message) {
-			if (whoAmI == 0) {
-				message = "Changes accepted!";
-				return true;
-			}
-			if (whoAmI != 0)
-			{
-				message = "You have no rights to change AlchemistNPCLite.modConfiguration.";
+		public override bool AcceptClientChanges(ModConfig pendingConfig, int whoAmI, ref NetworkText message) {
+			if (!NetMessage.DoesPlayerSlotCountAsAHost(whoAmI)) {
+				message = NetworkText.FromKey("tModLoader.ModConfigRejectChangesNotHost"); // "Only the host can change this config"
 				return false;
 			}
-			return false;
+			message = NetworkText.FromKey("ModConfigAccepted");
+			return true;
 		}
 	}
 }

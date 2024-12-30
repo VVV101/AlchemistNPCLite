@@ -6,6 +6,10 @@ namespace AlchemistNPCLite.Items
 {
     public class TankCombination : ModItem
     {
+		public override bool IsLoadingEnabled(Mod mod) {
+			return ModContent.GetInstance<ModConfiguration>().ModItems;
+		}
+		
         public override void SetStaticDefaults()
         {
             Item.ResearchUnlockCount = 20;
@@ -34,7 +38,7 @@ namespace AlchemistNPCLite.Items
             recipe.AddIngredient(ItemID.EndurancePotion, 1);
             recipe.AddIngredient(ItemID.LifeforcePotion, 1);
             recipe.AddIngredient(ItemID.IronskinPotion, 1);
-            recipe.AddIngredient(ItemID.RestorationPotion, 1);
+            recipe.AddIngredient(ItemID.RegenerationPotion, 1);
             recipe.AddIngredient(ItemID.ObsidianSkinPotion, 1);
             recipe.AddIngredient(ItemID.ThornsPotion, 1);
             recipe.AddIngredient(null, "TitanSkinPotion", 1);

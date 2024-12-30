@@ -365,7 +365,11 @@ Mods: {
 
 			Dopamine: {
 				DisplayName: Dopamine
-				Tooltip: Makes you Happy
+				Tooltip:
+					'''
+					Makes you Happy
+					NON-CALAMITY BUFF POTION
+					'''
 			}
 
 			DungeonTeleportationPotion: {
@@ -407,7 +411,9 @@ Mods: {
 				Tooltip:
 					'''
 					Grants Greater Dangersense buff (light up enemy projectiles)
+					Some transparent projectiles may become less visible (f.e. Moon Lord's) so use with care
 					This effect is global for all players
+					NON-CALAMITY BUFF POTION
 					'''
 			}
 
@@ -729,7 +735,11 @@ Mods: {
 
 			TrapsPotion: {
 				DisplayName: Trapper Potion
-				Tooltip: Empoweres all traps
+				Tooltip:
+					'''
+					Empoweres all traps
+					NON-CALAMITY BUFF POTION
+					'''
 			}
 
 			UltimaCake: {
@@ -1387,6 +1397,11 @@ Mods: {
 				CatchNPC: {
 					Tooltip: True to make mod's town NPCs catcheable. True by default
 					Label: Catcheable mod's NPCs toggle
+				}
+
+				ModItems: {
+					Tooltip: True to allow mod's custom items and potions to exist (Blurring potion, World Warper, etc.). True by default. Requires mods reload to update information.
+					Label: Mod's custom items toggle
 				}
 
 				RevPrices: {

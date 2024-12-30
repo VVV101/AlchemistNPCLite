@@ -1397,6 +1397,11 @@ Mods: {
 					Label: Alternar o mod de NPCs capturáveis
 				}
 
+				ModItems: {
+					// Tooltip: True to allow mod's custom items and potions to exist (Blurring potion, World Warper, etc.). True by default. Requires mods reload to update information.
+					// Label: Mod's custom items toggle
+				}
+
 				RevPrices: {
 					Tooltip: Verdadeiro para aumentar o preço das poções. Verdadeiro é o padrão
 					Label: Escala de preço no modo vingança do Calamity Mod
