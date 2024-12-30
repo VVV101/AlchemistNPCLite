@@ -1187,6 +1187,8 @@ Mods: {
 		AS9: 第九商店 (吊灯)
 		AS10: 第十商店 (烛台)
 		ShopsChanger: 切换商店
+		// Combinations: Combinations
+		// Flasks: Flasks
 		ShopB1: "第一商店 (原版)              "
 		ShopB2: 第二商店 (模组/灾厄)
 		ShopB3: 第二商店 (瑟银/RG)
@@ -1342,7 +1344,7 @@ Mods: {
 		Entry10: 某些组合只有在世界上存在某些类型的魔法时才能制作
 		// Excavation1: Mining capabilities greatly increased.
 		// Excavation2: Mining area is set to
-		// Excavation3: CTRL + right click to remove buff.
+		// Excavation3: CTRL + right click to remove buff
 
 		Tiles: {
 			HMCraftPound.MapEntry: 豪华手工英镑
