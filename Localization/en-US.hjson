@@ -1194,12 +1194,14 @@ Mods: {
 		AS9: 9th shop (Chandeliers)
 		AS10: 10th shop (Candelabras)
 		ShopsChanger: Shops Changer
+		Combinations: Combinations
+		Flasks: Flasks
 		ShopB1: 1st shop (Vanilla)
 		ShopB2: 2nd shop (Mod/Calamity)
 		ShopB3: 3rd shop (Thorium/RG)
-		ShopB4: 4th shop (MorePotions/Atheria)
-		ShopB5: 5th shop (UnuBattleRods/Tacklebox/Tremor)
-		ShopB6: 6th shop (Wildlife/Sacred/Spirit/Cristilium/ExpSentr)
+		ShopB4: 4th shop (Atheria)
+		ShopB5: 5th shop (UnuBattleRods/Tacklebox)
+		ShopB6: 6th shop (Spirit)
 		Lillian: Lillian
 		Lucy: Lucy
 		Alice: Alice
@@ -1242,10 +1244,11 @@ Mods: {
 		EntryJ8: "Did you notice that "
 		EntryJ9: " and I looks almost the same? It's because we're twin brothers."
 		EntryJ10: Should you find enought of those torn notes, bring the to me and ill decipher them for you. Dont ask me why, just know that they hold a value for me.
-		Shop2: 2nd shop
-		Shop3: 3rd shop
-		Shop4: 4th shop
-		Shop5: 5th shop
+		Shop1: Vanilla Music Boxes
+		Shop2: Vanilla Music Boxes #2
+		Shop3: Otherworld Music Boxes
+		Shop4: Modded MB (Calamity)
+		Shop5: Modded MB (Calamity/Thorium)
 		ShopChanger: Shop Changer
 		Beethoven: Beethoven
 		Bach: Bach
@@ -1346,6 +1349,9 @@ Mods: {
 		Entry8: "My mom, "
 		Entry9: ", is the coolest brewer ever, isn't she? She can brew the hardest potions with ease."
 		Entry10: Certain combinations can only be brewed if certain types of magic are present in the world.
+		Excavation1: Mining capabilities greatly increased.
+		Excavation2: Mining area is set to
+		Excavation3: CTRL + right click to remove buff
 
 		Tiles: {
 			HMCraftPound.MapEntry: Superb Crafting Pound

@@ -2,6 +2,7 @@
 using Terraria.GameInput;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.Localization;
 
 namespace AlchemistNPCLite.Buffs
 {
@@ -17,7 +18,7 @@ namespace AlchemistNPCLite.Buffs
 		{
 			Player player = Main.player[Main.myPlayer];
 			AlchemistNPCLitePlayer modPlayer = player.GetModPlayer<AlchemistNPCLitePlayer>();
-			tip = "Mining capabilities greatly increased.\nMining area is set to "+modPlayer.ExcavationPower+" x "+modPlayer.ExcavationPower+".\nCTRL + right click to remove buff.";
+			tip = Language.GetTextValue("Mods.AlchemistNPCLite.Excavation1")+"\n"+Language.GetTextValue("Mods.AlchemistNPCLite.Excavation2")+" "+modPlayer.ExcavationPower+" x "+modPlayer.ExcavationPower+"\n"+Language.GetTextValue("Mods.AlchemistNPCLite.Excavation3");
 		}
 		
 		public override bool RightClick(int buffIndex)

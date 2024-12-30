@@ -193,8 +193,10 @@ namespace AlchemistNPCLite.NPCs
 
         public override void SetChatButtons(ref string button, ref string button2)
         {
-            button = "Combinations";
-            button2 = "Flasks";
+            string Combinations = Language.GetTextValue("Mods.AlchemistNPCLite.Combinations");
+            string Flasks = Language.GetTextValue("Mods.AlchemistNPCLite.Flasks");
+            button = Combinations;
+            button2 = Flasks;
         }
 
         public override void OnChatButtonClicked(bool firstButton, ref string shopName)
