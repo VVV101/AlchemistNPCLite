@@ -10,6 +10,14 @@ The Musician will come if you defeat Skeletron.
 Mod has support for Thorium, Calamity, Mod of Redemption, Census and imkSushi's mod.
 
 Mod's Discord: https://discord.gg/WGKyKun
+v1.9.6
+-Updated for latest December 2024 tModloader build.
+-Updated Russian localization, thanks to Alino4kaHvoshch and xenofite.
+-Updated small icon, thanks to Alino4kaHvoshch.
+-Added config option for disabling all new content from mod.
+-Reworked some of the multiplayer config code.
+-Some prices rebalancing (mostly Architect), thanks to .Nihilus.
+-Fixed Battle, Vanilla Tank and Modded Tank combinations recipes.
 v1.9.5
 -Added Brazilian Portuguese by BrenoS93.
 -Added back imkSushi's potions support (base summoning, angler amnesia, meteorite and resurrection).
