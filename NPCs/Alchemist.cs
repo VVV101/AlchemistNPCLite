@@ -312,16 +312,18 @@ namespace AlchemistNPCLite.NPCs
             ModLoader.TryGetMod("Redemption", out Mod Redemption);
             ModLoader.TryGetMod("imkSushisMod", out Mod imkSushisMod);
             var shop = new NPCShop(Type, BaseShop)
-                .Add(new Item(ItemID.LesserHealingPotion) { shopCustomPrice = 1000 })
+                .Add(new Item(ItemID.LesserHealingPotion) { shopCustomPrice = 1000 },
+                    Condition.NotDownedEowOrBoc)
                 .Add(new Item(ItemID.HealingPotion) { shopCustomPrice = 5000 },
                     Condition.DownedEowOrBoc)
                 .Add(new Item(ItemID.GreaterHealingPotion) { shopCustomPrice = 10000 },
                     Condition.Hardmode)
                 .Add(new Item(ItemID.SuperHealingPotion) { shopCustomPrice = 25000 },
                     Condition.DownedMoonLord)
-                .AddModItemToShop(Calamity, "SupremeHealingPotion", 500000, () => (bool)Calamity.Call("Downed", "profaned guardians") && !(bool)Calamity.Call("Downed", "polterghast"))
-                .AddModItemToShop(Calamity, "OmegaHealingPotion", 1000000, () => (bool)Calamity.Call("Downed", "polterghast"))
-                .Add(new Item(ItemID.LesserManaPotion) { shopCustomPrice = 500 })
+                .AddModItemToShop(Calamity, "SupremeHealingPotion", 500000, () => (bool)Calamity.Call("Downed", "providence") && !(bool)Calamity.Call("Downed", "dog"))
+                .AddModItemToShop(Calamity, "OmegaHealingPotion", 1000000, () => (bool)Calamity.Call("Downed", "dog"))
+                .Add(new Item(ItemID.LesserManaPotion) { shopCustomPrice = 500 },
+                    Condition.NotDownedEowOrBoc)
                 .Add(new Item(ItemID.ManaPotion) { shopCustomPrice = 1000 },
                     Condition.DownedEowOrBoc)
                 .Add(new Item(ItemID.GreaterManaPotion) { shopCustomPrice = 5000 },
@@ -377,6 +379,7 @@ namespace AlchemistNPCLite.NPCs
                     Condition.Hardmode)
                 .Add(new Item(ItemID.Ichor) { shopCustomPrice = 7500 },
                     Condition.Hardmode)
+				.Add(new Item(ItemID.GenderChangePotion) { shopCustomPrice = 100000 })
                 .Add(new Item(678) { shopCustomPrice = 150000 }, Condition.ForTheWorthyWorld);
             shop.Register();
 

@@ -68,7 +68,7 @@ namespace AlchemistNPCLite
             }
         }
 
-        public override void PostSetupContent()
+        /*public override void PostSetupContent()
         {
             ModLoader.TryGetMod("Census", out Mod censusMod);
             if (censusMod != null)
@@ -82,7 +82,7 @@ namespace AlchemistNPCLite
                 censusMod.Call("TownNPCCondition", NPCType<NPCs.Musician>(), "Defeat Skeletron");
                 censusMod.Call("TownNPCCondition", NPCType<NPCs.YoungBrewer>(), "World state is Hardmode and both Alchemist and Operator are alive");
             }
-        }
+        }*/
 
         public override void Unload()
         {

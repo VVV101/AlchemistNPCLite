@@ -959,17 +959,18 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.SkeletronBossBag) { shopCustomPrice = 1000000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode))
                 .Add(new Item(ItemID.DeerclopsBossBag) { shopCustomPrice = 1500000 },
-                    new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedDeerclops)).AddModItemToShop(ThoriumMod, "DarkMageBag", 1000000, () => NPC.downedBoss3 && Main.expertMode && DD2Event.DownedInvasionT1)
+                    new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedDeerclops))
+				.AddModItemToShop(ThoriumMod, "DarkMageBag", 1000000, () => NPC.downedBoss3 && Main.expertMode && DD2Event.DownedInvasionT1)
                 .Add(new Item(ItemID.WallOfFleshBossBag) { shopCustomPrice = 1750000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode && Main.hardMode))
                 .Add(new Item(ItemID.QueenSlimeBossBag) { shopCustomPrice = 1500000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedQueenSlime))
                 .Add(new Item(ItemID.DestroyerBossBag) { shopCustomPrice = 2000000 },
-                    new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3))
+                    new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedMechBoss1))
                 .Add(new Item(ItemID.TwinsBossBag) { shopCustomPrice = 2000000 },
-                    new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3))
+                    new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedMechBoss2))
                 .Add(new Item(ItemID.SkeletronPrimeBossBag) { shopCustomPrice = 2000000 },
-                    new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3))
+                    new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedMechBoss3))
                 .AddModItemToShop(ThoriumMod, "OgreBag", 1000000, () => NPC.downedBoss3 && Main.expertMode && DD2Event.DownedInvasionT2 && NPC.downedMechBossAny)
                 .Add(new Item(ItemID.PlanteraBossBag) { shopCustomPrice = 2500000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedPlantBoss))

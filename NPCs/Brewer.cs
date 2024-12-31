@@ -371,16 +371,15 @@ namespace AlchemistNPCLite.NPCs
                     Condition.Hardmode)
                 .Add(new Item(ItemID.InfernoPotion) { shopCustomPrice = 15000 },
                     Condition.DownedSkeletron)
-                .Add(new Item(ItemID.StinkPotion) { shopCustomPrice = 7500 })
-                .Add(new Item(ItemID.LovePotion) { shopCustomPrice = 7500 },
-                    Condition.Hardmode)
                 .Add(new Item(ItemID.FishingPotion) { shopCustomPrice = 10000 })
                 .Add(new Item(ItemID.SonarPotion) { shopCustomPrice = 10000 })
-                .Add(new Item(ItemID.CratePotion) { shopCustomPrice = 10000 })
-                .Add(new Item(ItemID.GenderChangePotion) { shopCustomPrice = 100000 });
+                .Add(new Item(ItemID.CratePotion) { shopCustomPrice = 10000 });
             shop.Register();
 
             shop = new NPCShop(Type, SHOP_2)
+				.Add(new Item(ItemID.StinkPotion) { shopCustomPrice = 7500 })
+                .Add(new Item(ItemID.LovePotion) { shopCustomPrice = 7500 },
+                    Condition.Hardmode)
                 .AddModItemToShop<BewitchingPotion>(10000, () => NPC.downedBoss3);
                 if (ModContent.GetInstance<ModConfiguration>().ModItems){
                     shop.AddModItemToShop<SunshinePotion>(15000);
