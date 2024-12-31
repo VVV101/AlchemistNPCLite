@@ -378,6 +378,7 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.GrayBrick) { shopCustomPrice = 10 })
                 .Add(new Item(ItemID.Glass) { shopCustomPrice = 10 })
 				.Add(new Item(ItemID.Pumpkin) { shopCustomPrice = 125 })
+				.Add(new Item(ItemID.Cactus) { shopCustomPrice = 25 })
                 .Add(new Item(ItemID.MeteoriteBrick) { shopCustomPrice = 60 }, Condition.DownedEowOrBoc)
                 .Add(new Item(ItemID.ObsidianBrick) { shopCustomPrice = 5 })
                 .Add(new Item(ItemID.IridescentBrick) { shopCustomPrice = 5 })

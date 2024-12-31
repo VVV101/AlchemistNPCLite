@@ -15,6 +15,7 @@ v1.9.6
 -Updated Russian localization, thanks to Alino4kaHvoshch and xenofite.
 -Updated small icon, thanks to Alino4kaHvoshch.
 -Added config option for disabling all new content from mod.
+-Added Cactus to Architect's 2nd shop.
 -Reworked some of the multiplayer config code.
 -Changed conditions for some potions availability.
 -Now mech bosses treasure bags are available after beating respective boss, not only after all 3 being defeated.
@@ -110,12 +111,5 @@ v1.8.14
 -Adjust Calamity boss bag prices
 -Added Diving Helmet to Tinkerer.
 -Update recipe creation
-v1.8.13
--Updated to current 1.4-stable.
-v1.8.12
--Initial update to 1.4-preview
--Update IEntitySources
--Use new SetNPCNameList system
--Added NPCs affections (may be raw, but any suggestions are appreciated).
 
 Earlier changes can be found in mod's discord.
