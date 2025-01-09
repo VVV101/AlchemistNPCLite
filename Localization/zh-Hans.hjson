@@ -8,7 +8,7 @@ Mods: {
 			Operator: 出售各种不同的制作材料和宝藏袋（如果在专家以上玩）.不是人
 			Architect: 出售各种不同的物块和制作站.装修专家
 			Tinkerer: 出售各种配饰，随着进度解锁. ''Lore-wise'' 是蒸汽朋克的弟弟
-			YoungBrewer: 出售各种药水组合和强化药剂. ''Lore-wise'' 是炼金师和药剂师的儿子
+			YoungBrewer: 出售各种药水药剂包和强化药剂. ''Lore-wise'' 是炼金师和药剂师的儿子
 		}
 
 		Common: {
@@ -175,7 +175,7 @@ Mods: {
 
 			Blurring: {
 				DisplayName: 模糊
-				Description: 敌人并看不清你 (暗影躲避有30秒CD)
+				Description: 敌人看不清你 (暗影躲避有30秒CD)
 			}
 
 			BuilderComb: {
@@ -307,8 +307,8 @@ Mods: {
 			}
 
 			ThoriumComb: {
-				DisplayName: 瑟银组合
-				Description: 刺客组合,嗜血, 疯狂, 光辉, 圣洁, 创造力, 耳虫, 灵感爆发，水合
+				DisplayName: 瑟银药剂包
+				Description: 刺客药剂包,嗜血, 疯狂, 光辉, 圣洁, 创造力, 耳虫, 灵感爆发，水合
 			}
 		}
 
@@ -331,7 +331,7 @@ Mods: {
 				DisplayName: 迷人药剂
 				Tooltip:
 					'''
-					增加召唤物能力 (增加一个召唤物上限)
+					+1仆从栏
 					非灾厄BUFF药剂
 					'''
 			}
@@ -478,7 +478,7 @@ Mods: {
 					当它在你的背包中时，你有非常高的几率不消耗药水
 					允许快速使用猪猪存钱罐的buff药水
 					炼金师，药剂师和年轻药剂师提供50%的折扣
-					如果至尊灾厄被击败，药水不会消耗
+					如果至尊女巫，灾厄被击败，药水不会消耗
 					Buff持续时间延长50%
 					'''
 			}
@@ -544,10 +544,10 @@ Mods: {
 			}
 
 			MorePotionsCombination: {
-				DisplayName: 更多药剂组合
+				DisplayName: 更多药剂包
 				Tooltip:
 					'''
-					从更多药剂组合中获得大多数buff
+					从更多药剂包中获得大多数buff
 					干旱,强化再生, 勇气, 灵魂绑定, 钻石皮, 黄昏, 黎明, 迅捷之手, 速度
 					'''
 			}
@@ -563,11 +563,11 @@ Mods: {
 			}
 
 			InformatingNote: {
-				DisplayName: 信息说明
+				DisplayName: 售卖说明
 				Tooltip:
 					'''
 					暂无宝袋袋.
-					击败骷髅王解锁第一波
+					击败骷髅王后开始售卖
 					'''
 			}
 
@@ -684,8 +684,8 @@ Mods: {
 			}
 
 			TinkererHorcrux: {
-				DisplayName: 音乐家魂器
-				Tooltip: 里面有音乐家的一片灵魂.
+				DisplayName: 工匠魂器
+				Tooltip: 里面有工匠的一片灵魂.
 			}
 
 			SunshinePotion: {
@@ -1220,7 +1220,7 @@ Mods: {
 		EntryB17: "通常我会很困惑为什么 "
 		EntryB18: " 和我一样从容冷静, 但是后来我想到了 "
 		EntryB19: 我曾经远离泰拉瑞亚去学习更多关于炼金术的知识.在旅途中，我遇到了一位名叫阿扎诺尔的“魔法科学家”。他向我展示了一种叫做“奇术”的东西的秘密
-		ArenaShop: 阿瑞娜商店
+		ArenaShop: 战斗场地商店
 		Carl: Carl
 		John: John
 		JanMare: JanMare
@@ -1229,13 +1229,13 @@ Mods: {
 		Charley: Charley
 		EntryJ1: 我找到一些珠宝, 你想看看吗?
 		EntryJ2: 魔法戒指并不像传说中的那样强大,但它仍然能给你对抗强大生物的力量
-		EntryJ3: 呦... 你想要什么,我的朋友?
+		EntryJ3: 呦...你想要什么,我的朋友?
 		EntryJ4: 我可以为你做钻石戒指
 		EntryJ5: 不,不要认为我和骷髅商人有关系
 		EntryJ6: 如果你找到了所有的魔法戒指,你可以制造欧姆尼戒指
 		EntryJ7: 你在周围看到机械生物了吗?
 		EntryJ8: "你有没有注意到到我和 "
-		EntryJ9: " 长得几乎一毛一样?这是因为我们是兄弟"
+		EntryJ9: "长得几乎一毛一样?这是因为我们是兄弟"
 		EntryJ10: 如果你发现这些撕碎的笔记太多了，把它带给我，我会帮你破译的.不要问我为什么，只要知道这些对我有价值
 		Shop1: 第一商店(原版音乐盒) #1
 		Shop2: 第二商店(原版音乐盒) #2
@@ -1258,11 +1258,11 @@ Mods: {
 		EntryM6: 听着，你的热情令人敬畏，但你能不能自己录制下一首BOSS的曲子？我可不想为了一些曲子冒生命危险
 		EntryM7: 啊，我看你救了探险家！干的好！也许我的下一首歌将是关于你的胜利
 		EntryM8: "你知道吗, "
-		EntryM9: " 在我安装这套音响系统的过程中，它帮了我大忙.电线是关键！"
+		EntryM9: "在我安装这套音响系统的过程中，它帮了我大忙.电线是关键！"
 		EntryM10: "如果你遇到 "
-		EntryM11: ", 让他知道他还欠我卖给他音乐盒的钱"
+		EntryM11: ",让他知道他还欠我卖给他音乐盒的钱"
 		EntryM12: "老实说，我不确定我是否信任 "
-		EntryM13: . 他声称自己没有被附身，但他仍在使用头骨战斗...我得到的信息很复杂
+		EntryM13: .他声称自己没有被附身，但他仍在使用头骨战斗...我得到的信息很复杂
 		EntryM14: 伙计，我的混音带比这个好得多，但由于版权原因，我不能卖给你
 		EntryM15: 不，我没有“全明星”音乐盒.你自己编码
 		EntryM16: 等等，NPC？我以为我是主角！
@@ -1318,8 +1318,8 @@ Mods: {
 		EntryO36: 记住主管，宝藏袋虽然珍贵，但并不是所有东西都能装在里面.那个变种人可以帮助你获得BOSS最难以获得的物品
 		Alexander: Alexander
 		Peter: Peter
-		TinkererButton1: 出售
-		TinkererButton2: 商店
+		TinkererButton1: 移动/杂项
+		TinkererButton2: 战斗
 		EntryT1: 需要一些特别的东西? 尽管说...
 		EntryT2: 你看见过我的姐姐吗? 比起工匠, 她更像个蒸汽朋克女孩...
 		EntryT3: 如果你在什么地方见过纸管, 把它带给我, 我会为你解锁一些东西
@@ -1340,8 +1340,8 @@ Mods: {
 		Entry6: 嗨, *咳咳*.. 那绝对不是柠檬茶
 		Entry7: 你有在附近见到钢铁破坏者吗?
 		Entry8: "我妈妈, "
-		Entry9: " , 是最酷的药剂师, 不是吗? 她可以轻松酿造出难做的药剂"
-		Entry10: 某些组合只有在世界上存在某些类型的魔法时才能制作
+		Entry9: ",是最酷的药剂师, 不是吗? 她可以轻松酿造出难做的药剂"
+		Entry10: 某些药剂包只有在世界上存在某些类型的魔法时才能制作
 		Excavation1: 极大增加挖掘能力
 		Excavation2: 挖掘区域被设定为
 		Excavation3: CTRL + right 来移除Buff
@@ -1370,7 +1370,7 @@ Mods: {
 
 				SiltSlushPrice: {
 					Tooltip: 默认是700是7银的价格
-					Label: 淤泥/雪泥块价格
+					Label: 泥块/雪泥块价格
 				}
 
 				WormholePrice: {
@@ -1385,7 +1385,7 @@ Mods: {
 
 				StarPrice: {
 					Tooltip: 默认是1000是10银的价格
-					Label: 堕落之星价格
+					Label: 坠落之星价格
 				}
 
 				PotsPriceMulti: {
@@ -1399,13 +1399,13 @@ Mods: {
 				}
 
 				ModItems: {
-					// Tooltip: True to allow mod's custom items and potions to exist (Blurring potion, World Warper, etc.). True by default. Requires mods reload to update information.
-					// Label: Mod's custom items toggle
+					Tooltip: 启用以允许自定义物品和药水存在（模糊药剂、世界传送装置等）默认为开，需要重新加载以修改此配置
+					Label: Mod自定义物品切换
 				}
 
 				RevPrices: {
 					Tooltip: 让药水价格更高.默认为开
-					Label: 报复模式价格调整
+					Label: 复仇模式价格调整
 				}
 
 				DisabledLocatorNpcs: {
@@ -1415,7 +1415,7 @@ Mods: {
 
 				LocatorRange: {
 					Tooltip: 指针能指向的最大范围.默认为4000
-					Label: 生命型分析机指向范围
+					Label: 生命体分析机指向范围
 				}
 
 				LifeformAnalyzer: {
