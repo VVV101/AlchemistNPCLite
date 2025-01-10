@@ -10,6 +10,9 @@ The Musician will come if you defeat Skeletron.
 Mod has support for Thorium, Calamity, Mod of Redemption, Census and imkSushi's mod.
 
 Mod's Discord: https://discord.gg/WGKyKun
+v1.9.7
+-Chinese Localization Fix by 虞悖.
+-Russian localization fix.
 v1.9.6
 -Updated for latest December 2024 tModloader build.
 -Updated Russian localization, thanks to Alino4kaHvoshch and xenofite.
