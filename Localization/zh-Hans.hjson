@@ -8,7 +8,7 @@ Mods: {
 			Operator: 出售各种不同的制作材料和宝藏袋（如果在专家以上玩）.不是人
 			Architect: 出售各种不同的物块和制作站.装修专家
 			Tinkerer: 出售各种配饰，随着进度解锁. ''Lore-wise'' 是蒸汽朋克的弟弟
-			YoungBrewer: 出售各种药水组合和强化药剂. ''Lore-wise'' 是炼金师和药剂师的儿子
+			YoungBrewer: 出售各种药水药剂包和强化药剂. ''Lore-wise'' 是炼金师和药剂师的儿子
 		}
 
 		Common: {
@@ -175,7 +175,7 @@ Mods: {
 
 			Blurring: {
 				DisplayName: 模糊
-				Description: 敌人并看不清你 (暗影躲避有30秒CD)
+				Description: 敌人看不清你 (暗影躲避有30秒CD)
 			}
 
 			BuilderComb: {
@@ -184,8 +184,8 @@ Mods: {
 			}
 
 			CalamityComb: {
-				DisplayName: 灾厄组合
-				Description: 光合作用，Fabsol的伏特加，翱翔和跳跃的buff组合
+				DisplayName: 灾厄组药剂包
+				Description: 包含以下Buff：光合作用，Fabsol的伏特加，翱翔、跳跃
 			}
 
 			Corrosion: {
@@ -307,8 +307,8 @@ Mods: {
 			}
 
 			ThoriumComb: {
-				DisplayName: 瑟银组合
-				Description: 刺客组合,嗜血, 疯狂, 光辉, 圣洁, 创造力, 耳虫, 灵感爆发，水合
+				DisplayName: 瑟银药剂包
+				Description: 刺客药剂包,嗜血, 疯狂, 光辉, 圣洁, 创造力, 耳虫, 灵感爆发，水合
 			}
 		}
 
@@ -331,7 +331,7 @@ Mods: {
 				DisplayName: 迷人药剂
 				Tooltip:
 					'''
-					增加召唤物能力 (增加一个召唤物上限)
+					+1仆从栏
 					非灾厄BUFF药剂
 					'''
 			}
@@ -351,7 +351,7 @@ Mods: {
 			}
 
 			CalamityCombination: {
-				DisplayName: 灾厄组合
+				DisplayName: 灾厄组药剂包
 				Tooltip: 获得一些灾厄模组buff (光合作用, Fabsol伏特加, 翱翔，跳跃)
 			}
 
@@ -478,7 +478,7 @@ Mods: {
 					当它在你的背包中时，你有非常高的几率不消耗药水
 					允许快速使用猪猪存钱罐的buff药水
 					炼金师，药剂师和年轻药剂师提供50%的折扣
-					如果至尊灾厄被击败，药水不会消耗
+					如果至尊女巫，灾厄被击败，药水不会消耗
 					Buff持续时间延长50%
 					'''
 			}
@@ -519,7 +519,7 @@ Mods: {
 				DisplayName: 模拟控制单元
 				Tooltip:
 					'''
-					独家产品，安吉拉设计
+					独家产品，Angela设计
 					左键昼夜交换
 					右键控制下雨（沙漠中控制沙尘暴）
 					'''
@@ -544,10 +544,10 @@ Mods: {
 			}
 
 			MorePotionsCombination: {
-				DisplayName: 更多药剂组合
+				DisplayName: 更多药剂包
 				Tooltip:
 					'''
-					从更多药剂组合中获得大多数buff
+					从更多药剂包中获得大多数buff
 					干旱,强化再生, 勇气, 灵魂绑定, 钻石皮, 黄昏, 黎明, 迅捷之手, 速度
 					'''
 			}
@@ -563,11 +563,11 @@ Mods: {
 			}
 
 			InformatingNote: {
-				DisplayName: 信息说明
+				DisplayName: 售卖说明
 				Tooltip:
 					'''
 					暂无宝袋袋.
-					击败骷髅王解锁第一波
+					击败骷髅王后开始售卖
 					'''
 			}
 
@@ -684,8 +684,8 @@ Mods: {
 			}
 
 			TinkererHorcrux: {
-				DisplayName: 音乐家魂器
-				Tooltip: 里面有音乐家的一片灵魂.
+				DisplayName: 工匠魂器
+				Tooltip: 里面有工匠的一片灵魂.
 			}
 
 			SunshinePotion: {
@@ -985,47 +985,47 @@ Mods: {
 		EyeofCthulhu: 克苏鲁之眼宝藏袋
 		EaterOfWorlds: 世界吞噬者宝藏袋
 		BrainOfCthulhu: 克苏鲁之脑宝藏袋
-		QueenBee: 蜂后宝藏袋
-		Skeletron: 骷髅王宝藏袋
-		Deerclops: 独眼巨鹿宝藏袋
-		WallOfFlesh: 血肉之墙宝藏袋
-		QueenSlime: 史莱姆皇后宝藏袋
-		Destroyer: 机械蠕虫宝藏袋
-		Twins: 双子魔眼宝藏袋
-		SkeletronPrime: 机械骷髅王宝藏袋
-		Plantera: 世纪之花宝藏袋
-		EmpressOfLight: 光之女皇宝藏袋
-		Golem: 石巨人宝藏袋
-		Betsy: 贝茜宝藏袋
-		DukeFishron: 猪鲨公爵宝藏袋
-		MoonLord: 月亮领主宝藏袋
-		DesertScourge: 荒漠灾虫宝藏袋
-		Crabulon: 蘑菇螃蟹宝藏袋
-		HiveMind: 腐巢意志宝藏袋
-		Perforator: 血肉宿主宝藏袋
-		SlimeGod: 史莱姆之神宝藏袋
-		Cryogen: 极地之灵宝藏袋
-		BrimstoneElemental: 硫磺火元素宝藏袋
-		AquaticScourge: 渊海灾虫宝藏袋
-		Calamitas: 灾厄之影宝藏袋
-		AstrageldonSlime: 大彗星史莱姆宝藏袋
-		AstrumDeus: 星神吞噬者宝藏袋
-		Leviathan: 利维坦宝藏袋
-		PlaguebringerGoliath: 瘟疫使者歌莉娅宝藏袋
-		Ravager: 毁灭魔像宝藏袋
-		Providence: 亵渎天神宝藏袋
-		StormWeaver: 风暴编织者宝藏袋
-		CeaselessVoid: 无尽虚空宝藏袋
-		Signus: 神之使徒西格纳斯宝藏袋
-		Polterghast: 噬魂幽花宝藏袋
-		OldDuke: 硫海遗爵宝藏袋
-		DevourerofGods: 神明吞噬者宝藏袋
-		Bumblebirb: 癫痫鸟宝藏袋
-		Yharon: 犽戎宝藏袋
-		ExoMechs: 星流巨械宝藏袋
-		SupremeCalamitas: 至尊灾厄宝藏袋
-		DarkMage: 黑暗法师百宝袋
-		Ogre: 食人魔百宝袋
+		QueenBee: 宝藏袋（蜂后）
+		Skeletron: 宝藏袋（骷髅王）
+		Deerclops: 宝藏袋（独眼巨鹿）
+		WallOfFlesh: 宝藏袋（血肉墙）
+		QueenSlime: 宝藏袋（史莱姆皇后）
+		Destroyer: 宝藏袋（毁灭者）
+		Twins: 宝藏袋（双子魔眼）
+		SkeletronPrime: 宝藏袋（机械骷髅王）
+		Plantera: 宝藏袋（世纪之花）
+		EmpressOfLight: 宝藏袋（光之女皇）
+		Golem: 宝藏袋（石巨人）
+		Betsy: 宝藏袋（双足翼龙）
+		DukeFishron: 宝藏袋（猪龙鱼公爵）
+		MoonLord: 宝藏袋（月亮领主）
+		DesertScourge: 宝藏袋（荒漠灾虫）
+		Crabulon: 宝藏袋（菌生蟹）
+		HiveMind: 宝藏袋（腐巢意志）
+		Perforator: 宝藏袋（血肉宿主）
+		SlimeGod: 宝藏袋（史莱姆之神）
+		Cryogen: 宝藏袋（极地之灵）
+		BrimstoneElemental: 宝藏袋（硫磺火元素）
+		AquaticScourge: 宝藏袋（渊海灾虫）
+		Calamitas: 宝藏袋（灾厄之影）
+		AstrageldonSlime: 宝藏胶囊（末世星史莱姆）
+		AstrumDeus: 宝藏袋（星神游龙）
+		Leviathan: 宝藏袋（利维坦和阿娜希塔）
+		PlaguebringerGoliath: 宝藏袋（瘟疫使者歌莉娅）
+		Ravager: 宝藏袋（毁灭魔像）
+		Providence: 宝藏袋（亵渎天神，普罗维登斯）
+		StormWeaver: 宝藏袋（风暴编织者）
+		CeaselessVoid: 宝藏袋（无尽虚空）
+		Signus: 宝藏袋（神之使徒，西格纳斯）
+		Polterghast: 宝藏袋（噬魂幽花）
+		OldDuke: 宝藏袋（硫海遗爵）
+		DevourerofGods: 宝藏袋（神明吞噬者）
+		Bumblebirb: 宝藏袋（痴愚金龙）
+		Yharon: 宝藏袋（犽戎）
+		ExoMechs: 宝藏盒（星流巨械）
+		SupremeCalamitas: 宝藏保险箱（灾厄）
+		DarkMage: 宝藏袋（黑暗魔法师）
+		Ogre: 宝藏袋（食人魔）
 		ThunderBird: 惊雷王鹰宝藏袋
 		QueenJellyfish: 水母皇后宝藏袋
 		CountEcho: 水母皇后宝藏袋
@@ -1130,13 +1130,13 @@ Mods: {
 		EntryA7: 你有在周围看到一个机械骷髅王吗?
 		EntryA8: 你有听说过极限蘑菇吗？如果你找到了一个，我相信我能研究出一种可以帮助你的材料
 		EntryA9: "我向 "
-		EntryA10: " 购买高效萃取配方，因为他说不，然后我就说‘即使是傻子也能研究出那个配方’"
+		EntryA10: "购买高效萃取配方，因为他说不，然后我就说‘即使是傻子也能研究出那个配方’"
 		EntryA11: 想想看, 她正在得到那些药水而我没有...但我对此却又无法反驳
 		EntryA12: "他叫什么来着? "
 		EntryA13: ? 所以... 老师在这儿? 我最好加快脚步!
 		EntryA14: 感谢上帝，我从骷髅王那里拿到了这些碎片，想要看看吗？
-		EntryA15: "你能不能拜托 "
-		EntryA16: " 别再嘲笑我?我知道我的药剂不能让你变强,但是至少他们喝起来不危险"
+		EntryA15: "你能不能拜托"
+		EntryA16: "别再嘲笑我?我知道我的药剂不能让你变强,但是至少他们喝起来不危险"
 		EntryA17: 这些哥布林是如此的愤怒...幸好，他们在这里的时间不会很久
 		EntryA18: 你最好以最快的速度解决这些海盗先，我忍不住想和船长说几句话，好些年没见到过他咯!
 		EntryA19: 我觉得你不会让他们进我的屋子的，是吧?
@@ -1144,18 +1144,18 @@ Mods: {
 		EntryA21: ...我的朋友，在这个时刻最好的事情就是别来打扰我!
 		EntryA22: 我有一个爆炸烧瓶，你不会想知道它尝起来是什么味道的
 		EntryA23: "所以 "
-		EntryA24: " 是怎么在这种时候保持冷静的? 我现在就想知道, 现在!"
+		EntryA24: "是怎么在这种时候保持冷静的? 我现在就想知道, 现在!"
 		EntryA25: "不要让来自丛林的黑暗者用迷人的智慧欺骗你.我和 "
-		EntryA26: " 曾经是他的学徒.当他的课程变得过于黑暗时，我退出了，但 "
-		EntryA27: " 对神秘炼金术的兴趣除了增长之外什么也没做"
+		EntryA26: "曾经是他的学徒.当他的课程变得过于黑暗时，我退出了，但"
+		EntryA27: "对神秘炼金术的兴趣除了增长之外什么也没做"
 		Joe: Joe
 		Mark: Mark
 		Walter: Walter
 		Archer: Archer
 		Frido: Frido
 		Li: Li
-		A1: "如果这个卑鄙的 "
-		A2: " 再不住口的话, 我会让 "
+		A1: "如果这个卑鄙的"
+		A2: " 再不住口的话, 我会让"
 		A3: " 咬她."
 		A4: 杀掉那个僵尸! 杀掉那个兔子! 那个名字是血- 哦, 抱歉, 我没注意到你在这里
 		A5: 哦嗨你好我正在为一个湖收集一些装满血的水桶我很开心所以别问我更多问题了再见
@@ -1180,19 +1180,19 @@ Mods: {
 		AS2: 第二商店 (建筑方块)
 		AS3: 第三商店 (基础家具)
 		AS4: 第四商店 (高级家具)
-		AS5: 第五商店 (火把)
-		AS6: 第六商店 (蜡烛)
-		AS7: 第七商店 (台灯)
-		AS8: 第八商店 (灯笼)
-		AS9: 第九商店 (吊灯)
-		AS10: 第十商店 (烛台)
+		AS5: 第五商店 (火把专卖)
+		AS6: 第六商店 (蜡烛专卖)
+		AS7: 第七商店 (台灯专卖)
+		AS8: 第八商店 (灯笼专卖)
+		AS9: 第九商店 (吊灯专卖)
+		AS10: 第十商店 (烛台专卖)
 		ShopsChanger: 切换商店
-		// Combinations: Combinations
-		// Flasks: Flasks
-		ShopB1: "第一商店 (原版)              "
+		Combinations: 药剂包
+		Flasks: 烧瓶
+		ShopB1: "第一商店 (原版)"
 		ShopB2: 第二商店 (模组/灾厄)
 		ShopB3: 第二商店 (瑟银/RG)
-		ShopB4: "第三商店 (更多药剂)         "
+		ShopB4: "第三商店 (更多药剂)"
 		ShopB5: 第四商店 (震颤/钓杆/钓具箱)
 		ShopB6: 第五商店 (蛮荒/圣域/魂灵/水晶之地/扩展)
 		Lillian: Lillian
@@ -1220,7 +1220,7 @@ Mods: {
 		EntryB17: "通常我会很困惑为什么 "
 		EntryB18: " 和我一样从容冷静, 但是后来我想到了 "
 		EntryB19: 我曾经远离泰拉瑞亚去学习更多关于炼金术的知识.在旅途中，我遇到了一位名叫阿扎诺尔的“魔法科学家”。他向我展示了一种叫做“奇术”的东西的秘密
-		ArenaShop: 阿瑞娜商店
+		ArenaShop: 战斗场地商店
 		Carl: Carl
 		John: John
 		JanMare: JanMare
@@ -1229,19 +1229,19 @@ Mods: {
 		Charley: Charley
 		EntryJ1: 我找到一些珠宝, 你想看看吗?
 		EntryJ2: 魔法戒指并不像传说中的那样强大,但它仍然能给你对抗强大生物的力量
-		EntryJ3: 呦... 你想要什么,我的朋友?
+		EntryJ3: 呦...你想要什么,我的朋友?
 		EntryJ4: 我可以为你做钻石戒指
 		EntryJ5: 不,不要认为我和骷髅商人有关系
 		EntryJ6: 如果你找到了所有的魔法戒指,你可以制造欧姆尼戒指
 		EntryJ7: 你在周围看到机械生物了吗?
 		EntryJ8: "你有没有注意到到我和 "
-		EntryJ9: " 长得几乎一毛一样?这是因为我们是兄弟"
+		EntryJ9: "长得几乎一毛一样?这是因为我们是兄弟"
 		EntryJ10: 如果你发现这些撕碎的笔记太多了，把它带给我，我会帮你破译的.不要问我为什么，只要知道这些对我有价值
-		// Shop1: Vanilla Music Boxes
-		Shop2: 2nd shop
-		Shop3: 3rd shop
-		Shop4: 4th shop
-		Shop5: 5th shop
+		Shop1: 第一商店(原版音乐盒) #1
+		Shop2: 第二商店(原版音乐盒) #2
+		Shop3: 第三商店(异界音乐盒)
+		Shop4: 第四商店(灾厄音乐盒)
+		Shop5: 第五商店(灾厄/瑟银音乐盒)
 		ShopChanger: 切换商店
 		Beethoven: Beethoven
 		Bach: Bach
@@ -1258,11 +1258,11 @@ Mods: {
 		EntryM6: 听着，你的热情令人敬畏，但你能不能自己录制下一首BOSS的曲子？我可不想为了一些曲子冒生命危险
 		EntryM7: 啊，我看你救了探险家！干的好！也许我的下一首歌将是关于你的胜利
 		EntryM8: "你知道吗, "
-		EntryM9: " 在我安装这套音响系统的过程中，它帮了我大忙.电线是关键！"
+		EntryM9: "在我安装这套音响系统的过程中，它帮了我大忙.电线是关键！"
 		EntryM10: "如果你遇到 "
-		EntryM11: ", 让他知道他还欠我卖给他音乐盒的钱"
+		EntryM11: ",让他知道他还欠我卖给他音乐盒的钱"
 		EntryM12: "老实说，我不确定我是否信任 "
-		EntryM13: . 他声称自己没有被附身，但他仍在使用头骨战斗...我得到的信息很复杂
+		EntryM13: .他声称自己没有被附身，但他仍在使用头骨战斗...我得到的信息很复杂
 		EntryM14: 伙计，我的混音带比这个好得多，但由于版权原因，我不能卖给你
 		EntryM15: 不，我没有“全明星”音乐盒.你自己编码
 		EntryM16: 等等，NPC？我以为我是主角！
@@ -1274,10 +1274,10 @@ Mods: {
 		EntryM22: 你弄疼我的耳朵了！关小声点！
 		BossDropsShop: Boss掉落物&材料商店
 		BossDropsModsShop: Boss掉落物&材料商店
-		VanillaTreasureBagsShop: "原版宝藏袋商店    "
-		ModdedTreasureBagsShop: "模组宝藏袋商店    "
-		ModdedTreasureBagsShop2: "模组宝藏袋商店#2    "
-		ModdedTreasureBagsShop3: "模组宝藏袋商店#3    "
+		VanillaTreasureBagsShop: "原版宝藏袋商店"
+		ModdedTreasureBagsShop: "模组宝藏袋商店#1"
+		ModdedTreasureBagsShop2: "模组宝藏袋商店#2"
+		ModdedTreasureBagsShop3: "模组宝藏袋商店#3"
 		Angela: Angela
 		Carmen: Carmen
 		EntryO1: 您好吗, 主管, 我能为您做什么?
@@ -1318,8 +1318,8 @@ Mods: {
 		EntryO36: 记住主管，宝藏袋虽然珍贵，但并不是所有东西都能装在里面.那个变种人可以帮助你获得BOSS最难以获得的物品
 		Alexander: Alexander
 		Peter: Peter
-		TinkererButton1: 出售
-		TinkererButton2: 商店
+		TinkererButton1: 移动/杂项
+		TinkererButton2: 战斗
 		EntryT1: 需要一些特别的东西? 尽管说...
 		EntryT2: 你看见过我的姐姐吗? 比起工匠, 她更像个蒸汽朋克女孩...
 		EntryT3: 如果你在什么地方见过纸管, 把它带给我, 我会为你解锁一些东西
@@ -1340,11 +1340,11 @@ Mods: {
 		Entry6: 嗨, *咳咳*.. 那绝对不是柠檬茶
 		Entry7: 你有在附近见到钢铁破坏者吗?
 		Entry8: "我妈妈, "
-		Entry9: " , 是最酷的药剂师, 不是吗? 她可以轻松酿造出难做的药剂"
-		Entry10: 某些组合只有在世界上存在某些类型的魔法时才能制作
-		// Excavation1: Mining capabilities greatly increased.
-		// Excavation2: Mining area is set to
-		// Excavation3: CTRL + right click to remove buff
+		Entry9: ",是最酷的药剂师, 不是吗? 她可以轻松酿造出难做的药剂"
+		Entry10: 某些药剂包只有在世界上存在某些类型的魔法时才能制作
+		Excavation1: 极大增加挖掘能力
+		Excavation2: 挖掘区域被设定为
+		Excavation3: CTRL + right 来移除Buff
 
 		Tiles: {
 			HMCraftPound.MapEntry: 豪华手工英镑
@@ -1370,7 +1370,7 @@ Mods: {
 
 				SiltSlushPrice: {
 					Tooltip: 默认是700是7银的价格
-					Label: 淤泥/雪泥块价格
+					Label: 泥块/雪泥块价格
 				}
 
 				WormholePrice: {
@@ -1385,7 +1385,7 @@ Mods: {
 
 				StarPrice: {
 					Tooltip: 默认是1000是10银的价格
-					Label: 堕落之星价格
+					Label: 坠落之星价格
 				}
 
 				PotsPriceMulti: {
@@ -1399,13 +1399,13 @@ Mods: {
 				}
 
 				ModItems: {
-					// Tooltip: True to allow mod's custom items and potions to exist (Blurring potion, World Warper, etc.). True by default. Requires mods reload to update information.
-					// Label: Mod's custom items toggle
+					Tooltip: 启用以允许自定义物品和药水存在（模糊药剂、世界传送装置等）默认为开，需要重新加载以修改此配置
+					Label: Mod自定义物品切换
 				}
 
 				RevPrices: {
 					Tooltip: 让药水价格更高.默认为开
-					Label: 报复模式价格调整
+					Label: 复仇模式价格调整
 				}
 
 				DisabledLocatorNpcs: {
@@ -1415,7 +1415,7 @@ Mods: {
 
 				LocatorRange: {
 					Tooltip: 指针能指向的最大范围.默认为4000
-					Label: 生命型分析机指向范围
+					Label: 生命体分析机指向范围
 				}
 
 				LifeformAnalyzer: {
