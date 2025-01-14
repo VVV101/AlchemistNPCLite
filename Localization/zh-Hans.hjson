@@ -169,7 +169,7 @@ Mods: {
 
 		Buffs: {
 			BattleComb: {
-				DisplayName: 战斗药剂包
+				DisplayName: 战斗捆绑包
 				Description: 包含以下Buff：耐力, 生命力, 铁皮, 再生, 暴怒, 怒气
 			}
 
@@ -179,12 +179,12 @@ Mods: {
 			}
 
 			BuilderComb: {
-				DisplayName: 建筑师药剂包
+				DisplayName: 建筑师捆绑包
 				Description: 包含以下Buff：镇静, 建筑工, 挖矿
 			}
 
 			CalamityComb: {
-				DisplayName: 灾厄药剂包
+				DisplayName: 灾厄捆绑包
 				Description: 包含以下Buff：光合，Fabsol伏特加，腾飞、弹跳
 			}
 
@@ -210,7 +210,7 @@ Mods: {
 			}
 
 			ExplorerComb: {
-				DisplayName: 探索者药剂包
+				DisplayName: 探索捆绑剂包
 				Description:
 					'''
 					包含以下Buff：危险感知, 狩猎, 洞穴探险, 夜猫子, 光芒, 挖矿
@@ -219,7 +219,7 @@ Mods: {
 			}
 
 			FishingComb: {
-				DisplayName: 钓鱼药剂包
+				DisplayName: 钓鱼捆绑包
 				Description: 包含以下Buff：声呐, 钓鱼, 再生, 镇静, 荆棘, 铁皮, 狱火, 宝匣
 			}
 
@@ -239,7 +239,7 @@ Mods: {
 			}
 
 			MageComb: {
-				DisplayName: 魔法药剂包
+				DisplayName: 魔法捆绑包
 				Description: 包含以下Buff：魔能, 魔力再生, 灵视, 暴怒, 怒气
 			}
 
@@ -249,7 +249,7 @@ Mods: {
 			}
 
 			RangerComb: {
-				DisplayName: 射手药剂包
+				DisplayName: 射手捆绑包
 				Description: 包含以下Buff：箭术, 弹药储备, 暴怒, 怒气
 			}
 
@@ -259,7 +259,7 @@ Mods: {
 			}
 
 			SummonerComb: {
-				DisplayName: 召唤师药剂包
+				DisplayName: 召唤师捆绑包
 				Description: 包含以下Buff：召唤, 迷人, 怒气
 			}
 
@@ -269,7 +269,7 @@ Mods: {
 			}
 
 			TankComb: {
-				DisplayName: 坦克药剂包 (模组)
+				DisplayName: 坦克捆绑包 (模组)
 				Description: 包含以下Buff：耐力, 生命力, 铁皮, 黑曜石皮, 荆棘, 再生, 泰坦皮肤, 无敌
 			}
 
@@ -293,7 +293,7 @@ Mods: {
 			}
 
 			UniversalComb: {
-				DisplayName: 万能药剂包
+				DisplayName: 万能捆绑包
 				Description:
 					'''
 					完美结合了以下药剂包的Buff：
@@ -302,12 +302,12 @@ Mods: {
 			}
 
 			VanTankComb: {
-				DisplayName: 坦克药剂包 (原版)
+				DisplayName: 坦克捆绑包 (原版)
 				Description: 包含以下Buff：耐力, 生命力, 铁皮, 黑曜石皮肤, 荆棘, 恢复
 			}
 
 			ThoriumComb: {
-				DisplayName: 瑟银药剂包
+				DisplayName: 瑟银捆绑包
 				Description: 刺客药剂包,嗜血, 疯狂, 光辉, 圣洁, 创造力, 耳虫, 灵感爆发，水合
 			}
 		}
