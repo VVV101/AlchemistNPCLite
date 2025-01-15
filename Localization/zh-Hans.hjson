@@ -665,7 +665,7 @@ Mods: {
 
 			SpiritCombination: {
 				DisplayName: 魂灵药剂包
-				Tooltip: 获得大部分魂灵Buff (符文之力, 灵魂之护, 魂灵, 星之燃烧, 坚定和毒素)
+				Tooltip: 获得大部分魂灵Buff (符文爆发, 魂灵之环, 星之燃烧, 坚定和毒素)
 			}
 
 			SummonerCombination: {
