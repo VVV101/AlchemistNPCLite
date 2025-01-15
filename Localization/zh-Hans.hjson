@@ -1,11 +1,11 @@
 Mods: {
 	AlchemistNPCLite: {
 		Bestiary: {
-			Alchemist: 出售各种实用药水、植物、蘑菇和其他不同的东西. ''Lore-wise'' 是药剂师的老朋友/恋人. 目前, ''离婚''
-			Brewer: 出售各种增益药水. ''Lore-wise'' 是炼金师的老朋友/恋人. 目前, ''离婚''
+			Alchemist: 出售各种实用药水、植物、蘑菇和其他不同的东西. ''Lore-wise'' 是药剂师的老朋友/恋人. 目前''离婚''
+			Brewer: 出售各种增益药水. ''Lore-wise'' 是炼金师的老朋友/恋人. 目前''离婚''
 			Jeweler: 出售无限数量的不同宝石.还能为建立竞技场提供物品，用于磨练或打BOSS. ''Lore-wise'' 应该算是商人的孪生兄弟
 			Musician: 随着一些进度出售不同的音乐盒.目前不存在真正的传说
-			Operator: 出售各种不同的制作材料和宝藏袋（如果在专家以上玩）.不是人
+			Operator: 出售各种不同的制作材料和宝藏袋（如果在专家以上）.不是人
 			Architect: 出售各种不同的物块和制作站.装修专家
 			Tinkerer: 出售各种配饰，随着进度解锁. ''Lore-wise'' 是蒸汽朋克的弟弟
 			YoungBrewer: 出售各种药水药剂包和强化药剂. ''Lore-wise'' 是炼金师和药剂师的儿子
@@ -175,7 +175,11 @@ Mods: {
 
 			Blurring: {
 				DisplayName: 模糊
-				Description: 敌人看不清你 (暗影躲避有30秒CD)
+				Description: 
+					'''
+					敌人看不清你 
+					(暗影躲避有30秒CD)
+					'''
 			}
 
 			BuilderComb: {
@@ -188,7 +192,7 @@ Mods: {
 				Description: 包含以下Buff：光合，Fabsol伏特加，腾飞、弹跳
 			}
 
-			Corrosion: {
+    			Corrosion: {
 				DisplayName: 腐蚀
 				Description: 你的肉体正在融化!
 			}
@@ -234,8 +238,8 @@ Mods: {
 			}
 
 			LongInvincible: {
-				DisplayName: 延长无敌帧
-				Description: 增加你的无敌帧时间
+				DisplayName: 无敌
+				Description: 增加受伤后的无敌帧
 			}
 
 			MageComb: {
@@ -308,14 +312,18 @@ Mods: {
 
 			ThoriumComb: {
 				DisplayName: 瑟银捆绑包
-				Description: 刺客药剂包,嗜血, 疯狂, 光辉, 圣洁, 创造力, 耳虫, 灵感爆发，水合
+				Description: 包含以下buff：刺客,堕血, 狂怒, 光辉, 圣洁, 创意, 耳虫, 灵感之触，补水
 			}
 		}
 
 		Items: {
 			BattleCombination: {
 				DisplayName: 战斗药剂包
-				Tooltip: 获得你在战斗时需要的Buff(耐力, 生命力, 铁皮, 再生, 暴怒, 怒气)
+				Tooltip: 
+					'''
+					获得你在战斗时需要的Buff
+					(耐力, 生命力, 铁皮, 再生, 暴怒, 怒气)
+					'''
 			}
 
 			BeachTeleporterPotion: {
@@ -331,7 +339,7 @@ Mods: {
 				DisplayName: 迷人药剂
 				Tooltip:
 					'''
-					+1仆从栏
+					增加1最大仆从栏
 					非灾厄BUFF药剂
 					'''
 			}
@@ -340,19 +348,28 @@ Mods: {
 				DisplayName: 模糊药剂
 				Tooltip:
 					'''
-					获得模糊Buff (30秒冷却结束10秒后激活暗影躲避)
+					获得模糊Buff
+					(每30秒冷却激活10s的神圣防护)
 					非灾厄BUFF药剂
 					'''
 			}
 
 			BuilderCombination: {
 				DisplayName: 建筑师药剂包
-				Tooltip: 获得你在建筑时需要的Buff(镇静, 建筑工, 挖矿)
+				Tooltip: 
+					'''
+					获得你在建筑时需要的Buff
+					(镇静, 建筑工, 挖矿)
+					'''
 			}
 
 			CalamityCombination: {
-				DisplayName: 灾厄组药剂包
-				Tooltip: 获得一些灾厄模组buff (光合作用, Fabsol伏特加, 腾飞，弹跳)
+				DisplayName: 灾厄药剂包
+				Tooltip: 
+					'''
+					获得一些灾厄Buff 
+					(光合, Fabsol伏特加, 腾飞，弹跳)
+					'''
 			}
 
 			DiscordPotion: {
@@ -389,19 +406,27 @@ Mods: {
 
 			ExplorerCombination: {
 				DisplayName: 探索者药剂包
-				Tooltip: 获得你在探索时所需的Buff(危险感知, 狩猎, 洞穴探险, 夜猫子, 光芒, 挖矿, 鱼鳃, 脚蹼, 水上漂)
+				Tooltip: 
+					'''
+					获得你在探索时所需的Buff
+					(危险感知, 狩猎, 洞穴探险, 夜猫子, 光芒, 挖矿, 鱼鳃, 脚蹼, 水上漂)
+					'''
 			}
 
 			FishingCombination: {
 				DisplayName: 钓鱼药剂包
-				Tooltip: 获得你在钓鱼时所需的Buff (声呐, 钓鱼, 再生, 镇静, 荆棘, 铁皮, 狱火, 宝匣)
+				Tooltip: 
+					'''
+					获得你在钓鱼时所需的Buff 
+					(声呐, 钓鱼, 再生, 镇静, 荆棘, 铁皮, 狱火, 宝匣)
+					'''
 			}
 
 			FortitudePotion: {
 				DisplayName: 刚毅药剂
 				Tooltip:
 					'''
-					极大地免疫击退
+					使你免疫击退
 					非灾厄BUFF药剂
 					'''
 			}
@@ -419,7 +444,7 @@ Mods: {
 				DisplayName: 无敌药剂
 				Tooltip:
 					'''
-					延长受伤后的无敌帧时间
+					增加受伤后的无敌帧
 					非灾厄BUFF药剂
 					'''
 			}
@@ -436,7 +461,11 @@ Mods: {
 
 			MageCombination: {
 				DisplayName: 魔法药剂包
-				Tooltip: 获得一些魔法buff(魔能, 法力再生, 暴怒, 怒气)
+				Tooltip: 
+					'''
+					获得一些魔法buff
+					(魔能, 法力再生, 暴怒, 怒气)
+					'''
 			}
 
 			AlchemistCharmTier1: {
@@ -712,7 +741,7 @@ Mods: {
 				Tooltip:
 					'''
 					获得瑟银的大部分药水Buff
-					嗜血, 精准, 对决, 狂怒, 创造力, 耳虫, 灵感爆发, 光辉, 圣洁
+					刺客,堕血, 狂怒, 光辉, 圣洁, 创意, 耳虫, 灵感之触，补水
 					'''
 			}
 
@@ -735,7 +764,7 @@ Mods: {
 				DisplayName: 终极蛋糕
 				Tooltip:
 					'''
-					同时赋予几乎所有增益站点的效果
+					同时赋予几乎所有增益站的效果
 					这包括篝火, 红心灯笼、巴斯特雕像、利器站、弹药箱、水晶球、蛋糕块和施法桌.
 					通过某种难以想象的魔法，它永远不会被消耗掉
 					非灾厄buff物品
@@ -1359,8 +1388,8 @@ Mods: {
 		Configs: {
 			ModConfiguration: {
 				ShopChangeDelay: {
-					Tooltip: 打开界面后可更改商店前的延迟时间.默认为10帧
-					Label: 商店更改延迟
+					Tooltip: 可更改商店购买物品前的延迟时间.默认为10帧
+					Label: 购买更改延迟
 				}
 
 				DesertFossilPrice: {
