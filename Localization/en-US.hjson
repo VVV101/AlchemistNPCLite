@@ -336,7 +336,7 @@ Mods: {
 				DisplayName: Blurring Potion
 				Tooltip:
 					'''
-					Grants Blurring buff (activates Holy Protection for 10 sec after 30 sec CD)
+					Grants Blurring buff (activates Shadow Dodge for 10 sec after 30 sec CD)
 					NON-CALAMITY BUFF POTION
 					'''
 			}
