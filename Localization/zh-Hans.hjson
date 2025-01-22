@@ -1219,11 +1219,11 @@ Mods: {
 		Combinations: 药剂包
 		Flasks: 烧瓶
 		ShopB1: 第一商店 (原版)
-		ShopB2: 第二商店 (模组/灾厄)
-		ShopB3: 第二商店 (瑟银/RG)
-		ShopB4: 第三商店 (更多药剂)
-		ShopB5: 第四商店 (震颤/钓杆/钓具箱)
-		ShopB6: 第五商店 (蛮荒/圣域/魂灵/水晶之地/扩展)
+		ShopB2: 第二商店 (炼金/灾厄)
+		ShopB3: 第三商店 (瑟银/RG)
+		ShopB4: 第四商店 (Atheria)
+		ShopB5: 第五商店 (钓杆/钓具箱)
+		ShopB6: 第六商店 (魂灵)
 		Lillian: Lillian
 		Lucy: Lucy
 		Alice: Alice
