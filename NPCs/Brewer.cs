@@ -330,7 +330,7 @@ namespace AlchemistNPCLite.NPCs
             ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
             ModLoader.TryGetMod("ThoriumMod", out Mod ThoriumMod);
             ModLoader.TryGetMod("Redemption", out Mod Redemption);
-			//ModLoader.TryGetMod("ShardsOfAtheria", out Mod Atheria);
+            ModLoader.TryGetMod("ShardsOfAtheria", out Mod Atheria);
 
             var shop = new NPCShop(Type, SHOP_1)
                 .Add(new Item(ItemID.SwiftnessPotion) { shopCustomPrice = 5000 })
@@ -381,23 +381,21 @@ namespace AlchemistNPCLite.NPCs
             shop.Register();
 
             shop = new NPCShop(Type, SHOP_2)
-                .AddModItemToShop<BewitchingPotion>(10000, () => NPC.downedBoss3);
-                if (ModContent.GetInstance<ModConfiguration>().ModItems){
-                    shop.AddModItemToShop<SunshinePotion>(15000);
-                    shop.AddModItemToShop<Dopamine>(15000);
-                    shop.AddModItemToShop<GreaterDangersensePotion>(25000);
-                    shop.AddModItemToShop<NatureBlessingPotion>(25000);
-                    shop.AddModItemToShop<ExcavationPotion>(50000, Condition.DownedEowOrBoc);
-                    shop.AddModItemToShop<FortitudePotion>(15000, () => NPC.downedBoss3);
-                    shop.AddModItemToShop<InvincibilityPotion>(15000, () => Main.hardMode);
-                    shop.AddModItemToShop<TitanSkinPotion>(15000, () => Main.hardMode);
-                    shop.AddModItemToShop<DiscordPotion>(200000, () => NPC.downedMechBossAny && !NPC.downedMoonlord);
-                    shop.AddModItemToShop<PerfectDiscordPotion>(330000, () => NPC.downedMoonlord);
-                    shop.AddModItemToShop<BlurringPotion>(150000, () => NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3);
-                    shop.AddModItemToShop<NinjaPotion>(75000, () => NPC.downedPlantBoss);
-                    shop.AddModItemToShop<TrapsPotion>(50000, () => NPC.downedGolemBoss);
-                }
-                shop.AddModItemToShop(Calamity, "BoundingPotion", 20000)
+                .AddModItemToShop<SunshinePotion>(15000)
+                .AddModItemToShop<Dopamine>(15000)
+                .AddModItemToShop<GreaterDangersensePotion>(25000)
+                .AddModItemToShop<NatureBlessingPotion>(25000)
+                .AddModItemToShop<ExcavationPotion>(50000, Condition.DownedEowOrBoc)
+                .AddModItemToShop<BewitchingPotion>(10000, () => NPC.downedBoss3)
+                .AddModItemToShop<FortitudePotion>(15000, () => NPC.downedBoss3)
+                .AddModItemToShop<InvincibilityPotion>(15000, () => Main.hardMode)
+                .AddModItemToShop<TitanSkinPotion>(15000, () => Main.hardMode)
+                .AddModItemToShop<DiscordPotion>(200000, () => NPC.downedMechBossAny && !NPC.downedMoonlord)
+                .AddModItemToShop<PerfectDiscordPotion>(330000, () => NPC.downedMoonlord)
+                .AddModItemToShop<BlurringPotion>(150000, () => NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3)
+                .AddModItemToShop<NinjaPotion>(75000, () => NPC.downedPlantBoss)
+                .AddModItemToShop<TrapsPotion>(50000, () => NPC.downedGolemBoss)
+                .AddModItemToShop(Calamity, "BoundingPotion", 20000)
                 .AddModItemToShop(Calamity, "CalciumPotion", 35000)
                 .AddModItemToShop(Calamity, "TriumphPotion", 30000)
                 .AddModItemToShop(Calamity, "TeslaPotion", 25000)
@@ -435,11 +433,14 @@ namespace AlchemistNPCLite.NPCs
                 .AddModItemToShop(Redemption, "VigourousPotion", 250000, () => Operator.RedemptionDowned.Nebuleus);
             shop.Register();
 
-            shop = new NPCShop(Type, SHOP_4);
-				/*.AddModItemToShop(Atheria, "SoulInjection", 7500)
-				.AddModItemToShop(Atheria, "BoneMarrowInjection", 7500, Condition.DownedSkeletron)
-				.AddModItemToShop(Atheria, "ConductivityPotion", 7500, Condition.DownedEowOrBoc)
-				.AddModItemToShop(Atheria, "ChargedFlightPotion", 7500, () => Operator.ShardsConditions.DownedNova);*/
+            shop = new NPCShop(Type, SHOP_4)
+                .AddModItemToShop(Atheria, "SoulInjection", 7500)
+                .AddModItemToShop(Atheria, "InsulationPotion", 7500)
+                .AddModItemToShop(Atheria, "ConductivityPotion", 7500, Condition.DownedEowOrBoc)
+                .AddModItemToShop(Atheria, "AreusInjection", 7500, Condition.DownedEowOrBoc)
+                .AddModItemToShop(Atheria, "BoneMarrowInjection", 7500, Condition.DownedSkeletron)
+                .AddModItemToShop(Atheria, "GammaPlagueInjection", 7500, Condition.DownedMechBossAny)
+                .AddModItemToShop(Atheria, "ChargedFlightPotion", 7500, () => Operator.ShardsDowned.DownedNova);
             shop.Register();
 
             shop = new NPCShop(Type, SHOP_5);

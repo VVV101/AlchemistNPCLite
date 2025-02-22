@@ -26,7 +26,7 @@ namespace AlchemistNPCLite.Interface
             OperatorShopsPanel.Left.Set(575f, 0f);
             OperatorShopsPanel.Top.Set(275f, 0f);
             OperatorShopsPanel.Width.Set(300f, 0f);
-            OperatorShopsPanel.Height.Set(190f, 0f);
+            OperatorShopsPanel.Height.Set(220f, 0f);
             OperatorShopsPanel.BackgroundColor = new Color(73, 94, 171);
 
             OperatorShopsPanel.OnLeftMouseDown += new MouseEvent(DragStart);
@@ -46,30 +46,37 @@ namespace AlchemistNPCLite.Interface
             text1.Height.Set(22, 0f);
             OperatorShopsPanel.Append(text1);
 
+            UIText text7 = new("Modded Materials/Boss Drops #2");
+            text7.Left.Set(35, 0f);
+            text7.Top.Set(70, 0f);
+            text7.Width.Set(90, 0f);
+            text7.Height.Set(22, 0f);
+            OperatorShopsPanel.Append(text7);
+
             UIText text2 = new("Vanilla Treasure Bags");
             text2.Left.Set(35, 0f);
-            text2.Top.Set(70, 0f);
+            text2.Top.Set(100, 0f);
             text2.Width.Set(70, 0f);
             text2.Height.Set(22, 0f);
             OperatorShopsPanel.Append(text2);
 
             UIText text3 = new("Modded Treasure Bags #1");
             text3.Left.Set(35, 0f);
-            text3.Top.Set(100, 0f);
+            text3.Top.Set(130, 0f);
             text3.Width.Set(120, 0f);
             text3.Height.Set(22, 0f);
             OperatorShopsPanel.Append(text3);
 
             UIText text4 = new("Modded Treasure Bags #2");
             text4.Left.Set(35, 0f);
-            text4.Top.Set(130, 0f);
+            text4.Top.Set(160, 0f);
             text4.Width.Set(120, 0f);
             text4.Height.Set(22, 0f);
             OperatorShopsPanel.Append(text4);
 
             UIText text5 = new("Modded Treasure Bags #3");
             text5.Left.Set(35, 0f);
-            text5.Top.Set(160, 0f);
+            text5.Top.Set(190, 0f);
             text5.Width.Set(120, 0f);
             text5.Height.Set(22, 0f);
             OperatorShopsPanel.Append(text5);
@@ -89,30 +96,37 @@ namespace AlchemistNPCLite.Interface
             playButton1.Height.Set(22, 0f);
             playButton1.OnLeftClick += new(PlayButtonClicked2);
             OperatorShopsPanel.Append(playButton1);
+            UIImageButton playButton7 = new(buttonPlayTexture);
+            playButton7.Left.Set(10, 0f);
+            playButton7.Top.Set(70, 0f);
+            playButton7.Width.Set(22, 0f);
+            playButton7.Height.Set(22, 0f);
+            playButton7.OnLeftClick += new(PlayButtonClicked7);
+            OperatorShopsPanel.Append(playButton7);
             UIImageButton playButton2 = new(buttonPlayTexture);
             playButton2.Left.Set(10, 0f);
-            playButton2.Top.Set(70, 0f);
+            playButton2.Top.Set(100, 0f);
             playButton2.Width.Set(22, 0f);
             playButton2.Height.Set(22, 0f);
             playButton2.OnLeftClick += new(PlayButtonClicked3);
             OperatorShopsPanel.Append(playButton2);
             UIImageButton playButton3 = new(buttonPlayTexture);
             playButton3.Left.Set(10, 0f);
-            playButton3.Top.Set(100, 0f);
+            playButton3.Top.Set(130, 0f);
             playButton3.Width.Set(22, 0f);
             playButton3.Height.Set(22, 0f);
             playButton3.OnLeftClick += new(PlayButtonClicked4);
             OperatorShopsPanel.Append(playButton3);
             UIImageButton playButton4 = new(buttonPlayTexture);
             playButton4.Left.Set(10, 0f);
-            playButton4.Top.Set(130, 0f);
+            playButton4.Top.Set(160, 0f);
             playButton4.Width.Set(22, 0f);
             playButton4.Height.Set(22, 0f);
             playButton4.OnLeftClick += new(PlayButtonClicked5);
             OperatorShopsPanel.Append(playButton4);
             UIImageButton playButton5 = new(buttonPlayTexture);
             playButton5.Left.Set(10, 0f);
-            playButton5.Top.Set(160, 0f);
+            playButton5.Top.Set(190, 0f);
             playButton5.Width.Set(22, 0f);
             playButton5.Height.Set(22, 0f);
             playButton5.OnLeftClick += new(PlayButtonClicked6);
@@ -139,6 +153,8 @@ namespace AlchemistNPCLite.Interface
                 Operator.Shop4 = false;
                 Operator.Shop5 = false;
                 Operator.Shop6 = false;
+                Operator.Shop7 = false;
+                Operator.ShopIndex = 0;
                 AlchemistHelper.OpenShop(ref Shop, Operator.MaterialShop, ref visible);
             }
         }
@@ -153,7 +169,25 @@ namespace AlchemistNPCLite.Interface
                 Operator.Shop4 = false;
                 Operator.Shop5 = false;
                 Operator.Shop6 = false;
+                Operator.Shop7 = false;
+                Operator.ShopIndex = 1;
                 AlchemistHelper.OpenShop(ref Shop, Operator.ModMaterialShop, ref visible);
+            }
+        }
+
+        private void PlayButtonClicked7(UIMouseEvent evt, UIElement listeningElement)
+        {
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
+            {
+                Operator.Shop1 = false;
+                Operator.Shop2 = true;
+                Operator.Shop3 = false;
+                Operator.Shop4 = false;
+                Operator.Shop5 = false;
+                Operator.Shop6 = false;
+                Operator.Shop7 = true;
+                Operator.ShopIndex = 6;
+                AlchemistHelper.OpenShop(ref Shop, Operator.ModMaterialShop2, ref visible);
             }
         }
 
@@ -167,6 +201,8 @@ namespace AlchemistNPCLite.Interface
                 Operator.Shop4 = false;
                 Operator.Shop5 = false;
                 Operator.Shop6 = false;
+                Operator.Shop7 = false;
+                Operator.ShopIndex = 2;
                 AlchemistHelper.OpenShop(ref Shop, Operator.VanillaBagsShop, ref visible);
             }
         }
@@ -181,6 +217,8 @@ namespace AlchemistNPCLite.Interface
                 Operator.Shop4 = true;
                 Operator.Shop5 = false;
                 Operator.Shop6 = false;
+                Operator.Shop7 = false;
+                Operator.ShopIndex = 3;
                 AlchemistHelper.OpenShop(ref Shop, Operator.Bags1Shop, ref visible);
             }
         }
@@ -195,6 +233,8 @@ namespace AlchemistNPCLite.Interface
                 Operator.Shop4 = false;
                 Operator.Shop5 = true;
                 Operator.Shop6 = false;
+                Operator.Shop7 = false;
+                Operator.ShopIndex = 4;
                 AlchemistHelper.OpenShop(ref Shop, Operator.Bags2Shop, ref visible);
             }
         }
@@ -209,6 +249,8 @@ namespace AlchemistNPCLite.Interface
                 Operator.Shop4 = false;
                 Operator.Shop5 = false;
                 Operator.Shop6 = true;
+                Operator.Shop7 = false;
+                Operator.ShopIndex = 5;
                 AlchemistHelper.OpenShop(ref Shop, Operator.Bags3Shop, ref visible);
             }
         }

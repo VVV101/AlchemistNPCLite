@@ -306,6 +306,11 @@ Mods: {
 				DisplayName: Thorium Comb
 				Description: Combination of Assassin, Blood, Frenzy, Glowing, Holy, Creativity, Earworm, Inspiration Reach and Hydrataion potions
 			}
+
+			SpiritComb: {
+				Description: Mods.AlchemistNPCLite.Buffs.SpiritComb.Description
+				DisplayName: Spirit Comb
+			}
 		}
 
 		Items: {
@@ -1278,6 +1283,7 @@ Mods: {
 		EntryM22: You are hurting my ears! Turn it down!
 		BossDropsShop: Boss Drops & Materials Shop
 		BossDropsModsShop: Modded Boss Drops & Materials Shop
+		BossDropsModsShop2: Modded Boss Drops & Materials Shop #2
 		VanillaTreasureBagsShop: Vanilla Treasure Bags Shop
 		ModdedTreasureBagsShop: Modded Treasure Bags Shop
 		ModdedTreasureBagsShop2: Modded Treasure Bags Shop #2

@@ -310,6 +310,11 @@ Mods: {
 				DisplayName: 瑟银组合
 				Description: 刺客组合,嗜血, 疯狂, 光辉, 圣洁, 创造力, 耳虫, 灵感爆发，水合
 			}
+
+			SpiritComb: {
+				// Description: Mods.AlchemistNPCLite.Buffs.SpiritComb.Description
+				// DisplayName: Spirit Comb
+			}
 		}
 
 		Items: {
@@ -1271,6 +1276,7 @@ Mods: {
 		EntryM22: 你弄疼我的耳朵了！关小声点！
 		BossDropsShop: Boss掉落物&材料商店
 		BossDropsModsShop: Boss掉落物&材料商店
+		BossDropsModsShop2: Boss掉落物&材料商店#2
 		VanillaTreasureBagsShop: "原版宝藏袋商店    "
 		ModdedTreasureBagsShop: "模组宝藏袋商店    "
 		ModdedTreasureBagsShop2: "模组宝藏袋商店#2    "

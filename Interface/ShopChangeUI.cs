@@ -53,7 +53,7 @@ namespace AlchemistNPCLite.Interface
             text21.Height.Set(22, 0f);
             BrewerShopsPanel.Append(text21);
 
-            UIText text3 = new("MorePotions");
+            UIText text3 = new("MorePotions/Atheria");
             text3.Left.Set(35, 0f);
             text3.Top.Set(100, 0f);
             text3.Width.Set(70, 0f);

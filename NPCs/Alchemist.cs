@@ -311,6 +311,8 @@ namespace AlchemistNPCLite.NPCs
             ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
             ModLoader.TryGetMod("Redemption", out Mod Redemption);
             ModLoader.TryGetMod("imkSushisMod", out Mod imkSushisMod);
+            ModLoader.TryGetMod("SpiritMod", out Mod SpiritMod);
+
             var shop = new NPCShop(Type, BaseShop)
                 .Add(new Item(ItemID.LesserHealingPotion) { shopCustomPrice = 1000 })
                 .Add(new Item(ItemID.HealingPotion) { shopCustomPrice = 5000 },
@@ -394,7 +396,11 @@ namespace AlchemistNPCLite.NPCs
                     Condition.DownedEowOrBoc)
                 .Add(new Item(ItemID.ViciousMushroom) { shopCustomPrice = 1000 },
                     Condition.DownedEowOrBoc)
-                .AddModItemToShop(Redemption, "Nightshade", 1000, () => NPC.downedBoss3);
+                .AddModItemToShop(Redemption, "Nightshade", 1000, () => NPC.downedBoss3)
+                .AddModItemToShop(SpiritMod, "GlowRoot", 1000)
+                .AddModItemToShop(SpiritMod, "CloudstalkItem", 1000)
+                .AddModItemToShop(SpiritMod, "Kelp", 1500)
+                .AddModItemToShop(SpiritMod, "SoulBloom", 2000);
             /*
             if (ModLoader.GetMod("Tremor") != null)
             {
