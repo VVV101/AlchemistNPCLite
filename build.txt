@@ -1,7 +1,7 @@
 displayName = AlchemistNPC Lite
 author = Gregg/VVV101, b2mauler, Rockman Zeta, somebody0214, RebooT, drh
-version = 1.9.6
+version = 1.9.8
 homepage = https://forums.terraria.org/index.php?threads/alchemistnpc-v8-0.52798/
-weakReferences = Census, CalamityMod, CalamityModMusic, Redemption, ThoriumMod
+weakReferences = Census, CalamityMod, CalamityModMusic, Redemption, ThoriumMod, ShardsOfAtheria, SpiritMod
 includeSource = true
-sortAfter = Census, CalamityMod, CalamityModMusic, Redemption, ThoriumMod, imkSushisMod
+sortAfter = Census, CalamityMod, CalamityModMusic, Redemption, ThoriumMod, imkSushisMod, ShardsOfAtheria, SpiritMod

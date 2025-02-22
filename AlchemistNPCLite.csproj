@@ -1,21 +1,19 @@
-<?xml version="1.0" encoding="utf-8"?>
+﻿
 <Project Sdk="Microsoft.NET.Sdk">
   <Import Project="..\tModLoader.targets" />
   <PropertyGroup>
     <AssemblyName>AlchemistNPCLite</AssemblyName>
-    <TargetFramework>net6.0</TargetFramework>
-    <PlatformTarget>AnyCPU</PlatformTarget>
     <LangVersion>latest</LangVersion>
   </PropertyGroup>
-  <ItemGroup>
-    <PackageReference Include="tModLoader.CodeAssist" Version="0.1.*" />
-  </ItemGroup>
   <ItemGroup>
     <Reference Include="Redemption">
       <HintPath>..\..\ModReader\Redemption\Redemption.dll</HintPath>
     </Reference>
     <Reference Include="ShardsOfAtheria">
-      <HintPath>..\ModAssemblies\ShardsOfAtheria_v1.0.dll</HintPath>
+      <HintPath>..\ModAssemblies\ShardsOfAtheria_v1.0.3.dll</HintPath>
+    </Reference>
+    <Reference Include="SpiritMod">
+      <HintPath>..\..\ModReader\SpiritMod\SpiritMod.dll</HintPath>
     </Reference>
   </ItemGroup>
 </Project>

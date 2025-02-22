@@ -296,6 +296,11 @@ Mods: {
 				DisplayName: Combinações do Mod Thorium
 				Description: Assassino, Sangue, Frenesi, Brilhante, Sagrada, Criatividade, Verme do Ouvido, Alcance Inspirador e Idratação
 			}
+
+			SpiritComb: {
+				// Description: Mods.AlchemistNPCLite.Buffs.SpiritComb.Description
+				// DisplayName: Spirit Comb
+			}
 		}
 
 		Items: {
@@ -1276,6 +1281,7 @@ Mods: {
 		EntryM22: Você está machucando meus ouvidos! Abaixe o volume!
 		BossDropsShop: Loja de materiais e drops dos chefes
 		BossDropsModsShop: Loja de materiais e drops dos chefes fornecido pelos mods
+		BossDropsModsShop2: Loja de materiais e drops dos chefes fornecido pelos mods #2
 		VanillaTreasureBagsShop: Loja das bolsas do tesouro normais
 		ModdedTreasureBagsShop: Loja das bolsas do tesouro fornecidas pelos mods
 		ModdedTreasureBagsShop2: Loja das bolsas do tesouro fornecidas pelos mods #2

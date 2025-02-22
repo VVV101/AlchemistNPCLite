@@ -306,6 +306,11 @@ Mods: {
 				// DisplayName: Thorium Comb
 				// Description: Combination of Assassin, Blood, Frenzy, Glowing, Holy, Creativity, Earworm, Inspiration Reach and Hydrataion potions
 			}
+
+			SpiritComb: {
+				// Description: Mods.AlchemistNPCLite.Buffs.SpiritComb.Description
+				// DisplayName: Spirit Comb
+			}
 		}
 
 		Items: {
@@ -1254,6 +1259,7 @@ Mods: {
 		EntryM22: У меня уже болят уши! Сделай потише!
 		BossDropsShop: Магазин лута Боссов и материалов
 		BossDropsModsShop: Магазин модового лута Боссов и материалов
+		BossDropsModsShop2: Магазин модового лута Боссов и материалов #2
 		VanillaTreasureBagsShop: Магазин сумок стандарных Боссов
 		ModdedTreasureBagsShop: Магазин сумок модовых Боссов
 		ModdedTreasureBagsShop2: Магазин сумок модовых Боссов #2
