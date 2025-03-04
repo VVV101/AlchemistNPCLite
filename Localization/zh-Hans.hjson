@@ -1,11 +1,11 @@
 Mods: {
 	AlchemistNPCLite: {
 		Bestiary: {
-			Alchemist: 出售各种实用药水、植物、蘑菇和其他不同的东西.在背景中是药剂师的老朋友/恋人.目前''离婚''
-			Brewer: 出售各种增益药水.在背景中是炼金师的老朋友/恋人.目前''离婚''
-			Jeweler: 出售无限数量的不同宝石.还能为建立竞技场提供物品，用于磨练或打BOSS.在背景中应该算是商人的孪生兄弟
+			Alchemist: 出售各种实用药水、植物、蘑菇和其他不同的东西.在背景中是药剂师的老朋友/恋人.目前已离婚
+			Brewer: 出售各种增益药水.在背景中是炼金师的老朋友/恋人.目前已离婚
+			Jeweler: 出售无限数量的不同宝石.还能为修建战斗场地提供物品，用于磨练或打BOSS.在背景中应该算是商人的孪生兄弟
 			Musician: 随着一些进度出售不同的音乐盒.目前没有背景
-			Operator: 出售各种不同的制作材料和宝藏袋（如果在专家以上）.并非人类
+			Operator: 出售各种不同的制作材料和宝藏袋（在专家模式及以上）.尽管并非人类
 			Architect: 出售各种不同的物块和制作站.装修专家
 			Tinkerer: 出售各种配饰，随着进度解锁.在背景上是蒸汽朋克的弟弟
 			YoungBrewer: 出售各种药水药剂包和强化药剂.在背景上是炼金师和药剂师的儿子
@@ -33,10 +33,10 @@ Mods: {
 				LoveBiome: 这个地方让我想起了以前和朋友一起训练的日子
 				DislikeBiome: 这里太冷了...我的手都冻僵了
 				HateBiome: 我想住在别的地方！这太可怕了
-				LikeNPC: "{NPCName}她懂得努力工作的重要性.有她在身边真好"
-				LikeNPC_Princess: 我得去看看{NPCName}那个女孩懂我！
+				LikeNPC: "{NPCName}懂得努力工作的重要性.有她在身边真好"
+				LikeNPC_Princess: 我得去看看{NPCName}，那个女孩懂我！
 				LoveNPC: "{NPCName}在这里！谁是爸爸的儿子？"
-				DislikeNPC:{NPCName}在附近时我觉得我无法集中注意力.她总是拿我开玩笑
+				DislikeNPC:{NPCName}在附近时我觉得我无法集中注意力.因为她总是拿我开玩笑
 				HateNPC: 这是我们之间的秘密，我是说你有没有考虑过把{NPCName}扔回到你找到他的地方？
 			}
 
@@ -52,7 +52,7 @@ Mods: {
 				DislikeBiome: 这里太冷了...我的手都冻僵了
 				HateBiome: 我想住在别的地方！这太可怕了
 				LikeNPC: "{NPCName}很容易被戏弄！我帮不上忙..."
-				LikeNPC_Princess: 我得去看看{NPCName}.那个女孩懂我！
+				LikeNPC_Princess: 我得去看看{NPCName}，那个女孩懂我！
 				LoveNPC: "{NPCName}在这里！谁是妈妈的儿子？"
 				DislikeNPC: "{NPCName}不停的警告真让人讨厌.简直受不了"
 				HateNPC: 这是我们之间的秘密，我是说你有没有考虑过把{NPCName}扔回到你找到他的地方？
@@ -70,7 +70,7 @@ Mods: {
 				DislikeBiome: 这里太冷了...我的手都冻僵了
 				HateBiome: 我想住在别的地方！这太可怕了
 				LikeNPC: "{NPCName}对钱很敏感.有点太贪婪了，但我完全能理解"
-				LikeNPC_Princess: 我得去看看{NPCName}那个女孩懂我！
+				LikeNPC_Princess: 我得去看看{NPCName}，那个女孩懂我！
 				LoveNPC: "{NPCName}在这里！你可以清楚地看出我们几乎一模一样.但我不想留胡子"
 				DislikeNPC: 我不能忍受这样的女孩{NPCName}, 她完全分散了我的注意力
 				HateNPC: 这是我们之间的秘密，我是说你有没有考虑过把{NPCName}扔回到你找到他的地方？
@@ -87,8 +87,8 @@ Mods: {
 				LoveBiome: 我喜欢这个地方的闪亮和明亮.也非常适合举办派对
 				DislikeBiome: 这里太冷了...我的手都冻僵了
 				HateBiome: 我想住在别的地方！这太可怕了
-				LikeNPC: "{NPCName}当我没有音乐盒的时候很有用.你知制作这些有多难吗？"
-				LikeNPC_Princess: 我得去看看{NPCName}那个女孩懂我！
+				LikeNPC: "{NPCName}当我没有音乐盒的时候很有用.你知道制作这些有多难吗？"
+				LikeNPC_Princess: 我得去看看{NPCName}，那个女孩懂我！
 				LoveNPC: "{NPCName}和我一样喜欢音乐！我可以整天和她在一起"
 				DislikeNPC: "{NPCName}这个吝啬鬼太烦人了.你能把他带到外面的什么地方吗？"
 				HateNPC: 这是我们之间的秘密，我是说你有没有考虑过把{NPCName}扔回到你找到他的地方？
@@ -114,7 +114,7 @@ Mods: {
 
 			Architect: {
 				Content: 我感觉很好！
-				NoHome: 作为一名建筑师，我特别不喜欢没有房子
+				NoHome: 作为一名建筑师，我特别不喜欢没有房子的日子
 				LoveSpace: 和平与宁静意味着我可以尽情享受！
 				FarFromHome: 我想我的房子并不在这条路上...除非你要带我去什么地方？
 				DislikeCrowded: 人越多越开心，但我开始觉得有点太拥挤了
@@ -155,11 +155,11 @@ Mods: {
 				FarFromHome: 我想我的房子并不在这条路上...除非你要带我去什么地方？
 				DislikeCrowded: 人越多越开心，但我开始觉得有点太拥挤了
 				HateCrowded: 我无法在不踢到人的情况下踢腿放松
-				LikeBiome: 我可以在周围暖和的时候生活，所以我可以接受
-				LoveBiome: 我喜欢森林！新鲜空气和周围的绿色植物.此外还奢求什么呢？
+				LikeBiome: 我可以在周围暖和的环境生活，我喜欢这里
+				LoveBiome: 我很喜欢森林！新鲜空气和周围的绿色植物.此外还奢求什么呢？
 				DislikeBiome: 我不喜欢这样.我想要一个更温暖的地方居住
 				HateBiome: 我想住在别的地方！这太可怕了
-				LikeNPC: 爸爸也在这里？他有时会很傻，但妈妈尊重他在传送药水的成功.因为无论她怎么努力，都无法重现
+				LikeNPC: 爸爸也在这里？他有时会很傻，但妈妈尊重他在传送药水领域的成功.因为无论妈妈怎么努力，都无法重现
 				LikeNPC_Princess: 我得去看看{NPCName}.她真的很喜欢和我一起玩.我也是
 				LoveNPC: 妈妈来了？太棒了我喜欢我爸爸，是的，但是妈妈...她的药水几乎无所不能，而且非常有用！
 				DislikeNPC: "{NPCName}脾气暴躁.我问过他几次做玩具的事，但他总是没有时间"
@@ -170,7 +170,11 @@ Mods: {
 		Buffs: {
 			BattleComb: {
 				DisplayName: 战斗药剂包
-				Description: 包含以下Buff：耐力, 生命力, 铁皮, 再生, 暴怒, 怒气
+				Description: 
+					'''
+					包含以下Buff
+					耐力, 生命力, 铁皮, 再生, 暴怒, 怒气
+					'''
 			}
 
 			Blurring: {
@@ -184,12 +188,20 @@ Mods: {
 
 			BuilderComb: {
 				DisplayName: 建筑师药剂包
-				Description: 包含以下Buff：镇静, 建筑工, 挖矿
+				Description: 
+					'''
+					包含以下Buff
+					镇静, 建筑工, 挖矿
+					'''
 			}
 
 			CalamityComb: {
 				DisplayName: 灾厄药剂包
-				Description: 包含以下Buff：光合，Fabsol伏特加，腾飞、弹跳
+				Description: 
+					'''
+					包含以下Buff
+					光合，Fabsol伏特加，腾飞、弹跳
+					'''
 			}
 
     		Corrosion: {
@@ -217,14 +229,19 @@ Mods: {
 				DisplayName: 探索者药剂包
 				Description:
 					'''
-					包含以下Buff：危险感知, 狩猎, 洞穴探险, 夜猫子, 光芒, 挖矿
+					包含以下Buff
+					危险感知, 狩猎, 洞穴探险, 夜猫子, 光芒, 挖矿
 					同时给予鱼鳃、脚蹼和水上漂药水效果
 					'''
 			}
 
 			FishingComb: {
 				DisplayName: 钓鱼药剂包
-				Description: 包含以下Buff：声呐, 钓鱼, 再生, 镇静, 荆棘, 铁皮, 狱火, 宝匣
+				Description: 
+					'''
+					包含以下Buff
+					声呐, 钓鱼, 再生, 镇静, 荆棘, 铁皮, 狱火, 宝匣
+					'''
 			}
 
 			Fortitude: {
@@ -244,7 +261,11 @@ Mods: {
 
 			MageComb: {
 				DisplayName: 魔法药剂包
-				Description: 包含以下Buff：魔能, 魔力再生, 灵视, 暴怒, 怒气
+				Description: 
+					'''
+					包含以下Buff
+					魔能, 魔力再生, 灵视, 暴怒, 怒气
+					'''
 			}
 
 			NinjaSkill: {
@@ -254,7 +275,11 @@ Mods: {
 
 			RangerComb: {
 				DisplayName: 射手药剂包
-				Description: 包含以下Buff：箭术, 弹药储备, 暴怒, 怒气
+				Description: 
+					'''
+					包含以下Buff
+					箭术, 弹药储备, 暴怒, 怒气
+					'''
 			}
 
 			StationUltimaBuff: {
@@ -264,7 +289,11 @@ Mods: {
 
 			SummonerComb: {
 				DisplayName: 召唤师药剂包
-				Description: 包含以下Buff：召唤, 迷人, 怒气
+				Description: 
+					'''
+					包含以下Buff
+					召唤, 迷人, 怒气
+					'''
 			}
 
 			Sunshine: {
@@ -273,13 +302,17 @@ Mods: {
 			}
 
 			TankComb: {
-				DisplayName: 坦克药剂包 (模组)
-				Description: 包含以下Buff：耐力, 生命力, 铁皮, 黑曜石皮, 荆棘, 再生, 泰坦皮肤, 无敌
+				DisplayName: 坦克药剂包 (炼金)
+				Description: 
+					'''
+					包含以下Buff
+					耐力, 生命力, 铁皮, 黑曜石皮, 荆棘, 再生, 泰坦皮肤, 无敌
+					'''
 			}
 
 			TitanSkin: {
 				DisplayName: 泰坦皮肤
-				Description: 你免疫一些Debuff
+				Description: 使你免疫一些Debuff
 			}
 
 			TrapsBuff: {
@@ -307,12 +340,20 @@ Mods: {
 
 			VanTankComb: {
 				DisplayName: 坦克药剂包 (原版)
-				Description: 包含以下Buff：耐力, 生命力, 铁皮, 黑曜石皮肤, 荆棘, 恢复
+				Description: 
+					'''
+					包含以下Buff
+					耐力, 生命力, 铁皮, 黑曜石皮肤, 荆棘, 恢复
+					'''
 			}
 
 			ThoriumComb: {
-				DisplayName: 瑟银捆绑包
-				Description: 包含以下buff：刺客,堕血, 狂怒, 光辉, 圣洁, 创意, 耳虫, 灵感之触，补水
+				DisplayName: 瑟银药剂包
+				Description: 
+					'''
+					包含以下buff
+					刺客,堕血, 狂怒, 光辉, 圣洁, 创意, 耳虫, 灵感之触，补水
+					'''
 			}
 		}
 
@@ -559,7 +600,7 @@ Mods: {
 				Tooltip:
 					'''
 					当它在你的背包中时，你有更好的机会获得更好的重铸
-					不影响配饰
+					不影响配饰，仅对武器生效
 					'''
 			}
 
@@ -578,6 +619,7 @@ Mods: {
 					'''
 					从更多药剂包中获得大多数buff
 					干旱,强化再生, 勇气, 灵魂绑定, 钻石皮, 黄昏, 黎明, 迅捷之手, 速度
+					bro这个东西没有更新到1.4.4，应该不会生效
 					'''
 			}
 
@@ -588,7 +630,11 @@ Mods: {
 
 			NinjaPotion: {
 				DisplayName: 忍者药剂
-				Tooltip: 增加5%的伤害和暴击几率, 并获得忍者大师装备的能力
+				Tooltip: 
+					'''
+					增加5%的伤害和暴击几率,
+					获得忍者大师装备的能力
+					'''
 			}
 
 			InformatingNote: {
@@ -660,17 +706,30 @@ Mods: {
 
 			RangerCombination: {
 				DisplayName: 射手药剂包
-				Tooltip: 获得一些远程Buff (箭术, 弹药储备, 暴怒, 怒气)
+				Tooltip: 
+					'''
+					获得一些远程Buff 
+					(箭术, 弹药储备, 暴怒, 怒气)
+					'''
 			}
 
 			SpiritCombination: {
 				DisplayName: 魂灵药剂包
-				Tooltip: 获得大部分魂灵Buff (符文爆发, 魂灵之环, 星之燃烧, 坚定和毒素)
+				Tooltip: 
+					'''
+					得大部分魂灵Buff 
+					(符文爆发, 魂灵之环, 星之燃烧, 坚定和毒素)
+					bro这个东西的代码应该被注释了，不会生效
+					'''
 			}
 
 			SummonerCombination: {
 				DisplayName: 召唤师药剂包
-				Tooltip: 获得一些召唤Buff (召唤, 战斗, 迷人, 怒气)
+				Tooltip: 
+					'''
+					获得一些召唤Buff 
+					(召唤, 战斗, 迷人, 怒气)
+					'''
 			}
 
 			AlchemistHorcrux: {
@@ -727,8 +786,12 @@ Mods: {
 			}
 
 			TankCombination : {
-				DisplayName: 坦克药剂包 (模组)
-				Tooltip: 获得一些坦克Buff (耐力, 生命力, 铁皮, 黑曜石皮, 荆棘, 再生, 泰坦皮肤, 无敌)
+				DisplayName: 坦克药剂包 (炼金)
+				Tooltip: 
+					'''
+					获得一些坦克Buff 
+					(耐力, 生命力, 铁皮, 黑曜石皮, 荆棘, 再生, 泰坦皮肤, 无敌)
+					'''
 			}
 
 			TempleTeleportationPotion: {
@@ -749,7 +812,8 @@ Mods: {
 				DisplayName: 泰坦皮肤药剂
 				Tooltip:
 					'''
-					使你免疫部分Debuff (着火了！, 霜冻, 诅咒狱火, 冷冻, 冰冻, 灵液)
+					使你免疫部分Debuff 
+					(着火了！, 霜冻, 诅咒狱火, 冷冻, 冰冻, 灵液)
 					对诅咒狱火和灵液的免疫能力只有在击败双子魔眼后才会生效
 					非灾厄BUFF药剂
 					'''
@@ -792,7 +856,11 @@ Mods: {
 
 			VanTankCombination: {
 				DisplayName: 坦克药剂包 (原版)
-				Tooltip: 获得一些坦克Buff (耐力, 生命力, 铁皮, 黑曜石皮, 荆棘, 再生)
+				Tooltip: 
+					'''
+					获得一些坦克Buff 
+					(耐力, 生命力, 铁皮, 黑曜石皮, 荆棘, 再生)
+					'''
 			}
 
 			MateriaTransmutatorMK2: {
@@ -1153,13 +1221,13 @@ Mods: {
 		EntryA1: 我的生命药水可以治疗你的伤口
 		EntryA2: 我的魔法药水可以回复你的魔力
 		EntryA3: 再生药剂...不知道它们是好是坏...
-		EntryA4: 有一个传说中的溜溜球被称为Sasscade
+		EntryA4: 有一个传说中的悠悠球被称为Sasscade
 		EntryA5: 来自骷髅商人的奇异啤酒气味真的很糟糕,但法力恢复效果非常棒!
 		EntryA6: 嗨, *咳咳*..那绝对不是柠檬茶
 		EntryA7: 你有在周围看到一个机械骷髅王吗?
 		EntryA8: 你有听说过极限蘑菇吗？如果你找到了一个，我相信我能研究出一种可以帮助你的材料
 		EntryA9: 我向
-		EntryA10: 购买高效萃取配方，因为他不愿意卖给我，然后我就说“即使是傻子也能研究出那个配方”
+		EntryA10: 购买高效萃取配方，但是他不愿意卖给我，然后我就说“即使是傻子也能研究出那个配方”
 		EntryA11: 想想看, 她正在得到那些药水而我没有...但我对此却又无法反驳
 		EntryA12: 他叫什么来着?
 		EntryA13: ? 所以...老师在这儿? 我最好加快脚步!
@@ -1176,7 +1244,7 @@ Mods: {
 		EntryA24: 是怎么在这种时候保持冷静的? 我现在就想知道！现在!
 		EntryA25: 不要让来自丛林的黑暗者用迷人的智慧欺骗你.我和
 		EntryA26: 曾经是他的学徒.当他的课程变得过于黑暗时，我退出了，但
-		EntryA27: 对神秘炼金术的兴趣除了增长之外什么也没改变
+		EntryA27: 除了对神秘炼金术的兴趣增长了之外什么也没改变
 		Joe: Joe
 		Mark: Mark
 		Walter: Walter
@@ -1188,7 +1256,7 @@ Mods: {
 		A3: 咬她.
 		A4: 杀掉那个僵尸! 杀掉那个兔子! 那个名字是血- 哦, 抱歉, 我没注意到你在这里
 		A5: 哦嗨，你好！我正在为一个湖收集一些装满血的水桶. 我很开心所以别问我更多问题了，再见. 
-		A6: 我很喜欢有一大堆僵尸在我的门后面，但是我非常很它们打破我的门!
+		A6: 我很喜欢有一大堆僵尸在我的门后面，但是我十分痛恨它们打破我的门!
 		A7: 啊哈, 这种不安全的感觉, 偏执狂热爱这种血月升起的感觉
 		A8: 你对我的信仰感兴趣吗? 它涉及对血月的牺牲
 		A9: 你知道为什么我恨这些哥布林嘛? 他们太吵了！
@@ -1200,7 +1268,7 @@ Mods: {
 		A15: 什么玩意儿? 我去哪里搞到我的建筑师学位? 有建筑师学位吗?
 		A16: 你知道木头怎么才不会烧着吗? 经过一系列操作之后的确不会.真的怪...
 		A17: 不, 我不是家伙(guy).我是老兄(dude)
-		A18: 嗯, 你最近做的一件事情几乎让人印象深刻.(并不)
+		A18: 嗯, 你最近做的一件事情几乎让人印象深刻.(bushi)
 		A19: 所以, 你说箱子也是家具？我的评价是: 去你丫的
 		A20: 我看了你的建筑, 但是我仍然觉得不怎么样
 		A21: 你听说过那个叫FuryForged的家伙吗？他的本事都是我教的！
@@ -1265,7 +1333,7 @@ Mods: {
 		EntryJ7: 你在周围看到机械生物了吗?
 		EntryJ8: 你有没有注意到到我和
 		EntryJ9: 长得几乎一毛一样?这是因为我们是兄弟
-		EntryJ10: 如果你发现这些撕碎的笔记太多了，把它带给我，我会帮你破译的.不要问我为什么，只要知道这些对我有价值
+		EntryJ10: 如果你发现这些破碎的笔记，把它带给我，我会帮你破译的.不要问我为什么，只要知道这些对我有价值（这在Lite版没用）
 		Shop1: 第一商店(原版音乐盒) #1
 		Shop2: 第二商店(原版音乐盒) #2
 		Shop3: 第三商店(异界音乐盒)
@@ -1351,8 +1419,8 @@ Mods: {
 		TinkererButton2: 战斗
 		EntryT1: 需要一些特别的东西? 尽管说...
 		EntryT2: 你看见过我的姐姐吗? 比起工匠, 她更像个蒸汽朋克女孩...
-		EntryT3: 如果你在什么地方见过纸管, 把它带给我, 我会为你解锁一些东西
-		EntryT4: 随着进度的推进, 你可能会发现更有价值的东西.攒些蓝图来制作更稀有的饰品
+		EntryT3: 如果你在什么地方见过纸管, 把它带给我, 我会为你解锁一些东西（这在Lite版没用）
+		EntryT4: 随着进度的推进, 你可能会发现更有价值的东西.攒些蓝图来制作更稀有的饰品（这在Lite版没用）
 		EntryT5: 你永远不会知道在哪里可以得到真正珍贵的东西.所以耐心探索每一个可能的角落吧
 		Harold: Harold
 		Charles: Charles
@@ -1364,7 +1432,7 @@ Mods: {
 		Entry1: 我出售我父母做的药剂
 		Entry2: 我有一些药水可以卖给你
 		Entry3: 战斗药剂包是我的主意
-		Entry4: 有一个传说中的溜溜球被称为Sasscadee
+		Entry4: 有一个传说中的悠悠球被称为Sasscadee
 		Entry5: 来自骷髅商人的奇异啤酒气味真的很糟糕，但法力恢复效果是可怕的
 		Entry6: 嗨, *咳咳*..那绝对不是柠檬茶
 		Entry7: 你有在附近见到钢铁破坏者吗?
