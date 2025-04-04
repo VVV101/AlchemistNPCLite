@@ -918,7 +918,7 @@ namespace AlchemistNPCLite.NPCs
                 .AddModItemToShop(Calamity, "Phantoplasm", 100000, () => (bool)Calamity.Call("Downed", "polterghast"))
                 .AddModItemToShop(Calamity, "NightmareFuel", 120000, () => (bool)Calamity.Call("Downed", "dog") && AlchemistNPCLiteWorld.downedDOGPumpking)
                 .AddModItemToShop(Calamity, "EndothermicEnergy", 120000, () => (bool)Calamity.Call("Downed", "dog") && AlchemistNPCLiteWorld.downedDOGIceQueen)
-                .AddModItemToShop(Calamity, "DarksunFragment", 150000, () => (bool)Calamity.Call("Downed", "buffed mothron"))
+                .AddModItemToShop(Calamity, "DarksunFragment", 150000, () => (bool)Calamity.Call("Downed", "dog") && AlchemistNPCLiteWorld.downedDOGMothron)
                 //if (ModLoader.GetMod("SpiritMod") != null)
                 //{
                 //    .addModItemToShop(SpiritMod, "BrokenParts", 500000, NPC.downedGolemBoss);
@@ -960,7 +960,8 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.SkeletronBossBag) { shopCustomPrice = 1000000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode))
                 .Add(new Item(ItemID.DeerclopsBossBag) { shopCustomPrice = 1500000 },
-                    new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedDeerclops)).AddModItemToShop(ThoriumMod, "DarkMageBag", 1000000, () => NPC.downedBoss3 && Main.expertMode && DD2Event.DownedInvasionT1)
+                    new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedDeerclops))
+                .AddModItemToShop(ThoriumMod, "DarkMageBag", 1000000, () => NPC.downedBoss3 && Main.expertMode && DD2Event.DownedInvasionT1)
                 .Add(new Item(ItemID.WallOfFleshBossBag) { shopCustomPrice = 1750000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode && Main.hardMode))
                 .Add(new Item(ItemID.QueenSlimeBossBag) { shopCustomPrice = 1500000 },
