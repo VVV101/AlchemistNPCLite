@@ -1,14 +1,14 @@
 Mods: {
 	AlchemistNPCLite: {
 		Bestiary: {
-			Alchemist: 出售各种实用药水、植物、蘑菇和其他不同的东西. ''Lore-wise'' 是药剂师的老朋友/恋人. 目前, ''离婚''
-			Brewer: 出售各种增益药水. ''Lore-wise'' 是炼金师的老朋友/恋人. 目前, ''离婚''
-			Jeweler: 出售无限数量的不同宝石.还能为建立竞技场提供物品，用于磨练或打BOSS. ''Lore-wise'' 应该算是商人的孪生兄弟
-			Musician: 随着一些进度出售不同的音乐盒.目前不存在真正的传说
-			Operator: 出售各种不同的制作材料和宝藏袋（如果在专家以上玩）.不是人
+			Alchemist: 出售各种实用药水、植物、蘑菇和其他不同的东西.在背景中是药剂师的老朋友/恋人.目前已离婚
+			Brewer: 出售各种增益药水.在背景中是炼金师的老朋友/恋人.目前已离婚
+			Jeweler: 出售无限数量的不同宝石.还能为修建战斗场地提供物品，用于磨练或打BOSS.在背景中应该算是商人的孪生兄弟
+			Musician: 随着一些进度出售不同的音乐盒.目前没有背景
+			Operator: 出售各种不同的制作材料和宝藏袋（在专家模式及以上）.尽管并非人类
 			Architect: 出售各种不同的物块和制作站.装修专家
-			Tinkerer: 出售各种配饰，随着进度解锁. ''Lore-wise'' 是蒸汽朋克的弟弟
-			YoungBrewer: 出售各种药水药剂包和强化药剂. ''Lore-wise'' 是炼金师和药剂师的儿子
+			Tinkerer: 出售各种配饰，随着进度解锁.在背景上是蒸汽朋克的弟弟
+			YoungBrewer: 出售各种药水药剂包和强化药剂.在背景上是炼金师和药剂师的儿子
 		}
 
 		Common: {
@@ -20,175 +20,191 @@ Mods: {
 			RainStopped: 雨停了
 		}
 
-		#This is what displays during all of an NPC's happiness levels. Note that the localization key for these should always be "TownNPCMood.*NPCName*.*Mood*" or else it won't display properly.
+		#This is what displays during all of an NPC's happiness levels.Note that the localization key for these should always be "TownNPCMood.*NPCName*.*Mood*" or else it won't display properly.
 		TownNPCMood: {
 			Alchemist: {
 				Content: 我感觉很好！
-				NoHome: 你有多余的房子吗？没有房子做药水真的很不舒服
+				NoHome: 你有多余的房子吗？没有房子做药水真的很不舒服！
 				LoveSpace: 和平与宁静意味着我可以尽情享受！
-				FarFromHome: 我想我的房子就是这样...除非你要带我去什么地方？
+				FarFromHome: 我想我的房子并不在这条路上...除非你要带我去什么地方？
 				DislikeCrowded: 人越多越开心，但我开始觉得有点太拥挤了
 				HateCrowded: 我无法在不踢到人的情况下踢腿放松
 				LikeBiome: 温馨祥和，还有什么比做药水更好的呢？
 				LoveBiome: 这个地方让我想起了以前和朋友一起训练的日子
 				DislikeBiome: 这里太冷了...我的手都冻僵了
 				HateBiome: 我想住在别的地方！这太可怕了
-				LikeNPC: "{NPCName} 她懂得努力工作的重要性.有她在身边真好"
-				LikeNPC_Princess: 我得去看看 {NPCName} 又有个女孩来找我！
-				LoveNPC: "{NPCName} 在这里！谁是爸爸的儿子？"
-				DislikeNPC: 我觉得我无法集中注意力 {NPCName} 就在附近.她总是拿我开玩笑
-				HateNPC: 只有我们知道.你有没有考虑过 {NPCName} 回到你找到他的地方？
+				LikeNPC: "{NPCName}懂得努力工作的重要性.有她在身边真好"
+				LikeNPC_Princess: 我得去看看{NPCName}，那个女孩懂我！
+				LoveNPC: "{NPCName}在这里！谁是爸爸的儿子？"
+				DislikeNPC:{NPCName}在附近时我觉得我无法集中注意力.因为她总是拿我开玩笑
+				HateNPC: 这是我们之间的秘密，我是说你有没有考虑过把{NPCName}扔回到你找到他的地方？
 			}
 
 			Brewer: {
 				Content: 我感觉很好！
 				NoHome: 你有多余的房子吗？没有房子做药水真的很不舒服
 				LoveSpace: 和平与宁静意味着我可以尽情享受！
-				FarFromHome: 我想我的房子就是这样...除非你要带我去什么地方？
+				FarFromHome: 我想我的房子并不在这条路上...除非你要带我去什么地方？
 				DislikeCrowded: 人越多越开心，但我开始觉得有点太拥挤了
 				HateCrowded: 我无法在不踢到人的情况下踢腿放松
-				LikeBiome: 这里有点太热，但空气很好
+				LikeBiome: 这里有点太热了，但空气很好
 				LoveBiome: 温馨祥和，正如我所愿！
 				DislikeBiome: 这里太冷了...我的手都冻僵了
 				HateBiome: 我想住在别的地方！这太可怕了
-				LikeNPC: "{NPCName} 很容易被戏弄！我忍不住"
-				LikeNPC_Princess: 我得去看看 {NPCName} 又有个女孩来找我！
-				LoveNPC: "{NPCName} 在这里！谁是妈妈的儿子？"
-				DislikeNPC: "{NPCName} 他不停的警告真让人讨厌.简直受不了"
-				HateNPC: 只有我们知道.你有没有考虑过 {NPCName} 回到你找到他的地方？
+				LikeNPC: "{NPCName}很容易被戏弄！我帮不上忙..."
+				LikeNPC_Princess: 我得去看看{NPCName}，那个女孩懂我！
+				LoveNPC: "{NPCName}在这里！谁是妈妈的儿子？"
+				DislikeNPC: "{NPCName}不停的警告真让人讨厌.简直受不了"
+				HateNPC: 这是我们之间的秘密，我是说你有没有考虑过把{NPCName}扔回到你找到他的地方？
 			}
 
 			Jeweler: {
 				Content: 我感觉很好！
 				NoHome: 你有多余的房子吗？没有房子做珠宝真的很不舒服
 				LoveSpace: 和平与宁静意味着我可以尽情享受！
-				FarFromHome: 我想我的房子就是这样...除非你要带我去什么地方？
+				FarFromHome: 我想我的房子并不在这条路上...除非你要带我去什么地方？
 				DislikeCrowded: 人越多越开心，但我开始觉得有点太拥挤了
 				HateCrowded: 我无法在不踢到人的情况下踢腿放松
-				LikeBiome: 这里有点太热，但空气很好
+				LikeBiome: 这里有点太热了，但空气很好
 				LoveBiome: 温馨祥和，正如我所愿！
 				DislikeBiome: 这里太冷了...我的手都冻僵了
 				HateBiome: 我想住在别的地方！这太可怕了
-				LikeNPC: "{NPCName} 对钱很敏感.有点太贪婪了，但我完全能理解"
-				LikeNPC_Princess: 我得去看看 {NPCName} 又有个女孩来找我！
-				LoveNPC: "{NPCName} 在这里！你可以清楚地看出我们几乎一模一样.但我不想留胡子"
-				DislikeNPC: 我不能忍受这样的女孩 {NPCName}, 她完全分散了我的注意力
-				HateNPC: 只有我们知道.你有没有考虑过 {NPCName} 回到你找到他的地方？
+				LikeNPC: "{NPCName}对钱很敏感.有点太贪婪了，但我完全能理解"
+				LikeNPC_Princess: 我得去看看{NPCName}，那个女孩懂我！
+				LoveNPC: "{NPCName}在这里！你可以清楚地看出我们几乎一模一样.但我不想留胡子"
+				DislikeNPC: 我不能忍受这样的女孩{NPCName}, 她完全分散了我的注意力
+				HateNPC: 这是我们之间的秘密，我是说你有没有考虑过把{NPCName}扔回到你找到他的地方？
 			}
 
 			Musician: {
 				Content: 我感觉很好！
 				NoHome: 你有多余的房子吗？如果我没有房子住，我怎么做音乐？
 				LoveSpace: 和平与宁静意味着我可以尽情享受！
-				FarFromHome: 我想我的房子就是这样...除非你要带我去什么地方？
+				FarFromHome: 我想我的房子并不在这条路上...除非你要带我去什么地方？
 				DislikeCrowded: 人越多越开心，但我开始觉得有点太拥挤了
 				HateCrowded: 我无法在不踢到人的情况下踢腿放松
 				LikeBiome: 安静与和平，我还需要什么来创作音乐？这里的音响效果非常棒！
 				LoveBiome: 我喜欢这个地方的闪亮和明亮.也非常适合举办派对
 				DislikeBiome: 这里太冷了...我的手都冻僵了
 				HateBiome: 我想住在别的地方！这太可怕了
-				LikeNPC: "{NPCName} 当我没有音乐盒的时候很有用.你知制作这些有多难吗？"
-				LikeNPC_Princess: 我得去看看 {NPCName} 又有个女孩来找我！
-				LoveNPC: "{NPCName} 和我一样喜欢音乐！我可以整天和她在一起"
-				DislikeNPC: 这个吝啬鬼 {NPCName} 太烦人了.你能把他带到外面的什么地方吗？
-				HateNPC: 只有我们知道.你有没有考虑过 {NPCName} 回到你找到他的地方？
+				LikeNPC: "{NPCName}当我没有音乐盒的时候很有用.你知道制作这些有多难吗？"
+				LikeNPC_Princess: 我得去看看{NPCName}，那个女孩懂我！
+				LoveNPC: "{NPCName}和我一样喜欢音乐！我可以整天和她在一起"
+				DislikeNPC: "{NPCName}这个吝啬鬼太烦人了.你能把他带到外面的什么地方吗？"
+				HateNPC: 这是我们之间的秘密，我是说你有没有考虑过把{NPCName}扔回到你找到他的地方？
 			}
 
 			Operator: {
 				Content: 我感觉很好！
 				NoHome: 我需要一个庇护所.我不喜欢没有房子
 				LoveSpace: 和平与宁静意味着我可以尽情享受！
-				FarFromHome: 我想我的房子就是这样...除非你要带我去什么地方？
+				FarFromHome: 我想我的房子并不在这条路上...除非你要带我去什么地方？
 				DislikeCrowded: 人越多越开心，但我开始觉得有点太拥挤了
 				HateCrowded: 我无法在不踢到人的情况下踢腿放松
 				LikeBiome: 海洋是我想看的东西.谢谢
-				LoveBiome: 我的电路在这里运行良好.令人惊讶的是我喜欢雪
-				DislikeBiome: 我讨厌地下.你知道的.对吧？
+				LoveBiome: 我喜欢雪. 令人惊讶的是我的电路在这里运行良好.
+				DislikeBiome: 我讨厌地下.你知道的，对吧？
 				HateBiome: 我想住在别的地方！这太可怕了
-				LikeNPC: "{NPCName} 是我能谈论这项技术的众多人之一"
-				LikeNPC_Princess: 我得去看看 {NPCName} 又有个女孩来找我！
-				LoveNPC: "{NPCName} 可能是唯一能理解我的人.做为一个半机械人"
-				DislikeNPC: "{NPCName} 似乎害怕我.我不知道为什么，但他的恐惧让我有些恼火"
-				HateNPC: 只有我们知道.你有没有考虑过 {NPCName} 回到你找到他的地方？
+				LikeNPC: "{NPCName}是我能谈论这项技术的众多人之一"
+				LikeNPC_Princess: 我得去看看{NPCName}那个女孩懂我！
+				LoveNPC: "{NPCName}可能是唯一能理解我的人.做为一个半机械人"
+				DislikeNPC: "{NPCName}似乎害怕我.我不知道为什么，但他的恐惧让我有些恼火"
+				HateNPC: 这是我们之间的秘密，我是说你有没有考虑过把{NPCName}扔回到你找到他的地方？
 			}
 
 			Architect: {
 				Content: 我感觉很好！
-				NoHome: 作为一名建筑师，我特别不喜欢没有房子
+				NoHome: 作为一名建筑师，我特别不喜欢没有房子的日子
 				LoveSpace: 和平与宁静意味着我可以尽情享受！
-				FarFromHome: 我想我的房子就是这样...除非你要带我去什么地方？
+				FarFromHome: 我想我的房子并不在这条路上...除非你要带我去什么地方？
 				DislikeCrowded: 人越多越开心，但我开始觉得有点太拥挤了
 				HateCrowded: 我无法在不踢到人的情况下踢腿放松
 				LikeBiome: 很安静的地方.我喜欢
 				LoveBiome: 这么多颜色，这么多建筑材料.完美的
 				DislikeBiome: 我讨厌寒冷的感觉.我需要一个温暖的地方
 				HateBiome: 我想住在别的地方！这太可怕了
-				LikeNPC: "{NPCName} 可能只是一个烦人的妖精，但他明白如何建造.我尊重这一点"
-				LikeNPC_Princess: 我得去看看 {NPCName} 又有个女孩来找我！
-				LoveNPC: "{NPCName} 知道如何制作各种颜色.这太棒了"
-				DislikeNPC: "{NPCName} 脾气暴躁讨厌颜色.我想，让他生活在万圣节会很有趣吧"
-				HateNPC: 只有我们知道.你有没有考虑过 {NPCName} 回到你找到他的地方？
+				LikeNPC: "{NPCName}可能只是一个烦人的妖精，但他明白如何建造.我尊重这一点"
+				LikeNPC_Princess: 我得去看看{NPCName}那个女孩懂我！
+				LoveNPC: "{NPCName}知道如何制作各种颜色.这太棒了"
+				DislikeNPC: "{NPCName}脾气暴躁而且讨厌颜色. 我想，让他住在神圣地会很有趣吧"
+				HateNPC: 这是我们之间的秘密，我是说你有没有考虑过把{NPCName}扔回到你找到他的地方？
 			}
 
 			Tinkerer: {
 				Content: 我感觉很好！
 				NoHome: 制作配饰需要耐心.没有房子我也做不到
 				LoveSpace: 和平与宁静意味着我可以尽情享受！
-				FarFromHome: 我想我的房子就是这样...除非你要带我去什么地方？
+				FarFromHome: 我想我的房子并不在这条路上...除非你要带我去什么地方？
 				DislikeCrowded: 人越多越开心，但我开始觉得有点太拥挤了
 				HateCrowded: 我无法在不踢到人的情况下踢腿放松
 				LikeBiome: 有点黑，但我完全可以住在这里
 				LoveBiome: 我和姐姐习惯了在寒冷的地方生活，所以我完全可以接受
 				DislikeBiome: 我讨厌炎热的天气和沙子，所以我不会住在这里
 				HateBiome: 我想住在别的地方！这太可怕了
-				LikeNPC: "{NPCName} 是如此的善良和聪明.我尊重这一点"
-				LikeNPC_Princess: 我得去看看 {NPCName} 又有个女孩来找我！
-				LoveNPC: "{NPCName} 终于来了？我有很多话要说，姐姐！"
-				DislikeNPC: 不要让 {NPCName} 在我周围的任何地方.他衣服上的沙子总是堵塞我的机械
-				HateNPC: 只有我们知道.你有没有考虑过 {NPCName} 回到你找到他的地方？
+				LikeNPC: "{NPCName}是如此的善良和聪明.我尊重这一点"
+				LikeNPC_Princess: 我得去看看{NPCName}那个女孩懂我！
+				LoveNPC: "{NPCName}终于来了？我有很多话要说，姐姐！"
+				DislikeNPC: 不要让{NPCName}在我周围的任何地方.他衣服上的沙子总是堵塞我的机械
+				HateNPC: 这是我们之间的秘密，我是说你有没有考虑过把{NPCName}扔回到你找到他的地方？
 			}
 
 			YoungBrewer: {
 				Content: 我感觉很好！
 				NoHome: 我不喜欢长时间呆在外面.我需要一个自己的房间
 				LoveSpace: 和平与宁静意味着我可以尽情享受！
-				FarFromHome: 我想我的房子就是这样...除非你要带我去什么地方？
+				FarFromHome: 我想我的房子并不在这条路上...除非你要带我去什么地方？
 				DislikeCrowded: 人越多越开心，但我开始觉得有点太拥挤了
 				HateCrowded: 我无法在不踢到人的情况下踢腿放松
-				LikeBiome: 我可以在周围暖和的时候生活，所以我可以接受
-				LoveBiome: 我喜欢森林！新鲜空气和周围的绿色植物.此人还需要什么？
+				LikeBiome: 我可以在周围暖和的环境生活，我喜欢这里
+				LoveBiome: 我很喜欢森林！新鲜空气和周围的绿色植物.此外还奢求什么呢？
 				DislikeBiome: 我不喜欢这样.我想要一个更温暖的地方居住
 				HateBiome: 我想住在别的地方！这太可怕了
-				LikeNPC: 爸爸也在这里？他有时会很傻，但妈妈尊重他的传送药水.无论她怎么努力，她都无法重现
-				LikeNPC_Princess: 我得去看看 {NPCName}. 她真的很喜欢和我一起玩.我也是
+				LikeNPC: 爸爸也在这里？他有时会很傻，但妈妈尊重他在传送药水领域的成功.因为无论妈妈怎么努力，都无法重现
+				LikeNPC_Princess: 我得去看看{NPCName}.她真的很喜欢和我一起玩.我也是
 				LoveNPC: 妈妈来了？太棒了我喜欢我爸爸，是的，但是妈妈...她的药水几乎无所不能，而且非常有用！
-				DislikeNPC: "{NPCName} 脾气暴躁.我问过他几次做玩具的事，但他总是没有时间"
-				HateNPC: 只有我们知道.你有没有考虑过 {NPCName} 回到你找到他的地方？
+				DislikeNPC: "{NPCName}脾气暴躁.我问过他几次做玩具的事，但他总是没有时间"
+				HateNPC: 这是我们之间的秘密，我是说你有没有考虑过把{NPCName}扔回到你找到他的地方？
 			}
 		}
 
 		Buffs: {
 			BattleComb: {
 				DisplayName: 战斗药剂包
-				Description: 包含以下Buff：耐力, 生命力, 铁皮, 恢复, 暴怒, 怒气
+				Description: 
+					'''
+					包含以下Buff
+					耐力, 生命力, 铁皮, 再生, 暴怒, 怒气
+					'''
 			}
 
 			Blurring: {
 				DisplayName: 模糊
-				Description: 敌人看不清你 (暗影躲避有30秒CD)
+				Description: 
+					'''
+					敌人看不清你 
+					(神圣防护有30秒CD)
+					'''
 			}
 
 			BuilderComb: {
 				DisplayName: 建筑师药剂包
-				Description: 包含以下Buff：镇静, 建筑工, 挖矿
+				Description: 
+					'''
+					包含以下Buff
+					镇静, 建筑工, 挖矿
+					'''
 			}
 
 			CalamityComb: {
-				DisplayName: 灾厄组药剂包
-				Description: 包含以下Buff：光合作用，Fabsol的伏特加，翱翔、跳跃
+				DisplayName: 灾厄药剂包
+				Description: 
+					'''
+					包含以下Buff
+					光合，Fabsol伏特加，腾飞、弹跳
+					'''
 			}
 
-			Corrosion: {
+    		Corrosion: {
 				DisplayName: 腐蚀
 				Description: 你的肉体正在融化!
 			}
@@ -213,14 +229,19 @@ Mods: {
 				DisplayName: 探索者药剂包
 				Description:
 					'''
-					包含以下Buff：危险感知, 狩猎, 洞穴探险, 夜猫子, 光芒, 挖矿
-					同时给予鱼鳃、脚蹼和水上行走药水效果
+					包含以下Buff
+					危险感知, 狩猎, 洞穴探险, 夜猫子, 光芒, 挖矿
+					同时给予鱼鳃、脚蹼和水上漂药水效果
 					'''
 			}
 
 			FishingComb: {
 				DisplayName: 钓鱼药剂包
-				Description: 包含以下Buff：声呐, 钓鱼, 恢复, 镇静, 荆棘, 铁皮, 狱火, 宝匣
+				Description: 
+					'''
+					包含以下Buff
+					声呐, 钓鱼, 再生, 镇静, 荆棘, 铁皮, 狱火, 宝匣
+					'''
 			}
 
 			Fortitude: {
@@ -229,18 +250,22 @@ Mods: {
 			}
 
 			GreaterDangersense: {
-				DisplayName: 更大的危险感
-				Description: 高亮敌人的射弹
+				DisplayName: 更强的危险感
+				Description: 高亮敌人的弹幕
 			}
 
 			LongInvincible: {
-				DisplayName: 延长无敌
-				Description: 增加你的无敌时间
+				DisplayName: 无敌
+				Description: 延长受伤后的无敌帧
 			}
 
 			MageComb: {
 				DisplayName: 魔法药剂包
-				Description: 包含以下Buff：魔能, 魔力再生, 智慧, 暴怒, 怒气
+				Description: 
+					'''
+					包含以下Buff
+					魔能, 魔力再生, 灵视, 暴怒, 怒气
+					'''
 			}
 
 			NinjaSkill: {
@@ -250,17 +275,25 @@ Mods: {
 
 			RangerComb: {
 				DisplayName: 射手药剂包
-				Description: 包含以下Buff：箭术, 弹药储备, 暴怒, 怒气
+				Description: 
+					'''
+					包含以下Buff
+					箭术, 弹药储备, 暴怒, 怒气
+					'''
 			}
 
 			StationUltimaBuff: {
 				DisplayName: 终极增益站
-				Description: 同时授予所有增益站的效果
+				Description: 同时给予所有增益站的效果
 			}
 
 			SummonerComb: {
 				DisplayName: 召唤师药剂包
-				Description: 包含以下Buff：召唤, 迷人, 怒气
+				Description: 
+					'''
+					包含以下Buff
+					召唤, 迷人, 怒气
+					'''
 			}
 
 			Sunshine: {
@@ -269,13 +302,17 @@ Mods: {
 			}
 
 			TankComb: {
-				DisplayName: 坦克药剂包 (模组)
-				Description: 包含以下Buff：耐力, 生命力, 铁皮, 黑曜石皮肤, 荆棘, 恢复, 泰坦皮肤, 无敌
+				DisplayName: 坦克药剂包 (炼金)
+				Description: 
+					'''
+					包含以下Buff
+					耐力, 生命力, 铁皮, 黑曜石皮, 荆棘, 再生, 泰坦皮肤, 无敌
+					'''
 			}
 
 			TitanSkin: {
 				DisplayName: 泰坦皮肤
-				Description: 你免疫一些Debuff
+				Description: 使你免疫一些Debuff
 			}
 
 			TrapsBuff: {
@@ -303,19 +340,31 @@ Mods: {
 
 			VanTankComb: {
 				DisplayName: 坦克药剂包 (原版)
-				Description: 包含以下Buff：耐力, 生命力, 铁皮, 黑曜石皮肤, 荆棘, 恢复
+				Description: 
+					'''
+					包含以下Buff
+					耐力, 生命力, 铁皮, 黑曜石皮肤, 荆棘, 恢复
+					'''
 			}
 
 			ThoriumComb: {
 				DisplayName: 瑟银药剂包
-				Description: 刺客药剂包,嗜血, 疯狂, 光辉, 圣洁, 创造力, 耳虫, 灵感爆发，水合
+				Description: 
+					'''
+					包含以下buff
+					刺客,堕血, 狂怒, 光辉, 圣洁, 创意, 耳虫, 灵感之触，补水
+					'''
 			}
 		}
 
 		Items: {
 			BattleCombination: {
 				DisplayName: 战斗药剂包
-				Tooltip: 获得你在战斗时需要的Buff(耐力, 生命力, 铁皮, 恢复, 暴怒, 怒气)
+				Tooltip: 
+					'''
+					获得你在战斗时需要的Buff
+					(耐力, 生命力, 铁皮, 再生, 暴怒, 怒气)
+					'''
 			}
 
 			BeachTeleporterPotion: {
@@ -331,7 +380,7 @@ Mods: {
 				DisplayName: 迷人药剂
 				Tooltip:
 					'''
-					+1仆从栏
+					增加1最大仆从栏
 					非灾厄BUFF药剂
 					'''
 			}
@@ -340,19 +389,28 @@ Mods: {
 				DisplayName: 模糊药剂
 				Tooltip:
 					'''
-					获得模糊Buff (30秒冷却结束10秒后激活暗影躲避)
+					获得模糊Buff
+					(每30秒冷却激活10s的神圣防护)
 					非灾厄BUFF药剂
 					'''
 			}
 
 			BuilderCombination: {
 				DisplayName: 建筑师药剂包
-				Tooltip: 获得你在建筑时需要的Buff(镇静, 建筑工, 挖矿)
+				Tooltip: 
+					'''
+					获得你在建筑时需要的Buff
+					(镇静, 建筑工, 挖矿)
+					'''
 			}
 
 			CalamityCombination: {
-				DisplayName: 灾厄组药剂包
-				Tooltip: 获得一些灾厄模组buff (光合作用, Fabsol伏特加, 翱翔，跳跃)
+				DisplayName: 灾厄药剂包
+				Tooltip: 
+					'''
+					获得一些灾厄Buff 
+					(光合, Fabsol伏特加, 腾飞，弹跳)
+					'''
 			}
 
 			DiscordPotion: {
@@ -389,28 +447,36 @@ Mods: {
 
 			ExplorerCombination: {
 				DisplayName: 探索者药剂包
-				Tooltip: 获得你在探索时所需的Buff(危险感知, 狩猎, 洞穴探险, 夜猫子, 光芒, 挖矿, 鱼鳃, 脚蹼, 水上行走)
+				Tooltip: 
+					'''
+					获得你在探索时所需的Buff
+					(危险感知, 狩猎, 洞穴探险, 夜猫子, 光芒, 挖矿, 鱼鳃, 脚蹼, 水上漂)
+					'''
 			}
 
 			FishingCombination: {
 				DisplayName: 钓鱼药剂包
-				Tooltip: 获得你在钓鱼时所需的Buff (声呐, 钓鱼, 恢复, 镇静, 荆棘, 铁皮, 狱火, 宝匣)
+				Tooltip: 
+					'''
+					获得你在钓鱼时所需的Buff 
+					(声呐, 钓鱼, 再生, 镇静, 荆棘, 铁皮, 狱火, 宝匣)
+					'''
 			}
 
 			FortitudePotion: {
 				DisplayName: 刚毅药剂
 				Tooltip:
 					'''
-					极大地免疫击退
+					使你免疫击退
 					非灾厄BUFF药剂
 					'''
 			}
 
 			GreaterDangersensePotion: {
-				DisplayName: 更大的危险感药剂
+				DisplayName: 更强的危险感药剂
 				Tooltip:
 					'''
-					获得更大的危险感buff（高亮敌人的射弹）
+					获得更强的危险感buff（高亮敌人的弹幕）
 					这种效果对所有玩家都是全局性的
 					'''
 			}
@@ -419,7 +485,7 @@ Mods: {
 				DisplayName: 无敌药剂
 				Tooltip:
 					'''
-					延长受伤后的无敌时间
+					延长受伤后的无敌帧
 					非灾厄BUFF药剂
 					'''
 			}
@@ -430,20 +496,24 @@ Mods: {
 					'''
 					将你传送到丛林
 					左键点击传送到丛林
-					右键点击传送到活红木树
+					右键点击传送到生命红木树
 					'''
 			}
 
 			MageCombination: {
 				DisplayName: 魔法药剂包
-				Tooltip: 获得一些魔法buff(魔能, 法力再生, 暴怒, 怒气)
+				Tooltip: 
+					'''
+					获得一些魔法buff
+					(魔能, 法力再生, 暴怒, 怒气)
+					'''
 			}
 
 			AlchemistCharmTier1: {
 				DisplayName: 炼金师1级护身符
 				Tooltip:
 					'''
-					虽然这在你的背包中，但你不消耗药水的几率很低
+					当它在你的背包中时，你有极小几率不消耗药水
 					炼金师、药剂师和年轻药剂师提供10%的折扣
 					Buff持续时间延长10%
 					'''
@@ -478,7 +548,7 @@ Mods: {
 					当它在你的背包中时，你有非常高的几率不消耗药水
 					允许快速使用猪猪存钱罐的buff药水
 					炼金师，药剂师和年轻药剂师提供50%的折扣
-					如果至尊女巫，灾厄被击败，药水不会消耗
+					如果至尊女巫，灾厄被击败，则药水不会消耗
 					Buff持续时间延长50%
 					'''
 			}
@@ -490,7 +560,7 @@ Mods: {
 					将你传送到地图的任意位置
 					在全屏地图界面点击右键传送
 					Boss存活时无法使用
-					使用后破坏
+					使用后消耗
 					"噢, 蔚蓝的正义, 深红的爱
 					为了被命运吞没的人而战
 					我向光明宣誓
@@ -506,7 +576,7 @@ Mods: {
 					将你传送到地图的任意位置
 					在全屏地图界面点击右键传送
 					Boss存活时无法使用
-					使用后不会破坏
+					使用后不会消耗
 					"噢, 蔚蓝的正义, 深红的爱
 					为了被命运吞没的人而战
 					我向光明宣誓
@@ -530,7 +600,7 @@ Mods: {
 				Tooltip:
 					'''
 					当它在你的背包中时，你有更好的机会获得更好的重铸
-					不影响配饰
+					不影响配饰，仅对武器生效
 					'''
 			}
 
@@ -549,17 +619,22 @@ Mods: {
 					'''
 					从更多药剂包中获得大多数buff
 					干旱,强化再生, 勇气, 灵魂绑定, 钻石皮, 黄昏, 黎明, 迅捷之手, 速度
+					bro这个东西没有更新到1.4.4，应该不会生效
 					'''
 			}
 
 			NatureBlessingPotion: {
 				DisplayName: 自然赐福药剂
-				Tooltip: 大自然给予树精的祝福buff
+				Tooltip: 大自然给予树妖祝福buff
 			}
 
 			NinjaPotion: {
 				DisplayName: 忍者药剂
-				Tooltip: 增加5%的伤害和暴击几率, 并获得忍者大师的能力
+				Tooltip: 
+					'''
+					增加5%的伤害和暴击几率,
+					获得忍者大师装备的能力
+					'''
 			}
 
 			InformatingNote: {
@@ -575,7 +650,7 @@ Mods: {
 				DisplayName: 海洋传送药剂
 				Tooltip:
 					'''
-					将你传送到海里 (最左边或最右边的珊瑚)
+					将你传送到海洋 (最左边或最右边的珊瑚)
 					方向取决于鼠标按键
 					如果没有珊瑚存在将无法工作
 					'''
@@ -615,7 +690,7 @@ Mods: {
 				DisplayName: 简易手工便士
 				Tooltip:
 					'''
-					这让你看起来像是个制造大湿
+					这让你看起来像是个制造大师
 					可代替工作台
 					'''
 			}
@@ -631,17 +706,30 @@ Mods: {
 
 			RangerCombination: {
 				DisplayName: 射手药剂包
-				Tooltip: 获得一些远程Buff (箭术, 弹药储备, 暴怒, 怒气)
+				Tooltip: 
+					'''
+					获得一些远程Buff 
+					(箭术, 弹药储备, 暴怒, 怒气)
+					'''
 			}
 
 			SpiritCombination: {
 				DisplayName: 魂灵药剂包
-				Tooltip: 获得大部分魂灵Buff (符文之力, 灵魂之护, 魂灵, 星之燃烧, 坚定和毒素)
+				Tooltip: 
+					'''
+					得大部分魂灵Buff 
+					(符文爆发, 魂灵之环, 星之燃烧, 坚定和毒素)
+					bro这个东西的代码应该被注释了，不会生效
+					'''
 			}
 
 			SummonerCombination: {
 				DisplayName: 召唤师药剂包
-				Tooltip: 获得一些召唤Buff (召唤, 战斗, 迷人, 怒气)
+				Tooltip: 
+					'''
+					获得一些召唤Buff 
+					(召唤, 战斗, 迷人, 怒气)
+					'''
 			}
 
 			AlchemistHorcrux: {
@@ -697,9 +785,13 @@ Mods: {
 					'''
 			}
 
-			TankCombination: {
-				DisplayName: 坦克药剂包 (模组)
-				Tooltip: 获得一些坦克Buff (耐力, 生命力, 铁皮, 黑曜石皮肤, 荆棘, 恢复, 抵抗, 泰坦皮肤, 无敌)
+			TankCombination : {
+				DisplayName: 坦克药剂包 (炼金)
+				Tooltip: 
+					'''
+					获得一些坦克Buff 
+					(耐力, 生命力, 铁皮, 黑曜石皮, 荆棘, 再生, 泰坦皮肤, 无敌)
+					'''
 			}
 
 			TempleTeleportationPotion: {
@@ -708,11 +800,11 @@ Mods: {
 			}
 
 			ThoriumCombination: {
-				DisplayName: 瑟银捆绑包
+				DisplayName: 瑟银药剂包
 				Tooltip:
 					'''
 					获得瑟银的大部分药水Buff
-					嗜血, 精准, 对决, 狂怒, 创造力, 耳虫, 灵感爆发, 光辉, 圣洁
+					刺客,堕血, 狂怒, 光辉, 圣洁, 创意, 耳虫, 灵感之触，补水
 					'''
 			}
 
@@ -720,8 +812,9 @@ Mods: {
 				DisplayName: 泰坦皮肤药剂
 				Tooltip:
 					'''
-					使你免疫部分Debuff (点燃, 霜燃, 诅咒火焰, 寒冷, 冰冻, 腐蚀)
-					对诅咒火焰和腐蚀的免疫能力只有在击败双子魔眼后才会生效
+					使你免疫部分Debuff 
+					(着火了！, 霜冻, 诅咒狱火, 冷冻, 冰冻, 灵液)
+					对诅咒狱火和灵液的免疫能力只有在击败双子魔眼后才会生效
 					非灾厄BUFF药剂
 					'''
 			}
@@ -735,8 +828,8 @@ Mods: {
 				DisplayName: 终极蛋糕
 				Tooltip:
 					'''
-					同时赋予几乎所有增益站点的效果
-					这包括篝火, 心灯、巴斯特雕像、利器站、弹药箱、水晶球、蛋糕块和施法桌.
+					同时赋予几乎所有增益站的效果
+					这包括篝火, 红心灯笼、巴斯特雕像、利器站、弹药箱、水晶球、蛋糕块和施法桌.
 					通过某种难以想象的魔法，它永远不会被消耗掉
 					非灾厄buff物品
 					'''
@@ -746,9 +839,9 @@ Mods: {
 				DisplayName: 地狱传送药剂
 				Tooltip:
 					'''
-					将你传送至最靠近地狱两端的黑曜石塔楼
+					将你传送至最靠近地狱两端的废墟建筑
 					方向取决于鼠标按键
-					我建议你这么做之前先来一瓶82年的黑曜石皮肤药剂
+					我建议你这么做之前先来一瓶82年的黑曜石皮药水
 					'''
 			}
 
@@ -763,7 +856,11 @@ Mods: {
 
 			VanTankCombination: {
 				DisplayName: 坦克药剂包 (原版)
-				Tooltip: 获得一些坦克Buff (耐力, 生命力, 铁皮, 黑曜石皮肤, 荆棘, 恢复, 抵抗)
+				Tooltip: 
+					'''
+					获得一些坦克Buff 
+					(耐力, 生命力, 铁皮, 黑曜石皮, 荆棘, 再生)
+					'''
 			}
 
 			MateriaTransmutatorMK2: {
@@ -790,7 +887,7 @@ Mods: {
 					LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LikeNPC}"
 					DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.DislikeNPC}"
 					LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Alchemist.LikeNPC_Princess}"
-					Princess_LovesNPC: 我喜欢 {NPCName}
+					Princess_LovesNPC: 我喜欢{NPCName}
 				}
 
 				Census.SpawnCondition: 击败克苏鲁之眼
@@ -813,7 +910,7 @@ Mods: {
 					LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LikeNPC}"
 					DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.DislikeNPC}"
 					LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Architect.LikeNPC_Princess}"
-					Princess_LovesNPC: 我喜欢 {NPCName}
+					Princess_LovesNPC: 我喜欢{NPCName}
 				}
 
 				Census.SpawnCondition: 拥有至少3个NPC
@@ -836,7 +933,7 @@ Mods: {
 					LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LikeNPC}"
 					DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.DislikeNPC}"
 					LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Brewer.LikeNPC_Princess}"
-					Princess_LovesNPC: 我喜欢 {NPCName}
+					Princess_LovesNPC: 我喜欢{NPCName}
 				}
 
 				Census.SpawnCondition: 击败克苏鲁之眼
@@ -859,7 +956,7 @@ Mods: {
 					LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LikeNPC}"
 					DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.DislikeNPC}"
 					LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Jeweler.LikeNPC_Princess}"
-					Princess_LovesNPC: 我喜欢 {NPCName}
+					Princess_LovesNPC: 我喜欢{NPCName}
 				}
 
 				Census.SpawnCondition: 击败克苏鲁之眼
@@ -882,7 +979,7 @@ Mods: {
 					LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LikeNPC}"
 					DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.DislikeNPC}"
 					LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Musician.LikeNPC_Princess}"
-					Princess_LovesNPC: 我喜欢 {NPCName}
+					Princess_LovesNPC: 我喜欢{NPCName}
 				}
 
 				Census.SpawnCondition: 击败骷髅王
@@ -905,10 +1002,10 @@ Mods: {
 					LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LikeNPC}"
 					DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.DislikeNPC}"
 					LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Operator.LikeNPC_Princess}"
-					Princess_LovesNPC: 我喜欢 {NPCName}
+					Princess_LovesNPC: 我喜欢{NPCName}
 				}
 
-				Census.SpawnCondition: 击败世界吞噬者/克苏鲁之脑
+				Census.SpawnCondition: 击败世界吞噬怪/克苏鲁之脑
 			}
 
 			Tinkerer: {
@@ -928,7 +1025,7 @@ Mods: {
 					LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LikeNPC}"
 					DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.DislikeNPC}"
 					LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.Tinkerer.LikeNPC_Princess}"
-					Princess_LovesNPC: 我喜欢 {NPCName}
+					Princess_LovesNPC: 我喜欢{NPCName}
 				}
 
 				Census.SpawnCondition: 击败克苏鲁之眼
@@ -951,7 +1048,7 @@ Mods: {
 					LikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LikeNPC}"
 					DislikeNPC: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.DislikeNPC}"
 					LikeNPC_Princess: "{$Mods.AlchemistNPCLite.TownNPCMood.YoungBrewer.LikeNPC_Princess}"
-					Princess_LovesNPC: 我喜欢 {NPCName}
+					Princess_LovesNPC: 我喜欢{NPCName}
 				}
 
 				Census.SpawnCondition: 世界处于困难模式状态
@@ -970,22 +1067,22 @@ Mods: {
 		cultist: 邪教徒面具/兜帽
 		tier3HardmodeBar: 三级肉后锭(精金/钛金)
 		hardmodeComponent: 困难模式组件
-		evilBar: 魔金/血腥锭
-		evilMushroom: 邪恶蘑菇
+		evilBar: 邪恶锭（魔矿/猩红矿锭）
+		evilMushroom: 邪恶蘑菇（魔菇/毒蘑菇）
 		evilComponent: 邪恶材料(暗影鳞片/组织样本)
 		evilDrop: 邪恶掉落物(腐肉/椎骨)
 		tier2anvil: 二级砧(秘银/山铜砧)
 		tier2forge: 二级熔炉(精金/钛金熔炉)
 		tier1anvil: 一级砧(铁/铅砧)
-		CelestialWings: 四柱翅膀
-		LunarHamaxe: 月斧
+		CelestialWings: 夜明翅膀
+		LunarHamaxe: 夜明斧
 		tier3Watch: 三级表(金表/铂金表)
 		tier3PreHmOre: 三级困难模式矿石
-		KingSlime: 史莱姆之王宝藏袋
-		EyeofCthulhu: 克苏鲁之眼宝藏袋
-		EaterOfWorlds: 世界吞噬者宝藏袋
-		BrainOfCthulhu: 克苏鲁之脑宝藏袋
-		QueenBee: 宝藏袋（蜂后）
+		KingSlime: 宝藏袋（史莱姆之王）
+		EyeofCthulhu: 宝藏袋（克苏鲁之眼）
+		EaterOfWorlds: 宝藏袋（世界吞噬怪）
+		BrainOfCthulhu: 宝藏袋（克苏鲁之脑）
+		QueenBee: 宝藏袋（蜂王）
 		Skeletron: 宝藏袋（骷髅王）
 		Deerclops: 宝藏袋（独眼巨鹿）
 		WallOfFlesh: 宝藏袋（血肉墙）
@@ -1124,30 +1221,30 @@ Mods: {
 		EntryA1: 我的生命药水可以治疗你的伤口
 		EntryA2: 我的魔法药水可以回复你的魔力
 		EntryA3: 再生药剂...不知道它们是好是坏...
-		EntryA4: 有一个传说中的溜溜球被称为Sasscade
+		EntryA4: 有一个传说中的悠悠球被称为Sasscade
 		EntryA5: 来自骷髅商人的奇异啤酒气味真的很糟糕,但法力恢复效果非常棒!
-		EntryA6: 嗨, *咳咳*.. 那绝对不是柠檬茶
+		EntryA6: 嗨, *咳咳*..那绝对不是柠檬茶
 		EntryA7: 你有在周围看到一个机械骷髅王吗?
 		EntryA8: 你有听说过极限蘑菇吗？如果你找到了一个，我相信我能研究出一种可以帮助你的材料
-		EntryA9: "我向 "
-		EntryA10: 购买高效萃取配方，因为他说不，然后我就说‘即使是傻子也能研究出那个配方’
+		EntryA9: 我向
+		EntryA10: 购买高效萃取配方，但是他不愿意卖给我，然后我就说“即使是傻子也能研究出那个配方”
 		EntryA11: 想想看, 她正在得到那些药水而我没有...但我对此却又无法反驳
-		EntryA12: "他叫什么来着? "
-		EntryA13: ? 所以... 老师在这儿? 我最好加快脚步!
+		EntryA12: 他叫什么来着?
+		EntryA13: ? 所以...老师在这儿? 我最好加快脚步!
 		EntryA14: 感谢上帝，我从骷髅王那里拿到了这些碎片，想要看看吗？
 		EntryA15: 你能不能拜托
-		EntryA16: 别再嘲笑我?我知道我的药剂不能让你变强,但是至少他们喝起来不危险
+		EntryA16: 别再嘲笑我?我知道我的药剂不能让人变强,但是至少它们喝起来不危险
 		EntryA17: 这些哥布林是如此的愤怒...幸好，他们在这里的时间不会很久
-		EntryA18: 你最好以最快的速度解决这些海盗先，我忍不住想和船长说几句话，好些年没见到过他咯!
+		EntryA18: 你最好先以最快的速度解决这些海盗，我忍不住想和船长说几句话，好些年没见到过他咯!
 		EntryA19: 我觉得你不会让他们进我的屋子的，是吧?
 		EntryA20: 也许在这个时候你有比和我说话更重要的事情要做? 有个血红色的月亮挂在天上哎!
 		EntryA21: ...我的朋友，在这个时刻最好的事情就是别来打扰我!
 		EntryA22: 我有一个爆炸烧瓶，你不会想知道它尝起来是什么味道的
-		EntryA23: "所以 "
-		EntryA24: 是怎么在这种时候保持冷静的? 我现在就想知道, 现在!
-		EntryA25: "不要让来自丛林的黑暗者用迷人的智慧欺骗你.我和 "
+		EntryA23: 所以
+		EntryA24: 是怎么在这种时候保持冷静的? 我现在就想知道！现在!
+		EntryA25: 不要让来自丛林的黑暗者用迷人的智慧欺骗你.我和
 		EntryA26: 曾经是他的学徒.当他的课程变得过于黑暗时，我退出了，但
-		EntryA27: 对神秘炼金术的兴趣除了增长之外什么也没做
+		EntryA27: 除了对神秘炼金术的兴趣增长了之外什么也没改变
 		Joe: Joe
 		Mark: Mark
 		Walter: Walter
@@ -1155,24 +1252,24 @@ Mods: {
 		Frido: Frido
 		Li: Li
 		A1: 如果这个卑鄙的
-		A2: " 再不住口的话, 我会让"
-		A3: " 咬她."
+		A2: 再不住口的话, 我会让
+		A3: 咬她.
 		A4: 杀掉那个僵尸! 杀掉那个兔子! 那个名字是血- 哦, 抱歉, 我没注意到你在这里
-		A5: 哦嗨你好我正在为一个湖收集一些装满血的水桶我很开心所以别问我更多问题了再见
-		A6: 当有一大堆僵尸在我的门后面时我很喜欢它，但是当它们打破我的门时我恨它!
-		A7: 啊哈, 这种不安全的感觉, 偏执狂热爱这种血月在空中的感觉
+		A5: 哦嗨，你好！我正在为一个湖收集一些装满血的水桶. 我很开心所以别问我更多问题了，再见. 
+		A6: 我很喜欢有一大堆僵尸在我的门后面，但是我十分痛恨它们打破我的门!
+		A7: 啊哈, 这种不安全的感觉, 偏执狂热爱这种血月升起的感觉
 		A8: 你对我的信仰感兴趣吗? 它涉及对血月的牺牲
-		A9: 你知道为毛我恨这些哥布林嘛? 他们太鸡儿吵了
+		A9: 你知道为什么我恨这些哥布林嘛? 他们太吵了！
 		A10: 海盗万岁! 他们给我供应金家具!
 		A11: 啊哈! 最后进行一些适当的电镀来完成我的屋顶!
-		A12: "请不要乱炸OK? "
-		A13: " 已经够烦了"
+		A12: 请不要乱炸OK?
+		A13: 已经够烦了
 		A14: 建筑药水对所有人免费, 除了你
 		A15: 什么玩意儿? 我去哪里搞到我的建筑师学位? 有建筑师学位吗?
-		A16: 你知道木头怎么才不会烧着吗? 经过一系列操作之后的确不会. 真的怪...
-		A17: 不, 我不是家伙(guy). 我是老兄(dude)
-		A18: 嗯, 你最近做的一件事情几乎让人印象深刻. (不存在的)
-		A19: 所以, 你说箱子也是家具. 我表示: 去你丫的
+		A16: 你知道木头怎么才不会烧着吗? 经过一系列操作之后的确不会.真的怪...
+		A17: 不, 我不是家伙(guy).我是老兄(dude)
+		A18: 嗯, 你最近做的一件事情几乎让人印象深刻.(bushi)
+		A19: 所以, 你说箱子也是家具？我的评价是: 去你丫的
 		A20: 我看了你的建筑, 但是我仍然觉得不怎么样
 		A21: 你听说过那个叫FuryForged的家伙吗？他的本事都是我教的！
 		A22: 我曾受雇于某家公司，负责建造一个超大规模的高科技、高安全设施.让我告诉你，这是我在安全和控制方面的巅峰之作
@@ -1190,11 +1287,11 @@ Mods: {
 		Combinations: 药剂包
 		Flasks: 烧瓶
 		ShopB1: 第一商店 (原版)
-		ShopB2: 第二商店 (模组/灾厄)
-		ShopB3: 第二商店 (瑟银/RG)
-		ShopB4: 第三商店 (更多药剂)
-		ShopB5: 第四商店 (震颤/钓杆/钓具箱)
-		ShopB6: 第五商店 (蛮荒/圣域/魂灵/水晶之地/扩展)
+		ShopB2: 第二商店 (炼金/灾厄)
+		ShopB3: 第三商店 (瑟银/RG)
+		ShopB4: 第四商店 (Atheria)
+		ShopB5: 第五商店 (钓杆/钓具箱)
+		ShopB6: 第六商店 (魂灵)
 		Lillian: Lillian
 		Lucy: Lucy
 		Alice: Alice
@@ -1206,19 +1303,19 @@ Mods: {
 		EntryB3: 我得到了来自谜语大学的学位
 		EntryB4: 有一个传说中的溜溜球被称为Sasscadee
 		EntryB5: 哇哦，面包屑和海狸唾液!
-		EntryB6: 嗨, *咳咳* 那不是地狱降临药剂!
+		EntryB6: 嗨, *咳咳* 那不是狱火药剂!
 		EntryB7: 你在周围看到双子魔眼了吗?
-		EntryB8: "那个愚蠢的 "
-		EntryB9: " 过于害怕在炼金术中使用神秘力量，所以他的药水只是一种没用的水"
-		EntryB10: *啊嚏* 噫... 那些哥布林在附近时我总是打喷嚏
+		EntryB8: 那个愚蠢的
+		EntryB9: 过于害怕在炼金术中使用神秘力量，所以他的药水只是一种没用的水罢了
+		EntryB10: *啊嚏* 噫...那些哥布林在附近时我总是打喷嚏
 		EntryB11: 别让他们进入我的房子...我这儿有那么多的物资和设备
 		EntryB12: 这是一场外星入侵吗？他们会奴役我们所有人吗？亦或者毁灭我们？没人知道答案...
 		EntryB13: 天上的那个是血月吗？我喜欢！它看起来好漂亮！
 		EntryB14: 我出生的时候正好是血月，每当它升起时我都会变得很兴奋！
 		EntryB15: 是的，我能理解为什么女孩们会生气，但这并不能阻止我的快乐!
-		EntryB16: 和我一样开心, 我也不会给你打折的 - 我又不傻
-		EntryB17: "通常我会很困惑为什么 "
-		EntryB18: " 和我一样从容冷静, 但是后来我想到了 "
+		EntryB16: 和我一样开心, 我也不会给你打折的，我又不傻
+		EntryB17: 通常我会很困惑为什么
+		EntryB18: 和我一样从容冷静, 但是后来我想到了
 		EntryB19: 我曾经远离泰拉瑞亚去学习更多关于炼金术的知识.在旅途中，我遇到了一位名叫阿扎诺尔的“魔法科学家”。他向我展示了一种叫做“奇术”的东西的秘密
 		ArenaShop: 战斗场地商店
 		Carl: Carl
@@ -1234,9 +1331,9 @@ Mods: {
 		EntryJ5: 不,不要认为我和骷髅商人有关系
 		EntryJ6: 如果你找到了所有的魔法戒指,你可以制造欧姆尼戒指
 		EntryJ7: 你在周围看到机械生物了吗?
-		EntryJ8: "你有没有注意到到我和 "
+		EntryJ8: 你有没有注意到到我和
 		EntryJ9: 长得几乎一毛一样?这是因为我们是兄弟
-		EntryJ10: 如果你发现这些撕碎的笔记太多了，把它带给我，我会帮你破译的.不要问我为什么，只要知道这些对我有价值
+		EntryJ10: 如果你发现这些破碎的笔记，把它带给我，我会帮你破译的.不要问我为什么，只要知道这些对我有价值（这在Lite版没用）
 		Shop1: 第一商店(原版音乐盒) #1
 		Shop2: 第二商店(原版音乐盒) #2
 		Shop3: 第三商店(异界音乐盒)
@@ -1251,20 +1348,20 @@ Mods: {
 		Lloyd: Lloyd
 		Gamma: Gamma
 		EntryM1: 我会戴上耳机，但我不确定泰拉人是否有耳朵...
-		EntryM2: 我想知道为什么BOSS1和BOSS2在OST中没有得到更好的名字.那些名字太平淡无奇了
-		EntryM3: 听着, 半机械人可能有我的名字，但我在这里还有更好的工作
-		EntryM4: 嘘！你会毁了我的录音！
+		EntryM2: 我想知道为什么BOSS 1和BOSS 2在OST中没有得到更好的名字.那些名字太平淡无奇了
+		EntryM3: 听着！虽然我也在脑叶公司工作，但还是更喜欢这里
+		EntryM4: 嘘！你会毁了我的音频！
 		EntryM5: 我发誓，如果再有人让我卖给他们一个“Megalovania”音乐盒...
 		EntryM6: 听着，你的热情令人敬畏，但你能不能自己录制下一首BOSS的曲子？我可不想为了一些曲子冒生命危险
-		EntryM7: 啊，我看你救了探险家！干的好！也许我的下一首歌将是关于你的胜利
-		EntryM8: "你知道吗, "
-		EntryM9: 在我安装这套音响系统的过程中，它帮了我大忙.电线是关键！
-		EntryM10: "如果你遇到 "
-		EntryM11: ",让他知道他还欠我卖给他音乐盒的钱"
-		EntryM12: "老实说，我不确定我是否信任 "
-		EntryM13: .他声称自己没有被附身，但他仍在使用头骨战斗...我得到的信息很复杂
+		EntryM7: 啊，我看到你救了探险家！干的好！也许我的下一首歌将是关于你的胜利
+		EntryM8: 你知道吗,
+		EntryM9: 在我安装这套音响系统的过程中帮了我大忙.电线是关键！
+		EntryM10: 如果你遇到
+		EntryM11: ,让他知道他还欠我卖给他音乐盒的钱
+		EntryM12: 老实说，我不确定我是否信任
+		EntryM13: . 他声称自己没有被附身，但他仍在使用头骨战斗...我得到的信息很复杂
 		EntryM14: 伙计，我的混音带比这个好得多，但由于版权原因，我不能卖给你
-		EntryM15: 不，我没有“全明星”音乐盒.你自己编码
+		EntryM15: 不，我没有“全明星”音乐盒.你自己编码去吧！
 		EntryM16: 等等，NPC？我以为我是主角！
 		EntryM17: 从没想过我会卖一个有歌词的音乐盒...DM DOKURO，你是个疯子，我喜欢它！
 		EntryM18: 整个音乐课？听起来太棒了！可惜我没有装备，对吧？
@@ -1281,50 +1378,50 @@ Mods: {
 		Angela: Angela
 		Carmen: Carmen
 		EntryO1: 您好吗, 主管, 我能为您做什么?
-		EntryO2: 那个'大雷鸟'看起来并不怎么危险. 我只希望它不是天启鸟的一部分...
+		EntryO2: 那个'大雷鸟'看起来并不怎么危险.我只希望它不是天启鸟的一部分...
 		EntryO3: 您好, 主管! 今天真安静, 不是么?
 		EntryO4: 您想要什么特别的东西吗, 主管?
-		EntryO5: 世界吞噬者为异常, 危险等级: TETH. 现在它已经被写入了. 您需要些来自它的物品吗?
+		EntryO5: 世界吞噬者为异常, 危险等级: TETH.现在它已经被写入了.您需要些来自它的物品吗?
 		EntryO6: 如果您成功阻止诸神黄昏, 那么您可以做您想做的一切
-		EntryO7: 克苏鲁之眼是个特别奇怪的生物. 它看起来像是个十分危险的东西的一部分. 如果它没有逃跑对我们来说更好
+		EntryO7: 克苏鲁之眼是个特别奇怪的生物.它看起来像是个十分危险的东西的一部分.如果它没有逃跑对我们来说更好
 		EntryO8: 克苏鲁之脑也许看起来很吓人, 但是失去了它的爪牙它几乎什么都做不了
-		EntryO9: 这个世界出现了某种变动, 主管. 邪恶正在扩张, 但是与此同时, 我的传感系统发现了一个新生物群落诞生了, 叫做神圣之地
-		EntryO10: 所有的这些机械Boss... 他们肯定有创伤来源. 他们会得到什么分类号码? 我觉得可以从 T-05- 开始...
-		EntryO11: 哥布林... 如此可怜的生物. 他们唯一有用的东西就是尖刺球和鱼叉链枪
-		EntryO12: 挺奇怪的异常事件... 他们都看起来像是活着的生物, 但是他们的 '飞翔荷兰人号' 的危险等级绝对有 HE
-		EntryO13: 火星人又来了. 上次他们来的时候, 几个大城镇被毁灭了. 但是, 恕我直言, 我们可以说我们现在还没有准备好
+		EntryO9: 这个世界出现了某种变动, 主管.邪恶正在扩张, 但是与此同时, 我的传感系统发现了一个新生物群落诞生了, 叫做神圣之地
+		EntryO10: 所有的这些机械Boss...他们肯定有创伤来源.他们会得到什么分类号码? 我觉得可以从 T-05- 开始...
+		EntryO11: 哥布林...如此可怜的生物.他们唯一有用的东西就是尖刺球和鱼叉链枪
+		EntryO12: 挺奇怪的异常事件...他们都看起来像是活着的生物, 但是他们的 '飞翔荷兰人号' 的危险等级绝对有 HE
+		EntryO13: 火星人又来了.上次他们来的时候, 几个大城镇被毁灭了.但是, 恕我直言, 我们可以说我们现在还没有准备好
 		EntryO14: 血月? 这不应该每666年才发生一次吗?
-		EntryO15: 所有的这些奇怪生物一直冲过来, 冲向这个'信标'... 真希望我们能在黎明前活下来
-		EntryO16: 无论怎样, 都有一些乐观的理由. 血月带来了一些生物, 平时我们都见不到的生物
-		EntryO17: 我阅读了一些关于一个生物的手稿, 叫做史莱姆之神. 他们说这是世界上第一个生物之一
-		EntryO18: Yharim... 我很确定我曾经听过这个名字. 但是我的记忆数据已损坏. 试着去问问大山猪关于它的事情吧...
+		EntryO15: 所有的这些奇怪生物一直冲过来, 冲向这个'信标'...真希望我们能在黎明前活下来
+		EntryO16: 无论怎样, 都有一些乐观的理由.血月带来了一些生物, 平时我们都见不到的生物
+		EntryO17: 我阅读了一些关于一个生物的手稿, 叫做史莱姆之神.他们说这是世界上第一个生物之一
+		EntryO18: 亚利姆...我很确定我曾经听过这个名字.但是我的记忆数据已损坏.试着去问问灾厄关于它的事情吧...
 		EntryO19: 这种肉食植物真的很危险...危险等级至少为 HE , 总之很高兴再次见到你平安归来
-		EntryO20: 这古老的机器拥有着巨大的天界之力. 随着它的死亡, 世界也发生了永远的改变...
-		EntryO21: 一个蜂后那么大的昆虫是不符合现在的分类标准的. 我建议为他建立一个新的分类 MI-XX. 很奇怪还没有人为了自己的意愿驱使它们, 那么让我们成为第一个吧
-		EntryO22: 看来我对蜂后的看法是错的. 它们的记忆中储存着一个被野心蒙蔽了双眼的科学家的漫谈, 他残酷地把瘟疫带给它们. 让我们把它们归类为MP-0X
-		EntryO23: 根据我的记录, 你所说的那个克兹尼格斯是一个较弱的虚空巡查者, 被归类为OB-V-01. 在现实的面纱后面有着更大的威胁在等待着
-		EntryO24: 这个飞行侦察者.....好奇. 从储存在残骸中的数据库来看, 这似乎是一艘为火星人而设的侦察船, 用来确定地球人的居住环境. 我担心飞行员最后看到的已经被上传到中央火星指挥中心
+		EntryO20: 这古老的机器拥有着巨大的天界之力.随着它的死亡, 世界也发生了永远的改变...
+		EntryO21: 一个蜂王那么大的昆虫是不符合现在的分类标准的.我建议为他建立一个新的分类 MI-XX.很奇怪还没有人为了自己的意愿驱使它们, 那么让我们成为第一个吧
+		EntryO22: 看来我对蜂王的看法是错的.它们的记忆中储存着一个被野心蒙蔽了双眼的科学家的漫谈, 他残酷地把瘟疫带给它们.让我们把它们归类为MP-0X
+		EntryO23: 根据我的记录, 你所说的那个克兹尼格斯是一个较弱的虚空巡查者, 被归类为OB-V-01.在现实的面纱后面有着更大的威胁在等待着
+		EntryO24: 这个飞行侦察者.....好奇.从储存在残骸中的数据库来看, 这似乎是一艘为火星人而设的侦察船, 用来确定地球人的居住环境.我担心飞行员最后看到的已经被上传到中央火星指挥中心
 		EntryO25: 把一个法师的力量转移到自己身上并且用它困住他并非易事, 但是观察如此残酷的行为...永冻之土, 前冰堡之王, 愿你看到和平
-		EntryO26: 星盘袭击者是个天才星尘蜈蚣, 或是G-S-C3, 作为终身伴侣和合作伙伴在火星精英中很受欢迎. 从我恢复出的巡航机的存储芯片来看, 他一定在离家很远的地方探索着
+		EntryO26: 星盘巡游者是个天才星尘蜈蚣, 或是G-S-C3, 作为终身伴侣和合作伙伴在火星精英中很受欢迎.从我恢复出的巡航机的存储芯片来看, 他一定在离家很远的地方探索着
 		EntryO27: 我花了时间对这个不可思议的生物的遗体进行了分析, 每次它攻击的时候, 整个星球似乎都在它的意愿中产生共鸣, 我除了担心它的死亡的后果之外, 什么都做不了, 至少你又一次从末日中拯救了Terraria...又一次
 		EntryO28: 这样一个古老的存在是值得记录的--它外表的材料可以承受与地球太阳核心的温度相等的温度!如果我们能使材料具有一半的耐热性, 这将彻底改变对 ARS-0N 囚犯的控制装置!
-		EntryO29: 那些制造毁灭魔像的人就应该被关进 HI-MAX 监狱中去. 这些可怜的灵魂受尽了折磨......好吧, 至少你将他们从痛苦之渊中解放出来
-		EntryO30: 有意思...那些癫痫鸟实际上是丛林龙犽戎的克隆体. 我很高兴看到那些实验都失败了!
-		EntryO31: 你很幸运, 那东西膨胀了, 没有直接在你头上开个直通太阳的传送门. 他所展示出的力量和智慧, 意味着我要对蠕虫的类别做一个全新的分类
-		EntryO32: 对于这生物的起源我有些基本的猜测, 而不是单纯害怕他的灵魂(如果他有灵魂的话)...反辐射能量, 研究表明, 这种'湮灭能量'在黑暗中发出光芒, 在光明中辐射黑暗. 我不知道它是怎么来的, 但是我知道我们必须付出一切代价封印它
-		EntryO33: 至尊灾厄眼被击败了, 但是他说还有一个比他更为强大的存在, 我们必须祈祷他还没有注意到我们
+		EntryO29: 那些制造毁灭魔像的人就应该被关进 HI-MAX 监狱中去.这些可怜的灵魂受尽了折磨......好吧, 至少你将他们从痛苦之渊中解放出来
+		EntryO30: 有意思...那些痴愚金龙实际上是重生之龙，犽戎的克隆体.我很高兴看到那些实验都失败了!
+		EntryO31: 你很幸运, 那东西膨胀了, 没有直接在你头上开个直通太阳的传送门.他所展示出的力量和智慧, 意味着我要对蠕虫的类别做一个全新的分类
+		EntryO32: 对于这生物的起源我有些基本的猜测, 而不是单纯害怕他的灵魂(如果他有灵魂的话)...反辐射能量, 研究表明, 这种'湮灭能量'在黑暗中发出光芒, 在光明中辐射黑暗.我不知道它是怎么来的, 但是我知道我们必须付出一切代价封印它
+		EntryO33: 至尊女巫，灾厄被击败了, 但是他说还有一个比他更为强大的存在, 我们必须祈祷他还没有注意到我们
 		EntryO34: 老实说，我不确定为什么巨型旋转头骨是一切的关键，但不知为何，它们似乎包含着天体的力量...
 		EntryO35: 是啊，我知道我们是那些捕获和养殖可怕的怪物的人。但谁会想到把战利品袋放在巨型怪物体内是个好主意？
-		EntryO36: 记住主管，宝藏袋虽然珍贵，但并不是所有东西都能装在里面.那个变种人可以帮助你获得BOSS最难以获得的物品
+		EntryO36: 记住主管，宝藏袋虽然珍贵，但并不是所有东西都能装在里面.那个突变体可以帮助你获得BOSS最难以获得的物品
 		Alexander: Alexander
 		Peter: Peter
 		TinkererButton1: 移动/杂项
 		TinkererButton2: 战斗
 		EntryT1: 需要一些特别的东西? 尽管说...
 		EntryT2: 你看见过我的姐姐吗? 比起工匠, 她更像个蒸汽朋克女孩...
-		EntryT3: 如果你在什么地方见过纸管, 把它带给我, 我会为你解锁一些东西
-		EntryT4: 随着进度的推进, 你可能会发现更有价值的东西. 攒些蓝图来制作更稀有的饰品
-		EntryT5: 你永远不会知道在哪里可以得到真正珍贵的东西. 所以耐心探索每一个可能的角落吧
+		EntryT3: 如果你在什么地方见过纸管, 把它带给我, 我会为你解锁一些东西（这在Lite版没用）
+		EntryT4: 随着进度的推进, 你可能会发现更有价值的东西.攒些蓝图来制作更稀有的饰品（这在Lite版没用）
+		EntryT5: 你永远不会知道在哪里可以得到真正珍贵的东西.所以耐心探索每一个可能的角落吧
 		Harold: Harold
 		Charles: Charles
 		Monty: Monty
@@ -1335,12 +1432,12 @@ Mods: {
 		Entry1: 我出售我父母做的药剂
 		Entry2: 我有一些药水可以卖给你
 		Entry3: 战斗药剂包是我的主意
-		Entry4: 有一个传说中的溜溜球被称为Sasscadee
+		Entry4: 有一个传说中的悠悠球被称为Sasscadee
 		Entry5: 来自骷髅商人的奇异啤酒气味真的很糟糕，但法力恢复效果是可怕的
-		Entry6: 嗨, *咳咳*.. 那绝对不是柠檬茶
+		Entry6: 嗨, *咳咳*..那绝对不是柠檬茶
 		Entry7: 你有在附近见到钢铁破坏者吗?
-		Entry8: "我妈妈, "
-		Entry9: ",是最酷的药剂师, 不是吗? 她可以轻松酿造出难做的药剂"
+		Entry8: 我妈妈,
+		Entry9: ,是最酷的药剂师, 不是吗? 她可以轻松酿造出难做的药剂
 		Entry10: 某些药剂包只有在世界上存在某些类型的魔法时才能制作
 		Excavation1: 极大增加挖掘能力
 		Excavation2: 挖掘区域被设定为
@@ -1359,8 +1456,8 @@ Mods: {
 		Configs: {
 			ModConfiguration: {
 				ShopChangeDelay: {
-					Tooltip: 打开界面后可更改商店前的延迟时间.默认为10帧
-					Label: 商店更改延迟
+					Tooltip: 可更改商店购买物品前的延迟时间.默认为10帧
+					Label: 购买更改延迟
 				}
 
 				DesertFossilPrice: {
@@ -1389,7 +1486,7 @@ Mods: {
 				}
 
 				PotsPriceMulti: {
-					Tooltip: 将药水价格乘以X.默认为1
+					Tooltip: 将药水价格乘以该值.默认为1
 					Label: 药水价格倍数
 				}
 
