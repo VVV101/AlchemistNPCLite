@@ -20,7 +20,7 @@ Mods: {
 			RainStopped: 雨停了
 		}
 
-		#This is what displays during all of an NPC's happiness levels.Note that the localization key for these should always be "TownNPCMood.*NPCName*.*Mood*" or else it won't display properly.
+		#This is what displays during all of an NPC's happiness levels. Note that the localization key for these should always be "TownNPCMood.*NPCName*.*Mood*" or else it won't display properly.
 		TownNPCMood: {
 			Alchemist: {
 				Content: 我感觉很好！
@@ -36,7 +36,7 @@ Mods: {
 				LikeNPC: "{NPCName}懂得努力工作的重要性.有她在身边真好"
 				LikeNPC_Princess: 我得去看看{NPCName}，那个女孩懂我！
 				LoveNPC: "{NPCName}在这里！谁是爸爸的儿子？"
-				DislikeNPC:{NPCName}在附近时我觉得我无法集中注意力.因为她总是拿我开玩笑
+				DislikeNPC: "{NPCName}在附近时我觉得我无法集中注意力.因为她总是拿我开玩笑"
 				HateNPC: 这是我们之间的秘密，我是说你有没有考虑过把{NPCName}扔回到你找到他的地方？
 			}
 
@@ -170,7 +170,7 @@ Mods: {
 		Buffs: {
 			BattleComb: {
 				DisplayName: 战斗药剂包
-				Description: 
+				Description:
 					'''
 					包含以下Buff
 					耐力, 生命力, 铁皮, 再生, 暴怒, 怒气
@@ -179,7 +179,7 @@ Mods: {
 
 			Blurring: {
 				DisplayName: 模糊
-				Description: 
+				Description:
 					'''
 					敌人看不清你 
 					(神圣防护有30秒CD)
@@ -188,7 +188,7 @@ Mods: {
 
 			BuilderComb: {
 				DisplayName: 建筑师药剂包
-				Description: 
+				Description:
 					'''
 					包含以下Buff
 					镇静, 建筑工, 挖矿
@@ -197,14 +197,14 @@ Mods: {
 
 			CalamityComb: {
 				DisplayName: 灾厄药剂包
-				Description: 
+				Description:
 					'''
 					包含以下Buff
 					光合，Fabsol伏特加，腾飞、弹跳
 					'''
 			}
 
-    		Corrosion: {
+			Corrosion: {
 				DisplayName: 腐蚀
 				Description: 你的肉体正在融化!
 			}
@@ -237,7 +237,7 @@ Mods: {
 
 			FishingComb: {
 				DisplayName: 钓鱼药剂包
-				Description: 
+				Description:
 					'''
 					包含以下Buff
 					声呐, 钓鱼, 再生, 镇静, 荆棘, 铁皮, 狱火, 宝匣
@@ -261,7 +261,7 @@ Mods: {
 
 			MageComb: {
 				DisplayName: 魔法药剂包
-				Description: 
+				Description:
 					'''
 					包含以下Buff
 					魔能, 魔力再生, 灵视, 暴怒, 怒气
@@ -275,7 +275,7 @@ Mods: {
 
 			RangerComb: {
 				DisplayName: 射手药剂包
-				Description: 
+				Description:
 					'''
 					包含以下Buff
 					箭术, 弹药储备, 暴怒, 怒气
@@ -289,7 +289,7 @@ Mods: {
 
 			SummonerComb: {
 				DisplayName: 召唤师药剂包
-				Description: 
+				Description:
 					'''
 					包含以下Buff
 					召唤, 迷人, 怒气
@@ -303,7 +303,7 @@ Mods: {
 
 			TankComb: {
 				DisplayName: 坦克药剂包 (炼金)
-				Description: 
+				Description:
 					'''
 					包含以下Buff
 					耐力, 生命力, 铁皮, 黑曜石皮, 荆棘, 再生, 泰坦皮肤, 无敌
@@ -340,7 +340,7 @@ Mods: {
 
 			VanTankComb: {
 				DisplayName: 坦克药剂包 (原版)
-				Description: 
+				Description:
 					'''
 					包含以下Buff
 					耐力, 生命力, 铁皮, 黑曜石皮肤, 荆棘, 恢复
@@ -349,7 +349,7 @@ Mods: {
 
 			ThoriumComb: {
 				DisplayName: 瑟银药剂包
-				Description: 
+				Description:
 					'''
 					包含以下buff
 					刺客,堕血, 狂怒, 光辉, 圣洁, 创意, 耳虫, 灵感之触，补水
@@ -360,7 +360,7 @@ Mods: {
 		Items: {
 			BattleCombination: {
 				DisplayName: 战斗药剂包
-				Tooltip: 
+				Tooltip:
 					'''
 					获得你在战斗时需要的Buff
 					(耐力, 生命力, 铁皮, 再生, 暴怒, 怒气)
@@ -397,7 +397,7 @@ Mods: {
 
 			BuilderCombination: {
 				DisplayName: 建筑师药剂包
-				Tooltip: 
+				Tooltip:
 					'''
 					获得你在建筑时需要的Buff
 					(镇静, 建筑工, 挖矿)
@@ -406,7 +406,7 @@ Mods: {
 
 			CalamityCombination: {
 				DisplayName: 灾厄药剂包
-				Tooltip: 
+				Tooltip:
 					'''
 					获得一些灾厄Buff 
 					(光合, Fabsol伏特加, 腾飞，弹跳)
@@ -447,7 +447,7 @@ Mods: {
 
 			ExplorerCombination: {
 				DisplayName: 探索者药剂包
-				Tooltip: 
+				Tooltip:
 					'''
 					获得你在探索时所需的Buff
 					(危险感知, 狩猎, 洞穴探险, 夜猫子, 光芒, 挖矿, 鱼鳃, 脚蹼, 水上漂)
@@ -456,7 +456,7 @@ Mods: {
 
 			FishingCombination: {
 				DisplayName: 钓鱼药剂包
-				Tooltip: 
+				Tooltip:
 					'''
 					获得你在钓鱼时所需的Buff 
 					(声呐, 钓鱼, 再生, 镇静, 荆棘, 铁皮, 狱火, 宝匣)
@@ -502,7 +502,7 @@ Mods: {
 
 			MageCombination: {
 				DisplayName: 魔法药剂包
-				Tooltip: 
+				Tooltip:
 					'''
 					获得一些魔法buff
 					(魔能, 法力再生, 暴怒, 怒气)
@@ -630,7 +630,7 @@ Mods: {
 
 			NinjaPotion: {
 				DisplayName: 忍者药剂
-				Tooltip: 
+				Tooltip:
 					'''
 					增加5%的伤害和暴击几率,
 					获得忍者大师装备的能力
@@ -706,7 +706,7 @@ Mods: {
 
 			RangerCombination: {
 				DisplayName: 射手药剂包
-				Tooltip: 
+				Tooltip:
 					'''
 					获得一些远程Buff 
 					(箭术, 弹药储备, 暴怒, 怒气)
@@ -715,7 +715,7 @@ Mods: {
 
 			SpiritCombination: {
 				DisplayName: 魂灵药剂包
-				Tooltip: 
+				Tooltip:
 					'''
 					得大部分魂灵Buff 
 					(符文爆发, 魂灵之环, 星之燃烧, 坚定和毒素)
@@ -725,7 +725,7 @@ Mods: {
 
 			SummonerCombination: {
 				DisplayName: 召唤师药剂包
-				Tooltip: 
+				Tooltip:
 					'''
 					获得一些召唤Buff 
 					(召唤, 战斗, 迷人, 怒气)
@@ -785,9 +785,9 @@ Mods: {
 					'''
 			}
 
-			TankCombination : {
+			TankCombination: {
 				DisplayName: 坦克药剂包 (炼金)
-				Tooltip: 
+				Tooltip:
 					'''
 					获得一些坦克Buff 
 					(耐力, 生命力, 铁皮, 黑曜石皮, 荆棘, 再生, 泰坦皮肤, 无敌)
@@ -856,7 +856,7 @@ Mods: {
 
 			VanTankCombination: {
 				DisplayName: 坦克药剂包 (原版)
-				Tooltip: 
+				Tooltip:
 					'''
 					获得一些坦克Buff 
 					(耐力, 生命力, 铁皮, 黑曜石皮, 荆棘, 再生)
@@ -1255,7 +1255,7 @@ Mods: {
 		A2: 再不住口的话, 我会让
 		A3: 咬她.
 		A4: 杀掉那个僵尸! 杀掉那个兔子! 那个名字是血- 哦, 抱歉, 我没注意到你在这里
-		A5: 哦嗨，你好！我正在为一个湖收集一些装满血的水桶. 我很开心所以别问我更多问题了，再见. 
+		A5: 哦嗨，你好！我正在为一个湖收集一些装满血的水桶. 我很开心所以别问我更多问题了，再见.
 		A6: 我很喜欢有一大堆僵尸在我的门后面，但是我十分痛恨它们打破我的门!
 		A7: 啊哈, 这种不安全的感觉, 偏执狂热爱这种血月升起的感觉
 		A8: 你对我的信仰感兴趣吗? 它涉及对血月的牺牲
@@ -1357,7 +1357,7 @@ Mods: {
 		EntryM8: 你知道吗,
 		EntryM9: 在我安装这套音响系统的过程中帮了我大忙.电线是关键！
 		EntryM10: 如果你遇到
-		EntryM11: ,让他知道他还欠我卖给他音乐盒的钱
+		EntryM11: ",让他知道他还欠我卖给他音乐盒的钱"
 		EntryM12: 老实说，我不确定我是否信任
 		EntryM13: . 他声称自己没有被附身，但他仍在使用头骨战斗...我得到的信息很复杂
 		EntryM14: 伙计，我的混音带比这个好得多，但由于版权原因，我不能卖给你
@@ -1437,7 +1437,7 @@ Mods: {
 		Entry6: 嗨, *咳咳*..那绝对不是柠檬茶
 		Entry7: 你有在附近见到钢铁破坏者吗?
 		Entry8: 我妈妈,
-		Entry9: ,是最酷的药剂师, 不是吗? 她可以轻松酿造出难做的药剂
+		Entry9: ",是最酷的药剂师, 不是吗? 她可以轻松酿造出难做的药剂"
 		Entry10: 某些药剂包只有在世界上存在某些类型的魔法时才能制作
 		Excavation1: 极大增加挖掘能力
 		Excavation2: 挖掘区域被设定为

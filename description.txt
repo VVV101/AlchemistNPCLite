@@ -10,6 +10,11 @@ The Musician will come if you defeat Skeletron.
 Mod has support for Thorium, Calamity, Mod of Redemption, Census and imkSushi's mod.
 
 Mod's Discord: https://discord.gg/WGKyKun
+v1.9.8
+-Added Shards of Atheria support by Rockman Zeta.
+-Added German localization by Cracky.
+-Updated Chinese localization by 虞悖.
+-Now Pumpkin blocks cost 2 silver 50 copper.
 v1.9.7
 -Chinese Localization Fix by 虞悖.
 -Russian localization fix.
