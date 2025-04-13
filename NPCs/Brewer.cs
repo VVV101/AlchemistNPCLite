@@ -330,7 +330,7 @@ namespace AlchemistNPCLite.NPCs
             ModLoader.TryGetMod("CalamityMod", out Mod Calamity);
             ModLoader.TryGetMod("ThoriumMod", out Mod ThoriumMod);
             ModLoader.TryGetMod("Redemption", out Mod Redemption);
-			//ModLoader.TryGetMod("ShardsOfAtheria", out Mod Atheria);
+            ModLoader.TryGetMod("ShardsOfAtheria", out Mod Atheria);
 
             var shop = new NPCShop(Type, SHOP_1)
                 .Add(new Item(ItemID.SwiftnessPotion) { shopCustomPrice = 5000 })
@@ -434,11 +434,11 @@ namespace AlchemistNPCLite.NPCs
                 .AddModItemToShop(Redemption, "VigourousPotion", 250000, () => Operator.RedemptionDowned.Nebuleus);
             shop.Register();
 
-            shop = new NPCShop(Type, SHOP_4);
-				/*.AddModItemToShop(Atheria, "SoulInjection", 7500)
-				.AddModItemToShop(Atheria, "BoneMarrowInjection", 7500, Condition.DownedSkeletron)
-				.AddModItemToShop(Atheria, "ConductivityPotion", 7500, Condition.DownedEowOrBoc)
-				.AddModItemToShop(Atheria, "ChargedFlightPotion", 7500, () => Operator.ShardsConditions.DownedNova);*/
+            shop = new NPCShop(Type, SHOP_4)
+                .AddModItemToShop(Atheria, "SoulInjection", 7500)
+                .AddModItemToShop(Atheria, "ConductivityPotion", 7500, Condition.DownedEowOrBoc)
+                .AddModItemToShop(Atheria, "BoneMarrowInjection", 7500, Condition.DownedSkeletron)
+                .AddModItemToShop(Atheria, "ChargedFlightPotion", 7500, () => Operator.ShardsConditions.DownedNova);
             shop.Register();
 
             shop = new NPCShop(Type, SHOP_5);
