@@ -12,6 +12,7 @@
           "Basic.Reference.Assemblies.Net80": "1.0.0.0",
           "CsvHelper": "2.0.0.0",
           "DotNetZip": "1.16.0.0",
+          "FargowiltasSouls": "0.0.0.0",
           "FNA": "23.10.0.0",
           "Hjson": "1.0.0.0",
           "Humanizer": "2.14.0.0",
@@ -53,7 +54,7 @@
           "RailSDK.Net": "1.0.0.0",
           "Redemption": "0.0.0.0",
           "ReLogic": "1.0.0.0",
-          "ShardsOfAtheria_v1.0": "1.0.0.0",
+          "ShardsOfAtheria": "1.0.0.0",
           "Steamworks.NET": "20.1.0.0",
           "SteelSeriesEngineWrapper": "1.0.0.0",
           "Stubble.Core": "1.10.0.0",
@@ -106,6 +107,14 @@
           "DotNetZip.dll": {
             "assemblyVersion": "1.16.0.0",
             "fileVersion": "1.16.0.0"
+          }
+        }
+      },
+      "FargowiltasSouls/0.0.0.0": {
+        "runtime": {
+          "FargowiltasSouls.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "0.0.0.0"
           }
         }
       },
@@ -642,9 +651,9 @@
           }
         }
       },
-      "ShardsOfAtheria_v1.0/1.0.0.0": {
+      "ShardsOfAtheria/1.0.0.0": {
         "runtime": {
-          "ShardsOfAtheria_v1.0.dll": {
+          "ShardsOfAtheria.dll": {
             "assemblyVersion": "1.0.0.0",
             "fileVersion": "1.0.0.0"
           }
@@ -921,6 +930,11 @@
       "serviceable": false,
       "sha512": ""
     },
+    "FargowiltasSouls/0.0.0.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    },
     "FNA/23.10.0.0": {
       "type": "reference",
       "serviceable": false,
@@ -1126,7 +1140,7 @@
       "serviceable": false,
       "sha512": ""
     },
-    "ShardsOfAtheria_v1.0/1.0.0.0": {
+    "ShardsOfAtheria/1.0.0.0": {
       "type": "reference",
       "serviceable": false,
       "sha512": ""

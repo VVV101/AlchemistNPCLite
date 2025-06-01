@@ -1370,7 +1370,7 @@ Mods: {
 		EntryM21: 有没有一个名字来形容害怕被蛋糕监视的感觉？
 		EntryM22: 你弄疼我的耳朵了！关小声点！
 		BossDropsShop: Boss掉落物&材料商店
-		BossDropsModsShop: Boss掉落物&材料商店
+		BossDropsModsShop: 模组Boss掉落物&材料商店
 		VanillaTreasureBagsShop: 原版宝藏袋商店
 		ModdedTreasureBagsShop: 模组宝藏袋商店#1
 		ModdedTreasureBagsShop2: 模组宝藏袋商店#2
@@ -1441,7 +1441,7 @@ Mods: {
 		Entry10: 某些药剂包只有在世界上存在某些类型的魔法时才能制作
 		Excavation1: 极大增加挖掘能力
 		Excavation2: 挖掘区域被设定为
-		Excavation3: CTRL + right 来移除Buff
+		Excavation3: CTRL + 右键 来移除Buff
 
 		Tiles: {
 			HMCraftPound.MapEntry: 豪华手工英镑
