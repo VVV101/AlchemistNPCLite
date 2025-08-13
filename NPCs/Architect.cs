@@ -378,7 +378,7 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.GrayBrick) { shopCustomPrice = 10 })
                 .Add(new Item(ItemID.Glass) { shopCustomPrice = 10 })
 				.Add(new Item(ItemID.Pumpkin) { shopCustomPrice = 250 })
-				.Add(new Item(ItemID.Cactus) { shopCustomPrice = 25 })
+				.Add(new Item(ItemID.Cactus) { shopCustomPrice = 250 })
                 .Add(new Item(ItemID.MeteoriteBrick) { shopCustomPrice = 60 }, Condition.DownedEowOrBoc)
                 .Add(new Item(ItemID.ObsidianBrick) { shopCustomPrice = 5 })
                 .Add(new Item(ItemID.IridescentBrick) { shopCustomPrice = 5 })
@@ -463,7 +463,7 @@ namespace AlchemistNPCLite.NPCs
             shop.Register();
 			
 			shop = new NPCShop(Type, Torch)
-				.Add(new Item(ItemID.Torch) { shopCustomPrice = 50 })
+				.Add(new Item(ItemID.Torch) { shopCustomPrice = 10 })
 				.Add(new Item(ItemID.TikiTorch) { shopCustomPrice = 250 })
 				.Add(new Item(974) { shopCustomPrice = 300 })
 				.Add(new Item(427) { shopCustomPrice = 300 })
@@ -474,8 +474,8 @@ namespace AlchemistNPCLite.NPCs
 				.Add(new Item(431) { shopCustomPrice = 300 })
 				.Add(new Item(432) { shopCustomPrice = 300 })
 				.Add(new Item(433) { shopCustomPrice = 300 })
-				.Add(new Item(523) { shopCustomPrice = 300 })
-				.Add(new Item(1333) { shopCustomPrice = 300 })
+				.Add(new Item(523) { shopCustomPrice = 300 }, Condition.Hardmode)
+				.Add(new Item(1333) { shopCustomPrice = 300 }, Condition.Hardmode)
 				.Add(new Item(2274) { shopCustomPrice = 300 })
 				.Add(new Item(3004) { shopCustomPrice = 300 })
 				.Add(new Item(3045) { shopCustomPrice = 300 })
@@ -491,8 +491,8 @@ namespace AlchemistNPCLite.NPCs
 			shop.Register();
 			
 			shop = new NPCShop(Type, Candle)
-				.Add(new Item(105) { shopCustomPrice = 500 })
-				.Add(new Item(713) { shopCustomPrice = 500 })
+				.Add(new Item(105) { shopCustomPrice = 2000 })
+				.Add(new Item(713) { shopCustomPrice = 3000 })
 				.Add(new Item(1405) { shopCustomPrice = 500 })
 				.Add(new Item(1406) { shopCustomPrice = 500 })
 				.Add(new Item(1407) { shopCustomPrice = 500 })
@@ -592,7 +592,6 @@ namespace AlchemistNPCLite.NPCs
 				.Add(new Item(2579) { shopCustomPrice = 500 })
 				.Add(new Item(2641) { shopCustomPrice = 500 })
 				.Add(new Item(2642) { shopCustomPrice = 500 })
-				.Add(new Item(2820) { shopCustomPrice = 500 })
 				.Add(new Item(3138) { shopCustomPrice = 500 }, Condition.DownedEowOrBoc)
 				.Add(new Item(3139) { shopCustomPrice = 500 })
 				.Add(new Item(3140) { shopCustomPrice = 500 })
