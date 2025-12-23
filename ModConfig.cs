@@ -55,6 +55,7 @@ namespace AlchemistNPCLite
 		public bool CatchNPC;
 		
 		[DefaultValue(true)]
+		[ReloadRequired]
 		public bool ModItems;
 		
 		[Range(1, 1000)]

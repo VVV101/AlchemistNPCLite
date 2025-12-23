@@ -1,4 +1,5 @@
-﻿using Terraria;
+﻿using Terraria.DataStructures;
+using Terraria;
 using Terraria.ID;
 using Terraria.ModLoader;
 
@@ -12,6 +13,7 @@ namespace AlchemistNPCLite.Items
 		
         public override void SetStaticDefaults()
         {
+			Main.RegisterItemAnimation(Type, new DrawAnimationVertical(8, 6));
             Item.ResearchUnlockCount = 20;
         }
         public override void SetDefaults()
@@ -21,7 +23,7 @@ namespace AlchemistNPCLite.Items
             Item.useTurn = true;
             Item.useAnimation = 17;
             Item.useTime = 17;
-            Item.maxStack = 99;
+            Item.maxStack = 9999;
             Item.consumable = true;
             Item.width = 20;
             Item.height = 30;

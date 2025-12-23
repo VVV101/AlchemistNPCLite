@@ -16,6 +16,11 @@ By zlzhaidou:
 -Chinese localizations fixes.
 By Ziemexx
 -Prices rebalance for Architect and Operator.
+---
+-Added reload requirement for Mod's custom items toggle, thanks to jopojelly.
+-New sprites for Bewitching, Blurring, Discord, Excavation, Fortitude, Greater Dangersense, Invincibility, 
+Nature Blessing, Ninja, Sunshine, Titan Skin and Trapper potions, Lifeform Analyzer locators.
+-New sprites for Battle and Bulder combinations buffs, Blurring buffs by Alino4kaHvoshch.
 v1.9.8
 -Added Shards of Atheria support by Rockman Zeta.
 -Added German localization by Cracky.
