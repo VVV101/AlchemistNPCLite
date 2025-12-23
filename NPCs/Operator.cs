@@ -842,8 +842,44 @@ namespace AlchemistNPCLite.NPCs
             }
         }
 
-        // Possibly redundant with ModGlobalNPC
-        public override void ModifyNPCLoot(NPCLoot npcLoot)
+        [JITWhenModsEnabled("FargowiltasSouls")]
+        public static class FargoDowned
+        {
+            public static bool Trojan
+            {
+                get { return FargowiltasSouls.Core.Systems.WorldSavingSystem.DownedBoss[(int)FargowiltasSouls.Core.Systems.WorldSavingSystem.Downed.TrojanSquirrel]; }
+            }
+            public static bool Cursed
+            {
+                get { return FargowiltasSouls.Core.Systems.WorldSavingSystem.DownedBoss[(int)FargowiltasSouls.Core.Systems.WorldSavingSystem.Downed.CursedCoffin]; }
+            }
+            public static bool Devi
+            {
+                get { return FargowiltasSouls.Core.Systems.WorldSavingSystem.DownedDevi; }
+            }
+            public static bool Banished
+            {
+                get { return FargowiltasSouls.Core.Systems.WorldSavingSystem.DownedBoss[(int)FargowiltasSouls.Core.Systems.WorldSavingSystem.Downed.BanishedBaron]; }
+            }
+            public static bool LifeLight
+            {
+                get { return FargowiltasSouls.Core.Systems.WorldSavingSystem.DownedBoss[(int)FargowiltasSouls.Core.Systems.WorldSavingSystem.Downed.Lifelight]; }
+            }
+            public static bool Cosmos
+            {
+                get { return FargowiltasSouls.Core.Systems.WorldSavingSystem.DownedBoss[(int)FargowiltasSouls.Core.Systems.WorldSavingSystem.Downed.CosmosChampion]; }
+            }
+            public static bool Abom
+            {
+                get { return FargowiltasSouls.Core.Systems.WorldSavingSystem.DownedAbom; }
+            }
+            public static bool Mutant
+            {
+                get { return FargowiltasSouls.Core.Systems.WorldSavingSystem.DownedMutant; }
+            }
+        }
+            // Possibly redundant with ModGlobalNPC
+            public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
             base.ModifyNPCLoot(npcLoot);
 
@@ -856,7 +892,9 @@ namespace AlchemistNPCLite.NPCs
             ModLoader.TryGetMod("ThoriumMod", out Mod ThoriumMod);
             ModLoader.TryGetMod("Redemption", out Mod Redemption);
             ModLoader.TryGetMod("ShardsOfAtheria", out Mod Atheria);
+            ModLoader.TryGetMod("FargowiltasSouls", out Mod FargoSouls);
 
+            #region Vaillan MaterialShop
             var shop = new NPCShop(Type, MaterialShop)
                 .Add(new Item(ItemID.Lens) { shopCustomPrice = 5000 })
                 .Add(new Item(ItemID.DemoniteOre) { shopCustomPrice = 1500 })
@@ -887,15 +925,23 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.FragmentVortex) { shopCustomPrice = 50000 }, new Condition("", () => NPC.downedMoonlord))
                 .Add(new Item(ItemID.FragmentStardust) { shopCustomPrice = 50000 }, new Condition("", () => NPC.downedMoonlord));
             shop.Register();
+            #endregion
+
+            #region Mod Material Shop
             shop = new NPCShop(Type, ModMaterialShop)
+            #region Alchemist
                 .Add(new Item(ModContent.ItemType<Items.Misc.GlobalTeleporter>()), new Condition("", () => Main.hardMode))
                 .Add(new Item(ModContent.ItemType<Items.Misc.WorldControlUnit>()) { shopCustomPrice = 3000000 }, new Condition("", () => Main.hardMode))
                 .Add(new Item(ModContent.ItemType<Items.Misc.GlobalTeleporterUp>()), new Condition("", () => NPC.downedMoonlord))
+            #endregion
+            #region Thorium
                 .AddModItemToShop(ThoriumMod, "Petal", 5000)
                 .AddModItemToShop(ThoriumMod, "BrokenHeroFragment", 250000, () => NPC.downedGolemBoss)
                 .AddModItemToShop(ThoriumMod, "WhiteDwarfFragment", 50000, () => NPC.downedMoonlord)
                 .AddModItemToShop(ThoriumMod, "CometFragment", 50000, () => NPC.downedMoonlord)
                 .AddModItemToShop(ThoriumMod, "CelestialFragment", 50000, () => NPC.downedMoonlord)
+            #endregion
+            #region Calamity
                 .AddModItemToShop(Calamity, "TrueShadowScale", 20000, () => (bool)Calamity.Call("Downed", "hive mind"))
                 .AddModItemToShop(Calamity, "BloodSample", 20000, () => (bool)Calamity.Call("Downed", "perforators"))
                 .AddModItemToShop(Calamity, "EbonianGel", 25000, () => (bool)Calamity.Call("Downed", "slime god"))
@@ -919,6 +965,14 @@ namespace AlchemistNPCLite.NPCs
                 .AddModItemToShop(Calamity, "NightmareFuel", 120000, () => (bool)Calamity.Call("Downed", "dog") && AlchemistNPCLiteWorld.downedDOGPumpking)
                 .AddModItemToShop(Calamity, "EndothermicEnergy", 120000, () => (bool)Calamity.Call("Downed", "dog") && AlchemistNPCLiteWorld.downedDOGIceQueen)
                 .AddModItemToShop(Calamity, "DarksunFragment", 150000, () => (bool)Calamity.Call("Downed", "dog") && AlchemistNPCLiteWorld.downedDOGMothron)
+            #endregion
+            #region Fargo
+                .AddModItemToShop(FargoSouls, "DeviatingEnergy", Item.sellPrice(0, 1,50,0),() => FargoDowned.Devi)
+                .AddModItemToShop(FargoSouls, "Eridanium", Item.sellPrice(0, 8, 50, 0), () => FargoDowned.Cosmos)
+                .AddModItemToShop(FargoSouls, "AbomEnergy", Item.sellPrice(0, 6, 50, 0), () => FargoDowned.Abom)
+                .AddModItemToShop(FargoSouls, "EternalEnergy", Item.sellPrice(0, 9, 50, 0), () => FargoDowned.Mutant)
+            #endregion
+            #region Spirit
                 //if (ModLoader.GetMod("SpiritMod") != null)
                 //{
                 //    .addModItemToShop(SpiritMod, "BrokenParts", 500000, NPC.downedGolemBoss);
@@ -933,6 +987,8 @@ namespace AlchemistNPCLite.NPCs
                 //    .addModItemToShop(LithosArmory, "BrokenHeroSpear", 500000, NPC.downedGolemBoss);
                 //    .addModItemToShop(LithosArmory, "BrokenHeroWand", 500000, NPC.downedGolemBoss);
                 //}
+            #endregion
+            #region Atheria
                 .AddModItemToShop(Atheria, "EmptyNeedle", 500)
                 .AddModItemToShop(Atheria, "SoulOfDaylight", 1000)
                 .AddModItemToShop(Atheria, "SoulOfTwilight", 1000)
@@ -942,8 +998,11 @@ namespace AlchemistNPCLite.NPCs
                 .AddModItemToShop(Atheria, "BrokenHeroGun", 45000, Condition.DownedGolem)
                 .AddModItemToShop(Atheria, "FragmentEntropy", 180000, Condition.DownedMoonLord)
                 .AddModItemToShop(Atheria, "MemoryFragment", 10000, Condition.DownedMoonLord);
+            #endregion
             shop.Register();
+            #endregion
 
+            #region VanillaBagsShop
             shop = new NPCShop(Type, VanillaBagsShop)
                 .Add(new Item(ModContent.ItemType<Items.Notes.InformatingNote>()) { shopCustomPrice = 30000 },
                     new Condition("", () => !NPC.downedBoss3))
@@ -986,8 +1045,11 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.MoonLordBossBag) { shopCustomPrice = 12000000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedMoonlord));
             shop.Register();
+            #endregion
 
+            #region Bags 1 Shop - Calamity & Thorium
             shop = new NPCShop(Type, Bags1Shop)
+            #region Calamaity Part
                 .AddModItemToShop(Calamity, "DesertScourgeBag", 375000, () => (bool)Calamity.Call("Downed", "desert scourge"))
                 .AddModItemToShop(Calamity, "CrabulonBag", 700000, () => (bool)Calamity.Call("Downed", "crabulon"))
                 .AddModItemToShop(Calamity, "HiveMindBag", 1000000, () => (bool)Calamity.Call("Downed", "hive mind") || (bool)Calamity.Call("Downed", "perforators"))
@@ -1013,7 +1075,9 @@ namespace AlchemistNPCLite.NPCs
                 .AddModItemToShop(Calamity, "YharonBag", 75000000, () => (bool)Calamity.Call("Downed", "yharon"))
                 .AddModItemToShop(Calamity, "DraedonTreasureBag", 115000000, () => (bool)Calamity.Call("Downed", "exomechs"))
                 .AddModItemToShop(Calamity, "SCalBag", 200000000, () => (bool)Calamity.Call("Downed", "supremecalamitas"))
+            #endregion
 
+            #region Thorium Part
                 .AddModItemToShop(ThoriumMod, "ThunderBirdBag", 500000, () => (bool)ThoriumMod.Call("GetDownedBoss", "TheGrandThunderBird"))
                 .AddModItemToShop(ThoriumMod, "JellyFishBag", 750000, () => (bool)ThoriumMod.Call("GetDownedBoss", "QueenJellyfish"))
                 .AddModItemToShop(ThoriumMod, "CountBag", 850000, () => (bool)ThoriumMod.Call("GetDownedBoss", "Viscount"))
@@ -1025,13 +1089,28 @@ namespace AlchemistNPCLite.NPCs
                 .AddModItemToShop(ThoriumMod, "LichBag", 3000000, () => (bool)ThoriumMod.Call("GetDownedBoss", "Lich"))
                 .AddModItemToShop(ThoriumMod, "AbyssionBag", 3500000, () => (bool)ThoriumMod.Call("GetDownedBoss", "ForgottenOne"))
                 .AddModItemToShop(ThoriumMod, "RagBag", 5000000, () => (bool)ThoriumMod.Call("GetDownedBoss", "ThePrimordials"))
+            #endregion
                 ;
             shop.Register();
+            #endregion
 
-            shop = new NPCShop(Type, Bags2Shop);
-            //.AddModItemToShop(Atheria, "NovaBossBag", 1500000, () => ShardsConditions.DownedNova);
+            #region Bags 2 Shop - Fargo
+            shop = new NPCShop(Type, Bags2Shop)
+                 .AddModItemToShop(FargoSouls, "TrojanSquirrelBag", Item.buyPrice(0,20,0,0), () => FargoDowned.Trojan)
+                 .AddModItemToShop(FargoSouls, "CursedCoffinBag", Item.buyPrice(0, 29, 0, 0), () => FargoDowned.Cursed)
+                 .AddModItemToShop(FargoSouls, "DeviBag", Item.buyPrice(1, 0, 0, 0), () => FargoDowned.Devi)
+                 .AddModItemToShop(FargoSouls, "BanishedBaronBag", Item.buyPrice(1, 25, 0, 0), () => FargoDowned.Banished)
+                 .AddModItemToShop(FargoSouls, "LifelightBag", Item.buyPrice(1, 60, 0, 0), () => FargoDowned.LifeLight)
+                 .AddModItemToShop(FargoSouls, "CosmosBag", Item.buyPrice(20, 60, 0, 0), () => FargoDowned.Cosmos)
+                 .AddModItemToShop(FargoSouls, "AbomBag", Item.buyPrice(30, 60, 0, 0), () => FargoDowned.Abom)
+                 .AddModItemToShop(FargoSouls, "MutantBag", Item.buyPrice(40, 60, 0, 0), () => FargoDowned.Mutant)
+                ;
+
+            //.AddModItemToShop(Atheria, "NovaBossBag", 1500000, () => FargoDowned.Trojan);
             shop.Register();
+            #endregion
 
+            #region Bags 3 Shop - Redemption
             shop = new NPCShop(Type, Bags3Shop)
                 //.addModItemToShop(Redemption, "KingChickenBag", 150000, () => Operator.RedemptionDowned.ReDownedChicken)
                 .AddModItemToShop(Redemption, "ThornBag", 250000, () => RedemptionDowned.Thorn)
@@ -1048,347 +1127,7 @@ namespace AlchemistNPCLite.NPCs
                 .AddModItemToShop(Redemption, "NebBag", 10000000, () => RedemptionDowned.Nebuleus)
                 ;
             shop.Register();
-            /*
-            //if (Shop4)
-            //{
-            //    if (ThoriumMod != null)
-            //    {
-            //        if (NPC.downedBoss3)
-            //        {
-            //            if ((bool)ThoriumMod.Call("GetDownedBoss", "TheGrandThunderBird"))
-            //            {
-            //                .addModItemToShop(ThoriumMod, "ThunderBirdBag", 500000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)ThoriumMod.Call("GetDownedBoss", "QueenJellyfish"))
-            //            {
-            //                .addModItemToShop(ThoriumMod, "JellyFishBag", 750000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)ThoriumMod.Call("GetDownedBoss", "Viscount"))
-            //            {
-            //                .addModItemToShop(ThoriumMod, "CountBag", 850000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)ThoriumMod.Call("GetDownedBoss", "GraniteEnergyStorm"))
-            //            {
-            //                .addModItemToShop(ThoriumMod, "GraniteBag", 1000000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)ThoriumMod.Call("GetDownedBoss", "BuriedChampion"))
-            //            {
-            //                .addModItemToShop(ThoriumMod, "HeroBag", 1000000, ref shop, ref nextSlot);
-            //            }
-            //            if ((bool)ThoriumMod.Call("GetDownedBoss", "StarScouter"))
-            //            {
-            //                .addModItemToShop(ThoriumMod, "ScouterBag", 1250000, ref shop, ref nextSlot);
-            //            }
-            //            if (Main.hardMode)
-            //            {
-            //                if ((bool)ThoriumMod.Call("GetDownedBoss", "BoreanStrider"))
-            //                {
-            //                    .addModItemToShop(ThoriumMod, "BoreanBag", 1500000, ref shop, ref nextSlot);
-            //                }
-            //                if ((bool)ThoriumMod.Call("GetDownedBoss", "FallenBeholder"))
-            //                {
-            //                    .addModItemToShop(ThoriumMod, "BeholderBag", 2000000, ref shop, ref nextSlot);
-            //                }
-            //                if ((bool)ThoriumMod.Call("GetDownedBoss", "Lich"))
-            //                {
-            //                    .addModItemToShop(ThoriumMod, "LichBag", 3000000, ref shop, ref nextSlot);
-            //                }
-            //                if ((bool)ThoriumMod.Call("GetDownedBoss", "ForgottenOne"))
-            //                {
-            //                    .addModItemToShop(ThoriumMod, "AbyssionBag", 3500000, ref shop, ref nextSlot);
-            //                }
-            //            }
-            //            if (NPC.downedMoonlord)
-            //            {
-            //                if ((bool)ThoriumMod.Call("GetDownedBoss", "ThePrimordials"))
-            //                {
-            //                    .addModItemToShop(ThoriumMod, "RagBag", 5000000, ref shop, ref nextSlot);
-            //                }
-            //            }
-            //        }
-            //    }
-
-            //    // IMPLEMENT WHEN WEAKREFERENCES FIXED
-            //    /*
-            //    if (ModLoader.GetMod("SacredTools") != null)
-            //    {
-            //        if (NPC.downedBoss3)
-            //        {
-            //            if (SacredToolsDownedDecree)
-            //            {
-            //                .addModItemToShop(SacredTools, "DecreeBag", 330000, ref shop, ref nextSlot);
-            //            }
-            //            if (SacredToolsDownedPumpkin)
-            //            {
-            //                .addModItemToShop(SacredTools, "PumpkinBag", 500000, ref shop, ref nextSlot);
-            //            }
-            //            if (SacredToolsDownedHarpyPreHM)
-            //            {
-            //                .addModItemToShop(SacredTools, "HarpyBag", 1000000, ref shop, ref nextSlot);
-            //            }
-            //            if (SacredToolsDownedAraneas)
-            //            {
-            //                .addModItemToShop(SacredTools, "AraneasBag", 1500000, ref shop, ref nextSlot);
-            //            }
-            //            if (SacredToolsDownedHarpyHM)
-            //            {
-            //                .addModItemToShop(SacredTools, "HarpyBag2", 2000000, ref shop, ref nextSlot);
-            //            }
-            //            if (SacredToolsDownedPrimordia)
-            //            {
-            //                .addModItemToShop(SacredTools, "PrimordiaBag", 3000000, ref shop, ref nextSlot);
-            //            }
-            //            if (SacredToolsDownedAbbadon)
-            //            {
-            //                .addModItemToShop(SacredTools, "OblivionBag", 5000000, ref shop, ref nextSlot);
-            //            }
-            //            if (SacredToolsDownedAraghur)
-            //            {
-            //                .addModItemToShop(SacredTools, "SerpentBag", 7500000, ref shop, ref nextSlot);
-            //            }
-            //            if (SacredToolsDownedLunarians)
-            //            {
-            //                .addModItemToShop(SacredTools, "LunarBag", 10000000, ref shop, ref nextSlot);
-            //            }
-            //            if (SacredToolsDownedChallenger)
-            //            {
-            //                .addModItemToShop(SacredTools, "ChallengerBag", 15000000, ref shop, ref nextSlot);
-            //            }
-            //        }
-            //    }
-            //}
-            //if (Shop5)
-            //{
-            //    if (!NPC.downedBoss3)
-            //    {
-            //        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Notes.InformatingNote>());
-            //        nextSlot++;
-            //    }
-            //    if (NPC.downedBoss3 && Main.expertMode)
-            //    {
-            //        // IMPLEMENT WHEN WEAKREFERENCES FIXED
-            //        /*
-            //        if (ModLoader.GetMod("AAMod") != null)
-            //        {
-            //            if (AAModDownedMonarch)
-            //            {
-            //                shop5.addModItemToShop(AAMod, "MonarchBag", 150000, ref shop, ref nextSlot);
-            //            }
-            //            if (AAModDownedGrips)
-            //            {
-            //                shop5.addModItemToShop(AAMod, "GripsBag", 300000, ref shop, ref nextSlot);
-            //            }
-            //            if (AAModDownedTruffleToad)
-            //            {
-            //                shop5.addModItemToShop(AAMod, "TruffleBag", 350000, ref shop, ref nextSlot);
-            //            }
-            //            if (AAModDownedBrood)
-            //            {
-            //                shop5.addModItemToShop(AAMod, "BroodBag", 500000, ref shop, ref nextSlot);
-            //            }
-            //            if (AAModDownedHydra)
-            //            {
-            //                shop5.addModItemToShop(AAMod, "HydraBag", 750000, ref shop, ref nextSlot);
-            //            }
-            //            if (AAModDownedSerpent)
-            //            {
-            //                shop5.addModItemToShop(AAMod, "SerpentBag", 1000000, ref shop, ref nextSlot);
-            //            }
-            //            if (AAModDownedDjinn)
-            //            {
-            //                shop5.addModItemToShop(AAMod, "DjinnBag", 1000000, ref shop, ref nextSlot);
-            //            }
-            //            if (AAModDownedEquinox)
-            //            {
-            //                shop5.addModItemToShop(AAMod, "DBBag", 2500000, ref shop, ref nextSlot);
-            //                shop5.addModItemToShop(AAMod, "NCBag", 2500000, ref shop, ref nextSlot);
-            //            }
-            //            if (AAModDownedSisters)
-            //            {
-            //                shop5.addModItemToShop(AAMod, "AHBag", 5000000, ref shop, ref nextSlot);
-            //            }
-            //            if (AAModDownedYamata)
-            //            {
-            //                shop5.addModItemToShop(AAMod, "YamataBag", 5000000, ref shop, ref nextSlot);
-            //            }
-            //            if (AAModDownedAkuma)
-            //            {
-            //                shop5.addModItemToShop(AAMod, "AkumaBag", 5000000, ref shop, ref nextSlot);
-            //            }
-            //            if (AAModDownedZero)
-            //            {
-            //                shop5.addModItemToShop(AAMod, "ZeroBag", 10000000, ref shop, ref nextSlot);
-            //            }
-            //            if (AAModDownedShen)
-            //            {
-            //                shop5.addModItemToShop(AAMod, "ShenCache", 15000000, ref shop, ref nextSlot);
-            //            }
-            //        }
-            //        if (ModLoader.GetMod("SpiritMod") != null)
-            //        {
-            //            if (SpiritModDownedScarabeus)
-            //            {
-            //                shop5.addModItemToShop(SpiritMod, "BagOScarabs", 300000, ref shop, ref nextSlot);
-            //            }
-            //            if (SpiritModDownedBane)
-            //            {
-            //                shop5.addModItemToShop(SpiritMod, "ReachBossBag", 500000, ref shop, ref nextSlot);
-            //            }
-            //            if (SpiritModDownedFlier)
-            //            {
-            //                shop5.addModItemToShop(SpiritMod, "FlyerBag", 750000, ref shop, ref nextSlot);
-            //            }
-            //            if (SpiritModDownedStarplateRaider)
-            //            {
-            //                shop5.addModItemToShop(SpiritMod, "SteamRaiderBag", 1000000, ref shop, ref nextSlot);
-            //            }
-            //            if (SpiritModDownedInfernon)
-            //            {
-            //                shop5.addModItemToShop(SpiritMod, "InfernonBag", 2000000, ref shop, ref nextSlot);
-            //            }
-            //            if (SpiritModDownedDusking)
-            //            {
-            //                shop5.addModItemToShop(SpiritMod, "DuskingBag", 2500000, ref shop, ref nextSlot);
-            //            }
-            //            if (SpiritModDownedEtherialUmbra)
-            //            {
-            //                shop5.addModItemToShop(SpiritMod, "SpiritCoreBag", 2500000, ref shop, ref nextSlot);
-            //            }
-            //            if (SpiritModDownedIlluminantMaster)
-            //            {
-            //                shop5.addModItemToShop(SpiritMod, "IlluminantBag", 3000000, ref shop, ref nextSlot);
-            //            }
-            //            if (SpiritModDownedAtlas)
-            //            {
-            //                shop5.addModItemToShop(SpiritMod, "AtlasBag", 4000000, ref shop, ref nextSlot);
-            //            }
-            //            if (SpiritModDownedOverseer)
-            //            {
-            //                shop5.addModItemToShop(SpiritMod, "OverseerBag", 8000000, ref shop, ref nextSlot);
-            //            }
-            //        }
-            //        if (ModLoader.GetMod("Laugicality") != null)
-            //        {
-            //            if (EnigmaDownedSharkron)
-            //            {
-            //                shop5.addModItemToShop(Laugicality, "DuneSharkronTreasureBag", 300000, ref shop, ref nextSlot);
-            //            }
-            //            if (EnigmaDownedHypothema)
-            //            {
-            //                shop5.addModItemToShop(Laugicality, "HypothemaTreasureBag", 500000, ref shop, ref nextSlot);
-            //            }
-            //            if (EnigmaDownedRagnar)
-            //            {
-            //                shop5.addModItemToShop(Laugicality, "RagnarTreasureBag", 750000, ref shop, ref nextSlot);
-            //            }
-            //            if (EnigmaDownedAnDio)
-            //            {
-            //                shop5.addModItemToShop(Laugicality, "AnDioTreasureBag", 1000000, ref shop, ref nextSlot);
-            //            }
-            //            if (EnigmaDownedAnnihilator)
-            //            {
-            //                shop5.addModItemToShop(Laugicality, "AnnihilatorTreasureBag", 2000000, ref shop, ref nextSlot);
-            //            }
-            //            if (EnigmaDownedSlybertron)
-            //            {
-            //                shop5.addModItemToShop(Laugicality, "SlybertronTreasureBag", 2000000, ref shop, ref nextSlot);
-            //            }
-            //            if (EnigmaDownedSteamTrain)
-            //            {
-            //                shop5.addModItemToShop(Laugicality, "SteamTrainTreasureBag", 2000000, ref shop, ref nextSlot);
-            //            }
-            //        }
-            //        if (ModLoader.GetMod("pinkymod") != null)
-            //        {
-            //            if (PinkymodDownedST)
-            //            {
-            //                shop5.addModItemToShop(pinkymod, "STBag", 500000, ref shop, ref nextSlot);
-            //            }
-            //            if (PinkymodDownedMS)
-            //            {
-            //                shop5.addModItemToShop(pinkymod, "HOTCTreasureBag", 750000, ref shop, ref nextSlot);
-            //                shop5.addModItemToShop(pinkymod, "MythrilBag", 1000000, ref shop, ref nextSlot);
-            //            }
-            //            if (PinkymodDownedVD)
-            //            {
-            //                shop5.addModItemToShop(pinkymod, "Valdabag", 1500000, ref shop, ref nextSlot);
-            //            }
-            //            if (PinkymodDownedAD)
-            //            {
-            //                shop5.addModItemToShop(pinkymod, "GatekeeperTreasureBag", 2500000, ref shop, ref nextSlot);
-            //            }
-            //        }
-            //    }
-            //}
-            //if (Shop6)
-            //{
-            //    if (!NPC.downedBoss3)
-            //    {
-            //        shop.item[nextSlot].SetDefaults(ModContent.ItemType<Items.Notes.InformatingNote>());
-            //        nextSlot++;
-            //    }
-            //    if (NPC.downedBoss3 && Main.expertMode)
-            //    {
-            //        // IMPLEMENT WHEN WEAKREFERENCES FIXED
-            //        /*
-            //        if (ModLoader.GetMod("ElementsAwoken") != null)
-            //        {
-            //            if (EADownedWasteland)
-            //            {
-            //                shop6.addModItemToShop(ElementsAwoken, "WastelandBag", 300000, ref shop, ref nextSlot);
-            //            }
-            //            if (EADownedInfernace)
-            //            {
-            //                shop6.addModItemToShop(ElementsAwoken, "InfernaceBag", 500000, ref shop, ref nextSlot);
-            //            }
-            //            if (EADownedScourgeFighter)
-            //            {
-            //                shop6.addModItemToShop(ElementsAwoken, "ScourgeFighterBag", 1500000, ref shop, ref nextSlot);
-            //            }
-            //            if (EADownedRegaroth)
-            //            {
-            //                shop6.addModItemToShop(ElementsAwoken, "RegarothBag", 1750000, ref shop, ref nextSlot);
-            //            }
-            //            if (EADownedPermafrost)
-            //            {
-            //                shop6.addModItemToShop(ElementsAwoken, "PermafrostBag", 2250000, ref shop, ref nextSlot);
-            //            }
-            //            if (EADownedObsidious)
-            //            {
-            //                shop6.addModItemToShop(ElementsAwoken, "ObsidiousBag", 2250000, ref shop, ref nextSlot);
-            //            }
-            //            if (EADownedAqueous)
-            //            {
-            //                shop6.addModItemToShop(ElementsAwoken, "AqueousBag", 2500000, ref shop, ref nextSlot);
-            //            }
-            //            if (EADownedWyrm)
-            //            {
-            //                shop6.addModItemToShop(ElementsAwoken, "TempleKeepersBag", 2750000, ref shop, ref nextSlot);
-            //            }
-            //            if (EADownedGuardian)
-            //            {
-            //                shop6.addModItemToShop(ElementsAwoken, "GuardianBag", 3000000, ref shop, ref nextSlot);
-            //            }
-            //            if (EADownedVolcanox)
-            //            {
-            //                shop6.addModItemToShop(ElementsAwoken, "VolcanoxBag", 5000000, ref shop, ref nextSlot);
-            //            }
-            //            if (EADownedVoidLevi)
-            //            {
-            //                shop6.addModItemToShop(ElementsAwoken, "VoidLeviathanBag", 6000000, ref shop, ref nextSlot);
-            //            }
-            //            if (EADownedAzana)
-            //            {
-            //                shop6.addModItemToShop(ElementsAwoken, "AzanaBag", 8000000, ref shop, ref nextSlot);
-            //            }
-            //            if (EADownedAncients)
-            //            {
-            //                shop6.addModItemToShop(ElementsAwoken, "AncientsBag", 10000000, ref shop, ref nextSlot);
-            //            }
-            //        }
-            //    }
-            //}
-            //*/
+            #endregion
         }
     }
 }
