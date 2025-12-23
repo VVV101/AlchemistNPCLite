@@ -10,6 +10,9 @@ The Musician will come if you defeat Skeletron.
 Mod has support for Thorium, Calamity, Mod of Redemption, Census and imkSushi's mod.
 
 Mod's Discord: https://discord.gg/WGKyKun
+v1.9.9
+-Added some support for Fargo's Souls mod.
+-Chinese localizations fixes by zlzhaidou.
 v1.9.8
 -Added Shards of Atheria support by Rockman Zeta.
 -Added German localization by Cracky.
