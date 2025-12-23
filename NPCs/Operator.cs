@@ -896,34 +896,34 @@ namespace AlchemistNPCLite.NPCs
 
             #region Vaillan MaterialShop
             var shop = new NPCShop(Type, MaterialShop)
-                .Add(new Item(ItemID.Lens) { shopCustomPrice = 10000 })
+                .Add(new Item(ItemID.Lens) { shopCustomPrice = 5000 })
                 .Add(new Item(ItemID.DemoniteOre) { shopCustomPrice = 1500 })
-                .Add(new Item(ItemID.ShadowScale) { shopCustomPrice = 10000 })
-                .Add(new Item(ItemID.RottenChunk) { shopCustomPrice = 10000 })
+                .Add(new Item(ItemID.ShadowScale) { shopCustomPrice = 5000 })
+                .Add(new Item(ItemID.RottenChunk) { shopCustomPrice = 1000 })
                 .Add(new Item(ItemID.CrimtaneOre) { shopCustomPrice = 1500 })
-                .Add(new Item(ItemID.TissueSample) { shopCustomPrice = 10000 })
-                .Add(new Item(ItemID.Vertebrae) { shopCustomPrice = 10000 })
+                .Add(new Item(ItemID.TissueSample) { shopCustomPrice = 5000 })
+                .Add(new Item(ItemID.Vertebrae) { shopCustomPrice = 1000 })
                 .Add(new Item(ItemID.BeeWax) { shopCustomPrice = 10000 }, Condition.DownedQueenBee)
                 .Add(new Item(ItemID.Stinger) { shopCustomPrice = 75000 }, Condition.DownedQueenBee)
                 .Add(new Item(ItemID.JungleSpores) { shopCustomPrice = 10000 }, Condition.DownedQueenBee)
                 .Add(new Item(ItemID.Vine) { shopCustomPrice = 15000 }, Condition.DownedQueenBee)
-                .Add(new Item(ItemID.Feather) { shopCustomPrice = 25000 }, Condition.DownedSkeletron)
-                .Add(new Item(ItemID.SharkFin) { shopCustomPrice = 25000 }, Condition.DownedSkeletron)
-                .Add(new Item(ItemID.Bone) { shopCustomPrice = 10000 }, Condition.DownedSkeletron)
+                .Add(new Item(ItemID.Feather) { shopCustomPrice = 10000 }, Condition.DownedSkeletron)
+                .Add(new Item(ItemID.SharkFin) { shopCustomPrice = 10000 }, Condition.DownedSkeletron)
+                .Add(new Item(ItemID.Bone) { shopCustomPrice = 500 }, Condition.DownedSkeletron)
                 .Add(new Item(ItemID.AncientBattleArmorMaterial) { shopCustomPrice = 200000 }, new Condition("", () => AlchemistNPCLiteWorld.downedSandElemental))
-                .Add(new Item(ItemID.SoulofLight) { shopCustomPrice = 15000 }, Condition.DownedMechBossAny)
-                .Add(new Item(ItemID.SoulofNight) { shopCustomPrice = 15000 }, Condition.DownedMechBossAny)
-                .Add(new Item(ItemID.SoulofFlight) { shopCustomPrice = 25000 }, Condition.DownedMechBossAny)
-                .Add(new Item(ItemID.SoulofMight) { shopCustomPrice = 30000 }, new Condition("", () => NPC.downedMechBoss1))
-                .Add(new Item(ItemID.SoulofSight) { shopCustomPrice = 30000 }, new Condition("", () => NPC.downedMechBoss2))
+                .Add(new Item(ItemID.SoulofLight) { shopCustomPrice = 10000 }, Condition.DownedMechBossAny)
+                .Add(new Item(ItemID.SoulofNight) { shopCustomPrice = 10000 }, Condition.DownedMechBossAny)
+                .Add(new Item(ItemID.SoulofFlight) { shopCustomPrice = 15000 }, Condition.DownedMechBossAny)
+                .Add(new Item(ItemID.SoulofMight) { shopCustomPrice = 20000 }, new Condition("", () => NPC.downedMechBoss1))
+                .Add(new Item(ItemID.SoulofSight) { shopCustomPrice = 20000 }, new Condition("", () => NPC.downedMechBoss2))
                 .Add(new Item(ItemID.BlackLens) { shopCustomPrice = 200000 }, new Condition("", () => NPC.downedMechBoss2))
-                .Add(new Item(ItemID.SoulofFright) { shopCustomPrice = 30000 }, new Condition("", () => NPC.downedMechBoss3))
-                .Add(new Item(ItemID.HallowedBar) { shopCustomPrice = 20000 }, Condition.DownedMechBossAll)
-                .Add(new Item(ItemID.Ectoplasm) { shopCustomPrice = 35000 }, new Condition("", () => NPC.downedPlantBoss))
-                .Add(new Item(ItemID.FragmentSolar) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedMoonlord))
-                .Add(new Item(ItemID.FragmentNebula) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedMoonlord))
-                .Add(new Item(ItemID.FragmentVortex) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedMoonlord))
-                .Add(new Item(ItemID.FragmentStardust) { shopCustomPrice = 100000 }, new Condition("", () => NPC.downedMoonlord));
+                .Add(new Item(ItemID.SoulofFright) { shopCustomPrice = 20000 }, new Condition("", () => NPC.downedMechBoss3))
+                .Add(new Item(ItemID.HallowedBar) { shopCustomPrice = 15000 }, Condition.DownedMechBossAll)
+                .Add(new Item(ItemID.Ectoplasm) { shopCustomPrice = 20000 }, new Condition("", () => NPC.downedPlantBoss))
+                .Add(new Item(ItemID.FragmentSolar) { shopCustomPrice = 50000 }, new Condition("", () => NPC.downedMoonlord))
+                .Add(new Item(ItemID.FragmentNebula) { shopCustomPrice = 50000 }, new Condition("", () => NPC.downedMoonlord))
+                .Add(new Item(ItemID.FragmentVortex) { shopCustomPrice = 50000 }, new Condition("", () => NPC.downedMoonlord))
+                .Add(new Item(ItemID.FragmentStardust) { shopCustomPrice = 50000 }, new Condition("", () => NPC.downedMoonlord));
             shop.Register();
             #endregion
 
@@ -935,11 +935,11 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ModContent.ItemType<Items.Misc.GlobalTeleporterUp>()), new Condition("", () => NPC.downedMoonlord))
             #endregion
             #region Thorium
-                .AddModItemToShop(ThoriumMod, "Petal", 10000)
+                .AddModItemToShop(ThoriumMod, "Petal", 5000)
                 .AddModItemToShop(ThoriumMod, "BrokenHeroFragment", 250000, () => NPC.downedGolemBoss)
-                .AddModItemToShop(ThoriumMod, "WhiteDwarfFragment", 100000, () => NPC.downedMoonlord)
-                .AddModItemToShop(ThoriumMod, "CometFragment", 100000, () => NPC.downedMoonlord)
-                .AddModItemToShop(ThoriumMod, "CelestialFragment", 100000, () => NPC.downedMoonlord)
+                .AddModItemToShop(ThoriumMod, "WhiteDwarfFragment", 50000, () => NPC.downedMoonlord)
+                .AddModItemToShop(ThoriumMod, "CometFragment", 50000, () => NPC.downedMoonlord)
+                .AddModItemToShop(ThoriumMod, "CelestialFragment", 50000, () => NPC.downedMoonlord)
             #endregion
             #region Calamity
                 .AddModItemToShop(Calamity, "TrueShadowScale", 20000, () => (bool)Calamity.Call("Downed", "hive mind"))
@@ -1006,43 +1006,43 @@ namespace AlchemistNPCLite.NPCs
             shop = new NPCShop(Type, VanillaBagsShop)
                 .Add(new Item(ModContent.ItemType<Items.Notes.InformatingNote>()) { shopCustomPrice = 30000 },
                     new Condition("", () => !NPC.downedBoss3))
-                .Add(new Item(ItemID.KingSlimeBossBag) { shopCustomPrice = 250000 },
+                .Add(new Item(ItemID.KingSlimeBossBag) { shopCustomPrice = 500000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode))
-                .Add(new Item(ItemID.EyeOfCthulhuBossBag) { shopCustomPrice = 350000 },
+                .Add(new Item(ItemID.EyeOfCthulhuBossBag) { shopCustomPrice = 700000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode))
-                .Add(new Item(ItemID.EaterOfWorldsBossBag) { shopCustomPrice = 500000 },
+                .Add(new Item(ItemID.EaterOfWorldsBossBag) { shopCustomPrice = 1000000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode))
-                .Add(new Item(ItemID.BrainOfCthulhuBossBag) { shopCustomPrice = 500000 },
+                .Add(new Item(ItemID.BrainOfCthulhuBossBag) { shopCustomPrice = 1000000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode))
-                .Add(new Item(ItemID.QueenBeeBossBag) { shopCustomPrice = 750000 },
+                .Add(new Item(ItemID.QueenBeeBossBag) { shopCustomPrice = 1250000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode))
                 .Add(new Item(ItemID.SkeletronBossBag) { shopCustomPrice = 1000000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode))
                 .Add(new Item(ItemID.DeerclopsBossBag) { shopCustomPrice = 1500000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedDeerclops))
                 .AddModItemToShop(ThoriumMod, "DarkMageBag", 1000000, () => NPC.downedBoss3 && Main.expertMode && DD2Event.DownedInvasionT1)
-                .Add(new Item(ItemID.WallOfFleshBossBag) { shopCustomPrice = 1750000 },
+                .Add(new Item(ItemID.WallOfFleshBossBag) { shopCustomPrice = 2750000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode && Main.hardMode))
-                .Add(new Item(ItemID.QueenSlimeBossBag) { shopCustomPrice = 1500000 },
+                .Add(new Item(ItemID.QueenSlimeBossBag) { shopCustomPrice = 3000000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedQueenSlime))
-                .Add(new Item(ItemID.DestroyerBossBag) { shopCustomPrice = 2000000 },
+                .Add(new Item(ItemID.DestroyerBossBag) { shopCustomPrice = 4000000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3))
-                .Add(new Item(ItemID.TwinsBossBag) { shopCustomPrice = 2000000 },
+                .Add(new Item(ItemID.TwinsBossBag) { shopCustomPrice = 4000000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3))
-                .Add(new Item(ItemID.SkeletronPrimeBossBag) { shopCustomPrice = 2000000 },
+                .Add(new Item(ItemID.SkeletronPrimeBossBag) { shopCustomPrice = 4000000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedMechBoss1 && NPC.downedMechBoss2 && NPC.downedMechBoss3))
                 .AddModItemToShop(ThoriumMod, "OgreBag", 1000000, () => NPC.downedBoss3 && Main.expertMode && DD2Event.DownedInvasionT2 && NPC.downedMechBossAny)
-                .Add(new Item(ItemID.PlanteraBossBag) { shopCustomPrice = 2500000 },
+                .Add(new Item(ItemID.PlanteraBossBag) { shopCustomPrice = 5000000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedPlantBoss))
-                .Add(new Item(ItemID.FairyQueenBossBag) { shopCustomPrice = 2500000 },
+                .Add(new Item(ItemID.FairyQueenBossBag) { shopCustomPrice = 5000000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedEmpressOfLight))
-                .Add(new Item(ItemID.GolemBossBag) { shopCustomPrice = 3000000 },
+                .Add(new Item(ItemID.GolemBossBag) { shopCustomPrice = 6000000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedGolemBoss))
-                .Add(new Item(ItemID.BossBagBetsy) { shopCustomPrice = 3500000 },
+                .Add(new Item(ItemID.BossBagBetsy) { shopCustomPrice = 7000000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode && DD2Event.DownedInvasionT3 && NPC.downedGolemBoss))
-                .Add(new Item(ItemID.FishronBossBag) { shopCustomPrice = 3500000 },
+                .Add(new Item(ItemID.FishronBossBag) { shopCustomPrice = 7000000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedFishron))
-                .Add(new Item(ItemID.MoonLordBossBag) { shopCustomPrice = 4000000 },
+                .Add(new Item(ItemID.MoonLordBossBag) { shopCustomPrice = 12000000 },
                     new Condition("", () => NPC.downedBoss3 && Main.expertMode && NPC.downedMoonlord));
             shop.Register();
             #endregion

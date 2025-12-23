@@ -11,8 +11,11 @@ Mod has support for Thorium, Calamity, Mod of Redemption, Census and imkSushi's 
 
 Mod's Discord: https://discord.gg/WGKyKun
 v1.9.9
+By zlzhaidou:
 -Added some support for Fargo's Souls mod.
--Chinese localizations fixes by zlzhaidou.
+-Chinese localizations fixes.
+By Ziemexx
+-Prices rebalance for Architect and Operator.
 v1.9.8
 -Added Shards of Atheria support by Rockman Zeta.
 -Added German localization by Cracky.
