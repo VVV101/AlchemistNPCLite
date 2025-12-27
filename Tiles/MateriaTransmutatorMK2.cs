@@ -79,10 +79,19 @@ namespace AlchemistNPCLite.Tiles
                 adjTiles[adjTiles.Length - 1] = ModLoader.GetMod("FargowiltasSouls").TileType("CrucibleCosmosSheet");
             }
 			*/
-            if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity) && Calamity.TryFind<ModTile>("DraedonsForge", out ModTile currTile))
+            if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
             {
-                Array.Resize(ref tempTiles, tempTiles.Length + 1);
-                tempTiles[tempTiles.Length - 1] = currTile.Type;
+				ModTile currTile;
+				if( Calamity.TryFind<ModTile>("CosmicAnvil", out currTile))
+				{
+					Array.Resize(ref tempTiles, tempTiles.Length + 1);
+					tempTiles[tempTiles.Length - 1] = currTile.Type;
+				}
+				if( Calamity.TryFind<ModTile>("DraedonsForge", out currTile))
+				{
+					Array.Resize(ref tempTiles, tempTiles.Length + 1);
+					tempTiles[tempTiles.Length - 1] = currTile.Type;
+				}
             }
             AdjTiles = tempTiles;
             DustType = 111;

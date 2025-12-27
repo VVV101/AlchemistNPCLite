@@ -19,6 +19,12 @@ namespace AlchemistNPCLite.Interface
         public static bool visible = false;
         public static uint timeStart;
         public static string Shop = Operator.MaterialShop;
+		UIText text = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.BossDropsShop"));
+		UIText text1 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.BossDropsModsShop"));
+		UIText text2 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.VanillaTreasureBagsShop"));
+		UIText text3 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ModdedTreasureBagsShop"));
+		UIText text4 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ModdedTreasureBagsShop2"));
+		UIText text5 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ModdedTreasureBagsShop3"));
 
         public override void OnInitialize()
         {
@@ -26,56 +32,56 @@ namespace AlchemistNPCLite.Interface
             OperatorShopsPanel.SetPadding(0);
             OperatorShopsPanel.Left.Set(575f, 0f);
             OperatorShopsPanel.Top.Set(275f, 0f);
-            OperatorShopsPanel.Width.Set(300f, 0f);
+            OperatorShopsPanel.Width.Set(375f, 0f);
             OperatorShopsPanel.Height.Set(190f, 0f);
             OperatorShopsPanel.BackgroundColor = new Color(73, 94, 171);
 
             OperatorShopsPanel.OnLeftMouseDown += new MouseEvent(DragStart);
             OperatorShopsPanel.OnLeftMouseUp += new MouseEvent(DragEnd);
 
-            UIText text = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.BossDropsShop"));
             text.Left.Set(35, 0f);
             text.Top.Set(10, 0f);
             text.Width.Set(90, 0f);
             text.Height.Set(22, 0f);
+			text.TextColor = CheckColor(1);
             OperatorShopsPanel.Append(text);
 
-            UIText text1 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.BossDropsModsShop"));
             text1.Left.Set(35, 0f);
             text1.Top.Set(40, 0f);
             text1.Width.Set(90, 0f);
             text1.Height.Set(22, 0f);
+			text1.TextColor = CheckColor(2);
             OperatorShopsPanel.Append(text1);
 
-            UIText text2 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.VanillaTreasureBagsShop"));
             text2.Left.Set(35, 0f);
             text2.Top.Set(70, 0f);
             text2.Width.Set(70, 0f);
             text2.Height.Set(22, 0f);
+			text2.TextColor = CheckColor(3);
             OperatorShopsPanel.Append(text2);
 
-            UIText text3 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ModdedTreasureBagsShop"));
             text3.Left.Set(35, 0f);
             text3.Top.Set(100, 0f);
             text3.Width.Set(120, 0f);
             text3.Height.Set(22, 0f);
+			text3.TextColor = CheckColor(4);
             OperatorShopsPanel.Append(text3);
 
-            UIText text4 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ModdedTreasureBagsShop2"));
             text4.Left.Set(35, 0f);
             text4.Top.Set(130, 0f);
             text4.Width.Set(120, 0f);
             text4.Height.Set(22, 0f);
+			text4.TextColor = CheckColor(5);
             OperatorShopsPanel.Append(text4);
 
-            UIText text5 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ModdedTreasureBagsShop3"));
             text5.Left.Set(35, 0f);
             text5.Top.Set(160, 0f);
             text5.Width.Set(120, 0f);
             text5.Height.Set(22, 0f);
+			text5.TextColor = CheckColor(6);
             OperatorShopsPanel.Append(text5);
 
-            Asset<Texture2D> buttonPlayTexture = ModContent.Request<Texture2D>("Terraria/Images/UI/ButtonPlay");
+            Asset<Texture2D> buttonPlayTexture = ModContent.Request<Texture2D>("AlchemistNPCLite/Interface/ButtonSet");
             UIImageButton playButton = new(buttonPlayTexture);
             playButton.Left.Set(10, 0f);
             playButton.Top.Set(10, 0f);
@@ -119,9 +125,9 @@ namespace AlchemistNPCLite.Interface
             playButton5.OnLeftClick += new(PlayButtonClicked6);
             OperatorShopsPanel.Append(playButton5);
 
-            Asset<Texture2D> buttonDeleteTexture = ModContent.Request<Texture2D>("Terraria/Images/UI/ButtonDelete");
+            Asset<Texture2D> buttonDeleteTexture = ModContent.Request<Texture2D>("AlchemistNPCLite/Interface/ButtonClose");
             UIImageButton closeButton = new(buttonDeleteTexture);
-            closeButton.Left.Set(270, 0f);
+            closeButton.Left.Set(345, 0f);
             closeButton.Top.Set(10, 0f);
             closeButton.Width.Set(22, 0f);
             closeButton.Height.Set(22, 0f);
@@ -134,12 +140,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Operator.Shop1 = true;
-                Operator.Shop2 = false;
-                Operator.Shop3 = false;
-                Operator.Shop4 = false;
-                Operator.Shop5 = false;
-                Operator.Shop6 = false;
+                Operator.Shops = 1;
+                ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Operator.MaterialShop, ref visible);
             }
         }
@@ -148,12 +150,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Operator.Shop1 = false;
-                Operator.Shop2 = true;
-                Operator.Shop3 = false;
-                Operator.Shop4 = false;
-                Operator.Shop5 = false;
-                Operator.Shop6 = false;
+                Operator.Shops = 2;
+                ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Operator.ModMaterialShop, ref visible);
             }
         }
@@ -162,12 +160,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Operator.Shop1 = false;
-                Operator.Shop2 = false;
-                Operator.Shop3 = true;
-                Operator.Shop4 = false;
-                Operator.Shop5 = false;
-                Operator.Shop6 = false;
+                Operator.Shops = 3;
+                ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Operator.VanillaBagsShop, ref visible);
             }
         }
@@ -176,12 +170,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Operator.Shop1 = false;
-                Operator.Shop2 = false;
-                Operator.Shop3 = false;
-                Operator.Shop4 = true;
-                Operator.Shop5 = false;
-                Operator.Shop6 = false;
+                Operator.Shops = 4;
+                ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Operator.Bags1Shop, ref visible);
             }
         }
@@ -190,12 +180,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Operator.Shop1 = false;
-                Operator.Shop2 = false;
-                Operator.Shop3 = false;
-                Operator.Shop4 = false;
-                Operator.Shop5 = true;
-                Operator.Shop6 = false;
+                Operator.Shops = 5;
+                ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Operator.Bags2Shop, ref visible);
             }
         }
@@ -204,12 +190,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Operator.Shop1 = false;
-                Operator.Shop2 = false;
-                Operator.Shop3 = false;
-                Operator.Shop4 = false;
-                Operator.Shop5 = false;
-                Operator.Shop6 = true;
+                Operator.Shops = 6;
+                ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Operator.Bags3Shop, ref visible);
             }
         }
@@ -256,5 +238,21 @@ namespace AlchemistNPCLite.Interface
                 Recalculate();
             }
         }
+		
+		private Color CheckColor(int i)
+		{
+			if (Operator.Shops == i) return Color.Lime;
+			return Color.White;
+		}
+		
+		private void ReCheckColor()
+		{
+			text.TextColor = CheckColor(1);
+			text1.TextColor = CheckColor(2);
+			text2.TextColor = CheckColor(3);
+			text3.TextColor = CheckColor(4);
+			text4.TextColor = CheckColor(5);
+			text5.TextColor = CheckColor(6);
+		}
     }
 }

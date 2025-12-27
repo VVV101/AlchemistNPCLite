@@ -1352,6 +1352,8 @@ Mods: {
 		Excavation1: Bergbaufähigkeiten stark erhöht.
 		Excavation2: Bergbaubereich ist eingestellt auf
 		Excavation3: STRG + Rechtsklick, um Buff zu entfernen
+		// FishingComb1: Calming effect is enabled.
+		// FishingComb2: Calming effect is disabled.
 
 		Tiles: {
 			HMCraftPound.MapEntry: Erstklassiger Handwerkspfund

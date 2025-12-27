@@ -15,11 +15,7 @@ namespace AlchemistNPCLite.NPCs
     [AutoloadHead]
     public class Musician : ModNPC
     {
-        public static bool S1 = true;
-        public static bool S2 = false;
-        public static bool S3 = false;
-		public static bool S4 = false;
-		public static bool S5 = false;
+        public static int Shops = 1;
 		
 		public static string Sh1 = "Sh1";
         public static string Sh2 = "Sh2";
@@ -278,23 +274,23 @@ namespace AlchemistNPCLite.NPCs
 			string Shop4 = Language.GetTextValue("Mods.AlchemistNPCLite.Shop4");
 			string Shop5 = Language.GetTextValue("Mods.AlchemistNPCLite.Shop5");
             string ShopChanger = Language.GetTextValue("Mods.AlchemistNPCLite.ShopChanger");
-            if (S1)
+            if (Shops == 1)
             {
                 button = Language.GetTextValue("LegacyInterface.28");
             }
-            if (S2)
+            if (Shops == 2)
             {
                 button = Shop2;
             }
-            if (S3)
+            if (Shops == 3)
             {
                 button = Shop3;
             }
-			if (S4)
+			if (Shops == 4)
             {
                 button = Shop4;
             }
-			if (S5)
+			if (Shops == 5)
             {
                 button = Shop5;
             }

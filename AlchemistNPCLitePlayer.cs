@@ -42,6 +42,7 @@ namespace AlchemistNPCLite
         public bool GlobalTeleporter = false;
         public bool GlobalTeleporterUp = false;
         public int ExcavationPower = 3;
+		public bool Calming = true;
 
         public override void ResetEffects()
         {

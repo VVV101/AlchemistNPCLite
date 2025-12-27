@@ -1350,6 +1350,8 @@ Mods: {
 		// Excavation1: Mining capabilities greatly increased.
 		// Excavation2: Mining area is set to
 		// Excavation3: CTRL + right click to remove buff
+		// FishingComb1: Calming effect is enabled.
+		// FishingComb2: Calming effect is disabled.
 
 		Tiles: {
 			HMCraftPound.MapEntry: Estação de Criação Expandida

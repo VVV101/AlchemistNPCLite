@@ -18,12 +18,7 @@ namespace AlchemistNPCLite.NPCs
     [AutoloadHead]
     public class Operator : ModNPC
     {
-        public static bool Shop1 = true;
-        public static bool Shop2 = false;
-        public static bool Shop3 = false;
-        public static bool Shop4 = false;
-        public static bool Shop5 = false;
-        public static bool Shop6 = false;
+        public static int Shops = 1;
         public const string MaterialShop = "Materials";
         public const string ModMaterialShop = "ModMaterials";
         public const string VanillaBagsShop = "VanillaBags";
@@ -416,27 +411,27 @@ namespace AlchemistNPCLite.NPCs
             {
                 button2 = ShopChanger;
             }
-            if (Shop1)
+            if (Shops == 1)
             {
                 button = BossDropsShop;
             }
-            if (Shop2)
+            if (Shops == 2)
             {
                 button = BossDropsModsShop;
             }
-            if (Shop3)
+            if (Shops == 3)
             {
                 button = VanillaTreasureBagsShop;
             }
-            if (Shop4)
+            if (Shops == 4)
             {
                 button = ModdedTreasureBagsShop;
             }
-            if (Shop5)
+            if (Shops == 5)
             {
                 button = ModdedTreasureBagsShop2;
             }
-            if (Shop6)
+            if (Shops == 6)
             {
                 button = ModdedTreasureBagsShop3;
             }
@@ -448,12 +443,7 @@ namespace AlchemistNPCLite.NPCs
             {
                 if (!Main.expertMode)
                 {
-                    Shop1 = true;
-                    Shop2 = false;
-                    Shop3 = false;
-                    Shop4 = false;
-                    Shop5 = false;
-                    Shop6 = false;
+                    Shops = 1;
                     shopName = MaterialShop;
                 }
                 if (Main.expertMode)
@@ -466,12 +456,7 @@ namespace AlchemistNPCLite.NPCs
             {
                 if (!Main.expertMode)
                 {
-                    Shop2 = true;
-                    Shop1 = false;
-                    Shop3 = false;
-                    Shop4 = false;
-                    Shop5 = false;
-                    Shop6 = false;
+                    Shops = 2;
                     shopName = ModMaterialShop;
                 }
                 if (Main.expertMode)
@@ -910,6 +895,7 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.Feather) { shopCustomPrice = 10000 }, Condition.DownedSkeletron)
                 .Add(new Item(ItemID.SharkFin) { shopCustomPrice = 10000 }, Condition.DownedSkeletron)
                 .Add(new Item(ItemID.Bone) { shopCustomPrice = 500 }, Condition.DownedSkeletron)
+				.Add(new Item(ItemID.FrostCore) { shopCustomPrice = 200000 }, new Condition("", () => AlchemistNPCLiteWorld.downedIceGolem))
                 .Add(new Item(ItemID.AncientBattleArmorMaterial) { shopCustomPrice = 200000 }, new Condition("", () => AlchemistNPCLiteWorld.downedSandElemental))
                 .Add(new Item(ItemID.SoulofLight) { shopCustomPrice = 10000 }, Condition.DownedMechBossAny)
                 .Add(new Item(ItemID.SoulofNight) { shopCustomPrice = 10000 }, Condition.DownedMechBossAny)

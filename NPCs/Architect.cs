@@ -16,16 +16,7 @@ namespace AlchemistNPCLite.NPCs
     [AutoloadHead]
     public class Architect : ModNPC
     {
-        public static bool Shop1 = true;
-        public static bool Shop2 = false;
-        public static bool Shop3 = false;
-        public static bool Shop4 = false;
-        public static bool Shop5 = false;
-        public static bool Shop6 = false;
-        public static bool Shop7 = false;
-        public static bool Shop8 = false;
-        public static bool Shop9 = false;
-        public static bool Shop10 = false;
+        public static int Shops = 1;
         public static string Filler = "Filler";
         public static string Building = "Building";
         public static string BasicFurn = "BasicFurn";
@@ -258,43 +249,43 @@ namespace AlchemistNPCLite.NPCs
             string AS9 = Language.GetTextValue("Mods.AlchemistNPCLite.AS9");
             string AS10 = Language.GetTextValue("Mods.AlchemistNPCLite.AS10");
             string ShopsChanger = Language.GetTextValue("Mods.AlchemistNPCLite.ShopsChanger");
-            if (Shop1)
+            if (Shops == 1)
             {
                 button = AS1;
             }
-            if (Shop2)
+            if (Shops == 2)
             {
                 button = AS2;
             }
-            if (Shop3)
+            if (Shops == 3)
             {
                 button = AS3;
             }
-            if (Shop4)
+            if (Shops == 4)
             {
                 button = AS4;
             }
-            if (Shop5)
+            if (Shops == 5)
             {
                 button = AS5;
             }
-            if (Shop6)
+            if (Shops == 6)
             {
                 button = AS6;
             }
-            if (Shop7)
+            if (Shops == 7)
             {
                 button = AS7;
             }
-            if (Shop8)
+            if (Shops == 8)
             {
                 button = AS8;
             }
-            if (Shop9)
+            if (Shops == 9)
             {
                 button = AS9;
             }
-            if (Shop10)
+            if (Shops == 10)
             {
                 button = AS10;
             }

@@ -220,7 +220,11 @@ Mods: {
 
 			FishingComb: {
 				DisplayName: Fishing Combination
-				Description: Combination of Crate, Sonar, Fishing, Regeneration, Thorns, Iron Skin, Calming & Inferno buffs
+				Description:
+					'''
+					Combination of Crate, Sonar, Fishing, Regeneration, Thorns, Iron Skin, Calming & Inferno buffs
+					Right click to enable/disable calming effect.
+					'''
 			}
 
 			Fortitude: {
@@ -394,7 +398,11 @@ Mods: {
 
 			FishingCombination: {
 				DisplayName: Fishing Combination
-				Tooltip: Grants Crate, Sonar, Fishing, Regeneration, Thorns, Iron Skin, Calming & Inferno buffs
+				Tooltip:
+					'''
+					Grants Crate, Sonar, Fishing, Regeneration, Thorns, Iron Skin, Calming & Inferno buffs
+					Right click to enable/disable calming effect.
+					'''
 			}
 
 			FortitudePotion: {
@@ -706,7 +714,7 @@ Mods: {
 
 			TankCombination: {
 				DisplayName: Tank Combination (w/Modded)
-				Tooltip: Grants buffs, which are necessary for Tanks (Endurance, Lifeforce, Ironskin, Obsidian Skin, Thorns, Regeneration, Titan Skin, Invincibility)
+				Tooltip: Grants buffs, which are necessary for Tanks (Swiftness, Endurance, Lifeforce, Ironskin, Obsidian Skin, Thorns, Regeneration, Titan Skin, Invincibility)
 			}
 
 			TempleTeleportationPotion: {
@@ -770,7 +778,7 @@ Mods: {
 
 			VanTankCombination: {
 				DisplayName: Tank Combination (Vanilla)
-				Tooltip: Grants buffs, which are necessary for Tanks (Endurance, Lifeforce, Ironskin, Obsidian Skin, Thorns, Regeneration)
+				Tooltip: Grants buffs, which are necessary for Tanks (Swiftness, Endurance, Lifeforce, Ironskin, Obsidian Skin, Thorns, Regeneration)
 			}
 
 			MateriaTransmutatorMK2: {
@@ -1352,6 +1360,8 @@ Mods: {
 		Excavation1: Mining capabilities greatly increased.
 		Excavation2: Mining area is set to
 		Excavation3: CTRL + right click to remove buff
+		FishingComb1: Calming effect is enabled.
+		FishingComb2: Calming effect is disabled.
 
 		Tiles: {
 			HMCraftPound.MapEntry: Superb Crafting Pound

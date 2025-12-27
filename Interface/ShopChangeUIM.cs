@@ -24,56 +24,61 @@ namespace AlchemistNPCLite.Interface
         public static bool visible = false;
         public static uint timeStart;
 		public static string Shop = Musician.Sh1;
-
+		UIText text = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.Shop1"));
+		UIText text2 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.Shop2"));
+		UIText text3 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.Shop3"));
+		UIText text4 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.Shop4"));
+		UIText text5 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.Shop5"));
+		
         public override void OnInitialize()
         {
             MusicianShopsPanel = new UIPanel();
             MusicianShopsPanel.SetPadding(0);
             MusicianShopsPanel.Left.Set(575f, 0f);
             MusicianShopsPanel.Top.Set(275f, 0f);
-            MusicianShopsPanel.Width.Set(300f, 0f);
+            MusicianShopsPanel.Width.Set(325f, 0f);
             MusicianShopsPanel.Height.Set(165f, 0f);
             MusicianShopsPanel.BackgroundColor = new Color(73, 94, 171);
 
             MusicianShopsPanel.OnLeftMouseDown += new UIElement.MouseEvent(DragStart);
             MusicianShopsPanel.OnLeftMouseUp += new UIElement.MouseEvent(DragEnd);
 
-            UIText text = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.Shop1"));
             text.Left.Set(35, 0f);
             text.Top.Set(10, 0f);
             text.Width.Set(90, 0f);
             text.Height.Set(22, 0f);
+			text.TextColor = CheckColor(1);
             MusicianShopsPanel.Append(text);
 
-            UIText text2 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.Shop2"));
             text2.Left.Set(35, 0f);
             text2.Top.Set(40, 0f);
             text2.Width.Set(90, 0f);
             text2.Height.Set(22, 0f);
+			text2.TextColor = CheckColor(2);
             MusicianShopsPanel.Append(text2);
 
-            UIText text3 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.Shop3"));
             text3.Left.Set(35, 0f);
             text3.Top.Set(70, 0f);
             text3.Width.Set(90, 0f);
             text3.Height.Set(22, 0f);
+			text3.TextColor = CheckColor(3);
             MusicianShopsPanel.Append(text3);
 			
-			UIText text4 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.Shop4"));
             text4.Left.Set(35, 0f);
             text4.Top.Set(100, 0f);
             text4.Width.Set(90, 0f);
             text4.Height.Set(22, 0f);
+			text4.TextColor = CheckColor(4);
             MusicianShopsPanel.Append(text4);
 			
-			UIText text5 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.Shop5"));
             text5.Left.Set(35, 0f);
             text5.Top.Set(130, 0f);
             text5.Width.Set(90, 0f);
             text5.Height.Set(22, 0f);
+			text5.TextColor = CheckColor(5);
             MusicianShopsPanel.Append(text5);
 
-            Asset<Texture2D> buttonPlayTexture = ModContent.Request<Texture2D>("Terraria/Images/UI/ButtonPlay");
+            Asset<Texture2D> buttonPlayTexture = ModContent.Request<Texture2D>("AlchemistNPCLite/Interface/ButtonSet");
             UIImageButton playButton = new UIImageButton(buttonPlayTexture);
             playButton.Left.Set(10, 0f);
             playButton.Top.Set(10, 0f);
@@ -110,9 +115,9 @@ namespace AlchemistNPCLite.Interface
             playButton5.OnLeftClick += new MouseEvent(PlayButtonClicked5);
             MusicianShopsPanel.Append(playButton5);
 
-            Asset<Texture2D> buttonDeleteTexture = ModContent.Request<Texture2D>("Terraria/Images/UI/ButtonDelete");
+            Asset<Texture2D> buttonDeleteTexture = ModContent.Request<Texture2D>("AlchemistNPCLite/Interface/ButtonClose");
             UIImageButton closeButton = new UIImageButton(buttonDeleteTexture);
-            closeButton.Left.Set(270, 0f);
+            closeButton.Left.Set(295, 0f);
             closeButton.Top.Set(10, 0f);
             closeButton.Width.Set(22, 0f);
             closeButton.Height.Set(22, 0f);
@@ -125,11 +130,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Musician.S1 = true;
-                Musician.S2 = false;
-                Musician.S3 = false;
-				Musician.S4 = false;
-				Musician.S5 = false;
+                Musician.Shops = 1;
+                ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Musician.Sh1, ref visible);
             }
         }
@@ -138,11 +140,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Musician.S1 = false;
-                Musician.S2 = true;
-                Musician.S3 = false;
-				Musician.S4 = false;
-				Musician.S5 = false;
+                Musician.Shops = 2;
+                ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Musician.Sh2, ref visible);
             }
         }
@@ -151,11 +150,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Musician.S1 = false;
-                Musician.S2 = false;
-                Musician.S3 = true;
-				Musician.S4 = false;
-				Musician.S5 = false;
+                Musician.Shops = 3;
+                ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Musician.Sh3, ref visible);
             }
         }
@@ -164,11 +160,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Musician.S1 = false;
-                Musician.S2 = false;
-                Musician.S3 = false;
-				Musician.S4 = true;
-				Musician.S5 = false;
+                Musician.Shops = 4;
+                ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Musician.Sh4, ref visible);
             }
         }
@@ -177,11 +170,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Musician.S1 = false;
-                Musician.S2 = false;
-                Musician.S3 = false;
-				Musician.S4 = false;
-				Musician.S5 = true;
+                Musician.Shops = 5;
+                ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Musician.Sh5, ref visible);
             }
         }
@@ -228,5 +218,20 @@ namespace AlchemistNPCLite.Interface
                 Recalculate();
             }
         }
+		
+		private Color CheckColor(int i)
+		{
+			if (Musician.Shops == i) return Color.Lime;
+			return Color.White;
+		}
+		
+		private void ReCheckColor()
+		{
+			text.TextColor = CheckColor(1);
+			text2.TextColor = CheckColor(2);
+			text3.TextColor = CheckColor(3);
+			text4.TextColor = CheckColor(4);
+			text5.TextColor = CheckColor(5);
+		}
     }
 }

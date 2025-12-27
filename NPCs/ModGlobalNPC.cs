@@ -348,6 +348,17 @@ namespace AlchemistNPCLite.NPCs
                     }
                 }
             }
+			if (npc.type == NPCID.IceGolem)
+            {
+                if (!AlchemistNPCLiteWorld.downedIceGolem)
+                {
+                    AlchemistNPCLiteWorld.downedIceGolem = true;
+                    if (Main.netMode == NetmodeID.Server)
+                    {
+                        NetMessage.SendData(MessageID.WorldData);
+                    }
+                }
+            }
         }
         public override void ModifyNPCLoot(NPC npc, NPCLoot npcLoot)
         {

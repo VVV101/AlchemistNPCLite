@@ -19,6 +19,16 @@ namespace AlchemistNPCLite.Interface
         public static bool visible = false;
         public static uint timeStart;
         public static string Shop = Architect.Filler;
+		UIText text = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS1"));
+		UIText text2 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS2"));
+		UIText text3 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS3"));
+		UIText text4 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS4"));
+		UIText text5 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS5"));
+		UIText text6 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS6"));
+		UIText text7 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS7"));
+		UIText text8 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS8"));
+		UIText text9 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS9"));
+		UIText text10 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS10"));
 
         public override void OnInitialize()
         {
@@ -26,84 +36,84 @@ namespace AlchemistNPCLite.Interface
             ArchitectShopsPanel.SetPadding(0);
             ArchitectShopsPanel.Left.Set(575f, 0f);
             ArchitectShopsPanel.Top.Set(275f, 0f);
-            ArchitectShopsPanel.Width.Set(250f, 0f);
+            ArchitectShopsPanel.Width.Set(300f, 0f);
             ArchitectShopsPanel.Height.Set(310f, 0f);
             ArchitectShopsPanel.BackgroundColor = new Color(73, 94, 171);
 
             ArchitectShopsPanel.OnLeftMouseDown += new(DragStart);
             ArchitectShopsPanel.OnLeftMouseUp += new(DragEnd);
 
-            UIText text = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS1"));
             text.Left.Set(35, 0f);
             text.Top.Set(10, 0f);
             text.Width.Set(70, 0f);
             text.Height.Set(22, 0f);
+			text.TextColor = CheckColor(1);
             ArchitectShopsPanel.Append(text);
 
-            UIText text2 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS2"));
             text2.Left.Set(35, 0f);
             text2.Top.Set(40, 0f);
             text2.Width.Set(70, 0f);
             text2.Height.Set(22, 0f);
+			text2.TextColor = CheckColor(2);
             ArchitectShopsPanel.Append(text2);
 
-            UIText text3 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS3"));
             text3.Left.Set(35, 0f);
             text3.Top.Set(70, 0f);
             text3.Width.Set(70, 0f);
             text3.Height.Set(22, 0f);
+			text2.TextColor = CheckColor(3);
             ArchitectShopsPanel.Append(text3);
 
-            UIText text4 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS4"));
             text4.Left.Set(35, 0f);
             text4.Top.Set(100, 0f);
             text4.Width.Set(70, 0f);
             text4.Height.Set(22, 0f);
+			text4.TextColor = CheckColor(4);
             ArchitectShopsPanel.Append(text4);
 
-            UIText text5 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS5"));
             text5.Left.Set(35, 0f);
             text5.Top.Set(130, 0f);
             text5.Width.Set(50, 0f);
             text5.Height.Set(22, 0f);
+			text5.TextColor = CheckColor(5);
             ArchitectShopsPanel.Append(text5);
 
-            UIText text6 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS6"));
             text6.Left.Set(35, 0f);
             text6.Top.Set(160, 0f);
             text6.Width.Set(50, 0f);
             text6.Height.Set(22, 0f);
+			text6.TextColor = CheckColor(6);
             ArchitectShopsPanel.Append(text6);
 
-            UIText text7 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS7"));
             text7.Left.Set(35, 0f);
             text7.Top.Set(190, 0f);
             text7.Width.Set(50, 0f);
             text7.Height.Set(22, 0f);
+			text7.TextColor = CheckColor(7);
             ArchitectShopsPanel.Append(text7);
 
-            UIText text8 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS8"));
             text8.Left.Set(35, 0f);
             text8.Top.Set(220, 0f);
             text8.Width.Set(60, 0f);
             text8.Height.Set(22, 0f);
+			text8.TextColor = CheckColor(8);
             ArchitectShopsPanel.Append(text8);
 
-            UIText text9 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS9"));
             text9.Left.Set(35, 0f);
             text9.Top.Set(250, 0f);
             text9.Width.Set(70, 0f);
             text9.Height.Set(22, 0f);
+			text9.TextColor = CheckColor(9);
             ArchitectShopsPanel.Append(text9);
 
-            UIText text10 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.AS10"));
             text10.Left.Set(35, 0f);
             text10.Top.Set(280, 0f);
             text10.Width.Set(70, 0f);
             text10.Height.Set(22, 0f);
+			text10.TextColor = CheckColor(10);
             ArchitectShopsPanel.Append(text10);
 
-            Asset<Texture2D> buttonPlayTexture = ModContent.Request<Texture2D>("Terraria/Images/UI/ButtonPlay");
+            Asset<Texture2D> buttonPlayTexture = ModContent.Request<Texture2D>("AlchemistNPCLite/Interface/ButtonSet");
             UIImageButton playButton = new(buttonPlayTexture);
             playButton.Left.Set(10, 0f);
             playButton.Top.Set(10, 0f);
@@ -175,9 +185,9 @@ namespace AlchemistNPCLite.Interface
             playButton10.OnLeftClick += new(PlayButtonClicked10);
             ArchitectShopsPanel.Append(playButton10);
 
-            Asset<Texture2D> buttonDeleteTexture = ModContent.Request<Texture2D>("Terraria/Images/UI/ButtonDelete");
+            Asset<Texture2D> buttonDeleteTexture = ModContent.Request<Texture2D>("AlchemistNPCLite/Interface/ButtonClose");
             UIImageButton closeButton = new(buttonDeleteTexture);
-            closeButton.Left.Set(220, 0f);
+            closeButton.Left.Set(270, 0f);
             closeButton.Top.Set(10, 0f);
             closeButton.Width.Set(22, 0f);
             closeButton.Height.Set(22, 0f);
@@ -190,16 +200,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Architect.Shop1 = true;
-                Architect.Shop2 = false;
-                Architect.Shop3 = false;
-                Architect.Shop4 = false;
-                Architect.Shop5 = false;
-                Architect.Shop6 = false;
-                Architect.Shop7 = false;
-                Architect.Shop8 = false;
-                Architect.Shop9 = false;
-                Architect.Shop10 = false;
+                Architect.Shops = 1;
+				ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Architect.Filler, ref visible);
             }
         }
@@ -208,16 +210,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Architect.Shop1 = false;
-                Architect.Shop2 = true;
-                Architect.Shop3 = false;
-                Architect.Shop4 = false;
-                Architect.Shop5 = false;
-                Architect.Shop6 = false;
-                Architect.Shop7 = false;
-                Architect.Shop8 = false;
-                Architect.Shop9 = false;
-                Architect.Shop10 = false;
+                Architect.Shops = 2;
+				ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Architect.Building, ref visible);
             }
         }
@@ -226,16 +220,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Architect.Shop1 = false;
-                Architect.Shop2 = false;
-                Architect.Shop3 = true;
-                Architect.Shop4 = false;
-                Architect.Shop5 = false;
-                Architect.Shop6 = false;
-                Architect.Shop7 = false;
-                Architect.Shop8 = false;
-                Architect.Shop9 = false;
-                Architect.Shop10 = false;
+                Architect.Shops = 3;
+				ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Architect.BasicFurn, ref visible);
             }
         }
@@ -244,16 +230,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Architect.Shop1 = false;
-                Architect.Shop2 = false;
-                Architect.Shop3 = false;
-                Architect.Shop4 = true;
-                Architect.Shop5 = false;
-                Architect.Shop6 = false;
-                Architect.Shop7 = false;
-                Architect.Shop8 = false;
-                Architect.Shop9 = false;
-                Architect.Shop10 = false;
+                Architect.Shops = 4;
+				ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Architect.AdvFurn, ref visible);
             }
         }
@@ -262,16 +240,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Architect.Shop1 = false;
-                Architect.Shop2 = false;
-                Architect.Shop3 = false;
-                Architect.Shop4 = false;
-                Architect.Shop5 = true;
-                Architect.Shop6 = false;
-                Architect.Shop7 = false;
-                Architect.Shop8 = false;
-                Architect.Shop9 = false;
-                Architect.Shop10 = false;
+                Architect.Shops = 5;
+				ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Architect.Torch, ref visible);
             }
         }
@@ -280,16 +250,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Architect.Shop1 = false;
-                Architect.Shop2 = false;
-                Architect.Shop3 = false;
-                Architect.Shop4 = false;
-                Architect.Shop5 = false;
-                Architect.Shop6 = true;
-                Architect.Shop7 = false;
-                Architect.Shop8 = false;
-                Architect.Shop9 = false;
-                Architect.Shop10 = false;
+                Architect.Shops = 6;
+				ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Architect.Candle, ref visible);
             }
         }
@@ -298,16 +260,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Architect.Shop1 = false;
-                Architect.Shop2 = false;
-                Architect.Shop3 = false;
-                Architect.Shop4 = false;
-                Architect.Shop5 = false;
-                Architect.Shop6 = false;
-                Architect.Shop7 = true;
-                Architect.Shop8 = false;
-                Architect.Shop9 = false;
-                Architect.Shop10 = false;
+                Architect.Shops = 7;
+				ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Architect.Lamp, ref visible);
             }
         }
@@ -316,16 +270,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Architect.Shop1 = false;
-                Architect.Shop2 = false;
-                Architect.Shop3 = false;
-                Architect.Shop4 = false;
-                Architect.Shop5 = false;
-                Architect.Shop6 = false;
-                Architect.Shop7 = false;
-                Architect.Shop8 = true;
-                Architect.Shop9 = false;
-                Architect.Shop10 = false;
+                Architect.Shops = 8;
+				ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Architect.Lantern, ref visible);
             }
         }
@@ -334,16 +280,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Architect.Shop1 = false;
-                Architect.Shop2 = false;
-                Architect.Shop3 = false;
-                Architect.Shop4 = false;
-                Architect.Shop5 = false;
-                Architect.Shop6 = false;
-                Architect.Shop7 = false;
-                Architect.Shop8 = false;
-                Architect.Shop9 = true;
-                Architect.Shop10 = false;
+                Architect.Shops = 9;
+				ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Architect.Chandelier, ref visible);
             }
         }
@@ -352,16 +290,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Architect.Shop1 = false;
-                Architect.Shop2 = false;
-                Architect.Shop3 = false;
-                Architect.Shop4 = false;
-                Architect.Shop5 = false;
-                Architect.Shop6 = false;
-                Architect.Shop7 = false;
-                Architect.Shop8 = false;
-                Architect.Shop9 = false;
-                Architect.Shop10 = true;
+                Architect.Shops = 10;
+				ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Architect.Candelabra, ref visible);
             }
         }
@@ -408,5 +338,25 @@ namespace AlchemistNPCLite.Interface
                 Recalculate();
             }
         }
+		
+		private Color CheckColor(int i)
+		{
+			if (Architect.Shops == i) return Color.Lime;
+			return Color.White;
+		}
+		
+		private void ReCheckColor()
+		{
+			text.TextColor = CheckColor(1);
+			text2.TextColor = CheckColor(2);
+			text3.TextColor = CheckColor(3);
+			text4.TextColor = CheckColor(4);
+			text5.TextColor = CheckColor(5);
+			text6.TextColor = CheckColor(6);
+			text7.TextColor = CheckColor(7);
+			text8.TextColor = CheckColor(8);
+			text9.TextColor = CheckColor(9);
+			text10.TextColor = CheckColor(10);
+		}
     }
 }

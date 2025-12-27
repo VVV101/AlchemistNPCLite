@@ -14,12 +14,7 @@ namespace AlchemistNPCLite.NPCs
     [AutoloadHead]
     public class Brewer : ModNPC
     {
-        public static bool Shop1 = true;
-        public static bool Shop2 = false;
-        public static bool Shop3 = false;
-        public static bool Shop4 = false;
-        public static bool Shop5 = false;
-        public static bool Shop6 = false;
+        public static int Shops = 1;
 
         public const string SHOP_1 = "VanillaPotions";
         public const string SHOP_2 = "Mod/Calamity";
@@ -236,27 +231,27 @@ namespace AlchemistNPCLite.NPCs
             string ShopB5 = Language.GetTextValue("Mods.AlchemistNPCLite.ShopB5");
             string ShopB6 = Language.GetTextValue("Mods.AlchemistNPCLite.ShopB6");
             string ShopsChanger = Language.GetTextValue("Mods.AlchemistNPCLite.ShopsChanger");
-            if (Shop1)
+            if (Shops == 1)
             {
                 button = ShopB1;
             }
-            if (Shop2)
+            if (Shops == 2)
             {
                 button = ShopB2;
             }
-            if (Shop3)
+            if (Shops == 3)
             {
                 button = ShopB3;
             }
-            if (Shop4)
+            if (Shops == 4)
             {
                 button = ShopB4;
             }
-            if (Shop5)
+            if (Shops == 5)
             {
                 button = ShopB5;
             }
-            if (Shop6)
+            if (Shops == 6)
             {
                 button = ShopB6;
             }

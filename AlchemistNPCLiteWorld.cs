@@ -27,6 +27,7 @@ namespace AlchemistNPCLite
         public static bool downedDOGIceQueen;
         public static bool downedDOGMothron;
         public static bool downedSandElemental;
+		public static bool downedIceGolem;
         private UserInterface alchemistUserInterface;
         internal ShopChangeUI alchemistUI;
         private UserInterface alchemistUserInterfaceA;
@@ -43,6 +44,7 @@ namespace AlchemistNPCLite
             downedDOGPumpking = false;
             downedDOGMothron = false;
             downedSandElemental = false;
+			downedIceGolem = false;
             if (!Main.dedServ)
             {
                 alchemistUI = new ShopChangeUI();
@@ -74,6 +76,7 @@ namespace AlchemistNPCLite
             if (downedDOGIceQueen) downed.Add("DOGIceQueen");
             if (downedDOGMothron) downed.Add("DOGMothron");
             if (downedSandElemental) downed.Add("SandElemental");
+			if (downedIceGolem) downed.Add("IceGolem");
 
             tag["downed"] = downed;
         }
@@ -85,6 +88,7 @@ namespace AlchemistNPCLite
             flags[1] = downedDOGIceQueen;
             flags[2] = downedDOGMothron;
             flags[3] = downedSandElemental;
+			flags[4] = downedIceGolem;
             writer.Write(flags);
         }
 
@@ -95,6 +99,7 @@ namespace AlchemistNPCLite
             downedDOGIceQueen = flags[1];
             downedDOGMothron = flags[2];
             downedSandElemental = flags[3];
+			downedIceGolem = flags[4];
             // As mentioned in NetSend, BitBytes can contain 8 values. If you have more, be sure to read the additional data:
             // BitsByte flags2 = reader.ReadByte();
             // downed9thBoss = flags[0];
@@ -107,6 +112,7 @@ namespace AlchemistNPCLite
             downedDOGIceQueen = downed.Contains("DOGIceQueen");
             downedDOGMothron = downed.Contains("DOGMothron");
             downedSandElemental = downed.Contains("SandElemental");
+			downedIceGolem = downed.Contains("IceGolem");
         }
 
         public override void ModifyInterfaceLayers(List<GameInterfaceLayer> layers)
@@ -351,20 +357,18 @@ namespace AlchemistNPCLite
             Recipe.Create(ItemID.HoneyBlock, 5)
                 .AddIngredient(ItemID.BottledHoney, 10)
                 .AddCondition(Condition.NearWater)
-                .AddCondition(Condition.NearHoney)
                 .Register();
 
             Recipe.Create(ItemID.CrispyHoneyBlock, 5)
                 .AddIngredient(ItemID.BottledHoney, 10)
                 .AddCondition(Condition.NearLava)
-                .AddCondition(Condition.NearHoney)
                 .Register();
 
             Recipe.Create(ItemID.Stopwatch)
                 .AddRecipeGroup("AlchemistNPCLite:AnyWatch")
                 .AddIngredient(ItemID.HermesBoots)
                 .AddIngredient(ItemID.Wire, 15)
-                .AddIngredient(ItemID.Wood, 5)
+                .AddIngredient(ItemID.IronBar, 5)
                 .AddTile(TileID.TinkerersWorkbench)
                 .Register();
 

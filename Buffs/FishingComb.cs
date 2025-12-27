@@ -1,7 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
 using Terraria;
+using Terraria.GameInput;
 using Terraria.ID;
 using Terraria.ModLoader;
+using Terraria.Localization;
 
 namespace AlchemistNPCLite.Buffs
 {
@@ -12,6 +14,14 @@ namespace AlchemistNPCLite.Buffs
             Main.debuff[Type] = false;
             BuffID.Sets.NurseCannotRemoveDebuff[Type] = true;
         }
+		
+		public override void ModifyBuffText(ref string buffName, ref string tip, ref int rare)
+		{
+			Player player = Main.player[Main.myPlayer];
+			AlchemistNPCLitePlayer modPlayer = player.GetModPlayer<AlchemistNPCLitePlayer>();
+			if (modPlayer.Calming) tip = Language.GetTextValue("Mods.AlchemistNPCLite.Buffs.FishingComb.Description")+"\n"+Language.GetTextValue("Mods.AlchemistNPCLite.FishingComb1")+"\n"+Language.GetTextValue("Mods.AlchemistNPCLite.Excavation3");
+			else tip = Language.GetTextValue("Mods.AlchemistNPCLite.Buffs.FishingComb.Description")+"\n"+Language.GetTextValue("Mods.AlchemistNPCLite.FishingComb2")+"\n"+Language.GetTextValue("Mods.AlchemistNPCLite.Excavation3");
+		}
 
         public override void Update(Player player, ref int buffIndex)
         {
@@ -29,7 +39,7 @@ namespace AlchemistNPCLite.Buffs
             player.fishingSkill += 15;
             player.sonarPotion = true;
             player.cratePotion = true;
-            player.calmed = true;
+			if (modPlayer.Calming) player.calmed = true;
             if ((double)player.thorns < 1.0) player.thorns = 0.3333333f;
 
             player.inferno = true;
@@ -58,7 +68,19 @@ namespace AlchemistNPCLite.Buffs
                     }
                 }
             }
-
         }
+		
+		public override bool RightClick(int buffIndex)
+		{
+			Player player = Main.player[Main.myPlayer];
+			AlchemistNPCLitePlayer modPlayer = player.GetModPlayer<AlchemistNPCLitePlayer>();
+            switch (modPlayer.Calming)
+			{
+				case true: modPlayer.Calming = false; break;
+				case false: modPlayer.Calming = true; break;
+			}
+			if (PlayerInput.Triggers.Current.SmartCursor) return true;
+			return false;
+		}
     }
 }

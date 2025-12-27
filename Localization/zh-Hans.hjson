@@ -1442,6 +1442,8 @@ Mods: {
 		Excavation1: 极大增加挖掘能力
 		Excavation2: 挖掘区域被设定为
 		Excavation3: CTRL + 右键 来移除Buff
+		// FishingComb1: Calming effect is enabled.
+		// FishingComb2: Calming effect is disabled.
 
 		Tiles: {
 			HMCraftPound.MapEntry: 豪华手工英镑

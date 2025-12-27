@@ -3,6 +3,7 @@ using AlchemistNPCLite.Utilities;
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using ReLogic.Content;
+using System;
 using Terraria;
 using Terraria.Audio;
 using Terraria.GameContent.UI.Elements;
@@ -19,6 +20,12 @@ namespace AlchemistNPCLite.Interface
         public static bool visible = false;
         public static uint timeStart;
         public static string Shop = Brewer.SHOP_1;
+		UIText text = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ShopB1"));
+		UIText text2 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ShopB2"));
+		UIText text3 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ShopB3"));
+		UIText text4 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ShopB4"));
+		UIText text5 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ShopB5"));
+		UIText text6 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ShopB6"));
 
         public override void OnInitialize()
         {
@@ -33,49 +40,49 @@ namespace AlchemistNPCLite.Interface
             BrewerShopsPanel.OnLeftMouseDown += new(DragStart);
             BrewerShopsPanel.OnLeftMouseUp += new(DragEnd);
 
-            UIText text = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ShopB1"));
             text.Left.Set(35, 0f);
             text.Top.Set(10, 0f);
             text.Width.Set(60, 0f);
             text.Height.Set(22, 0f);
+			text.TextColor = CheckColor(1);
             BrewerShopsPanel.Append(text);
-
-            UIText text2 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ShopB2"));
+            
             text2.Left.Set(35, 0f);
             text2.Top.Set(40, 0f);
             text2.Width.Set(120, 0f);
             text2.Height.Set(22, 0f);
+			text2.TextColor = CheckColor(2);
             BrewerShopsPanel.Append(text2);
 
-            UIText text21 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ShopB3"));
-            text21.Left.Set(35, 0f);
-            text21.Top.Set(70, 0f);
-            text21.Width.Set(100, 0f);
-            text21.Height.Set(22, 0f);
-            BrewerShopsPanel.Append(text21);
-
-            UIText text3 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ShopB4"));
             text3.Left.Set(35, 0f);
-            text3.Top.Set(100, 0f);
-            text3.Width.Set(70, 0f);
+            text3.Top.Set(70, 0f);
+            text3.Width.Set(100, 0f);
             text3.Height.Set(22, 0f);
+			text3.TextColor = CheckColor(3);
             BrewerShopsPanel.Append(text3);
 
-            UIText text4 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ShopB5"));
             text4.Left.Set(35, 0f);
-            text4.Top.Set(130, 0f);
-            text4.Width.Set(150, 0f);
+            text4.Top.Set(100, 0f);
+            text4.Width.Set(70, 0f);
             text4.Height.Set(22, 0f);
+			text4.TextColor = CheckColor(4);
             BrewerShopsPanel.Append(text4);
 
-            UIText text5 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ShopB6"));
             text5.Left.Set(35, 0f);
-            text5.Top.Set(160, 0f);
-            text5.Width.Set(72, 0f);
+            text5.Top.Set(130, 0f);
+            text5.Width.Set(150, 0f);
             text5.Height.Set(22, 0f);
+			text5.TextColor = CheckColor(5);
             BrewerShopsPanel.Append(text5);
 
-            Asset<Texture2D> buttonPlayTexture = ModContent.Request<Texture2D>("Terraria/Images/UI/ButtonPlay");
+            text6.Left.Set(35, 0f);
+            text6.Top.Set(160, 0f);
+            text6.Width.Set(72, 0f);
+            text6.Height.Set(22, 0f);
+			text6.TextColor = CheckColor(6);
+            BrewerShopsPanel.Append(text6);
+
+            Asset<Texture2D> buttonPlayTexture = ModContent.Request<Texture2D>("AlchemistNPCLite/Interface/ButtonSet");
             UIImageButton playButton = new(buttonPlayTexture);
             playButton.Left.Set(10, 0f);
             playButton.Top.Set(10, 0f);
@@ -90,38 +97,38 @@ namespace AlchemistNPCLite.Interface
             playButton2.Height.Set(22, 0f);
             playButton2.OnLeftClick += new MouseEvent(PlayButtonClicked2);
             BrewerShopsPanel.Append(playButton2);
-            UIImageButton playButton21 = new(buttonPlayTexture);
-            playButton21.Left.Set(10, 0f);
-            playButton21.Top.Set(70, 0f);
-            playButton21.Width.Set(22, 0f);
-            playButton21.Height.Set(22, 0f);
-            playButton21.OnLeftClick += new MouseEvent(PlayButtonClicked3);
-            BrewerShopsPanel.Append(playButton21);
             UIImageButton playButton3 = new(buttonPlayTexture);
             playButton3.Left.Set(10, 0f);
-            playButton3.Top.Set(100, 0f);
+            playButton3.Top.Set(70, 0f);
             playButton3.Width.Set(22, 0f);
             playButton3.Height.Set(22, 0f);
-            playButton3.OnLeftClick += new MouseEvent(PlayButtonClicked4);
+            playButton3.OnLeftClick += new MouseEvent(PlayButtonClicked3);
             BrewerShopsPanel.Append(playButton3);
             UIImageButton playButton4 = new(buttonPlayTexture);
             playButton4.Left.Set(10, 0f);
-            playButton4.Top.Set(130, 0f);
+            playButton4.Top.Set(100, 0f);
             playButton4.Width.Set(22, 0f);
             playButton4.Height.Set(22, 0f);
-            playButton4.OnLeftClick += new MouseEvent(PlayButtonClicked5);
+            playButton4.OnLeftClick += new MouseEvent(PlayButtonClicked4);
             BrewerShopsPanel.Append(playButton4);
             UIImageButton playButton5 = new(buttonPlayTexture);
             playButton5.Left.Set(10, 0f);
-            playButton5.Top.Set(160, 0f);
+            playButton5.Top.Set(130, 0f);
             playButton5.Width.Set(22, 0f);
             playButton5.Height.Set(22, 0f);
-            playButton5.OnLeftClick += new MouseEvent(PlayButtonClicked6);
+            playButton5.OnLeftClick += new MouseEvent(PlayButtonClicked5);
             BrewerShopsPanel.Append(playButton5);
+            UIImageButton playButton6 = new(buttonPlayTexture);
+            playButton6.Left.Set(10, 0f);
+            playButton6.Top.Set(160, 0f);
+            playButton6.Width.Set(22, 0f);
+            playButton6.Height.Set(22, 0f);
+            playButton6.OnLeftClick += new MouseEvent(PlayButtonClicked6);
+            BrewerShopsPanel.Append(playButton6);
 
-            Asset<Texture2D> buttonDeleteTexture = ModContent.Request<Texture2D>("Terraria/Images/UI/ButtonDelete");
+            Asset<Texture2D> buttonDeleteTexture = ModContent.Request<Texture2D>("AlchemistNPCLite/Interface/ButtonClose");
             UIImageButton closeButton = new(buttonDeleteTexture);
-            closeButton.Left.Set(350, 0f);
+            closeButton.Left.Set(355, 0f);
             closeButton.Top.Set(10, 0f);
             closeButton.Width.Set(22, 0f);
             closeButton.Height.Set(22, 0f);
@@ -134,12 +141,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Brewer.Shop1 = true;
-                Brewer.Shop2 = false;
-                Brewer.Shop3 = false;
-                Brewer.Shop4 = false;
-                Brewer.Shop5 = false;
-                Brewer.Shop6 = false;
+                Brewer.Shops = 1;
+				ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Brewer.SHOP_1, ref visible);
             }
         }
@@ -148,12 +151,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Brewer.Shop1 = false;
-                Brewer.Shop2 = true;
-                Brewer.Shop3 = false;
-                Brewer.Shop4 = false;
-                Brewer.Shop5 = false;
-                Brewer.Shop6 = false;
+                Brewer.Shops = 2;
+				ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Brewer.SHOP_2, ref visible);
             }
         }
@@ -162,12 +161,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Brewer.Shop1 = false;
-                Brewer.Shop2 = false;
-                Brewer.Shop3 = true;
-                Brewer.Shop4 = false;
-                Brewer.Shop5 = false;
-                Brewer.Shop6 = false;
+                Brewer.Shops = 3;
+				ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Brewer.SHOP_3, ref visible);
             }
         }
@@ -176,13 +171,9 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Brewer.Shop1 = false;
-                Brewer.Shop2 = false;
-                Brewer.Shop3 = false;
-                Brewer.Shop4 = true;
-                Brewer.Shop5 = false;
-                Brewer.Shop6 = false;
-                AlchemistHelper.OpenShop(ref Shop, Brewer.SHOP_4, ref visible);
+               Brewer.Shops = 4;
+			   ReCheckColor();
+               AlchemistHelper.OpenShop(ref Shop, Brewer.SHOP_4, ref visible);
             }
         }
 
@@ -190,12 +181,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Brewer.Shop1 = false;
-                Brewer.Shop2 = false;
-                Brewer.Shop3 = false;
-                Brewer.Shop4 = false;
-                Brewer.Shop5 = true;
-                Brewer.Shop6 = false;
+                Brewer.Shops = 5;
+				ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Brewer.SHOP_5, ref visible);
             }
         }
@@ -204,12 +191,8 @@ namespace AlchemistNPCLite.Interface
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
             {
-                Brewer.Shop1 = false;
-                Brewer.Shop2 = false;
-                Brewer.Shop3 = false;
-                Brewer.Shop4 = false;
-                Brewer.Shop5 = false;
-                Brewer.Shop6 = true;
+                Brewer.Shops = 6;
+				ReCheckColor();
                 AlchemistHelper.OpenShop(ref Shop, Brewer.SHOP_6, ref visible);
             }
         }
@@ -256,5 +239,21 @@ namespace AlchemistNPCLite.Interface
                 Recalculate();
             }
         }
+		
+		private Color CheckColor(int i)
+		{
+			if (Brewer.Shops == i) return Color.Lime;
+			return Color.White;
+		}
+		
+		private void ReCheckColor()
+		{
+			text.TextColor = CheckColor(1);
+			text2.TextColor = CheckColor(2);
+			text3.TextColor = CheckColor(3);
+			text4.TextColor = CheckColor(4);
+			text5.TextColor = CheckColor(5);
+			text6.TextColor = CheckColor(6);
+		}
     }
 }
