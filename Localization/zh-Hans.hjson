@@ -867,6 +867,11 @@ Mods: {
 				DisplayName: 物质嬗变器mk2
 				Tooltip: 几乎像任何制作站一样工作.现在还包括Draedons的锻造厂
 			}
+
+			SingleUseCellphone: {
+				// Tooltip: Calls for Travelling Merchant. Can only be used during day time.
+				// DisplayName: Single Use Cellphone
+			}
 		}
 
 		NPCs: {

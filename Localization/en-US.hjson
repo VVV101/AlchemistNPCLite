@@ -785,6 +785,11 @@ Mods: {
 				DisplayName: Materia Transmutator MK 2
 				Tooltip: Works like almost any crafting station. Now also includes Draedon's Forge
 			}
+
+			SingleUseCellphone: {
+				Tooltip: Calls for Travelling Merchant. Can only be used during day time.
+				DisplayName: Single Use Cellphone
+			}
 		}
 
 		NPCs: {
@@ -1193,7 +1198,7 @@ Mods: {
 		A22: I was once hired by a certain company to build a supermassive hi-tech, hi-security installation. Lemme tell ya its my magnum opus in terms of security and containment.
 		AS1: 1st shop (Filler Blocks)
 		AS2: 2nd shop (Building Blocks)
-		AS3: 3rd shop (Basic Furniture)
+		AS3: 3rd shop (Basic & stuff)
 		AS4: 4th shop (Advanced Furniture)
 		AS5: 5th shop (Torches)
 		AS6: 6th shop (Candles)

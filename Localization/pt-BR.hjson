@@ -775,6 +775,11 @@ Mods: {
 					corriga essa informação com o autor caso esteja desatualizada
 					'''
 			}
+
+			SingleUseCellphone: {
+				// Tooltip: Calls for Travelling Merchant. Can only be used during day time.
+				// DisplayName: Single Use Cellphone
+			}
 		}
 
 		NPCs: {

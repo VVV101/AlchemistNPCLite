@@ -18,6 +18,8 @@ By Ziemexx
 -Prices rebalance for Architect and Operator.
 ---
 -Added green highlight for currently selected shop in Shop Changer interfaces of town NPCs.
+-Added Single Use Cellphone to Architect's 3rd shop. Calls for Travelling Merchant with shop reset.
+Can only be used during day time.
 -Added reload requirement for Mod's custom items toggle, thanks to jopojelly.
 -Added Frost Core to Operator's shop, requires to kill at least one Ice Golem.
 -Calming effect of Fishing Combination can now be disabled.

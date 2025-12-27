@@ -777,6 +777,11 @@ Mods: {
 				DisplayName: Materia-Transmutator MK 2
 				Tooltip: Funktioniert wie fast jede Handwerksstation. Beinhaltet jetzt auch Draedons Schmiede
 			}
+
+			SingleUseCellphone: {
+				// Tooltip: Calls for Travelling Merchant. Can only be used during day time.
+				// DisplayName: Single Use Cellphone
+			}
 		}
 
 		NPCs: {

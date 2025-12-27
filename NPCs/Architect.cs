@@ -1,3 +1,4 @@
+using AlchemistNPCLite.Items.Summoning;
 using AlchemistNPCLite.Interface;
 using AlchemistNPCLite.Utilities;
 using Microsoft.Xna.Framework;
@@ -422,7 +423,8 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.AncientChisel) { shopCustomPrice = 150000 }, Condition.Hardmode)
                 .Add(new Item(ItemID.ActuationAccessory) { shopCustomPrice = 150000 }, Condition.Hardmode)
                 .Add(new Item(ItemID.Ruler) { shopCustomPrice = 150000 }, Condition.DownedSkeletron)
-                .Add(new Item(ItemID.EngineeringHelmet) { shopCustomPrice = 150000 }, Condition.DownedSkeletron);
+                .Add(new Item(ItemID.EngineeringHelmet) { shopCustomPrice = 150000 }, Condition.DownedSkeletron)
+				.AddModItemToShop<SingleUseCellphone>(50000);
             shop.Register();
 
             shop = new NPCShop(Type, AdvFurn)

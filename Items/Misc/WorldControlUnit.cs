@@ -116,8 +116,7 @@ namespace AlchemistNPCLite.Items.Misc
 				{
 					Main.NewText(Language.GetTextValue("Mods.AlchemistNPCLite.Common.DayTimeSet"), 255, 255, 255);
 				}
-				Main.dayTime = true;
-				Main.time = 0.0;
+				Main.time = 32370.0;
 				return true;
 			}
 			return true;
