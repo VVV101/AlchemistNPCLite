@@ -38,7 +38,7 @@ namespace AlchemistNPCLite.Interface
             ArchitectShopsPanel.Top.Set(275f, 0f);
             ArchitectShopsPanel.Width.Set(300f, 0f);
             ArchitectShopsPanel.Height.Set(310f, 0f);
-            ArchitectShopsPanel.BackgroundColor = new Color(73, 94, 171);
+            ArchitectShopsPanel.BackgroundColor = new(49, 51, 117, 210);
 
             ArchitectShopsPanel.OnLeftMouseDown += new(DragStart);
             ArchitectShopsPanel.OnLeftMouseUp += new(DragEnd);

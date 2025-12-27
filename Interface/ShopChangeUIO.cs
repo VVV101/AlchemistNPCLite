@@ -34,7 +34,7 @@ namespace AlchemistNPCLite.Interface
             OperatorShopsPanel.Top.Set(275f, 0f);
             OperatorShopsPanel.Width.Set(375f, 0f);
             OperatorShopsPanel.Height.Set(190f, 0f);
-            OperatorShopsPanel.BackgroundColor = new Color(73, 94, 171);
+            OperatorShopsPanel.BackgroundColor = new(49, 51, 117, 210);
 
             OperatorShopsPanel.OnLeftMouseDown += new MouseEvent(DragStart);
             OperatorShopsPanel.OnLeftMouseUp += new MouseEvent(DragEnd);

@@ -35,7 +35,7 @@ namespace AlchemistNPCLite.Interface
             BrewerShopsPanel.Top.Set(275f, 0f);
             BrewerShopsPanel.Width.Set(385f, 0f);
             BrewerShopsPanel.Height.Set(190f, 0f);
-            BrewerShopsPanel.BackgroundColor = new(73, 94, 171);
+            BrewerShopsPanel.BackgroundColor = new(49, 51, 117, 210);
 
             BrewerShopsPanel.OnLeftMouseDown += new(DragStart);
             BrewerShopsPanel.OnLeftMouseUp += new(DragEnd);

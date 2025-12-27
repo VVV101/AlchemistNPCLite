@@ -38,7 +38,7 @@ namespace AlchemistNPCLite.Interface
             MusicianShopsPanel.Top.Set(275f, 0f);
             MusicianShopsPanel.Width.Set(325f, 0f);
             MusicianShopsPanel.Height.Set(165f, 0f);
-            MusicianShopsPanel.BackgroundColor = new Color(73, 94, 171);
+            MusicianShopsPanel.BackgroundColor = new(49, 51, 117, 210);
 
             MusicianShopsPanel.OnLeftMouseDown += new UIElement.MouseEvent(DragStart);
             MusicianShopsPanel.OnLeftMouseUp += new UIElement.MouseEvent(DragEnd);
