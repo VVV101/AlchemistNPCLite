@@ -1,5 +1,7 @@
 using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
+using AlchemistNPCLite.Items.Summoning;
+using AlchemistNPCLite.Utilities;
 using Terraria;
 using Terraria.GameContent;
 using Terraria.GameContent.ItemDropRules;
@@ -18,6 +20,16 @@ namespace AlchemistNPCLite.NPCs
                 return true;
             }
         }
+		
+		public override void ModifyShop(NPCShop shop) {
+			if (ModContent.GetInstance<ModConfiguration>().ModItems){
+				if (shop.NpcType == NPCID.Merchant) {
+					// Adding an item to a vanilla NPC is easy:
+					// This item sells for the normal price.
+					shop.AddModItemToShop<SingleUseCellphone>(50000);
+				}
+			}
+		}
 
         public override void ModifyActiveShop(NPC npc, string shopName, Item[] items)
         {
