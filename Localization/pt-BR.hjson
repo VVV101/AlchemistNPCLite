@@ -238,7 +238,7 @@ Mods: {
 			}
 
 			NinjaSkill: {
-				// DisplayName: Ninja
+				DisplayName: Ninja
 				Description: Você é um verdadeiro ninja!
 			}
 
@@ -777,8 +777,8 @@ Mods: {
 			}
 
 			SingleUseCellphone: {
-				// Tooltip: Calls for Travelling Merchant. Can only be used during day time.
-				// DisplayName: Single Use Cellphone
+				Tooltip: Calls for Travelling Merchant. Can only be used during day time.
+				DisplayName: Single Use Cellphone
 			}
 		}
 
@@ -1197,8 +1197,8 @@ Mods: {
 		AS9: Loja 9 (Lustres)
 		AS10: Loja 10 (Candelabros)
 		ShopsChanger: Mudar Loja
-		// Combinations: Combinations
-		// Flasks: Flasks
+		Combinations: Combinations
+		Flasks: Flasks
 		ShopB1: Loja 1 (Loja normal do jogo)
 		ShopB2: Loja 2 (Loja do mod Calamity)
 		ShopB3: Loja 3 (Loja do mod Thorium ou RG)
@@ -1247,7 +1247,7 @@ Mods: {
 		EntryJ8: "Você notou que "
 		EntryJ9: " e eu pareço quase o mesmo? é porque somos irmãos gêmeos."
 		EntryJ10: Se você encontrar o bastante dessas anotações rasgadas, traga para mim que eu vou decifrá-las para você. Não me pergunte o por que, apenas saiba que elas têm um valor seguro para mim.
-		// Shop1: Vanilla Music Boxes
+		Shop1: Vanilla Music Boxes
 		Shop2: Loja 2
 		Shop3: Loja 3
 		Shop4: Loja 4
@@ -1352,11 +1352,11 @@ Mods: {
 		Entry8: "Minha mãe, "
 		Entry9: ", é a melhor criadora de bebidas de todos os tempos, ela não é? Ela sabe preparar as poções mais dificeis com muita facilidade."
 		Entry10: Certas combinações só podem ser produzidas se certos tipos de magia estiverem presentes no mundo.
-		// Excavation1: Mining capabilities greatly increased.
-		// Excavation2: Mining area is set to
-		// Excavation3: CTRL + right click to remove buff
-		// FishingComb1: Calming effect is enabled.
-		// FishingComb2: Calming effect is disabled.
+		Excavation1: Mining capabilities greatly increased.
+		Excavation2: Mining area is set to
+		Excavation3: CTRL + right click to remove buff
+		FishingComb1: Calming effect is enabled.
+		FishingComb2: Calming effect is disabled.
 
 		Tiles: {
 			HMCraftPound.MapEntry: Estação de Criação Expandida
@@ -1411,8 +1411,8 @@ Mods: {
 				}
 
 				ModItems: {
-					// Tooltip: True to allow mod's custom items and potions to exist (Blurring potion, World Warper, etc.). True by default. Requires mods reload to update information.
-					// Label: Mod's custom items toggle
+					Tooltip: True to allow mod's custom items and potions to exist (Blurring potion, World Warper, etc.). True by default. Requires mods reload to update information.
+					Label: Mod's custom items toggle
 				}
 
 				RevPrices: {
