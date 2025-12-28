@@ -118,12 +118,5 @@ v1.8.19
 -Moved Flask of Crumbling to Flasks shop.
 v1.8.18
 -Fixed excessive damage reduction bonus of Battle Combination (thanks to Inactive).
-v1.8.17
--Added Mod of Redemption support (thanks to Rockman Zeta).
--Reimplemented Thorium mod support (thanks to b2mauler).
--Removed "removed" potions from Calamity Combination.
--Removed Boom Box as now Music Boxes can work even from vanity accessory slots.
--Removed additional tooltips on Treasure Bags as now they are properly named.
--Fixed some buffs and combinations which were not working (f.e. Lifeforce, modded crit bonuses, Ninja pot).
 
 Earlier changes can be found in mod's discord.
