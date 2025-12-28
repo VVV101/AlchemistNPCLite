@@ -125,21 +125,5 @@ v1.8.17
 -Removed Boom Box as now Music Boxes can work even from vanity accessory slots.
 -Removed additional tooltips on Treasure Bags as now they are properly named.
 -Fixed some buffs and combinations which were not working (f.e. Lifeforce, modded crit bonuses, Ninja pot).
-v1.8.16
--Fixed flasks breaking piggy bank potions using if placed before buff potions.
--Fixed Explorer's combination recipe.
--Added Mod Configuration options for Silt, Slush and Desert Fossil blocks prices.
-v1.8.15
--Fixed an issue with Alchemist Charm of 2+ tier was not using potions from piggy bank
--Fixed shops having empty spaces if mod item doesn't exist
--Increased some of the shop prices for balance
--Added a new buff item, Ultima Cake. Can be bought from the Jeweler after entering hardmode in Arena Shop.
--Added Pocket Mirror to Tinkerer's 1st shop (available in hardmode).
-v1.8.14
--Add Deerclop's bag to Operator
--Reimplement Calamity for 1.4
--Adjust Calamity boss bag prices
--Added Diving Helmet to Tinkerer.
--Update recipe creation
 
 Earlier changes can be found in mod's discord.
