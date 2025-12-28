@@ -20,16 +20,14 @@ namespace AlchemistNPCLite.NPCs
                 return true;
             }
         }
-		
-		public override void ModifyShop(NPCShop shop) {
-			if (ModContent.GetInstance<ModConfiguration>().ModItems){
-				if (shop.NpcType == NPCID.Merchant) {
-					// Adding an item to a vanilla NPC is easy:
-					// This item sells for the normal price.
-					shop.AddModItemToShop<SingleUseCellphone>(50000);
-				}
-			}
-		}
+        
+        public override void ModifyShop(NPCShop shop) {
+                if (shop.NpcType == NPCID.Merchant) {
+                    if (ModContent.GetInstance<ModConfiguration>().ModItems){
+                    shop.AddModItemToShop<SingleUseCellphone>(50000, Condition.DownedEyeOfCthulhu);
+                }
+            }
+        }
 
         public override void ModifyActiveShop(NPC npc, string shopName, Item[] items)
         {
@@ -39,8 +37,8 @@ namespace AlchemistNPCLite.NPCs
                 if (npc.type == ModContent.NPCType<Tinkerer>())
                 {
                     foreach (Item item in items) 
-					{
-						if (item == null || item.type == ItemID.None) continue;
+                    {
+                        if (item == null || item.type == ItemID.None) continue;
                         item.shopCustomPrice *= 2;
                     }
                 }
@@ -50,7 +48,7 @@ namespace AlchemistNPCLite.NPCs
                 {
                     foreach (Item item in items)
                     {
-						if (item == null || item.type == ItemID.None) continue;
+                        if (item == null || item.type == ItemID.None) continue;
                         item.shopCustomPrice *= AlchemistNPCLite.modConfiguration.PotsPriceMulti;
                         if (ModLoader.TryGetMod("CalamityMod", out Mod Calamity))
                         {
@@ -104,7 +102,7 @@ namespace AlchemistNPCLite.NPCs
                     addModItemToShop(Tremor, "EyeofOblivion", 3000000, ref shop, ref nextSlot);
                 }
             }
-			*/
+            */
         }
 
         public override void SetDefaults(NPC npc)
@@ -129,17 +127,17 @@ namespace AlchemistNPCLite.NPCs
             }
             // IMPLEMENT WHEN WEAKREFERENCES FIXED
             /*
-			if (ModLoader.GetMod("MaterialTraderNpc") != null)
-			{
-				if (npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Jungle Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Cavern Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Cool Guy")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Desert Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Dungeon Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Evil Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Hell Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Holy Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Ocean Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Sky Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Winter Trader")))
-				{
-					if (NPC.downedMoonlord)
-					{
-						npc.lifeMax = 500;
-					}
-				}
-			}
-			*/
+            if (ModLoader.GetMod("MaterialTraderNpc") != null)
+            {
+                if (npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Jungle Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Cavern Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Cool Guy")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Desert Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Dungeon Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Evil Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Hell Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Holy Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Ocean Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Sky Trader")) || npc.type == (ModLoader.GetMod("MaterialTraderNpc").NPCType("Winter Trader")))
+                {
+                    if (NPC.downedMoonlord)
+                    {
+                        npc.lifeMax = 500;
+                    }
+                }
+            }
+            */
             if (npc.type == ModContent.NPCType<Alchemist>())
             {
                 Main.npcCatchable[npc.type] = true;
@@ -296,16 +294,16 @@ namespace AlchemistNPCLite.NPCs
         public override void DrawEffects(NPC npc, ref Color drawColor)
         {
             foreach (var player in Main.player)
-			{
-				if (player.active && player.HasBuff(ModContent.BuffType<Buffs.GreaterDangersense>())) 
-				{
-					if (npc.type == 112 || npc.type == 666)
+            {
+                if (player.active && player.HasBuff(ModContent.BuffType<Buffs.GreaterDangersense>())) 
+                {
+                    if (npc.type == 112 || npc.type == 666)
                     {
                         npc.color = new Color(255, 255, 0, 100);
                         Lighting.AddLight(npc.position, 1f, 1f, 0f);
                     }
-				}
-			}
+                }
+            }
         }
         public override void OnKill(NPC npc)
         {
@@ -335,7 +333,7 @@ namespace AlchemistNPCLite.NPCs
                         }
                     }
                 }
-				
+                
                 if ((bool)Calamity.Call("Downed", "dog") && npc.type == 477)
                 {
                     if (!AlchemistNPCLiteWorld.downedDOGMothron)
@@ -360,7 +358,7 @@ namespace AlchemistNPCLite.NPCs
                     }
                 }
             }
-			if (npc.type == NPCID.IceGolem)
+            if (npc.type == NPCID.IceGolem)
             {
                 if (!AlchemistNPCLiteWorld.downedIceGolem)
                 {
@@ -392,7 +390,7 @@ namespace AlchemistNPCLite.NPCs
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Items.Summoning.APMC>(), 1));
             }
             if (npc.type == NPCID.UndeadMiner)
-            {	
+            {    
                 npcLoot.Add(ItemDropRule.Common(ModContent.ItemType<Items.ExcavationPotion>(), 1));
             }
         }
