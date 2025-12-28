@@ -26,6 +26,8 @@ Can only be used during day time.
 -New sprites for Bewitching, Blurring, Discord, Excavation, Fortitude, Greater Dangersense, Invincibility, 
 Nature Blessing, Ninja, Sunshine, Titan Skin and Trapper potions, Lifeform Analyzer locators.
 -New sprites for Battle and Bulder combinations buffs, Blurring buffs by Alino4kaHvoshch.
+-Moved Lumenite and Depth Cells to be available after beating Leviathan.
+-Moved Living Shards to be available after beating Plantera.
 -Changed sprites for select and close interface buttons.
 -Changed hairstyle of Alchemist.
 -Fixed Fabsol's vodka effect for Calamity Combination.
