@@ -863,8 +863,43 @@ namespace AlchemistNPCLite.NPCs
                 get { return FargowiltasSouls.Core.Systems.WorldSavingSystem.DownedMutant; }
             }
         }
+
+        [JITWhenModsEnabled("CatalystMod")]
+        public static class CatalystDown
+        {
+            public static bool Astrageldon
+            {
+                get { return CatalystMod.WorldDefeats.downedAstrageldon; }
+            }
+        }
+
+        [JITWhenModsEnabled("CalamityHunt")]
+        public static class CalamityHuntDown
+        {
+            public static bool Goozma
+            {
+                get { return CalamityHunt.Common.Systems.BossDownedSystem.Instance.GoozmaDowned; }
+            }
+        }
+
+        [JITWhenModsEnabled("AAMod")]
+        public static class AADown
+        {
+            public static bool Grips
+            {
+                get { return AAMod.Common.Globals.AABossDowned.downedGrips; }
+            }
+            public static bool Toad
+            {
+                get { return AAMod.Common.Globals.AABossDowned.downedToad; }
+            }
+            public static bool Monarch
+            {
+                get { return AAMod.Common.Globals.AABossDowned.downedMonarch; }
+            }
+        }
             // Possibly redundant with ModGlobalNPC
-            public override void ModifyNPCLoot(NPCLoot npcLoot)
+        public override void ModifyNPCLoot(NPCLoot npcLoot)
         {
             base.ModifyNPCLoot(npcLoot);
 
@@ -878,6 +913,9 @@ namespace AlchemistNPCLite.NPCs
             ModLoader.TryGetMod("Redemption", out Mod Redemption);
             ModLoader.TryGetMod("ShardsOfAtheria", out Mod Atheria);
             ModLoader.TryGetMod("FargowiltasSouls", out Mod FargoSouls);
+            ModLoader.TryGetMod("CalamityHunt", out Mod CalamityHunt);
+            ModLoader.TryGetMod("Catalyst", out Mod Catalyst);
+            ModLoader.TryGetMod("AAMod", out Mod AAMod);
 
             #region Vaillan MaterialShop
             var shop = new NPCShop(Type, MaterialShop)
@@ -953,7 +991,7 @@ namespace AlchemistNPCLite.NPCs
                 .AddModItemToShop(Calamity, "DarksunFragment", 150000, () => (bool)Calamity.Call("Downed", "dog") && AlchemistNPCLiteWorld.downedDOGMothron)
             #endregion
             #region Fargo
-                .AddModItemToShop(FargoSouls, "DeviatingEnergy", Item.sellPrice(0, 1,50,0),() => FargoDowned.Devi)
+                .AddModItemToShop(FargoSouls, "DeviatingEnergy", Item.sellPrice(0, 1, 50, 0), () => FargoDowned.Devi)
                 .AddModItemToShop(FargoSouls, "Eridanium", Item.sellPrice(0, 8, 50, 0), () => FargoDowned.Cosmos)
                 .AddModItemToShop(FargoSouls, "AbomEnergy", Item.sellPrice(0, 6, 50, 0), () => FargoDowned.Abom)
                 .AddModItemToShop(FargoSouls, "EternalEnergy", Item.sellPrice(0, 9, 50, 0), () => FargoDowned.Mutant)
@@ -983,7 +1021,10 @@ namespace AlchemistNPCLite.NPCs
                 .AddModItemToShop(Atheria, "HardlightPrism", 15000, () => ShardsConditions.DownedNova)
                 .AddModItemToShop(Atheria, "BrokenHeroGun", 45000, Condition.DownedGolem)
                 .AddModItemToShop(Atheria, "FragmentEntropy", 180000, Condition.DownedMoonLord)
-                .AddModItemToShop(Atheria, "MemoryFragment", 10000, Condition.DownedMoonLord);
+                .AddModItemToShop(Atheria, "MemoryFragment", 10000, Condition.DownedMoonLord)
+            #endregion
+            #region Catalyst
+            .AddModItemToShop(Catalyst, "MetanovaOre", Item.buyPrice(0, 2, 0, 0), () => CatalystDown.Astrageldon);
             #endregion
             shop.Register();
             #endregion
@@ -1033,7 +1074,7 @@ namespace AlchemistNPCLite.NPCs
             shop.Register();
             #endregion
 
-            #region Bags 1 Shop - Calamity & Thorium
+            #region Bags 1 Shop - Calamity & lots of Affiliated Mods(Catalyst Entropy(added by itself) CalamityHunt)
             shop = new NPCShop(Type, Bags1Shop)
             #region Calamaity Part
                 .AddModItemToShop(Calamity, "DesertScourgeBag", 375000, () => (bool)Calamity.Call("Downed", "desert scourge"))
@@ -1062,7 +1103,26 @@ namespace AlchemistNPCLite.NPCs
                 .AddModItemToShop(Calamity, "DraedonTreasureBag", 115000000, () => (bool)Calamity.Call("Downed", "exomechs"))
                 .AddModItemToShop(Calamity, "SCalBag", 200000000, () => (bool)Calamity.Call("Downed", "supremecalamitas"))
             #endregion
+            #region Affiliated Mod
+            .AddModItemToShop(CalamityHunt, "TreasureTrunk", 200000000, () => CalamityHuntDown.Goozma) // The price is as same as Supreme Calamitas's
+            .AddModItemToShop(Catalyst,"AstrageldonBag", 12000000, () => CatalystDown.Astrageldon);// The price is as same as MoonLord's
+                ;
+            shop.Register();
+            #endregion
+            #endregion
 
+            #region Bags 2 Shop - Fargo & Thorium & Ancient Awaken
+            shop = new NPCShop(Type, Bags2Shop)
+            #region Fargo
+                 .AddModItemToShop(FargoSouls, "TrojanSquirrelBag", Item.buyPrice(0, 20, 0, 0), () => FargoDowned.Trojan)
+                 .AddModItemToShop(FargoSouls, "CursedCoffinBag", Item.buyPrice(0, 29, 0, 0), () => FargoDowned.Cursed)
+                 .AddModItemToShop(FargoSouls, "DeviBag", Item.buyPrice(1, 0, 0, 0), () => FargoDowned.Devi)
+                 .AddModItemToShop(FargoSouls, "BanishedBaronBag", Item.buyPrice(1, 25, 0, 0), () => FargoDowned.Banished)
+                 .AddModItemToShop(FargoSouls, "LifelightBag", Item.buyPrice(1, 60, 0, 0), () => FargoDowned.LifeLight)
+                 .AddModItemToShop(FargoSouls, "CosmosBag", Item.buyPrice(20, 60, 0, 0), () => FargoDowned.Cosmos)
+                 .AddModItemToShop(FargoSouls, "AbomBag", Item.buyPrice(30, 60, 0, 0), () => FargoDowned.Abom)
+                 .AddModItemToShop(FargoSouls, "MutantBag", Item.buyPrice(40, 60, 0, 0), () => FargoDowned.Mutant)
+            #endregion
             #region Thorium Part
                 .AddModItemToShop(ThoriumMod, "ThunderBirdBag", 500000, () => (bool)ThoriumMod.Call("GetDownedBoss", "TheGrandThunderBird"))
                 .AddModItemToShop(ThoriumMod, "JellyFishBag", 750000, () => (bool)ThoriumMod.Call("GetDownedBoss", "QueenJellyfish"))
@@ -1076,23 +1136,12 @@ namespace AlchemistNPCLite.NPCs
                 .AddModItemToShop(ThoriumMod, "AbyssionBag", 3500000, () => (bool)ThoriumMod.Call("GetDownedBoss", "ForgottenOne"))
                 .AddModItemToShop(ThoriumMod, "RagBag", 5000000, () => (bool)ThoriumMod.Call("GetDownedBoss", "ThePrimordials"))
             #endregion
-                ;
-            shop.Register();
+            #region AAMod
+            .AddModItemToShop(AAMod, "GripsTreasureBag", Item.buyPrice(0,8,0,0),() => AADown.Grips)
+            .AddModItemToShop(AAMod, "ToadTreasureBag", Item.buyPrice(2,50,0,0), () => AADown.Toad)
+            .AddModItemToShop(AAMod, "MonarchTreasureBag", Item.buyPrice(4,0,0,0), () => AADown.Monarch)
             #endregion
-
-            #region Bags 2 Shop - Fargo
-            shop = new NPCShop(Type, Bags2Shop)
-                 .AddModItemToShop(FargoSouls, "TrojanSquirrelBag", Item.buyPrice(0,20,0,0), () => FargoDowned.Trojan)
-                 .AddModItemToShop(FargoSouls, "CursedCoffinBag", Item.buyPrice(0, 29, 0, 0), () => FargoDowned.Cursed)
-                 .AddModItemToShop(FargoSouls, "DeviBag", Item.buyPrice(1, 0, 0, 0), () => FargoDowned.Devi)
-                 .AddModItemToShop(FargoSouls, "BanishedBaronBag", Item.buyPrice(1, 25, 0, 0), () => FargoDowned.Banished)
-                 .AddModItemToShop(FargoSouls, "LifelightBag", Item.buyPrice(1, 60, 0, 0), () => FargoDowned.LifeLight)
-                 .AddModItemToShop(FargoSouls, "CosmosBag", Item.buyPrice(20, 60, 0, 0), () => FargoDowned.Cosmos)
-                 .AddModItemToShop(FargoSouls, "AbomBag", Item.buyPrice(30, 60, 0, 0), () => FargoDowned.Abom)
-                 .AddModItemToShop(FargoSouls, "MutantBag", Item.buyPrice(40, 60, 0, 0), () => FargoDowned.Mutant)
                 ;
-
-            //.AddModItemToShop(Atheria, "NovaBossBag", 1500000, () => FargoDowned.Trojan);
             shop.Register();
             #endregion
 
