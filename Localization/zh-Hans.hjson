@@ -241,6 +241,7 @@ Mods: {
 					'''
 					包含以下Buff
 					声呐, 钓鱼, 再生, 镇静, 荆棘, 铁皮, 狱火, 宝匣
+					右击来开启或关闭镇静效果
 					'''
 			}
 
@@ -302,7 +303,7 @@ Mods: {
 			}
 
 			TankComb: {
-				DisplayName: 坦克药剂包 (炼金)
+				DisplayName: 防护药剂包 (炼金)
 				Description:
 					'''
 					包含以下Buff
@@ -334,12 +335,12 @@ Mods: {
 				Description:
 					'''
 					完美结合了以下药剂包的Buff：
-					坦克药剂包、魔法药剂包、射手药剂包以及召唤师药剂包
+					防护药剂包、魔法药剂包、射手药剂包以及召唤师药剂包
 					'''
 			}
 
 			VanTankComb: {
-				DisplayName: 坦克药剂包 (原版)
+				DisplayName: 防护药剂包 (原版)
 				Description:
 					'''
 					包含以下Buff
@@ -460,6 +461,7 @@ Mods: {
 					'''
 					获得你在钓鱼时所需的Buff 
 					(声呐, 钓鱼, 再生, 镇静, 荆棘, 铁皮, 狱火, 宝匣)
+					右击来开启或关闭镇静效果
 					'''
 			}
 
@@ -786,11 +788,11 @@ Mods: {
 			}
 
 			TankCombination: {
-				DisplayName: 坦克药剂包 (炼金)
+				DisplayName: 防护药剂包 (炼金)
 				Tooltip:
 					'''
-					获得一些坦克Buff 
-					(耐力, 生命力, 铁皮, 黑曜石皮, 荆棘, 再生, 泰坦皮肤, 无敌)
+					获得一些防护Buff 
+					(敏捷，耐力, 生命力, 铁皮, 黑曜石皮, 荆棘, 再生, 泰坦皮肤, 无敌)
 					'''
 			}
 
@@ -850,16 +852,16 @@ Mods: {
 				Tooltip:
 					'''
 					完美结合了以下药剂包的buff：
-					坦克药剂包、魔法药剂包、射手药剂包以及召唤师药剂包
+					防护药剂包、魔法药剂包、射手药剂包以及召唤师药剂包
 					'''
 			}
 
 			VanTankCombination: {
-				DisplayName: 坦克药剂包 (原版)
+				DisplayName: 防护药剂包 (原版)
 				Tooltip:
 					'''
-					获得一些坦克Buff 
-					(耐力, 生命力, 铁皮, 黑曜石皮, 荆棘, 再生)
+					获得一些防护Buff 
+					(敏捷，耐力, 生命力, 铁皮, 黑曜石皮, 荆棘, 再生)
 					'''
 			}
 
@@ -869,8 +871,8 @@ Mods: {
 			}
 
 			SingleUseCellphone: {
-				Tooltip: Calls for Travelling Merchant. Can only be used during day time.
-				DisplayName: Single Use Cellphone
+				Tooltip: 可以呼叫旅商, 只能在白天使用
+				DisplayName: 一次性便携手机
 			}
 		}
 
@@ -1447,8 +1449,8 @@ Mods: {
 		Excavation1: 极大增加挖掘能力
 		Excavation2: 挖掘区域被设定为
 		Excavation3: CTRL + 右键 来移除Buff
-		FishingComb1: Calming effect is enabled.
-		FishingComb2: Calming effect is disabled.
+		FishingComb1: 镇静效果已启用
+		FishingComb2: 镇静效果已关闭
 
 		Tiles: {
 			HMCraftPound.MapEntry: 豪华手工英镑
