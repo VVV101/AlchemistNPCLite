@@ -303,7 +303,7 @@ Mods: {
 			}
 
 			TankComb: {
-				DisplayName: 防护药剂包 (炼金)
+				DisplayName: 坦克药剂包 (炼金)
 				Description:
 					'''
 					包含以下Buff
@@ -335,12 +335,12 @@ Mods: {
 				Description:
 					'''
 					完美结合了以下药剂包的Buff：
-					防护药剂包、魔法药剂包、射手药剂包以及召唤师药剂包
+					坦克药剂包、魔法药剂包、射手药剂包以及召唤师药剂包
 					'''
 			}
 
 			VanTankComb: {
-				DisplayName: 防护药剂包 (原版)
+				DisplayName: 坦克药剂包 (原版)
 				Description:
 					'''
 					包含以下Buff
@@ -788,10 +788,10 @@ Mods: {
 			}
 
 			TankCombination: {
-				DisplayName: 防护药剂包 (炼金)
+				DisplayName: 坦克药剂包 (炼金)
 				Tooltip:
 					'''
-					获得一些防护Buff 
+					获得一些坦克Buff 
 					(敏捷，耐力, 生命力, 铁皮, 黑曜石皮, 荆棘, 再生, 泰坦皮肤, 无敌)
 					'''
 			}
@@ -852,15 +852,15 @@ Mods: {
 				Tooltip:
 					'''
 					完美结合了以下药剂包的buff：
-					防护药剂包、魔法药剂包、射手药剂包以及召唤师药剂包
+					坦克药剂包、魔法药剂包、射手药剂包以及召唤师药剂包
 					'''
 			}
 
 			VanTankCombination: {
-				DisplayName: 防护药剂包 (原版)
+				DisplayName: 坦克药剂包 (原版)
 				Tooltip:
 					'''
-					获得一些防护Buff 
+					获得一些坦克Buff 
 					(敏捷，耐力, 生命力, 铁皮, 黑曜石皮, 荆棘, 再生)
 					'''
 			}
