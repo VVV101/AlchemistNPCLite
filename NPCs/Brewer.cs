@@ -393,11 +393,8 @@ namespace AlchemistNPCLite.NPCs
                 }
                 shop.AddModItemToShop(Calamity, "BoundingPotion", 20000)
                 .AddModItemToShop(Calamity, "CalciumPotion", 35000)
-                .AddModItemToShop(Calamity, "TriumphPotion", 30000)
-                .AddModItemToShop(Calamity, "TeslaPotion", 25000)
                 .AddModItemToShop(Calamity, "SulphurskinPotion", 15000)
                 .AddModItemToShop(Calamity, "ShadowPotion", 15000)
-                .AddModItemToShop(Calamity, "PotionofOmniscience", 20000, () => NPC.downedBoss3)
                 .AddModItemToShop(Calamity, "ZergPotion", 30000, () => (bool)Calamity.Call("Downed", "slime god"))
                 .AddModItemToShop(Calamity, "ZenPotion", 30000, () => (bool)Calamity.Call("Downed", "slime god"))
                 .AddModItemToShop(Calamity, "PhotosynthesisPotion", 50000, () => Main.hardMode)

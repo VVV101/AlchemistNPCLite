@@ -10,6 +10,9 @@ The Musician will come if you defeat Skeletron.
 Mod has support for Thorium, Calamity, Mod of Redemption, Census and imkSushi's mod.
 
 Mod's Discord: https://discord.gg/WGKyKun
+v1.9.9.1
+-Removed Purple Haze from Calamity Combination.
+-Blood Orbs are now available after beating Skeletron.
 v1.9.9
 By zlzhaidou:
 -Added some support for Fargo's Souls mod.

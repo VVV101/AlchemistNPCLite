@@ -8,7 +8,6 @@ namespace AlchemistNPCLite.Buffs
     {
         private string[] BuffList = {
                 "PhotosynthesisBuff",
-                "PurpleHazeBuff",
                 "Soaring",
                 "BoundingBuff"
         };

@@ -185,7 +185,7 @@ Mods: {
 
 			CalamityComb: {
 				DisplayName: Calamity Combination
-				Description: Combination of Photosynthesis, Fabsol's Vodka, Soaring and Bounding's buffs
+				Description: Combination of Photosynthesis, Soaring and Bounding's buffs
 			}
 
 			Corrosion: {
@@ -352,7 +352,7 @@ Mods: {
 
 			CalamityCombination: {
 				DisplayName: Calamity Combination
-				Tooltip: Grants some of the Calamity mod buffs (Photosynthesis, Fabsol's Vodka, Soaring and Bounding)
+				Tooltip: Grants some of the Calamity mod buffs (Photosynthesis, Soaring and Bounding)
 			}
 
 			DiscordPotion: {

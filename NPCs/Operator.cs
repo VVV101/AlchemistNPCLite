@@ -946,7 +946,7 @@ namespace AlchemistNPCLite.NPCs
                 .AddModItemToShop(Calamity, "BarofLife", 100000, () => (bool)Calamity.Call("Downed", "ravager"))
                 .AddModItemToShop(Calamity, "MeldBlob", 10000, () => (bool)Calamity.Call("Downed", "astrum deus"))
                 .AddModItemToShop(Calamity, "UnholyEssence", 50000, () => (bool)Calamity.Call("Downed", "profaned guardians"))
-                .AddModItemToShop(Calamity, "BloodOrb", 50000, () => (bool)Calamity.Call("Downed", "polterghast"))
+                .AddModItemToShop(Calamity, "BloodOrb", 7500, Condition.DownedSkeletron)
                 .AddModItemToShop(Calamity, "Phantoplasm", 100000, () => (bool)Calamity.Call("Downed", "polterghast"))
                 .AddModItemToShop(Calamity, "NightmareFuel", 120000, () => (bool)Calamity.Call("Downed", "dog") && AlchemistNPCLiteWorld.downedDOGPumpking)
                 .AddModItemToShop(Calamity, "EndothermicEnergy", 120000, () => (bool)Calamity.Call("Downed", "dog") && AlchemistNPCLiteWorld.downedDOGIceQueen)

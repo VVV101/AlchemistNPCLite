@@ -185,7 +185,7 @@ Mods: {
 
 			CalamityComb: {
 				DisplayName: Calamity-Kombination
-				Description: Kombination der Buff-Effekte von Photosynthese, Fabsols Wodka, Gleiten und Springen
+				Description: Kombination der Buff-Effekte von Photosynthese, Gleiten und Springen
 			}
 
 			Corrosion: {
@@ -348,7 +348,7 @@ Mods: {
 
 			CalamityCombination: {
 				DisplayName: Calamity-Kombination
-				Tooltip: Gewährt einige der Calamity-Mod-Buffs (Photosynthese, Fabsols Wodka, Schweben und Springen)
+				Tooltip: Gewährt einige der Calamity-Mod-Buffs (Photosynthese, Schweben und Springen)
 			}
 
 			DiscordPotion: {

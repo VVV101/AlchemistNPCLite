@@ -40,7 +40,6 @@ namespace AlchemistNPCLite.Items
             recipe.AddTile(TileID.AlchemyTable);
             string[][] modComponents = new string[][]{
                 new string[] {"CalamityMod", "PhotosynthesisPotion"},
-				new string[] {"CalamityMod", "FabsolsVodka"},
                 new string[] {"CalamityMod", "SoaringPotion"},
                 new string[] {"CalamityMod", "BoundingPotion"}
             };

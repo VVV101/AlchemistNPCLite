@@ -185,7 +185,7 @@ Mods: {
 
 			CalamityComb: {
 				DisplayName: Combinações de Poções do Mod Calamity
-				Description: Poção da Fotossíntese, Vodka do Fabsol, Poção da Decolagem e Poção do Pulo
+				Description: Poção da Fotossíntese, Poção da Decolagem e Poção do Pulo
 			}
 
 			Corrosion: {
@@ -336,7 +336,7 @@ Mods: {
 
 			CalamityCombination: {
 				DisplayName: Combinações do Mod Calamity Calamity Combination
-				Tooltip: Combina algumas poções do mod calamity (Fotossíntese, Vodka do Fabsol, Decolagem e Pulo)
+				Tooltip: Combina algumas poções do mod calamity (Fotossíntese, Decolagem e Pulo)
 			}
 
 			DiscordPotion: {
