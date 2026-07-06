@@ -209,7 +209,7 @@ namespace AlchemistNPCLite.NPCs
             {
                 return EntryA19;
             }
-            if (witchDoctor >= 0 && Main.rand.NextBool(7))
+            if (Brewer >= 0 && witchDoctor >= 0 && Main.rand.NextBool(7)) // Gregg: Brewer>=0 is required - the line below indexes Main.npc[Brewer]
             {
                 return EntryA25 + Main.npc[Brewer].GivenName + EntryA26 + Main.npc[Brewer].GivenName + EntryA27;
             }

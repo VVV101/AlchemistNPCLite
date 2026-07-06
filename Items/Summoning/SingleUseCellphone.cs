@@ -30,20 +30,23 @@ namespace AlchemistNPCLite.Items.Summoning
 
         public override bool? UseItem(Player player)
         {
-			Chest.SetupTravelShop();
-            if (player.whoAmI == Main.myPlayer)
-            {
-                int type = NPCID.TravellingMerchant;
+            if (player.whoAmI != Main.myPlayer)
+                return true;
 
-                if (Main.netMode != NetmodeID.MultiplayerClient)
-                {
-                    NPC.SpawnOnPlayer(player.whoAmI, type);
-                }
-                else
-                {
-                    // NPCID.Sets.MPAllowedEnemies[type] is set in ModGlobalNPC
-                    NetMessage.SendData(MessageID.SpawnBossUseLicenseStartEvent, number: player.whoAmI, number2: type);
-                }
+            if (Main.netMode == NetmodeID.SinglePlayer)
+            {
+                // Gregg: single player - set up the shop and spawn directly
+                Chest.SetupTravelShop();
+                NPC.SpawnOnPlayer(player.whoAmI, NPCID.TravellingMerchant);
+            }
+            else
+            {
+                // Gregg: in MP the SpawnBoss path doesn't set up the merchant's shop; ask the server
+                // to do SetupTravelShop + SendTravelShop + SpawnOnPlayer (see HandlePacket)
+                var packet = Mod.GetPacket();
+                packet.Write((byte)AlchemistNPCLite.AlchemistNPCLiteMessageType.SpawnTravelMerchant);
+                packet.Write(player.whoAmI);
+                packet.Send();
             }
             return true;
         }

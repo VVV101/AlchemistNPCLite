@@ -10,6 +10,15 @@ The Musician will come if you defeat Skeletron.
 Mod has support for Thorium, Calamity, Mod of Redemption, Census and imkSushi's mod.
 
 Mod's Discord: https://discord.gg/WGKyKun
+v1.9.9.2
+-Fixed Single Use Cellphone not summoning the Travelling Merchant in multiplayer (now sets up and syncs its shop server-side).
+-Fixed Horrifying Skull not reliably summoning the Dungeon Guardian in multiplayer.
+-Fixed a crash when talking to the Alchemist while a Witch Doctor was present but no Brewer.
+-Fixed Corrosive Flask not releasing its toxic cloud and Gemstone missing its impact dust/sound (updated to current tModLoader hook).
+-Fixed Ocean, Beach, Jungle and Underworld Teleporter potions running teleport logic in CanUseItem; moved to item use for correct multiplayer behavior.
+-Fixed Young Brewer not spawning from the Brewer's dialog in multiplayer.
+-Fixed World Control Unit weather and time-of-day changes not syncing in multiplayer.
+-Fixed World Warper/Modified World Warper teleporting off-target at resolutions above 1920x1080 (UI Scale mismatch).
 v1.9.9.1
 -Removed Purple Haze from Calamity Combination.
 -Blood Orbs are now available after beating Skeletron.

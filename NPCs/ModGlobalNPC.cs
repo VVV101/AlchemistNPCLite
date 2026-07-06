@@ -20,7 +20,16 @@ namespace AlchemistNPCLite.NPCs
                 return true;
             }
         }
-        
+
+        // Gregg: MPAllowedEnemies must be set once at load (not in per-instance SetDefaults),
+        // otherwise the flag only appears after such an NPC is created in the world and spawn items fail in MP.
+        // TravellingMerchant is for SingleUseCellphone, DungeonGuardian is for HorrifyingSkull.
+        public override void SetStaticDefaults()
+        {
+            NPCID.Sets.MPAllowedEnemies[NPCID.DungeonGuardian] = true;
+            NPCID.Sets.MPAllowedEnemies[NPCID.TravellingMerchant] = true;
+        }
+
         public override void ModifyShop(NPCShop shop) {
                 if (shop.NpcType == NPCID.Merchant) {
                     if (ModContent.GetInstance<ModConfiguration>().ModItems){
@@ -107,10 +116,6 @@ namespace AlchemistNPCLite.NPCs
 
         public override void SetDefaults(NPC npc)
         {
-            if (npc.type == NPCID.DungeonGuardian)
-            {
-                NPCID.Sets.MPAllowedEnemies[NPCID.DungeonGuardian] = true;
-            }
             if (npc.type == NPCID.Steampunker || npc.type == NPCID.Wizard || npc.type == NPCID.Guide || npc.type == NPCID.Nurse || npc.type == NPCID.Demolitionist || npc.type == NPCID.Merchant || npc.type == NPCID.DyeTrader || npc.type == NPCID.Dryad || npc.type == NPCID.DD2Bartender || npc.type == NPCID.ArmsDealer || npc.type == NPCID.Stylist || npc.type == NPCID.Painter || npc.type == NPCID.Angler || npc.type == NPCID.GoblinTinkerer || npc.type == NPCID.WitchDoctor || npc.type == NPCID.Clothier || npc.type == NPCID.Mechanic || npc.type == NPCID.PartyGirl || npc.type == NPCID.TaxCollector || npc.type == NPCID.Truffle || npc.type == NPCID.Pirate || npc.type == NPCID.Cyborg || npc.type == NPCID.SantaClaus)
             {
                 if (NPC.downedMoonlord)

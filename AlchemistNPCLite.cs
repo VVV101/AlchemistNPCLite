@@ -100,6 +100,43 @@ namespace AlchemistNPCLite
                 case AlchemistNPCLiteMessageType.TeleportPlayer:
                     TeleportClass.HandleTeleport(reader.ReadInt32(), true, whoAmI);
                     break;
+                // Gregg: client asks the server to spawn the Travelling Merchant (cellphone);
+                // the server sets up and broadcasts the shop, the way WorldGen.SpawnTravelNPC does
+                case AlchemistNPCLiteMessageType.SpawnTravelMerchant:
+                {
+                    int who = reader.ReadInt32();
+                    if (Main.netMode == NetmodeID.Server && Main.dayTime && !NPC.AnyNPCs(NPCID.TravellingMerchant))
+                    {
+                        Chest.SetupTravelShop();
+                        NetMessage.SendTravelShop(-1);
+                        NPC.SpawnOnPlayer(who, NPCID.TravellingMerchant);
+                    }
+                    break;
+                }
+                // Gregg: client asks the server to spawn the Young Brewer (button in the Brewer's dialog)
+                case AlchemistNPCLiteMessageType.SpawnYoungBrewer:
+                {
+                    int who = reader.ReadInt32();
+                    if (Main.netMode == NetmodeID.Server && !NPC.AnyNPCs(NPCType<NPCs.YoungBrewer>()))
+                    {
+                        NPC.SpawnOnPlayer(who, NPCType<NPCs.YoungBrewer>());
+                    }
+                    break;
+                }
+                // Gregg: client asks the server to change weather/time (WorldControlUnit) - world state is server-authoritative
+                case AlchemistNPCLiteMessageType.WorldControl:
+                {
+                    byte mode = reader.ReadByte();
+                    int who = reader.ReadInt32();
+                    if (Main.netMode == NetmodeID.Server && who >= 0 && who < Main.maxPlayers)
+                    {
+                        if (mode == 0)
+                            Items.Misc.WorldControlUnit.ApplyWeather(Main.player[who]);
+                        else
+                            Items.Misc.WorldControlUnit.ApplyTime();
+                    }
+                    break;
+                }
                 default:
                     Logger.Error("AlchemistNPCLite: Unknown Message type: " + msgType);
                     break;
@@ -108,7 +145,10 @@ namespace AlchemistNPCLite
 
         public enum AlchemistNPCLiteMessageType : byte
         {
-            TeleportPlayer
+            TeleportPlayer,
+            SpawnTravelMerchant,
+            SpawnYoungBrewer,
+            WorldControl
         }
     }
 }

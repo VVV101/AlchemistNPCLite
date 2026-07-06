@@ -254,6 +254,11 @@ namespace AlchemistNPCLite
 
                             cursorPosition /= 16;
                             cursorPosition *= 16 / Main.mapFullscreenScale;
+                            // Gregg: on this tModLoader build the fullscreen map is effectively drawn at
+                            // mapFullscreenScale / (2 - 1/UIScale) raw px per tile, so the cursor offset must be
+                            // multiplied by (2 - 1/UIScale). Measured at UI=1.49 (k=1.3285). No-op at UI Scale 100%
+                            // (tModLoader auto-raises UI Scale on displays taller than 1080p).
+                            cursorPosition *= 2f - 1f / Main.UIScale;
                             cursorWorldPosition += cursorPosition;
                             cursorWorldPosition *= 16;
 

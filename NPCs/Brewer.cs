@@ -276,15 +276,21 @@ namespace AlchemistNPCLite.NPCs
             {
                 if (NPC.HasBuff(BuffID.Lovestruck) && NPC.AnyNPCs(ModContent.NPCType<Alchemist>()) && !NPC.AnyNPCs(ModContent.NPCType<YoungBrewer>()))
                 {
-                    for (int k = 0; k < 255; k++)
+                    // Gregg: NPC spawning is server-side - SpawnOnPlayer won't work on an MP client.
+                    // Target is the talking player (Main.myPlayer), not the first active one.
+                    int target = Main.myPlayer;
+                    if (Main.netMode == NetmodeID.SinglePlayer)
                     {
-                        Player player = Main.player[k];
-                        if (player.active)
-                        {
-                            NPC.SpawnOnPlayer(k, ModContent.NPCType<YoungBrewer>());
-                            return;
-                        }
+                        NPC.SpawnOnPlayer(target, ModContent.NPCType<YoungBrewer>());
                     }
+                    else
+                    {
+                        var packet = Mod.GetPacket();
+                        packet.Write((byte)AlchemistNPCLite.AlchemistNPCLiteMessageType.SpawnYoungBrewer);
+                        packet.Write(target);
+                        packet.Send();
+                    }
+                    return;
                 }
                 if (!ShopChangeUI.visible) ShopChangeUI.timeStart = Main.GameUpdateCount;
                 ShopChangeUI.visible = true;

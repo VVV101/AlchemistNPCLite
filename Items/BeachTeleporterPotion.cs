@@ -20,8 +20,10 @@ namespace AlchemistNPCLite.Items
 
         public override bool? UseItem(Player player)
         {
+            // Gregg: teleport here, not in CanUseItem (that hook must be side-effect free)
             if (Main.myPlayer == player.whoAmI)
             {
+                TeleportClass.HandleTeleport(player.altFunctionUse == 2 ? 3 : 4);
                 return true;
             }
             return false;
@@ -30,27 +32,6 @@ namespace AlchemistNPCLite.Items
         public override bool AltFunctionUse(Player player)
         {
             return true;
-        }
-
-        public override bool CanUseItem(Player player)
-        {
-            if (player.altFunctionUse == 2)
-            {
-                if (Main.myPlayer == player.whoAmI)
-                {
-                    TeleportClass.HandleTeleport(3);
-                    return true;
-                }
-            }
-            if (player.altFunctionUse != 2)
-            {
-                if (Main.myPlayer == player.whoAmI)
-                {
-                    TeleportClass.HandleTeleport(4);
-                    return true;
-                }
-            }
-            return false;
         }
 
         public override bool CanRightClick()
