@@ -1290,6 +1290,7 @@ Mods: {
 		ModdedTreasureBagsShop: Modded Schatzbeutel-Shop
 		ModdedTreasureBagsShop2: Modded Schatzbeutel-Shop #2
 		ModdedTreasureBagsShop3: Modded Schatzbeutel-Shop #3
+		CustomShop: Eigene Gegenstände (Konfig)
 		Angela: Angela
 		Carmen: Carmen
 		EntryO1: Wie ist dein Tag, Manager? Kann ich dir helfen?
@@ -1415,6 +1416,11 @@ Mods: {
 				ModItems: {
 					Tooltip: True, um benutzerdefinierte Mod-Gegenstände und -Tränke zuzulassen (Verschwimmungstrank, Weltenverzerrer usw.). Standardmäßig True. Erfordert Mods neu laden, um Informationen zu aktualisieren.
 					Label: Benutzerdefinierte Mod-Gegenstände-Umschalter
+				}
+
+				OperatorCustomItems: {
+					Tooltip: Füge beliebige Vanilla- oder Mod-Gegenstände (Materialien, Boss-Beutel usw.) zum Reiter „Eigene Gegenstände" des Operators hinzu. Lege Gegenstand, Preis (in Kupfer) und Freischaltbedingung fest. Gegenstände aus nicht geladenen Mods werden ignoriert. Erfordert einen Mod-Neustart.
+					Label: Eigene Shop-Gegenstände des Operators
 				}
 
 				RevPrices: {

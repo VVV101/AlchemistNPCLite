@@ -1298,6 +1298,7 @@ Mods: {
 		ModdedTreasureBagsShop: Modded Treasure Bags Shop
 		ModdedTreasureBagsShop2: Modded Treasure Bags Shop #2
 		ModdedTreasureBagsShop3: Modded Treasure Bags Shop #3
+		CustomShop: Custom Items (Config)
 		Angela: Angela
 		Carmen: Carmen
 		EntryO1: How is your day, Manager? Can I help you?
@@ -1423,6 +1424,11 @@ Mods: {
 				ModItems: {
 					Tooltip: True to allow mod's custom items and potions to exist (Blurring potion, World Warper, etc.). True by default. Requires mods reload to update information.
 					Label: Mod's custom items toggle
+				}
+
+				OperatorCustomItems: {
+					Tooltip: Add any vanilla or modded items (materials, boss bags, etc.) to the Operator's "Custom Items" shop tab. Set the item, price (in copper) and when it unlocks. Items from mods that aren't loaded are ignored. Requires a mod reload.
+					Label: Operator custom shop items
 				}
 
 				RevPrices: {

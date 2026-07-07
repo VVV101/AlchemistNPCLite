@@ -25,6 +25,7 @@ namespace AlchemistNPCLite.Interface
 		UIText text3 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ModdedTreasureBagsShop"));
 		UIText text4 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ModdedTreasureBagsShop2"));
 		UIText text5 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.ModdedTreasureBagsShop3"));
+		UIText text6 = new UIText(Language.GetTextValue("Mods.AlchemistNPCLite.CustomShop")); // Gregg: config-driven custom items tab
 
         public override void OnInitialize()
         {
@@ -33,7 +34,7 @@ namespace AlchemistNPCLite.Interface
             OperatorShopsPanel.Left.Set(575f, 0f);
             OperatorShopsPanel.Top.Set(275f, 0f);
             OperatorShopsPanel.Width.Set(375f, 0f);
-            OperatorShopsPanel.Height.Set(190f, 0f);
+            OperatorShopsPanel.Height.Set(220f, 0f); // Gregg: +30 for the 7th (Custom Items) row
             OperatorShopsPanel.BackgroundColor = new(49, 51, 117, 210);
 
             OperatorShopsPanel.OnLeftMouseDown += new MouseEvent(DragStart);
@@ -81,6 +82,13 @@ namespace AlchemistNPCLite.Interface
 			text5.TextColor = CheckColor(6);
             OperatorShopsPanel.Append(text5);
 
+            text6.Left.Set(35, 0f);
+            text6.Top.Set(190, 0f);
+            text6.Width.Set(120, 0f);
+            text6.Height.Set(22, 0f);
+			text6.TextColor = CheckColor(7);
+            OperatorShopsPanel.Append(text6);
+
             Asset<Texture2D> buttonPlayTexture = ModContent.Request<Texture2D>("AlchemistNPCLite/Interface/ButtonSet");
             UIImageButton playButton = new(buttonPlayTexture);
             playButton.Left.Set(10, 0f);
@@ -124,6 +132,13 @@ namespace AlchemistNPCLite.Interface
             playButton5.Height.Set(22, 0f);
             playButton5.OnLeftClick += new(PlayButtonClicked6);
             OperatorShopsPanel.Append(playButton5);
+            UIImageButton playButton6 = new(buttonPlayTexture);
+            playButton6.Left.Set(10, 0f);
+            playButton6.Top.Set(190, 0f);
+            playButton6.Width.Set(22, 0f);
+            playButton6.Height.Set(22, 0f);
+            playButton6.OnLeftClick += new(PlayButtonClicked7);
+            OperatorShopsPanel.Append(playButton6);
 
             Asset<Texture2D> buttonDeleteTexture = ModContent.Request<Texture2D>("AlchemistNPCLite/Interface/ButtonClose");
             UIImageButton closeButton = new(buttonDeleteTexture);
@@ -196,6 +211,16 @@ namespace AlchemistNPCLite.Interface
             }
         }
 
+        private void PlayButtonClicked7(UIMouseEvent evt, UIElement listeningElement)
+        {
+            if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
+            {
+                Operator.Shops = 7;
+                ReCheckColor();
+                AlchemistHelper.OpenShop(ref Shop, Operator.CustomShop, ref visible);
+            }
+        }
+
         private void CloseButtonClicked(UIMouseEvent evt, UIElement listeningElement)
         {
             if (Main.GameUpdateCount - timeStart >= AlchemistNPCLite.modConfiguration.ShopChangeDelay)
@@ -253,6 +278,7 @@ namespace AlchemistNPCLite.Interface
 			text3.TextColor = CheckColor(4);
 			text4.TextColor = CheckColor(5);
 			text5.TextColor = CheckColor(6);
+			text6.TextColor = CheckColor(7);
 		}
     }
 }

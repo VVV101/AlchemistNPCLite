@@ -1280,6 +1280,7 @@ Mods: {
 		ModdedTreasureBagsShop: Мешки модовых боссов
 		ModdedTreasureBagsShop2: Мешки модовых боссов 2
 		ModdedTreasureBagsShop3: Мешки модовых боссов 3
+		CustomShop: Свои предметы (конфиг)
 		Angela: Анжела
 		Carmen: Кармен
 		EntryO1: Как проходит ваш день, Управляющий? Чем я могу вам помочь?
@@ -1405,6 +1406,11 @@ Mods: {
 				ModItems: {
 					// Tooltip: True to allow mod's custom items and potions to exist (Blurring potion, World Warper, etc.). True by default. Requires mods reload to update information.
 					// Label: Mod's custom items toggle
+				}
+
+				OperatorCustomItems: {
+					Tooltip: Добавьте любые ванильные или модовые предметы (материалы, мешки боссов и т.п.) во вкладку «Свои предметы» у Оператора. Задайте предмет, цену (в меди) и условие открытия. Предметы из невключённых модов игнорируются. Требуется перезагрузка мода.
+					Label: Свои предметы в лавке Оператора
 				}
 
 				RevPrices: {

@@ -200,7 +200,7 @@ Mods: {
 				Description:
 					'''
 					包含以下Buff
-					光合，腾飞、弹跳
+					光合，Fabsol伏特加，腾飞、弹跳
 					'''
 			}
 
@@ -241,6 +241,7 @@ Mods: {
 					'''
 					包含以下Buff
 					声呐, 钓鱼, 再生, 镇静, 荆棘, 铁皮, 狱火, 宝匣
+					右击来开启或关闭镇静效果
 					'''
 			}
 
@@ -409,7 +410,7 @@ Mods: {
 				Tooltip:
 					'''
 					获得一些灾厄Buff 
-					(光合, 腾飞，弹跳)
+					(光合, Fabsol伏特加, 腾飞，弹跳)
 					'''
 			}
 
@@ -460,6 +461,7 @@ Mods: {
 					'''
 					获得你在钓鱼时所需的Buff 
 					(声呐, 钓鱼, 再生, 镇静, 荆棘, 铁皮, 狱火, 宝匣)
+					右击来开启或关闭镇静效果
 					'''
 			}
 
@@ -790,7 +792,7 @@ Mods: {
 				Tooltip:
 					'''
 					获得一些坦克Buff 
-					(耐力, 生命力, 铁皮, 黑曜石皮, 荆棘, 再生, 泰坦皮肤, 无敌)
+					(敏捷, 耐力, 生命力, 铁皮, 黑曜石皮, 荆棘, 再生, 泰坦皮肤, 无敌)
 					'''
 			}
 
@@ -859,7 +861,7 @@ Mods: {
 				Tooltip:
 					'''
 					获得一些坦克Buff 
-					(耐力, 生命力, 铁皮, 黑曜石皮, 荆棘, 再生)
+					(敏捷, 耐力, 生命力, 铁皮, 黑曜石皮, 荆棘, 再生)
 					'''
 			}
 
@@ -869,8 +871,8 @@ Mods: {
 			}
 
 			SingleUseCellphone: {
-				Tooltip: Calls for Travelling Merchant. Can only be used during day time.
-				DisplayName: Single Use Cellphone
+				Tooltip: 可以呼叫旅商, 只能在白天使用
+				DisplayName: 一次性便携手机
 			}
 		}
 
@@ -1380,6 +1382,7 @@ Mods: {
 		ModdedTreasureBagsShop: 模组宝藏袋商店#1
 		ModdedTreasureBagsShop2: 模组宝藏袋商店#2
 		ModdedTreasureBagsShop3: 模组宝藏袋商店#3
+		CustomShop: 自定义物品 (配置)
 		Angela: Angela
 		Carmen: Carmen
 		EntryO1: 您好吗, 主管, 我能为您做什么?
@@ -1447,8 +1450,8 @@ Mods: {
 		Excavation1: 极大增加挖掘能力
 		Excavation2: 挖掘区域被设定为
 		Excavation3: CTRL + 右键 来移除Buff
-		FishingComb1: Calming effect is enabled.
-		FishingComb2: Calming effect is disabled.
+		FishingComb1: 镇静效果已启用
+		FishingComb2: 镇静效果已关闭
 
 		Tiles: {
 			HMCraftPound.MapEntry: 豪华手工英镑
@@ -1505,6 +1508,11 @@ Mods: {
 				ModItems: {
 					Tooltip: 启用以允许自定义物品和药水存在（模糊药剂、世界传送装置等）默认为开，需要重新加载以修改此配置
 					Label: Mod自定义物品切换
+				}
+
+				OperatorCustomItems: {
+					Tooltip: 将任意原版或模组物品（材料、Boss宝藏袋等）添加到操作员的「自定义物品」商店页。设置物品、价格（以铜币计）以及解锁条件。未加载的模组物品将被忽略。需要重新加载模组。
+					Label: 操作员自定义商店物品
 				}
 
 				RevPrices: {

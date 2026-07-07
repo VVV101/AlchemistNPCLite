@@ -86,6 +86,12 @@ namespace AlchemistNPCLite
 		[DefaultValue(10)]
 		public int ShopChangeDelay;
 
+		// Gregg: user-defined items for the Operator's "Custom Items" shop tab.
+		// Uses ItemDefinition, so any vanilla OR modded item resolves at runtime
+		// without hardcoding mod names (items whose mod isn't loaded are skipped).
+		[ReloadRequired]
+		public List<OperatorShopItem> OperatorCustomItems = new List<OperatorShopItem>();
+
 		public override ModConfig Clone() {
 			var clone = (ModConfiguration)base.Clone();
 			return clone;
@@ -103,5 +109,35 @@ namespace AlchemistNPCLite
 			message = NetworkText.FromKey("ModConfigAccepted");
 			return true;
 		}
+	}
+
+	// Gregg: one entry of the Operator's config-driven "Custom Items" shop.
+	public class OperatorShopItem
+	{
+		public ItemDefinition Item = new ItemDefinition(0);
+
+		[Range(1, 2000000000)]
+		public int Price = 10000;
+
+		[DefaultValue(OperatorShopGate.Always)]
+		public OperatorShopGate Availability = OperatorShopGate.Always;
+
+		public override bool Equals(object obj) =>
+			obj is OperatorShopItem o && Item.Equals(o.Item) && Price == o.Price && Availability == o.Availability;
+
+		public override int GetHashCode() => System.HashCode.Combine(Item, Price, Availability);
+	}
+
+	// Gregg: progression gate the user picks per custom item (conditions can't be serialized, so we offer presets).
+	public enum OperatorShopGate
+	{
+		Always,
+		Hardmode,
+		PostEvilBoss,
+		PostSkeletron,
+		PostAnyMechBoss,
+		PostPlantera,
+		PostGolem,
+		PostMoonLord
 	}
 }

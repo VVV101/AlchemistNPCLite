@@ -1288,6 +1288,7 @@ Mods: {
 		ModdedTreasureBagsShop: Loja das bolsas do tesouro fornecidas pelos mods
 		ModdedTreasureBagsShop2: Loja das bolsas do tesouro fornecidas pelos mods #2
 		ModdedTreasureBagsShop3: Loja das bolsas do tesouro fornecidas pelos mods #3
+		CustomShop: Itens personalizados (Config)
 		Angela: Angelica
 		Carmen: Carminha
 		EntryO1: Como foi o seu dia, Gerente? Eu posso te ajudar?
@@ -1413,6 +1414,11 @@ Mods: {
 				ModItems: {
 					Tooltip: True to allow mod's custom items and potions to exist (Blurring potion, World Warper, etc.). True by default. Requires mods reload to update information.
 					Label: Mod's custom items toggle
+				}
+
+				OperatorCustomItems: {
+					Tooltip: Adicione quaisquer itens vanilla ou de mods (materiais, sacos de chefe, etc.) à aba Itens personalizados do Operador. Defina o item, o preço (em cobre) e quando desbloqueia. Itens de mods não carregados são ignorados. Requer recarregar o mod.
+					Label: Itens personalizados da loja do Operador
 				}
 
 				RevPrices: {
