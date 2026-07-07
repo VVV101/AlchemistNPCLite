@@ -1032,7 +1032,7 @@ namespace AlchemistNPCLite.NPCs
             #region Catalyst
             .AddModItemToShop(Catalyst, "MetanovaOre", Item.buyPrice(0, 2, 0, 0), () => CatalystDown.Astrageldon);
             #endregion
-            shop.Register();
+            ShopPaginator.Register(shop); // Gregg: paginate instead of Register() — overflow past 39 no longer dropped
             #endregion
 
             #region VanillaBagsShop
@@ -1179,27 +1179,11 @@ namespace AlchemistNPCLite.NPCs
                 {
                     int type = entry?.Item?.Type ?? 0;
                     if (type <= 0) continue; // Gregg: skip unresolved (e.g. item from a mod that isn't loaded)
-                    customShop.Add(new Item(type) { shopCustomPrice = entry.Price }, GateCondition(entry.Availability));
+                    customShop.Add(new Item(type) { shopCustomPrice = entry.Price }, AlchemistHelper.GateCondition(entry.Availability));
                 }
             }
             customShop.Register();
             #endregion
-        }
-
-        // Gregg: maps a config gate preset to a shop Condition (conditions can't be serialized to config).
-        private static Condition GateCondition(OperatorShopGate gate)
-        {
-            switch (gate)
-            {
-                case OperatorShopGate.Hardmode: return new Condition("", () => Main.hardMode);
-                case OperatorShopGate.PostEvilBoss: return Condition.DownedEowOrBoc;
-                case OperatorShopGate.PostSkeletron: return Condition.DownedSkeletron;
-                case OperatorShopGate.PostAnyMechBoss: return Condition.DownedMechBossAny;
-                case OperatorShopGate.PostPlantera: return new Condition("", () => NPC.downedPlantBoss);
-                case OperatorShopGate.PostGolem: return Condition.DownedGolem;
-                case OperatorShopGate.PostMoonLord: return Condition.DownedMoonLord;
-                default: return new Condition("", () => true);
-            }
         }
     }
 }

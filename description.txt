@@ -10,6 +10,12 @@ The Musician will come if you defeat Skeletron.
 Mod has support for Thorium, Calamity, Mod of Redemption, Census and imkSushi's mod.
 
 Mod's Discord: https://discord.gg/WGKyKun
+v1.9.9.3
+-Shops now paginate instead of silently dropping items past the 40-slot limit: the Operator's modded-materials shop and both Alchemist shops. A "< page / total >" selector appears when a shop has more than one page.
+-The Tinkerer now has a config-driven "Custom Items" shop, opened through a shop-changer panel (Movement/Misc, Combat, Custom Items) like the Operator's.
+-Added a "Tinkerer custom shop items" config list (item, price in copper, unlock condition), same as the Operator's.
+-Reorganized the mod config into labeled sections; the Operator/Tinkerer custom-item lists now open on their own page with a readable label per entry.
+-Fixed the Operator custom-items config tooltip running off both edges of the screen.
 v1.9.9.2
 -Fixed Single Use Cellphone not summoning the Travelling Merchant in multiplayer (now sets up and syncs its shop server-side).
 -Fixed Horrifying Skull not reliably summoning the Dungeon Guardian in multiplayer.

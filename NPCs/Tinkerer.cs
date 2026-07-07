@@ -8,6 +8,8 @@ using Terraria.GameContent.Personalities;
 using Terraria.ID;
 using Terraria.Localization;
 using Terraria.ModLoader;
+using AlchemistNPCLite.Interface;
+using AlchemistNPCLite.Utilities;
 
 namespace AlchemistNPCLite.NPCs
 {
@@ -16,6 +18,8 @@ namespace AlchemistNPCLite.NPCs
     {
         public static string Shop1 = "MovementMisc";
         public static string Shop2 = "Combat";
+        public static string TCustomShop = "TinkererCustom"; // Gregg: config-driven custom items tab
+        public static int Shops = 1; // Gregg: current tab for the shop-change panel
         public override string Texture
         {
             get
@@ -153,19 +157,27 @@ namespace AlchemistNPCLite.NPCs
 
         public override void SetChatButtons(ref string button, ref string button2)
         {
-            button = Language.GetTextValue("Mods.AlchemistNPCLite.TinkererButton1");
-            button2 = Language.GetTextValue("Mods.AlchemistNPCLite.TinkererButton2");
+            // Gregg: button1 opens the currently-selected tab, button2 opens the tab-picker panel (like Operator).
+            string movement = Language.GetTextValue("Mods.AlchemistNPCLite.TinkererButton1");
+            string combat = Language.GetTextValue("Mods.AlchemistNPCLite.TinkererButton2");
+            string custom = Language.GetTextValue("Mods.AlchemistNPCLite.TinkererCustomShop");
+            button2 = Language.GetTextValue("Mods.AlchemistNPCLite.ShopChanger");
+            button = movement;
+            if (Shops == 2) button = combat;
+            if (Shops == 3) button = custom;
         }
 
         public override void OnChatButtonClicked(bool firstButton, ref string shopName)
         {
             if (firstButton)
             {
-                shopName = Shop1;
+                shopName = ShopChangeUIT.Shop;
+                ShopChangeUIT.visible = false;
             }
             else
             {
-                shopName = Shop2;
+                if (!ShopChangeUIT.visible) ShopChangeUIT.timeStart = Main.GameUpdateCount;
+                ShopChangeUIT.visible = true;
             }
         }
 
@@ -269,6 +281,20 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.PygmyNecklace) { shopCustomPrice = 330000 }, Condition.DownedGolem)
                 .Add(new Item(ItemID.NecromanticScroll) { shopCustomPrice = 330000 }, Condition.DownedGolem);
             shop.Register();
+
+            // Gregg: config-driven custom items shop (see ModConfiguration.TinkererCustomItems)
+            var customShop = new NPCShop(Type, TCustomShop);
+            var cfg = ModContent.GetInstance<ModConfiguration>();
+            if (cfg?.TinkererCustomItems != null)
+            {
+                foreach (var entry in cfg.TinkererCustomItems)
+                {
+                    int type = entry?.Item?.Type ?? 0;
+                    if (type <= 0) continue; // skip unresolved (item from a mod that isn't loaded)
+                    customShop.Add(new Item(type) { shopCustomPrice = entry.Price }, AlchemistHelper.GateCondition(entry.Availability));
+                }
+            }
+            customShop.Register();
         }
     }
 }

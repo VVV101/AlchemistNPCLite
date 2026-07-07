@@ -1331,6 +1331,7 @@ Mods: {
 		Peter: Peterson
 		TinkererButton1: Movemento e Diversos
 		TinkererButton2: Combate
+		TinkererCustomShop: Itens personalizados
 		EntryT1: Você precisa de algo especial? Apenas diga se sim...
 		EntryT2: Você já viu minha irmã mais velha? Ela é mais a Steampunker do que o Inventor Globin...
 		EntryT3: Se você ver o tubo de papel em algum lugar, traga-o para mim que eu irei desbloquear para você.
@@ -1371,6 +1372,15 @@ Mods: {
 
 		Configs: {
 			ModConfiguration: {
+				Headers: {
+					NpcSpawns: Surgimento de NPCs
+					LifeformLocator: Localizador do Analisador de Formas de Vida
+					General: Geral
+					ShopPrices: Preços da Loja
+					OperatorShop: Loja do Operador
+					TinkererShop: Loja do Inventor
+				}
+
 				ShopChangeDelay: {
 					Tooltip: Tempo de espera antes que a loja possa ser alterada depois de abrir a interface, 10 quadros é o padrão.
 					Label: Atraso na mudança da loja
@@ -1417,8 +1427,23 @@ Mods: {
 				}
 
 				OperatorCustomItems: {
-					Tooltip: Adicione quaisquer itens vanilla ou de mods (materiais, sacos de chefe, etc.) à aba Itens personalizados do Operador. Defina o item, o preço (em cobre) e quando desbloqueia. Itens de mods não carregados são ignorados. Requer recarregar o mod.
+					Tooltip:
+						'''
+						Adicione quaisquer itens vanilla ou de mods (materiais, sacos de chefe, etc.) à aba Itens personalizados do Operador.
+						Defina o item, o preço (em cobre) e quando desbloqueia.
+						Itens de mods não carregados são ignorados. Requer recarregar o mod.
+						'''
 					Label: Itens personalizados da loja do Operador
+				}
+
+				TinkererCustomItems: {
+					Tooltip:
+						'''
+						Adicione quaisquer itens vanilla ou de mods à aba Itens personalizados do Inventor.
+						Defina o item, o preço (em cobre) e quando desbloqueia.
+						Itens de mods não carregados são ignorados. Requer recarregar o mod.
+						'''
+					Label: Itens personalizados da loja do Inventor
 				}
 
 				RevPrices: {
@@ -1486,6 +1511,69 @@ Mods: {
 				LifeformAnalyzerAlt: {
 					Label: Alterne a textura do locaizador do Analisador de Forma de Vida
 					Tooltip: Use uma textura alternativa para o localizador do Analisador de Forma de Vida. Falso é o padrão
+				}
+			}
+
+			OperatorShopItem: {
+				// Tooltip: ""
+
+				Item: {
+					// Label: Item
+					// Tooltip: ""
+				}
+
+				Price: {
+					// Label: Price
+					// Tooltip: ""
+				}
+
+				Availability: {
+					// Label: Availability
+					// Tooltip: ""
+				}
+			}
+
+			OperatorShopGate: {
+				// Tooltip: ""
+
+				Always: {
+					// Label: Always
+					// Tooltip: ""
+				}
+
+				Hardmode: {
+					// Label: Hardmode
+					// Tooltip: ""
+				}
+
+				PostEvilBoss: {
+					// Label: Post Evil Boss
+					// Tooltip: ""
+				}
+
+				PostSkeletron: {
+					// Label: Post Skeletron
+					// Tooltip: ""
+				}
+
+				PostAnyMechBoss: {
+					// Label: Post Any Mech Boss
+					// Tooltip: ""
+				}
+
+				PostPlantera: {
+					// Label: Post Plantera
+					// Tooltip: ""
+				}
+
+				PostGolem: {
+					// Label: Post Golem
+					// Tooltip: ""
+				}
+
+				PostMoonLord: {
+					// Label: Post Moon Lord
+					// Tooltip: ""
 				}
 			}
 		}

@@ -1341,6 +1341,7 @@ Mods: {
 		Peter: Peter
 		TinkererButton1: Movement/Misc
 		TinkererButton2: Combat
+		TinkererCustomShop: Custom Items
 		EntryT1: Do you need something special? Just say if so...
 		EntryT2: Have you seen my elder sister yet? She is more Steampunker than Tinkerer...
 		EntryT3: If you seen Paper Tube somewhere, bring it to me and I will unlock it for you.
@@ -1381,6 +1382,15 @@ Mods: {
 
 		Configs: {
 			ModConfiguration: {
+				Headers: {
+					NpcSpawns: NPC Spawns
+					LifeformLocator: Lifeform Analyzer Locator
+					General: General
+					ShopPrices: Shop Prices
+					OperatorShop: Operator Shop
+					TinkererShop: Tinkerer Shop
+				}
+
 				ShopChangeDelay: {
 					Tooltip: Delay before shop can be changed after opening interface. 10 frames by default
 					Label: Shop Change Delay
@@ -1427,8 +1437,23 @@ Mods: {
 				}
 
 				OperatorCustomItems: {
-					Tooltip: Add any vanilla or modded items (materials, boss bags, etc.) to the Operator's "Custom Items" shop tab. Set the item, price (in copper) and when it unlocks. Items from mods that aren't loaded are ignored. Requires a mod reload.
+					Tooltip:
+						'''
+						Add any vanilla or modded items (materials, boss bags, etc.) to the Operator's "Custom Items" shop tab.
+						Set the item, price (in copper) and when it unlocks.
+						Items from mods that aren't loaded are ignored. Requires a mod reload.
+						'''
 					Label: Operator custom shop items
+				}
+
+				TinkererCustomItems: {
+					Tooltip:
+						'''
+						Add any vanilla or modded items to the Tinkerer's "Custom Items" shop tab.
+						Set the item, price (in copper) and when it unlocks.
+						Items from mods that aren't loaded are ignored. Requires a mod reload.
+						'''
+					Label: Tinkerer custom shop items
 				}
 
 				RevPrices: {
@@ -1496,6 +1521,69 @@ Mods: {
 				LifeformAnalyzerAlt: {
 					Label: Lifeform Analyzer locator alt texture
 					Tooltip: Use alternative texture for Lifeform Analyzer locator. False by default
+				}
+			}
+
+			OperatorShopItem: {
+				Tooltip: ""
+
+				Item: {
+					Label: Item
+					Tooltip: ""
+				}
+
+				Price: {
+					Label: Price
+					Tooltip: ""
+				}
+
+				Availability: {
+					Label: Availability
+					Tooltip: ""
+				}
+			}
+
+			OperatorShopGate: {
+				Tooltip: ""
+
+				Always: {
+					Label: Always
+					Tooltip: ""
+				}
+
+				Hardmode: {
+					Label: Hardmode
+					Tooltip: ""
+				}
+
+				PostEvilBoss: {
+					Label: Post Evil Boss
+					Tooltip: ""
+				}
+
+				PostSkeletron: {
+					Label: Post Skeletron
+					Tooltip: ""
+				}
+
+				PostAnyMechBoss: {
+					Label: Post Any Mech Boss
+					Tooltip: ""
+				}
+
+				PostPlantera: {
+					Label: Post Plantera
+					Tooltip: ""
+				}
+
+				PostGolem: {
+					Label: Post Golem
+					Tooltip: ""
+				}
+
+				PostMoonLord: {
+					Label: Post Moon Lord
+					Tooltip: ""
 				}
 			}
 		}

@@ -1425,6 +1425,7 @@ Mods: {
 		Peter: Peter
 		TinkererButton1: 移动/杂项
 		TinkererButton2: 战斗
+		TinkererCustomShop: 自定义物品
 		EntryT1: 需要一些特别的东西? 尽管说...
 		EntryT2: 你看见过我的姐姐吗? 比起工匠, 她更像个蒸汽朋克女孩...
 		EntryT3: 如果你在什么地方见过纸管, 把它带给我, 我会为你解锁一些东西（这在Lite版没用）
@@ -1465,6 +1466,15 @@ Mods: {
 
 		Configs: {
 			ModConfiguration: {
+				Headers: {
+					NpcSpawns: NPC生成
+					LifeformLocator: 生命体分析仪定位
+					General: 常规
+					ShopPrices: 商店价格
+					OperatorShop: 操作员商店
+					TinkererShop: 工匠商店
+				}
+
 				ShopChangeDelay: {
 					Tooltip: 可更改商店购买物品前的延迟时间.默认为10帧
 					Label: 购买更改延迟
@@ -1511,8 +1521,23 @@ Mods: {
 				}
 
 				OperatorCustomItems: {
-					Tooltip: 将任意原版或模组物品（材料、Boss宝藏袋等）添加到操作员的「自定义物品」商店页。设置物品、价格（以铜币计）以及解锁条件。未加载的模组物品将被忽略。需要重新加载模组。
+					Tooltip:
+						'''
+						将任意原版或模组物品（材料、Boss宝藏袋等）添加到操作员的「自定义物品」商店页。
+						设置物品、价格（以铜币计）以及解锁条件。
+						未加载的模组物品将被忽略。需要重新加载模组。
+						'''
 					Label: 操作员自定义商店物品
+				}
+
+				TinkererCustomItems: {
+					Tooltip:
+						'''
+						将任意原版或模组物品添加到工匠的「自定义物品」商店页。
+						设置物品、价格（以铜币计）以及解锁条件。
+						未加载的模组物品将被忽略。需要重新加载模组。
+						'''
+					Label: 工匠自定义商店物品
 				}
 
 				RevPrices: {
@@ -1580,6 +1605,69 @@ Mods: {
 				LifeformAnalyzerAlt: {
 					Label: 生命体分析机替代纹理
 					Tooltip: 对生命体分析机使用替代纹理.默认为关
+				}
+			}
+
+			OperatorShopItem: {
+				// Tooltip: ""
+
+				Item: {
+					// Label: Item
+					// Tooltip: ""
+				}
+
+				Price: {
+					// Label: Price
+					// Tooltip: ""
+				}
+
+				Availability: {
+					// Label: Availability
+					// Tooltip: ""
+				}
+			}
+
+			OperatorShopGate: {
+				// Tooltip: ""
+
+				Always: {
+					// Label: Always
+					// Tooltip: ""
+				}
+
+				Hardmode: {
+					// Label: Hardmode
+					// Tooltip: ""
+				}
+
+				PostEvilBoss: {
+					// Label: Post Evil Boss
+					// Tooltip: ""
+				}
+
+				PostSkeletron: {
+					// Label: Post Skeletron
+					// Tooltip: ""
+				}
+
+				PostAnyMechBoss: {
+					// Label: Post Any Mech Boss
+					// Tooltip: ""
+				}
+
+				PostPlantera: {
+					// Label: Post Plantera
+					// Tooltip: ""
+				}
+
+				PostGolem: {
+					// Label: Post Golem
+					// Tooltip: ""
+				}
+
+				PostMoonLord: {
+					// Label: Post Moon Lord
+					// Tooltip: ""
 				}
 			}
 		}

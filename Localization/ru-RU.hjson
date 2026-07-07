@@ -1323,6 +1323,7 @@ Mods: {
 		Peter: Пётр
 		TinkererButton1: Для мобильности и пр.
 		TinkererButton2: Для боя
+		TinkererCustomShop: Свои предметы
 		EntryT1: Нужно что-то особенное? Если так, то ты только намекни, я мигом...
 		EntryT2: Ты ещё не встречал мою старшую сестру? Она скорее паромеханик, чем инженер...
 		EntryT3: Если найдёшь где-нибудь тубус — неси его мне и я раскрою его для тебя.
@@ -1363,6 +1364,15 @@ Mods: {
 
 		Configs: {
 			ModConfiguration: {
+				Headers: {
+					NpcSpawns: Спавн НПС
+					LifeformLocator: Локатор анализатора существ
+					General: Общее
+					ShopPrices: Цены в магазине
+					OperatorShop: Магазин Оператора
+					TinkererShop: Лавка Изобретателя
+				}
+
 				ShopChangeDelay: {
 					Tooltip: Количество кадров, которое должно пройти после открытия диалогового окна, перед тем как игрок сможет сменить ассортимент магазина
 					Label: Задержка перед сменой магазина
@@ -1409,8 +1419,23 @@ Mods: {
 				}
 
 				OperatorCustomItems: {
-					Tooltip: Добавьте любые ванильные или модовые предметы (материалы, мешки боссов и т.п.) во вкладку «Свои предметы» у Оператора. Задайте предмет, цену (в меди) и условие открытия. Предметы из невключённых модов игнорируются. Требуется перезагрузка мода.
+					Tooltip:
+						'''
+						Добавьте любые ванильные или модовые предметы (материалы, мешки боссов и т.п.) во вкладку «Свои предметы» у Оператора.
+						Задайте предмет, цену (в меди) и условие открытия.
+						Предметы из невключённых модов игнорируются. Требуется перезагрузка мода.
+						'''
 					Label: Свои предметы в лавке Оператора
+				}
+
+				TinkererCustomItems: {
+					Tooltip:
+						'''
+						Добавьте любые ванильные или модовые предметы во вкладку «Свои предметы» у Изобретателя.
+						Задайте предмет, цену (в меди) и условие открытия.
+						Предметы из невключённых модов игнорируются. Требуется перезагрузка мода.
+						'''
+					Label: Свои предметы в лавке Изобретателя
 				}
 
 				RevPrices: {
@@ -1478,6 +1503,69 @@ Mods: {
 				LifeformAnalyzerAlt: {
 					Label: Старый спрайт стрелки от анализатора форм жизни
 					Tooltip: Стрелка-указатель от анализатора форм жизни будет использовать старый спрайт, который может приглянуться некоторым больше, чем нынешний спрайт
+				}
+			}
+
+			OperatorShopItem: {
+				// Tooltip: ""
+
+				Item: {
+					// Label: Item
+					// Tooltip: ""
+				}
+
+				Price: {
+					// Label: Price
+					// Tooltip: ""
+				}
+
+				Availability: {
+					// Label: Availability
+					// Tooltip: ""
+				}
+			}
+
+			OperatorShopGate: {
+				// Tooltip: ""
+
+				Always: {
+					// Label: Always
+					// Tooltip: ""
+				}
+
+				Hardmode: {
+					// Label: Hardmode
+					// Tooltip: ""
+				}
+
+				PostEvilBoss: {
+					// Label: Post Evil Boss
+					// Tooltip: ""
+				}
+
+				PostSkeletron: {
+					// Label: Post Skeletron
+					// Tooltip: ""
+				}
+
+				PostAnyMechBoss: {
+					// Label: Post Any Mech Boss
+					// Tooltip: ""
+				}
+
+				PostPlantera: {
+					// Label: Post Plantera
+					// Tooltip: ""
+				}
+
+				PostGolem: {
+					// Label: Post Golem
+					// Tooltip: ""
+				}
+
+				PostMoonLord: {
+					// Label: Post Moon Lord
+					// Tooltip: ""
 				}
 			}
 		}
