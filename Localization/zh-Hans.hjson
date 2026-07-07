@@ -1609,65 +1609,65 @@ Mods: {
 			}
 
 			OperatorShopItem: {
-				// Tooltip: ""
+				Tooltip: ""
 
 				Item: {
-					// Label: Item
-					// Tooltip: ""
+					Label: 物品
+					Tooltip: ""
 				}
 
 				Price: {
-					// Label: Price
-					// Tooltip: ""
+					Label: 价格
+					Tooltip: ""
 				}
 
 				Availability: {
-					// Label: Availability
-					// Tooltip: ""
+					Label: 售卖时期
+					Tooltip: ""
 				}
 			}
 
 			OperatorShopGate: {
-				// Tooltip: ""
+				Tooltip: ""
 
 				Always: {
-					// Label: Always
-					// Tooltip: ""
+					Label: 永远售卖
+					Tooltip: ""
 				}
 
 				Hardmode: {
-					// Label: Hardmode
-					// Tooltip: ""
+					Label: 困难模式
+					Tooltip: ""
 				}
 
 				PostEvilBoss: {
-					// Label: Post Evil Boss
-					// Tooltip: ""
+					Label: 邪恶Boss后
+					Tooltip: ""
 				}
 
 				PostSkeletron: {
-					// Label: Post Skeletron
-					// Tooltip: ""
+					Label: 骷髅王后
+					Tooltip: ""
 				}
 
 				PostAnyMechBoss: {
-					// Label: Post Any Mech Boss
-					// Tooltip: ""
+					Label: 任意机械Boss后
+					Tooltip: ""
 				}
 
 				PostPlantera: {
-					// Label: Post Plantera
-					// Tooltip: ""
+					Label: 世纪之花后
+					Tooltip: ""
 				}
 
 				PostGolem: {
-					// Label: Post Golem
-					// Tooltip: ""
+					Label: 石巨人后
+					Tooltip: ""
 				}
 
 				PostMoonLord: {
-					// Label: Post Moon Lord
-					// Tooltip: ""
+					Label: 月亮领主后
+					Tooltip: ""
 				}
 			}
 		}
