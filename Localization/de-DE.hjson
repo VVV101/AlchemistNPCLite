@@ -1290,6 +1290,7 @@ Mods: {
 		ModdedTreasureBagsShop: Modded Schatzbeutel-Shop
 		ModdedTreasureBagsShop2: Modded Schatzbeutel-Shop #2
 		ModdedTreasureBagsShop3: Modded Schatzbeutel-Shop #3
+		CustomShop: Eigene Gegenstände (Konfig)
 		Angela: Angela
 		Carmen: Carmen
 		EntryO1: Wie ist dein Tag, Manager? Kann ich dir helfen?
@@ -1332,6 +1333,7 @@ Mods: {
 		Peter: Peter
 		TinkererButton1: Bewegung/Diverses
 		TinkererButton2: Kampf
+		TinkererCustomShop: Eigene Gegenstände
 		EntryT1: Brauchst du etwas Besonderes? Sag es einfach, wenn ja...
 		EntryT2: Hast du meine ältere Schwester schon gesehen? Sie ist mehr Steampunker als Tüftler...
 		EntryT3: Wenn du irgendwo eine Papierröhre gesehen hast, bring sie zu mir und ich werde sie für dich öffnen.
@@ -1372,6 +1374,15 @@ Mods: {
 
 		Configs: {
 			ModConfiguration: {
+				Headers: {
+					NpcSpawns: NPC-Spawns
+					LifeformLocator: Lebensform-Analysator-Ortung
+					General: Allgemein
+					ShopPrices: Shop-Preise
+					OperatorShop: Operator-Shop
+					TinkererShop: Tüftler-Shop
+				}
+
 				ShopChangeDelay: {
 					Tooltip: Verzögerung, bevor der Shop nach dem Öffnen der Schnittstelle gewechselt werden kann. Standardmäßig 10 Frames
 					Label: Shop-Wechsel-Verzögerung
@@ -1415,6 +1426,26 @@ Mods: {
 				ModItems: {
 					Tooltip: True, um benutzerdefinierte Mod-Gegenstände und -Tränke zuzulassen (Verschwimmungstrank, Weltenverzerrer usw.). Standardmäßig True. Erfordert Mods neu laden, um Informationen zu aktualisieren.
 					Label: Benutzerdefinierte Mod-Gegenstände-Umschalter
+				}
+
+				OperatorCustomItems: {
+					Tooltip:
+						'''
+						Füge beliebige Vanilla- oder Mod-Gegenstände (Materialien, Boss-Beutel usw.) zum Reiter „Eigene Gegenstände" des Operators hinzu.
+						Lege Gegenstand, Preis (in Kupfer) und Freischaltbedingung fest.
+						Gegenstände aus nicht geladenen Mods werden ignoriert. Erfordert einen Mod-Neustart.
+						'''
+					Label: Eigene Shop-Gegenstände des Operators
+				}
+
+				TinkererCustomItems: {
+					Tooltip:
+						'''
+						Füge beliebige Vanilla- oder Mod-Gegenstände zum Reiter „Eigene Gegenstände" des Tüftlers hinzu.
+						Lege Gegenstand, Preis (in Kupfer) und Freischaltbedingung fest.
+						Gegenstände aus nicht geladenen Mods werden ignoriert. Erfordert einen Mod-Neustart.
+						'''
+					Label: Eigene Shop-Gegenstände des Tüftlers
 				}
 
 				RevPrices: {
@@ -1482,6 +1513,69 @@ Mods: {
 				LifeformAnalyzerAlt: {
 					Label: Alternative Textur für Lebensformanalysator-Ortung
 					Tooltip: Verwende alternative Textur für die Lebensformanalysator-Ortung. Standardmäßig False
+				}
+			}
+
+			OperatorShopItem: {
+				// Tooltip: ""
+
+				Item: {
+					// Label: Item
+					// Tooltip: ""
+				}
+
+				Price: {
+					// Label: Price
+					// Tooltip: ""
+				}
+
+				Availability: {
+					// Label: Availability
+					// Tooltip: ""
+				}
+			}
+
+			OperatorShopGate: {
+				// Tooltip: ""
+
+				Always: {
+					// Label: Always
+					// Tooltip: ""
+				}
+
+				Hardmode: {
+					// Label: Hardmode
+					// Tooltip: ""
+				}
+
+				PostEvilBoss: {
+					// Label: Post Evil Boss
+					// Tooltip: ""
+				}
+
+				PostSkeletron: {
+					// Label: Post Skeletron
+					// Tooltip: ""
+				}
+
+				PostAnyMechBoss: {
+					// Label: Post Any Mech Boss
+					// Tooltip: ""
+				}
+
+				PostPlantera: {
+					// Label: Post Plantera
+					// Tooltip: ""
+				}
+
+				PostGolem: {
+					// Label: Post Golem
+					// Tooltip: ""
+				}
+
+				PostMoonLord: {
+					// Label: Post Moon Lord
+					// Tooltip: ""
 				}
 			}
 		}

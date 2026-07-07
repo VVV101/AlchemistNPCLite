@@ -14,6 +14,7 @@ using Terraria.ModLoader.IO;
 using Terraria.DataStructures;
 using Microsoft.Xna.Framework.Graphics;
 using AlchemistNPCLite.Interface;
+using AlchemistNPCLite.Utilities;
 using Terraria.GameContent;
 using System;
 using Terraria.ModLoader.Config;
@@ -36,6 +37,10 @@ namespace AlchemistNPCLite
         internal ShopChangeUIO alchemistUIO;
         private UserInterface alchemistUserInterfaceM;
         internal ShopChangeUIM alchemistUIM;
+        private UserInterface alchemistUserInterfacePage; // Gregg: seamless shop pagination nav
+        internal ShopPageUI alchemistPageUI;
+        private UserInterface alchemistUserInterfaceT; // Gregg: Tinkerer shop-tab picker
+        internal ShopChangeUIT alchemistUIT;
 		public static RecipeGroup AlchemistNPCLiteRecipes;
 
         public override void OnWorldLoad()
@@ -66,6 +71,16 @@ namespace AlchemistNPCLite
                 alchemistUIM.Activate();
                 alchemistUserInterfaceM = new UserInterface();
                 alchemistUserInterfaceM.SetState(alchemistUIM);
+
+                alchemistPageUI = new ShopPageUI();
+                alchemistPageUI.Activate();
+                alchemistUserInterfacePage = new UserInterface();
+                alchemistUserInterfacePage.SetState(alchemistPageUI);
+
+                alchemistUIT = new ShopChangeUIT();
+                alchemistUIT.Activate();
+                alchemistUserInterfaceT = new UserInterface();
+                alchemistUserInterfaceT.SetState(alchemistUIT);
             }
         }
 
@@ -181,6 +196,39 @@ namespace AlchemistNPCLite
                     InterfaceScaleType.UI)
                 );
             }
+            int MouseTextIndexT = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
+            if (MouseTextIndexT != -1)
+            {
+                layers.Insert(MouseTextIndexT, new LegacyGameInterfaceLayer(
+                    "AlchemistNPCLite: Shop Selector T",
+                    delegate
+                    {
+                        if (ShopChangeUIT.visible)
+                        {
+                            alchemistUIT.Draw(Main.spriteBatch);
+                        }
+                        return true;
+                    },
+                    InterfaceScaleType.UI)
+                );
+            }
+
+            int ShopPageIndex = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
+            if (ShopPageIndex != -1)
+            {
+                layers.Insert(ShopPageIndex, new LegacyGameInterfaceLayer(
+                    "AlchemistNPCLite: Shop Pager",
+                    delegate
+                    {
+                        if (ShopPaginator.NavVisible)
+                        {
+                            alchemistPageUI.Draw(Main.spriteBatch);
+                        }
+                        return true;
+                    },
+                    InterfaceScaleType.UI)
+                );
+            }
 
             int LocatorArrowIndex = layers.FindIndex(layer => layer.Name.Equals("Vanilla: Mouse Text"));
             if (LocatorArrowIndex != -1)
@@ -223,6 +271,13 @@ namespace AlchemistNPCLite
         }
         public override void UpdateUI(GameTime gameTime)
         {
+            ShopPaginator.Update(); // Gregg: drop active paginated shop once its window closes
+
+            if (alchemistUserInterfacePage != null && ShopPaginator.NavVisible)
+            {
+                alchemistUserInterfacePage.Update(gameTime);
+            }
+
             if (alchemistUserInterface != null && ShopChangeUI.visible)
             {
                 alchemistUserInterface.Update(gameTime);
@@ -241,6 +296,11 @@ namespace AlchemistNPCLite
             if (alchemistUserInterfaceM != null && ShopChangeUIM.visible)
             {
                 alchemistUserInterfaceM.Update(gameTime);
+            }
+
+            if (alchemistUserInterfaceT != null && ShopChangeUIT.visible)
+            {
+                alchemistUserInterfaceT.Update(gameTime);
             }
         }
 		

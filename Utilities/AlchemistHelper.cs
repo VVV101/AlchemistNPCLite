@@ -69,5 +69,22 @@ namespace AlchemistNPCLite.Utilities
             //Main.SetNPCShopIndex(1);
             //Main.instance.shop[Main.npcShop].SetupShop(Shop, npc);
         }
+
+        // Gregg: maps a config gate preset to a shop Condition (conditions can't be serialized to config).
+        // Shared by the Operator and Tinkerer config-driven custom shops.
+        public static Condition GateCondition(OperatorShopGate gate)
+        {
+            switch (gate)
+            {
+                case OperatorShopGate.Hardmode: return new Condition("", () => Main.hardMode);
+                case OperatorShopGate.PostEvilBoss: return Condition.DownedEowOrBoc;
+                case OperatorShopGate.PostSkeletron: return Condition.DownedSkeletron;
+                case OperatorShopGate.PostAnyMechBoss: return Condition.DownedMechBossAny;
+                case OperatorShopGate.PostPlantera: return new Condition("", () => NPC.downedPlantBoss);
+                case OperatorShopGate.PostGolem: return Condition.DownedGolem;
+                case OperatorShopGate.PostMoonLord: return Condition.DownedMoonLord;
+                default: return new Condition("", () => true);
+            }
+        }
     }
 }

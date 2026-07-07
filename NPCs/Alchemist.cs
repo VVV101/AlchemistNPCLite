@@ -381,7 +381,7 @@ namespace AlchemistNPCLite.NPCs
                     Condition.Hardmode)
 				.Add(new Item(ItemID.GenderChangePotion) { shopCustomPrice = 100000 })
                 .Add(new Item(678) { shopCustomPrice = 150000 }, Condition.ForTheWorthyWorld);
-            shop.Register();
+            ShopPaginator.Register(shop); // Gregg: paginate — free to add potions without hitting the 39-slot cap
 
             shop = new NPCShop(Type, PlantShop)
                 .Add(new Item(ItemID.Daybloom) { shopCustomPrice = 1000 })
@@ -398,6 +398,7 @@ namespace AlchemistNPCLite.NPCs
                 .Add(new Item(ItemID.ViciousMushroom) { shopCustomPrice = 1000 },
                     Condition.DownedEowOrBoc)
                 .AddModItemToShop(Redemption, "Nightshade", 1000, () => NPC.downedBoss3);
+            // Gregg: PlantShop paginated too (register happens after the dead Tremor block below)
             /*
             if (ModLoader.GetMod("Tremor") != null)
             {
@@ -414,7 +415,7 @@ namespace AlchemistNPCLite.NPCs
                 }	
             }
             */
-            shop.Register();
+            ShopPaginator.Register(shop);
         }
     }
 }
